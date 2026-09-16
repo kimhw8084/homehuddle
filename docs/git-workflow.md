@@ -10,14 +10,13 @@ Development transcripts (claude.txt) and split scratch copies (chores_split_*) a
 
 The tracked-source hygiene script checks local-only filenames and selected credential patterns without printing matching values. CI runs it, but it is not a historical secret audit and cannot guarantee absence of every secret type.
 
-## Requested destination
+## GitHub destination
 
-kimhw8084/homehuddle was not accessible at inspection; this repository has no configured remote. GitHub authentication is available, but **no repository was created or pushed** in this checkpoint.
+On September 16, 2026, the owner requested that GitHub main be brought up to date. The previously absent repository was created as private: [kimhw8084/homehuddle](https://github.com/kimhw8084/homehuddle). Origin points to this repository.
 
-Publication needs the owner's history decision:
+Main starts with a clean source snapshot of implementation checkpoint 94b6546. The old divergent main is preserved locally as archive/main-before-sync-20260916, and the implementation branch and verified history bundles retain the earlier history. Only main is published; development transcripts and their historical commits are intentionally not uploaded. No force push or history deletion is needed.
 
-1. Private clean snapshot of reviewed source, while retaining old repository/history bundle locally.
-2. Preserved history after scanning all historical commits for secrets/personal data/large artifacts and reconciling divergent main.
+Check current publication and CI status in GitHub Actions. Publishing source is not a production app deployment or completion of the remaining release gates.
 
 Never push history first and assume deleting files later removes secrets. Never force-push just to make branches match. Synchronization is complete only after remote/local commit equality and hosted CI are verified.
 

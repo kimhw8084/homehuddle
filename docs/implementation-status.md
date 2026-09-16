@@ -2,6 +2,8 @@
 
 Local date America/Chicago; hosted migrations September 16 UTC.
 
+Publication update, September 16: a private GitHub repository has been created at kimhw8084/homehuddle, with main based on a clean snapshot of this implementation. The original checkpoint evidence below is historical; see GitHub Actions for current hosted CI results and [Git workflow](git-workflow.md) for preserved local history.
+
 ## Outcome
 
 A persisted, tested household core replaces local prototype behavior for signed-in users. This is a substantial **engineering preview**, not completion of the whole design roadmap or a certified public/paid production release.
@@ -58,7 +60,7 @@ Compatible updates removed the initial two critical advisories. Last npm audit s
 
 ## External decisions/prerequisites
 
-- Choose private clean-snapshot publication versus reviewed historical commits; no push yet.
+- GitHub publication uses a private clean snapshot; historical branches remain local. Verify main's remote commit and current CI checks before release.
 - Confirm SMTP, email template, OAuth providers and callback URLs using owned test accounts.
 - Supply native build/signing/store setup and physical-device QA; no store release made.
 - Configure store products, provider account/webhook secrets and approved commercial offer; no charges/subscriptions created.
