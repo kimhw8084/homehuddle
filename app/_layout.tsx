@@ -14,7 +14,8 @@ import { householdApi } from '../lib/household';
 export default function RootLayout() {
   const { session, setSession, setInitialized, isInitialized, isDevBypass } = useAuthStore();
   const { hasCompleted: onboardingDone, hasHydrated: onboardingHydrated, pendingInvite } = useOnboardingStore();
-  const segments = useSegments();
+  // Fresh CI checkouts have no generated Expo route tuples yet.
+  const segments: readonly string[] = useSegments();
   const router = useRouter();
   const [sessionError, setSessionError] = useState(false);
   const [sessionAttempt, setSessionAttempt] = useState(0);
