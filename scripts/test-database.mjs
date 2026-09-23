@@ -26,6 +26,8 @@ try {
   }
   sql('supabase/tests/integrity.sql');
   sql('supabase/tests/planning.sql');
+  sql('supabase/tests/routines.sql');
+  sql('supabase/tests/billing.sql');
   console.log('Database migration and integrity tests passed (PostgreSQL harness; Supabase services not emulated).');
 } finally {
   if (started) run('pg_ctl', ['-D', data, '-m', 'fast', '-w', 'stop']);

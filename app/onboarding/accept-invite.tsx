@@ -5,9 +5,10 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { accountApi } from '../../lib/account';
 import { useOnboardingStore } from '../../store/onboardingStore';
 import { useAuthStore } from '../../store/authStore';
-import { Action, Field, planningStyles as s } from '../../components/ui/PlanningUI';
+import { Action, Field, usePlanningStyles } from '../../components/ui/PlanningUI';
 
 export default function AcceptInviteScreen() {
+  const s = usePlanningStyles();
   const router = useRouter();
   const params = useLocalSearchParams<{ token?: string }>();
   const onboarding = useOnboardingStore();

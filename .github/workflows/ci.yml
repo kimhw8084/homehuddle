@@ -20,7 +20,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run check:edge
       - run: npx expo install --check
+      - name: Compile iOS and Android JavaScript bundles (not device qualification)
+        run: npx expo export --platform ios --platform android --output-dir dist-native-check
+        env:
+          EXPO_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+          EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_compile_only
       - run: npm run export:web
         env:
           EXPO_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321

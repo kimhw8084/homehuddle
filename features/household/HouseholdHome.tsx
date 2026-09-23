@@ -5,10 +5,13 @@ import { useRouter } from 'expo-router';
 import { useHuddleStore } from '../../store/huddleStore';
 import { householdApi } from '../../lib/household';
 import { requestHouseholdRefresh } from '../../lib/household-events';
-import { Action, Field, Panel, planningStyles as s } from '../../components/ui/PlanningUI';
+import { Action, Field, Panel, ScreenHeading, SyncStatus, usePlanningStyles } from '../../components/ui/PlanningUI';
+import { useHouseholdSync } from '../../store/householdSyncStore';
 import { dateKey } from '../planning/dates';
 
 export default function HouseholdHome() {
+  const s = usePlanningStyles();
+  const sync = useHouseholdSync();
   const router = useRouter();
   const state = useHuddleStore();
   const member = state.familyMembers.find(item => item.id === state.currentMemberId);
@@ -30,16 +33,15 @@ export default function HouseholdHome() {
     } catch (reason) { setError(reason instanceof Error ? reason.message : 'Review not saved. Try again.'); }
     finally { lock.current = false; setBusy(null); }
   }
-  return <SafeAreaView style={s.page}><ScrollView contentContainerStyle={s.content} keyboardShouldPersistTaps="handled" refreshControl={<RefreshControl refreshing={false} onRefresh={refresh} />}>
-    <Text style={s.muted}>{new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</Text>
-    <Text accessibilityRole="header" style={s.title}>Hi, {member?.name || 'there'}.</Text>
-    <Text style={s.muted}>A little coordination. More time together.</Text>
-    <Panel><Text style={s.heading}>{due.length ? `${due.length} household ${due.length === 1 ? 'chore needs' : 'chores need'} attention` : 'You’re caught up for today'}</Text>
+  return <SafeAreaView edges={['top', 'left', 'right']} style={s.page}><ScrollView contentContainerStyle={s.content} keyboardShouldPersistTaps="handled" refreshControl={<RefreshControl refreshing={sync.refreshing} onRefresh={refresh} />}>
+    <ScreenHeading eyebrow={new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })} title={`Hi, ${member?.name || 'there'}.`} subtitle="A little coordination. More time together." />
+    <SyncStatus {...sync} onRefresh={refresh} />
+    <Panel><Text style={s.heading}>{due.length ? `${due.length} household ${due.length === 1 ? 'chore needs' : 'chores need'} attention` : sync.error || sync.isOffline ? 'Your last loaded plan' : 'You’re caught up for today'}</Text>
       <Text style={s.muted}>{due.length ? 'Start with what is due. Points are awarded after review.' : 'Plan ahead now, then enjoy the time you get back.'}</Text>
       {due.slice(0, 4).map(chore => <View key={chore.id} style={s.row}><Text style={[s.text, { flex: 1 }]}>{chore.title}</Text><Text style={s.muted}>{chore.assignee ?? 'Unassigned'}</Text></View>)}
       <Action label="Open chores" onPress={() => router.push('/(app)/(tabs)/chores')} />
     </Panel>
-    <View style={s.row}><Action label="Plan dinner" secondary onPress={() => router.push('/(app)/(tabs)/family')} /><Action label="Open shopping list" secondary onPress={() => router.push('/(app)/(tabs)/restock')} /></View>
+    <View style={s.row}><Action label="Plan dinner" secondary onPress={() => router.push({ pathname: '/(app)/(tabs)/family', params: { section: 'meals' } })} /><Action label="Open shopping list" secondary onPress={() => router.push('/(app)/(tabs)/restock')} /></View>
     {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
     {adult && <Text accessibilityRole="header" style={s.heading}>Ready for review · {state.pendingApprovals.length}</Text>}
     {adult && !state.pendingApprovals.length && <Text style={s.muted}>No pending reviews. Completed chores will appear here.</Text>}

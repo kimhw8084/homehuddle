@@ -35,4 +35,4 @@ begin
   perform test.assert_true(failed, description);
 end;
 $$;
-grant usage on schema test to anon, authenticated;
+grant usage on schema test to anon, authenticated, service_role;

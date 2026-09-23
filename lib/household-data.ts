@@ -7,6 +7,8 @@ const TABLES = ['household_members', 'chores', 'chore_completions', 'rewards', '
 
 export const householdData = {
   async load(householdId: string, historyLimit = 100): Promise<HouseholdSnapshot> {
+    const prepared = await supabase.rpc('materialize_household_routines', { target_household: householdId });
+    if (prepared.error) throw prepared.error;
     const { data, error } = await supabase.rpc('get_household_snapshot', { target_household_id: householdId, history_limit: historyLimit });
     if (error) throw error;
     const snapshot = data as HouseholdSnapshot;

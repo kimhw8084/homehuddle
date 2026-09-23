@@ -1,4 +1,14 @@
-# Implementation checkpoint — September 15, 2026
+# Implementation status
+
+## Current checkpoint — September 23, 2026
+
+See [Native implementation and release-gate handoff](product/HomeHuddle-Native-Implementation-Handoff-2026-09-23.md) for the current evidence: five-tab production UI, shared interaction/theme improvements, recurring chores, disabled-by-default server-verified billing, 60 app tests, 76 database assertions, successful native PostgreSQL and iOS simulator-target compilation. [Run on iPhone Simulator](iphone-simulator.md) provides the streamlined Mac command and the missing-Simulator.app prerequisite.
+
+The owner confirms App Store Connect, Google Play Console and RevenueCat are not set up. No paid checkout or app-store release is enabled. The full design backlog is **not** complete: offline commands, push delivery, media lifecycle, device/visual/human qualification and the listed commercial/operations gates remain.
+
+The remainder of this file is preserved **historical September 15 evidence**, not current pass/fail status.
+
+## Historical checkpoint — September 15, 2026
 
 Local date America/Chicago; hosted migrations September 16 UTC.
 

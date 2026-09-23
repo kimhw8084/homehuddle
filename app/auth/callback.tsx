@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Action, planningStyles as s } from '../../components/ui/PlanningUI';
+import { Action, usePlanningStyles } from '../../components/ui/PlanningUI';
 
 // RootLayout consumes the callback exactly once and performs membership routing.
 export default function AuthCallback() {
+  const s = usePlanningStyles();
   const router = useRouter();
   const [delayed, setDelayed] = useState(false);
   useEffect(() => { const timer = setTimeout(() => setDelayed(true), 10000); return () => clearTimeout(timer); }, []);

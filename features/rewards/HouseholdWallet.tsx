@@ -5,9 +5,10 @@ import { useRouter } from 'expo-router';
 import { useHuddleStore } from '../../store/huddleStore';
 import { householdApi } from '../../lib/household';
 import { requestHouseholdRefresh } from '../../lib/household-events';
-import { Action, Panel, planningStyles as s } from '../../components/ui/PlanningUI';
+import { Action, Panel, usePlanningStyles } from '../../components/ui/PlanningUI';
 
 export default function HouseholdWallet() {
+  const s = usePlanningStyles();
   const router = useRouter();
   const state = useHuddleStore();
   const member = state.familyMembers.find(item => item.id === state.currentMemberId);

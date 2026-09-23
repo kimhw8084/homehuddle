@@ -4,6 +4,14 @@
 # working directory name when running `supabase init`.
 project_id = "HomeHuddle"
 
+[functions.billing-reconcile]
+verify_jwt = true
+
+[functions.billing-webhook]
+# RevenueCat is not a Supabase JWT caller. The handler requires the configured
+# Authorization secret and never trusts event fields to grant an entitlement.
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.

@@ -10,8 +10,12 @@ import * as Linking from 'expo-linking';
 import { consumeAuthRedirect, readableAuthError } from '../lib/auth';
 import { AppErrorBoundary } from '../components/AppErrorBoundary';
 import { householdApi } from '../lib/household';
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import { usePlanningTheme } from '../components/ui/PlanningUI';
 
 export default function RootLayout() {
+  const { colors, scheme } = usePlanningTheme();
   const { session, setSession, setInitialized, isInitialized, isDevBypass } = useAuthStore();
   const { hasCompleted: onboardingDone, hasHydrated: onboardingHydrated, pendingInvite } = useOnboardingStore();
   // Fresh CI checkouts have no generated Expo route tuples yet.
@@ -116,19 +120,21 @@ export default function RootLayout() {
   }, [session, isDevBypass, isInitialized, onboardingDone, onboardingHydrated, segments, router, userId, membershipReadyFor, pendingInvite]);
 
   if (!isSupabaseConfigured || sessionError) {
-    return <View style={{ flex: 1, justifyContent: 'center', padding: 32, gap: 16, backgroundColor: '#F8FAFC' }}>
-      <Text accessibilityRole="header" style={{ fontSize: 22, fontWeight: '700' }}>{sessionError ? 'Unable to restore your session' : 'HomeHuddle is not configured'}</Text>
-      <Text>{sessionError ? 'Please try again. Your household data has not been changed.' : 'Set the Supabase URL and public client key, then rebuild the app. Never use a server secret in the app.'}</Text>
+    return <View style={{ flex: 1, justifyContent: 'center', padding: 32, gap: 16, backgroundColor: colors.background }}>
+      <Text accessibilityRole="header" style={{ fontSize: 22, fontWeight: '700', color: colors.text }}>{sessionError ? 'Unable to restore your session' : 'HomeHuddle is not configured'}</Text>
+      <Text style={{ color: colors.subtext }}>{sessionError ? 'Please try again. Your household data has not been changed.' : 'Set the Supabase URL and public client key, then rebuild the app. Never use a server secret in the app.'}</Text>
       {sessionError && <TouchableOpacity accessibilityRole="button" onPress={() => setSessionAttempt(value => value + 1)} style={{ padding: 16, backgroundColor: '#4F46E5', borderRadius: 12 }}><Text style={{ color: 'white' }}>Try again</Text></TouchableOpacity>}
     </View>;
   }
 
   if (userId && membershipReadyFor !== userId) {
-    return <View style={{ flex: 1, justifyContent: 'center', padding: 32 }}><Text accessibilityLiveRegion="polite">Connecting to your household…</Text></View>;
+    return <View style={{ flex: 1, justifyContent: 'center', padding: 32, backgroundColor: colors.background }}><Text style={{ color: colors.text }} accessibilityLiveRegion="polite">Connecting to your household…</Text></View>;
   }
 
   return (
     <AppErrorBoundary>
+      <ThemeProvider value={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" />
@@ -136,6 +142,7 @@ export default function RootLayout() {
           <Stack.Screen name="onboarding" />
         </Stack>
       </GestureHandlerRootView>
+      </ThemeProvider>
     </AppErrorBoundary>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuthStore } from '../../../store/authStore';
-import HouseholdPlanner from '../../../features/household/HouseholdPlanner';
+import PlanScreen from '../../../features/planning/PlanScreen';
 
 export default function Route() {
   const demo = useAuthStore(state => state.isDevBypass && !state.user);
@@ -9,5 +9,5 @@ export default function Route() {
     const DemoScreen = require('../../../features/demo/screens/FamilyScreen').default;
     return <DemoScreen />;
   }
-  return <HouseholdPlanner />;
+  return <PlanScreen />;
 }

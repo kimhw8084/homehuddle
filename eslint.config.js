@@ -8,6 +8,11 @@ module.exports = defineConfig([
     ignores: ['dist/*'],
   },
   {
+    files: ['supabase/functions/**/*.ts'],
+    languageOptions: { globals: { Deno: 'readonly' } },
+    rules: { 'import/no-unresolved': ['error', { ignore: ['^npm:'] }] },
+  },
+  {
     // k6 is a separate runtime, not a Node/Metro dependency.
     files: ['load-tests/**/*.js'],
     languageOptions: { globals: { __ENV: 'readonly', __VU: 'readonly', __ITER: 'readonly' } },

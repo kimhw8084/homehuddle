@@ -2,7 +2,9 @@
 
 A shared household workspace for chores, dinner planning, shopping and earned rewards. Expo / React Native, TypeScript, Zustand and Supabase PostgreSQL.
 
-**Status: engineering preview, not production certification.** The signed-in core is persisted and tested. Billing, notification delivery, offline writes and native release validation are not complete. Read [implementation status](docs/implementation-status.md) before deploying or making product promises.
+**Status: engineering preview, not production certification.** The signed-in core and recurring routines are persisted and tested. iOS native compilation passes. Subscription code is implemented but checkout is disabled pending provider setup and lifecycle qualification; notification delivery, offline writes and native visual/release validation remain incomplete. Read [the September 23 implementation handoff](docs/product/HomeHuddle-Native-Implementation-Handoff-2026-09-23.md) before making product promises.
+
+For the shortest Mac launch path, use [Run on iPhone Simulator](docs/iphone-simulator.md): `npm run ios:simulator`. The full Xcode/Simulator app is required; command-line tools alone are insufficient.
 
 ## Local development
 
@@ -23,6 +25,7 @@ npm run check:env
 npx expo install --check
 npm run export:web
 npm run test:db:native
+npm run check:edge
 ```
 
 `check` includes TypeScript, Jest, isolated PostgreSQL/WASM tests and lint. Whole-repo lint allows legacy warnings; production feature directories have a separate zero-warning gate. The WASM harness never contacts hosted data; it does not emulate Auth/Storage/Realtime/PostgREST or native concurrent connections. The separate native runner needs working PostgreSQL binaries and pgcrypto; configure `PG_BIN` if necessary.
@@ -49,6 +52,8 @@ store/                     Session, onboarding, household read models
 types/                     Application contracts
 supabase/migrations/       Versioned schema and transactional commands
 supabase/tests/            Isolated database regression fixtures
+supabase/functions/        Server-only subscription authority (not yet deployed)
+plugins/                   Reproducible native prebuild configuration
 __tests__/                 Application and screen regression tests
 scripts/                   Environment and database test runners
 docs/                      Architecture, operations, implementation evidence
@@ -60,6 +65,8 @@ docs/                      Architecture, operations, implementation evidence
 - [Architecture and invariants](docs/architecture.md)
 - [Deployment and recovery](docs/operations.md)
 - [Implementation status and remaining work](docs/implementation-status.md)
+- [iPhone Simulator launch and walkthrough](docs/iphone-simulator.md)
+- [Subscription setup and release gates](docs/billing-setup.md)
 - [Git and publication workflow](docs/git-workflow.md)
 
 The full product design and improvement backlog are versioned under [docs/product](docs/product/README.md), with matching baseline exports in the owner's iCloud Downloads folder. They describe the target vision; the implementation status describes what exists today.

@@ -7,14 +7,22 @@ import { useHuddleStore } from '../../store/huddleStore';
 import { householdApi } from '../../lib/household';
 import { householdProofs } from '../../lib/household-proofs';
 import { requestHouseholdRefresh } from '../../lib/household-events';
-import { Action, Field, Panel, planningStyles as s } from '../../components/ui/PlanningUI';
+import { Action, Editor, Field, Panel, ScreenHeading, SyncStatus, usePlanningStyles } from '../../components/ui/PlanningUI';
+import { useAccessibilityPreferences } from '../../hooks/use-accessibility-preferences';
+import { useHouseholdSync } from '../../store/householdSyncStore';
+import { useOperationScope } from '../../hooks/use-operation-scope';
 import { dateKey } from '../planning/dates';
 import { Chore } from '../../types/chores';
 
 type Draft = { id: string; title: string; points: string; assigneeId: string | null; date: string; notes: string; photo: boolean; version: number };
 const empty = (): Draft => ({ id: randomUUID(), title: '', points: '10', assigneeId: null, date: dateKey(new Date()), notes: '', photo: false, version: 0 });
 
-export default function HouseholdChores() {
+export default function HouseholdChores({ embedded = false }: { embedded?: boolean } = {}) {
+  const s = usePlanningStyles();
+  const captureScope = useOperationScope();
+  const sync = useHouseholdSync();
+  const { reduceMotion } = useAccessibilityPreferences();
+  const baseline = useRef('');
   const state = useHuddleStore();
   const current = state.familyMembers.find(member => member.id === state.currentMemberId);
   const adult = current?.householdRole === 'owner' || current?.householdRole === 'parent';
@@ -30,41 +38,51 @@ export default function HouseholdChores() {
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
   const refresh = () => { if (state.householdId) requestHouseholdRefresh(state.householdId); };
-  async function run(action: (householdId: string) => Promise<string>) {
+  async function run(action: (householdId: string, current: () => boolean) => Promise<string>) {
     if (lock.current || !state.householdId) return;
+    const current = captureScope();
     lock.current = true; setBusy(true); setError(''); setNotice('');
-    try { setNotice(await action(state.householdId)); refresh(); }
-    catch (reason) { setError(reason instanceof Error ? reason.message : 'Your change was not saved. Please try again.'); refresh(); }
-    finally { lock.current = false; setBusy(false); }
+    try { const message = await action(state.householdId, current); if (current()) { setNotice(message); refresh(); } }
+    catch (reason) { if (current()) { setError(reason instanceof Error ? reason.message : 'Your change was not saved. Please try again.'); refresh(); } }
+    finally { lock.current = false; if (current()) setBusy(false); }
   }
   function edit(chore?: Chore) {
-    setDraft(chore ? { id: chore.id, title: chore.title, points: String(chore.points), assigneeId: chore.assigned_to ?? null, date: chore.dueDate, notes: chore.notes ?? '', photo: chore.photoRequired, version: chore.version ?? 1 } : empty());
+    const next = chore ? { id: chore.id, title: chore.title, points: String(chore.points), assigneeId: chore.assigned_to ?? null, date: chore.dueDate, notes: chore.notes ?? '', photo: chore.photoRequired, version: chore.version ?? 1 } : empty();
+    baseline.current = JSON.stringify(next); setDraft(next);
     setError(''); setComplete(null);
-    scroll.current?.scrollTo({ y: 0, animated: true });
+    scroll.current?.scrollTo({ y: 0, animated: !reduceMotion });
   }
   async function pickPhoto() {
+    if (lock.current) return;
+    const current = captureScope();
+    lock.current = true; setBusy(true);
     try {
       const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!current()) return;
       if (!permission.granted) { setError('Photo access is required to attach proof. You can enable it in device settings.'); return; }
       const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], quality: 0.6, exif: false });
-      if (!result.canceled) setPhoto(result.assets[0].uri);
-    } catch { setError('Unable to select a photo. Please try again.'); }
+      if (current() && !result.canceled) setPhoto(result.assets[0].uri);
+    } catch { if (current()) setError('Unable to select a photo. Please try again.'); }
+    finally { lock.current = false; if (current()) setBusy(false); }
   }
   const chores = state.chores.filter(chore => !mine || chore.assigned_to === current?.id)
     .sort((a, b) => Number(a.status !== 'pending') - Number(b.status !== 'pending') || a.dueDate.localeCompare(b.dueDate));
 
-  return <SafeAreaView style={s.page}><KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-    <ScrollView ref={scroll} contentContainerStyle={s.content} keyboardShouldPersistTaps="handled" refreshControl={<RefreshControl refreshing={false} onRefresh={refresh} />}>
-      <Text accessibilityRole="header" style={s.title}>Chores</Text><Text style={s.muted}>Clear ownership. A shared plan. Points after approval.</Text>
-      <View style={s.row}><Action label="Everyone" secondary={mine} onPress={() => setMine(false)} /><Action label="Assigned to me" secondary={!mine} onPress={() => setMine(true)} />{adult && <Action label="Add chore" disabled={busy} onPress={() => edit()} />}</View>
-      {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
+  return <SafeAreaView edges={embedded ? ['left', 'right'] : ['top', 'left', 'right']} style={s.page}><KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+    <ScrollView ref={scroll} contentContainerStyle={s.content} keyboardShouldPersistTaps="handled" refreshControl={<RefreshControl refreshing={sync.refreshing} onRefresh={refresh} />}>
+      {!embedded && <ScreenHeading title="Chores" subtitle="Clear ownership. A shared plan. Points after approval." />}
+      <SyncStatus {...sync} onRefresh={refresh} />
+      <View accessibilityRole="radiogroup" accessibilityLabel="Chore view" style={s.row}><Action label="Everyone" selected={!mine} secondary={mine} onPress={() => setMine(false)} /><Action label="Assigned to me" selected={mine} secondary={!mine} onPress={() => setMine(true)} /></View>
+      {adult && <Action label="Add chore" disabled={busy} onPress={() => edit()} />}
+      {!!error && !draft && !complete && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
       {!!notice && <Text accessibilityLiveRegion="polite" style={s.muted}>{notice}</Text>}
-      {draft && <Panel><Text accessibilityRole="header" style={s.heading}>{draft.version ? 'Edit chore' : 'A new chore'}</Text>
-        <Field label="What needs doing?" value={draft.title} maxLength={120} editable={!busy} onChangeText={title => setDraft(old => old ? { ...old, title } : null)} />
-        <View style={s.row}><View style={{ flex: 1 }}><Field label="Due date (YYYY-MM-DD)" value={draft.date} maxLength={10} editable={!busy} onChangeText={date => setDraft(old => old ? { ...old, date } : null)} /></View><View style={{ flex: 1 }}><Field label="Points" value={draft.points} keyboardType="number-pad" editable={!busy} onChangeText={points => setDraft(old => old ? { ...old, points } : null)} /></View></View>
+      {draft && <Editor title={draft.version ? 'Edit chore' : 'A new chore'} busy={busy} dirty={JSON.stringify(draft) !== baseline.current} onClose={() => setDraft(null)} closeLabel="Cancel chore edit"><Panel>
+        {!!error && !error.startsWith('Enter a valid date') && !error.startsWith('Points must') && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
+        <Field label="What needs doing?" required value={draft.title} maxLength={120} editable={!busy} onChangeText={title => setDraft(old => old ? { ...old, title } : null)} />
+        <View style={s.row}><View style={{ flex: 1, minWidth: 150 }}><Field label="Due date (YYYY-MM-DD)" error={error.startsWith('Enter a valid date') ? error : undefined} value={draft.date} maxLength={10} editable={!busy} onChangeText={date => setDraft(old => old ? { ...old, date } : null)} /></View><View style={{ flex: 1, minWidth: 120 }}><Field label="Points" error={error.startsWith('Points must') ? error : undefined} value={draft.points} keyboardType="number-pad" editable={!busy} onChangeText={points => setDraft(old => old ? { ...old, points } : null)} /></View></View>
         <Field label="Instructions (optional)" value={draft.notes} maxLength={2000} multiline editable={!busy} onChangeText={notes => setDraft(old => old ? { ...old, notes } : null)} />
-        <Text style={s.muted}>Assigned to</Text><View style={s.row}><Action label="Unassigned" secondary={!!draft.assigneeId} disabled={busy} onPress={() => setDraft(old => old ? { ...old, assigneeId: null } : null)} />
-          {state.familyMembers.map(member => <Action key={member.id} label={`${member.avatar} ${member.name}`} secondary={draft.assigneeId !== member.id} disabled={busy} onPress={() => setDraft(old => old ? { ...old, assigneeId: member.id ?? null } : null)} />)}</View>
+        <Text style={s.muted}>Assigned to</Text><View accessibilityRole="radiogroup" accessibilityLabel="Chore assignee" style={s.row}><Action label="Unassigned" selected={!draft.assigneeId} secondary={!!draft.assigneeId} disabled={busy} onPress={() => setDraft(old => old ? { ...old, assigneeId: null } : null)} />
+          {state.familyMembers.map(member => <Action key={member.id} label={`${member.avatar} ${member.name}`} selected={draft.assigneeId === member.id} secondary={draft.assigneeId !== member.id} disabled={busy} onPress={() => setDraft(old => old ? { ...old, assigneeId: member.id ?? null } : null)} />)}</View>
         <View style={s.row}><Switch accessibilityLabel="Require an after photo" value={draft.photo} disabled={busy} onValueChange={value => setDraft(old => old ? { ...old, photo: value } : null)} /><Text style={s.text}>Require an after photo</Text></View>
         <Action label="Save chore" busy={busy} disabled={!draft.title.trim()} onPress={() => { void run(async householdId => {
           const points = Number(draft.points);
@@ -74,20 +92,23 @@ export default function HouseholdChores() {
           if (draft.version) await householdApi.updateChore({ ...input, id: draft.id, version: draft.version });
           else await householdApi.createChoreV2({ ...input, householdId, requestId: draft.id });
           setDraft(null); return 'Chore saved to your household.';
-        }); }} /><Action label="Cancel chore edit" secondary disabled={busy} onPress={() => setDraft(null)} />
-      </Panel>}
-      {complete && <Panel><Text style={s.heading}>Complete: {complete.title}</Text><Field label="Completion note (optional)" value={note} maxLength={2000} multiline onChangeText={setNote} editable={!busy} />
+        }); }} />
+      </Panel></Editor>}
+      {complete && <Editor title={`Complete: ${complete.title}`} busy={busy} dirty={Boolean(note || photo)} onClose={() => setComplete(null)} closeLabel="Cancel completion"><Panel>
+        {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
+        <Field label="Completion note (optional)" value={note} maxLength={2000} multiline onChangeText={setNote} editable={!busy} />
         {photo && <Image source={{ uri: photo }} accessibilityLabel="Selected proof photo" style={{ height: 180, width: '100%' }} resizeMode="contain" />}
         <Action label={photo ? 'Change proof photo' : 'Attach proof photo'} secondary disabled={busy} onPress={() => { void pickPhoto(); }} />
         <Text style={s.muted}>{complete.photoRequired ? 'An after photo is required. ' : ''}JPEG, PNG or WebP, up to 5 MB.</Text>
-        <Action label="Submit for approval" busy={busy} disabled={complete.photoRequired && !photo} onPress={() => { void run(async householdId => {
+        <Action label="Submit for approval" busy={busy} disabled={complete.photoRequired && !photo} onPress={() => { void run(async (householdId, currentScope) => {
           const memberId = complete.assigned_to ?? state.currentMemberId;
           if (!memberId) throw new Error('Your member profile is not ready.');
           const afterPath = photo ? await householdProofs.upload({ householdId, choreId: complete.id, slot: 'after', uri: photo }) : undefined;
+          if (!currentScope()) return '';
           await householdApi.submitCompletion({ choreId: complete.id, memberId, occurrenceDate: complete.dueDate, afterPath, note });
           setComplete(null); setPhoto(null); setNote(''); return 'Submitted. An adult can now review this chore on Home.';
-        }); }} /><Action label="Cancel completion" secondary disabled={busy} onPress={() => setComplete(null)} />
-      </Panel>}
+        }); }} />
+      </Panel></Editor>}
       {!chores.length && <Panel><Text style={s.heading}>{mine ? 'Nothing assigned to you' : 'A fresh start'}</Text><Text style={s.muted}>{adult ? 'Add the first chore your household wants to coordinate.' : 'An adult can add and assign household chores.'}</Text></Panel>}
       {chores.map(chore => {
         const assignee = state.familyMembers.find(member => member.id === chore.assigned_to);
@@ -95,9 +116,9 @@ export default function HouseholdChores() {
         return <Panel key={chore.id}><Text style={s.heading}>{chore.title}</Text><Text style={s.muted}>{chore.assignee ?? 'Unassigned'} · {chore.dueDate} · {chore.points} points</Text>
           {!!chore.notes && <Text style={s.text}>{chore.notes}</Text>}
           <Text style={s.muted}>{chore.reviewStatus === 'submitted' ? 'Awaiting review' : chore.reviewStatus === 'approved' ? 'Approved' : 'To do'}{chore.photoRequired ? ' · Photo required' : ''}</Text>
-          <View style={s.row}>{chore.status === 'pending' && canComplete && <Action label="Complete chore" disabled={busy} onPress={() => { setComplete(chore); setDraft(null); setNote(''); setPhoto(null); setError(''); scroll.current?.scrollTo({ y: 0, animated: true }); }} />}
-            {adult && chore.status === 'pending' && <Action label="Edit chore" secondary disabled={busy} onPress={() => edit(chore)} />}
-            {adult && chore.reviewStatus !== 'submitted' && <Action label="Archive chore" secondary disabled={busy} onPress={() => setArchiving(chore.id)} />}</View>
+          <View style={s.row}>{chore.status === 'pending' && canComplete && <Action label="Complete chore" accessibilityLabel={`Complete ${chore.title}`} disabled={busy} onPress={() => { setComplete(chore); setDraft(null); setNote(''); setPhoto(null); setError(''); }} />}
+            {adult && chore.status === 'pending' && <Action label="Edit chore" accessibilityLabel={`Edit ${chore.title}`} secondary disabled={busy} onPress={() => edit(chore)} />}
+            {adult && chore.reviewStatus !== 'submitted' && <Action label="Archive chore" accessibilityLabel={`Archive ${chore.title}`} secondary disabled={busy} onPress={() => setArchiving(chore.id)} />}</View>
           {archiving === chore.id && <View style={{ gap: 10 }}><Text style={s.muted}>Archive this chore? Completion and points history will be preserved.</Text><Action label="Confirm archive" disabled={busy} onPress={() => { void run(async () => { await householdApi.archiveChore(chore.id); setArchiving(null); return 'Chore archived. Its history is preserved.'; }); }} /><Action label="Keep chore" secondary onPress={() => setArchiving(null)} /></View>}
         </Panel>;
       })}

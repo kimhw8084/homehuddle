@@ -7,6 +7,9 @@ import { useAuthStore } from '../store/authStore';
 import { householdApi } from '../lib/household';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }) }));
+jest.mock('../hooks/use-accessibility-preferences', () => ({ useAccessibilityPreferences: () => ({ reduceMotion: true }) }));
+
 jest.mock('../lib/supabase', () => ({ supabase: { auth: { signOut: jest.fn() } } }));
 jest.mock('../lib/household', () => ({ householdApi: { createChoreV2: jest.fn(), updateChore: jest.fn(), submitCompletion: jest.fn(), purchaseReward: jest.fn(), createReward: jest.fn() } }));
 jest.mock('../lib/household-proofs', () => ({ householdProofs: { upload: jest.fn() } }));

@@ -5,8 +5,10 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "ios:simulator": "node scripts/ios-simulator.mjs",
+    "start:simulator": "expo start --dev-client --localhost",
     "web": "expo start --web",
     "lint": "eslint .",
     "test": "jest --runInBand",
@@ -17,6 +19,7 @@
     "export:web": "expo export --platform web",
     "check:env": "node --env-file-if-exists=.env scripts/check-environment.mjs",
     "check:source": "node scripts/check-source-hygiene.mjs",
+    "check:edge": "npx --yes deno@2.9.6 check --config supabase/functions/deno.json supabase/functions/billing-reconcile/index.ts supabase/functions/billing-webhook/index.ts",
     "check": "npm run typecheck && npm run test && npm run test:db && npm run lint && npm run lint:production && npm run check:source"
   },
   "dependencies": {
@@ -33,8 +36,10 @@
     "expo-apple-authentication": "~8.0.8",
     "expo-av": "~16.0.8",
     "expo-blur": "~15.0.8",
+    "expo-build-properties": "~1.0.10",
     "expo-constants": "~18.0.14",
     "expo-crypto": "~15.0.9",
+    "expo-dev-client": "~6.0.21",
     "expo-device": "~8.0.10",
     "expo-font": "~14.0.12",
     "expo-haptics": "~15.0.8",

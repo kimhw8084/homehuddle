@@ -56,7 +56,9 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      ["expo-build-properties", { "ios": { "deploymentTarget": "15.1" } }],
+      "./plugins/with-ios-pod-minimum"
     ],
     "experiments": {
       "typedRoutes": true,

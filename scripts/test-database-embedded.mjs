@@ -42,6 +42,8 @@ try {
   for (const file of readdirSync(join(root, 'supabase/migrations')).filter(name => name.endsWith('.sql')).sort()) await sql(`supabase/migrations/${file}`);
   await psqlTest('supabase/tests/integrity.sql');
   await psqlTest('supabase/tests/planning.sql');
+  await psqlTest('supabase/tests/routines.sql');
+  await psqlTest('supabase/tests/billing.sql');
   console.log(`All PostgreSQL/WASM migration and policy regression tests passed (${assertions} assertions).`);
 } catch (error) {
   console.error(error.message);

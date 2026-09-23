@@ -1,5 +1,7 @@
 # Product documents
 
+Current implementation receipt: [September 23 native implementation handoff](HomeHuddle-Native-Implementation-Handoff-2026-09-23.md). It distinguishes shipped source/database changes, measured checks, disabled commercial integration and remaining implementation/qualification gates. [iPhone Simulator instructions](../iphone-simulator.md) are separate so the run path stays short.
+
 The two dated design/backlog files are now versioned baseline specifications. Edit future revisions here, then export matching dated copies to iCloud Downloads; avoid independently editing competing specifications.
 
 The original audit findings remain historical evidence. They are not current pass/fail results. See [implementation status](../implementation-status.md) for actual implementation and release gates. An implemented subset does not close a backlog item's full acceptance criteria.
