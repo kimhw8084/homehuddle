@@ -4,6 +4,8 @@ Local date America/Chicago; hosted migrations September 16 UTC.
 
 Publication update, September 16: a private GitHub repository has been created at kimhw8084/homehuddle, with main based on a clean snapshot of this implementation. The original checkpoint evidence below is historical; see GitHub Actions for current hosted CI results and [Git workflow](git-workflow.md) for preserved local history.
 
+UI assessment update, September 23: [Golden UI qualification review](product/HomeHuddle-Golden-UI-Qualification-Review-2026-09-23.md) records the reference-tree review and remaining source/interaction/platform/visual/human gaps against c7af0ab. Application and native PostgreSQL jobs in [the September 16 CI run](https://github.com/kimhw8084/homehuddle/actions/runs/35087548890) were rechecked as successful. No new rendered/native/human UI acceptance was established by the September 23 assessment; its planned fixes are not implemented by the document update.
+
 ## Outcome
 
 A persisted, tested household core replaces local prototype behavior for signed-in users. This is a substantial **engineering preview**, not completion of the whole design roadmap or a certified public/paid production release.

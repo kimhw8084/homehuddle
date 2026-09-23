@@ -1,5 +1,7 @@
 # HomeHuddle — Product Design, Architecture & Production Plan
 
+> September 23 UI qualification addendum: [Golden UI review and acceptance plan](HomeHuddle-Golden-UI-Qualification-Review-2026-09-23.md) assesses the current c7af0ab implementation against the supplied Notion reference and its full exposed child tree. UI qualification remains incomplete; the September 15 baseline below is historical. The addendum strengthens the design/acceptance criteria without claiming its findings are fixed.
+
 Version 1.0 · September 15, 2026 · Prepared from the current local codebase
 
 Companion: [Current-state improvement backlog](HomeHuddle-Improvement-Backlog-2026-09-15.md).

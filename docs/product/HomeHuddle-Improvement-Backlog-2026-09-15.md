@@ -1,6 +1,8 @@
 # HomeHuddle — Current-State Review & Improvement Backlog
 
-> Implementation update (September 15 local / September 16 UTC): the baseline findings below are preserved as the original review, not current pass/fail results. Persisted core workflows, auth/sync/integrity fixes, directory separation, tests and hosted forward migrations have since been implemented. See [implementation checkpoint](HomeHuddle-Implementation-Checkpoint-2026-09-15.md) for evidence and incomplete release gates. Backlog acceptance criteria remain binding; a partial implementation does not automatically close an item. GitHub publication is still pending the history/visibility decision.
+> Implementation update: the baseline findings below are preserved as the September 15 review, not current pass/fail results. Persisted core workflows, auth/sync/integrity fixes, directory separation, tests and hosted forward migrations have since been implemented. The private GitHub main was synchronized and CI passed for c7af0ab on September 16. See [implementation checkpoint](HomeHuddle-Implementation-Checkpoint-2026-09-15.md) for evidence and incomplete release gates. Backlog acceptance criteria remain binding; a partial implementation does not automatically close an item.
+
+> September 23 UI qualification addendum: [Golden UI review and acceptance plan](HomeHuddle-Golden-UI-Qualification-Review-2026-09-23.md) assesses the current c7af0ab implementation against the supplied Notion reference and its full exposed child tree. UI qualification remains incomplete; the September 15 baseline below is historical. The addendum strengthens the design/acceptance criteria without claiming its findings are fixed.
 
 Version 1.0 · September 15, 2026
 
