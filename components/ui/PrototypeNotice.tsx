@@ -4,11 +4,13 @@ import { Text, View } from 'react-native';
 export function PrototypeNotice({ screen }: { screen: 'Home' | 'Chores' }) {
   return (
     <View style={{ marginHorizontal: 20, marginVertical: 8, padding: 12, borderRadius: 14, backgroundColor: '#EEF2FF', borderColor: '#C7D2FE', borderWidth: 1 }}>
-      <Text style={{ color: '#3730A3', fontWeight: '700', fontSize: 12 }}>{screen} preview · sample data</Text>
+      <Text style={{ color: '#3730A3', fontWeight: '700', fontSize: 12 }}>
+        {screen === 'Chores' ? 'Chores · partial persistence' : 'Home · mixed live and preview data'}
+      </Text>
       <Text style={{ color: '#4338CA', fontSize: 12, marginTop: 3 }}>
         {screen === 'Chores'
-          ? 'Edits stay in this preview and reset on reload. Household points are not changed.'
-          : 'Dashboard actions are not connected yet. Market and Wallet use your household when signed in.'}
+          ? 'Core chore actions save to your household. Recurrence, sections, ordering, and some advanced actions may not persist yet.'
+          : 'Reviews use household commands. Automations, appliance controls, and some dashboard content are still preview-only.'}
       </Text>
     </View>
   );

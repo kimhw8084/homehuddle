@@ -1,5 +1,7 @@
 # Original UI — development-preview evidence
 
+Historical only: these screenshots were captured before the September 24 correction restored the later authored Home and Chores routes. They must not be used as the visual baseline for the current app.
+
 Captured September 23, 2026 (America/Chicago) in headless Chrome at 390×844 CSS pixels, 2× scale, reduced-motion preference enabled. All images contain sample data entered through the explicit development bypass, not real household data. No browser page errors were observed navigating the four tabs. Screenshots were visually inspected and are not native iPhone, accessibility, signed-in integration, or human design acceptance.
 
 - [Home](home.png): authored dashboard retained; sample-data boundary visible.

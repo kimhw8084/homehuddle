@@ -1,12 +1,12 @@
-# Original UI integration — September 23, 2026
+# Original UI integration — September 24, 2026
 
 Local date America/Chicago; database application completed September 24 UTC.
 
 ## Contract
 
-HomeHuddle's product identity is the owner's authored UI in original commit `dcf30b3`, recovered onto main by `20b6528`. Keep its four-tab structure, visual language, rich cards, calendar, filters, bottom sheets, wallet chart, inventory gestures, and reward editor. Backend integration is not permission to replace these screens with a smaller app.
+HomeHuddle's product identity is the owner's evolved authored UI, including work through April 30 commit `c098688`. The September 23 recovery incorrectly used March 8 commit `dcf30b3` as the source. Later, fuller Home and Chores screens had been retained at `features/demo/screens/MissionControlScreen.tsx` and `features/demo/screens/ChoresView.tsx`; the active tab routes now use those preserved screens. Keep the four-tab structure, visual language, rich cards, calendar, filters, bottom sheets, wallet chart, inventory gestures, and reward editor. Backend integration is not permission to replace the screens with a smaller app.
 
-This checkpoint is a verified Market/Wallet implementation phase, **not a claim of complete production readiness or UI perfection**. Home and Chores integration is still required. Store accounts and RevenueCat are not configured, and paid checkout remains disabled.
+This checkpoint preserves the Market/Wallet implementation and restores the richer Home/Chores UI, **not a claim of complete production readiness or UI perfection**. Chores uses household-backed operations for several core actions, but recurrence, sections/order metadata, and other advanced flows still need a persistence audit. Home uses household commands for reviews, while automations, appliance controls, and some content remain preview/local state. Store accounts and RevenueCat are not configured, and paid checkout remains disabled.
 
 ## Implemented without replacing the screens
 
@@ -27,7 +27,7 @@ Household points are not currency or a real-money wallet. Daily wallet buckets c
 
 ## Structure and authority
 
-The route files retain the authored presentation. `features/rewards/market-model.ts` contains data mapping and validation; `market-api.ts` sends scoped commands. `lib/persisted-command.ts` owns durable retry receipts. `hooks/use-household-command.ts` owns in-flight state, account/role scope checks, and refresh requests. The existing household bootstrap and snapshot synchronizer remain the shared data boundary.
+The active Home and Chores tab files re-export the preserved full screens in `features/demo/screens/`; that historical folder name does not mean those screens are disposable or safe to replace. Market and Wallet retain their active authored routes. `features/rewards/market-model.ts` contains data mapping and validation; `market-api.ts` sends scoped commands. `lib/persisted-command.ts` owns durable retry receipts. `hooks/use-household-command.ts` owns in-flight state, account/role scope checks, and refresh requests. The existing household bootstrap and snapshot synchronizer remain the shared data boundary.
 
 The database is authoritative for permissions, points, stock, purchase price, inventory state, and contributions. `private.market_commands` is an internal idempotency ledger, not a client-readable table. Household-row locks serialize shared balance/stock changes. Version checks reject stale editing. RLS restricts reads; direct client writes to new shared tables are denied. New tables participate in the existing Realtime refresh mechanism.
 
@@ -42,16 +42,12 @@ The enum addition is a separate migration because PostgreSQL requires a commit b
 
 ## Evidence and limits
 
-- TypeScript: passed.
-- Jest: 22 suites, 84 tests passed. Original-screen tests cover actual household data, permissions, changed quotes, failed purchases, and failed-editor draft retention. Retry tests cover lost responses and changed drafts, including creation identities.
-- Database: 122 assertions passed in both PGlite and native PostgreSQL. Native independent-connection tests additionally prove last-stock serialization and same-request replay without a second debit.
-- Lint: 0 errors / 793 warnings across the repository; strict production-module lint has no warnings. Remaining warnings are visible debt, not waived acceptance.
-- Expo SDK 57 dependency alignment and iOS/Android/web JavaScript exports: passed. These are not native builds or store qualification.
+- Before the September 24 Home/Chores route correction, TypeScript passed; Jest passed 22 suites / 84 tests; 122 database assertions passed in PGlite and native PostgreSQL; native concurrency checks passed; lint had 0 errors / 793 warnings; strict production-module lint passed; SDK 57 alignment and iOS/Android/web JavaScript exports passed. These checks are not evidence for the newly reactivated Home/Chores routes.
 - Rendered preview: all four tabs at 390×844 in headless Chrome, no page errors; screenshots were visually inspected. Runtime checks found and fixed the NativeWind manual-theme configuration, unsupported web gyroscope subscription, developer-preview onboarding redirect, and clipped member rows.
 - Hosted checks: new shared-table RLS and client privileges, RPC grants, and invoker snapshot verified after migration. No real user purchases or fund deposits were made to test the hosted project.
 - Actual iPhone, signed-in two-device Auth/Realtime/Storage, keyboard/VoiceOver/Dynamic Type, release performance and human visual acceptance remain unverified.
 
-The local screenshot evidence is an explicit development preview, not proof of persistence or native fidelity. The signed-in screen tests use mocked transport; database tests exercise SQL separately. A real end-to-end service/device test is still a release gate.
+The September 23 screenshots show the earlier March-based routes and are historical, not visual evidence for the restored screens. The signed-in Market/Wallet screen tests use mocked transport; database tests exercise SQL separately. A real end-to-end service/device test and fresh visual review of Home/Chores are still release gates.
 
 ## Hosted advisor disposition
 
@@ -68,8 +64,8 @@ These findings are not represented as an all-green security review.
 
 ## Remaining implementation, in order
 
-1. **Original Chores:** map the existing calendar/sections/drag ordering/filtering/editor to persistent records. Add schema/commands for authored metadata and all supported recurrence forms, assignment exceptions, proof and review. Implement honest pending/approved/rejected/undo states without client-minted points. Preserve monthly/yearly/custom recurrence rather than silently reducing the editor to the existing daily/weekly routine subset.
-2. **Original Home:** live family roster/presence, actual reviews and today's chores, persisted automation and appliance state; remove sample values only as each operation gains a real data contract. Replace timed fake refresh with the shared synchronizer.
+1. **Original Chores:** audit the restored UI against the existing core create/edit/archive/assignment/completion commands, then persist section metadata, drag ordering, filters/preferences, and all supported recurrence forms and exceptions. Verify proof, review, pending/approved/rejected/undo states without client-minted points. Preserve monthly/yearly/custom recurrence rather than silently reducing the editor to the existing daily/weekly routine subset.
+2. **Original Home:** finish live family roster/presence, actual reviews and today's chores, persisted automation and appliance state; remove sample values only as each operation gains a real data contract. Replace any fake refresh with the shared synchronizer.
 3. **Recovery and history:** durable offline queue/conflict UX, saved editing drafts across process restarts, uncertain-command recovery surfaced independently of reopening its form, bounded receipt retention, history pagination, and household timezone/DST semantics. Current receipts protect retries; they are not a full offline queue.
 4. **Native UI qualification:** smallest supported iPhone, large text, VoiceOver, dark mode, reduced motion throughout all original screens, keyboard avoidance and gesture alternatives. Test long names, empty households, 100+ items and role/account switches. Web compile is not certification of every browser alert/gesture interaction.
 5. **End-to-end integrity:** two owned test accounts/devices; email links, reconnection, background/resume, lost-response retries, concurrent purchases, expired/refunded inventory, household/member removal, proof media upload/deletion. Exercise real Supabase services, not just isolated SQL.
@@ -79,4 +75,4 @@ These findings are not represented as an all-green security review.
 
 Use an owned disposable household, not developer bypass. Create a reward with limited stock and eligibility. Purchase with an authorized member who already has legitimately earned points; verify the immutable price, decrement, ledger and bag after reload. Use/undo, gift to an eligible member, and refund an unused non-gifted reward. Verify rejected actions do not alter balances. Start a family fund, deposit from two authorized accounts, cancel and confirm each original contributor receives exactly their own deposit back. Repeat with two devices and interrupt connectivity during a request.
 
-A zero-point new household cannot earn through the original Chores preview yet. Do not insert fake production points to make a demo look complete; integrate Chores before treating this as a complete household pilot.
+A zero-point new household still lacks a verified end-to-end run through the restored full Chores flow proving that completion/review awards points and remains correct after reload. Do not insert fake production points to make a demo look complete; complete that signed-in flow before treating this as a household pilot.

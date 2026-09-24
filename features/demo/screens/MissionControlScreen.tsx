@@ -22,6 +22,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useAuthStore } from '../../../store/authStore';
+import { PrototypeNotice } from '../../../components/ui/PrototypeNotice';
 
 import { supabase } from '../../../lib/supabase';
 import { householdApi } from '../../../lib/household';
@@ -3494,6 +3495,7 @@ export default function MissionControlScreen() {
   return (
     <SafeAreaView className="flex-1 bg-[#FDFCFB]" edges={['top']}>
       <AmbientHUD chores={chores} onProfilePress={() => router.push('/profile')} familyMembers={familyMembers} currentUser={currentUser} />
+      <PrototypeNotice screen="Home" />
       <ScrollView ref={mainScrollRef} className="flex-1" showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 150 }} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#4F46E5" />}>
 
         {announcements?.[0] && (

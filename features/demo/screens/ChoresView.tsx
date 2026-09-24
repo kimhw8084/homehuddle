@@ -40,6 +40,7 @@ import { GestureHandlerRootView, Swipeable, Gesture, GestureDetector, PanGesture
 import ReanimatedSwipeable, { type SwipeableMethods } from 'react-native-gesture-handler/ReanimatedSwipeable';
 import DraggableFlatList, { ScaleDecorator, ShadowDecorator } from 'react-native-draggable-flatlist';
 import { useHuddleStore } from '../../../store/huddleStore';
+import { PrototypeNotice } from '../../../components/ui/PrototypeNotice';
 import { RandomAssignmentModal, GamePickerModal } from '../../../components/games/RandomAssignmentGames';
 
 // --- CONSTANTS ---
@@ -6238,6 +6239,8 @@ export default function ChoresView() {
             {searchQuery.length > 0 && <TouchableOpacity onPress={() => setSearchQuery('')}><X size={16} color="#94A3B8" /></TouchableOpacity>}
           </View>
         </Animated.View>
+
+        <PrototypeNotice screen="Chores" />
 
         <CalendarHUD ref={hudRef} selectedDate={selectedDate} setSelectedDate={(d) => { startTransition(() => { setSelectedDate(d); setScrollMonthLabel(null); }); }} choresByDate={choresByDate} isExpanded={isCalExpanded} setIsExpanded={setIsCalExpanded} calDate={calDate} setCalDate={setCalDate} calMode={calMode} setCalMode={setCalMode} onScrollMonth={setScrollMonthLabel} />
 
