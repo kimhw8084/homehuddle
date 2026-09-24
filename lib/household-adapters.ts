@@ -114,7 +114,7 @@ export function toWalletTransaction(
     id: entry.id,
     memberId: member.id,
     member: member.display_name,
-    label: entry.kind === 'chore_award' ? (chore?.title ?? 'Chore completed') : entry.kind === 'reward_purchase' ? `Purchased: ${rewardLabel}` : `Refund: ${rewardLabel}`,
+    label: entry.kind === 'chore_award' ? (chore?.title ?? 'Chore completed') : entry.kind === 'reward_purchase' ? `Purchased: ${rewardLabel}` : entry.kind === 'fund_contribution' ? 'Goal contribution' : entry.kind === 'fund_refund' ? 'Goal refund' : `Refund: ${rewardLabel}`,
     pts: entry.amount,
     date: new Date(entry.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
     icon: entry.kind === 'chore_award' ? '✅' : entry.kind === 'reward_purchase' ? '🎁' : '↩️',

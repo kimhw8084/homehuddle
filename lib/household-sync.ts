@@ -9,6 +9,7 @@ export function applyHouseholdSnapshot(snapshot: HouseholdSnapshot, userId: stri
 
   // Notify once: all household domains must describe the same snapshot.
   useHuddleStore.setState({
+    snapshot,
     householdId: snapshot.householdId,
     currentMemberId: currentMember.id,
     currentUser: currentMember.display_name,
@@ -19,7 +20,7 @@ export function applyHouseholdSnapshot(snapshot: HouseholdSnapshot, userId: stri
     chores: snapshot.chores.filter(chore => !chore.archived_at).map(chore => toChore(chore, snapshot.members)),
     pendingApprovals: snapshot.completions.filter(completion => completion.status === 'submitted')
       .map(completion => toPendingApproval(completion, snapshot.chores, snapshot.members)),
-    marketItems: snapshot.rewards.filter(reward => reward.active).map(toMarketReward),
+    marketItems: snapshot.rewards.filter(reward => reward.active).map(reward => ({ ...toMarketReward(reward), purchaseCount: snapshot.purchaseCounts?.find(row => row.reward_id === reward.id)?.count ?? 0 })),
     walletBag: snapshot.inventory.map(item => toWalletBagItem(item, snapshot.rewards, snapshot.members))
       .filter((item): item is NonNullable<typeof item> => item !== null),
     walletTransactions: snapshot.ledger.map(entry => toWalletTransaction(entry, snapshot.members, snapshot.chores, snapshot.completions, snapshot.inventory, snapshot.rewards))

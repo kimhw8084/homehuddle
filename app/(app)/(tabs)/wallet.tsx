@@ -12,7 +12,18 @@ import {
   ShoppingBag, Store, TrendingUp, ChevronRight, RefreshCcw, Send,
   CheckCircle2, History, Search, X, Plus, Target, Trash2,
 } from 'lucide-react-native';
+import { randomUUID } from 'expo-crypto';
 import { Modal, Pressable } from 'react-native';
+import { useHouseholdSync } from '../../../store/householdSyncStore';
+import { useAccessibilityPreferences } from '../../../hooks/use-accessibility-preferences';
+import { useHuddleStore } from '../../../store/huddleStore';
+import { useAuthStore } from '../../../store/authStore';
+import { useDraftCloseGuard } from '../../../hooks/use-draft-close-guard';
+import { useHouseholdCommand } from '../../../hooks/use-household-command';
+import { marketMembers, walletSeries, MarketMember } from '../../../features/rewards/market-model';
+import { marketCommand } from '../../../features/rewards/market-api';
+import { MarketStatus } from '../../../features/rewards/MarketStatus';
+import type { HouseholdSnapshot } from '../../../types/household';
 
 const { width } = Dimensions.get('window');
 
@@ -106,6 +117,7 @@ const TRANSACTIONS = [
 
 type Goal = {
   id: string;
+  version?: number;
   member: string;       // who created it
   name: string;
   emoji: string;
@@ -115,10 +127,14 @@ type Goal = {
   contributions: Record<string, number>; // memberName → pts contributed
 };
 
-type BagStatus = 'active' | 'used' | 'expired';
+type BagStatus = 'active' | 'used' | 'expired' | 'refunded';
 
 type BagItem = {
   id: string;
+  memberId?: string;
+  version?: number;
+  purchasedAt?: string;
+  expiresAt?: string | null;
   member: string;
   name: string;
   emoji: string;
@@ -209,16 +225,17 @@ const MORPH_CFG = { duration: 420, easing: Easing.out(Easing.cubic) };
 // ─── POINTS GRAPH ─────────────────────────────────────────────────
 type Period = '7D' | '14D' | '30D';
 
-function PointsGraph({ member, onScrollLock }: { member: string; onScrollLock: (locked: boolean) => void }) {
+function PointsGraph({ member, onScrollLock, snapshot, demo }: { member: string; onScrollLock: (locked: boolean) => void; snapshot: HouseholdSnapshot | null; demo: boolean }) {
   const [period, setPeriod] = useState<Period>('30D');
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const touching = useRef(false);
 
   const sliceN = ({ '7D': 7, '14D': 14, '30D': 30 } as const)[period];
-  const data  = (HISTORIES[member] ?? HISTORIES.Dad).slice(-sliceN);
-  const dates = ALL_DATES.slice(-sliceN);
+  const series = useMemo(() => walletSeries(snapshot, member), [snapshot, member]);
+  const data = useMemo(() => (demo ? HISTORIES[member] ?? HISTORIES.Dad : series.map(row => row.balance)).slice(-sliceN), [demo, member, series, sliceN]);
+  const dates = demo ? ALL_DATES.slice(-sliceN) : series.slice(-sliceN).map(row => new Date(row.day + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }));
 
-  const idx   = hoverIdx ?? data.length - 1;
+  const idx   = Math.min(hoverIdx ?? data.length - 1, data.length - 1);
   const val   = data[idx];
   const delta = data[data.length - 1] - data[0];
   const pct   = data[0] > 0 ? ((delta / data[0]) * 100).toFixed(1) : '0.0';
@@ -395,16 +412,17 @@ function TxRow({ tx }: { tx: typeof TRANSACTIONS[0] }) {
 // Card inner height: emoji(54) + top/bottom padding(32) + use button(10+12+2) + gap(12) = ~122px
 // Action buttons fill the full card height via alignSelf:'stretch'
 function ActiveBagItemRow({
-  item, onResell, onGift, onUse,
+  item, onResell, onGift, onUse, disabled,
 }: {
   item: BagItem;
   onResell: (item: BagItem) => void;
   onGift:   (item: BagItem) => void;
   onUse:    (item: BagItem) => void;
+  disabled?: boolean;
 }) {
   const ref = useRef<Swipeable>(null);
 
-  const renderRightActions = item.gifted ? undefined : () => (
+  const renderRightActions = item.gifted || disabled ? undefined : () => (
     <View style={{ width: 80, paddingLeft: 8, marginBottom: 12 }}>
       <TouchableOpacity
         onPress={() => { ref.current?.close(); onResell(item); }}
@@ -434,13 +452,16 @@ function ActiveBagItemRow({
     <Swipeable
       ref={ref}
       renderRightActions={renderRightActions}
-      renderLeftActions={renderLeftActions}
+      renderLeftActions={disabled ? undefined : renderLeftActions}
       friction={2}
       leftThreshold={80}
       rightThreshold={80}
       onSwipeableOpen={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}
     >
-      <View style={[C.shadow, { backgroundColor: C.card, borderRadius: 18, borderWidth: 1, borderColor: C.cardBorder, padding: 16, marginBottom: 12 }]}>
+      <View accessible accessibilityLabel={`${item.name}, ${item.pts} points, ${item.gifted ? 'gifted' : 'purchased'} reward`}
+        accessibilityActions={disabled ? [] : [{ name: 'activate', label: 'Use reward' }, { name: 'gift', label: 'Gift reward' }, ...(!item.gifted ? [{ name: 'refund', label: 'Resell reward' }] : [])]}
+        onAccessibilityAction={({ nativeEvent }) => { if (!disabled) { if (nativeEvent.actionName === 'gift') onGift(item); else if (nativeEvent.actionName === 'refund') onResell(item); else onUse(item); } }}
+        style={[C.shadow, { backgroundColor: C.card, borderRadius: 18, borderWidth: 1, borderColor: C.cardBorder, padding: 16, marginBottom: 12 }]}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
           <View style={{ width: 54, height: 54, borderRadius: 16, backgroundColor: C.muted, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ fontSize: 28 }}>{item.emoji}</Text>
@@ -464,6 +485,7 @@ function ActiveBagItemRow({
           </View>
         </View>
         <TouchableOpacity
+          disabled={disabled} accessibilityRole="button" accessibilityLabel={`Use ${item.name}`}
           onPress={() => onUse(item)}
           style={{ marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, backgroundColor: C.accentBg, borderRadius: 14, paddingVertical: 10, borderWidth: 1, borderColor: C.accent + '30' }}
         >
@@ -488,7 +510,7 @@ function HistoryItemRow({ item }: { item: BagItem }) {
           <Text style={{ fontSize: 14, fontWeight: '800', color: isExpired ? C.subtext : C.text }}>{item.name}</Text>
           <View style={{ paddingHorizontal: 7, paddingVertical: 2, borderRadius: 8, backgroundColor: isExpired ? C.muted : C.greenBg }}>
             <Text style={{ fontSize: 9, fontWeight: '900', color: isExpired ? C.subtext : C.green }}>
-              {isExpired ? 'EXPIRED' : 'USED'}
+              {item.status === 'refunded' ? 'RESOLD' : isExpired ? 'EXPIRED' : 'USED'}
             </Text>
           </View>
         </View>
@@ -673,11 +695,13 @@ const DUE_OPTIONS = [
 ];
 
 // ─── GOAL FORM MODAL ──────────────────────────────────────────────
-function GoalFormModal({ defaultAssignee, onSave, onClose }: {
+function GoalFormModal({ defaultAssignee, onSave, onClose, members, adult, busy, error }: {
   defaultAssignee: string;
-  onSave: (goal: Omit<Goal, 'id' | 'member'>) => void;
+  onSave: (goal: Omit<Goal, 'id' | 'member'>) => Promise<boolean>;
+  members: MarketMember[]; adult: boolean; busy: boolean; error: string;
   onClose: () => void;
 }) {
+  const [validation, setValidation] = useState('');
   const [name, setName]         = useState('');
   const [emoji, setEmoji]       = useState('🎯');
   const [pts, setPts]           = useState('');
@@ -685,21 +709,22 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
   const [dueDays, setDueDays]   = useState<number | null>(30);
   const emojiInputRef = useRef<TextInput>(null);
 
-  const handleSave = () => {
-    const target = parseInt(pts);
-    if (!name.trim() || !target || target <= 0) {
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+  const handleSave = async () => {
+    if (busy) return;
+    const target = Number(pts);
+    if (!name.trim() || !Number.isInteger(target) || target <= 0 || target > 100000) {
+      setValidation('Enter a name and a whole-number target between 1 and 100,000 points.');
       return;
     }
     let dueDate: string | null = null;
     if (dueDays !== null) {
       const d = new Date();
       d.setDate(d.getDate() + dueDays);
-      dueDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      dueDate = [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
     }
-    onSave({ name: name.trim(), emoji, targetPts: target, assignee, dueDate, contributions: {} });
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    onClose();
+    if (await onSave({ name: name.trim(), emoji, targetPts: target, assignee, dueDate, contributions: {} })) {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); onClose();
+    }
   };
 
   const labelStyle = { fontSize: 11, fontWeight: '700' as const, color: C.subtext, textTransform: 'uppercase' as const, letterSpacing: 0.6, marginBottom: 8 };
@@ -713,15 +738,16 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (_, g) => { if (g.dy > 0) translateY.value = g.dy; },
     onPanResponderRelease: (_, g) => {
-      if (g.dy > 80) { translateY.value = withTiming(700, { duration: 250 }); setTimeout(onClose, 260); }
+      if (g.dy > 80) { translateY.value = withSpring(0); closeRef.current(); }
       else { translateY.value = withSpring(0, { damping: 28, stiffness: 280 }); }
     },
   })).current;
 
+  const { requestClose, closeRef } = useDraftCloseGuard({ name, emoji, pts, assignee, dueDays }, busy, onClose);
   return (
-    <Modal visible transparent animationType="none" statusBarTranslucent>
+    <Modal onRequestClose={requestClose} visible transparent animationType="none" statusBarTranslucent>
       <View style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.55)', justifyContent: 'flex-end' }}>
-        <Pressable style={{ flex: 1 }} onPress={onClose} />
+        <Pressable style={{ flex: 1 }} onPress={requestClose} />
         <Animated.View style={[panelStyle, { backgroundColor: C.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, maxHeight: '90%' }]}>
           <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: 40 }} keyboardShouldPersistTaps="handled">
             <View {...panResponder.panHandlers} style={{ alignItems: 'center', paddingBottom: 12 }}>
@@ -730,7 +756,7 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
             <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 24 }}>
               <Target size={20} color={C.accent} style={{ marginRight: 8 }} />
               <Text style={{ fontSize: 20, fontWeight: '900', color: C.text, flex: 1 }}>New Savings Fund</Text>
-              <TouchableOpacity onPress={onClose}><X size={22} color={C.subtext} /></TouchableOpacity>
+              <TouchableOpacity onPress={requestClose}><X size={22} color={C.subtext} /></TouchableOpacity>
             </View>
 
             {/* Emoji picker — opens native emoji keyboard */}
@@ -746,7 +772,7 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
                 <Text style={{ fontSize: 11, color: C.subtext, marginTop: 2 }}>Switch to 😊 on your keyboard</Text>
               </View>
               {/* Invisible TextInput positioned over the row — captures keyboard focus */}
-              <TextInput
+              <TextInput editable={!busy}
                 ref={emojiInputRef}
                 value=""
                 onChangeText={val => {
@@ -765,7 +791,7 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
             {/* Goal name */}
             <Text style={labelStyle}>Goal Name</Text>
             <View style={fieldStyle}>
-              <TextInput
+              <TextInput editable={!busy}
                 value={name}
                 onChangeText={setName}
                 placeholder="e.g. Nintendo Switch, Hawaii Trip…"
@@ -778,7 +804,7 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
             {/* Target points */}
             <Text style={labelStyle}>Target Points</Text>
             <View style={{ ...fieldStyle, flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-              <TextInput
+              <TextInput editable={!busy}
                 value={pts}
                 onChangeText={setPts}
                 placeholder="e.g. 5000"
@@ -789,15 +815,16 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
               <Text style={{ fontSize: 13, color: C.subtext, fontWeight: '700' }}>pts</Text>
             </View>
 
+            <MarketStatus busy={busy} error={validation || error} />
             {/* Assignee */}
             <Text style={labelStyle}>Who is saving?</Text>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 6 }}>
-              {FAMILY_MEMBERS.map(m => {
-                const active = assignee === m.name;
+              {members.filter(m => m.canAct).map(m => {
+                const active = assignee === m.id;
                 return (
                   <TouchableOpacity
-                    key={m.name}
-                    onPress={() => { setAssignee(m.name); Haptics.selectionAsync(); }}
+                    key={m.id}
+                    onPress={() => { setAssignee(m.id); Haptics.selectionAsync(); }}
                     style={{ flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20, backgroundColor: active ? m.color : C.muted, borderWidth: 1, borderColor: active ? m.color : C.mutedBorder }}
                   >
                     <Text style={{ fontSize: 16 }}>{m.avatar}</Text>
@@ -808,6 +835,7 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
             </View>
             {/* All / family goal */}
             <TouchableOpacity
+              disabled={!adult || busy}
               onPress={() => { setAssignee('All'); Haptics.selectionAsync(); }}
               style={{ flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 14, paddingVertical: 10, borderRadius: 20, marginBottom: 18,
                 backgroundColor: assignee === 'All' ? '#4F46E5' : C.muted, borderWidth: 1, borderColor: assignee === 'All' ? '#4F46E5' : C.mutedBorder }}
@@ -838,7 +866,7 @@ function GoalFormModal({ defaultAssignee, onSave, onClose }: {
             </View>
 
             <TouchableOpacity
-              onPress={handleSave}
+              disabled={busy} onPress={() => { void handleSave(); }}
               style={{ backgroundColor: C.accent, borderRadius: 18, paddingVertical: 16, alignItems: 'center' }}
             >
               <Text style={{ fontSize: 15, fontWeight: '900', color: '#fff' }}>Create Fund</Text>
@@ -893,6 +921,7 @@ function ConfettiPiece({ piece, screenHeight }: { piece: CPiece; screenHeight: n
 }
 
 function ConfettiOverlay({ onDone }: { onDone: () => void }) {
+  const { reduceMotion } = useAccessibilityPreferences();
   const { height: screenHeight } = Dimensions.get('window');
   useEffect(() => {
     const maxDelay = Math.max(...CONFETTI_PIECES.map(p => p.delay));
@@ -902,7 +931,8 @@ function ConfettiOverlay({ onDone }: { onDone: () => void }) {
 
   return (
     <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} pointerEvents="none">
-      {CONFETTI_PIECES.map((p, i) => (
+      {reduceMotion && <Text accessibilityLiveRegion="polite" style={{ alignSelf: 'center', marginTop: 100, padding: 20, borderRadius: 20, backgroundColor: C.card, color: C.accent, fontWeight: '800' }}>Goal reached!</Text>}
+      {!reduceMotion && CONFETTI_PIECES.map((p, i) => (
         <ConfettiPiece key={i} piece={p} screenHeight={screenHeight} />
       ))}
     </View>
@@ -910,11 +940,12 @@ function ConfettiOverlay({ onDone }: { onDone: () => void }) {
 }
 
 // ─── CONTRIBUTE MODAL ─────────────────────────────────────────────
-function ContributeModal({ goal, contributorName, availablePts, onContribute, onClose }: {
+function ContributeModal({ goal, contributorName, availablePts, onContribute, onClose, busy, error }: {
   goal: Goal;
+  busy: boolean; error: string;
   contributorName: string;
   availablePts: number;
-  onContribute: (id: string, amount: number, memberName: string) => void;
+  onContribute: (id: string, amount: number, memberName: string) => Promise<boolean>;
   onClose: () => void;
 }) {
   const contributed = Object.values(goal.contributions).reduce((a, b) => a + b, 0);
@@ -927,23 +958,24 @@ function ContributeModal({ goal, contributorName, availablePts, onContribute, on
     translateY.value = withSpring(0, { damping: 28, stiffness: 300 });
   }, []);
 
-  const amount = parseInt(input) || 0;
+  const amount = Number(input) || 0;
   const capped = Math.min(amount, remaining, availablePts);
-  const canSubmit = capped > 0;
+  const canSubmit = Number.isInteger(amount) && amount > 0 && amount <= remaining && amount <= availablePts && !busy;
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (!canSubmit) return;
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    onContribute(goal.id, capped, contributorName);
-    onClose();
+    if (await onContribute(goal.id, capped, contributorName)) {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); onClose();
+    }
   };
 
   const QUICK = [50, 100, 200, 500].filter(a => a <= Math.min(remaining, availablePts));
 
+  const { requestClose } = useDraftCloseGuard(input, busy, onClose);
   return (
-    <Modal visible transparent animationType="none" statusBarTranslucent>
+    <Modal onRequestClose={requestClose} visible transparent animationType="none" statusBarTranslucent>
       <View style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.55)', justifyContent: 'flex-end' }}>
-        <Pressable style={{ flex: 1 }} onPress={onClose} />
+        <Pressable style={{ flex: 1 }} onPress={requestClose} />
         <Animated.View style={[panelStyle, { backgroundColor: C.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, padding: 24, paddingBottom: 40 }]}>
           <View style={{ width: 40, height: 4, backgroundColor: C.mutedBorder, borderRadius: 2, alignSelf: 'center', marginBottom: 20 }} />
 
@@ -954,7 +986,7 @@ function ContributeModal({ goal, contributorName, availablePts, onContribute, on
               <Text style={{ fontSize: 16, fontWeight: '900', color: C.text }}>{goal.name}</Text>
               <Text style={{ fontSize: 12, color: C.subtext }}>{contributed.toLocaleString()} / {goal.targetPts.toLocaleString()} pts saved</Text>
             </View>
-            <TouchableOpacity onPress={onClose}><X size={20} color={C.subtext} /></TouchableOpacity>
+            <TouchableOpacity onPress={requestClose}><X size={20} color={C.subtext} /></TouchableOpacity>
           </View>
 
           {/* Available balance */}
@@ -980,7 +1012,7 @@ function ContributeModal({ goal, contributorName, availablePts, onContribute, on
 
           {/* Custom input */}
           <View style={{ backgroundColor: C.muted, borderRadius: 14, paddingHorizontal: 16, paddingVertical: 14, flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-            <TextInput
+            <TextInput editable={!busy}
               value={input}
               onChangeText={setInput}
               placeholder="Enter amount"
@@ -1000,8 +1032,9 @@ function ContributeModal({ goal, contributorName, availablePts, onContribute, on
             <Text style={{ fontSize: 11, color: C.gold, fontWeight: '700', marginBottom: 6 }}>Only {remaining.toLocaleString()} pts needed to complete — capping to that</Text>
           )}
 
+          <MarketStatus busy={busy} error={error} />
           <TouchableOpacity
-            onPress={handleConfirm}
+            onPress={() => { void handleConfirm(); }}
             disabled={!canSubmit}
             style={{ backgroundColor: canSubmit ? C.accent : C.muted, borderRadius: 16, paddingVertical: 15, alignItems: 'center', marginTop: 10 }}
           >
@@ -1016,24 +1049,24 @@ function ContributeModal({ goal, contributorName, availablePts, onContribute, on
 }
 
 // ─── GOAL PROGRESS CARD ───────────────────────────────────────────
-function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributorName, availablePts }: {
+function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributorName, availablePts, members, busy, error, canManage }: {
   goal: Goal;
+  members: MarketMember[]; busy: boolean; error: string; canManage: boolean;
   onDelete: (id: string) => void;
   onComplete: (id: string) => void;
-  onContribute: (id: string, amount: number, memberName: string) => void;
+  onContribute: (id: string, amount: number, memberName: string) => Promise<boolean>;
   contributorName: string;
   availablePts: number;
 }) {
   const contributed = Object.values(goal.contributions).reduce((a, b) => a + b, 0);
   const pct  = Math.min(contributed / goal.targetPts, 1);
   const done = pct >= 1;
-  const assigneeMember = FAMILY_MEMBERS.find(m => m.name === goal.assignee);
+  const assigneeMember = members.find(m => m.id === goal.assignee);
   const overdue = !done && goal.dueDate !== null && new Date() > new Date(goal.dueDate);
   const isFamily = goal.assignee === 'All';
   const [showContribute, setShowContribute] = useState(false);
 
   const handleComplete = () => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     onComplete(goal.id);
   };
 
@@ -1058,7 +1091,7 @@ function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributo
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
             {isFamily ? (
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3 }}>
-                {FAMILY_MEMBERS.map(m => <Text key={m.name} style={{ fontSize: 13 }}>{m.avatar}</Text>)}
+                {members.map(m => <Text key={m.id} style={{ fontSize: 13 }}>{m.avatar}</Text>)}
                 <Text style={{ fontSize: 11, fontWeight: '700', color: '#818CF8', marginLeft: 2 }}>Family Fund</Text>
               </View>
             ) : assigneeMember ? (
@@ -1076,7 +1109,7 @@ function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributo
             {overdue && <View style={{ backgroundColor: C.redBg, borderRadius: 6, paddingHorizontal: 6, paddingVertical: 2 }}><Text style={{ fontSize: 10, fontWeight: '900', color: C.red }}>OVERDUE</Text></View>}
           </View>
         </View>
-        <TouchableOpacity onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); onDelete(goal.id); }} style={{ padding: 4 }}>
+        <TouchableOpacity disabled={busy || !canManage} accessibilityLabel="Cancel goal and refund contributions" onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); onDelete(goal.id); }} style={{ padding: 4 }}>
           <Trash2 size={15} color={C.subtext} />
         </TouchableOpacity>
       </View>
@@ -1103,7 +1136,7 @@ function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributo
       {/* Contribute button */}
       {!done && (
         <TouchableOpacity
-          onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setShowContribute(true); }}
+          disabled={busy || availablePts < 1} onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setShowContribute(true); }}
           style={{ backgroundColor: isFamily ? '#EEF2FF' : C.accentBg, borderRadius: 14, paddingVertical: 11, alignItems: 'center', flexDirection: 'row', justifyContent: 'center', gap: 7, borderWidth: 1, borderColor: isFamily ? '#C7D2FE' : C.accent + '30' }}
         >
           <Plus size={15} color={isFamily ? '#818CF8' : C.accent} />
@@ -1114,7 +1147,7 @@ function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributo
       {/* Complete button — shown when done */}
       {done && (
         <TouchableOpacity
-          onPress={handleComplete}
+          disabled={busy || !canManage} onPress={handleComplete}
           style={{ backgroundColor: C.green, borderRadius: 14, paddingVertical: 13, alignItems: 'center', flexDirection: 'row', justifyContent: 'center', gap: 8 }}
         >
           <CheckCircle2 size={16} color="#fff" />
@@ -1125,6 +1158,7 @@ function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributo
       {showContribute && (
         <ContributeModal
           goal={goal}
+          busy={busy} error={error}
           contributorName={contributorName}
           availablePts={availablePts}
           onContribute={onContribute}
@@ -1175,6 +1209,8 @@ function TabSwitcher({ tab, onTabChange }: { tab: Tab; onTabChange: (t: Tab) => 
         return (
           <TouchableOpacity
             key={t}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: active }}
             onPress={() => onTabChange(t)}
             activeOpacity={0.85}
             style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 11, borderRadius: 14 }}
@@ -1193,16 +1229,19 @@ function TabSwitcher({ tab, onTabChange }: { tab: Tab; onTabChange: (t: Tab) => 
 }
 
 // ─── MEMBER PILLS ─────────────────────────────────────────────────
-function MemberPills({ selected, onSelect }: { selected: string; onSelect: (n: string) => void }) {
+function MemberPills({ selected, onSelect, members }: { selected: string; onSelect: (n: string) => void; members: MarketMember[] }) {
   return (
     // alignItems stretch so pills don't overflow; height is self-determined by content
-    <View style={{ flexDirection: 'row', paddingHorizontal: 24, gap: 8, marginBottom: 16 }}>
-      {FAMILY_MEMBERS.map(m => {
-        const active = selected === m.name;
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexGrow: 0, flexShrink: 0 }} contentContainerStyle={{ flexDirection: 'row', paddingHorizontal: 24, gap: 8, marginBottom: 16 }}>
+      {members.map(m => {
+        const active = selected === m.id;
         return (
           <TouchableOpacity
-            key={m.name}
-            onPress={() => { Haptics.selectionAsync(); onSelect(m.name); }}
+            key={m.id}
+            accessibilityRole="button"
+            accessibilityState={{ selected: active }}
+            accessibilityLabel={`${m.name}’s wallet`}
+            onPress={() => { Haptics.selectionAsync(); onSelect(m.id); }}
             style={[C.shadow, {
               flexDirection: 'row', alignItems: 'center', gap: 8,
               paddingHorizontal: 14, paddingVertical: 9, borderRadius: 50,
@@ -1216,7 +1255,7 @@ function MemberPills({ selected, onSelect }: { selected: string; onSelect: (n: s
           </TouchableOpacity>
         );
       })}
-    </View>
+    </ScrollView>
   );
 }
 
@@ -1254,9 +1293,35 @@ type Tab = 'wallet' | 'bag';
 export default function WalletScreen() {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>('wallet');
-  const [selectedMember, setSelectedMember] = useState('Dad');
-  const [bag, setBag] = useState<BagItem[]>(INITIAL_BAG);
-  const [goals, setGoals] = useState<Goal[]>([]);
+  const command = useHouseholdCommand();
+  const sync = useHouseholdSync();
+  const snapshot = useHuddleStore(state => state.snapshot);
+  const transactions = useHuddleStore(state => state.walletTransactions);
+  const demo = useAuthStore(state => state.isDevBypass && !state.user);
+  const family = useMemo(() => demo ? FAMILY_MEMBERS.map(m => ({ ...m, id: m.name, balance: HISTORIES[m.name]?.at(-1) ?? 0, canAct: true, adult: m.name !== 'Alex' })) : marketMembers(snapshot, command.memberId), [demo, snapshot, command.memberId]);
+  const [selectedMember, setSelectedMember] = useState(command.memberId ?? 'Dad');
+  const [clock, setClock] = useState(() => Date.now());
+  useEffect(() => { const timer = setInterval(() => setClock(Date.now()), 10000); return () => clearInterval(timer); }, []);
+  useEffect(() => { if (!family.some(m => m.id === selectedMember)) setSelectedMember(command.memberId ?? family[0]?.id ?? ''); }, [family, selectedMember, command.memberId]);
+  const [useItem, setUseItem] = useState<BagItem | null>(null);
+  const [useNote, setUseNote] = useState('');
+  const [demoBag, setBag] = useState<BagItem[]>(INITIAL_BAG);
+  const bag: BagItem[] = useMemo(() => demo ? demoBag : (snapshot?.inventory ?? []).map(row => ({
+    id: row.id, memberId: row.member_id, version: row.version ?? 1,
+    member: snapshot?.members.find(m => m.id === row.member_id)?.display_name ?? 'Former member',
+    name: row.title_snapshot ?? 'Reward', emoji: row.emoji_snapshot ?? '🎁', pts: row.cost_snapshot ?? 0,
+    claimedDate: new Date(row.purchased_at).toLocaleDateString(), purchasedAt: row.purchased_at, expiresAt: row.expires_at,
+    usedDate: row.redeemed_at ? new Date(row.redeemed_at).toLocaleDateString() : null,
+    expiresDate: row.expires_at ? new Date(row.expires_at).toLocaleDateString() : null,
+    status: row.refunded_at ? 'refunded' : row.status === 'redeemed' ? 'used' : row.expires_at && new Date(row.expires_at).getTime() <= clock ? 'expired' : 'active',
+    note: row.note ?? null, gifted: row.gifted ?? false,
+  })), [demo, demoBag, snapshot, clock]);
+  const [demoGoals, setGoals] = useState<Goal[]>([]);
+  const goals: Goal[] = useMemo(() => demo ? demoGoals : (snapshot?.funds ?? []).filter(fund => fund.status === 'active').map(fund => ({
+    id: fund.id, version: fund.version, member: fund.creator_id, name: fund.name, emoji: fund.emoji,
+    targetPts: fund.target, assignee: fund.assignee_id ?? 'All', dueDate: fund.due_date,
+    contributions: Object.fromEntries((snapshot?.fundContributions ?? []).filter(row => row.fund_id === fund.id).map(row => [row.member_id, row.amount])),
+  })), [demo, demoGoals, snapshot]);
   const [showGoalForm, setShowGoalForm] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
@@ -1270,46 +1335,50 @@ export default function WalletScreen() {
     undoTimerRef.current = setTimeout(() => setUndoItem(null), 4000);
   }, []);
 
-  const handleUndo = useCallback(() => {
-    if (!undoItem) return;
+  useEffect(() => () => { if (undoTimerRef.current) clearTimeout(undoTimerRef.current); }, []);
+  const handleUndo = async () => {
+    if (!undoItem || command.busy) return;
+    if (demo) setBag(prev => prev.map(b => b.id === undoItem.prev.id ? undoItem.prev : b));
+    else if (!await sendItem(undoItem.item, 'undo_use')) return;
     if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
-    setBag(prev => prev.map(b => b.id === undoItem.prev.id ? undoItem.prev : b));
     setUndoItem(null);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-  }, [undoItem]);
+  };
 
-  const memberTxns    = useMemo(() => TRANSACTIONS.filter(t => t.member === selectedMember), [selectedMember]);
+  const memberTxns = useMemo(() => demo ? TRANSACTIONS.filter(t => t.member === selectedMember) : transactions.filter(t => t.memberId === selectedMember), [demo, selectedMember, transactions]);
   const memberGoals   = useMemo(() => goals.filter(g => g.assignee === selectedMember || g.assignee === 'All'), [goals, selectedMember]);
-  const currentBalance = useMemo(() => {
-    const hist = HISTORIES[selectedMember] ?? [];
-    return hist[hist.length - 1] ?? 0;
-  }, [selectedMember]);
+  const member = family.find(m => m.id === selectedMember) ?? family[0] ?? { id: '', name: 'Household member', avatar: '👤', balance: 0, canAct: false, adult: false, color: C.accent };
+  const currentBalance = member.balance;
+  const sendItem = (item: BagItem, action: string, recipient: string | null = null, note: string | null = null) =>
+    command.run(current => marketCommand(command.userId!, command.householdId!, action, item.id, 'change_wallet_item', {
+      target_inventory: item.id, expected_version: item.version ?? 1, action, recipient, note_value: note,
+    }, current));
 
-  const handleAddGoal = useCallback((data: Omit<Goal, 'id' | 'member'>) => {
-    setGoals(prev => [...prev, { ...data, id: `g-${Date.now()}`, member: selectedMember }]);
-  }, [selectedMember]);
 
-  const handleCompleteGoal = useCallback((id: string) => {
-    setShowConfetti(true);
-    setTimeout(() => setGoals(prev => prev.filter(g => g.id !== id)), 600);
-  }, []);
-
-  const handleContributeGoal = useCallback((id: string, amount: number, memberName: string) => {
-    if (amount <= 0) return;
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    setGoals(prev => prev.map(g => {
-      if (g.id !== id) return g;
-      const prev_contrib = g.contributions[memberName] ?? 0;
-      return { ...g, contributions: { ...g.contributions, [memberName]: prev_contrib + amount } };
-    }));
-  }, []);
-
-  const handleDeleteGoal = useCallback((id: string) => {
-    Alert.alert('Remove Fund?', '', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Remove', style: 'destructive', onPress: () => setGoals(prev => prev.filter(g => g.id !== id)) },
+  const handleAddGoal = async (data: Omit<Goal, 'id' | 'member'>) => {
+    if (demo) { setGoals(prev => [...prev, { ...data, id: randomUUID(), member: selectedMember }]); return true; }
+    return command.run(current => marketCommand(command.userId!, command.householdId!, 'create-fund', 'new', 'create_wallet_fund',
+      { target_household: command.householdId, name_value: data.name, emoji_value: data.emoji, target_value: data.targetPts, assignee: data.assignee === 'All' ? null : data.assignee, due_value: data.dueDate }, current, ['fund_id']));
+  };
+  const closeFund = async (id: string, action: 'complete' | 'cancel') => {
+    const fund = goals.find(g => g.id === id);
+    if (!fund) return false;
+    if (demo) { setGoals(prev => prev.filter(g => g.id !== id)); return true; }
+    return command.run(current => marketCommand(command.userId!, command.householdId!, action, id, 'close_wallet_fund', { target_fund: id, expected_version: fund.version, action }, current));
+  };
+  const handleCompleteGoal = async (id: string) => {
+    if (await closeFund(id, 'complete')) setShowConfetti(true);
+  };
+  const handleContributeGoal = async (id: string, amount: number, memberId: string) => {
+    if (!member.canAct) return false;
+    if (demo) { setGoals(prev => prev.map(g => g.id === id ? { ...g, contributions: { ...g.contributions, [memberId]: (g.contributions[memberId] ?? 0) + amount } } : g)); return true; }
+    return command.run(current => marketCommand(command.userId!, command.householdId!, 'contribute', id + ':' + memberId, 'contribute_wallet_fund', { target_fund: id, member_id_value: memberId, amount_value: amount }, current));
+  };
+  const handleDeleteGoal = (id: string) => {
+    Alert.alert('Cancel this fund?', 'All deposited points will be refunded to the people who contributed them.', [
+      { text: 'Keep saving', style: 'cancel' }, { text: 'Cancel fund', style: 'destructive', onPress: () => { void closeFund(id, 'cancel'); } },
     ]);
-  }, []);
+  };
   const activeBag = useMemo(() => {
     const FAR_FUTURE = new Date('9999-12-31').getTime();
     const parseDate = (s: string | null) => {
@@ -1319,82 +1388,53 @@ export default function WalletScreen() {
       return isNaN(d.getTime()) ? FAR_FUTURE : d.getTime();
     };
     return bag
-      .filter(b => b.member === selectedMember && b.status === 'active')
+      .filter(b => (demo ? b.member === selectedMember : b.memberId === selectedMember) && b.status === 'active')
       .sort((a, b) => {
         const hasExpA = !!a.expiresDate;
         const hasExpB = !!b.expiresDate;
         // items with expiry come before items without
         if (hasExpA !== hasExpB) return hasExpA ? -1 : 1;
-        if (hasExpA && hasExpB) return parseDate(a.expiresDate) - parseDate(b.expiresDate);
+        if (hasExpA && hasExpB) return parseDate(a.expiresAt ?? a.expiresDate) - parseDate(b.expiresAt ?? b.expiresDate);
         // both have no expiry — sort by purchase date ascending (earlier purchase = higher up)
-        return parseDate(a.claimedDate) - parseDate(b.claimedDate);
+        return parseDate(a.purchasedAt ?? a.claimedDate) - parseDate(b.purchasedAt ?? b.claimedDate);
       });
-  }, [bag, selectedMember]);
+  }, [bag, selectedMember, demo]);
   const historyBag  = useMemo(() => bag.filter(b => b.member === selectedMember && b.status !== 'active'), [bag, selectedMember]);
-  const member      = FAMILY_MEMBERS.find(m => m.name === selectedMember)!;
 
-  const handleResell = useCallback((item: BagItem) => {
-    Alert.alert(
-      `Resell "${item.name}"?`,
-      `You'll get back ${item.pts} pts and the item is removed from your bag.`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: `Resell for ${item.pts} pts`, onPress: () => {
-          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-          setBag(prev => prev.filter(b => b.id !== item.id));
-        }},
-      ],
-    );
-  }, []);
-
-  const handleGift = useCallback((item: BagItem) => {
-    const others = FAMILY_MEMBERS.filter(m => m.name !== item.member);
-    Alert.alert(
-      `Gift "${item.name}"?`,
-      'Send this reward to another family member.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        ...others.map(m => ({
-          text: `${m.avatar} ${m.name}`,
-          onPress: () => {
-            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-            setBag(prev => prev.map(b => b.id === item.id ? { ...b, member: m.name, gifted: true } : b));
-          },
-        })),
-      ],
-    );
-  }, []);
-
-  const handleUse = useCallback((item: BagItem) => {
-    Alert.alert(
-      `Use "${item.name}"?`,
-      'This marks the reward as used and moves it to history.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Use it!', onPress: () => {
-          // Second step: optional note
-          Alert.prompt(
-            'Leave a note?',
-            'Optional — add a memory about how you used it.',
-            [
-              { text: 'Skip', onPress: (_note?: string) => commitUse(item, null) },
-              { text: 'Save note', onPress: (note?: string) => commitUse(item, note?.trim() || null) },
-            ],
-            'plain-text',
-            '',
-          );
-        }},
-      ],
-    );
-  }, []);
-
-  const commitUse = useCallback((item: BagItem, note: string | null) => {
+  const handleResell = (item: BagItem) => {
+    if (!member.canAct || command.busy) return;
+    Alert.alert(`Resell "${item.name}"?`, `Return this unused reward for the ${item.pts} points originally paid.`, [
+      { text: 'Cancel', style: 'cancel' }, { text: 'Resell', onPress: async () => {
+        if (demo) setBag(prev => prev.filter(b => b.id !== item.id));
+        else await sendItem(item, 'refund');
+      } },
+    ]);
+  };
+  const handleGift = (item: BagItem) => {
+    if (!member.canAct || command.busy) return;
+    Alert.alert(`Gift "${item.name}"?`, 'The recipient keeps its original expiry and cannot resell it.', [
+      { text: 'Cancel', style: 'cancel' },
+      ...family.filter(m => m.id !== (item.memberId ?? item.member)).map(m => ({
+        text: `${m.avatar} ${m.name}`, onPress: async () => {
+          if (demo) setBag(prev => prev.map(b => b.id === item.id ? { ...b, member: m.name, gifted: true } : b));
+          else await sendItem(item, 'gift', m.id);
+        },
+      })),
+    ]);
+  };
+  const handleUse = (item: BagItem) => {
+    if (!member.canAct || command.busy) return;
+    setUseNote(''); setUseItem(item);
+  };
+  const commitUse = async () => {
+    if (!useItem || command.busy) return;
+    const item = useItem;
+    if (!demo && !await sendItem(item, 'use', null, useNote.trim() || null)) return;
+    const next: BagItem = { ...item, version: (item.version ?? 1) + 1, status: 'used', usedDate: new Date().toLocaleDateString(), note: useNote.trim() || null };
+    if (demo) setBag(prev => prev.map(b => b.id === item.id ? next : b));
+    setUseItem(null); showUndo(item, next);
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    const today = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-    const next: BagItem = { ...item, status: 'used', usedDate: today, note: note ?? item.note };
-    setBag(prev => prev.map(b => b.id === item.id ? next : b));
-    showUndo(item, next);
-  }, [showUndo]);
+  };
 
   return (
     <View style={{ flex: 1, backgroundColor: C.bg }}>
@@ -1428,7 +1468,9 @@ export default function WalletScreen() {
         <TabSwitcher tab={tab} onTabChange={t => { Haptics.selectionAsync(); setTab(t); }} />
 
         {/* Member pills — fixed row, no horizontal scroll, no overflow */}
-        <MemberPills selected={selectedMember} onSelect={setSelectedMember} />
+        <MemberPills selected={selectedMember} onSelect={setSelectedMember} members={family} />
+        <MarketStatus busy={command.busy} error={command.error} />
+        {!member.canAct && <Text style={{ marginHorizontal: 24, marginBottom: 8, color: C.subtext }}>Viewing {member.name}’s wallet. Only their account can use these rewards.</Text>}
 
         {/* Main scroll — scrollEnabled is always true; chart captures its own responder */}
         <ScrollView
@@ -1447,21 +1489,22 @@ export default function WalletScreen() {
                   <Text style={{ fontSize: 18 }}>{member.avatar}</Text>
                   <Text style={{ fontSize: 13, fontWeight: '700', color: C.subtext }}>{member.name}'s Balance</Text>
                   <View style={{ marginLeft: 'auto', backgroundColor: C.accentBg, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 }}>
-                    <Text style={{ fontSize: 10, fontWeight: '900', color: C.accent }}>LIVE</Text>
+                    <Text style={{ fontSize: 10, fontWeight: '900', color: C.accent }}>{demo ? 'PREVIEW' : sync.isOffline || sync.error ? 'CACHED' : 'SYNCED'}</Text>
                   </View>
                 </View>
-                <PointsGraph member={selectedMember} onScrollLock={(locked) => setScrollEnabled(!locked)} />
+                <PointsGraph snapshot={snapshot} demo={demo} member={selectedMember} onScrollLock={(locked) => setScrollEnabled(!locked)} />
               </View>
 
               {/* All-time mini banner — between graph and today */}
               {(() => {
-                const allTimeEarned = (HISTORIES[selectedMember] ?? []).reduce((sum, v, i, arr) => {
+                const allTimeEarned = demo ? (HISTORIES[selectedMember] ?? []).reduce((sum, v, i, arr) => {
                   if (i === 0) return 0;
                   const gain = v - arr[i - 1];
                   return gain > 0 ? sum + gain : sum;
-                }, 0);
-                const todayEarned = memberTxns.filter(t => t.pts > 0 && t.date === 'Today').reduce((s, t) => s + t.pts, 0);
-                const todaySpent  = Math.abs(memberTxns.filter(t => t.pts < 0 && t.date === 'Today').reduce((s, t) => s + t.pts, 0));
+                }, 0) : Number(snapshot?.walletEarned?.find(row => row.member_id === selectedMember)?.earned ?? 0);
+                const today = snapshot?.walletDaily?.find(row => row.member_id === selectedMember && row.day === new Date().toISOString().slice(0, 10));
+                const todayEarned = demo ? memberTxns.filter(t => t.pts > 0 && t.date === 'Today').reduce((s, t) => s + t.pts, 0) : Number(today?.earned ?? 0);
+                const todaySpent = demo ? Math.abs(memberTxns.filter(t => t.pts < 0 && t.date === 'Today').reduce((s, t) => s + t.pts, 0)) : Number(today?.spent ?? 0);
                 return (
                   <>
                     {/* All-time compact strip */}
@@ -1508,11 +1551,12 @@ export default function WalletScreen() {
                     <GoalProgressCard
                       key={goal.id}
                       goal={goal}
+                      members={family} busy={command.busy} error={command.error} canManage={demo || command.role === 'owner' || command.role === 'parent' || goal.member === command.memberId}
                       onDelete={handleDeleteGoal}
                       onComplete={handleCompleteGoal}
                       onContribute={handleContributeGoal}
                       contributorName={selectedMember}
-                      availablePts={currentBalance}
+                      availablePts={member.canAct ? currentBalance : 0}
                     />
                   ))}
                 </View>
@@ -1546,7 +1590,7 @@ export default function WalletScreen() {
               ) : (
                 <>
                   {activeBag.map(item => (
-                    <ActiveBagItemRow key={item.id} item={item} onResell={handleResell} onGift={handleGift} onUse={handleUse} />
+                    <ActiveBagItemRow disabled={command.busy || !member.canAct} key={item.id} item={item} onResell={handleResell} onGift={handleGift} onUse={handleUse} />
                   ))}
                   <TouchableOpacity
                     onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); router.push('/market'); }}
@@ -1566,9 +1610,22 @@ export default function WalletScreen() {
       </SafeAreaView>
 
       {/* Goal form modal */}
+      {useItem && <Modal visible transparent animationType="slide" onRequestClose={() => { if (!command.busy) setUseItem(null); }}>
+        <View style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.5)', justifyContent: 'center', padding: 24 }}>
+          <View style={{ backgroundColor: C.card, borderRadius: 24, padding: 24, gap: 16 }}>
+            <Text accessibilityRole="header" style={{ fontSize: 20, fontWeight: '800', color: C.text }}>Use {useItem.name}?</Text>
+            <Text style={{ color: C.subtext }}>Add an optional memory. You can briefly undo after using this reward.</Text>
+            <TextInput accessibilityLabel="Reward memory, optional" value={useNote} onChangeText={setUseNote} multiline maxLength={2000} editable={!command.busy} placeholder="A memory to keep…" style={{ minHeight: 80, borderWidth: 1, borderColor: C.cardBorder, borderRadius: 14, padding: 12, color: C.text }} />
+            <MarketStatus busy={command.busy} error={command.error} />
+            <TouchableOpacity disabled={command.busy} accessibilityRole="button" onPress={() => { void commitUse(); }} style={{ backgroundColor: C.accent, padding: 16, borderRadius: 14, alignItems: 'center' }}><Text style={{ color: '#fff', fontWeight: '800' }}>{command.busy ? 'Saving…' : 'Use reward'}</Text></TouchableOpacity>
+            <TouchableOpacity disabled={command.busy} accessibilityRole="button" onPress={() => setUseItem(null)} style={{ padding: 12, alignItems: 'center' }}><Text style={{ color: C.subtext }}>Cancel</Text></TouchableOpacity>
+          </View>
+        </View>
+      </Modal>}
       {showGoalForm && (
         <GoalFormModal
-          defaultAssignee={selectedMember}
+          defaultAssignee={member.canAct ? selectedMember : command.memberId ?? ''}
+          members={family} adult={demo || command.role === 'owner' || command.role === 'parent'} busy={command.busy} error={command.error}
           onSave={handleAddGoal}
           onClose={() => setShowGoalForm(false)}
         />

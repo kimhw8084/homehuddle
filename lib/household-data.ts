@@ -3,7 +3,7 @@ import { supabase } from './supabase';
 import { householdProofs } from './household-proofs';
 import { ChoreCompletionRecord, HouseholdSnapshot } from '../types/household';
 
-const TABLES = ['household_members', 'chores', 'chore_completions', 'rewards', 'reward_inventory', 'point_ledger', 'shopping_items'] as const;
+const TABLES = ['household_members', 'chores', 'chore_completions', 'rewards', 'reward_inventory', 'point_ledger', 'shopping_items', 'market_sales', 'wallet_funds', 'wallet_fund_contributions'] as const;
 
 export const householdData = {
   async load(householdId: string, historyLimit = 100): Promise<HouseholdSnapshot> {

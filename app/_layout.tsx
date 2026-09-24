@@ -98,6 +98,13 @@ export default function RootLayout() {
     const inOnboarding = segments[0] === 'onboarding';
     const isAuthed = session || isDevBypass;
 
+    // Preview is explicitly local and development-only; it must not require or
+    // mutate a real account's onboarding record to open the authored UI.
+    if (__DEV__ && isDevBypass && !session) {
+      if (!inAppGroup) router.replace('/(app)/(tabs)');
+      return;
+    }
+
     if (!isAuthed && inAppGroup) {
       router.replace('/');
       return;

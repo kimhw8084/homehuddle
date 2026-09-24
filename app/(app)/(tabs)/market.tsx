@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import {
   View, Text, TouchableOpacity, ScrollView, Dimensions, Alert,
-  TextInput, Modal, Pressable, FlatList, PanResponder,
+  TextInput, Modal, Pressable, FlatList, PanResponder, KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -15,6 +15,16 @@ import {
   MoreHorizontal, TrendingUp, TrendingDown, Package, Pencil, Trash2,
   ShieldCheck, Search, Bolt, Timer, Lock, ListPlus,
 } from 'lucide-react-native';
+import { randomUUID } from 'expo-crypto';
+import { useHuddleStore } from '../../../store/huddleStore';
+import { useAuthStore } from '../../../store/authStore';
+import { useDraftCloseGuard } from '../../../hooks/use-draft-close-guard';
+import { useHouseholdCommand } from '../../../hooks/use-household-command';
+import { useAccessibilityPreferences } from '../../../hooks/use-accessibility-preferences';
+import { marketMembers, MarketMember, RewardDraft, saleForItem, validateRewardDraft } from '../../../features/rewards/market-model';
+import { marketCommand } from '../../../features/rewards/market-api';
+import { MarketStatus } from '../../../features/rewards/MarketStatus';
+import { supabase } from '../../../lib/supabase';
 
 const { width } = Dimensions.get('window');
 
@@ -53,6 +63,7 @@ type PriceEntry = { date: string; pts: number };  // history of price changes
 
 type MarketItem = {
   id: string;
+  version?: number;
   name: string;
   emoji: string;
   pts: number;
@@ -172,23 +183,27 @@ function PriceHistoryModal({ item, onClose }: { item: MarketItem; onClose: () =>
 type ItemFormProps = {
   initial?: MarketItem;
   categories: string[];
-  onSave: (item: Omit<MarketItem, 'id' | 'priceHistory' | 'createdBy' | 'purchaseCount'>) => void;
+  onSave: (item: RewardDraft) => Promise<boolean>;
   onClose: () => void;
   currentUser: string;
+  members: MarketMember[];
+  busy: boolean;
+  error: string;
+  canChooseCurators: boolean;
 };
 
-function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: ItemFormProps) {
+function ItemFormModal({ initial, categories, onSave, onClose, currentUser, members, busy, error, canChooseCurators }: ItemFormProps) {
   const [name, setName]             = useState(initial?.name ?? '');
   const [emoji, setEmoji]           = useState(initial?.emoji ?? '');
   const [pts, setPts]               = useState(initial?.pts.toString() ?? '');
   const [desc, setDesc]             = useState(initial?.desc ?? '');
-  const [category, setCategory]     = useState(initial?.category ?? categories[0]);
+  const [category, setCategory]     = useState(initial?.category ?? categories[0] ?? 'Rewards');
   const [newCat, setNewCat]         = useState('');
   const [addingCat, setAddingCat]   = useState(false);
   const [stock, setStock]           = useState<string>(initial?.stock?.toString() ?? '');
-  const [unlimited, setUnlimited]   = useState(initial?.stock === null);
+  const [unlimited, setUnlimited]   = useState(initial?.stock == null);
   const [expires, setExpires]       = useState<string>(initial?.expiresInDays?.toString() ?? '');
-  const [noExpiry, setNoExpiry]     = useState(initial?.expiresInDays === null);
+  const [noExpiry, setNoExpiry]     = useState(initial?.expiresInDays == null);
   const [eligible, setEligible]     = useState<string[]>(initial?.eligibleMembers ?? []);
   const [curators, setCurators]     = useState<string[]>(initial?.curators ?? [currentUser]);
   const [suggestion, setSuggestion] = useState<typeof SUGGESTIONS[0] | null>(null);
@@ -205,26 +220,26 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
     Haptics.selectionAsync();
   };
 
-  const handleSave = () => {
-    const ptsNum = parseInt(pts);
-    if (!name.trim() || !ptsNum) {
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-      return;
-    }
+  const [validation, setValidation] = useState('');
+  const handleSave = async () => {
+    if (busy) return;
+    const ptsNum = Number(pts);
     const finalCat = addingCat && newCat.trim() ? newCat.trim() : category;
-    onSave({
+    const draft: RewardDraft = {
       name: name.trim(),
       emoji: emoji.trim() || '🎁',
       pts: ptsNum,
       desc: desc.trim(),
       category: finalCat,
-      stock: unlimited ? null : (parseInt(stock) || 0),
-      expiresInDays: noExpiry ? null : (parseInt(expires) || null),
+      stock: unlimited ? null : (stock.trim() ? Number(stock) : NaN),
+      expiresInDays: noExpiry ? null : (expires.trim() ? Number(expires) : NaN),
       eligibleMembers: eligible,
       curators,
-    });
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    onClose();
+    };
+    const message = validateRewardDraft(draft);
+    if (message) { setValidation(message); return; }
+    setValidation('');
+    if (await onSave(draft)) { Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); onClose(); }
   };
 
   const toggleMember = (arr: string[], set: (v: string[]) => void, name: string) => {
@@ -232,6 +247,7 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
     Haptics.selectionAsync();
   };
 
+  const { requestClose, closeRef } = useDraftCloseGuard({ name, emoji, pts, desc, category, newCat, addingCat, stock, unlimited, expires, noExpiry, eligible, curators }, busy, onClose);
   const translateY = useSharedValue(600);
   const panelStyle = useAnimatedStyle(() => ({ transform: [{ translateY: translateY.value }] }));
   useEffect(() => { translateY.value = withSpring(0, { ...SPRING_CONFIG, damping: 30 }); }, []);
@@ -239,26 +255,26 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (_, g) => { if (g.dy > 0) translateY.value = g.dy; },
     onPanResponderRelease: (_, g) => {
-      if (g.dy > 80) { translateY.value = withTiming(700, { duration: 250 }); setTimeout(onClose, 260); }
+      if (g.dy > 80) { translateY.value = withSpring(0); closeRef.current(); }
       else { translateY.value = withSpring(0, { damping: 28, stiffness: 280 }); }
     },
   })).current;
 
   return (
-    <Modal visible transparent animationType="none" statusBarTranslucent>
-      <View style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.5)', justifyContent: 'flex-end' }}>
-        <Pressable style={{ flex: 1 }} onPress={onClose} />
-        <Animated.View {...panResponder.panHandlers} style={[panelStyle, { backgroundColor: C.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, maxHeight: '92%' }]}>
+    <Modal visible transparent animationType="none" statusBarTranslucent onRequestClose={requestClose}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.5)', justifyContent: 'flex-end' }}>
+        <Pressable style={{ flex: 1 }} onPress={requestClose} />
+        <Animated.View style={[panelStyle, { backgroundColor: C.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, maxHeight: '92%' }]}>
           <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: 40 }} keyboardShouldPersistTaps="handled">
             {/* Handle */}
-            <View style={{ alignItems: 'center', paddingBottom: 12 }}>
+            <View {...panResponder.panHandlers} style={{ alignItems: 'center', paddingBottom: 12 }}>
               <View style={{ width: 40, height: 4, backgroundColor: C.mutedBorder, borderRadius: 2 }} />
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
               <Text style={{ fontSize: 20, fontWeight: '900', color: C.text, flex: 1 }}>
                 {initial ? 'Edit Item' : 'New Market Item'}
               </Text>
-              <TouchableOpacity onPress={onClose}><X size={22} color={C.subtext} /></TouchableOpacity>
+              <TouchableOpacity onPress={requestClose}><X size={22} color={C.subtext} /></TouchableOpacity>
             </View>
 
             {/* Suggestions */}
@@ -285,13 +301,13 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
 
             {/* Emoji + Name */}
             <View style={{ flexDirection: 'row', gap: 10, marginBottom: 14 }}>
-              <TextInput
+              <TextInput editable={!busy}
                 value={emoji}
                 onChangeText={setEmoji}
                 placeholder="🎁"
                 style={{ fontSize: 28, width: 58, height: 58, borderRadius: 16, backgroundColor: C.muted, textAlign: 'center', borderWidth: 1, borderColor: C.mutedBorder }}
               />
-              <TextInput
+              <TextInput editable={!busy}
                 value={name}
                 onChangeText={t => { setName(t); setShowSugg(true); }}
                 placeholder="Item name"
@@ -301,7 +317,7 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
             </View>
 
             {/* Description */}
-            <TextInput
+            <TextInput editable={!busy}
               value={desc}
               onChangeText={setDesc}
               placeholder="Short description…"
@@ -312,7 +328,7 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
             {/* Points */}
             <View style={{ marginBottom: 14 }}>
               <Text style={{ fontSize: 12, fontWeight: '700', color: C.subtext, marginBottom: 6 }}>Price (pts)</Text>
-              <TextInput
+              <TextInput editable={!busy}
                 value={pts}
                 onChangeText={setPts}
                 keyboardType="numeric"
@@ -344,7 +360,7 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
                 </TouchableOpacity>
               </ScrollView>
               {addingCat && (
-                <TextInput
+                <TextInput editable={!busy}
                   value={newCat}
                   onChangeText={setNewCat}
                   placeholder="New category name…"
@@ -373,7 +389,7 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
                 </TouchableOpacity>
               </View>
               {!unlimited && (
-                <TextInput
+                <TextInput editable={!busy}
                   value={stock}
                   onChangeText={setStock}
                   keyboardType="numeric"
@@ -402,7 +418,7 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
                 </TouchableOpacity>
               </View>
               {!noExpiry && (
-                <TextInput
+                <TextInput editable={!busy}
                   value={expires}
                   onChangeText={setExpires}
                   keyboardType="numeric"
@@ -417,12 +433,12 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
             <View style={{ marginBottom: 14 }}>
               <Text style={{ fontSize: 12, fontWeight: '700', color: C.subtext, marginBottom: 6 }}>Who can buy  <Text style={{ fontWeight: '400' }}>(empty = everyone)</Text></Text>
               <View style={{ flexDirection: 'row', gap: 8 }}>
-                {FAMILY_MEMBERS.map(m => {
-                  const on = eligible.includes(m.name);
+                {members.map(m => {
+                  const on = eligible.includes(m.id);
                   return (
                     <TouchableOpacity
-                      key={m.name}
-                      onPress={() => toggleMember(eligible, setEligible, m.name)}
+                      key={m.id}
+                      onPress={() => toggleMember(eligible, setEligible, m.id)}
                       style={{ flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20, backgroundColor: on ? m.color : C.muted, borderWidth: 1, borderColor: on ? m.color : C.mutedBorder }}
                     >
                       <Text style={{ fontSize: 16 }}>{m.avatar}</Text>
@@ -437,12 +453,13 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
             <View style={{ marginBottom: 24 }}>
               <Text style={{ fontSize: 12, fontWeight: '700', color: C.subtext, marginBottom: 6 }}>Curators  <Text style={{ fontWeight: '400' }}>(can edit, restock, delete)</Text></Text>
               <View style={{ flexDirection: 'row', gap: 8 }}>
-                {FAMILY_MEMBERS.map(m => {
-                  const on = curators.includes(m.name);
+                {members.map(m => {
+                  const on = curators.includes(m.id);
                   return (
                     <TouchableOpacity
-                      key={m.name}
-                      onPress={() => toggleMember(curators, setCurators, m.name)}
+                      key={m.id}
+                      disabled={!canChooseCurators || busy}
+                      onPress={() => toggleMember(curators, setCurators, m.id)}
                       style={{ flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20, backgroundColor: on ? C.accent : C.muted, borderWidth: 1, borderColor: on ? C.accent : C.mutedBorder }}
                     >
                       <Text style={{ fontSize: 16 }}>{m.avatar}</Text>
@@ -454,30 +471,33 @@ function ItemFormModal({ initial, categories, onSave, onClose, currentUser }: It
             </View>
 
             {/* Save */}
+            <MarketStatus busy={busy} error={validation || error} />
             <TouchableOpacity
-              onPress={handleSave}
+              accessibilityRole="button" accessibilityLabel="Save reward" disabled={busy} onPress={() => { void handleSave(); }}
               style={{ backgroundColor: C.accent, borderRadius: 20, paddingVertical: 18, alignItems: 'center' }}
             >
-              <Text style={{ fontSize: 16, fontWeight: '900', color: '#fff' }}>{initial ? 'Save Changes' : 'Add to Market'}</Text>
+              <Text style={{ fontSize: 16, fontWeight: '900', color: '#fff' }}>{busy ? 'Saving…' : initial ? 'Save Changes' : 'Add to Market'}</Text>
             </TouchableOpacity>
           </ScrollView>
         </Animated.View>
-      </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }
 
 // ─── RESTOCK MODAL ────────────────────────────────────────────────
-function RestockModal({ item, onRestock, onClose }: { item: MarketItem; onRestock: (n: number) => void; onClose: () => void }) {
+function RestockModal({ item, onRestock, onClose, busy, error }: { item: MarketItem; onRestock: (n: number) => Promise<boolean>; onClose: () => void; busy: boolean; error: string }) {
   const [qty, setQty] = useState('5');
+  const { requestClose } = useDraftCloseGuard(qty, busy, onClose);
   return (
-    <Modal visible transparent animationType="fade" statusBarTranslucent>
-      <Pressable style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.5)', justifyContent: 'center', paddingHorizontal: 32 }} onPress={onClose}>
+    <Modal onRequestClose={requestClose} visible transparent animationType="fade" statusBarTranslucent>
+      <Pressable style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.5)', justifyContent: 'center', paddingHorizontal: 32 }} onPress={requestClose}>
         <Pressable onPress={e => e.stopPropagation()}>
           <View style={{ backgroundColor: C.card, borderRadius: 24, padding: 24, gap: 16 }}>
             <Text style={{ fontSize: 18, fontWeight: '900', color: C.text }}>{item.emoji} Restock "{item.name}"</Text>
+            <MarketStatus busy={busy} error={error} />
             <Text style={{ fontSize: 13, color: C.subtext }}>Current stock: {item.stock ?? '∞'}</Text>
-            <TextInput
+            <TextInput editable={!busy}
               value={qty}
               onChangeText={setQty}
               keyboardType="numeric"
@@ -487,11 +507,11 @@ function RestockModal({ item, onRestock, onClose }: { item: MarketItem; onRestoc
               autoFocus
             />
             <View style={{ flexDirection: 'row', gap: 10 }}>
-              <TouchableOpacity onPress={onClose} style={{ flex: 1, backgroundColor: C.muted, borderRadius: 16, paddingVertical: 14, alignItems: 'center' }}>
+              <TouchableOpacity onPress={requestClose} style={{ flex: 1, backgroundColor: C.muted, borderRadius: 16, paddingVertical: 14, alignItems: 'center' }}>
                 <Text style={{ fontWeight: '700', color: C.subtext }}>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => { const n = parseInt(qty); if (n > 0) { onRestock(n); onClose(); Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } }}
+                disabled={busy} onPress={async () => { const n = Number(qty); if (Number.isInteger(n) && n > 0 && n <= 100000 && await onRestock(n)) { onClose(); Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } }}
                 style={{ flex: 1, backgroundColor: C.green, borderRadius: 16, paddingVertical: 14, alignItems: 'center' }}
               >
                 <Text style={{ fontWeight: '900', color: '#fff' }}>Add Stock</Text>
@@ -560,11 +580,13 @@ const DURATION_OPTIONS = [
   { label: '1d',  ms: 24 * 3600_000 },
 ];
 
-function FlashSaleModal({ items, categories, onSave, onClose }: {
+function FlashSaleModal({ items, categories, onSave, onClose, busy, error }: {
   items: MarketItem[];
   categories: string[];
-  onSave: (sale: Omit<FlashSale, 'id'>) => void;
+  onSave: (sale: Omit<FlashSale, 'id'>) => Promise<boolean>;
   onClose: () => void;
+  busy: boolean;
+  error: string;
 }) {
   const [scopeType, setScopeType]         = useState<'all' | 'categories' | 'items'>('all');
   const [selCats, setSelCats]             = useState<string[]>([]);
@@ -574,8 +596,8 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
   const [durationOpt, setDurationOpt]     = useState<number | 'custom'>(DURATION_OPTIONS[1].ms);
   const [customDurationH, setCustomDurationH] = useState('');
 
-  const discountPct = discountPreset === 'custom' ? (parseInt(customDiscount) || 0) : discountPreset;
-  const durationMs  = durationOpt === 'custom' ? ((parseInt(customDurationH) || 0) * 3600_000) : durationOpt;
+  const discountPct = discountPreset === 'custom' ? (Number(customDiscount) || 0) : discountPreset;
+  const durationMs  = durationOpt === 'custom' ? ((Number(customDurationH) || 0) * 3600_000) : durationOpt;
   const translateY = useSharedValue(500);
   const panelStyle = useAnimatedStyle(() => ({ transform: [{ translateY: translateY.value }] }));
   useEffect(() => { translateY.value = withSpring(0, { ...SPRING_CONFIG, damping: 30 }); }, []);
@@ -583,7 +605,7 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (_, g) => { if (g.dy > 0) translateY.value = g.dy; },
     onPanResponderRelease: (_, g) => {
-      if (g.dy > 80) { translateY.value = withTiming(700, { duration: 250 }); setTimeout(onClose, 260); }
+      if (g.dy > 80) { translateY.value = withSpring(0); closeRef.current(); }
       else { translateY.value = withSpring(0, { damping: 28, stiffness: 280 }); }
     },
   })).current;
@@ -592,28 +614,30 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
   const toggleItem = (id: string) => setSelItems(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
 
   const scopeValid = scopeType === 'all' || (scopeType === 'categories' && selCats.length > 0) || (scopeType === 'items' && selItems.length > 0);
-  const isValid = scopeValid && discountPct > 0 && discountPct <= 100 && durationMs > 0;
+  const isValid = scopeValid && Number.isInteger(discountPct) && discountPct > 0 && discountPct <= 100 && durationMs > 0 && durationMs <= 30 * 86400000;
 
-  const handleSave = () => {
-    if (!isValid) return;
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+  const pendingSale = useRef<{ key: string; sale: Omit<FlashSale, 'id'> } | null>(null);
+  const handleSave = async () => {
+    if (!isValid || busy) return;
     const scope: FlashSaleScope =
       scopeType === 'all'        ? { type: 'all' } :
       scopeType === 'categories' ? { type: 'categories', categories: selCats } :
       { type: 'items', itemIds: selItems };
-    onSave({ scope, discountPct, expiresAt: Date.now() + durationMs });
-    onClose();
+    const key = JSON.stringify({ scope, discountPct, durationMs });
+    if (pendingSale.current?.key !== key) pendingSale.current = { key, sale: { scope, discountPct, expiresAt: Date.now() + durationMs } };
+    if (await onSave(pendingSale.current.sale)) { Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); onClose(); }
   };
 
   const label = { fontSize: 11, fontWeight: '700' as const, color: C.subtext, textTransform: 'uppercase' as const, letterSpacing: 0.6, marginBottom: 8 };
 
+  const { requestClose, closeRef } = useDraftCloseGuard({ scopeType, selCats, selItems, discountPreset, customDiscount, durationOpt, customDurationH }, busy, onClose);
   return (
-    <Modal visible transparent animationType="none" statusBarTranslucent>
+    <Modal onRequestClose={requestClose} visible transparent animationType="none" statusBarTranslucent>
       <View style={{ flex: 1, backgroundColor: 'rgba(15,23,42,0.55)', justifyContent: 'flex-end' }}>
-        <Pressable style={{ flex: 1 }} onPress={onClose} />
-        <Animated.View {...fsPan.panHandlers} style={[panelStyle, { backgroundColor: C.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, maxHeight: '90%' }]}>
+        <Pressable style={{ flex: 1 }} onPress={requestClose} />
+        <Animated.View style={[panelStyle, { backgroundColor: C.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, maxHeight: '90%' }]}>
           <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: 40 }} keyboardShouldPersistTaps="handled">
-            <View style={{ alignItems: 'center', paddingBottom: 12 }}>
+            <View {...fsPan.panHandlers} style={{ alignItems: 'center', paddingBottom: 12 }}>
               <View style={{ width: 40, height: 4, backgroundColor: C.mutedBorder, borderRadius: 2 }} />
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 24 }}>
@@ -621,7 +645,7 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
                 <Text style={{ fontSize: 18 }}>⚡</Text>
               </View>
               <Text style={{ fontSize: 20, fontWeight: '900', color: C.text, flex: 1 }}>New Flash Sale</Text>
-              <TouchableOpacity onPress={onClose}><X size={22} color={C.subtext} /></TouchableOpacity>
+              <TouchableOpacity onPress={requestClose}><X size={22} color={C.subtext} /></TouchableOpacity>
             </View>
 
             {/* Scope */}
@@ -696,7 +720,7 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
             </View>
             {discountPreset === 'custom' && (
               <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: C.muted, borderRadius: 14, paddingHorizontal: 14, paddingVertical: 12, marginBottom: 20, gap: 8 }}>
-                <TextInput value={customDiscount} onChangeText={setCustomDiscount} placeholder="e.g. 15" placeholderTextColor={C.subtext} keyboardType="number-pad" style={{ flex: 1, fontSize: 17, fontWeight: '800', color: C.text }} autoFocus />
+                <TextInput editable={!busy} value={customDiscount} onChangeText={setCustomDiscount} placeholder="e.g. 15" placeholderTextColor={C.subtext} keyboardType="number-pad" style={{ flex: 1, fontSize: 17, fontWeight: '800', color: C.text }} autoFocus />
                 <Text style={{ fontSize: 14, fontWeight: '700', color: C.subtext }}>% off</Text>
               </View>
             )}
@@ -719,17 +743,18 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
             </View>
             {durationOpt === 'custom' && (
               <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: C.muted, borderRadius: 14, paddingHorizontal: 14, paddingVertical: 12, marginBottom: 28, gap: 8 }}>
-                <TextInput value={customDurationH} onChangeText={setCustomDurationH} placeholder="e.g. 6" placeholderTextColor={C.subtext} keyboardType="number-pad" style={{ flex: 1, fontSize: 17, fontWeight: '800', color: C.text }} autoFocus />
+                <TextInput editable={!busy} value={customDurationH} onChangeText={setCustomDurationH} placeholder="e.g. 6" placeholderTextColor={C.subtext} keyboardType="number-pad" style={{ flex: 1, fontSize: 17, fontWeight: '800', color: C.text }} autoFocus />
                 <Text style={{ fontSize: 14, fontWeight: '700', color: C.subtext }}>hours</Text>
               </View>
             )}
 
+            <MarketStatus busy={busy} error={error} />
             <TouchableOpacity
-              onPress={handleSave}
-              disabled={!isValid}
+              onPress={() => { void handleSave(); }}
+              disabled={!isValid || busy}
               style={{ backgroundColor: isValid ? C.gold : C.muted, borderRadius: 18, paddingVertical: 16, alignItems: 'center', flexDirection: 'row', justifyContent: 'center', gap: 8 }}
             >
-              <Text style={{ fontSize: 15, fontWeight: '900', color: isValid ? '#fff' : C.subtext }}>⚡ Launch Flash Sale</Text>
+              <Text style={{ fontSize: 15, fontWeight: '900', color: isValid ? '#fff' : C.subtext }}>{busy ? 'Saving…' : '⚡ Launch Flash Sale'}</Text>
             </TouchableOpacity>
           </ScrollView>
         </Animated.View>
@@ -741,7 +766,7 @@ function FlashSaleModal({ items, categories, onSave, onClose }: {
 // ─── MARKET CARD ──────────────────────────────────────────────────
 function MarketCard({
   item, memberBalance, currentUser, onBuy, onLongPress, isPopular, salePrice,
-  saleExpiresAt,
+  saleExpiresAt, disabled,
 }: {
   item: MarketItem;
   memberBalance: number;
@@ -751,6 +776,7 @@ function MarketCard({
   isPopular: boolean;
   salePrice?: number;
   saleExpiresAt?: number;
+  disabled?: boolean;
 }) {
   const [confirming, setConfirming] = useState(false);
   const confirmTimer = useRef<NodeJS.Timeout | null>(null);
@@ -760,9 +786,13 @@ function MarketCard({
   const hasFunds = memberBalance >= effectivePrice;
   const isEligible = item.eligibleMembers.length === 0 || item.eligibleMembers.includes(currentUser);
   const canBuy = !outOfStock && hasFunds && isEligible;
+  useEffect(() => {
+    if (confirmTimer.current) clearTimeout(confirmTimer.current);
+    setConfirming(false);
+  }, [currentUser, effectivePrice, item.version]);
 
   const handleBuyPress = () => {
-    if (outOfStock) return;
+    if (outOfStock || disabled) return;
 
     if (!isEligible) {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
@@ -881,6 +911,10 @@ function MarketCard({
           {/* Price button — only interactive element */}
           <TouchableOpacity
             activeOpacity={0.8}
+            disabled={disabled || outOfStock}
+            accessibilityRole="button"
+            accessibilityLabel={confirming ? `Confirm ${item.name} for ${effectivePrice} points` : `${item.name}, ${effectivePrice} points`}
+            accessibilityState={{ disabled: disabled || outOfStock }}
             onPress={handleBuyPress}
             style={{
               flexShrink: 0,
@@ -1026,11 +1060,12 @@ function ConfirmSheet({ item, effectivePrice, memberBalance, onConfirm, onCancel
 }
 
 // ─── REDEEM OVERLAY ───────────────────────────────────────────────
-function RedeemOverlay({ item, effectivePrice, memberBalance, onDone }: {
+function RedeemOverlay({ item, effectivePrice, memberBalance, onDone, reduceMotion }: {
   item: MarketItem;
   effectivePrice: number;
   memberBalance: number;
   onDone: () => void;
+  reduceMotion: boolean;
 }) {
   const cardScale = useSharedValue(0.85);
   const cardOp    = useSharedValue(0);
@@ -1038,6 +1073,13 @@ function RedeemOverlay({ item, effectivePrice, memberBalance, onDone }: {
   const [displayed, setDisplayed] = useState(memberBalance);
 
   useEffect(() => {
+    if (reduceMotion) {
+      cardScale.value = 1; cardOp.value = 1; cardY.value = 0;
+      setDisplayed(memberBalance - effectivePrice);
+      const timer = setTimeout(onDone, 2000);
+      return () => clearTimeout(timer);
+    }
+    const timers: ReturnType<typeof setTimeout>[] = [];
     // Appear instantly
     cardScale.value = withSpring(1, { damping: 20, stiffness: 350 });
     cardOp.value    = withTiming(1, { duration: 120 });
@@ -1055,17 +1097,17 @@ function RedeemOverlay({ item, effectivePrice, memberBalance, onDone }: {
       if (step >= steps) {
         clearInterval(t);
         // Wait 2 seconds before flying away so user sees the result
-        setTimeout(() => {
+        timers.push(setTimeout(() => {
           cardScale.value = withTiming(0.1, { duration: 300, easing: Easing.in(Easing.quad) });
           cardY.value     = withTiming(SCREEN_H * 0.45, { duration: 300, easing: Easing.in(Easing.quad) });
           cardOp.value    = withTiming(0, { duration: 260 });
-          setTimeout(() => { Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); onDone(); }, 310);
-        }, 2000);
+          timers.push(setTimeout(() => { Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); onDone(); }, 310));
+        }, 2000));
       }
     }, interval);
 
-    return () => clearInterval(t);
-  }, []);
+    return () => { clearInterval(t); timers.forEach(clearTimeout); };
+  }, [reduceMotion, memberBalance, effectivePrice, onDone, cardScale, cardOp, cardY]);
 
   const cardStyle = useAnimatedStyle(() => ({
     transform: [{ scale: cardScale.value }, { translateY: cardY.value }],
@@ -1073,7 +1115,7 @@ function RedeemOverlay({ item, effectivePrice, memberBalance, onDone }: {
   }));
 
   return (
-    <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(15,23,42,0.65)' }} pointerEvents="box-none">
+    <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(15,23,42,0.65)' }} accessibilityViewIsModal accessibilityLiveRegion="polite">
       <Animated.View style={[cardStyle, { width: width - 64, backgroundColor: C.card, borderRadius: 24, padding: 24, alignItems: 'center', shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 24, shadowOffset: { width: 0, height: 8 }, elevation: 20 }]}>
         <View style={{ width: 72, height: 72, borderRadius: 22, backgroundColor: C.accentBg, alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
           <Text style={{ fontSize: 40 }}>{item.emoji}</Text>
@@ -1093,9 +1135,21 @@ function RedeemOverlay({ item, effectivePrice, memberBalance, onDone }: {
 export default function MarketScreen() {
   const router  = useRouter();
   const insets  = useSafeAreaInsets();
-  const [selectedMember, setSelectedMember] = useState('Dad');
+  const { reduceMotion } = useAccessibilityPreferences();
+  const command = useHouseholdCommand();
+  const snapshot = useHuddleStore(state => state.snapshot);
+  const savedItems = useHuddleStore(state => state.marketItems);
+  const demo = useAuthStore(state => state.isDevBypass && !state.user);
+  const family = useMemo(() => demo ? FAMILY_MEMBERS.map(m => ({ ...m, id: m.name, canAct: true, adult: m.name !== 'Alex' })) : marketMembers(snapshot, command.memberId), [demo, snapshot, command.memberId]);
+  const [selectedMember, setSelectedMember] = useState(command.memberId ?? 'Dad');
+  const actorId = demo ? 'Dad' : command.memberId ?? '';
+  const adult = demo || command.role === 'owner' || command.role === 'parent';
+  const [clock, setClock] = useState(() => Date.now());
+  useEffect(() => { const timer = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(timer); }, []);
+  useEffect(() => { if (!family.some(m => m.id === selectedMember)) setSelectedMember(command.memberId ?? family[0]?.id ?? ''); }, [family, selectedMember, command.memberId]);
   const [category, setCategory]             = useState<Category>('All');
-  const [items, setItems]                   = useState<MarketItem[]>(INITIAL_ITEMS);
+  const [demoItems, setItems]               = useState<MarketItem[]>(INITIAL_ITEMS);
+  const items = demo ? demoItems : savedItems;
   const [showAdd, setShowAdd]               = useState(false);
   const [editItem, setEditItem]             = useState<MarketItem | null>(null);
   const [longPressItem, setLongPressItem]   = useState<MarketItem | null>(null);
@@ -1104,29 +1158,18 @@ export default function MarketScreen() {
   const [ptsSortDir, setPtsSortDir]         = useState<null | 'asc' | 'desc'>(null);
   const [searchQuery, setSearchQuery]       = useState('');
   const [searching, setSearching]           = useState(false);
-  const [flashSales, setFlashSales]         = useState<FlashSale[]>([]);
+  const [demoSales, setFlashSales]          = useState<FlashSale[]>([]);
+  const flashSales: FlashSale[] = useMemo(() => demo ? demoSales : (snapshot?.sales ?? []).map(sale => ({ id: sale.id, scope: sale.scope, discountPct: sale.discount_pct, expiresAt: new Date(sale.expires_at).getTime() })), [demo, demoSales, snapshot]);
   const [showFlashSale, setShowFlashSale]   = useState(false);
   const [showAddMenu, setShowAddMenu]       = useState(false);
   const [isFabOpen, setIsFabOpen]           = useState(false);
-  const [redeemState, setRedeemState]       = useState<{ item: MarketItem; price: number } | null>(null);
+  const [redeemState, setRedeemState]       = useState<{ item: MarketItem; price: number; balance: number } | null>(null);
 
   const currentUser = selectedMember;
-  const member = FAMILY_MEMBERS.find(m => m.name === selectedMember)!;
+  const member = family.find(m => m.id === selectedMember) ?? family[0] ?? { id: '', name: 'Household member', avatar: '👤', balance: 0, canAct: false, adult: false, color: C.accent };
 
-  // Active (non-expired) sales
-  const activeSales = useMemo(() => flashSales.filter(s => s.expiresAt > Date.now()), [flashSales]);
-
-  // Returns discounted price for an item, or undefined if no sale applies
-  const getSaleInfo = useCallback((item: MarketItem): { price: number; expiresAt: number } | undefined => {
-    const sale = activeSales.find(s => {
-      if (s.scope.type === 'all') return true;
-      if (s.scope.type === 'categories') return s.scope.categories.includes(item.category);
-      if (s.scope.type === 'items') return s.scope.itemIds.includes(item.id);
-      return false;
-    });
-    if (!sale) return undefined;
-    return { price: Math.max(1, Math.round(item.pts * (1 - sale.discountPct / 100))), expiresAt: sale.expiresAt };
-  }, [activeSales]);
+  const activeSales = useMemo(() => flashSales.filter(s => s.expiresAt > clock), [flashSales, clock]);
+  const getSaleInfo = useCallback((item: MarketItem) => saleForItem(item, activeSales, clock), [activeSales, clock]);
 
   const allCategories = useMemo(() => {
     const cats = new Set(items.map(i => i.category));
@@ -1139,7 +1182,7 @@ export default function MarketScreen() {
   const popularIds = useMemo(() => {
     return [...items]
       .sort((a, b) => b.purchaseCount - a.purchaseCount)
-      .slice(0, 2)
+      .filter(i => i.purchaseCount > 0).slice(0, 2)
       .map(i => i.id);
   }, [items]);
 
@@ -1150,7 +1193,7 @@ export default function MarketScreen() {
       (!q || i.name.toLowerCase().includes(q) || i.desc.toLowerCase().includes(q) || i.category.toLowerCase().includes(q))
     );
 
-    const canBuyFn  = (i: MarketItem) => (i.stock === null || i.stock > 0) && member.balance >= i.pts && (i.eligibleMembers.length === 0 || i.eligibleMembers.includes(currentUser));
+    const canBuyFn  = (i: MarketItem) => (i.stock === null || i.stock > 0) && member.balance >= (getSaleInfo(i)?.price ?? i.pts) && (i.eligibleMembers.length === 0 || i.eligibleMembers.includes(currentUser));
     const isOOS     = (i: MarketItem) => i.stock !== null && i.stock <= 0;
 
     const buyable   = filtered.filter(i => canBuyFn(i));
@@ -1170,58 +1213,60 @@ export default function MarketScreen() {
     const popular = buyable.filter(i => popularIds.includes(i.id)).sort((a, b) => b.purchaseCount - a.purchaseCount);
     const rest    = buyable.filter(i => !popularIds.includes(i.id));
     return [...popular, ...rest, ...cantBuy, ...outStock];
-  }, [items, category, popularIds, ptsSortDir, member.balance, currentUser, searchQuery]);
+  }, [items, category, popularIds, ptsSortDir, member.balance, currentUser, searchQuery, getSaleInfo]);
 
-  const handleBuy = useCallback((item: MarketItem, effectivePrice: number) => {
-    setRedeemState({ item, price: effectivePrice });
-  }, []);
+  const send = (operation: string, entity: string, rpc: string, args: Record<string, unknown>) =>
+    command.run(current => marketCommand(command.userId!, command.householdId!, operation, entity, rpc, args, current));
 
-  const handleRedeemDone = useCallback(() => {
-    if (!redeemState) return;
-    const { item } = redeemState;
-    if (item.stock !== null) {
-      setItems(prev => prev.map(i => i.id === item.id ? { ...i, stock: (i.stock ?? 1) - 1, purchaseCount: i.purchaseCount + 1 } : i));
-    } else {
-      setItems(prev => prev.map(i => i.id === item.id ? { ...i, purchaseCount: i.purchaseCount + 1 } : i));
+  const handleBuy = async (item: MarketItem, effectivePrice: number) => {
+    if (!member.canAct || command.busy) return;
+    const balance = member.balance;
+    if (demo || await send('purchase', member.id + ':' + item.id, 'purchase_reward_v2',
+      { target_reward_id: item.id, target_member_id: member.id, expected_cost: effectivePrice })) {
+      setRedeemState({ item, price: effectivePrice, balance });
+      if (demo) setItems(prev => prev.map(i => i.id === item.id ? { ...i, stock: i.stock === null ? null : i.stock - 1, purchaseCount: i.purchaseCount + 1 } : i));
     }
-    setRedeemState(null);
-  }, [redeemState]);
+  };
+  const handleRedeemDone = useCallback(() => setRedeemState(null), []);
 
-  const handleSaveNew = useCallback((data: Omit<MarketItem, 'id' | 'priceHistory' | 'createdBy' | 'purchaseCount'>) => {
-    const id = `custom-${Date.now()}`;
-    const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    setItems(prev => [...prev, { ...data, id, createdBy: currentUser, purchaseCount: 0, priceHistory: [{ date: today, pts: data.pts }] }]);
-  }, [currentUser]);
-
-  const handleSaveEdit = useCallback((data: Omit<MarketItem, 'id' | 'priceHistory' | 'createdBy' | 'purchaseCount'>) => {
-    if (!editItem) return;
-    const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    setItems(prev => prev.map(i => {
-      if (i.id !== editItem.id) return i;
-      const newHistory = data.pts !== i.pts ? [...i.priceHistory, { date: today, pts: data.pts }] : i.priceHistory;
-      return { ...i, ...data, priceHistory: newHistory };
-    }));
-    setEditItem(null);
-  }, [editItem]);
-
-  const handleDelete = useCallback((item: MarketItem) => {
-    Alert.alert(`Delete "${item.name}"?`, 'This cannot be undone.', [
+  const handleSaveNew = async (data: RewardDraft) => {
+    if (demo) {
+      setItems(prev => [...prev, { ...data, id: randomUUID(), createdBy: actorId, purchaseCount: 0, priceHistory: [{ date: new Date().toLocaleDateString(), pts: data.pts }] }]); return true;
+    }
+    return command.run(current => marketCommand(command.userId!, command.householdId!, 'create-reward', 'new', 'save_market_reward',
+      { target_household: command.householdId, expected_version: 0, draft: data }, current, ['request_id', 'target_reward']));
+  };
+  const handleSaveEdit = async (data: RewardDraft) => {
+    if (!editItem) return false;
+    if (demo) { setItems(prev => prev.map(i => i.id === editItem.id ? { ...i, ...data } : i)); return true; }
+    return send('save', editItem.id, 'save_market_reward', { target_household: command.householdId, target_reward: editItem.id, expected_version: editItem.version ?? 1, draft: data });
+  };
+  const handleDelete = (item: MarketItem) => {
+    Alert.alert(`Archive "${item.name}"?`, 'Existing purchases and history are preserved.', [
       { text: 'Cancel', style: 'cancel' },
-      { text: 'Delete', style: 'destructive', onPress: () => {
-        setItems(prev => prev.filter(i => i.id !== item.id));
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      }},
+      { text: 'Archive', style: 'destructive', onPress: () => {
+        if (demo) setItems(prev => prev.filter(i => i.id !== item.id));
+        else void send('archive', item.id, 'change_market_reward', { target_reward: item.id, expected_version: item.version ?? 1, action: 'archive' });
+      } },
     ]);
-  }, []);
-
-  const handleRestock = useCallback((item: MarketItem, qty: number) => {
-    const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    setItems(prev => prev.map(i => i.id === item.id ? { ...i, stock: (i.stock ?? 0) + qty } : i));
-  }, []);
+  };
+  const handleRestock = async (item: MarketItem, qty: number) => {
+    if (demo) { setItems(prev => prev.map(i => i.id === item.id ? { ...i, stock: (i.stock ?? 0) + qty } : i)); return true; }
+    return send('restock', item.id, 'change_market_reward', { target_reward: item.id, expected_version: item.version ?? 1, action: 'restock', quantity: qty });
+  };
+  const handleSale = async (sale: Omit<FlashSale, 'id'>) => {
+    if (demo) { setFlashSales(prev => [...prev, { ...sale, id: randomUUID() }]); return true; }
+    return command.run(current => marketCommand(command.userId!, command.householdId!, 'create-sale', 'new', 'save_market_sale',
+      { target_household: command.householdId, scope_value: sale.scope, discount_value: sale.discountPct, expires_value: new Date(sale.expiresAt).toISOString() }, current, ['sale_id']));
+  };
+  const cancelSale = async (id: string) => {
+    if (demo) { setFlashSales(prev => prev.filter(s => s.id !== id)); return; }
+    await command.run(async () => { const { error } = await supabase.rpc('cancel_market_sale', { target_sale: id }); if (error) throw error; });
+  };
 
   return (
     <View style={{ flex: 1, backgroundColor: C.bg }}>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }} edges={['top', 'left', 'right']}>
 
         {/* Header */}
         <View style={{ paddingHorizontal: 24, paddingTop: 8, paddingBottom: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -1241,14 +1286,19 @@ export default function MarketScreen() {
           </View>
         </View>
 
+        <MarketStatus busy={command.busy} error={command.error} />
+        {!member.canAct && <Text style={{ marginHorizontal: 24, color: C.subtext, marginBottom: 8 }}>Viewing {member.name}’s balance. Their purchases require their own account.</Text>}
         {/* Member selector */}
-        <View style={{ flexDirection: 'row', paddingHorizontal: 24, gap: 8, marginBottom: 14 }}>
-          {FAMILY_MEMBERS.map(m => {
-            const active = selectedMember === m.name;
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexGrow: 0, flexShrink: 0 }} contentContainerStyle={{ paddingHorizontal: 24, gap: 8, marginBottom: 14 }}>
+          {family.map(m => {
+            const active = selectedMember === m.id;
             return (
               <TouchableOpacity
-                key={m.name}
-                onPress={() => { Haptics.selectionAsync(); setSelectedMember(m.name); }}
+                key={m.id}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
+                accessibilityLabel={`${m.name}, ${m.balance} points`}
+                onPress={() => { Haptics.selectionAsync(); setSelectedMember(m.id); }}
                 style={[C.shadow, {
                   flexDirection: 'row', alignItems: 'center', gap: 8,
                   paddingHorizontal: 14, paddingVertical: 9, borderRadius: 50,
@@ -1266,7 +1316,7 @@ export default function MarketScreen() {
               </TouchableOpacity>
             );
           })}
-        </View>
+        </ScrollView>
 
         {/* Balance banner */}
         <View style={[C.shadow, {
@@ -1283,6 +1333,14 @@ export default function MarketScreen() {
           </View>
         </View>
 
+        {activeSales.length > 0 && <ScrollView horizontal style={{ flexGrow: 0, flexShrink: 0 }} contentContainerStyle={{ paddingHorizontal: 24, gap: 8, paddingBottom: 12 }}>
+          {activeSales.map(sale => <TouchableOpacity key={sale.id} accessibilityRole="button" disabled={!adult || command.busy} accessibilityLabel={`${sale.discountPct}% sale, ${adult ? 'end sale' : 'active'}`}
+            onPress={() => Alert.alert('End this sale?', 'Future purchases will use the current price. Existing purchases are unchanged.', [{ text: 'Keep sale', style: 'cancel' }, { text: 'End sale', onPress: () => { void cancelSale(sale.id); } }])}
+            style={{ padding: 12, borderRadius: 14, backgroundColor: C.goldBg, flexDirection: 'row', gap: 8 }}>
+            <Text style={{ color: '#92400E', fontWeight: '700' }}>⚡ {sale.discountPct}% off · {sale.scope.type === 'all' ? 'Everything' : sale.scope.type === 'categories' ? sale.scope.categories.join(', ') : 'Selected rewards'}</Text>
+            {adult && <X size={16} color="#92400E" />}
+          </TouchableOpacity>)}
+        </ScrollView>}
         {/* Category filter — fixed height row, horizontal scroll */}
         <FlatList
           horizontal
@@ -1292,7 +1350,6 @@ export default function MarketScreen() {
           showsHorizontalScrollIndicator={false}
           style={{ flexGrow: 0, flexShrink: 0, height: 36, marginBottom: 14 }}
           contentContainerStyle={{ paddingHorizontal: 24 }}
-          getItemLayout={(_data, index) => ({ length: 100, offset: 100 * index, index })}
           renderItem={({ item: cat, index: idx }) => {
             const active = category === cat;
             return (
@@ -1367,6 +1424,10 @@ export default function MarketScreen() {
           </View>
 
           <View style={{ gap: 0 }}>
+            {!sorted.length && <View style={{ padding: 24, borderRadius: 20, backgroundColor: C.card, borderWidth: 1, borderColor: C.cardBorder }}>
+              <Text style={{ fontSize: 18, fontWeight: '800', color: C.text }}>{searchQuery || category !== 'All' ? 'No matching rewards' : 'Something to look forward to'}</Text>
+              <Text style={{ marginTop: 8, color: C.subtext }}>{searchQuery || category !== 'All' ? 'Try a different search or category.' : adult ? 'Use + to add your household’s first reward.' : 'A parent can add rewards for your household.'}</Text>
+            </View>}
             {sorted.map((item, idx) => (
               <Animated.View key={`${category}-${item.id}`} entering={FadeInDown.delay(idx * 40).springify().damping(22)}>
                 <MarketCard
@@ -1374,6 +1435,7 @@ export default function MarketScreen() {
                   memberBalance={member.balance}
                   currentUser={currentUser}
                   onBuy={handleBuy}
+                  disabled={command.busy || !!redeemState || !member.canAct}
                   onLongPress={setLongPressItem}
                   isPopular={popularIds.includes(item.id)}
                   salePrice={getSaleInfo(item)?.price}
@@ -1387,8 +1449,9 @@ export default function MarketScreen() {
       </SafeAreaView>
 
       {/* Speed Dial FAB */}
+      {adult && <>
       {isFabOpen && <Pressable onPress={() => setIsFabOpen(false)} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />}
-      <View style={{ position: 'absolute', right: 24, bottom: 100, alignItems: 'flex-end' }}>
+      <View style={{ position: 'absolute', right: 24, bottom: 80 + Math.max(insets.bottom, 10), alignItems: 'flex-end' }}>
         {isFabOpen && (
           <>
             <View style={{ marginBottom: 12 }}>
@@ -1410,7 +1473,7 @@ export default function MarketScreen() {
                   <Text style={{ fontSize: 13, fontWeight: '800', color: '#0F172A' }}>New Item</Text>
                 </View>
                 <TouchableOpacity
-                  onPress={() => { setIsFabOpen(false); setShowAdd(true); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); }}
+                  accessibilityLabel="Add a reward" accessibilityRole="button" onPress={() => { setIsFabOpen(false); setShowAdd(true); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); }}
                   style={{ width: 50, height: 50, borderRadius: 25, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center', shadowColor: C.accent, shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 3 } }}
                 >
                   <ListPlus size={22} color="white" />
@@ -1421,6 +1484,7 @@ export default function MarketScreen() {
         )}
         <TouchableOpacity
           activeOpacity={0.9}
+          accessibilityRole="button" accessibilityLabel={isFabOpen ? 'Close market actions' : 'Open market actions'}
           onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); setIsFabOpen(!isFabOpen); }}
           style={{ width: 60, height: 60, borderRadius: 30, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center', shadowColor: C.accent, shadowOpacity: 0.4, shadowRadius: 14, shadowOffset: { width: 0, height: 5 }, elevation: 6 }}
         >
@@ -1428,13 +1492,15 @@ export default function MarketScreen() {
         </TouchableOpacity>
       </View>
 
+      </>}
       {/* Modals */}
       {showAdd && (
         <ItemFormModal
           categories={allCategories}
           onSave={handleSaveNew}
           onClose={() => setShowAdd(false)}
-          currentUser={currentUser}
+          currentUser={actorId}
+          members={family} busy={command.busy} error={command.error} canChooseCurators={adult}
         />
       )}
       {editItem && (
@@ -1443,14 +1509,15 @@ export default function MarketScreen() {
           categories={allCategories}
           onSave={handleSaveEdit}
           onClose={() => setEditItem(null)}
-          currentUser={currentUser}
+          currentUser={actorId}
+          members={family} busy={command.busy} error={command.error} canChooseCurators={adult}
         />
       )}
       {longPressItem && (
         <LongPressMenu
           item={longPressItem}
           currentUser={currentUser}
-          canCurate={longPressItem.curators.includes(currentUser) || longPressItem.createdBy === currentUser}
+          canCurate={adult || longPressItem.curators.includes(actorId)}
           onEdit={() => setEditItem(longPressItem)}
           onRestock={() => setRestockItem(longPressItem)}
           onDelete={() => handleDelete(longPressItem)}
@@ -1461,6 +1528,7 @@ export default function MarketScreen() {
       {restockItem && (
         <RestockModal
           item={restockItem}
+          busy={command.busy} error={command.error}
           onRestock={qty => handleRestock(restockItem, qty)}
           onClose={() => setRestockItem(null)}
         />
@@ -1475,7 +1543,7 @@ export default function MarketScreen() {
         <FlashSaleModal
           items={items}
           categories={allCategories}
-          onSave={sale => setFlashSales(prev => [...prev, { ...sale, id: `fs-${Date.now()}` }])}
+          onSave={handleSale} busy={command.busy} error={command.error}
           onClose={() => setShowFlashSale(false)}
         />
       )}
@@ -1483,8 +1551,9 @@ export default function MarketScreen() {
         <RedeemOverlay
           item={redeemState.item}
           effectivePrice={redeemState.price}
-          memberBalance={member.balance}
+          memberBalance={redeemState.balance}
           onDone={handleRedeemDone}
+          reduceMotion={reduceMotion}
         />
       )}
     </View>

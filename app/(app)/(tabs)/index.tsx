@@ -19,6 +19,7 @@ import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '../../../store/authStore';
 import { supabase } from '../../../lib/supabase';
+import { PrototypeNotice } from '../../../components/ui/PrototypeNotice';
 import {
   Home,
   Users,
@@ -720,6 +721,7 @@ export default function MissionControlScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#4F46E5" />
         }
       >
+        <PrototypeNotice screen="Home" />
         {/* Bento Row 1: Shift Slider */}
         <View className="px-6 mt-6">
           <ShiftSlider />

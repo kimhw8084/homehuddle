@@ -40,6 +40,7 @@ import Animated, {
   cancelAnimation,
 } from 'react-native-reanimated';
 import { Gyroscope } from 'expo-sensors';
+import { useAccessibilityPreferences } from '../hooks/use-accessibility-preferences';
 import { BlurView } from 'expo-blur';
 import * as WebBrowser from 'expo-web-browser';
 import NetInfo from '@react-native-community/netinfo';
@@ -278,6 +279,7 @@ const DynamicTyper = () => {
 
 // --- Main Auth Root View ---
 export default function AuthRootView() {
+  const { reduceMotion } = useAccessibilityPreferences();
   const router = useRouter();
   const systemColorScheme = useColorScheme();
   const { setDevBypass, setSession } = useAuthStore();
@@ -306,18 +308,22 @@ export default function AuthRootView() {
 
   // Gyroscope Parallax
   useEffect(() => {
-    let subscription: any;
+    // Web can report sensor availability without implementing the native
+    // emitter. Motion is decorative and must never block sign-in.
+    if (Platform.OS === 'web' || reduceMotion) return;
+    let active = true;
+    let subscription: ReturnType<typeof Gyroscope.addListener> | undefined;
     Gyroscope.isAvailableAsync().then((available) => {
-      if (available) {
+      if (available && active) {
         Gyroscope.setUpdateInterval(50);
         subscription = Gyroscope.addListener(({ x, y }) => {
           bgX.value = withTiming(y * 20, { duration: 100 });
           bgY.value = withTiming(x * 20, { duration: 100 });
         });
       }
-    });
-    return () => subscription?.remove();
-  }, []);
+    }).catch(() => { /* Keep the static background when motion is unavailable. */ });
+    return () => { active = false; subscription?.remove(); };
+  }, [reduceMotion, bgX, bgY]);
 
   // Entrance Sequence
   useEffect(() => {

@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import type { HouseholdSnapshot } from '../types/household';
 import * as Haptics from 'expo-haptics';
 
 import { Chore, Section } from '../types/chores';
@@ -10,6 +11,7 @@ export type MarketPriceEntry = { date: string; pts: number };
 
 export type MarketItem = {
     id: string;
+    version?: number;
     name: string;
     emoji: string;
     pts: number;
@@ -177,6 +179,7 @@ export type Announcement = {
 
 export interface HuddleState {
     // Data
+    snapshot: HouseholdSnapshot | null;
     householdId: string | null;
     currentMemberId: string | null;
     chores: Chore[];
@@ -332,6 +335,7 @@ export interface HuddleState {
 }
 
 export const useHuddleStore = create<HuddleState>((set) => ({
+    snapshot: null,
     householdId: null,
     currentMemberId: null,
     currentUser: '',

@@ -22,6 +22,8 @@ Never push history first and assume deleting files later removes secrets. Never 
 
 ## Ongoing workflow
 
+The September 23 authored-UI recovery is commit `20b6528` on main. The original design source is `dcf30b3`, retained in the local archive. Subsequent integration must improve the four authored tab screens in place. Do not swap them for `features/*` screen components or publish the archived history, which includes historical environment files. Reuse safe backend/domain modules without discarding the authored UI.
+
 - Short-lived feature/fix/implementation branches; focused follow-up PRs.
 - Required checks: types, tests, SQL regressions, lint, Expo alignment, web compile; native/service integration for release candidates.
 - UI PRs include screenshots/accessibility evidence using the provided PR template.

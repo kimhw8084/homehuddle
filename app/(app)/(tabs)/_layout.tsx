@@ -3,8 +3,10 @@ import { Tabs } from 'expo-router';
 import { Home, ListTodo, Wallet, Store } from 'lucide-react-native';
 import { BlurView } from 'expo-blur';
 import { View, StyleSheet, Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function AppLayout() {
+  const insets = useSafeAreaInsets();
   return (
     <Tabs screenOptions={{
       headerShown: false,
@@ -23,8 +25,8 @@ export default function AppLayout() {
         elevation: 0,
         shadowOpacity: 0.1,
         shadowRadius: 10,
-        height: 85,
-        paddingBottom: 25,
+        height: 60 + Math.max(insets.bottom, 10),
+        paddingBottom: Math.max(insets.bottom, 10),
         paddingTop: 10,
         backgroundColor: Platform.OS === 'ios' ? 'transparent' : 'rgba(255, 255, 255, 0.95)',
       },
@@ -61,6 +63,9 @@ export default function AppLayout() {
           tabBarIcon: ({ color }) => <Store size={26} color={color} strokeWidth={2.5} />,
         }}
       />
+      <Tabs.Screen name="family" options={{ href: null }} />
+      <Tabs.Screen name="restock" options={{ href: null }} />
+      <Tabs.Screen name="household" options={{ href: null }} />
     </Tabs>
   );
 }

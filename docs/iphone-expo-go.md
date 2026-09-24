@@ -33,7 +33,9 @@ If Terminal says it is using a development build, use `start:go`, not `start:sim
 
 ## What this preview verifies
 
-Use email sign-in and an owned test account. Test chores, routines, dinners, shopping, household points/rewards, and theme/text-size behavior using a disposable test household. The [simulator guide's walkthrough](iphone-simulator.md#what-to-test-first) lists useful checks.
+Use email sign-in and an owned disposable test household. The original **Market and Wallet** now save real household changes. Test reward creation, purchase, bag use/gift/refund, and savings-goal deposits/cancellation. Purchases use household points, not real money. Verify the changed balance and inventory again after reloading and on a second signed-in device.
+
+The original **Home and Chores are still design previews** with a visible sample-data notice; their edits reset on reload and do not award real points. Their integration is not finished. The hidden development bypass also uses sample data throughout; tap its **PREVIEW** control and **Exit preview and sign in** to test persistence. Do not confuse the earlier simulator walkthrough's planned coverage with a completed original-screen integration. See [current implementation status](implementation-status.md).
 
 Paid checkout is deliberately unavailable in Expo Go, even if billing environment flags are accidentally present. Store purchases/restore, provider-specific native authentication, and production push delivery require separate configured development/release builds and qualification. The SDK upgrade is not a claim that the full production roadmap is complete.
 

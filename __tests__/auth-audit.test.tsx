@@ -3,6 +3,9 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 
 // Mocks
+jest.mock('../hooks/use-accessibility-preferences', () => ({
+  useAccessibilityPreferences: () => ({ reduceMotion: true, screenReader: false }),
+}));
 const mockReplace = jest.fn();
 jest.mock('expo-router', () => ({
   useRouter: () => ({

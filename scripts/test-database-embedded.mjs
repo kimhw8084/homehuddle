@@ -44,6 +44,7 @@ try {
   await psqlTest('supabase/tests/planning.sql');
   await psqlTest('supabase/tests/routines.sql');
   await psqlTest('supabase/tests/billing.sql');
+  await psqlTest('supabase/tests/market-wallet.sql');
   console.log(`All PostgreSQL/WASM migration and policy regression tests passed (${assertions} assertions).`);
 } catch (error) {
   console.error(error.message);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { View, Text, TouchableOpacity, TextInput, ScrollView, Pressable, StyleSheet, unstable_batchedUpdates, Animated as RNAnimated, Alert, Modal } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { PrototypeNotice } from '../../../components/ui/PrototypeNotice';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';
 import { Image } from 'expo-image';
@@ -3804,6 +3805,7 @@ export default function ChoresView() {
           </View>
         </Animated.View>
 
+        <PrototypeNotice screen="Chores" />
         <CalendarHUD ref={hudRef} selectedDate={selectedDate} setSelectedDate={setSelectedDate} choresByDate={choresByDate} isExpanded={isCalExpanded} setIsExpanded={setIsCalExpanded} calDate={calDate} setCalDate={setCalDate} calMode={calMode} setCalMode={setCalMode} />
 
         {/* Sort / Filter bar */}
