@@ -12,7 +12,7 @@ The platform tradeoff is **iOS 16.4 minimum**, up from 15.1. Node 22.13+ is requ
 
 ## Compatibility work
 
-- Aligned Expo modules, RN native libraries, React renderer, Jest, Babel and TypeScript; removed obsolete unused test dependencies.
+- Aligned Expo modules, RN native libraries, React renderer, Jest, Babel and TypeScript; removed obsolete unused test dependencies. Explicit Expo ambient types make clean-checkout type checking independent of ignored generated declaration files.
 - Migrated navigation imports to Expo Router's bundled navigation exports; restored Metro package-export resolution.
 - Updated Worklets/Reanimated Babel configuration and the official test mocks. Removed old empty Expo mocks that broke the new runtime's fetch integration.
 - Updated removed `StyleSheet.absoluteFillObject` references, color-scheme normalization, and SF Symbols typing.
