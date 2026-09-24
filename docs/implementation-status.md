@@ -2,11 +2,13 @@
 
 ## Current checkpoint — September 23, 2026
 
-The [SDK 57 upgrade](sdk-57-upgrade.md) supersedes the earlier SDK 54 runtime evidence. Use [iPhone + Expo Go over Wi-Fi](iphone-expo-go.md) for the no-cable preview. React Native is now 0.86.3, React 19.2.3, and minimum iOS is 16.4. Core behavior is preserved; paid checkout remains disabled in Expo Go.
+The [SDK 57 upgrade](sdk-57-upgrade.md) remains the runtime baseline. React Native is 0.86.3, React 19.2.3, and minimum iOS is 16.4. Use [iPhone + Expo Go over Wi-Fi](iphone-expo-go.md) for the no-cable preview.
 
-See [Native implementation and release-gate handoff](product/HomeHuddle-Native-Implementation-Handoff-2026-09-23.md) for the current evidence: five-tab production UI, shared interaction/theme improvements, recurring chores, disabled-by-default server-verified billing, 60 app tests, 76 database assertions, successful native PostgreSQL and iOS simulator-target compilation. [Run on iPhone Simulator](iphone-simulator.md) provides the streamlined Mac command and the missing-Simulator.app prerequisite.
+The local `main` implementation now restores the owner's authored Home, Chores, Market, and Wallet screens and four-tab navigation from original commit `dcf30b3`, while retaining the newer SDK 57 shell and backend modules. TypeScript, 62 app tests, 76 isolated database assertions, whole-repo lint (0 errors; 798 warnings), production lint, tracked-source hygiene, and iOS/Android/web JavaScript exports passed for this checkpoint. This is source/build evidence, not device or visual acceptance.
 
-The owner confirms App Store Connect, Google Play Console and RevenueCat are not set up. No paid checkout or app-store release is enabled. The full design backlog is **not** complete: offline commands, push delivery, media lifecycle, device/visual/human qualification and the listed commercial/operations gates remain.
+The restored screens are a **UI baseline, not a production-ready integration**: chore, market, and wallet flows still use prototype-local/sample state and are not yet connected to the persisted household commands. Do not use these restored screens for consequential real-household changes until that integration is complete. The next implementation slice is to connect the authored Chores experience to the existing server-authoritative chore/routine API, then integrate Home, Market, and Wallet screen-by-screen while preserving their authored interaction design. The 798 lint warnings remain visible; the original screens are not represented as warning-free.
+
+App Store Connect, Google Play Console, and RevenueCat are not set up. Paid checkout and app-store release remain disabled. Offline commands, push delivery, media lifecycle, device/visual/human qualification, and commercial/operations gates remain open. See [Run on iPhone Simulator](iphone-simulator.md) for the simulator prerequisite and Mac instructions.
 
 The remainder of this file is preserved **historical September 15 evidence**, not current pass/fail status.
 
