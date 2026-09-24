@@ -22,7 +22,7 @@ Never push history first and assume deleting files later removes secrets. Never 
 
 ## Ongoing workflow
 
-The September 23 recovery commit `20b6528` mistakenly restored the March 8 snapshot `dcf30b3` and called it the latest authored UI. The owner's Home and Chores screens continued evolving through April 30 commit `c098688`; later full versions were retained in `features/demo/screens/`. The September 24 correction routes Home and Chores back to those preserved versions. Treat `features/demo/screens/` as retained authored product UI, not disposable demos. Improve these screens in place, preserve Market/Wallet's persisted implementation, and do not publish the archived history, which includes historical environment files.
+The September 23 recovery commit `20b6528` mistakenly restored the March 8 snapshot `dcf30b3` and called it the latest authored UI. The latest complete project tree immediately before that restore is `4ddb6ac`; its full screens were retained in `features/demo/screens/`, with Home/Chores source last updated for SDK 57 in `3f77db2`. April 30 `c098688` is an earlier major feature snapshot, not the latest preserved tree. The September 24 correction routes Home and Chores to the later preserved versions. Treat `features/demo/screens/` as retained authored product UI, not disposable demos. Improve these screens in place, preserve Market/Wallet's persisted implementation, and do not publish the archived history, which includes historical environment files.
 
 - Short-lived feature/fix/implementation branches; focused follow-up PRs.
 - Required checks: types, tests, SQL regressions, lint, Expo alignment, web compile; native/service integration for release candidates.
