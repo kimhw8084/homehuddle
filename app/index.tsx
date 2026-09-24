@@ -283,7 +283,7 @@ export default function AuthRootView() {
   const { setDevBypass, setSession } = useAuthStore();
   
   // State
-  const [themeOverride, setThemeOverride] = useState<ColorSchemeName>(null);
+  const [themeOverride, setThemeOverride] = useState<ColorSchemeName | null>(null);
   const activeColorScheme = themeOverride || systemColorScheme;
   const isDark = activeColorScheme === 'dark';
 
@@ -892,14 +892,14 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   backgroundLayer: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     width: width + 100,
     height: height + 100,
     left: -50,
     top: -50,
   },
   gradientOverlay: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
   },
   headerContainer: {
     flex: 1,
@@ -937,7 +937,7 @@ const styles = StyleSheet.create({
     height: '52%',
   },
   keyboardAvoider: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
   },
   blurContainer: {
     flex: 1,

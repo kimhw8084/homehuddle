@@ -1,4 +1,5 @@
 import { Platform } from 'react-native';
+import Constants, { ExecutionEnvironment } from 'expo-constants';
 import type { PurchasesPackage } from 'react-native-purchases';
 import { supabase } from './supabase';
 import { useAuthStore } from '../store/authStore';
@@ -7,7 +8,7 @@ export const PRO_ENTITLEMENT = 'homehuddle_pro';
 const apiKey = Platform.select({ ios: process.env.EXPO_PUBLIC_REVENUECAT_IOS_API_KEY, android: process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_API_KEY });
 const secureURL = (value?: string) => value?.startsWith('https://') ? value : undefined;
 export const billingLinks = { terms: secureURL(process.env.EXPO_PUBLIC_TERMS_URL), privacy: secureURL(process.env.EXPO_PUBLIC_PRIVACY_URL) };
-export const billingAvailable = Boolean(process.env.EXPO_PUBLIC_BILLING_ENABLED === 'true' && apiKey && billingLinks.terms && billingLinks.privacy && Platform.OS !== 'web');
+export const billingAvailable = Boolean(process.env.EXPO_PUBLIC_BILLING_ENABLED === 'true' && apiKey && billingLinks.terms && billingLinks.privacy && Platform.OS !== 'web' && Constants.executionEnvironment !== ExecutionEnvironment.StoreClient);
 export type BillingStatus = { active: boolean; expiresAt: string | null; isSponsor: boolean; hasSponsor: boolean };
 let configuredUser: string | null = null;
 let serial: Promise<unknown> = Promise.resolve();
@@ -24,6 +25,7 @@ function withBilling<T>(userId: string, action: (purchases: PurchasesSdk) => Pro
     if (!billingAvailable || !apiKey) throw new Error('Subscriptions are not enabled in this build. All free features remain available.');
     assertAccount(userId);
     const purchases = await loadPurchases();
+    assertAccount(userId);
     if (!configuredUser) { purchases.configure({ apiKey, appUserID: userId }); configuredUser = userId; }
     else if (configuredUser !== userId) { await purchases.logIn(userId); configuredUser = userId; }
     assertAccount(userId);

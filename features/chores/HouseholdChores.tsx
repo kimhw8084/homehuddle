@@ -22,7 +22,7 @@ export default function HouseholdChores({ embedded = false }: { embedded?: boole
   const captureScope = useOperationScope();
   const sync = useHouseholdSync();
   const { reduceMotion } = useAccessibilityPreferences();
-  const baseline = useRef('');
+  const [baseline, setBaseline] = useState('');
   const state = useHuddleStore();
   const current = state.familyMembers.find(member => member.id === state.currentMemberId);
   const adult = current?.householdRole === 'owner' || current?.householdRole === 'parent';
@@ -48,7 +48,7 @@ export default function HouseholdChores({ embedded = false }: { embedded?: boole
   }
   function edit(chore?: Chore) {
     const next = chore ? { id: chore.id, title: chore.title, points: String(chore.points), assigneeId: chore.assigned_to ?? null, date: chore.dueDate, notes: chore.notes ?? '', photo: chore.photoRequired, version: chore.version ?? 1 } : empty();
-    baseline.current = JSON.stringify(next); setDraft(next);
+    setBaseline(JSON.stringify(next)); setDraft(next);
     setError(''); setComplete(null);
     scroll.current?.scrollTo({ y: 0, animated: !reduceMotion });
   }
@@ -76,7 +76,7 @@ export default function HouseholdChores({ embedded = false }: { embedded?: boole
       {adult && <Action label="Add chore" disabled={busy} onPress={() => edit()} />}
       {!!error && !draft && !complete && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
       {!!notice && <Text accessibilityLiveRegion="polite" style={s.muted}>{notice}</Text>}
-      {draft && <Editor title={draft.version ? 'Edit chore' : 'A new chore'} busy={busy} dirty={JSON.stringify(draft) !== baseline.current} onClose={() => setDraft(null)} closeLabel="Cancel chore edit"><Panel>
+      {draft && <Editor title={draft.version ? 'Edit chore' : 'A new chore'} busy={busy} dirty={JSON.stringify(draft) !== baseline} onClose={() => setDraft(null)} closeLabel="Cancel chore edit"><Panel>
         {!!error && !error.startsWith('Enter a valid date') && !error.startsWith('Points must') && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
         <Field label="What needs doing?" required value={draft.title} maxLength={120} editable={!busy} onChangeText={title => setDraft(old => old ? { ...old, title } : null)} />
         <View style={s.row}><View style={{ flex: 1, minWidth: 150 }}><Field label="Due date (YYYY-MM-DD)" error={error.startsWith('Enter a valid date') ? error : undefined} value={draft.date} maxLength={10} editable={!busy} onChangeText={date => setDraft(old => old ? { ...old, date } : null)} /></View><View style={{ flex: 1, minWidth: 120 }}><Field label="Points" error={error.startsWith('Points must') ? error : undefined} value={draft.points} keyboardType="number-pad" editable={!busy} onChangeText={points => setDraft(old => old ? { ...old, points } : null)} /></View></View>

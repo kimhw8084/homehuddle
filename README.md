@@ -4,7 +4,7 @@ A shared household workspace for chores, dinner planning, shopping and earned re
 
 **Status: engineering preview, not production certification.** The signed-in core and recurring routines are persisted and tested. iOS native compilation passes. Subscription code is implemented but checkout is disabled pending provider setup and lifecycle qualification; notification delivery, offline writes and native visual/release validation remain incomplete. Read [the September 23 implementation handoff](docs/product/HomeHuddle-Native-Implementation-Handoff-2026-09-23.md) before making product promises.
 
-For the shortest Mac launch path, use [Run on iPhone Simulator](docs/iphone-simulator.md): `npm run ios:simulator`. The full Xcode/Simulator app is required; command-line tools alone are insufficient.
+**Runtime: Expo SDK 57 / React Native 0.86.3 / React 19.2.3.** For the shortest phone launch path, use [iPhone + Expo Go, no cable](docs/iphone-expo-go.md): `npm run start:go -- --clear`, then scan the QR code. Native iOS now requires iOS 16.4 or later. For a compiled development build, [Run on iPhone Simulator](docs/iphone-simulator.md) remains available; the full Xcode/Simulator app is required for interactive use.
 
 ## Local development
 
@@ -12,7 +12,7 @@ Use Node 22 (see `.nvmrc`). Run `npm ci`, then create an untracked `.env` using 
 
 ```sh
 npm run check:env
-npm start
+npm run start:go
 ```
 
 The configured hosted project has the new migrations applied. Other environments must follow [operations](docs/operations.md). Never run the historical reset against existing hosted data. Provider flags alone do not configure OAuth; native sign-in/push require a development build and provider setup.
@@ -66,6 +66,8 @@ docs/                      Architecture, operations, implementation evidence
 - [Deployment and recovery](docs/operations.md)
 - [Implementation status and remaining work](docs/implementation-status.md)
 - [iPhone Simulator launch and walkthrough](docs/iphone-simulator.md)
+- [iPhone Expo Go launch without a cable](docs/iphone-expo-go.md)
+- [SDK 57 upgrade evidence and limitations](docs/sdk-57-upgrade.md)
 - [Subscription setup and release gates](docs/billing-setup.md)
 - [Git and publication workflow](docs/git-workflow.md)
 

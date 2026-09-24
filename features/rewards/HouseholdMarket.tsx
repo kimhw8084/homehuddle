@@ -15,7 +15,7 @@ type Draft = { id?: string; name: string; cost: string; description: string };
 export default function HouseholdMarket() {
   const s = usePlanningStyles();
   const captureScope = useOperationScope();
-  const baseline = useRef('');
+  const [baseline, setBaseline] = useState('');
   const router = useRouter();
   const state = useHuddleStore();
   const userId = useAuthStore(value => value.user?.id);
@@ -29,7 +29,7 @@ export default function HouseholdMarket() {
   const lock = useRef(false);
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
-  function edit(value: Draft) { baseline.current = JSON.stringify(value); setDraft(value); setError(''); }
+  function edit(value: Draft) { setBaseline(JSON.stringify(value)); setDraft(value); setError(''); }
   async function run(action: (current: () => boolean) => Promise<string>) {
     if (lock.current || !state.householdId) return;
     const current = captureScope();
@@ -43,7 +43,7 @@ export default function HouseholdMarket() {
     <Panel><Text style={s.muted}>Your available points</Text><Text style={s.title}>{balance}</Text><Action label="Your wallet and activity" secondary onPress={() => router.push('/(app)/(tabs)/wallet')} /></Panel>
     {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}{!!notice && <Text accessibilityLiveRegion="polite" style={s.muted}>{notice}</Text>}
     {adult && <Action label="Add a reward" disabled={busy} onPress={() => edit({ name: '', cost: '50', description: '' })} />}
-    {draft && <Editor title={draft.id ? 'Edit reward' : 'Create a reward'} busy={busy} dirty={JSON.stringify(draft) !== baseline.current} onClose={() => setDraft(null)} closeLabel="Cancel reward edit"><Panel>
+    {draft && <Editor title={draft.id ? 'Edit reward' : 'Create a reward'} busy={busy} dirty={JSON.stringify(draft) !== baseline} onClose={() => setDraft(null)} closeLabel="Cancel reward edit"><Panel>
       {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
       <Field label="Reward name" required value={draft.name} maxLength={100} editable={!busy} onChangeText={name => setDraft(old => old ? { ...old, name } : null)} />
       <Field label="Cost in points" required error={error.startsWith('Cost must') ? error : undefined} value={draft.cost} keyboardType="number-pad" editable={!busy} onChangeText={cost => setDraft(old => old ? { ...old, cost } : null)} />

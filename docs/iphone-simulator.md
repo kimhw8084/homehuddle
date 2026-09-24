@@ -1,5 +1,7 @@
 # Run HomeHuddle on your Mac’s iPhone Simulator
 
+For your actual iPhone, the simpler path is [Expo Go over Wi-Fi](iphone-expo-go.md). No physical connection or simulator is needed. This guide is for a separate native development build, now using SDK 57.
+
 ## One-time prerequisite
 
 Install and open the **full Xcode app**, not only Command Line Tools. In Xcode:
@@ -54,8 +56,8 @@ Do not turn on paid checkout during this walkthrough. Remote push notifications,
 - **Simulator.app missing:** restore the full Xcode app and select its tools as described above. The project script prints the exact missing path. Do not change app source to bypass this prerequisite.
 - **No matching iPhone:** install a runtime and create a device in Xcode; rerun without an explicit device name.
 - **CocoaPods missing:** install CocoaPods for your Mac’s Ruby setup, then rerun. CocoaPods is already available in the validated environment.
-- **Deployment target below 15:** the committed prebuild plugin raises third-party pod targets to Expo 54’s iOS 15.1 floor. If using old generated native files, run `rtk proxy npx expo prebuild --platform ios` from the app directory, then rebuild. Do not use `--clean` on hand-edited native projects.
+- **Stale native files after upgrading:** SDK 57 requires iOS 16.4 and a rebuilt development client. Back up any hand-edited native directory before regenerating. SDK 57 `expo prebuild` cleans by default; use `--no-clean` only when deliberately preserving a customized native project. This repository generates native configuration from `app.json` and `plugins/`; the current Mac's old SDK 54 directory was preserved before regeneration.
 - **Unable to load household:** verify `.env`, internet access and the target database migrations. Do not reset the hosted database.
 - **Changes seem to use old screens:** exit developer bypass and sign in to an actual test account. Production has five destinations: Today, Plan, Shop, Rewards, Household.
 
-Reference: [Expo’s local development builds](https://docs.expo.dev/guides/local-app-development/) and [SDK 54 platform requirements](https://docs.expo.dev/versions/v54.0.0/).
+Reference: [Expo’s local development builds](https://docs.expo.dev/guides/local-app-development/) and [SDK 57 release notes](https://expo.dev/changelog/sdk-57).

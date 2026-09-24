@@ -29,7 +29,7 @@ export default function HouseholdRoutines() {
   const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState(false);
   const lock = useRef(false);
-  const baseline = useRef('');
+  const [baseline, setBaseline] = useState('');
   async function run(action: () => Promise<void>, message: string) {
     if (lock.current) return;
     const scope = context.key;
@@ -46,7 +46,7 @@ export default function HouseholdRoutines() {
   return <ScrollView contentContainerStyle={s.content} keyboardShouldPersistTaps="handled">
     <Panel><Text style={s.heading}>Plan once. Repeat reliably.</Text><Text style={s.muted}>Daily and weekly routines are free. Each date becomes its own chore with its own approval and points.</Text>
       <Text style={s.muted}>Opening HomeHuddle prepares the next 14 days. Existing chores stay when you pause; archive a chore to skip just that date. No automatic backfill of missed dates.</Text>
-      {adult && <Action label="Create routine" onPress={() => { const next = newDraft(); baseline.current = JSON.stringify(next); setDraft(next); setPoints('10'); setError(''); }} />}
+      {adult && <Action label="Create routine" onPress={() => { const next = newDraft(); setBaseline(JSON.stringify(next)); setDraft(next); setPoints('10'); setError(''); }} />}
     </Panel>
     <SyncStatus {...shared} onRefresh={shared.refresh} />
     {!!error && !draft && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
@@ -60,7 +60,7 @@ export default function HouseholdRoutines() {
       {(routine.interval_count > 1 || routine.assignee_ids.length > 1) && plan.data && !plan.data.active && <Text style={s.muted}>Plus has expired. New occurrences are paused; existing chores remain available.</Text>}
       {adult && <Action label={routine.active ? 'Pause routine' : 'Resume routine'} accessibilityLabel={`${routine.active ? 'Pause' : 'Resume'} ${routine.title}`} secondary busy={busy} onPress={() => { void run(() => routinesApi.setActive(routine, !routine.active), routine.active ? 'Routine paused. Existing chores are unchanged.' : 'Routine resumed. The next 14 days are prepared.'); }} />}
     </Panel>)}
-    {draft && <Editor title="Create a routine" busy={busy} dirty={JSON.stringify(draft) !== baseline.current || points !== '10'} onClose={() => setDraft(null)}>
+    {draft && <Editor title="Create a routine" busy={busy} dirty={JSON.stringify(draft) !== baseline || points !== '10'} onClose={() => setDraft(null)}>
       {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
       <Field label="Chore title" required value={draft.title} maxLength={120} editable={!busy} onChangeText={title => setDraft({ ...draft, title })} />
       <Text style={s.text}>Repeat</Text><View accessibilityRole="radiogroup" accessibilityLabel="Repeat frequency" style={s.row}>{(['daily', 'weekly'] as const).map(frequency => <Action key={frequency} label={frequency === 'daily' ? 'Every day' : 'Every week'} selected={draft.frequency === frequency} secondary={draft.frequency !== frequency} disabled={busy} onPress={() => setDraft({ ...draft, frequency })} />)}</View>

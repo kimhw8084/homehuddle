@@ -14,6 +14,8 @@ export function useSharedData<T>(tables: readonly string[], load: (householdId: 
     scope: scopeKey, loader: load, loading: true, refreshing: false, isOffline: false,
   });
   useEffect(() => {
+    // A new external subscription must start without the preceding scope's data/error.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setResult({ scope: scopeKey, loader: load, loading: true, refreshing: false, isOffline: false });
     if (!householdId || !userId) return;
     let active = true;

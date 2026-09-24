@@ -383,7 +383,7 @@ const WidgetWrapper = ({
             </View>
 
             {isEditing && (
-                <Animated.View entering={FadeInDown.duration(200)} exiting={FadeOut.duration(200)} style={{ ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(255,255,255,0.85)', borderRadius: 12, borderWidth: 2, borderColor: '#6366F1', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
+                <Animated.View entering={FadeInDown.duration(200)} exiting={FadeOut.duration(200)} style={{ ...StyleSheet.absoluteFill, backgroundColor: 'rgba(255,255,255,0.85)', borderRadius: 12, borderWidth: 2, borderColor: '#6366F1', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
                     <TouchableOpacity onPress={onRemove} style={{ position: 'absolute', top: -8, right: -8, width: 28, height: 28, borderRadius: 14, backgroundColor: '#E11D48', alignItems: 'center', justifyContent: 'center', ...GOLDEN_SHADOW }}>
                         <X size={16} color="white" strokeWidth={3} />
                     </TouchableOpacity>

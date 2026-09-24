@@ -2584,7 +2584,7 @@ const QuickAddChorePanel = ({
   return (
     <Modal visible transparent animationType="none" statusBarTranslucent onRequestClose={safeClose}>
       <View style={{ flex: 1 }}>
-      <Pressable onPress={safeClose} style={{ ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(15,23,42,0.6)' }} />
+      <Pressable onPress={safeClose} style={{ ...StyleSheet.absoluteFill, backgroundColor: 'rgba(15,23,42,0.6)' }} />
       <Animated.View style={[panelStyle, { position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: 'white', borderTopLeftRadius: 32, borderTopRightRadius: 32, height: '92%' }]}>
         {/* Drag handle */}
         <GestureDetector gesture={dragGesture}>
@@ -6688,7 +6688,7 @@ const SortFilterSheet = ({
   return (
     <Modal visible animationType="none" transparent statusBarTranslucent>
       <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
-        <Pressable onPress={onClose} style={{ ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(15,23,42,0.5)' }} />
+        <Pressable onPress={onClose} style={{ ...StyleSheet.absoluteFill, backgroundColor: 'rgba(15,23,42,0.5)' }} />
         <GestureDetector gesture={dragGesture}>
           <Animated.View style={[sheetStyle, {
             position: 'absolute', bottom: 0, left: 0, right: 0,

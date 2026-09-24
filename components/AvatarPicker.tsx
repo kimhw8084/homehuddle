@@ -410,7 +410,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
   },
   backdrop: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     backgroundColor: 'rgba(0,0,0,0.45)',
   },
   menu: {

@@ -27,8 +27,8 @@ export function MealPlanner() {
   const lock = useRef(false);
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
-  const mealBaseline = useRef('');
-  const recipeBaseline = useRef('');
+  const [mealBaseline, setMealBaseline] = useState('');
+  const [recipeBaseline, setRecipeBaseline] = useState('');
   const recipes = shared.data?.recipes ?? [];
   const plans = shared.data?.plans ?? [];
   const visibleRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(search.trim().toLowerCase())).slice(0, 30);
@@ -58,11 +58,11 @@ export function MealPlanner() {
         {plan?.cook_id && <Text style={s.muted}>Cooking: {members.find(member => member.id === plan.cook_id)?.name ?? 'Former member'}</Text>}
         <Action label={plan ? 'Change dinner' : 'Plan dinner'} secondary disabled={busy || shared.loading} onPress={() => {
           const next = plan ? { ...plan } : { meal_date: date, recipe_id: null, title: '', cook_id: null, version: 0 };
-          mealBaseline.current = JSON.stringify(next); setMealDraft(next); setError('');
+          setMealBaseline(JSON.stringify(next)); setMealDraft(next); setError('');
         }} />
       </Panel>;
     })}
-    {mealDraft && <Editor title={`Dinner for ${mealDraft.meal_date}`} busy={busy} dirty={JSON.stringify(mealDraft) !== mealBaseline.current} closeLabel="Cancel dinner edit" onClose={() => setMealDraft(null)}><Panel>
+    {mealDraft && <Editor title={`Dinner for ${mealDraft.meal_date}`} busy={busy} dirty={JSON.stringify(mealDraft) !== mealBaseline} closeLabel="Cancel dinner edit" onClose={() => setMealDraft(null)}><Panel>
       {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
       <Field label="Dinner plan" required value={mealDraft.title} maxLength={120} editable={!busy} onChangeText={title => setMealDraft(old => old ? { ...old, title, recipe_id: null } : null)} placeholder="Choose a recipe below, or type Takeout…" />
       <Field label="Find a recipe" value={search} onChangeText={setSearch} editable={!busy} />
@@ -86,11 +86,11 @@ export function MealPlanner() {
       <Field label="Search saved recipes" value={search} onChangeText={setSearch} />
       {shared.data && !recipes.length && <Text style={s.muted}>Save a household favorite once. Reuse it in any week.</Text>}
       {!!recipes.length && !visibleRecipes.length && <Text style={s.muted}>No matching recipes. Clear your search to see your recipe book.</Text>}
-      {visibleRecipes.map(recipe => <View key={recipe.id} style={s.row}><Text style={[s.text, { flex: 1 }]}>{recipe.name} · {recipe.ingredients.length} ingredients</Text><Action label={`Edit ${recipe.name}`} secondary disabled={busy} onPress={() => { const lines = recipe.ingredients.join('\n'); recipeBaseline.current = JSON.stringify([recipe, lines]); setRecipeDraft(recipe); setIngredients(lines); setError(''); }} /></View>)}
+      {visibleRecipes.map(recipe => <View key={recipe.id} style={s.row}><Text style={[s.text, { flex: 1 }]}>{recipe.name} · {recipe.ingredients.length} ingredients</Text><Action label={`Edit ${recipe.name}`} secondary disabled={busy} onPress={() => { const lines = recipe.ingredients.join('\n'); setRecipeBaseline(JSON.stringify([recipe, lines])); setRecipeDraft(recipe); setIngredients(lines); setError(''); }} /></View>)}
       {recipes.length > 30 && <Text style={s.muted}>Showing up to 30 matching recipes. Search to narrow the list.</Text>}
-      <Action label="Add a recipe" secondary disabled={busy} onPress={() => { const next = { id: randomUUID(), name: '', ingredients: [], instructions: '', version: 0 }; recipeBaseline.current = JSON.stringify([next, '']); setRecipeDraft(next); setIngredients(''); setError(''); }} />
+      <Action label="Add a recipe" secondary disabled={busy} onPress={() => { const next = { id: randomUUID(), name: '', ingredients: [], instructions: '', version: 0 }; setRecipeBaseline(JSON.stringify([next, ''])); setRecipeDraft(next); setIngredients(''); setError(''); }} />
     </Panel>
-    {recipeDraft && <Editor title={recipeDraft.version ? 'Edit recipe' : 'Save a favorite'} busy={busy} dirty={JSON.stringify([recipeDraft, ingredients]) !== recipeBaseline.current} closeLabel="Cancel recipe edit" onClose={() => setRecipeDraft(null)}><Panel>
+    {recipeDraft && <Editor title={recipeDraft.version ? 'Edit recipe' : 'Save a favorite'} busy={busy} dirty={JSON.stringify([recipeDraft, ingredients]) !== recipeBaseline} closeLabel="Cancel recipe edit" onClose={() => setRecipeDraft(null)}><Panel>
       {!!error && <Text accessibilityRole="alert" style={s.error}>{error}</Text>}
       <Field label="Recipe name" required value={recipeDraft.name} maxLength={120} editable={!busy} onChangeText={name => setRecipeDraft(old => old ? { ...old, name } : null)} />
       <Field label="Ingredients (one per line, include amounts)" value={ingredients} onChangeText={setIngredients} multiline maxLength={16100} editable={!busy} style={{ minHeight: 120 }} placeholder={'2 tomatoes\n500 g pasta\nOlive oil'} />

@@ -3079,7 +3079,7 @@ const WeeklyMenuModal = ({ visible, onClose, weekMenu, updateWeekMenu, recipes, 
   return (
     <Modal visible transparent animationType="none" statusBarTranslucent onRequestClose={close}>
       <View style={{ flex: 1 }}>
-        <Pressable style={{ ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.45)' }} onPress={close} />
+        <Pressable style={{ ...StyleSheet.absoluteFill, backgroundColor: 'rgba(0,0,0,0.45)' }} onPress={close} />
         <Animated.View style={[panelStyle, { position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: '#fff', borderTopLeftRadius: 28, borderTopRightRadius: 28, paddingBottom: insets.bottom + 16, maxHeight: '88%' }]}>
           {/* Drag handle */}
           <View style={{ width: 36, height: 4, backgroundColor: '#e2e8f0', borderRadius: 2, alignSelf: 'center', marginTop: 12, marginBottom: 4 }} />

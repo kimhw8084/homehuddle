@@ -1,5 +1,7 @@
 # Product documents
 
+Runtime update: [SDK 57 upgrade evidence](../sdk-57-upgrade.md) and [iPhone Expo Go instructions, no cable](../iphone-expo-go.md). These supersede SDK 54-specific setup details in the historical handoff below.
+
 Current implementation receipt: [September 23 native implementation handoff](HomeHuddle-Native-Implementation-Handoff-2026-09-23.md). It distinguishes shipped source/database changes, measured checks, disabled commercial integration and remaining implementation/qualification gates. [iPhone Simulator instructions](../iphone-simulator.md) are separate so the run path stays short.
 
 The two dated design/backlog files are now versioned baseline specifications. Edit future revisions here, then export matching dated copies to iCloud Downloads; avoid independently editing competing specifications.

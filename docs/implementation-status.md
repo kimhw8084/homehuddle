@@ -2,6 +2,8 @@
 
 ## Current checkpoint — September 23, 2026
 
+The [SDK 57 upgrade](sdk-57-upgrade.md) supersedes the earlier SDK 54 runtime evidence. Use [iPhone + Expo Go over Wi-Fi](iphone-expo-go.md) for the no-cable preview. React Native is now 0.86.3, React 19.2.3, and minimum iOS is 16.4. Core behavior is preserved; paid checkout remains disabled in Expo Go.
+
 See [Native implementation and release-gate handoff](product/HomeHuddle-Native-Implementation-Handoff-2026-09-23.md) for the current evidence: five-tab production UI, shared interaction/theme improvements, recurring chores, disabled-by-default server-verified billing, 60 app tests, 76 database assertions, successful native PostgreSQL and iOS simulator-target compilation. [Run on iPhone Simulator](iphone-simulator.md) provides the streamlined Mac command and the missing-Simulator.app prerequisite.
 
 The owner confirms App Store Connect, Google Play Console and RevenueCat are not set up. No paid checkout or app-store release is enabled. The full design backlog is **not** complete: offline commands, push delivery, media lifecycle, device/visual/human qualification and the listed commercial/operations gates remain.

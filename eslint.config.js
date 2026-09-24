@@ -5,7 +5,26 @@ const expoConfig = require('eslint-config-expo/flat');
 module.exports = defineConfig([
   expoConfig,
   {
-    ignores: ['dist/*'],
+    ignores: ['dist/**', 'dist-native-check/**', 'ios/**', 'android/**'],
+  },
+  {
+    // SDK 55+ adds Compiler diagnostics. Compiler remains disabled in app.json.
+    // Keep this existing legacy debt visible without weakening the strict core gate.
+    files: [
+      'app/(app)/profile.tsx', 'app/(app)/settings/{about,help,household,invite,notifications}.tsx',
+      'app/_layout.tsx', 'app/index.tsx', 'app/onboarding/{accept-invite,done}.tsx',
+      'components/ChoreModals.tsx', 'components/WeeklyMenuSection.tsx',
+      'components/games/RandomAssignmentGames.tsx', 'features/demo/**/*.tsx',
+      'hooks/use-color-scheme.web.ts', 'hooks/use-household-bootstrap.ts', 'hooks/use-operation-scope.ts',
+    ],
+    rules: {
+      'react-hooks/static-components': 'warn',
+      'react-hooks/set-state-in-effect': 'warn',
+      'react-hooks/purity': 'warn',
+      'react-hooks/refs': 'warn',
+      'react-hooks/immutability': 'warn',
+      'react-hooks/preserve-manual-memoization': 'warn',
+    },
   },
   {
     files: ['supabase/functions/**/*.ts'],

@@ -1,11 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
-import path from 'path';
-
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
-
-const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY!;
 // Note: Normally we'd use the Service Role key here to bypass RLS, but since we don't have it,
 // we'll output pure SQL for the user to run directly in their Supabase SQL editor.
 

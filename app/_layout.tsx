@@ -10,7 +10,7 @@ import * as Linking from 'expo-linking';
 import { consumeAuthRedirect, readableAuthError } from '../lib/auth';
 import { AppErrorBoundary } from '../components/AppErrorBoundary';
 import { householdApi } from '../lib/household';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router/react-navigation';
 import { StatusBar } from 'expo-status-bar';
 import { usePlanningTheme } from '../components/ui/PlanningUI';
 

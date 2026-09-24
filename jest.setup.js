@@ -1,8 +1,8 @@
 /* global jest */
 
-jest.mock('expo', () => ({
-  Constants: {},
-}));
+jest.mock('react-native-worklets', () => require('react-native-worklets/src/mock'));
+jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'));
+
 jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest/async-storage-mock')
 );
@@ -25,13 +25,3 @@ jest.mock('react-native-safe-area-context', () => ({
   SafeAreaView: 'SafeAreaView',
   useSafeAreaInsets: () => ({ top: 0, right: 0, bottom: 0, left: 0 }),
 }));
-jest.mock('expo-modules-core', () => {
-  const actual = jest.requireActual('expo-modules-core');
-  return {
-    ...actual,
-    NativeModulesProxy: {},
-    requireNativeModule: jest.fn(),
-    requireNativeViewManager: jest.fn(),
-    EventEmitter: jest.fn(),
-  };
-});

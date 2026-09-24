@@ -353,7 +353,7 @@ const styles = StyleSheet.create({
   ctaText: { color: '#fff', fontSize: 16, fontWeight: '800' },
 
   // Modal
-  modalBackdrop: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.45)' },
+  modalBackdrop: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(0,0,0,0.45)' },
   modalWrap: { flex: 1, justifyContent: 'flex-end' },
   modalSheet: {
     backgroundColor: C.card,
