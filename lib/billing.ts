@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import Purchases, { PurchasesPackage } from 'react-native-purchases';
+import type { PurchasesPackage } from 'react-native-purchases';
 import { supabase } from './supabase';
 import { useAuthStore } from '../store/authStore';
 
@@ -11,18 +11,23 @@ export const billingAvailable = Boolean(process.env.EXPO_PUBLIC_BILLING_ENABLED 
 export type BillingStatus = { active: boolean; expiresAt: string | null; isSponsor: boolean; hasSponsor: boolean };
 let configuredUser: string | null = null;
 let serial: Promise<unknown> = Promise.resolve();
+type PurchasesSdk = typeof import('react-native-purchases').default;
+async function loadPurchases(): Promise<PurchasesSdk> {
+  return (await import('react-native-purchases')).default;
+}
 function assertAccount(userId: string) {
   if (useAuthStore.getState().user?.id !== userId) throw new Error('Your account changed. Reopen subscription settings.');
 }
 // SDK identity changes and purchase sheets cannot interleave across accounts.
-function withBilling<T>(userId: string, action: () => Promise<T>): Promise<T> {
+function withBilling<T>(userId: string, action: (purchases: PurchasesSdk) => Promise<T>): Promise<T> {
   const work = serial.catch(() => undefined).then(async () => {
     if (!billingAvailable || !apiKey) throw new Error('Subscriptions are not enabled in this build. All free features remain available.');
     assertAccount(userId);
-    if (!configuredUser) { Purchases.configure({ apiKey, appUserID: userId }); configuredUser = userId; }
-    else if (configuredUser !== userId) { await Purchases.logIn(userId); configuredUser = userId; }
+    const purchases = await loadPurchases();
+    if (!configuredUser) { purchases.configure({ apiKey, appUserID: userId }); configuredUser = userId; }
+    else if (configuredUser !== userId) { await purchases.logIn(userId); configuredUser = userId; }
     assertAccount(userId);
-    return action();
+    return action(purchases);
   });
   serial = work;
   return work;
@@ -33,7 +38,7 @@ export async function getHouseholdBillingStatus(householdId: string): Promise<Bi
   return data;
 }
 export function getBillingPackages(userId: string) {
-  return withBilling(userId, async () => (await Purchases.getOfferings()).current?.availablePackages.filter(item => Boolean(item.product.subscriptionPeriod)) ?? []);
+  return withBilling(userId, async purchases => (await purchases.getOfferings()).current?.availablePackages.filter(item => Boolean(item.product.subscriptionPeriod)) ?? []);
 }
 export async function reconcileBilling(userId: string, householdId: string) {
   assertAccount(userId);
@@ -47,16 +52,16 @@ async function claim(householdId: string) {
   if (error) throw new Error(error.message);
 }
 export function purchaseHouseholdPlan(userId: string, householdId: string, offer: PurchasesPackage) {
-  return withBilling(userId, async () => {
+  return withBilling(userId, async purchases => {
     await claim(householdId); assertAccount(userId);
-    await Purchases.purchasePackage(offer);
+    await purchases.purchasePackage(offer);
     return reconcileBilling(userId, householdId);
   });
 }
 export function restoreHouseholdPlan(userId: string, householdId: string) {
-  return withBilling(userId, async () => {
+  return withBilling(userId, async purchases => {
     await claim(householdId); assertAccount(userId);
-    await Purchases.restorePurchases();
+    await purchases.restorePurchases();
     return reconcileBilling(userId, householdId);
   });
 }
