@@ -1,0 +1,143 @@
+{
+  "accepted_at": "2026-09-25T17:03:50Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"pwd && git status --short --branch && git rev-parse HEAD && git rev-parse main && git show -s --format='%H%n%T%n%s' f8ea259d2f52aba1bc3d4aba7a034625fff33fb2 && git branch --list 'codex/homehuddle-ui0-runtime-unblock-v1'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'cat /Users/haewonkim/.codex/RTK.md && cat /Users/haewonkim/.codex/law.md'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rg --files -g 'AGENTS.md' -g 'package.json' -g 'package-lock.json' -g 'app/index.tsx' -g '__tests__/auth-audit.test.tsx' -g 'tailwind.config.js' -g 'tsconfig.json' -g 'jest*' -g '*supabase*' -g '*playwright*' -g '*evidence*' | head -100\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git branch -avv && rtk git log --graph --oneline --decorate --all -15 && rtk git merge-base main f8ea259d2f52aba1bc3d4aba7a034625fff33fb2 && rtk git diff --stat f8ea259d2f52aba1bc3d4aba7a034625fff33fb2..main -- app/index.tsx __tests__/auth-audit.test.tsx tailwind.config.js package.json package-lock.json jest.setup.js'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff -- app/index.tsx __tests__/auth-audit.test.tsx tailwind.config.js package.json package-lock.json jest.setup.js && rtk git status --porcelain=v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git rev-parse main origin/main HEAD && rtk proxy git show -s --format='%H%n%P%n%T%n%s' main && rtk proxy git show -s --format='%H%n%P%n%T%n%s' origin/main && rtk proxy git show -s --format='%H%n%P%n%T%n%s' f8ea259d2f52aba1bc3d4aba7a034625fff33fb2 && rtk proxy git merge-base main f8ea259d2f52aba1bc3d4aba7a034625fff33fb2 && rtk proxy git diff --name-status f8ea259d2f52aba1bc3d4aba7a034625fff33fb2..main\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git diff --name-status f8ea259d2f52aba1bc3d4aba7a034625fff33fb2..origin/main -- app/index.tsx __tests__/auth-audit.test.tsx tailwind.config.js package.json package-lock.json jest.setup.js tsconfig.json && rtk proxy git diff --unified=5 f8ea259d2f52aba1bc3d4aba7a034625fff33fb2..origin/main -- app/index.tsx __tests__/auth-audit.test.tsx tailwind.config.js jest.setup.js'",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.156.1",
+    "configured_model": "gpt-6-luna",
+    "event_count": 20,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 79.2,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 85760,
+      "fresh_input_tokens": 22527,
+      "input_tokens": 108287,
+      "non_reasoning_output_tokens": 1458,
+      "output_tokens": 4865,
+      "reasoning_output_tokens": 3407,
+      "total_processed_tokens": 113152
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-25T17:06:03Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "branch": "codex/homehuddle-ui0-runtime-unblock-v1",
+    "detached_verify": false,
+    "head_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "remote_exact_head": true,
+    "remote_head_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "work_branch": "codex/homehuddle-ui0-runtime-unblock-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-306112f6b6458603c31d72de",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-runtime-unblock-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-runtime-unblock-v1"
+  },
+  "operation": "FIX",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-runtime-unblock-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-25T17:03:50Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 133,
+    "queue_seconds": 0,
+    "total_seconds": 133
+  },
+  "transport": {
+    "bytes": 8121,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 7799,
+    "prompt_sha256": "decf1bd1f94e93d50d2c3cf2e34827d67646b70ad761e8843300582b700b386e",
+    "sha256": "306112f6b6458603c31d72def5e6783dc177162014c93a7573139477fed4f996"
+  }
+}
