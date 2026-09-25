@@ -1,0 +1,364 @@
+{
+  "accepted_at": "2026-09-25T21:23:49Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const{chromium}=require(\\\"/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright\\\");(async()=>{let b=await chromium.launch();let p=await b.newPage({viewport:{width:390,height:844}});await p.goto(\\\"http://127.0.0.1:8083\\\");await p.waitForTimeout(300);let l=p.locator(\\\"[data-testid=logo-trigger]\\\");await l.click();await p.waitForTimeout(80);await l.click();await p.getByText(\\\"Instant Bypass Login\\\",{exact:true}).click();await p.waitForTimeout(700);await p.mouse.click(338,35);await p.waitForTimeout(200);console.log(\\\"profile\\\",p.url());await p.getByText(\\\"Personal Info\\\",{exact:true}).first().click();await p.waitForTimeout(200);console.log(\\\"form\\\",p.url());console.log(await p.locator(\\\"body\\\").evaluate(e=>[...e.querySelectorAll(\\\"button,a,[role=button]\\\")].map(x=>({tag:x.tagName,text:x.innerText,aria:x.getAttribute(\\\"aria-label\\\"),x:x.getBoundingClientRect().x,y:x.getBoundingClientRect().y,w:x.getBoundingClientRect().width,h:x.getBoundingClientRect().height}))));await p.mouse.click(35,32);await p.waitForTimeout(600);console.log(\\\"after xy\\\",p.url());await p.goBack().catch(()=>{});await p.waitForTimeout(300);console.log(\\\"after back\\\",p.url());await b.close()})()'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 -c 'p=\\\"/tmp/homehuddle-capture-mobile-settings.js\\\";s=open(p).read();s=s.replace(\\\"await l.click({timeout:4000});\\\",\\\"await l.scrollIntoViewIfNeeded({timeout:4000});await l.click({timeout:4000});\\\");s=s.replace(\\\"await cap(p,key);returnProfile(p)\\\",\\\"await cap(p,key);await returnProfile(p)\\\");open(p,\\\"w\\\").write(s)' && rtk node /tmp/homehuddle-capture-mobile-settings.js\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 -c 'p=\\\"/tmp/homehuddle-capture-mobile-settings.js\\\";s=open(p).read();s=s.replace(\\\"await p.getByText('Deleted',{exact:true}).last().click({timeout:2500});\\\",\\\"await p.mouse.click(291,86);\\\");open(p,\\\"w\\\").write(s)' && rtk rg -n 'Deleted' /tmp/homehuddle-capture-mobile-settings.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\np='/tmp/homehuddle-capture-mobile-settings.js'\ns=open(p).read()\ns=s.replace(\\\"await p.getByText('Deleted',{exact:true}).last().click({timeout:2500});\\\", \\\"await p.mouse.click(291,86);\\\")\nopen(p,'w').write(s)\nPY\nrtk node /tmp/homehuddle-capture-mobile-settings.js\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\np='/tmp/homehuddle-capture-mobile-settings.js'\ns=open(p).read()\ns=s.replace(\\\"async function returnProfile(p){await p.mouse.click(35,32);await p.waitForTimeout(250);if(new URL(p.url()).pathname\"'!='\"'/profile')throw Error('back to profile failed '+p.url())}\\\",\\\"async function returnProfile(p){await p.mouse.click(35,32);await p.waitForTimeout(250);if(new URL(p.url()).pathname==='/profile')return;if(new URL(p.url()).pathname==='/'){await p.getByRole('tab',{name:'Home',exact:true}).click();await p.waitForTimeout(200);await p.mouse.click(338,35);await p.waitForTimeout(250)}if(new URL(p.url()).pathname\"'!='\"'/profile')throw Error('return to profile failed '+p.url())}\\\")\nopen(p,'w').write(s)\nPY\nrtk node /tmp/homehuddle-capture-mobile-settings.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk cat > /tmp/homehuddle-capture-desktop-settings.js <<'EOF'\nconst fs=require('node:fs'),crypto=require('node:crypto'),path=require('node:path');const {chromium}=require('/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright');const root='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas',base='http://127.0.0.1:8083',vp={width:1440,height:900,name:'desktop-1440x900'},rows=[];const hash=b=>crypto.createHash('sha256').update(b).digest('hex');\nasync function cap(p,key){await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(250);const f=path.join(root,'screenshots',\"'`${key}--${vp.name}.png`),b=await p.screenshot({path:f,fullPage:false});rows.push({surface_key:key,path:`screenshots/${path.basename(f)}`,width:1440,height:900,dpr:1,sha256:hash(b),bytes:b.length,route:new URL(p.url()).pathname,status:'\"'captured'});console.log('CAPTURED',key,hash(b))}\nasync function ret(p){await p.mouse.click(35,32);await p.waitForTimeout(200);if(new URL(p.url()).pathname==='/profile')return;if(new URL(p.url()).pathname==='/'){await p.getByRole('tab',{name:'Home',exact:true}).click();await p.waitForTimeout(150);await p.mouse.click(1388,35);await p.waitForTimeout(250)}if(new URL(p.url()).pathname\"'!='\"'/profile')throw Error('return profile '+p.url())}\nasync function visit(p,label,route,key){if(new URL(p.url()).pathname\"'!='\"'/profile')throw Error('profile precondition '+p.url());const l=p.getByText(label,{exact:true}).first();await l.scrollIntoViewIfNeeded({timeout:3000});await l.click({timeout:3000});await p.waitForTimeout(200);if(new URL(p.url()).pathname\"'!==route)throw Error('\"'route '+label+' '+p.url());await cap(p,key);await ret(p)}\nasync function clickTextAtRender(p,label){const pt=await p.evaluate(label=>{const norm=s=>(s||'').replace(/\\\\s+/g,' ').trim();const es=[...document.querySelectorAll('body *')].filter(e=>e.children.length===0&&norm(e.textContent)===label).map(e=>{const r=e.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,hit=document.elementFromPoint(x,y);return{x,y,w:r.width,h:r.height,hit:\"'!!hit&&(hit===e||e.contains(hit)),op:getComputedStyle(e).opacity}}).filter(q=>q.w>0&&q.h>0&&q.x>=0&&q.x<innerWidth&&q.y>=0&&q.y<innerHeight&&q.hit).sort((a,b)=>a.y-b.y);return es[0]||null},label);if(!pt)throw Error('\"'visible text geometry missing '+label);await p.mouse.click(pt.x,pt.y);await p.waitForTimeout(200);console.log('CLICKED_TEXT',label,pt)}\n(async()=>{fs.mkdirSync(path.join(root,'screenshots'),{recursive:true});const b=await chromium.launch({headless:true}),c=await b.newContext({viewport:{width:1440,height:900},deviceScaleFactor:1,locale:'en-US',timezoneId:'America/Chicago',colorScheme:'light'}),p=await c.newPage();await p.goto(base,{waitUntil:'domcontentloaded'});await p.waitForTimeout(350);const logo=p.locator('[data-testid=logo-trigger]');await logo.click();await p.waitForTimeout(70);await logo.click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.waitForTimeout(850);await p.mouse.click(1388,35);await p.waitForTimeout(250);if(new URL(p.url()).pathname\"'!='\"'/profile')throw Error('profile '+p.url());await cap(p,'profile-center');await visit(p,'Personal Info','/settings/personal-info','settings-personal-info');await visit(p,'Password & Security','/settings/privacy','settings-privacy-security');await visit(p,'Notification Settings','/settings/notifications','settings-notifications');await visit(p,'Household Settings','/settings/household','settings-household');await visit(p,'Invite Family','/settings/invite','settings-invite');await visit(p,'Chore History','/settings/chore-history','settings-chore-history-completed');await clickTextAtRender(p,'Deleted');await cap(p,'settings-chore-history-deleted');await ret(p);await visit(p,'Help Center','/settings/help','settings-help');await visit(p,'About HomeHuddle','/settings/about','settings-about');fs.writeFileSync('/tmp/homehuddle-ui0-desktop-settings.json',JSON.stringify({rows},null,2));await b.close()})().catch(e=>{console.error(e);process.exit(1)});\nEOF\nrtk node /tmp/homehuddle-capture-desktop-settings.js\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const{chromium}=require(\\\"/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright\\\");(async()=>{let b=await chromium.launch();let p=await b.newPage({viewport:{width:1440,height:900}});await p.goto(\\\"http://127.0.0.1:8083\\\");await p.waitForTimeout(300);let l=p.locator(\\\"[data-testid=logo-trigger]\\\");await l.click();await p.waitForTimeout(70);await l.click();await p.getByText(\\\"Instant Bypass Login\\\",{exact:true}).click();await p.waitForTimeout(650);await p.mouse.click(1388,35);await p.waitForTimeout(200);await p.getByText(\\\"Chore History\\\",{exact:true}).click();await p.waitForTimeout(250);console.log(\\\"route\\\",p.url(),\\\"text locator\\\",await p.getByText(\\\"Deleted\\\",{exact:true}).count());console.log(await p.evaluate(()=>[...document.querySelectorAll(\\\"body *\\\")].filter(e=>(e.textContent||\\\"\\\").trim()===\\\"Deleted\\\").map(e=>{let r=e.getBoundingClientRect();return {tag:e.tagName,cls:e.className,role:e.getAttribute(\\\"role\\\"),x:r.x,y:r.y,w:r.width,h:r.height,children:e.children.length,display:getComputedStyle(e).display,opacity:getComputedStyle(e).opacity}}).slice(0,20)));await b.close()})()'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\np='/tmp/homehuddle-capture-desktop-settings.js'\ns=open(p).read()\ns=s.replace(\\\"await clickTextAtRender(p,'Deleted');\\\", \\\"await p.getByText('Deleted',{exact:true}).click({timeout:2500});await p.waitForTimeout(200);\\\")\nopen(p,'w').write(s)\nPY\nrtk node /tmp/homehuddle-capture-desktop-settings.js\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\np='/tmp/homehuddle-capture-desktop-settings.js';s=open(p).read();s=s.replace(\\\"await p.getByText('Deleted',{exact:true}).click({timeout:2500});await p.waitForTimeout(200);\\\", \\\"await p.mouse.click(1078,86);await p.waitForTimeout(200);\\\");open(p,'w').write(s)\nPY\nrtk node /tmp/homehuddle-capture-desktop-settings.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n -i 'Add Chore|Edit Chore|Assign|Reschedule|Random|Game|Bulk|Completed|filterVisible|sortVisible|showCompleted|selectedTasks|modal' 'app/(app)/(tabs)/chores.tsx' | head -200\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const{chromium}=require(\\\"/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright\\\");(async()=>{let b=await chromium.launch();let p=await b.newPage({viewport:{width:390,height:844}});await p.goto(\\\"http://127.0.0.1:8083\\\");await p.waitForTimeout(350);let l=p.locator(\\\"[data-testid=logo-trigger]\\\");await l.click();await p.waitForTimeout(70);await l.click();await p.getByText(\\\"Instant Bypass Login\\\",{exact:true}).click();await p.waitForTimeout(700);await p.getByRole(\\\"tab\\\",{name:\\\"Chores\\\",exact:true}).click();await p.waitForTimeout(250);await p.mouse.click(261,714);await p.waitForTimeout(300);console.log(p.url());console.log((await p.locator(\\\"body\\\").innerText()).slice(-6000));console.log(\\\"modal\\\",await p.getByRole(\\\"dialog\\\").count());await p.screenshot({path:\\\"/tmp/homehuddle-addchore-check.png\\\"});await b.close()})()'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1470,1650p' 'app/(app)/(tabs)/chores.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk cat > /tmp/homehuddle-capture-home-overlays.js <<'EOF'\nconst fs=require('node:fs'),crypto=require('node:crypto'),path=require('node:path');const{chromium}=require('/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright');const root='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas',base='http://127.0.0.1:8083',rows=[];const hash=b=>crypto.createHash('sha256').update(b).digest('hex');\nasync function cap(p,key,v){await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(350);const f=path.join(root,'screenshots',\"'`${key}--${v.name}.png`),b=await p.screenshot({path:f,fullPage:false});rows.push({surface_key:key,path:`screenshots/${path.basename(f)}`,width:v.width,height:v.height,dpr:1,sha256:hash(b),bytes:b.length,route:new URL(p.url()).pathname,status:'\"'captured'});console.log('CAPTURED',key,v.name,hash(b))}\nasync function enter(p){await p.goto(base,{waitUntil:'domcontentloaded'});await p.waitForTimeout(350);const l=p.locator('[data-testid=logo-trigger]');await l.click();await p.waitForTimeout(70);await l.click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.waitForTimeout(800);}\nasync function home(p){await p.keyboard.press('Escape').catch(()=>{});await p.waitForTimeout(180);const h=p.getByRole('tab',{name:'Home',exact:true});if(await h.count())await h.click();await p.waitForTimeout(220)}\nasync function shot(v){const b=await chromium.launch({headless:true}),c=await b.newContext({viewport:{width:v.width,height:v.height},deviceScaleFactor:1,locale:'en-US',timezoneId:'America/Chicago',colorScheme:'light'}),p=await c.newPage();await enter(p);for(const [key,act] of [\n['home-family-switcher',async()=>p.mouse.click(v.width>500?1318:269,35)],\n['home-inbox-review',async()=>p.getByText('Inbox Review',{exact:true}).click({timeout:2500})],\n['home-delivery-add',async()=>p.mouse.click(v.width>500?1398:360,508)],\n['home-delivery-calendar',async()=>p.mouse.click(v.width>500?1324:295,508)],\n['home-delivery-history',async()=>p.mouse.click(v.width>500?1352:322,508)],\n['home-announcement-board',async()=>p.getByText('Grandparents visiting\"'!'\"',{exact:true}).click({timeout:2500})],\n['home-dinner-planner',async()=>p.getByText('Tap for details & recipes',{exact:true}).click({timeout:2500})]\n]){await home(p);try{await act();await p.waitForTimeout(350);await cap(p,key,v)}catch(e){console.log('ACTION_FAIL',key,v.name,String(e).slice(0,240))}}await b.close()}\n(async()=>{fs.mkdirSync(path.join(root,'screenshots'),{recursive:true});await shot({width:1440,height:900,name:'desktop-1440x900'});await shot({width:390,height:844,name:'mobile-390x844'});fs.writeFileSync('/tmp/homehuddle-ui0-home-overlays.json',JSON.stringify({rows},null,2))})().catch(e=>{console.error(e);process.exit(1)});\nEOF\nrtk node /tmp/homehuddle-capture-home-overlays.js\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const{chromium}=require(\\\"/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright\\\");(async()=>{let b=await chromium.launch();let p=await b.newPage({viewport:{width:1440,height:900}});await p.goto(\\\"http://127.0.0.1:8083\\\");await p.waitForTimeout(250);let l=p.locator(\\\"[data-testid=logo-trigger]\\\");await l.click();await p.waitForTimeout(60);await l.click();await p.getByText(\\\"Instant Bypass Login\\\",{exact:true}).click();await p.waitForTimeout(600);await p.getByText(\\\"Inbox Review\\\",{exact:true}).click();await p.waitForTimeout(200);console.log(\\\"open\\\",p.url(),await p.getByRole(\\\"tab\\\",{name:\\\"Home\\\"}).count());await p.keyboard.press(\\\"Escape\\\");await p.waitForTimeout(120);console.log(\\\"escape text\\\",(await p.locator(\\\"body\\\").innerText()).includes(\\\"2 pending\\\"));await p.mouse.click(10,10);await p.waitForTimeout(200);console.log(\\\"backdrop text\\\",(await p.locator(\\\"body\\\").innerText()).includes(\\\"2 pending\\\"));await b.close()})()'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const{chromium}=require(\\\"/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright\\\");(async()=>{let b=await chromium.launch();let p=await b.newPage({viewport:{width:1440,height:900}});await p.goto(\\\"http://127.0.0.1:8083\\\");await p.waitForTimeout(250);let l=p.locator(\\\"[data-testid=logo-trigger]\\\");await l.click();await p.waitForTimeout(60);await l.click();await p.getByText(\\\"Instant Bypass Login\\\",{exact:true}).click();await p.waitForTimeout(600);await p.getByText(\\\"Inbox Review\\\",{exact:true}).click();await p.waitForTimeout(200);let q=p.getByText(\\\"Inbox Review\\\",{exact:true});console.log(\\\"matches\\\",await q.count());for(let i=0;i<await q.count();i++)console.log(i,await q.nth(i).boundingBox());let box=await q.last().boundingBox();await p.mouse.click(1396,box.y+box.height/2);await p.waitForTimeout(200);console.log(\\\"after matches\\\",await q.count(),\\\"titles\\\",await p.locator(\\\"body\\\").innerText().slice(-200));await b.close()})()'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'Automations|Add Automation|Appliance Watch|Add Appliance|Add delivery|Delivery|Tonight.s Dinner|Inbox Review|Grandparents visiting|showHistory|set.*Modal|Calendar' 'app/(app)/(tabs)/index.tsx' | head -180\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '2570,2765p' 'app/(app)/(tabs)/index.tsx'; rtk sed -n '3490,3542p' 'app/(app)/(tabs)/index.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1662,1905p' 'app/(app)/(tabs)/index.tsx' | rtk rg -n 'Text|onClose|Close|X size'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '680,760p' 'app/(app)/(tabs)/index.tsx'; rtk sed -n '1500,1545p' 'app/(app)/(tabs)/index.tsx'; rtk rg -n 'Announcements|announcement.*Modal|Weekly Menu|Dinner Planner' 'app/(app)/(tabs)/index.tsx' | head -80\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk cat > /tmp/homehuddle-capture-home-overlays.js <<'EOF'\nconst fs=require('node:fs'),crypto=require('node:crypto'),path=require('node:path');const{chromium}=require('/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright');const root='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas',base='http://127.0.0.1:8083',rows=[];const hash=b=>crypto.createHash('sha256').update(b).digest('hex');\nasync function cap(p,key,v){await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(250);const f=path.join(root,'screenshots',\"'`${key}--${v.name}.png`),b=await p.screenshot({path:f,fullPage:false});rows.push({surface_key:key,path:`screenshots/${path.basename(f)}`,width:v.width,height:v.height,dpr:1,sha256:hash(b),bytes:b.length,route:new URL(p.url()).pathname,status:'\"'captured'});console.log('CAPTURED',key,v.name,hash(b))}\nasync function withHome(v,key,act){const b=await chromium.launch({headless:true}),c=await b.newContext({viewport:{width:v.width,height:v.height},deviceScaleFactor:1,locale:'en-US',timezoneId:'America/Chicago',colorScheme:'light'}),p=await c.newPage();try{await p.goto(base,{waitUntil:'domcontentloaded'});await p.waitForTimeout(300);const l=p.locator('[data-testid=logo-trigger]');await l.click();await p.waitForTimeout(70);await l.click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.waitForTimeout(650);await act(p);await p.waitForTimeout(250);await cap(p,key,v)}catch(e){console.log('ACTION_FAIL',key,v.name,String(e).slice(0,400))}finally{await b.close()}}\nasync function go(v,key,action){await withHome(v,key,action)}\n(async()=>{fs.mkdirSync(path.join(root,'screenshots'),{recursive:true});const vps=[{width:1440,height:900,name:'desktop-1440x900'},{width:390,height:844,name:'mobile-390x844'}];for(const v of vps){await go(v,'home-family-switcher',async p=>p.mouse.click(v.width>500?1318:269,35));await go(v,'home-inbox-review',async p=>p.getByText('Inbox Review',{exact:true}).click({timeout:2500}));await go(v,'home-delivery-add',async p=>p.mouse.click(v.width>500?1398:360,508));await go(v,'home-delivery-calendar',async p=>p.mouse.click(v.width>500?1324:295,508));await go(v,'home-delivery-history',async p=>p.mouse.click(v.width>500?1352:322,508));await go(v,'home-announcement-board',async p=>p.getByText('Grandparents visiting\"'!'\"',{exact:true}).click({timeout:2500}));await go(v,'home-dinner-planner',async p=>p.getByText('Tap for details & recipes',{exact:true}).click({timeout:2500}));await go(v,'home-automation-create',async p=>{const l=p.getByText('Automations',{exact:true}).last();await l.scrollIntoViewIfNeeded({timeout:3000});const q=await l.boundingBox();await p.mouse.click(v.width-40,q.y+12)});await go(v,'home-appliance-create',async p=>{const l=p.getByText('Long press to reorder · Swipe to edit',{exact:true}).last();await l.scrollIntoViewIfNeeded({timeout:3000});const q=await l.boundingBox();await p.mouse.click(v.width-40,q.y-14)})}fs.writeFileSync('/tmp/homehuddle-ui0-home-overlays.json',JSON.stringify({rows},null,2));})().catch(e=>{console.error(e);process.exit(1)});\nEOF\nrtk node /tmp/homehuddle-capture-home-overlays.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1965,2070p' 'app/(app)/(tabs)/index.tsx'; rtk sed -n '1830,1910p' 'app/(app)/(tabs)/index.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'export.*GamePicker|function GamePicker|RandomAssignmentModal|Let a Game Decide|Choose|game' components/games/RandomAssignmentGames.tsx | head -160\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1630,1840p' components/games/RandomAssignmentGames.tsx; rtk sed -n '940,1090p' 'app/(app)/(tabs)/chores.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'GamePickerModal|gamePicker|showGame|game picker|Random Games|setShow' 'app/(app)/(tabs)/chores.tsx' | head -100\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '6080,6160p' 'app/(app)/(tabs)/chores.tsx'; rtk sed -n '1740,1905p' components/games/RandomAssignmentGames.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1355,1435p' 'app/(app)/(tabs)/chores.tsx'; rtk sed -n '4310,4380p' 'app/(app)/(tabs)/chores.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk cat > /tmp/homehuddle-capture-chores.js <<'EOF'\nconst fs=require('node:fs'),crypto=require('node:crypto'),path=require('node:path');const{chromium}=require('/tmp/homehuddle-ui0-atlas-tools/node_modules/playwright');const root='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas',base='http://127.0.0.1:8083',rows=[],fails=[];const hash=b=>crypto.createHash('sha256').update(b).digest('hex');\nasync function cap(p,key,v){await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(260);const f=path.join(root,'screenshots',\"'`${key}--${v.name}.png`),b=await p.screenshot({path:f,fullPage:false});rows.push({surface_key:key,path:`screenshots/${path.basename(f)}`,width:v.width,height:v.height,dpr:1,sha256:hash(b),bytes:b.length,route:new URL(p.url()).pathname,status:'\"'captured'});console.log('CAPTURED',key,v.name,new URL(p.url()).pathname,hash(b))}\nasync function setup(v){const b=await chromium.launch({headless:true}),c=await b.newContext({viewport:{width:v.width,height:v.height},deviceScaleFactor:1,locale:'en-US',timezoneId:'America/Chicago',colorScheme:'light'}),p=await c.newPage();await p.goto(base,{waitUntil:'domcontentloaded'});await p.waitForTimeout(300);let l=p.locator('[data-testid=logo-trigger]');await l.click();await p.waitForTimeout(70);await l.click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.waitForTimeout(700);await p.getByRole('tab',{name:'Chores',exact:true}).click();await p.waitForTimeout(250);return{b,c,p}}\nasync function run(v,key,action){let env;try{env=await setup(v);await action(env.p,v);await env.p.waitForTimeout(350);if(\"'!['\"'/chores'].includes(new URL(env.p.url()).pathname))throw Error('unexpected route '+env.p.url());await cap(env.p,key,v)}catch(e){fails.push({surface_key:key,viewport:v.name,error:String(e)});console.log('ACTION_FAIL',key,v.name,String(e).slice(0,300))}finally{if(env)await env.b.close()}}\nasync function getBox(p,t){const l=p.getByText(t,{exact:true}).first();await l.scrollIntoViewIfNeeded({timeout:3000});const q=await l.boundingBox();if(\"'!q)throw Error('\"'no box for '+t);return q}\n(async()=>{fs.mkdirSync(path.join(root,'screenshots'),{recursive:true});for(const v of [{width:1440,height:900,name:'desktop-1440x900'},{width:390,height:844,name:'mobile-390x844'}]){\nawait run(v,'chores-my-scope',async p=>{await p.mouse.click(v.width>500?763:238,25)});\nawait run(v,'chores-calendar-month',async p=>{await p.mouse.click(v.width>500?720:195,137)});\nawait run(v,'chores-create',async p=>{await p.mouse.click(v.width>500?1310:260,v.width>500?770:714)});\nawait run(v,'chores-expanded-task',async p=>{const q=await getBox(p,'Check Mail');await p.mouse.click(q.x+q.width/2,q.y+q.height/2)});\nawait run(v,'chores-edit',async p=>{const q=await getBox(p,'Check Mail');await p.mouse.click(q.x+q.width/2,q.y+q.height/2);await p.waitForTimeout(180);await p.getByText('Edit Chore',{exact:true}).last().click({timeout:2500})});\nawait run(v,'chores-filter-sort',async p=>{await p.mouse.click(v.width>500?1409:355,230)});\nawait run(v,'chores-assignment',async p=>{const q=await getBox(p,'Empty Kitchen Trash');await p.mouse.click(Math.max(24,q.x-23),q.y+q.height/2)});\nawait run(v,'chores-game-picker',async p=>{await p.mouse.click(v.width>500?1375:324,230)});\nawait run(v,'chores-random-assignment',async p=>{const q=await getBox(p,'Empty Kitchen Trash');await p.mouse.click(Math.max(24,q.x-23),q.y+q.height/2);await p.waitForTimeout(200);await p.getByText('Let a Game Decide',{exact:true}).click({timeout:3000});await p.waitForTimeout(500)});\nawait run(v,'chores-bulk-selection',async p=>{const q=await getBox(p,'Check Mail');const x=Math.max(24,q.x-23),y=q.y+q.height/2;await p.mouse.move(x,y);await p.mouse.down();await p.waitForTimeout(500);await p.mouse.up();await p.waitForTimeout(250)});\nawait run(v,'chores-reschedule',async p=>{const q=await getBox(p,'Check Mail');const y=q.y+q.height/2,x2=Math.min(v.width-24,q.x+q.width-10),x1=Math.max(20,q.x+15);await p.mouse.move(x2,y);await p.mouse.down();for(let i=1;i<=10;i++){await p.mouse.move(x2-(x2-x1)*i/10,y,{steps:1});await p.waitForTimeout(24)}await p.mouse.up();await p.waitForTimeout(400);if(\"'!(await p.getByText('\"'Reschedule',{exact:true}).count()))throw Error('swipe did not expose Reschedule action')});\nawait run(v,'chores-completed-expanded',async p=>{await p.mouse.move(v.width/2,450);await p.mouse.wheel(0,7000);await p.waitForTimeout(300);const q=p.getByText(/SHOW COMPLETED/).last();await q.scrollIntoViewIfNeeded({timeout:4000});await q.click({timeout:3000})});\n}fs.writeFileSync('/tmp/homehuddle-ui0-chores.json',JSON.stringify({rows,fails},null,2));console.log('SUMMARY',JSON.stringify({captured:rows.length,failed:fails.length,fails}))})().catch(e=>{console.error(e);process.exit(1)});\nEOF\nrtk node /tmp/homehuddle-capture-chores.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'Family Hub|Dinner Planner|Results|Vote|Voting|Heatmap|Show more|Wishlist|Bulletin|Announcements|Edit|member|selectedMember|onPress' 'app/(app)/(tabs)/family.tsx' | head -220\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '870,930p' 'app/(app)/(tabs)/family.tsx'; rtk sed -n '1030,1100p' 'app/(app)/(tabs)/family.tsx'; rtk sed -n '1250,1380p' 'app/(app)/(tabs)/family.tsx'; rtk sed -n '1430,1695p' 'app/(app)/(tabs)/family.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'voteForRecipe|menuPhase|DinnerPlanner|this week.s menu|Tap to see history|Results|Recipe' 'app/(app)/(tabs)/family.tsx' 'app/(app)/(tabs)/index.tsx' components | head -150\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1130,1260p' 'app/(app)/(tabs)/family.tsx'; rtk sed -n '1570,1698p' components/WeeklyMenuSection.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'WeeklyMenuSection' app\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'menuPhase|resetToMockData|MOCK_WEEK_MENU|weekMenu:' store/huddleStore.ts | head -120\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n -i 'Member|Manage|Edit|Add|Save|Remove|Delete' 'app/(app)/settings/household.tsx' | head -120; rtk rg -n -i 'history|pantry|edit|filter|quick add|onPress|modal' 'app/(app)/(tabs)/restock.tsx' | head -120\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '640,735p' 'app/(app)/(tabs)/restock.tsx'; rtk sed -n '1000,1085p' 'app/(app)/(tabs)/restock.tsx'; rtk sed -n '1450,1560p' components/WeeklyMenuSection.tsx; rtk sed -n '120,235p' 'app/(app)/(tabs)/family.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'setPendingIngredients|onPantryCheck|Pantry Check|pantry|Add Recipe|Recipe' 'app/(app)/(tabs)/restock.tsx' | head -100; rtk sed -n '925,970p' 'app/(app)/(tabs)/family.tsx'; rtk rg -n 'editingRestock|isAddingMode|setIsAddingMode|quickAddOpen' 'app/(app)/(tabs)/restock.tsx' | tail -70\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 -c 'import json;d=json.load(open(\\\"/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json\\\"));[(print(x[\\\"surface_key\\\"],json.dumps(x,ensure_ascii=False))) for x in d[\\\"surfaces\\\"] if x[\\\"surface_key\\\"] in {\\\"family-member-editor\\\",\\\"restock-pantry-check\\\",\\\"family-meal-voting\\\",\\\"family-meal-results\\\"}];print(\\\"other\\\",json.dumps(d.get(\\\"unreachable_candidates\\\",d.get(\\\"aliases\\\",{})),ensure_ascii=False)[:2500])'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 -c 'import json;d=json.load(open(\\\"/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json\\\")); print(json.dumps(d[\\\"discovery\\\"],indent=2,ensure_ascii=False)[-6500:])'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,270p' app/onboarding/family.tsx; rtk sed -n '1,200p' app/onboarding/profile.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'isWeeklyMenuOpen|setIsWeeklyMenuOpen|WeeklyMenuSection|Announcement.*Modal|announcementsVisible|showAnnouncements' 'app/(app)/(tabs)/index.tsx' | head -70; rtk rg -n -i 'flash sale|price history|restock|redeem|search|modal|history|new item|Add' 'app/(app)/(tabs)/market.tsx' | head -160\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'setShow|onPress=|onLongPress=|selectedCategory|activeCategory|setQuery|setSearch|search' 'app/(app)/(tabs)/market.tsx' | tail -120\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '214,525p' 'app/(app)/(tabs)/restock.tsx'; rtk sed -n '815,880p' 'app/(app)/(tabs)/restock.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'showMoreDetails|setShowMoreDetails|isHistoryExpanded' 'app/(app)/(tabs)/restock.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'setDetail|detailItem|setPrice|setRestock|setEditing|setAdd|setRedeem|setLongPress|setSearch|setCategory|showAddMenu|Pressable' 'app/(app)/(tabs)/market.tsx' | tail -120\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk ls -la /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas && rtk python3 - <<'PY'\nimport json\np='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json'\ntry:\n d=json.load(open(p))\n print('manifest', d.get('status'), len(d.get('surfaces',[])), d.get('sha256'))\n print('keys', [s.get('surface_key') or s.get('key') for s in d.get('surfaces',[])])\nexcept Exception as e: print(type(e).__name__,e)\nPY\nrtk git status --short && rtk git rev-parse HEAD && rtk git ls-remote origin refs/heads/main\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport json\np='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json'\nd=json.load(open(p))\nprint(json.dumps({k:v for k,v in d.items() if k\"'!='\"'surfaces'},indent=2)[:12000])\nfor key in ['family-member-editor','restock-item-detail','restock-pantry-check','home-delivery-history','home-automation-create','family-hub']:\n print('\\\\nKEY',key)\n print(json.dumps(next(x for x in d['surfaces'] if x['key']==key),indent=2))\nPY\nrtk rg -n \\\"pendingIngredients|Family Member|Edit Family|Add Family|isEditing|Edit\\\" 'app/(app)/(tabs)/family.tsx' app/onboarding/family.tsx 'app/(app)/(tabs)/restock.tsx' | head -100\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport json\np='/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json'\nd=json.load(open(p))\nfor s in d['surfaces']:\n if s.get('surface_key') in ['family-member-editor','restock-item-detail','restock-pantry-check','home-delivery-history','home-automation-create','family-hub','family-announcements','home-delivery-calendar']:\n  print('\\\\n',json.dumps(s,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,240p' /tmp/homehuddle-capture-home-overlays.js && rtk sed -n '1,180p' /tmp/homehuddle-capture-chores.js && rtk sed -n '1,120p' /tmp/homehuddle-capture-bases.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport json, pathlib, shutil, hashlib, datetime\nroot=pathlib.Path('/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas')\np=root/'surface-manifest.json'\nd=json.loads(p.read_text())\nimgs=list((root/'screenshots').glob('*.png'))\nfor f in imgs: f.unlink()\ns=d['surfaces']\nby={x['surface_key']:x for x in s}\n# Remove state claims that current source cannot reach or that do not form a distinct renderer.\ns[:]=[x for x in s if x['surface_key'] not in {'restock-item-detail','restock-pantry-check'}]\nd['discovery']['unreachable_surface_candidates']=[\n {'surface_key':'restock-pantry-check','route':'/restock','source':'app/(app)/(tabs)/restock.tsx','reason':'pendingIngredients initializes to [] and only resets to []; no current call site populates it, so the conditional pantry/recipe modal cannot be reached through the current product.'}\n]\nd['discovery']['surface_aliases']=[\n {'alias':'restock-item-detail','maps_to':'restock-inventory','reason':'No separate detail renderer exists; inventory rows show the item facts inline. Tapping a row expands its editor, represented by restock-item-edit.'}\n]\n# Correct member editing owner and route. This is onboarding, not the Family tab.\nm=by['family-member-editor']\nm.update({'label':'Onboarding family member edit modal','route':'/onboarding/family','owner':'app/onboarding/family.tsx','entry_point':'Onboarding Family step > pencil on an existing member; leave draft unsaved.','state':{'mode':'edit family member modal with prefilled fields','theme':'light','fixture':'local mock seed; action not submitted unless stated'},'source_files':['app/onboarding/family.tsx']})\n# Existing template captures and applies equally to create modal.\ncreate=json.loads(json.dumps(m)); create['surface_key']='family-member-create'; create['label']='Onboarding family member create modal'; create['entry_point']='Onboarding Family step > Add Family Member; leave draft unsaved.'; create['state']['mode']='create family member modal with blank/default fields';\n# Distinct Family widget-layout edit mode.\nlayout=json.loads(json.dumps(by['family-hub'])); layout['surface_key']='family-layout-edit'; layout['label']='Family widget layout edit mode'; layout['entry_point']='Family tab > Edit; keep layout draft unchanged.'; layout['state']={'mode':'Family widget layout editing with move/resize/remove controls visible','theme':'light','fixture':'local mock seed; action not submitted unless stated'}\nlayout['canonical']['desktop']['artifact']='screenshots/family-layout-edit--desktop-1440x900.png'; layout['canonical']['mobile']['artifact']='screenshots/family-layout-edit--mobile-390x844.png'\ns.extend([create,layout])\n# History uses the merged calendar/history button long-press.\nby={x['surface_key']:x for x in s}\nby['home-delivery-history']['entry_point']='Home Deliveries merged calendar/history control > press and hold to open history.'\n# Correct capture discovery disclosure and freeze provenance.\nd['manifest_status']='FROZEN_BEFORE_CANONICAL_CAPTURE'\nd['discovery']['pre_capture_discovery_screenshots']='Provisional trigger probes were taken before the final freeze, including several invalid target attempts. All provisional PNGs were deleted before this corrected freeze; none are included in the canonical package. Final canonical capture starts after this freeze.'\nd['discovery']['superseded_freeze']={'reason':'Source/runtime verification showed the initial manifest incorrectly modeled Family member editing and two unreachable/non-distinct Restock surfaces. The 70-key draft was invalidated; its PNG probes were discarded and this corrected manifest is the sole final freeze.','provisional_pngs_deleted':len(imgs)}\nd['surface_count']=len(s)\nd['expected_screenshot_count']=len(s)*2\nd['freeze_time_utc']=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()\n# stable exact JSON\np.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\\\\n')\nb=p.read_bytes()\nprint('surface_count',len(s),'expected_screenshots',len(s)*2,'deleted_provisional_pngs',len(imgs),'manifest_sha256',hashlib.sha256(b).hexdigest())\nprint('unique_keys',len({x['surface_key'] for x in s}))\nprint('manifest',p)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,200p' /tmp/homehuddle-capture-mobile-support.js && rtk sed -n '1,220p' /tmp/homehuddle-capture-mobile-settings.js && rtk sed -n '1,220p' /tmp/homehuddle-capture-desktop-settings.js && rtk ls -l /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/screenshots\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.156.1",
+    "configured_model": "gpt-6-luna",
+    "event_count": 340,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.failed",
+    "usage": {},
+    "warnings": [
+      {
+        "message": "Reconnecting... 2/5 (stream disconnected before completion: websocket closed by server before response.completed)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 3/5 (stream disconnected before completion: websocket closed by server before response.completed)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 4/5 (stream disconnected before completion: websocket closed by server before response.completed)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 5/5 (stream disconnected before completion: websocket closed by server before response.completed)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 1/5 (unexpected status 401 Unauthorized: Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************fvMA. You can find your API key at https://platform.openai.com/account/api-keys., url: https://chatgpt.com/backend-api/codex/responses, cf-ray: a40d86e4cd354863-DFW, request id: 0fabed29-c118-4737-9c2e-30318da3a27c)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 2/5 (unexpected status 401 Unauthorized: Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************fvMA. You can find your API key at https://platform.openai.com/account/api-keys., url: https://chatgpt.com/backend-api/codex/responses, cf-ray: a40d86f58b8f7074-DFW, request id: 75ee0f2c-23c2-43a4-ade6-4604698fc56c)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 3/5 (unexpected status 401 Unauthorized: Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************fvMA. You can find your API key at https://platform.openai.com/account/api-keys., url: https://chatgpt.com/backend-api/codex/responses, cf-ray: a40d87067bbf3aaa-DFW, request id: b33d629e-8253-4a49-a847-54473d1e3daa)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 4/5 (unexpected status 401 Unauthorized: Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************fvMA. You can find your API key at https://platform.openai.com/account/api-keys., url: https://chatgpt.com/backend-api/codex/responses, cf-ray: a40d871ceae4e54a-DFW, request id: 0e03f935-a566-476e-aa3d-b057af48cef9)",
+        "type": "error"
+      },
+      {
+        "message": "Reconnecting... 5/5 (unexpected status 401 Unauthorized: Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************fvMA. You can find your API key at https://platform.openai.com/account/api-keys., url: https://chatgpt.com/backend-api/codex/responses, cf-ray: a40d8735ef948788-DFW, request id: 064463af-1c78-4408-b0d1-db04365112dd)",
+        "type": "error"
+      },
+      {
+        "message": "unexpected status 401 Unauthorized: Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************fvMA. You can find your API key at https://platform.openai.com/account/api-keys., url: https://chatgpt.com/backend-api/codex/responses, cf-ray: a40d875b2d38ff98-DFW, request id: b469342e-4a79-4bd6-a7e8-68cf3f3ad17d",
+        "type": "error"
+      }
+    ]
+  },
+  "commits": [],
+  "diff": null,
+  "error_code": "CODEX_EXIT_NONZERO",
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": null,
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": "CODEX_EXECUTION",
+  "finished_at": "2026-09-25T22:40:07Z",
+  "git": {},
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-b996dcba9bca21b3369a84fb",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": true,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-perfect-baseline-v2",
+  "schema_version": 1,
+  "started_at": "2026-09-25T21:23:50Z",
+  "status": "FAILED_MODEL",
+  "timing": {
+    "execution_seconds": 4577,
+    "queue_seconds": 1,
+    "total_seconds": 4578
+  },
+  "transport": {
+    "bytes": 16264,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 15936,
+    "prompt_sha256": "a8118a592235dedd3479733b6d4bcbaa499c1071aafacbe06ae4a70ce48fb0ea",
+    "sha256": "b996dcba9bca21b3369a84fbb5d9e00455008ae7da4ae29c724000562a67d5e4"
+  }
+}
