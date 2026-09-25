@@ -1,0 +1,382 @@
+{
+  "accepted_at": "2026-09-25T19:51:43Z",
+  "changed_files": [
+    {
+      "additions": 63,
+      "deletions": 16,
+      "path": "__tests__/auth-audit.test.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 28,
+      "deletions": 11,
+      "path": "app/index.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 1,
+      "deletions": 0,
+      "path": "tailwind.config.js",
+      "status": "M"
+    }
+  ],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\na=Path(\\\"/tmp/homehuddle-chg251-candidate-show.patch\\\").read_bytes()\nb=Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-251-r2@e1a7587b70f19dba471032f9e8b96846ca3efbb3/CHG-251-r2-evidence/source-diff.patch\\\").read_bytes()\nprint(\\\"canonical_candidate_patch_prefix_exact\\\", b.startswith(a))\nprint(\\\"canonical_prefix_bytes\\\",len(a),\\\"package_patch_bytes\\\",len(b),\\\"trailing_bytes\\\",len(b)-len(a))\ntail=b[len(a):].decode(\\\"utf-8\\\",\\\"replace\\\")\nprint(\\\"trailing_section_head\\\",repr(tail[:800]))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\na=Path(\\\"/tmp/homehuddle-chg251-candidate-show.patch\\\").read_bytes(); b=Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-251-r2@e1a7587b70f19dba471032f9e8b96846ca3efbb3/CHG-251-r2-evidence/source-diff.patch\\\").read_bytes()\nn=min(len(a),len(b)); i=next((i for i in range(n) if a[i]\"'!=b[i]),None)\nprint(\"sizes\",len(a),len(b),\"first_diff\",i)\nprint(\"A\",repr(a[max(0,i-50):i+100] if i is not None else a[-50:]))\nprint(\"B\",repr(b[max(0,i-50):i+100] if i is not None else b[-50:]))\nprint(\"prefix_lines\")\nfor name,blob in [(\"candidate\",a),(\"package\",b)]:\n lines=blob.decode(\"utf8\",\"replace\").splitlines()\n print(name,\"line_count\",len(lines))\n for j,line in enumerate(lines[:15],1): print(j,repr(line))\nPY'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\na=Path(\\\"/tmp/homehuddle-chg251-candidate-show.patch\\\").read_bytes(); b=Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-251-r2@e1a7587b70f19dba471032f9e8b96846ca3efbb3/CHG-251-r2-evidence/source-diff.patch\\\").read_bytes()\nprint(\\\"candidate_patch_without_leading_stat_space_equals_package_prefix\\\",a[1:]==b[:len(a)-1])\nprint(\\\"candidate_patch_without_first_byte_match_length\\\",sum(1 for x,y in zip(a[1:],b) if x==y))\ni=next((i for i,(x,y) in enumerate(zip(a[1:],b)) if x\"'!=y),None)\nprint(\"first_diff_after_single_byte\",i,repr(a[1+i:1+i+80] if i is not None else b\"\"),repr(b[i:i+80] if i is not None else b\"\"))\nPY'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk ls -ld /tmp/homehuddle-chg251-recovery-CF-7335a7ab3871390c163df4ae'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport hashlib, json, pathlib, shutil\nsource=pathlib.Path(\\\"/Users/haewonkim/.codex-fabric/jobs/CF-271ed28547164d4053c0c3f2.executed/artifact-bridge/homehuddle-ui0-runtime-unblock-v2-package\\\")\npkg=pathlib.Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-251-r2@e1a7587b70f19dba471032f9e8b96846ca3efbb3/CHG-251-r2-evidence\\\")\ndest=pathlib.Path(\\\"/tmp/homehuddle-chg251-recovery-CF-7335a7ab3871390c163df4ae\\\")\nshutil.copytree(source,dest)\ndef sha(b): return hashlib.sha256(b).hexdigest()\nmanifest=json.loads((pkg/\\\"manifest.json\\\").read_text())\nverification=json.loads((pkg/\\\"verification.json\\\").read_text())\nbrowser=json.loads((pkg/\\\"runtime/candidate-browser-report.json\\\").read_text())\nprestage=(dest/\\\"r2-prestage-manifest.json\\\").read_bytes()\nreceipt={\n \\\"schemaVersion\\\":1,\n \\\"kind\\\":\\\"homehuddle-project-os-evidence-recovery\\\",\n \\\"project\\\":\\\"homehuddle\\\",\n \\\"repository\\\":\\\"kimhw8084/homehuddle\\\",\n \\\"alias\\\":\\\"app\\\",\n \\\"operation\\\":\\\"VERIFY\\\",\n \\\"recoveryRequest\\\":\\\"homehuddle-ui0-runtime-unblock-verify-v1\\\",\n \\\"originalRequest\\\":\\\"homehuddle-ui0-runtime-unblock-v2\\\",\n \\\"recoveryFabricJob\\\":\\\"CF-7335a7ab3871390c163df4ae\\\",\n \\\"originalFabricJob\\\":\\\"CF-271ed28547164d4053c0c3f2\\\",\n \\\"candidate\\\":{\n  \\\"sha\\\":\\\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\\\",\n  \\\"tree\\\":\\\"a66760b6df143a87e894d5fe636f152ea73f6bea\\\",\n  \\\"base\\\":\\\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\\\"\n },\n \\\"target\\\":{\\\"branch\\\":\\\"main\\\",\\\"observedRemoteSha\\\":\\\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\\\"},\n \\\"workBranch\\\":{\\\"name\\\":\\\"codex/homehuddle-ui0-runtime-unblock-verify-v1\\\",\\\"head\\\":\\\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\\\",\\\"update\\\":\\\"identity-preserving-fast-forward\\\"},\n \\\"carrierRef\\\":\\\"refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1\\\",\n \\\"recoveredPackage\\\":{\n  \\\"originalArtifactBridgeStatus\\\":\\\"NOT_UPLOADED\\\",\n  \\\"evidenceDirectory\\\":\\\"CHG-251-r2-evidence\\\",\n  \\\"evidenceManifestPath\\\":\\\"CHG-251-r2-evidence/manifest.json\\\",\n  \\\"evidenceManifestSha256\\\":sha((pkg/\\\"manifest.json\\\").read_bytes()),\n  \\\"evidenceManifestEntries\\\":len(manifest[\\\"items\\\"]),\n  \\\"prestageManifestPath\\\":\\\"r2-prestage-manifest.json\\\",\n  \\\"prestageManifestSha256\\\":sha(prestage),\n  \\\"prestageManifestEntries\\\":json.loads(prestage)[\\\"count\\\"],\n  \\\"archivePath\\\":\\\"homehuddle-chg251-r2-evidence.tar.gz\\\",\n  \\\"archiveSha256\\\":sha((dest/\\\"homehuddle-chg251-r2-evidence.tar.gz\\\").read_bytes()),\n  \\\"archiveBytes\\\":(dest/\\\"homehuddle-chg251-r2-evidence.tar.gz\\\").stat().st_size,\n  \\\"originalArtifactCarrierSha256\\\":sha((dest/\\\"artifact-carrier.json\\\").read_bytes())\n },\n \\\"validation\\\":{\n  \\\"candidateIdentityAndDiffScope\\\":\\\"PASS\\\",\n  \\\"manifestFileSizesAndSha256\\\":\\\"PASS\\\",\n  \\\"archiveSidecarAndContents\\\":\\\"PASS\\\",\n  \\\"screenshotPngSignaturesDimensionsAndSha256\\\":\\\"PASS\\\",\n  \\\"npmCi\\\":verification[\\\"npm_ci\\\"][\\\"outcome\\\"],\n  \\\"typescript\\\":verification[\\\"typescript\\\"][\\\"outcome\\\"],\n  \\\"fullLint\\\":verification[\\\"lint\\\"][\\\"outcome\\\"],\n  \\\"targetedLintExitCode\\\":verification[\\\"lint\\\"][\\\"targeted\\\"][\\\"exit_code\\\"],\n  \\\"jest\\\":verification[\\\"jest\\\"][\\\"outcome\\\"],\n  \\\"baseBrowserReproduction\\\":\\\"PRESENT\\\",\n  \\\"candidateDesktopMobileBrowserReport\\\":\\\"PRESENT\\\",\n  \\\"targetAndSourcePostflight\\\":\\\"PASS\\\"\n },\n \\\"screenshots\\\":[\n  {\\\"path\\\":r[\\\"path\\\"],\\\"width\\\":r[\\\"dimensions\\\"][\\\"width\\\"],\\\"height\\\":r[\\\"dimensions\\\"][\\\"height\\\"],\\\"sha256\\\":r[\\\"sha256\\\"],\\\"bytes\\\":r[\\\"bytes\\\"]}\n  for r in verification[\\\"browser\\\"][\\\"screenshots\\\"].values()\n ],\n \\\"recoveredAt\\\":\\\"2026-09-25T20:00:09Z\\\"\n}\n(dest/\\\"recovery-receipt.json\\\").write_text(json.dumps(receipt,indent=2,sort_keys=True)+\\\"\\\\n\\\")\nfiles=sorted(str(p.relative_to(dest)) for p in dest.rglob(\\\"*\\\") if p.is_file())\nprint(json.dumps({\\\"destination\\\":str(dest),\\\"receipt\\\":str(dest/\\\"recovery-receipt.json\\\"),\\\"total_files\\\":len(files),\\\"files\\\":files,\\\"receipt_sha256\\\":sha((dest/\\\"recovery-receipt.json\\\").read_bytes())},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib,json,sys\nstage=Path(\\\"/Users/haewonkim/.codex-fabric/jobs/CF-271ed28547164d4053c0c3f2.executed/artifact-bridge/homehuddle-ui0-runtime-unblock-v2-package\\\")\ndest=Path(\\\"/tmp/homehuddle-chg251-recovery-CF-7335a7ab3871390c163df4ae\\\")\ndef sha(b):return hashlib.sha256(b).hexdigest()\npre=json.loads((stage/\\\"r2-prestage-manifest.json\\\").read_text())\nerrors=[]\nfor it in pre[\\\"items\\\"]:\n p=dest/it[\\\"path\\\"]; b=p.read_bytes() if p.is_file() else b\\\"\\\"\n if not p.is_file() or len(b)\"'!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(it[\"path\"])\nfiles=[p for p in dest.rglob(\"*\") if p.is_file()]\nprint(json.dumps({\"prestage_items\":len(pre[\"items\"]),\"copied_items_valid\":not errors,\"bad_paths\":errors,\"payload_files_including_receipt\":len(files)},indent=2))\nsys.exit(1 if errors else 0)\nPY'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git init -b carrier-stage'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git add --all'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --cached --stat'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --cached --name-only'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git remote add origin https://github.com/kimhw8084/homehuddle.git'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git commit -m 'Recover CHG-251 R2 evidence for Project OS'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-list --parents -n 1 HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git push origin HEAD:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 -c 'from pathlib import Path; Path(\\\"/tmp/homehuddle-chg251-readback-CF-7335a7ab3871390c163df4ae\\\").mkdir(parents=True,exist_ok=False)'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git init -b readback'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git remote add origin https://github.com/kimhw8084/homehuddle.git'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch --no-tags origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1:refs/remotes/origin/recovery'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git checkout --detach refs/remotes/origin/recovery'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-tree -r --name-only HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport base64, hashlib, json, pathlib, struct, tarfile, sys\nroot=pathlib.Path(\\\"/tmp/homehuddle-chg251-readback-CF-7335a7ab3871390c163df4ae\\\")\ne=root/\\\"CHG-251-r2-evidence\\\"\nerrors=[]\ndef sha(b): return hashlib.sha256(b).hexdigest()\ndef j(rel): return json.loads((root/rel).read_text())\nmanifest=j(\\\"CHG-251-r2-evidence/manifest.json\\\")\nreceipt=j(\\\"recovery-receipt.json\\\")\npre=j(\\\"r2-prestage-manifest.json\\\")\ncarrier=j(\\\"artifact-carrier.json\\\")\nverification=j(\\\"CHG-251-r2-evidence/verification.json\\\")\nbrowser=j(\\\"CHG-251-r2-evidence/runtime/candidate-browser-report.json\\\")\ncommands=j(\\\"CHG-251-r2-evidence/verification-commands.json\\\")\nbase=j(\\\"CHG-251-r2-evidence/runtime/base-browser-reproduction.json\\\")\ntracked={str(p.relative_to(root)) for p in root.rglob(\\\"*\\\") if p.is_file()}\nexpected={it[\\\"path\\\"] for it in pre[\\\"items\\\"]}|{\\\"r2-prestage-manifest.json\\\",\\\"recovery-receipt.json\\\"}\nif tracked\"'!=expected: errors.append(\"remote tracked file inventory mismatch\")\nmsha=sha((e/\"manifest.json\").read_bytes())\nif (e/\"manifest.sha256\").read_text().strip().split()[0]!=msha: errors.append(\"remote evidence manifest sidecar mismatch\")\nif msha!=receipt[\"recoveredPackage\"][\"evidenceManifestSha256\"]: errors.append(\"receipt manifest SHA mismatch\")\nif (manifest.get(\"candidateSha\"),manifest.get(\"candidateTree\"),manifest.get(\"base\"),manifest.get(\"count\"))!=(\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\",\"a66760b6df143a87e894d5fe636f152ea73f6bea\",\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\",24): errors.append(\"remote manifest binding mismatch\")\nfor it in manifest[\"items\"]:\n p=e/it[\"path\"]\n if not p.is_file(): errors.append(\"missing evidence file \"+it[\"path\"]); continue\n b=p.read_bytes()\n if len(b)!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(\"remote evidence manifest hash/size mismatch \"+it[\"path\"])\nfor it in pre[\"items\"]:\n p=root/it[\"path\"]\n if not p.is_file(): errors.append(\"missing prestage file \"+it[\"path\"]); continue\n b=p.read_bytes()\n if len(b)!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(\"remote prestage hash/size mismatch \"+it[\"path\"])\nif receipt.get(\"project\")!=\"homehuddle\" or receipt.get(\"recoveryRequest\")!=\"homehuddle-ui0-runtime-unblock-verify-v1\" or receipt.get(\"originalRequest\")!=\"homehuddle-ui0-runtime-unblock-v2\": errors.append(\"recovery receipt request/project binding mismatch\")\nif receipt.get(\"recoveryFabricJob\")!=\"CF-7335a7ab3871390c163df4ae\" or receipt.get(\"originalFabricJob\")!=\"CF-271ed28547164d4053c0c3f2\": errors.append(\"recovery receipt job binding mismatch\")\nif receipt.get(\"carrierRef\")!=\"refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1\": errors.append(\"receipt carrier ref mismatch\")\nif receipt.get(\"candidate\")!={\"sha\":\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\",\"tree\":\"a66760b6df143a87e894d5fe636f152ea73f6bea\",\"base\":\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\"}: errors.append(\"receipt candidate binding mismatch\")\nif carrier.get(\"uploadStatus\")!=\"NOT_UPLOADED\" or carrier.get(\"fabricJob\")!=\"CF-271ed28547164d4053c0c3f2\": errors.append(\"original Artifact Bridge provenance missing\")\ncand=j(\"CHG-251-r2-evidence/candidate.json\")\nif cand.get(\"candidate\",{}).get(\"sha\")!=manifest[\"candidateSha\"] or cand.get(\"candidate\",{}).get(\"tree\")!=manifest[\"candidateTree\"] or cand.get(\"binding\",{}).get(\"baseSha\")!=manifest[\"base\"]: errors.append(\"remote candidate JSON binding mismatch\")\nif browser.get(\"candidate\",{}).get(\"sha\")!=manifest[\"candidateSha\"] or browser.get(\"candidate\",{}).get(\"tree\")!=manifest[\"candidateTree\"] or browser.get(\"candidate\",{}).get(\"base\")!=manifest[\"base\"]: errors.append(\"remote browser report binding mismatch\")\nif base.get(\"base_sha\")!=manifest[\"base\"]: errors.append(\"remote base reproduction binding mismatch\")\nif commands.get(\"npm-ci\",{}).get(\"exit_code\")!=0 or commands.get(\"tsc\",{}).get(\"exit_code\")!=0 or commands.get(\"jest\",{}).get(\"exit_code\")!=0 or commands.get(\"lint\",{}).get(\"exit_code\")!=1: errors.append(\"remote verification command record mismatch\")\nif verification.get(\"npm_ci\",{}).get(\"exit_code\")!=0 or verification.get(\"typescript\",{}).get(\"exit_code\")!=0 or verification.get(\"jest\",{}).get(\"exit_code\")!=0 or verification.get(\"lint\",{}).get(\"outcome\")!=\"FAIL_WITH_PRE_EXISTING_ERRORS\": errors.append(\"remote verification results mismatch\")\nshots=[]; vshots=verification.get(\"browser\",{}).get(\"screenshots\",{})\nfor it in manifest[\"items\"]:\n if not it[\"path\"].startswith(\"screenshots/\"): continue\n rel=it[\"path\"]; b=(e/rel).read_bytes()\n raw=base64.b64decode(base64.b64encode(b))\n sig=raw.startswith(b\"'\"\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n\\\") and len(raw)>=24\n dims=struct.unpack(\\\">II\\\",raw[16:24]) if sig else (None,None)\n vrec=next((rec for rec in vshots.values() if rec.get(\\\"path\\\")==rel),None)\n brec=next((rec for rec in browser.get(\\\"screenshots\\\",{}).values() if rec.get(\\\"file\\\")==rel),None)\n if not sig or len(raw)\"'!=it[\"bytes\"] or sha(raw)!=it[\"sha256\"]: errors.append(\"remote screenshot binary/base64 hash or PNG signature mismatch \"+rel)\n if not vrec or vrec.get(\"sha256\")!=sha(raw) or vrec.get(\"dimensions\")!={\"width\":dims[0],\"height\":dims[1]}: errors.append(\"remote verification screenshot reference mismatch \"+rel)\n if not brec or brec.get(\"sha256\")!=sha(raw) or brec.get(\"bytes\")!=len(raw): errors.append(\"remote browser screenshot reference mismatch \"+rel)\n shots.append({\"path\":rel,\"width\":dims[0],\"height\":dims[1],\"sha256\":sha(raw),\"bytes\":len(raw),\"binary_base64_roundtrip\":\"PASS\"})\nif len(shots)!=6: errors.append(\"remote screenshot count != 6\")\narchive=root/\"homehuddle-chg251-r2-evidence.tar.gz\"\nab=archive.read_bytes()\narchive_sha=sha(ab)\nside=(root/\"homehuddle-chg251-r2-evidence.tar.gz.sha256\").read_text().strip().split()[0]\nif archive_sha!=side or archive_sha!=receipt[\"recoveredPackage\"][\"archiveSha256\"] or len(ab)!=receipt[\"recoveredPackage\"][\"archiveBytes\"]: errors.append(\"remote archive bytes/hash/receipt mismatch\")\nwith tarfile.open(archive,\"r:gz\") as tf:\n members={}\n for ti in tf.getmembers():\n  if ti.isfile():\n   n=ti.name.removeprefix(\"./\"); prefix=\"CHG-251-r2-evidence/\"\n   if n.startswith(prefix): n=n[len(prefix):]\n   members[n]=tf.extractfile(ti).read()\n if not {it[\"path\"] for it in manifest[\"items\"]}.issubset(members): errors.append(\"remote archive missing manifest entries\")\n for it in manifest[\"items\"]:\n  if members.get(it[\"path\"])!=(e/it[\"path\"]).read_bytes(): errors.append(\"remote archive differs from remote evidence file \"+it[\"path\"])\nprint(json.dumps({\"ok\":not errors,\"errors\":errors,\"remoteFileCount\":len(tracked),\"remoteManifestEntries\":len(manifest[\"items\"]),\"remotePrestageEntries\":len(pre[\"items\"]),\"manifestSha256\":msha,\"archiveSha256\":archive_sha,\"archiveBytes\":len(ab),\"archiveRegularFiles\":len(members),\"screenshots\":shots,\"structuredFilesRead\":[\"CHG-251-r2-evidence/manifest.json\",\"CHG-251-r2-evidence/candidate.json\",\"CHG-251-r2-evidence/verification.json\",\"CHG-251-r2-evidence/verification-commands.json\",\"CHG-251-r2-evidence/runtime/base-browser-reproduction.json\",\"CHG-251-r2-evidence/runtime/candidate-browser-report.json\",\"recovery-receipt.json\"]},indent=2))\nsys.exit(0 if not errors else 2)\nPY'",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport base64, hashlib, json, pathlib, struct, tarfile, sys\nroot=pathlib.Path(\\\"/tmp/homehuddle-chg251-readback-CF-7335a7ab3871390c163df4ae\\\"); e=root/\\\"CHG-251-r2-evidence\\\"; errors=[]\ndef sha(b): return hashlib.sha256(b).hexdigest()\ndef j(rel): return json.loads((root/rel).read_text())\nmanifest=j(\\\"CHG-251-r2-evidence/manifest.json\\\"); receipt=j(\\\"recovery-receipt.json\\\")\npre=j(\\\"r2-prestage-manifest.json\\\"); carrier=j(\\\"artifact-carrier.json\\\")\nverification=j(\\\"CHG-251-r2-evidence/verification.json\\\")\nbrowser=j(\\\"CHG-251-r2-evidence/runtime/candidate-browser-report.json\\\")\ncommands=j(\\\"CHG-251-r2-evidence/verification-commands.json\\\")\nbase=j(\\\"CHG-251-r2-evidence/runtime/base-browser-reproduction.json\\\")\ntracked={str(p.relative_to(root)) for p in root.rglob(\\\"*\\\") if p.is_file() and \\\".git\\\" not in p.relative_to(root).parts}\nexpected={it[\\\"path\\\"] for it in pre[\\\"items\\\"]}|{\\\"r2-prestage-manifest.json\\\",\\\"recovery-receipt.json\\\"}\nif tracked\"'!=expected: errors.append(\"remote tracked file inventory mismatch\")\nmsha=sha((e/\"manifest.json\").read_bytes())\nif (e/\"manifest.sha256\").read_text().strip().split()[0]!=msha: errors.append(\"remote evidence manifest sidecar mismatch\")\nif msha!=receipt[\"recoveredPackage\"][\"evidenceManifestSha256\"]: errors.append(\"receipt manifest SHA mismatch\")\nif (manifest.get(\"candidateSha\"),manifest.get(\"candidateTree\"),manifest.get(\"base\"),manifest.get(\"count\"))!=(\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\",\"a66760b6df143a87e894d5fe636f152ea73f6bea\",\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\",24): errors.append(\"remote manifest binding mismatch\")\nfor it in manifest[\"items\"]:\n p=e/it[\"path\"]\n if not p.is_file(): errors.append(\"missing evidence file \"+it[\"path\"]); continue\n b=p.read_bytes()\n if len(b)!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(\"remote evidence manifest hash/size mismatch \"+it[\"path\"])\nfor it in pre[\"items\"]:\n p=root/it[\"path\"]\n if not p.is_file(): errors.append(\"missing prestage file \"+it[\"path\"]); continue\n b=p.read_bytes()\n if len(b)!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(\"remote prestage hash/size mismatch \"+it[\"path\"])\nif receipt.get(\"project\")!=\"homehuddle\" or receipt.get(\"recoveryRequest\")!=\"homehuddle-ui0-runtime-unblock-verify-v1\" or receipt.get(\"originalRequest\")!=\"homehuddle-ui0-runtime-unblock-v2\": errors.append(\"recovery receipt request/project binding mismatch\")\nif receipt.get(\"recoveryFabricJob\")!=\"CF-7335a7ab3871390c163df4ae\" or receipt.get(\"originalFabricJob\")!=\"CF-271ed28547164d4053c0c3f2\": errors.append(\"recovery receipt job binding mismatch\")\nif receipt.get(\"carrierRef\")!=\"refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1\": errors.append(\"receipt carrier ref mismatch\")\nif receipt.get(\"candidate\")!={\"sha\":\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\",\"tree\":\"a66760b6df143a87e894d5fe636f152ea73f6bea\",\"base\":\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\"}: errors.append(\"receipt candidate binding mismatch\")\nif carrier.get(\"uploadStatus\")!=\"NOT_UPLOADED\" or carrier.get(\"fabricJob\")!=\"CF-271ed28547164d4053c0c3f2\": errors.append(\"original Artifact Bridge provenance missing\")\ncand=j(\"CHG-251-r2-evidence/candidate.json\")\nif cand.get(\"candidate\",{}).get(\"sha\")!=manifest[\"candidateSha\"] or cand.get(\"candidate\",{}).get(\"tree\")!=manifest[\"candidateTree\"] or cand.get(\"binding\",{}).get(\"baseSha\")!=manifest[\"base\"]: errors.append(\"remote candidate JSON binding mismatch\")\nif browser.get(\"candidate\",{}).get(\"sha\")!=manifest[\"candidateSha\"] or browser.get(\"candidate\",{}).get(\"tree\")!=manifest[\"candidateTree\"] or browser.get(\"candidate\",{}).get(\"base\")!=manifest[\"base\"]: errors.append(\"remote browser report binding mismatch\")\nif base.get(\"base_sha\")!=manifest[\"base\"]: errors.append(\"remote base reproduction binding mismatch\")\nif commands.get(\"npm-ci\",{}).get(\"exit_code\")!=0 or commands.get(\"tsc\",{}).get(\"exit_code\")!=0 or commands.get(\"jest\",{}).get(\"exit_code\")!=0 or commands.get(\"lint\",{}).get(\"exit_code\")!=1: errors.append(\"remote verification command record mismatch\")\nif verification.get(\"npm_ci\",{}).get(\"exit_code\")!=0 or verification.get(\"typescript\",{}).get(\"exit_code\")!=0 or verification.get(\"jest\",{}).get(\"exit_code\")!=0 or verification.get(\"lint\",{}).get(\"outcome\")!=\"FAIL_WITH_PRE_EXISTING_ERRORS\": errors.append(\"remote verification results mismatch\")\nshots=[]; vshots=verification.get(\"browser\",{}).get(\"screenshots\",{})\nfor it in manifest[\"items\"]:\n if not it[\"path\"].startswith(\"screenshots/\"): continue\n rel=it[\"path\"]; raw=(e/rel).read_bytes(); raw=base64.b64decode(base64.b64encode(raw))\n sig=raw.startswith(b\"'\"\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n\\\") and len(raw)>=24\n dims=struct.unpack(\\\">II\\\",raw[16:24]) if sig else (None,None)\n vrec=next((x for x in vshots.values() if x.get(\\\"path\\\")==rel),None)\n brec=next((x for x in browser.get(\\\"screenshots\\\",{}).values() if x.get(\\\"file\\\")==rel),None)\n if not sig or len(raw)\"'!=it[\"bytes\"] or sha(raw)!=it[\"sha256\"]: errors.append(\"remote screenshot binary/base64 hash or PNG signature mismatch \"+rel)\n if not vrec or vrec.get(\"sha256\")!=sha(raw) or vrec.get(\"dimensions\")!={\"width\":dims[0],\"height\":dims[1]}: errors.append(\"remote verification screenshot reference mismatch \"+rel)\n if not brec or brec.get(\"sha256\")!=sha(raw) or brec.get(\"bytes\")!=len(raw): errors.append(\"remote browser screenshot reference mismatch \"+rel)\n shots.append({\"path\":rel,\"width\":dims[0],\"height\":dims[1],\"sha256\":sha(raw),\"bytes\":len(raw),\"binary_base64_roundtrip\":\"PASS\"})\nif len(shots)!=6: errors.append(\"remote screenshot count != 6\")\narchive=root/\"homehuddle-chg251-r2-evidence.tar.gz\"; ab=archive.read_bytes(); archive_sha=sha(ab)\nside=(root/\"homehuddle-chg251-r2-evidence.tar.gz.sha256\").read_text().strip().split()[0]\nif archive_sha!=side or archive_sha!=receipt[\"recoveredPackage\"][\"archiveSha256\"] or len(ab)!=receipt[\"recoveredPackage\"][\"archiveBytes\"]: errors.append(\"remote archive bytes/hash/receipt mismatch\")\nwith tarfile.open(archive,\"r:gz\") as tf:\n members={}\n for ti in tf.getmembers():\n  if ti.isfile():\n   n=ti.name.removeprefix(\"./\"); pref=\"CHG-251-r2-evidence/\"\n   if n.startswith(pref): n=n[len(pref):]\n   members[n]=tf.extractfile(ti).read()\n if not {it[\"path\"] for it in manifest[\"items\"]}.issubset(members): errors.append(\"remote archive missing manifest entries\")\n for it in manifest[\"items\"]:\n  if members.get(it[\"path\"])!=(e/it[\"path\"]).read_bytes(): errors.append(\"remote archive differs from remote evidence file \"+it[\"path\"])\nprint(json.dumps({\"ok\":not errors,\"errors\":errors,\"remoteFileCount\":len(tracked),\"remoteManifestEntries\":len(manifest[\"items\"]),\"remotePrestageEntries\":len(pre[\"items\"]),\"manifestSha256\":msha,\"archiveSha256\":archive_sha,\"archiveBytes\":len(ab),\"archiveRegularFiles\":len(members),\"screenshots\":shots,\"structuredFilesRead\":[\"CHG-251-r2-evidence/manifest.json\",\"CHG-251-r2-evidence/candidate.json\",\"CHG-251-r2-evidence/verification.json\",\"CHG-251-r2-evidence/verification-commands.json\",\"CHG-251-r2-evidence/runtime/base-browser-reproduction.json\",\"CHG-251-r2-evidence/runtime/candidate-browser-report.json\",\"recovery-receipt.json\"]},indent=2))\nsys.exit(0 if not errors else 2)\nPY'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport json,pathlib\np=pathlib.Path(\\\"/tmp/homehuddle-chg251-recovery-CF-7335a7ab3871390c163df4ae/recovery-receipt.json\\\")\nd=json.loads(p.read_text())\nd[\\\"status\\\"]=\\\"GIT_PUBLISHED_AWAITING_AUDIT\\\"\nd[\\\"publishedAt\\\"]=\\\"2026-09-25T20:04:46Z\\\"\nd[\\\"initialPublicationReadback\\\"]={\\\"commit\\\":\\\"bdc484ab19caaf22db50f4e6ffcf4b280f80410d\\\",\\\"result\\\":\\\"PASS\\\"}\np.write_text(json.dumps(d,indent=2,sort_keys=True)+\\\"\\\\n\\\")\nprint(\\\"updated recovery receipt with final handoff status\\\")\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git add recovery-receipt.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --cached --stat'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git commit -m 'Mark CHG-251 evidence recovery published'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git push origin HEAD:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch --no-tags origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1:refs/remotes/origin/recovery'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git checkout --detach refs/remotes/origin/recovery'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-tree -r --name-only HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nimport base64, hashlib, json, pathlib, struct, tarfile, sys\nroot=pathlib.Path(\\\"/tmp/homehuddle-chg251-readback-CF-7335a7ab3871390c163df4ae\\\"); e=root/\\\"CHG-251-r2-evidence\\\"; errors=[]\ndef sha(b): return hashlib.sha256(b).hexdigest()\ndef j(rel): return json.loads((root/rel).read_text())\nmanifest=j(\\\"CHG-251-r2-evidence/manifest.json\\\"); receipt=j(\\\"recovery-receipt.json\\\")\npre=j(\\\"r2-prestage-manifest.json\\\"); carrier=j(\\\"artifact-carrier.json\\\")\nverification=j(\\\"CHG-251-r2-evidence/verification.json\\\")\nbrowser=j(\\\"CHG-251-r2-evidence/runtime/candidate-browser-report.json\\\")\ncommands=j(\\\"CHG-251-r2-evidence/verification-commands.json\\\")\nbase=j(\\\"CHG-251-r2-evidence/runtime/base-browser-reproduction.json\\\")\ntracked={str(p.relative_to(root)) for p in root.rglob(\\\"*\\\") if p.is_file() and \\\".git\\\" not in p.relative_to(root).parts}\nexpected={it[\\\"path\\\"] for it in pre[\\\"items\\\"]}|{\\\"r2-prestage-manifest.json\\\",\\\"recovery-receipt.json\\\"}\nif tracked\"'!=expected: errors.append(\"remote tracked file inventory mismatch\")\nmsha=sha((e/\"manifest.json\").read_bytes())\nif (e/\"manifest.sha256\").read_text().strip().split()[0]!=msha or msha!=receipt[\"recoveredPackage\"][\"evidenceManifestSha256\"]: errors.append(\"remote evidence manifest sidecar/receipt mismatch\")\nif (manifest.get(\"candidateSha\"),manifest.get(\"candidateTree\"),manifest.get(\"base\"),manifest.get(\"count\"))!=(\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\",\"a66760b6df143a87e894d5fe636f152ea73f6bea\",\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\",24): errors.append(\"remote manifest binding mismatch\")\nfor it in manifest[\"items\"]:\n p=e/it[\"path\"]\n if not p.is_file(): errors.append(\"missing evidence file \"+it[\"path\"]); continue\n b=p.read_bytes()\n if len(b)!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(\"remote evidence manifest hash/size mismatch \"+it[\"path\"])\nfor it in pre[\"items\"]:\n p=root/it[\"path\"]\n if not p.is_file(): errors.append(\"missing prestage file \"+it[\"path\"]); continue\n b=p.read_bytes()\n if len(b)!=it[\"bytes\"] or sha(b)!=it[\"sha256\"]: errors.append(\"remote prestage hash/size mismatch \"+it[\"path\"])\nif receipt.get(\"status\")!=\"GIT_PUBLISHED_AWAITING_AUDIT\" or receipt.get(\"project\")!=\"homehuddle\" or receipt.get(\"recoveryRequest\")!=\"homehuddle-ui0-runtime-unblock-verify-v1\" or receipt.get(\"originalRequest\")!=\"homehuddle-ui0-runtime-unblock-v2\": errors.append(\"final recovery receipt status/request binding mismatch\")\nif receipt.get(\"recoveryFabricJob\")!=\"CF-7335a7ab3871390c163df4ae\" or receipt.get(\"originalFabricJob\")!=\"CF-271ed28547164d4053c0c3f2\": errors.append(\"recovery receipt job binding mismatch\")\nif receipt.get(\"carrierRef\")!=\"refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1\": errors.append(\"receipt carrier ref mismatch\")\nif receipt.get(\"candidate\")!={\"sha\":\"e1a7587b70f19dba471032f9e8b96846ca3efbb3\",\"tree\":\"a66760b6df143a87e894d5fe636f152ea73f6bea\",\"base\":\"f8ea259d2f52aba1bc3d4aba7a034625fff33fb2\"}: errors.append(\"receipt candidate binding mismatch\")\nif carrier.get(\"uploadStatus\")!=\"NOT_UPLOADED\" or carrier.get(\"fabricJob\")!=\"CF-271ed28547164d4053c0c3f2\": errors.append(\"original Artifact Bridge provenance missing\")\ncand=j(\"CHG-251-r2-evidence/candidate.json\")\nif cand.get(\"candidate\",{}).get(\"sha\")!=manifest[\"candidateSha\"] or cand.get(\"candidate\",{}).get(\"tree\")!=manifest[\"candidateTree\"] or cand.get(\"binding\",{}).get(\"baseSha\")!=manifest[\"base\"]: errors.append(\"remote candidate JSON binding mismatch\")\nif browser.get(\"candidate\",{}).get(\"sha\")!=manifest[\"candidateSha\"] or browser.get(\"candidate\",{}).get(\"tree\")!=manifest[\"candidateTree\"] or browser.get(\"candidate\",{}).get(\"base\")!=manifest[\"base\"]: errors.append(\"remote browser report binding mismatch\")\nif base.get(\"base_sha\")!=manifest[\"base\"]: errors.append(\"remote base reproduction binding mismatch\")\nif commands.get(\"npm-ci\",{}).get(\"exit_code\")!=0 or commands.get(\"tsc\",{}).get(\"exit_code\")!=0 or commands.get(\"jest\",{}).get(\"exit_code\")!=0 or commands.get(\"lint\",{}).get(\"exit_code\")!=1: errors.append(\"remote verification command record mismatch\")\nif verification.get(\"npm_ci\",{}).get(\"exit_code\")!=0 or verification.get(\"typescript\",{}).get(\"exit_code\")!=0 or verification.get(\"jest\",{}).get(\"exit_code\")!=0 or verification.get(\"lint\",{}).get(\"outcome\")!=\"FAIL_WITH_PRE_EXISTING_ERRORS\": errors.append(\"remote verification results mismatch\")\nshots=[]; vshots=verification.get(\"browser\",{}).get(\"screenshots\",{})\nfor it in manifest[\"items\"]:\n if not it[\"path\"].startswith(\"screenshots/\"): continue\n rel=it[\"path\"]; raw=base64.b64decode(base64.b64encode((e/rel).read_bytes()))\n sig=raw.startswith(b\"'\"\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n\\\") and len(raw)>=24\n dims=struct.unpack(\\\">II\\\",raw[16:24]) if sig else (None,None)\n vrec=next((x for x in vshots.values() if x.get(\\\"path\\\")==rel),None)\n brec=next((x for x in browser.get(\\\"screenshots\\\",{}).values() if x.get(\\\"file\\\")==rel),None)\n if not sig or len(raw)\"'!=it[\"bytes\"] or sha(raw)!=it[\"sha256\"]: errors.append(\"remote screenshot binary/base64 hash or PNG signature mismatch \"+rel)\n if not vrec or vrec.get(\"sha256\")!=sha(raw) or vrec.get(\"dimensions\")!={\"width\":dims[0],\"height\":dims[1]}: errors.append(\"remote verification screenshot reference mismatch \"+rel)\n if not brec or brec.get(\"sha256\")!=sha(raw) or brec.get(\"bytes\")!=len(raw): errors.append(\"remote browser screenshot reference mismatch \"+rel)\n shots.append({\"path\":rel,\"width\":dims[0],\"height\":dims[1],\"sha256\":sha(raw),\"bytes\":len(raw),\"binary_base64_roundtrip\":\"PASS\"})\nif len(shots)!=6: errors.append(\"remote screenshot count != 6\")\narchive=root/\"homehuddle-chg251-r2-evidence.tar.gz\"; ab=archive.read_bytes(); archive_sha=sha(ab)\nside=(root/\"homehuddle-chg251-r2-evidence.tar.gz.sha256\").read_text().strip().split()[0]\nif archive_sha!=side or archive_sha!=receipt[\"recoveredPackage\"][\"archiveSha256\"] or len(ab)!=receipt[\"recoveredPackage\"][\"archiveBytes\"]: errors.append(\"remote archive bytes/hash/receipt mismatch\")\nwith tarfile.open(archive,\"r:gz\") as tf:\n members={}\n for ti in tf.getmembers():\n  if ti.isfile():\n   n=ti.name.removeprefix(\"./\"); pref=\"CHG-251-r2-evidence/\"\n   if n.startswith(pref): n=n[len(pref):]\n   members[n]=tf.extractfile(ti).read()\n if not {it[\"path\"] for it in manifest[\"items\"]}.issubset(members): errors.append(\"remote archive missing manifest entries\")\n for it in manifest[\"items\"]:\n  if members.get(it[\"path\"])!=(e/it[\"path\"]).read_bytes(): errors.append(\"remote archive differs from remote evidence file \"+it[\"path\"])\nprint(json.dumps({\"ok\":not errors,\"errors\":errors,\"remoteFileCount\":len(tracked),\"remoteManifestEntries\":len(manifest[\"items\"]),\"remotePrestageEntries\":len(pre[\"items\"]),\"receiptStatus\":receipt.get(\"status\"),\"manifestSha256\":msha,\"archiveSha256\":archive_sha,\"archiveBytes\":len(ab),\"screenshots\":shots,\"structuredFilesRead\":[\"CHG-251-r2-evidence/manifest.json\",\"CHG-251-r2-evidence/candidate.json\",\"CHG-251-r2-evidence/verification.json\",\"CHG-251-r2-evidence/verification-commands.json\",\"CHG-251-r2-evidence/runtime/base-browser-reproduction.json\",\"CHG-251-r2-evidence/runtime/candidate-browser-report.json\",\"recovery-receipt.json\"]},indent=2))\nsys.exit(0 if not errors else 2)\nPY'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch --prune origin main'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse refs/remotes/origin/main'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --name-only f8ea259d2f52aba1bc3d4aba7a034625fff33fb2 HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.156.1",
+    "configured_model": "gpt-6-luna",
+    "event_count": 232,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 93.52,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 2590464,
+      "fresh_input_tokens": 179628,
+      "input_tokens": 2770092,
+      "non_reasoning_output_tokens": 22187,
+      "output_tokens": 47160,
+      "reasoning_output_tokens": 24973,
+      "total_processed_tokens": 2817252
+    },
+    "warnings": []
+  },
+  "commits": [
+    {
+      "sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+      "subject": "fix(auth): unblock web runtime for UI0 audits"
+    }
+  ],
+  "diff": {
+    "additions": 92,
+    "changed_files": 3,
+    "commit_count": 1,
+    "deletions": 27
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-25T20:06:51Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "branch": "codex/homehuddle-ui0-runtime-unblock-verify-v1",
+    "detached_verify": false,
+    "head_sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "remote_exact_head": true,
+    "remote_head_sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "work_branch": "codex/homehuddle-ui0-runtime-unblock-verify-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-7335a7ab3871390c163df4ae",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-runtime-unblock-verify-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-25T19:51:43Z",
+  "status": "EXECUTED_CHANGE",
+  "timing": {
+    "execution_seconds": 908,
+    "queue_seconds": 0,
+    "total_seconds": 908
+  },
+  "transport": {
+    "bytes": 6152,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 5813,
+    "prompt_sha256": "1546a1c01b27a8cd323246a44e2df652725171f8b81001dff7bde9cd49964dad",
+    "sha256": "7335a7ab3871390c163df4ae8c1afdf09fb4aa33a1e27e131e262ce5e23e4b43"
+  }
+}
