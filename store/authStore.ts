@@ -1,9 +1,5 @@
 import { create } from 'zustand';
 import { Session, User } from '@supabase/supabase-js';
-import { supabase } from '../lib/supabase';
-import { useOnboardingStore } from './onboardingStore';
-import { resetHouseholdState, useHuddleStore } from './huddleStore';
-import { useRandomGamesStore } from './randomGamesStore';
 
 interface AuthState {
   session: Session | null;
@@ -13,36 +9,16 @@ interface AuthState {
   setSession: (session: Session | null) => void;
   setInitialized: (initialized: boolean) => void;
   setDevBypass: (bypass: boolean) => void;
-  signOut: () => Promise<void>;
+  signOut: () => void;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
+export const useAuthStore = create<AuthState>((set) => ({
   session: null,
   user: null,
   isInitialized: false,
   isDevBypass: false,
-  setSession: (session) => {
-    if (get().user?.id !== session?.user.id || (session && get().isDevBypass)) {
-      resetHouseholdState();
-      useRandomGamesStore.setState({ log: [] });
-      useOnboardingStore.getState().bindAccount(session?.user.id ?? null);
-    }
-    set({ session, user: session?.user || null, isDevBypass: session ? false : get().isDevBypass });
-  },
+  setSession: (session) => set({ session, user: session?.user || null }),
   setInitialized: (initialized) => set({ isInitialized: initialized }),
-  setDevBypass: (isDevBypass) => {
-    if (!__DEV__ || get().session) return;
-    if (isDevBypass) useHuddleStore.getState().resetToMockData();
-    else resetHouseholdState();
-    set({ isDevBypass });
-  },
-  signOut: async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) throw error;
-    resetHouseholdState();
-    useRandomGamesStore.setState({ log: [] });
-    useOnboardingStore.getState().bindAccount(null);
-    useOnboardingStore.getState().restart();
-    set({ session: null, user: null, isDevBypass: false });
-  },
+  setDevBypass: (isDevBypass) => set({ isDevBypass }),
+  signOut: () => set({ session: null, user: null, isDevBypass: false }),
 }));

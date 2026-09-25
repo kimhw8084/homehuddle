@@ -32,13 +32,19 @@ const C = {
   red: '#EF4444',
 };
 
+const ROLES: Array<{ label: string; sub: string; value: 'Parent' | 'Child' }> = [
+  { label: 'Parent / Admin', sub: 'Can manage all settings', value: 'Parent' },
+  { label: 'Child / Member', sub: 'Standard household member', value: 'Child' },
+];
+
 export default function OnboardingProfile() {
   const router = useRouter();
-  const { setCurrentUser, setFamilyMembers } = useHuddleStore();
+  const { familyMembers, updateMemberName, updateMemberAvatar, setCurrentUser } = useHuddleStore();
 
   // Default to first member (Dad) as template for the admin account being set up
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState<AvatarValue>('');
+  const [role, setRole] = useState<'Parent' | 'Child'>('Parent');
   const [error, setError] = useState('');
 
   const step = '2 of 4';
@@ -52,14 +58,14 @@ export default function OnboardingProfile() {
     setError('');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
 
-    // A new household starts with exactly the authenticated parent, not demo members.
-    setFamilyMembers([{
-      name: trimmed,
-      avatar: avatar || '👤',
-      role: 'Parent',
-      pool: 'Me',
-      stats: { choresCompleted: 0, pointsEarned: 0, streak: 0 },
-    }]);
+    // Update first family member (the account holder / admin)
+    const firstMember = familyMembers[0];
+    if (firstMember && firstMember.name !== trimmed) {
+      updateMemberName(firstMember.name, trimmed);
+    }
+    if (avatar) {
+      updateMemberAvatar(trimmed, avatar);
+    }
     setCurrentUser(trimmed);
 
     router.push('/onboarding/family');
@@ -121,9 +127,31 @@ export default function OnboardingProfile() {
               maxLength={30}
             />
             {error ? <Text style={styles.errorText}>{error}</Text> : null}
-            <Text style={styles.fieldHint}>This is how you’ll appear to your family.</Text>
+            <Text style={styles.fieldHint}>This is how you'll appear to your family.</Text>
           </View>
 
+          {/* Role */}
+          <View style={styles.fieldGroup}>
+            <Text style={styles.fieldLabel}>Your Role</Text>
+            {ROLES.map(r => (
+              <TouchableOpacity
+                key={r.value}
+                style={[styles.roleRow, role === r.value && styles.roleRowActive]}
+                onPress={() => { setRole(r.value); Haptics.selectionAsync(); }}
+                activeOpacity={0.8}
+              >
+                <View style={styles.roleText}>
+                  <Text style={[styles.roleLabel, role === r.value && { color: C.accent }]}>
+                    {r.label}
+                  </Text>
+                  <Text style={styles.roleSub}>{r.sub}</Text>
+                </View>
+                <View style={[styles.radioOuter, role === r.value && { borderColor: C.accent }]}>
+                  {role === r.value && <View style={styles.radioInner} />}
+                </View>
+              </TouchableOpacity>
+            ))}
+          </View>
         </ScrollView>
 
         {/* Next button */}

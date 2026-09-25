@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Alert,
+  Switch,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -14,12 +15,27 @@ import {
   ChevronRight,
   ChevronLeft,
   User,
+  Bell,
+  Shield,
   LogOut,
+  CheckCircle2,
   Users,
+  Palmtree,
+  ShoppingCart,
+  Star,
   ClipboardList,
+  Wallet,
+  HelpCircle,
+  Heart,
+  Globe,
+  Moon,
+  Vibrate,
+  Trash2,
   Lock,
   UserPlus,
   Home,
+  Info,
+  RotateCcw,
 } from 'lucide-react-native';
 import { useAuthStore } from '../../store/authStore';
 import { useHuddleStore } from '../../store/huddleStore';
@@ -50,9 +66,15 @@ export default function ProfileScreen() {
   const signOut = useAuthStore(state => state.signOut);
   const currentUser = useHuddleStore(state => state.currentUser);
   const familyMembers = useHuddleStore(state => state.familyMembers);
+  const vacationMode = useHuddleStore(state => state.vacationMode);
 
   const me = familyMembers.find(m => m.name === currentUser);
 
+  // Local preference toggles (no persistence yet — wired in future)
+  const [hapticEnabled, setHapticEnabled] = React.useState(true);
+  const [notificationsEnabled, setNotificationsEnabled] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState(false);
+  const [choreApproval, setChoreApproval] = React.useState(false);
 
   const handleSignOut = () => {
     Alert.alert(
@@ -63,20 +85,16 @@ export default function ProfileScreen() {
         {
           text: 'Sign Out',
           style: 'destructive',
-          onPress: async () => {
+          onPress: () => {
             Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-            try {
-              await signOut();
-            } catch {
-              Alert.alert('Sign out failed', 'Please check your connection and try again.');
-            }
+            signOut();
           },
         },
       ]
     );
   };
 
-  const tap = () => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+  const tap = () => hapticEnabled && Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
 
   // ─── Sub-components ───────────────────────────────────────────────
 
@@ -94,6 +112,9 @@ export default function ProfileScreen() {
     sublabel,
     color = C.slate,
     value,
+    isToggle,
+    toggled,
+    onToggle,
     onPress,
     last,
     danger,
@@ -103,13 +124,17 @@ export default function ProfileScreen() {
     sublabel?: string;
     color?: string;
     value?: string;
+    isToggle?: boolean;
+    toggled?: boolean;
+    onToggle?: (v: boolean) => void;
     onPress?: () => void;
     last?: boolean;
     danger?: boolean;
   }) => (
     <TouchableOpacity
-      activeOpacity={0.7}
+      activeOpacity={isToggle ? 1 : 0.7}
       onPress={() => {
+        if (isToggle) return;
         tap();
         onPress?.();
       }}
@@ -122,17 +147,31 @@ export default function ProfileScreen() {
         <Text style={[styles.rowLabel, danger && { color: C.red }]}>{label}</Text>
         {sublabel ? <Text style={styles.rowSub}>{sublabel}</Text> : null}
       </View>
-      <View style={styles.rowRight}>
-        {value ? <Text style={styles.rowValue}>{value}</Text> : null}
-        <ChevronRight size={16} color="#CBD5E1" />
-      </View>
+      {isToggle ? (
+        <Switch
+          value={toggled}
+          onValueChange={v => {
+            if (hapticEnabled) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            onToggle?.(v);
+          }}
+          trackColor={{ false: '#E2E8F0', true: C.green }}
+          thumbColor="#fff"
+          ios_backgroundColor="#E2E8F0"
+        />
+      ) : (
+        <View style={styles.rowRight}>
+          {value ? <Text style={styles.rowValue}>{value}</Text> : null}
+          <ChevronRight size={16} color="#CBD5E1" />
+        </View>
+      )}
     </TouchableOpacity>
   );
 
   // ─── Derived values ───────────────────────────────────────────────
 
   const memberCount = familyMembers.filter(m => (m.role as string) !== 'Pet').length;
-  const memberSummary = `${memberCount} members`;
+  const petCount = familyMembers.filter(m => (m.role as string) === 'Pet').length;
+  const memberSummary = `${memberCount} members${petCount > 0 ? `, ${petCount} pet` : ''}`;
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }} edges={['top']}>
@@ -168,23 +207,92 @@ export default function ProfileScreen() {
           <Row icon={User} label="Personal Info" sublabel="Name, email, avatar" color={C.accent} onPress={() => router.push('/settings/personal-info')} last />
         </Card>
 
+        {/* ── PRIVACY & SECURITY ───────────────────────────────── */}
         <SectionHeader title="Privacy & Security" />
         <Card>
-          <Row icon={Lock} label="Privacy & account deletion" sublabel="Export or delete your account" color={C.purple} onPress={() => router.push('/settings/privacy')} />
+          <Row icon={Lock} label="Password & Security" sublabel="Password, 2FA" color={C.purple} onPress={() => router.push('/settings/privacy')} />
+          <Row icon={Shield} label="Privacy" sublabel="Visibility, data sharing" color={C.slate} onPress={() => router.push('/settings/privacy')} last />
+        </Card>
+
+        {/* ── PREFERENCES ──────────────────────────────────────── */}
+        <SectionHeader title="Preferences" />
+        <Card>
+          <Row
+            icon={Vibrate}
+            label="Haptic Feedback"
+            color={C.purple}
+            isToggle
+            toggled={hapticEnabled}
+            onToggle={v => setHapticEnabled(v)}
+          />
+          <Row
+            icon={Bell}
+            label="Notifications"
+            sublabel={notificationsEnabled ? 'All alerts on' : 'Silenced'}
+            color={C.pink}
+            isToggle
+            toggled={notificationsEnabled}
+            onToggle={v => setNotificationsEnabled(v)}
+          />
+          <Row icon={Bell} label="Notification Settings" sublabel="Customize alert types" color={C.pink} onPress={() => router.push('/settings/notifications')} />
+          <Row
+            icon={Moon}
+            label="Dark Mode"
+            sublabel="Coming soon"
+            color="#334155"
+            isToggle
+            toggled={darkMode}
+            onToggle={v => setDarkMode(v)}
+          />
+          <Row icon={Globe} label="Language & Region" sublabel="English (US)" color={C.cyan} value="EN" last />
         </Card>
 
         {/* ── HOUSEHOLD & WALLET ───────────────────────────────── */}
         <SectionHeader title="Household & Wallet" />
         <Card>
-          <Row icon={Home} label="Household Settings" sublabel="Members, export, and lifecycle" color={C.slate} onPress={() => router.push('/settings/household')} />
+          <Row icon={Home} label="Household Settings" sublabel="Name, ID, preferences" color={C.slate} onPress={() => router.push('/settings/household')} />
           <Row icon={Users} label="Family Members" sublabel={memberSummary} color={C.accent} onPress={() => router.push('/settings/household')} />
-          <Row icon={UserPlus} label="Invite Family" sublabel="Email invitations for parents and teens" color={C.cyan} onPress={() => router.push('/settings/invite')} last />
+          <Row icon={UserPlus} label="Invite Family" sublabel="Share invite code" color={C.cyan} onPress={() => router.push('/settings/invite')} />
+          <Row
+            icon={Palmtree}
+            label="Vacation Mode"
+            sublabel={vacationMode?.active ? `Active · ends ${vacationMode.endDate}` : 'Off'}
+            color={C.orange}
+            value={vacationMode?.active ? 'On' : ''}
+          />
+          <Row icon={Wallet} label="Wallet & Points" sublabel="Reset cycle, currency" color="#6366F1" onPress={() => router.push('/settings/household')} last />
         </Card>
 
         {/* ── APP FEATURES ─────────────────────────────────────── */}
         <SectionHeader title="App Features" />
         <Card>
-          <Row icon={ClipboardList} label="Completed chores" sublabel="Approved and rejected activity" color={C.amber} onPress={() => router.push('/settings/completed-chores')} />
+          <Row icon={ClipboardList} label="Chore History" sublabel="Completed & deleted" color={C.amber} onPress={() => router.push('/settings/chore-history')} />
+          <Row
+            icon={CheckCircle2}
+            label="Chore Approval"
+            sublabel="Require parent sign-off"
+            color={C.green}
+            isToggle
+            toggled={choreApproval}
+            onToggle={v => setChoreApproval(v)}
+          />
+          <Row icon={Star} label="Market Settings" sublabel="Rewards, stock, pricing" color={C.rose} />
+          <Row icon={ShoppingCart} label="Restock Preferences" sublabel="Default store, staples" color={C.green} last />
+        </Card>
+
+        {/* ── DATA & STORAGE ────────────────────────────────────── */}
+        <SectionHeader title="Data & Storage" />
+        <Card>
+          <Row icon={RotateCcw} label="Reset to Demo Data" sublabel="Restore all mock data" color={C.orange} />
+          <Row icon={Trash2} label="Clear App Cache" sublabel="Free up space" color={C.slate} last />
+        </Card>
+
+        {/* ── SUPPORT ──────────────────────────────────────────── */}
+        <SectionHeader title="Support" />
+        <Card>
+          <Row icon={HelpCircle} label="Help Center" sublabel="FAQs, live chat, email" color={C.slate} onPress={() => router.push('/settings/help')} />
+          <Row icon={Heart} label="About HomeHuddle" sublabel="Version 1.0.4 · Build 2026" color={C.rose} onPress={() => router.push('/settings/about')} />
+          <Row icon={Info} label="What's New" sublabel="See latest changes" color={C.cyan} last />
         </Card>
 
         {/* ── SIGN OUT ─────────────────────────────────────────── */}

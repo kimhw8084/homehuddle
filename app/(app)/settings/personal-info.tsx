@@ -12,12 +12,10 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import { ChevronLeft, User, Mail } from 'lucide-react-native';
+import { ChevronLeft, User, Mail, Phone, MapPin } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { AvatarPicker, AvatarValue } from '../../../components/AvatarPicker';
 import { useHuddleStore } from '../../../store/huddleStore';
-import { useAuthStore } from '../../../store/authStore';
-import { accountApi } from '../../../lib/account';
 
 const C = {
   bg: '#F8FAFC',
@@ -36,36 +34,30 @@ export default function PersonalInfoScreen() {
   const familyMembers = useHuddleStore(s => s.familyMembers);
   const updateMemberAvatar = useHuddleStore(s => s.updateMemberAvatar);
   const updateMemberName = useHuddleStore(s => s.updateMemberName);
-  const email = useAuthStore(s => s.user?.email ?? '');
 
   const me = familyMembers.find(m => m.name === currentUser);
 
   const [name, setName] = useState(currentUser);
   const [avatar, setAvatar] = useState<AvatarValue>((me?.avatar as AvatarValue) ?? '');
-  const [isSaving, setIsSaving] = useState(false);
+  // These fields are UI placeholders — wired to real backend when Supabase profile is live
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [location, setLocation] = useState('');
 
   const hasChanges =
     name.trim() !== currentUser ||
     avatar !== (me?.avatar ?? '');
 
-  const handleSave = async () => {
+  const handleSave = () => {
     const trimmed = name.trim();
     if (!trimmed) {
       Alert.alert('Name required', 'Please enter a display name.');
       return;
     }
-    setIsSaving(true);
-    try {
-      await accountApi.updateMyProfile(trimmed, avatar);
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      if (trimmed !== currentUser) updateMemberName(currentUser, trimmed);
-      if (avatar !== (me?.avatar ?? '')) updateMemberAvatar(trimmed, avatar);
-      router.back();
-    } catch (error) {
-      Alert.alert('Unable to save profile', error instanceof Error ? error.message : 'Please try again.');
-    } finally {
-      setIsSaving(false);
-    }
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    if (trimmed !== currentUser) updateMemberName(currentUser, trimmed);
+    if (avatar !== (me?.avatar ?? '')) updateMemberAvatar(trimmed, avatar);
+    router.back();
   };
 
   return (
@@ -79,9 +71,9 @@ export default function PersonalInfoScreen() {
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Personal Info</Text>
         <TouchableOpacity
-          style={[styles.saveButton, (!hasChanges || isSaving) && { opacity: 0.4 }]}
+          style={[styles.saveButton, !hasChanges && { opacity: 0.4 }]}
           onPress={handleSave}
-          disabled={!hasChanges || isSaving}
+          disabled={!hasChanges}
         >
           <Text style={styles.saveButtonText}>Save</Text>
         </TouchableOpacity>
@@ -126,18 +118,47 @@ export default function PersonalInfoScreen() {
                 <TextInput
                   style={styles.input}
                   value={email}
+                  onChangeText={setEmail}
+                  placeholder="your@email.com"
                   placeholderTextColor="#94A3B8"
                   keyboardType="email-address"
                   autoCapitalize="none"
-                  editable={false}
                 />
               </View>
             </View>
 
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Phone Number</Text>
+              <View style={styles.inputWrapper}>
+                <View style={styles.iconContainer}><Phone size={18} color={C.subtext} /></View>
+                <TextInput
+                  style={styles.input}
+                  value={phone}
+                  onChangeText={setPhone}
+                  placeholder="+1 (555) 000-0000"
+                  placeholderTextColor="#94A3B8"
+                  keyboardType="phone-pad"
+                />
+              </View>
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Location</Text>
+              <View style={styles.inputWrapper}>
+                <View style={styles.iconContainer}><MapPin size={18} color={C.subtext} /></View>
+                <TextInput
+                  style={styles.input}
+                  value={location}
+                  onChangeText={setLocation}
+                  placeholder="City, State"
+                  placeholderTextColor="#94A3B8"
+                />
+              </View>
+            </View>
           </View>
 
           <Text style={styles.note}>
-            Your display name and avatar are visible to everyone in your household. Your sign-in email is read-only.
+            Your display name and avatar are visible to everyone in your household. Email and phone are private.
           </Text>
         </ScrollView>
       </KeyboardAvoidingView>

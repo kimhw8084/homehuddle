@@ -1,37 +1,215 @@
-import React, { useState } from 'react';
-import { Alert, ScrollView, Share, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { 
+  View, 
+  Text, 
+  TouchableOpacity, 
+  ScrollView, 
+  StyleSheet 
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import { ChevronLeft, Download, Lock, Shield, Trash2 } from 'lucide-react-native';
-import { accountApi } from '../../../lib/account';
-import { useAuthStore } from '../../../store/authStore';
+import { ChevronLeft, Shield, Eye, Lock, Fingerprint, ChevronRight } from 'lucide-react-native';
+import * as Haptics from 'expo-haptics';
 
-const C = { bg: '#F8FAFC', card: '#fff', border: '#E2E8F0', accent: '#4F46E5', text: '#0F172A', sub: '#64748B', red: '#EF4444' };
+const C = {
+  bg:          '#F8FAFC',
+  card:        '#FFFFFF',
+  cardBorder:  '#E2E8F0',
+  accent:      '#4F46E5',
+  text:        '#0F172A',
+  subtext:     '#64748B',
+  muted:       '#F1F5F9',
+  red:         '#EF4444',
+};
 
 export default function PrivacyScreen() {
   const router = useRouter();
-  const signOut = useAuthStore(s => s.signOut);
-  const [busy, setBusy] = useState(false);
-  const exportData = async () => {
-    setBusy(true);
-    try { await Share.share({ message: JSON.stringify(await accountApi.exportMine(), null, 2), title: 'HomeHuddle data export' }); }
-    catch (error) { Alert.alert('Unable to export data', error instanceof Error ? error.message : 'Please try again.'); }
-    finally { setBusy(false); }
+
+  const handleBack = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    router.back();
   };
-  const deleteAccount = () => Alert.alert('Delete account?', 'This permanently deletes your sign-in account. Owners must transfer ownership or close their household first.', [
-    { text: 'Cancel', style: 'cancel' },
-    { text: 'Delete account', style: 'destructive', onPress: async () => {
-      setBusy(true);
-      try { await accountApi.deleteMyAccount(); await signOut(); }
-      catch (error) { Alert.alert('Unable to delete account', error instanceof Error ? error.message : 'Please try again.'); }
-      finally { setBusy(false); }
-    } },
-  ]);
-  return <SafeAreaView style={styles.safe} edges={['top']}><View style={styles.header}><TouchableOpacity onPress={() => router.back()}><ChevronLeft size={24} color={C.text} /></TouchableOpacity><Text style={styles.title}>Privacy & security</Text><View style={{ width: 24 }} /></View><ScrollView contentContainerStyle={styles.content}>
-    <View style={styles.hero}><Shield size={42} color={C.accent} /><Text style={styles.heroTitle}>Your data, clearly handled</Text><Text style={styles.sub}>HomeHuddle uses passwordless email sign-in. Password changes and two-factor authentication are not currently offered.</Text></View>
-    <View style={styles.card}><Row icon={Lock} label="Sign-in security" description="Email code or magic link; protect access to your email account." /><Row icon={Download} label="Export my data" description="Profile, completions, reward inventory, and points ledger." onPress={exportData} /></View>
-    <TouchableOpacity disabled={busy} onPress={deleteAccount} style={styles.delete}><Trash2 size={18} color={C.red} /><Text style={styles.deleteText}>{busy ? 'Working…' : 'Delete account'}</Text></TouchableOpacity>
-  </ScrollView></SafeAreaView>;
+
+  const ActionRow = ({ label, description, icon: Icon, color = C.accent, isDestructive = false }: any) => (
+    <TouchableOpacity 
+      activeOpacity={0.7}
+      onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)}
+      style={styles.row}
+    >
+      <View style={[styles.rowIcon, { backgroundColor: color + '15' }]}>
+        <Icon size={20} color={color} />
+      </View>
+      <View style={styles.rowContent}>
+        <Text style={[styles.rowLabel, isDestructive && { color: C.red }]}>{label}</Text>
+        <Text style={styles.rowDescription}>{description}</Text>
+      </View>
+      <ChevronRight size={18} color="#CBD5E1" />
+    </TouchableOpacity>
+  );
+
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }} edges={['top']}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={handleBack} style={styles.backButton}>
+          <ChevronLeft size={24} color={C.text} />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Privacy & Security</Text>
+        <View style={{ width: 40 }} />
+      </View>
+
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
+        <View style={styles.heroCard}>
+          <Shield size={48} color={C.accent} />
+          <Text style={styles.heroTitle}>Your Security</Text>
+          <Text style={styles.heroSubtitle}>Manage how your data is handled and keep your account safe.</Text>
+        </View>
+
+        <Text style={styles.sectionTitle}>Privacy</Text>
+        <View style={styles.list}>
+          <ActionRow 
+            label="Profile Visibility" 
+            description="Control who can see your activity"
+            icon={Eye}
+          />
+          <ActionRow 
+            label="Data Sharing" 
+            description="Manage how your household data is shared"
+            icon={Shield}
+          />
+        </View>
+
+        <Text style={[styles.sectionTitle, { marginTop: 24 }]}>Security</Text>
+        <View style={styles.list}>
+          <ActionRow 
+            label="Change Password" 
+            description="Update your account password regularly"
+            icon={Lock}
+          />
+          <ActionRow 
+            label="Two-Factor Auth" 
+            description="Add an extra layer of protection"
+            icon={Fingerprint}
+            color="#F59E0B"
+          />
+        </View>
+
+        <TouchableOpacity style={styles.deleteButton}>
+          <Text style={styles.deleteButtonText}>Delete Account</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
-function Row({ icon: Icon, label, description, onPress }: { icon: any; label: string; description: string; onPress?: () => void }) { return <TouchableOpacity disabled={!onPress} onPress={onPress} style={styles.row}><Icon size={20} color={C.accent} /><View style={{ flex: 1 }}><Text style={styles.label}>{label}</Text><Text style={styles.sub}>{description}</Text></View></TouchableOpacity>; }
-const styles = StyleSheet.create({ safe: { flex: 1, backgroundColor: C.bg }, header: { padding: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }, title: { fontSize: 17, fontWeight: '800', color: C.text }, content: { padding: 20, gap: 20 }, hero: { alignItems: 'center', gap: 10, padding: 18 }, heroTitle: { fontSize: 22, fontWeight: '900', color: C.text }, sub: { fontSize: 13, color: C.sub, lineHeight: 19, textAlign: 'center' }, card: { borderRadius: 18, borderWidth: 1, borderColor: C.border, backgroundColor: C.card }, row: { flexDirection: 'row', gap: 14, padding: 16, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: C.border }, label: { color: C.text, fontWeight: '800', marginBottom: 3 }, delete: { flexDirection: 'row', justifyContent: 'center', gap: 8, padding: 16, borderRadius: 14, backgroundColor: '#FFF1F2', borderWidth: 1, borderColor: '#FECDD3' }, deleteText: { color: C.red, fontWeight: '800' } });
+
+const styles = StyleSheet.create({
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  headerTitle: {
+    fontSize: 17,
+    fontWeight: '800',
+    color: C.text,
+  },
+  content: {
+    padding: 20,
+  },
+  heroCard: {
+    backgroundColor: '#fff',
+    borderRadius: 32,
+    padding: 32,
+    alignItems: 'center',
+    marginBottom: 32,
+    borderWidth: 1,
+    borderColor: C.cardBorder,
+  },
+  heroTitle: {
+    fontSize: 24,
+    fontWeight: '900',
+    color: C.text,
+    marginTop: 16,
+  },
+  heroSubtitle: {
+    fontSize: 14,
+    color: C.subtext,
+    textAlign: 'center',
+    marginTop: 8,
+    fontWeight: '500',
+    lineHeight: 20,
+  },
+  sectionTitle: {
+    fontSize: 14,
+    fontWeight: '800',
+    color: C.subtext,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: 12,
+    marginLeft: 4,
+  },
+  list: {
+    backgroundColor: '#fff',
+    borderRadius: 24,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: C.cardBorder,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: C.muted,
+  },
+  rowIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 12,
+  },
+  rowContent: {
+    flex: 1,
+  },
+  rowLabel: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: C.text,
+  },
+  rowDescription: {
+    fontSize: 12,
+    color: C.subtext,
+    marginTop: 2,
+    fontWeight: '500',
+  },
+  deleteButton: {
+    marginTop: 40,
+    alignItems: 'center',
+    padding: 16,
+    borderRadius: 20,
+    backgroundColor: '#FFF1F2',
+    borderWidth: 1,
+    borderColor: '#FECDD3',
+  },
+  deleteButtonText: {
+    color: C.red,
+    fontWeight: '800',
+    fontSize: 15,
+  }
+});

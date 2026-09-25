@@ -12,8 +12,6 @@ export type LinkedRestockItem = {
 export type Chore = {
   id: string;
   title: string;
-  version?: number;
-  reviewStatus?: 'pending' | 'submitted' | 'approved' | 'rejected';
   assignee: string | null;
   avatar: string;
   pool: 'Me' | 'Kids' | 'Parents';

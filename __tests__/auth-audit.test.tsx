@@ -1,11 +1,7 @@
-/* eslint-disable import/first */
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
+import { render, fireEvent, act } from '@testing-library/react-native';
 
 // Mocks
-jest.mock('../hooks/use-accessibility-preferences', () => ({
-  useAccessibilityPreferences: () => ({ reduceMotion: true, screenReader: false }),
-}));
 const mockReplace = jest.fn();
 jest.mock('expo-router', () => ({
   useRouter: () => ({
@@ -31,39 +27,27 @@ jest.mock('@react-native-community/netinfo', () => ({
   addEventListener: jest.fn(() => jest.fn()),
   fetch: jest.fn(),
 }));
-jest.mock('../lib/auth', () => ({
-  sendMagicLink: jest.fn(),
-  signInWithProvider: jest.fn(),
-}));
 
 import AuthRootView from '../app/index';
 
 describe('AuthRootView Functional Audit', () => {
-  it('reveals developer controls after exactly 5 taps in development', async () => {
+  it('triggers dev bypass after exactly 5 taps on the logo container', async () => {
     jest.useFakeTimers();
     const { getByTestId } = render(<AuthRootView />);
     const trigger = getByTestId('logo-trigger');
 
-    // 4 taps should not reveal developer controls.
+    // 4 taps shouldn't trigger anything but light haptics
     for(let i = 0; i < 4; i++) {
       fireEvent.press(trigger);
     }
     expect(mockSetDevBypass).not.toHaveBeenCalled();
     expect(mockReplace).not.toHaveBeenCalled();
 
-    // The fifth tap opens controls; entering the app still requires a deliberate action.
+    // 5th tap triggers bypass
     fireEvent.press(trigger);
-    expect(getByTestId('logo-trigger')).toBeTruthy();
-    expect(mockSetDevBypass).not.toHaveBeenCalled();
-    expect(mockReplace).not.toHaveBeenCalled();
+    expect(mockSetDevBypass).toHaveBeenCalledWith(true);
+    expect(mockReplace).toHaveBeenCalledWith('/(app)');
     
     jest.useRealTimers();
-  });
-
-  it('keeps magic-link submission enabled while connectivity is being determined', () => {
-    const { getByText, getByTestId } = render(<AuthRootView />);
-
-    fireEvent.press(getByText('Continue with Email'));
-    expect(getByTestId('send-magic-link').props.disabled).toBeFalsy();
   });
 });

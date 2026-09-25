@@ -9,17 +9,17 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useHuddleStore } from '../store/huddleStore';
 import { useOnboardingStore } from '../store/onboardingStore';
-import { useAuthStore } from '../store/authStore';
 
-export function DevToolsOverlay() {
-  return __DEV__ ? <DevToolsPanel /> : null;
+if (!__DEV__) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (module as any).exports = { DevToolsOverlay: () => null };
 }
 
-function DevToolsPanel() {
-  const insets = useSafeAreaInsets();
+export function DevToolsOverlay() {
+  if (!__DEV__) return null;
+
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const currentUser = useHuddleStore((s) => s.currentUser);
@@ -34,13 +34,11 @@ function DevToolsPanel() {
     <>
       {/* FAB */}
       <TouchableOpacity
-        accessibilityRole="button"
-        accessibilityLabel="Preview uses sample data. Open developer tools"
         onPress={() => setOpen(true)}
-        style={[styles.fab, { bottom: 76 + Math.max(insets.bottom, 10) }]}
+        style={styles.fab}
         activeOpacity={0.8}
       >
-        <Text style={{ color: '#fff', fontSize: 10, fontWeight: '800' }}>PREVIEW</Text>
+        <Text style={styles.fabIcon}>🛠</Text>
       </TouchableOpacity>
 
       {/* Bottom sheet modal */}
@@ -58,17 +56,13 @@ function DevToolsPanel() {
         <SafeAreaView style={styles.sheet}>
           {/* Header */}
           <View style={styles.header}>
-            <Text style={styles.headerTitle}>Preview · sample data</Text>
+            <Text style={styles.headerTitle}>Dev Tools</Text>
             <TouchableOpacity onPress={() => setOpen(false)} style={styles.closeBtn}>
               <Text style={styles.closeBtnText}>✕</Text>
             </TouchableOpacity>
           </View>
 
           <ScrollView contentContainerStyle={styles.body} showsVerticalScrollIndicator={false}>
-            <Text style={{ color: '#64748B' }}>This preview is not connected to a household. Sign in to save and share real data.</Text>
-            <TouchableOpacity accessibilityRole="button" style={styles.onboardingBtn} onPress={() => { setOpen(false); useAuthStore.getState().setDevBypass(false); router.replace('/'); }}>
-              <Text style={{ color: '#4F46E5', fontWeight: '700' }}>Exit preview and sign in</Text>
-            </TouchableOpacity>
             {/* Active Account */}
             <Text style={styles.sectionLabel}>Active Account</Text>
             <View style={styles.activeRow}>
@@ -109,7 +103,6 @@ function DevToolsPanel() {
               onPress={() => {
                 setOpen(false);
                 restartOnboarding();
-                useAuthStore.getState().setDevBypass(false);
                 router.replace('/onboarding');
               }}
               activeOpacity={0.8}
@@ -139,8 +132,9 @@ function DevToolsPanel() {
 const styles = StyleSheet.create({
   fab: {
     position: 'absolute',
-    left: 20,
-    width: 76,
+    bottom: 140,
+    right: 20,
+    width: 44,
     height: 44,
     borderRadius: 22,
     backgroundColor: '#1C1C1E',

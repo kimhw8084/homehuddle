@@ -28,13 +28,6 @@ import {
 } from 'lucide-react-native';
 import { Recipe, DayMenu, useHuddleStore } from '../store/huddleStore';
 import { InitialsAvatar } from './AvatarPicker';
-import { useAuthStore } from '../store/authStore';
-import { MealPlanner } from '../features/meals/MealPlanner';
-
-export function WeeklyMenuSection() {
-    const signedIn = useAuthStore(state => Boolean(state.user));
-    return signedIn ? <MealPlanner /> : <DemoWeeklyMenuSection />;
-}
 
 const { width } = Dimensions.get('window');
 const CARD_W = width - 40; // 20px margin each side
@@ -608,6 +601,11 @@ function ManageDayModal({ visible, day, isPast, onClose }: { visible: boolean; d
 
     useEffect(() => { setNote(dayMenu?.note ?? ''); setHomeCookedMode(null); }, [dayMenu?.note, visible]);
 
+    if (!dayMenu) return null;
+
+    const recipe = recipes.find(r => r.id === dayMenu.recipeId || r.name === dayMenu.recipeName);
+    const mt = mealTypeConfig(dayMenu.type);
+
     // Top 7 voted recipes (sorted by votes, >0)
     const topVotedRecipes = useMemo(() =>
         [...recipes].sort((a, b) => b.votes - a.votes).slice(0, 7).filter(r => r.votes > 0),
@@ -622,10 +620,6 @@ function ManageDayModal({ visible, day, isPast, onClose }: { visible: boolean; d
             .filter(Boolean) as string[],
         [weekMenu, day]
     );
-
-    if (!dayMenu) return null;
-    const recipe = recipes.find(r => r.id === dayMenu.recipeId || r.name === dayMenu.recipeName);
-    const mt = mealTypeConfig(dayMenu.type);
 
     const changeType = (type: DayMenu['type']) => {
         updateDayMenu(day, { type, recipeId: type !== 'home' ? undefined : dayMenu.recipeId, recipeName: type !== 'home' ? undefined : dayMenu.recipeName });
@@ -731,7 +725,7 @@ function ManageDayModal({ visible, day, isPast, onClose }: { visible: boolean; d
                                                 <Sparkles size={20} color={C.accent} />
                                                 <View style={{ flex: 1 }}>
                                                     <Text style={{ fontSize: 14, fontWeight: '800', color: C.accent }}>Top Voted Meals</Text>
-                                                    <Text style={{ fontSize: 11, color: C.sub, marginTop: 1 }}>From this week&apos;s poll results</Text>
+                                                    <Text style={{ fontSize: 11, color: C.sub, marginTop: 1 }}>From this week's poll results</Text>
                                                 </View>
                                                 <ChevronRight size={16} color={C.accent} />
                                             </TouchableOpacity>
@@ -864,7 +858,7 @@ function ManageDayModal({ visible, day, isPast, onClose }: { visible: boolean; d
                             {/* Cook selector */}
                             {dayMenu.type === 'home' && (
                                 <View>
-                                    <Text style={s.sectionLabel}>Who&apos;s Cooking?</Text>
+                                    <Text style={s.sectionLabel}>Who's Cooking?</Text>
                                     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 10 }}>
                                         {familyMembers.map(m => {
                                             const active = (localCook ?? dayMenu?.cook) === m.name;
@@ -1035,7 +1029,7 @@ function VotingModal({ visible, onClose }: { visible: boolean; onClose: () => vo
             <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }} edges={['top', 'bottom']}>
                 <View style={s.fullHeader}>
                     <View>
-                        <Text style={s.fullTitle}>🗳  Next Week&apos;s Vote</Text>
+                        <Text style={s.fullTitle}>🗳  Next Week's Vote</Text>
                         <Text style={s.fullSub}>Pick up to {NEEDS} meals · closes Sunday</Text>
                     </View>
                     <TouchableOpacity onPress={() => { setEditingVote(false); onClose(); }} style={s.closeIconBtn}><X size={20} color={C.sub} /></TouchableOpacity>
@@ -1213,7 +1207,7 @@ function ResultsModal({ visible, onClose, startOnSchedule }: { visible: boolean;
                     <View style={s.votingFooter}>
                         <TouchableOpacity onPress={confirmSchedule} style={s.primaryBtn}>
                             <CheckCircle2 size={18} color="#fff" />
-                            <Text style={s.primaryBtnText}>Set This Week&apos;s Menu</Text>
+                            <Text style={s.primaryBtnText}>Set This Week's Menu</Text>
                         </TouchableOpacity>
                     </View>
                 </SafeAreaView>
@@ -1291,7 +1285,7 @@ function NextWeekViewModal({ visible, onClose, onEdit }: { visible: boolean; onC
                     </View>
                     <View style={[s.fullHeader, { paddingBottom: 8 }]}>
                         <View style={{ flex: 1 }}>
-                            <Text style={s.fullTitle}>📅  Next Week&apos;s Menu</Text>
+                            <Text style={s.fullTitle}>📅  Next Week's Menu</Text>
                             <Text style={s.fullSub}>Finalized plan</Text>
                         </View>
                         <TouchableOpacity onPress={onClose} style={s.closeIconBtn}><X size={20} color={C.sub} /></TouchableOpacity>
@@ -1339,7 +1333,7 @@ function ArchiveModal({ visible, onClose }: { visible: boolean; onClose: () => v
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{ fontSize: 48 }}>📭</Text>
                         <Text style={{ fontSize: 16, fontWeight: '800', color: C.sub, marginTop: 12 }}>No past menus yet</Text>
-                        <Text style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>Finalize a week&apos;s menu to archive it</Text>
+                        <Text style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>Finalize a week's menu to archive it</Text>
                     </View>
                 ) : (
                     <ScrollView contentContainerStyle={{ padding: 20, gap: 16 }}>
@@ -1444,7 +1438,7 @@ function MealHistoryModal({ visible, onClose, recipeName, emoji }: { visible: bo
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{ fontSize: 40 }}>📅</Text>
                         <Text style={{ fontSize: 16, fontWeight: '800', color: C.sub, marginTop: 12 }}>No history yet</Text>
-                        <Text style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>This meal hasn&apos;t been tracked yet</Text>
+                        <Text style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>This meal hasn't been tracked yet</Text>
                     </View>
                 ) : (
                     <ScrollView contentContainerStyle={{ padding: 20, gap: 10 }}>
@@ -1585,7 +1579,7 @@ function VoteBanner({ onPress }: { onPress: () => void }) {
             )}
             {menuPhase === 'results' && (
                 <Text style={{ fontSize: 12, fontWeight: '700', color: accentColor, marginTop: 4 }}>
-                    Tap to view results and schedule next week&apos;s menu →
+                    Tap to view results and schedule next week's menu →
                 </Text>
             )}
         </TouchableOpacity>
@@ -1593,7 +1587,7 @@ function VoteBanner({ onPress }: { onPress: () => void }) {
 }
 
 // ─── Main Component ──────────────────────────────────────────────────────────
-function DemoWeeklyMenuSection() {
+export function WeeklyMenuSection() {
     const { menuPhase, startNextWeek, checkAndAdvanceVotingPhase, familyMembers, weekMenu, recipes } = useHuddleStore();
     const [showBank, setShowBank] = useState(false);
     const [showArchive, setShowArchive] = useState(false);
@@ -1625,7 +1619,7 @@ function DemoWeeklyMenuSection() {
                     </View>
                     <View>
                         <Text style={s.headerTitle}>Dinner Planner</Text>
-                        <Text style={s.headerSub}>This week&apos;s menu</Text>
+                        <Text style={s.headerSub}>This week's menu</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>

@@ -35,6 +35,11 @@ const C = {
   green: '#10B981',
 };
 
+const ROLE_OPTIONS: Array<{ label: string; value: 'Parent' | 'Child'; pool: 'Parents' | 'Kids' | 'Me' }> = [
+  { label: 'Parent', value: 'Parent', pool: 'Parents' },
+  { label: 'Child', value: 'Child', pool: 'Kids' },
+];
+
 // Colours assigned round-robin to new members
 const ACCENT_POOL = ['#4F46E5', '#EC4899', '#10B981', '#F59E0B', '#06B6D4', '#8B5CF6', '#F97316'];
 
@@ -74,7 +79,7 @@ export default function OnboardingFamily() {
     setDraft({
       name: member.name,
       avatar: (member.avatar as AvatarValue) ?? '',
-      role: member.role === 'Parent' ? 'Parent' : 'Child',
+      role: member.role,
       pool: member.pool as 'Parents' | 'Kids' | 'Me',
     });
     setDraftError('');
@@ -242,7 +247,22 @@ export default function OnboardingFamily() {
               />
               {draftError ? <Text style={styles.errorText}>{draftError}</Text> : null}
 
-              <Text style={[styles.fieldHint, { marginTop: 20 }]}>New profiles are parent-managed child profiles. Invite parents and teens after setup.</Text>
+              {/* Role */}
+              <Text style={[styles.fieldLabel, { marginTop: 20 }]}>Role</Text>
+              <View style={styles.roleRow}>
+                {ROLE_OPTIONS.map(r => (
+                  <TouchableOpacity
+                    key={r.value}
+                    style={[styles.roleChip, draft.role === r.value && styles.roleChipActive]}
+                    onPress={() => setDraft(d => ({ ...d, role: r.value, pool: r.pool }))}
+                    activeOpacity={0.8}
+                  >
+                    <Text style={[styles.roleChipText, draft.role === r.value && { color: C.accent }]}>
+                      {r.label}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
             </ScrollView>
           </View>
         </KeyboardAvoidingView>
@@ -327,7 +347,6 @@ const styles = StyleSheet.create({
   },
   addBtnText: { fontSize: 15, fontWeight: '700', color: C.accent },
   emptyHint: { textAlign: 'center', fontSize: 13, color: '#94A3B8', lineHeight: 20, marginTop: 20 },
-  fieldHint: { fontSize: 12, color: C.sub, lineHeight: 18 },
   footer: {
     paddingHorizontal: 24,
     paddingBottom: 16,
@@ -353,7 +372,7 @@ const styles = StyleSheet.create({
   ctaText: { color: '#fff', fontSize: 16, fontWeight: '800' },
 
   // Modal
-  modalBackdrop: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(0,0,0,0.45)' },
+  modalBackdrop: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.45)' },
   modalWrap: { flex: 1, justifyContent: 'flex-end' },
   modalSheet: {
     backgroundColor: C.card,

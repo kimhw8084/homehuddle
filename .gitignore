@@ -6,7 +6,6 @@ node_modules/
 # Expo
 .expo/
 dist/
-dist-native-check/
 web-build/
 expo-env.d.ts
 
@@ -32,21 +31,7 @@ yarn-error.*
 *.pem
 
 # local env files
-.env
 .env*.local
-.env.*
-!.env.example
-.db-url
-.claude/
-.gemini/
-# Local transcripts and split scratch copies are not release source.
-/claude.txt
-/chores_split_*
-coverage/
-test-results/
-playwright-report/
-supabase/.branches/
-supabase/.temp/
 
 # typescript
 *.tsbuildinfo

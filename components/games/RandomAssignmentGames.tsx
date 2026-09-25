@@ -693,7 +693,7 @@ function LavaLampGame({ members, winnerIdx, seed, onDone }: {
                 <View style={[gs.statusPill, { backgroundColor: '#F0FDF4', borderColor: C.green }]}>
                     <Trophy size={14} color={C.green} fill={C.green} />
                     <Text style={[gs.statusText, { color: C.green }]}>
-                        {members[winnerIdx].name}&apos;s blob survives!
+                        {members[winnerIdx].name}'s blob survives!
                     </Text>
                 </View>
             )}
@@ -1623,7 +1623,7 @@ function BubblePopGame({ members, winnerIdx, seed, onDone }: {
                 <View style={[gs.statusPill, { backgroundColor: '#F0FDF4', borderColor: C.green }]}>
                     <Trophy size={14} color={C.green} fill={C.green} />
                     <Text style={[gs.statusText, { color: C.green }]}>
-                        {members[winnerIdx].name}&apos;s bubble survived!
+                        {members[winnerIdx].name}'s bubble survived!
                     </Text>
                 </View>
             )}
@@ -1838,7 +1838,7 @@ export function RandomAssignmentModal({ visible, onClose, chore, onAssigned }: {
                         </View>
 
                         {/* Member pool */}
-                        <Text style={[gs.sectionLabel, { marginBottom: 12 }]}>Who&apos;s racing?</Text>
+                        <Text style={[gs.sectionLabel, { marginBottom: 12 }]}>Who's racing?</Text>
                         <Text style={{ fontSize: 12, fontWeight: '600', color: C.sub, marginBottom: 14, marginTop: -8 }}>Tap to remove from draw (min 2)</Text>
                         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
                             {allMembers.map((m, i) => {

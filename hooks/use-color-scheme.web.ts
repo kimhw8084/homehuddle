@@ -14,7 +14,7 @@ export function useColorScheme() {
   const colorScheme = useRNColorScheme();
 
   if (hasHydrated) {
-    return colorScheme === 'dark' ? 'dark' : 'light';
+    return colorScheme;
   }
 
   return 'light';

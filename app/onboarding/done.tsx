@@ -1,7 +1,7 @@
 /**
  * Onboarding Step 4 — All Set!
  */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -15,10 +15,7 @@ import * as Haptics from 'expo-haptics';
 import { CheckCircle2, Home, Users, Zap } from 'lucide-react-native';
 import { useOnboardingStore } from '../../store/onboardingStore';
 import { useHuddleStore } from '../../store/huddleStore';
-import { useAuthStore } from '../../store/authStore';
 import { InitialsAvatar } from '../../components/AvatarPicker';
-import { householdApi } from '../../lib/household';
-import { householdData } from '../../lib/household-data';
 
 const C = {
   bg: '#F8FAFC',
@@ -43,9 +40,6 @@ export default function OnboardingDone() {
   const router = useRouter();
   const setCompleted = useOnboardingStore(s => s.setCompleted);
   const { currentUser, familyMembers } = useHuddleStore();
-  const user = useAuthStore(s => s.user);
-  const [isSaving, setIsSaving] = useState(false);
-  const [saveError, setSaveError] = useState('');
 
   const scaleAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -56,44 +50,12 @@ export default function OnboardingDone() {
       Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true, damping: 14, stiffness: 200 }),
       Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: true }),
     ]).start();
-  }, [fadeAnim, scaleAnim]);
+  }, []);
 
-  const handleStart = async () => {
-    if (!user) {
-      setSaveError('Please sign in before creating your household.');
-      return;
-    }
-    setIsSaving(true);
-    setSaveError('');
+  const handleStart = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    try {
-      let householdId = await householdApi.getMyHouseholdId(user.id);
-      if (!householdId) {
-        householdId = await householdApi.createHousehold(`${currentUser}'s Household`, currentUser, me?.avatar);
-      }
-
-      // A previous attempt may have created the household before a member
-      // request failed. Reconcile by name so retrying completes that setup
-      // instead of duplicating members or accepting a partial household.
-      const snapshot = await householdData.load(householdId);
-      const existingNames = new Set(snapshot.members.map((member) => member.display_name.trim().toLocaleLowerCase()));
-      await Promise.all(familyMembers
-        .filter((member) => member.name !== currentUser)
-        .filter((member) => !existingNames.has(member.name.trim().toLocaleLowerCase()))
-        .map((member) => householdApi.addMember({
-          householdId,
-          name: member.name,
-          role: 'child',
-          avatar: member.avatar,
-        })));
-
-      setCompleted(true);
-      router.replace('/(app)/(tabs)');
-    } catch (error) {
-      setSaveError(error instanceof Error ? error.message : 'Unable to create your household.');
-    } finally {
-      setIsSaving(false);
-    }
+    setCompleted(true);
+    router.replace('/(app)/(tabs)');
   };
 
   const me = familyMembers.find(m => m.name === currentUser);
@@ -106,7 +68,7 @@ export default function OnboardingDone() {
           <View style={styles.successIcon}>
             <CheckCircle2 size={52} color={C.green} />
           </View>
-          <Text style={styles.successLabel}>You’re all set!</Text>
+          <Text style={styles.successLabel}>You're all set!</Text>
         </Animated.View>
 
         {/* Member avatars strip */}
@@ -126,7 +88,7 @@ export default function OnboardingDone() {
         <Animated.View style={{ opacity: fadeAnim }}>
           <Text style={styles.title}>Welcome, {currentUser}!</Text>
           <Text style={styles.subtitle}>
-            HomeHuddle is ready for your family.{'\n'}Here’s what’s waiting for you:
+            HomeHuddle is ready for your family.{'\n'}Here's what's waiting for you:
           </Text>
 
           {/* Checklist */}
@@ -143,10 +105,9 @@ export default function OnboardingDone() {
 
       {/* CTA */}
       <View style={styles.footer}>
-        {saveError ? <Text style={styles.errorText}>{saveError}</Text> : null}
-        <TouchableOpacity style={[styles.cta, isSaving && styles.ctaDisabled]} disabled={isSaving} activeOpacity={0.85} onPress={handleStart}>
+        <TouchableOpacity style={styles.cta} activeOpacity={0.85} onPress={handleStart}>
           <Home size={20} color="#fff" />
-          <Text style={styles.ctaText}>{isSaving ? 'Creating household…' : 'Go to HomeHuddle'}</Text>
+          <Text style={styles.ctaText}>Go to HomeHuddle</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -228,6 +189,4 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   ctaText: { color: '#fff', fontSize: 17, fontWeight: '800' },
-  ctaDisabled: { opacity: 0.6 },
-  errorText: { color: '#DC2626', fontSize: 13, fontWeight: '600', textAlign: 'center', marginBottom: 10 },
 });

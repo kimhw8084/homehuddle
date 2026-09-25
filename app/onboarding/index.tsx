@@ -7,12 +7,15 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
+  Dimensions,
   Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Home, Users, CheckCircle2, ShoppingCart, Zap } from 'lucide-react-native';
+
+const { width } = Dimensions.get('window');
 
 const C = {
   bg: '#F8FAFC',
@@ -74,9 +77,6 @@ export default function OnboardingWelcome() {
           }}
         >
           <Text style={styles.ctaText}>Get Started</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.inviteCta} activeOpacity={0.85} onPress={() => router.push('/onboarding/accept-invite')}>
-          <Text style={styles.inviteCtaText}>I have an invitation</Text>
         </TouchableOpacity>
         <Text style={styles.legal}>
           By continuing you agree to our Terms & Privacy Policy.
@@ -185,8 +185,6 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     letterSpacing: -0.3,
   },
-  inviteCta: { alignItems: 'center', paddingVertical: 10 },
-  inviteCtaText: { color: C.accent, fontSize: 14, fontWeight: '800' },
   legal: {
     textAlign: 'center',
     fontSize: 11,

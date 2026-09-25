@@ -1,12 +1,15 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { Home, ListTodo, Wallet, Store } from 'lucide-react-native';
+import { Home, ListTodo, Wallet, Store, ShoppingCart, Users } from 'lucide-react-native';
 import { BlurView } from 'expo-blur';
 import { View, StyleSheet, Platform } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useHuddleStore } from '../../../store/huddleStore';
 
 export default function AppLayout() {
-  const insets = useSafeAreaInsets();
+  const restockItems = useHuddleStore(s => s.restockItems);
+  const pendingRestockCount = restockItems?.reduce((n: number, cat: any) =>
+    n + (cat.items?.filter((it: any) => it.needed).length ?? 0), 0) ?? 0;
+
   return (
     <Tabs screenOptions={{
       headerShown: false,
@@ -25,8 +28,8 @@ export default function AppLayout() {
         elevation: 0,
         shadowOpacity: 0.1,
         shadowRadius: 10,
-        height: 60 + Math.max(insets.bottom, 10),
-        paddingBottom: Math.max(insets.bottom, 10),
+        height: 85,
+        paddingBottom: 25,
         paddingTop: 10,
         backgroundColor: Platform.OS === 'ios' ? 'transparent' : 'rgba(255, 255, 255, 0.95)',
       },
@@ -50,6 +53,13 @@ export default function AppLayout() {
         }}
       />
       <Tabs.Screen
+        name="family"
+        options={{
+          title: 'Family',
+          tabBarIcon: ({ color }) => <Users size={26} color={color} strokeWidth={2.5} />,
+        }}
+      />
+      <Tabs.Screen
         name="wallet"
         options={{
           title: 'Wallet',
@@ -63,9 +73,14 @@ export default function AppLayout() {
           tabBarIcon: ({ color }) => <Store size={26} color={color} strokeWidth={2.5} />,
         }}
       />
-      <Tabs.Screen name="family" options={{ href: null }} />
-      <Tabs.Screen name="restock" options={{ href: null }} />
-      <Tabs.Screen name="household" options={{ href: null }} />
+      <Tabs.Screen
+        name="restock"
+        options={{
+          title: 'Restock',
+          tabBarIcon: ({ color }) => <ShoppingCart size={26} color={color} strokeWidth={2.5} />,
+          tabBarBadge: pendingRestockCount > 0 ? pendingRestockCount : undefined,
+        }}
+      />
     </Tabs>
   );
 }

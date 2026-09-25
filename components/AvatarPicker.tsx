@@ -276,7 +276,7 @@ export function AvatarPicker({
             </View>
             <View style={styles.menuBody}>
               <Text style={styles.menuLabel}>Use Initials</Text>
-              <Text style={styles.menuSub}>Show &quot;{initials}&quot; as avatar</Text>
+              <Text style={styles.menuSub}>Show "{initials}" as avatar</Text>
             </View>
           </TouchableOpacity>
 
@@ -410,7 +410,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
   },
   backdrop: {
-    ...StyleSheet.absoluteFill,
+    ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0,0,0,0.45)',
   },
   menu: {

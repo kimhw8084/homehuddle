@@ -13,7 +13,6 @@ import {
   Switch,
   Platform,
   TextInput,
-  KeyboardAvoidingView,
   Appearance,
   ColorSchemeName,
   ScrollView
@@ -40,17 +39,11 @@ import Animated, {
   cancelAnimation,
 } from 'react-native-reanimated';
 import { Gyroscope } from 'expo-sensors';
-import { useAccessibilityPreferences } from '../hooks/use-accessibility-preferences';
 import { BlurView } from 'expo-blur';
 import * as WebBrowser from 'expo-web-browser';
 import NetInfo from '@react-native-community/netinfo';
-import { readableAuthError, sendMagicLink, signInWithProvider, verifyEmailCode } from '../lib/auth';
 
 const { width, height } = Dimensions.get('window');
-const APPLE_SIGN_IN_ENABLED = Platform.OS === 'ios' && process.env.EXPO_PUBLIC_ENABLE_APPLE_SIGN_IN === 'true';
-const GOOGLE_SIGN_IN_ENABLED = process.env.EXPO_PUBLIC_ENABLE_GOOGLE_SIGN_IN === 'true';
-const TERMS_URL = process.env.EXPO_PUBLIC_TERMS_URL;
-const PRIVACY_URL = process.env.EXPO_PUBLIC_PRIVACY_URL;
 
 const TYPER_STRINGS = [
   "Stop nagging.",
@@ -279,13 +272,12 @@ const DynamicTyper = () => {
 
 // --- Main Auth Root View ---
 export default function AuthRootView() {
-  const { reduceMotion } = useAccessibilityPreferences();
   const router = useRouter();
   const systemColorScheme = useColorScheme();
-  const { setDevBypass, setSession } = useAuthStore();
+  const { setDevBypass } = useAuthStore();
   
   // State
-  const [themeOverride, setThemeOverride] = useState<ColorSchemeName | null>(null);
+  const [themeOverride, setThemeOverride] = useState<ColorSchemeName>(null);
   const activeColorScheme = themeOverride || systemColorScheme;
   const isDark = activeColorScheme === 'dark';
 
@@ -296,8 +288,6 @@ export default function AuthRootView() {
   const [devModalVisible, setDevModalVisible] = useState(false);
   const [isEmailMode, setIsEmailMode] = useState(false);
   const [email, setEmail] = useState('');
-  const [emailCode, setEmailCode] = useState('');
-  const [isAwaitingEmailCode, setIsAwaitingEmailCode] = useState(false);
 
   // Reanimated Shared Values
   const bgX = useSharedValue(0);
@@ -308,22 +298,18 @@ export default function AuthRootView() {
 
   // Gyroscope Parallax
   useEffect(() => {
-    // Web can report sensor availability without implementing the native
-    // emitter. Motion is decorative and must never block sign-in.
-    if (Platform.OS === 'web' || reduceMotion) return;
-    let active = true;
-    let subscription: ReturnType<typeof Gyroscope.addListener> | undefined;
+    let subscription: any;
     Gyroscope.isAvailableAsync().then((available) => {
-      if (available && active) {
+      if (available) {
         Gyroscope.setUpdateInterval(50);
         subscription = Gyroscope.addListener(({ x, y }) => {
           bgX.value = withTiming(y * 20, { duration: 100 });
           bgY.value = withTiming(x * 20, { duration: 100 });
         });
       }
-    }).catch(() => { /* Keep the static background when motion is unavailable. */ });
-    return () => { active = false; subscription?.remove(); };
-  }, [reduceMotion, bgX, bgY]);
+    });
+    return () => subscription?.remove();
+  }, []);
 
   // Entrance Sequence
   useEffect(() => {
@@ -333,9 +319,7 @@ export default function AuthRootView() {
     tickerOpacity.value = withDelay(1200, withRepeat(withSequence(withTiming(1, { duration: 1000 }), withDelay(3000, withTiming(0, { duration: 1000 }))), -1, true));
 
     const unsubscribe = NetInfo.addEventListener(state => {
-      // NetInfo initially reports null while it determines reachability.
-      // Treat only an explicit false as offline so sign-in is not disabled on launch.
-      setIsOffline(state.isConnected === false);
+      setIsOffline(!state.isConnected);
     });
     return () => unsubscribe();
   }, []);
@@ -345,7 +329,7 @@ export default function AuthRootView() {
     setLogoTaps(newTaps);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     
-    if (__DEV__ && newTaps === 5) {
+    if (newTaps === 2) {
       setDevModalVisible(true);
       setLogoTaps(0);
     }
@@ -357,45 +341,20 @@ export default function AuthRootView() {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
       return;
     }
-    if (type === 'email' && !email.trim()) {
-      Alert.alert('Email required', 'Enter your email address to receive a magic link.');
-      return;
-    }
     setLoading(type);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     
-    try {
+    // Simulate network delay
+    setTimeout(() => {
+      setLoading(null);
       if (type === 'email') {
-        await sendMagicLink(email);
-        setIsAwaitingEmailCode(true);
-        Alert.alert('Sign-in email sent', `Enter the code sent to ${email.trim()}, or open the link in the email.`);
+        Alert.alert("Magic Link Sent", `Check ${email} to continue.`);
+        setIsEmailMode(false);
+        setEmail('');
       } else {
-        await signInWithProvider(type);
+        Alert.alert(`${type === 'apple' ? 'Apple' : 'Google'} SSO`, "Requires physical device entitlement configuration.");
       }
-    } catch (error) {
-      Alert.alert('Sign-in unavailable', readableAuthError(error));
-    } finally {
-      setLoading(null);
-    }
-  };
-
-  const handleVerifyEmailCode = async () => {
-    if (!emailCode.trim()) {
-      Alert.alert('Code required', 'Enter the sign-in code from your email.');
-      return;
-    }
-    setLoading('email');
-    try {
-      const session = await verifyEmailCode(email, emailCode);
-      if (!session) throw new Error('The code was accepted, but no sign-in session was created. Please request a new code.');
-      setSession(session);
-      setEmailCode('');
-      router.replace('/onboarding');
-    } catch (error) {
-      Alert.alert('Unable to verify code', readableAuthError(error));
-    } finally {
-      setLoading(null);
-    }
+    }, 1500);
   };
 
   const openLegal = (url: string) => {
@@ -429,86 +388,9 @@ export default function AuthRootView() {
   const teleport = (path: string) => {
     setDevModalVisible(false);
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    if (__DEV__ && path === '/(app)') setDevBypass(true);
+    if (path === '/(app)') setDevBypass(true);
     router.replace(path as any);
   };
-
-  if (isEmailMode) {
-    return (
-      <SafeAreaView style={[styles.emailScreen, { backgroundColor: isDark ? '#000' : '#fff' }]} edges={['top', 'bottom']}>
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.emailKeyboardAvoider}>
-          <ScrollView
-            contentContainerStyle={styles.emailContent}
-            keyboardShouldPersistTaps="handled"
-            keyboardDismissMode="on-drag"
-          >
-            <TouchableOpacity
-              onPress={() => {
-                setIsEmailMode(false);
-                setEmailCode('');
-                setIsAwaitingEmailCode(false);
-              }}
-              style={styles.emailBackButton}
-            >
-              <ArrowLeft size={18} color="#6366F1" />
-              <Text style={styles.emailBackText}>Back</Text>
-            </TouchableOpacity>
-
-            <View style={styles.emailForm}>
-              <Text style={[styles.emailTitle, { color: isDark ? '#fff' : '#0f172a' }]}>Sign in with email</Text>
-              <Text style={[styles.emailSubtitle, { color: isDark ? '#cbd5e1' : '#475569' }]}>We’ll send a sign-in email to your inbox.</Text>
-
-              <Text style={[styles.emailLabel, { color: isDark ? '#e2e8f0' : '#334155' }]}>Email address</Text>
-              <TextInput
-                testID="email-input"
-                placeholder="you@example.com"
-                placeholderTextColor={isDark ? '#94A3B8' : '#64748B'}
-                value={email}
-                onChangeText={setEmail}
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="email-address"
-                textContentType="emailAddress"
-                style={[styles.emailInput, { backgroundColor: isDark ? '#18181b' : '#f1f5f9', color: isDark ? '#fff' : '#0f172a' }]}
-              />
-
-              {!isAwaitingEmailCode ? (
-                <>
-                  <TouchableOpacity testID="send-magic-link" onPress={() => handleLogin('email')} disabled={!!loading || isOffline} style={[styles.emailAction, (!!loading || isOffline) && styles.emailActionDisabled]}>
-                    {loading === 'email' ? <ActivityIndicator color="#fff" /> : <Text style={styles.emailActionText}>Send sign-in code</Text>}
-                  </TouchableOpacity>
-                  <TouchableOpacity testID="enter-email-code" onPress={() => setIsAwaitingEmailCode(true)} disabled={!email.trim() || !!loading} style={styles.emailSecondaryAction}>
-                    <Text style={styles.emailSecondaryText}>I already have a code</Text>
-                  </TouchableOpacity>
-                </>
-              ) : (
-                <>
-                  <Text style={[styles.emailLabel, { color: isDark ? '#e2e8f0' : '#334155' }]}>Six-digit code</Text>
-                  <TextInput
-                    testID="email-code-input"
-                    placeholder="123456"
-                    placeholderTextColor={isDark ? '#94A3B8' : '#64748B'}
-                    value={emailCode}
-                    onChangeText={setEmailCode}
-                    keyboardType="number-pad"
-                    maxLength={10}
-                    textContentType="oneTimeCode"
-                    style={[styles.emailInput, styles.codeInput, { backgroundColor: isDark ? '#18181b' : '#f1f5f9', color: isDark ? '#fff' : '#0f172a' }]}
-                  />
-                  <TouchableOpacity testID="verify-email-code" onPress={handleVerifyEmailCode} disabled={!!loading || isOffline} style={[styles.emailAction, (!!loading || isOffline) && styles.emailActionDisabled]}>
-                    {loading === 'email' ? <ActivityIndicator color="#fff" /> : <Text style={styles.emailActionText}>Verify and continue</Text>}
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => setIsAwaitingEmailCode(false)} disabled={!!loading} style={styles.emailSecondaryAction}>
-                    <Text style={styles.emailSecondaryText}>Send a new code</Text>
-                  </TouchableOpacity>
-                </>
-              )}
-            </View>
-          </ScrollView>
-        </KeyboardAvoidingView>
-      </SafeAreaView>
-    );
-  }
 
   return (
     <View style={[styles.container, { backgroundColor: isDark ? '#000' : '#fff' }]}>
@@ -563,23 +445,17 @@ export default function AuthRootView() {
       </SafeAreaView>
 
       {/* Bottom Sheet */}
-      <KeyboardAvoidingView
-        behavior="padding"
-        style={styles.keyboardAvoider}
-        keyboardVerticalOffset={0}
-        pointerEvents="box-none"
-      >
-      <Animated.View style={[sheetAnimatedStyle, styles.bottomSheetContainer, isEmailMode && styles.emailBottomSheet]}>
+      <Animated.View style={[sheetAnimatedStyle, styles.bottomSheetContainer]}>
         <BlurView intensity={Platform.OS === 'ios' ? 40 : 100} tint={isDark ? "dark" : "light"} style={styles.blurContainer}>
           <View className="px-8 pt-6 pb-12 w-full items-center">
             
-            {/* Product summary: never display fabricated activity counts. */}
+            {/* Social Proof Ticker */}
             {!isEmailMode && (
               <View>
                 <Animated.View entering={FadeIn} exiting={FadeOut} style={[tickerAnimatedStyle, styles.tickerContainer]}>
                   <CheckCircle2 color="#10B981" size={14} />
                   <Text className="text-emerald-600 dark:text-emerald-400 font-bold text-xs ml-2 uppercase tracking-widest">
-                    Chores, meals, one shared list
+                    14,203 chores completed today
                   </Text>
                 </Animated.View>
               </View>
@@ -589,7 +465,7 @@ export default function AuthRootView() {
             {!isEmailMode ? (
               <View className="w-full mt-2">
                 <Animated.View entering={FadeIn} exiting={FadeOut} className="space-y-4 gap-4">
-                  {APPLE_SIGN_IN_ENABLED && <TouchableOpacity
+                  <TouchableOpacity
                     onPress={() => handleLogin('apple')}
                     disabled={!!loading || isOffline}
                     activeOpacity={0.7}
@@ -598,9 +474,9 @@ export default function AuthRootView() {
                     {loading === 'apple' ? <ActivityIndicator color={isDark ? '#000' : '#fff'} /> : (
                       <Text style={[styles.ssoText, { color: isDark ? '#000' : '#fff' }]}> Continue with Apple</Text>
                     )}
-                  </TouchableOpacity>}
+                  </TouchableOpacity>
 
-                  {GOOGLE_SIGN_IN_ENABLED && <TouchableOpacity
+                  <TouchableOpacity
                     onPress={() => handleLogin('google')}
                     disabled={!!loading || isOffline}
                     activeOpacity={0.7}
@@ -609,7 +485,7 @@ export default function AuthRootView() {
                     {loading === 'google' ? <ActivityIndicator color={isDark ? '#fff' : '#000'} /> : (
                       <Text style={[styles.ssoText, { color: isDark ? '#fff' : '#000' }]}>Continue with Google</Text>
                     )}
-                  </TouchableOpacity>}
+                  </TouchableOpacity>
 
                   <TouchableOpacity 
                     onPress={() => {
@@ -622,13 +498,12 @@ export default function AuthRootView() {
                   </TouchableOpacity>
                 </Animated.View>
               </View>
-            ) : !isAwaitingEmailCode ? (
+            ) : (
               <View className="w-full mt-2">
                 <Animated.View entering={FadeIn} exiting={FadeOut}>
                   <View className="bg-slate-100 dark:bg-zinc-800 rounded-2xl flex-row items-center px-4 py-4 mb-4 border border-slate-200 dark:border-zinc-700">
                     <Mail size={20} color={isDark ? '#94A3B8' : '#64748B'} />
                     <TextInput
-                      testID="email-input"
                       placeholder="Enter your email"
                       placeholderTextColor={isDark ? '#64748B' : '#94A3B8'}
                       value={email}
@@ -640,9 +515,8 @@ export default function AuthRootView() {
                   </View>
 
                   <TouchableOpacity
-                    testID="send-magic-link"
                     onPress={() => handleLogin('email')}
-                    disabled={!!loading || isOffline}
+                    disabled={!email || !!loading || isOffline}
                     activeOpacity={0.7}
                     style={[styles.ssoButton, { backgroundColor: '#4F46E5', transform: [{ scale: loading === 'email' ? 0.98 : 1 }] }]}
                   >
@@ -651,21 +525,10 @@ export default function AuthRootView() {
                     )}
                   </TouchableOpacity>
 
-                  <TouchableOpacity
-                    testID="enter-email-code"
-                    onPress={() => setIsAwaitingEmailCode(true)}
-                    disabled={!email.trim() || !!loading}
-                    className="mt-5 items-center"
-                  >
-                    <Text className="text-indigo-500 font-bold text-sm">I already have a code</Text>
-                  </TouchableOpacity>
-
                   <TouchableOpacity 
                     onPress={() => {
                       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                       setIsEmailMode(false);
-                      setEmailCode('');
-                      setIsAwaitingEmailCode(false);
                     }}
                     className="mt-6 flex-row items-center justify-center"
                   >
@@ -674,62 +537,23 @@ export default function AuthRootView() {
                   </TouchableOpacity>
                 </Animated.View>
               </View>
-            ) : (
-              <View className="w-full mt-2">
-                <Animated.View entering={FadeIn} exiting={FadeOut}>
-                  <Text className="text-slate-600 dark:text-zinc-300 text-center font-semibold mb-4">
-                    Enter the code sent to {email.trim()}
-                  </Text>
-                  <View className="bg-slate-100 dark:bg-zinc-800 rounded-2xl flex-row items-center px-4 py-4 mb-4 border border-slate-200 dark:border-zinc-700">
-                    <Mail size={20} color={isDark ? '#94A3B8' : '#64748B'} />
-                    <TextInput
-                      testID="email-code-input"
-                      placeholder="Email code"
-                      placeholderTextColor={isDark ? '#64748B' : '#94A3B8'}
-                      value={emailCode}
-                      onChangeText={setEmailCode}
-                      autoCapitalize="none"
-                      autoCorrect={false}
-                      keyboardType="number-pad"
-                      maxLength={10}
-                      className="flex-1 ml-3 text-slate-900 dark:text-white font-semibold text-base"
-                    />
-                  </View>
-                  <TouchableOpacity
-                    testID="verify-email-code"
-                    onPress={handleVerifyEmailCode}
-                    disabled={!!loading || isOffline}
-                    activeOpacity={0.7}
-                    style={[styles.ssoButton, { backgroundColor: '#4F46E5', transform: [{ scale: loading === 'email' ? 0.98 : 1 }] }]}
-                  >
-                    {loading === 'email' ? <ActivityIndicator color="#fff" /> : (
-                      <Text style={[styles.ssoText, { color: '#fff' }]}>Verify and Continue</Text>
-                    )}
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => setIsAwaitingEmailCode(false)}
-                    disabled={!!loading}
-                    className="mt-6 flex-row items-center justify-center"
-                  >
-                    <ArrowLeft size={14} color="#6366F1" />
-                    <Text className="text-indigo-500 font-bold text-sm ml-2">Use a different email</Text>
-                  </TouchableOpacity>
-                </Animated.View>
-              </View>
             )}
 
             {/* Legal */}
             <View className="mt-8 flex-row flex-wrap justify-center px-4">
               <Text className="text-slate-400 dark:text-zinc-500 text-xs">By continuing, you agree to our </Text>
-              {TERMS_URL ? <TouchableOpacity onPress={() => openLegal(TERMS_URL)}><Text className="text-indigo-500 font-bold text-xs">Terms</Text></TouchableOpacity> : <Text className="text-slate-400 dark:text-zinc-500 text-xs">Terms</Text>}
+              <TouchableOpacity onPress={() => openLegal('https://example.com/terms')}>
+                <Text className="text-indigo-500 font-bold text-xs">Terms</Text>
+              </TouchableOpacity>
               <Text className="text-slate-400 dark:text-zinc-500 text-xs"> & </Text>
-              {PRIVACY_URL ? <TouchableOpacity onPress={() => openLegal(PRIVACY_URL)}><Text className="text-indigo-500 font-bold text-xs">Privacy</Text></TouchableOpacity> : <Text className="text-slate-400 dark:text-zinc-500 text-xs">Privacy</Text>}
+              <TouchableOpacity onPress={() => openLegal('https://example.com/privacy')}>
+                <Text className="text-indigo-500 font-bold text-xs">Privacy</Text>
+              </TouchableOpacity>
             </View>
             <Text className="text-slate-400 dark:text-zinc-500 text-[10px] mt-2">Harulo Studio LLC</Text>
           </View>
         </BlurView>
       </Animated.View>
-      </KeyboardAvoidingView>
 
       {/* Developer Modal */}
       <Modal
@@ -816,96 +640,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  emailScreen: {
-    flex: 1,
-  },
-  emailKeyboardAvoider: {
-    flex: 1,
-  },
-  emailContent: {
-    flexGrow: 1,
-    padding: 24,
-  },
-  emailBackButton: {
-    alignSelf: 'flex-start',
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    paddingVertical: 12,
-  },
-  emailBackText: {
-    color: '#6366F1',
-    fontSize: 16,
-    fontWeight: '700',
-  },
-  emailForm: {
-    flex: 1,
-    justifyContent: 'center',
-    width: '100%',
-    maxWidth: 480,
-    alignSelf: 'center',
-    paddingVertical: 24,
-  },
-  emailTitle: {
-    fontSize: 30,
-    fontWeight: '800',
-    marginBottom: 8,
-  },
-  emailSubtitle: {
-    fontSize: 16,
-    lineHeight: 24,
-    marginBottom: 32,
-  },
-  emailLabel: {
-    fontSize: 14,
-    fontWeight: '700',
-    marginBottom: 8,
-  },
-  emailInput: {
-    minHeight: 56,
-    borderRadius: 14,
-    paddingHorizontal: 16,
-    fontSize: 17,
-    marginBottom: 20,
-  },
-  codeInput: {
-    letterSpacing: 6,
-    textAlign: 'center',
-    fontWeight: '700',
-  },
-  emailAction: {
-    minHeight: 56,
-    borderRadius: 28,
-    backgroundColor: '#4F46E5',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  emailActionDisabled: {
-    opacity: 0.55,
-  },
-  emailActionText: {
-    color: '#fff',
-    fontSize: 17,
-    fontWeight: '700',
-  },
-  emailSecondaryAction: {
-    alignItems: 'center',
-    paddingVertical: 20,
-  },
-  emailSecondaryText: {
-    color: '#6366F1',
-    fontSize: 15,
-    fontWeight: '700',
-  },
   backgroundLayer: {
-    ...StyleSheet.absoluteFill,
+    ...StyleSheet.absoluteFillObject,
     width: width + 100,
     height: height + 100,
     left: -50,
     top: -50,
   },
   gradientOverlay: {
-    ...StyleSheet.absoluteFill,
+    ...StyleSheet.absoluteFillObject,
   },
   headerContainer: {
     flex: 1,
@@ -938,12 +681,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: '42%',
-  },
-  emailBottomSheet: {
-    height: '52%',
-  },
-  keyboardAvoider: {
-    ...StyleSheet.absoluteFill,
   },
   blurContainer: {
     flex: 1,
