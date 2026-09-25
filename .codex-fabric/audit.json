@@ -1,0 +1,387 @@
+{
+  "accepted_at": "2026-09-25T00:28:15Z",
+  "changed_files": [
+    {
+      "additions": 57,
+      "deletions": 57,
+      "path": "package-lock.json",
+      "status": "M"
+    },
+    {
+      "additions": 6,
+      "deletions": 6,
+      "path": "package.json",
+      "status": "M"
+    }
+  ],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'cat /Users/haewonkim/.codex/AGENTS.md; rg --files --hidden -g AGENTS.md -g \\\"\"'!node_modules\" -g \"!.git\" .; cat docs/original-ui-integration.md docs/implementation-status.md docs/sdk-57-upgrade.md package.json .github/workflows/ci.yml; cat scripts/test-database*.mjs'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nimport json, pathlib\np=json.loads(pathlib.Path('package.json').read_text()); l=json.loads(pathlib.Path('package-lock.json').read_text())\nprint(json.dumps({'lockfileVersion':l['lockfileVersion'],'root':l['packages'][''],'package_count':len(l['packages']),'expo_nodes':{k:v for k,v in l['packages'].items() if k in ['node_modules/'+n for n in ['expo','expo-build-properties','expo-image-picker','expo-linking','expo-notifications','expo-router','react','react-native']]}},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'ls -la /Users/haewonkim/.codex-fabric/bin /Users/haewonkim/.codex-fabric/libexec; ls -ld /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c*; rg -n \\\"artifact.bridge|artifact_bridge|Artifact Bridge\\\" /Users/haewonkim/.codex-fabric/bin /Users/haewonkim/.codex-fabric/libexec /Users/haewonkim/.codex-fabric/current --glob \\\"*.py\\\" --glob \\\"*.md\\\" --glob \\\"*stdin\\\" | head -100; node --version; npm --version; git --version; command -v node; command -v npm; ls /opt/homebrew/opt/node* /opt/homebrew/opt/postgresql* /opt/homebrew/opt/deno* 2>/dev/null'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'ls -la /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running; rg --files --hidden /Users/haewonkim/.codex/plugins /Users/haewonkim/.codex/skills /Users/haewonkim/.config /Users/haewonkim/.codex-fabric/libexec /Users/haewonkim/.codex-fabric/config -g \\\"*artifact*\\\" -g \\\"*bridge*\\\" -g \\\"*projectos*\\\" -g \\\"\"'!node_modules\" -g \"!.git\" 2>/dev/null | head -90'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'cat docs/sdk-57-upgrade.md package.json .github/workflows/ci.yml scripts/test-database.mjs scripts/test-database-native.mjs; ls -la /Users/haewonkim/.codex-fabric/current /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running; rg -n \\\"artifact|bridge\\\" /Users/haewonkim/.codex-fabric/current/README* /Users/haewonkim/.codex-fabric/current/fabric.py /Users/haewonkim/.codex-fabric/bin/fabricctl | head -80; /opt/homebrew/opt/node@22/bin/node --version; /opt/homebrew/opt/node@22/bin/npm --version; command -v deno'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'cat /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/prompt.md; cat /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/job.json; cat scripts/test-database-embedded.mjs; ls -la .env* 2>/dev/null; ls /opt/homebrew/bin/*artifact* /opt/homebrew/bin/*bridge* /opt/homebrew/bin/*project* 2>/dev/null'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport os\nfor root in [Path.home(),Path('/usr/local/bin'),Path('/opt/homebrew/bin')]:\n print(root)\n if root==Path.home(): print('\\\\n'.join(p.name for p in root.iterdir() if p.is_dir()))\n else: print('\\\\n'.join(p.name for p in root.iterdir() if any(s in p.name.lower() for s in ['project','artifact','bridge','fabric'])))\nprint('PATH directories:', os.environ.get('PATH','').split(':'))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'cat /Users/haewonkim/.codex/plugins/cache/openai-curated-remote/supabase/1.0.0/skills/supabase/SKILL.md; rg -n \\\"artifact\\\" /Users/haewonkim/.codex-fabric/libexec/projectos_integrate.py'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'ls -la /Users/haewonkim/.projectos /Users/haewonkim/bin; rg --files --hidden /Users/haewonkim/.projectos /Users/haewonkim/bin -g \\\"\"'!*credentials*\" -g \"!*token*\" -g \"!*secret*\" -g \"!node_modules\" -g \"!.git\" | head -100'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json, subprocess, hashlib\njob=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running')\nroot=job/'artifact-bridge'\n(root/'material/logs').mkdir(parents=True,exist_ok=True)\n(root/'local').mkdir(exist_ok=True)\nbase='763599a80553990d40015028fc46ca209c6360b3'\nr=subprocess.run(['git','ls-remote','--exit-code','origin','refs/heads/main'],capture_output=True,text=True)\nassert r.returncode==0 and r.stdout.split()[0]==base\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==base\nassert subprocess.check_output(['git','rev-parse','HEAD\"'^{tree}'\"'],text=True).strip()=='983e9a0760c8f082163b3c72de6a693058156b9b'\nassert not subprocess.check_output(['git','status','--porcelain=v1'],text=True)\nmeta={'project':'homehuddle','request':'homehuddle-sdk57-alignment-v1','change':'CHG-210','operation':'FIX','job_id':job.name.removesuffix('.running'),'repository':'kimhw8084/homehuddle','alias_requested':'app','alias_native_job':'default','target':'main','base':base,'base_tree':'983e9a0760c8f082163b3c72de6a693058156b9b','work_branch':'codex/homehuddle-sdk57-alignment-v1','remote_target':r.stdout.strip(),'remote_target_exit_code':r.returncode,'local_main_untouched':subprocess.check_output(['git','rev-parse','main'],text=True).strip(),'base_lock_sha256':hashlib.sha256(Path('package-lock.json').read_bytes()).hexdigest()}\n(root/'material/binding.json').write_text(json.dumps(meta,indent=2)+'\\\\n')\n(root/'local/base-package-lock.json').write_bytes(Path('package-lock.json').read_bytes())\n(root/'local/base-package.json').write_bytes(Path('package.json').read_bytes())\nprint('Artifact evidence root initialized for',meta['job_id'])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'chmod +x /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/record-shell.py; /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage --help; cat /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/baseline-qualification.json'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py baseline-ci npm ci'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'rg --files --hidden /Users/haewonkim/home /Users/haewonkim/Projects /Users/haewonkim/.codex-ops -g \\\"*artifact*stage*\\\" -g \\\"*artifact*bridge*\\\" -g \\\"\"'!node_modules\" -g \"!.git\" -g \"!.venv\" -g \"!venv\" 2>/dev/null | head -70; rg -n \"projectos-artifact|artifact.stage|artifact_stage\" /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage | head -25'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py baseline-expo-check npx expo install --check'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'ls -la /Users/haewonkim/.codex-ops /Users/haewonkim/home /Users/haewonkim/Projects; rg -n \\\"projectos-artifact-stage|artifact_bridge.*stage|Artifact Bridge\\\" /Users/haewonkim/.codex-fabric/current/README* /Users/haewonkim/.codex-ops /Users/haewonkim/.config -g \\\"*.md\\\" -g \\\"*.py\\\" -g \\\"*.json\\\" -g \\\"\"'!*credentials*\" -g \"!*token*\" 2>/dev/null | head -60'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'rg --files --hidden --no-ignore /Users/haewonkim/Projects/codex-ops-dashboard /Users/haewonkim/.codex-ops -g \\\"*artifact*\\\" -g \\\"*bridge*\\\" -g \\\"\"'!node_modules\" -g \"!.git\" -g \"!.venv\" -g \"!venv\" | head -80; ls -la /Users/haewonkim/Projects/codex-ops-dashboard'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'ls -la /Users/haewonkim/Projects/codex-ops-dashboard/scripts /Users/haewonkim/.codex-ops/runtime; rg -n --hidden --no-ignore -L \\\"artifact.stage|artifact_bridge|Artifact Bridge\\\" /Users/haewonkim/Projects/codex-ops-dashboard/scripts /Users/haewonkim/Projects/codex-ops-dashboard/docs | head -70'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py expo-fix npx expo install --fix'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'git diff --stat; git diff -- package.json; git diff --check; git status --short; git diff -- package-lock.json'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nimport os\nfrom pathlib import Path\nroots=[Path.home()/'.local',Path.home()/'home/development',Path.home()/'.codex-fabric/releases']\nfor root in roots:\n for current, dirs, files in os.walk(root):\n  dirs[:]=[d for d in dirs if d not in ['node_modules','.git','.venv','venv','__pycache__','site-packages','.next','target','dist','build']]\n  for f in files:\n   if ('artifact' in f.lower() and any(s in f.lower() for s in ['bridge','stage','helper'])) or f=='projectos-artifact': print(Path(current)/f)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json,subprocess,hashlib,datetime\nroot=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge')\np=json.loads(Path('package.json').read_text()); old=json.loads((root/'local/base-package.json').read_text()); lock=json.loads(Path('package-lock.json').read_text()); before=json.loads((root/'local/base-package-lock.json').read_text())\nexpected={'expo','expo-build-properties','expo-image-picker','expo-linking','expo-notifications','expo-router'}\nchanges={k:{'from':old['dependencies'][k],'to':v} for k,v in p['dependencies'].items() if old['dependencies'].get(k)\"'!=v}\nassert set(changes)==expected\nold['\"'dependencies']=p['dependencies']; assert old==p\nassert p['dependencies']['react']=='19.2.3' and p['dependencies']['react-native']=='0.86.3'\nfor field in ['dependencies','devDependencies','engines']: assert lock['packages'][''][field]==p[field]\nchanged=[]\nfor k in sorted(set(before['packages'])|set(lock['packages'])):\n a=before['packages'].get(k); b=lock['packages'].get(k)\n if a\"'!=b: changed.append({'\"'path':k,'old_version':a.get('version') if a else None,'new_version':b.get('version') if b else None,'changed_fields':[f for f in sorted(set(a or {})|set(b or {})) if (a or {}).get(f)\"'!=(b or {}).get(f)]})\n(root/'\"'material/package-inventory.json').write_text(json.dumps({'manifest_changes':changes,'lock_entry_changes':changed,'old_package_entries':len(before['packages']),'new_package_entries':len(lock['packages']),'added_package_entries':list(set(lock['packages'])-set(before['packages'])),'removed_package_entries':list(set(before['packages'])-set(lock['packages'])),'manifest_lock_agree':True},indent=2)+'\\\\n')\nprint(json.dumps(changed,indent=2))\nfiles=subprocess.check_output(['git','diff','--name-only'],text=True).splitlines(); assert sorted(files)==['package-lock.json','package.json']\nr=subprocess.run(['git','diff','--check']); assert r.returncode==0\n(root/'material/dependency.patch').write_text(subprocess.check_output(['git','diff','--','package.json','package-lock.json'],text=True))\n# Capture the installed Expo SDK compatibility map, without source changes.\n(root/'material/expo-bundledNativeModules.json').write_bytes(Path('node_modules/expo/bundledNativeModules.json').read_bytes())\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'git add -- package.json package-lock.json && git commit -m \\\"fix: align Expo SDK 57 compatible patches\\\" && git rev-parse HEAD && git rev-parse HEAD\"'^{tree}'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py final-ci npm ci'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json\nfor f in [Path('/Users/haewonkim/.codex-fabric/jobs/CF-9dd602658e4288c65a5c2a8a.executed/artifact-bridge/artifact-stage-receipt.json'),Path('/Users/haewonkim/.codex-fabric/jobs/CF-9c8b4d383ed230b97e167b70.executed/artifact-bridge/compact-stage/artifact-stage-receipt.json')]:\n data=json.loads(f.read_text())\n print(f.name, list(data))\n for k,v in data.items():\n  if any(s in k for s in ['helper','command','version','status']): print(k,v)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json,subprocess,platform,hashlib\nr=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material')\nb=json.loads((r/'binding.json').read_text())\nb['candidate_source_sha']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nb['candidate_source_tree']=subprocess.check_output(['git','rev-parse','HEAD\"'^{tree}'\"'],text=True).strip()\nb['candidate_lock_sha256']=hashlib.sha256(Path('package-lock.json').read_bytes()).hexdigest()\n(r/'binding.json').write_text(json.dumps(b,indent=2)+'\\\\n')\nprint(json.dumps(b,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport os\nroot=Path.home()\nskip={'.git','node_modules','.venv','venv','site-packages','__pycache__','.next','target','dist','build','.Trash','.cache','.npm','.nvm','.codex','Library','Pictures','Music','Movies','Applications','OrbStack','.orbstack','.docker','.rustup','.gem','.swiftpm','.cocoapods','data','logs','worktrees','repos','sessions'}\nfor current,dirs,files in os.walk(root):\n dirs[:]=[d for d in dirs if d not in skip]\n for f in files:\n  if ('artifact' in f.lower() and any(s in f.lower() for s in ['bridge','stage','helper'])) and not f.endswith(('.json','.zip','.png','.log')): print(Path(current)/f,flush=True)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json\np=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9dd602658e4288c65a5c2a8a.executed/artifact-bridge/artifact-stage-receipt.json')\nd=json.loads(p.read_text())\nfor k in ['bridge','source','lineage']: print(k,json.dumps(d[k],indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py expo-check npx expo install --check'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py native-db npm run test:db:native'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py edge npm run check:edge'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py native-db-diagnostic env KEEP_TEST_DB=true npm run test:db:native'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport os,re,json\nr=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material')\nfor d in Path(os.environ['TMPDIR']).glob('homehuddle-db-test-*'):\n f=d/'server.log'\n if f.exists() and f.stat().st_mtime>1790296300:\n  s=f.read_text().replace(str(Path.home()),'<HOME>')\n  s=re.sub(r'/var/folders/[\"'^'\"\\\\s\\\\\\\"]+', '<TEMP>',s)\n  print(s)\n  (r/'logs/native-db-startup-diagnostic.log').write_text(s)\nprint('Library candidates:')\nfor p in (Path.home()/'Library/Application Support').iterdir():\n if any(s in p.name.lower() for s in ['codex','project','fabric']): print(p)\nprint('AR3 qualification files:')\nfor p in (Path.home()/'.projectos/qualifications/artifact-bridge-ar3-r3').iterdir(): print(p.name)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'tail -8 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material/logs/check.log; rg -n \\\"installed|helper_path|helperPath|artifact-stage|libexec\\\" /Users/haewonkim/.projectos/qualifications/artifact-bridge-ar3-r3 -g \\\"*.md\\\" -g \\\"*receipt*.json\\\" -g \\\"*RECEIPT*.json\\\" -g \\\"*report*.json\\\" -g \\\"\"'!node_modules\" -g \"!.git\" | head -60'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py check npm run check'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'mkdir -p /tmp/chg210-pg-CF-9eec5fb85695a39591e5162c; cat /Users/haewonkim/.projectos/qualifications/artifact-bridge-ar3-r3/PROJECT_OS_AR3_FINAL_RESULT_REPORT.md; rg -n \\\"\"'^def |add_argument|stage_for|fabric|artifactRun|project\" /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage | tail -90'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py native-export npx expo export --platform ios --platform android --output-dir dist-native-check'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py native-db-short-tmp env TMPDIR=/tmp/chg210-pg-CF-9eec5fb85695a39591e5162c npm run test:db:native'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'sed -n \\\"256,268p\\\" /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage; sed -n \\\"883,925p\\\" /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage; sed -n \\\"965,1040p\\\" /Users/haewonkim/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage; cat /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material/constituent-exits.jsonl; rg -n \\\"Test Suites:|Tests:|Snapshots:|assertions|warn|Warning|deprecated|Bundled|bundles|assets\\\" /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material/logs/check.log /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material/logs/native-export.log | head -55'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py web-export npm run export:web'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py manifest-lock-install npm ls --all --json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport subprocess,json,hashlib,platform,os\nr=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material')\nenv=os.environ.copy();env['PATH']='/opt/homebrew/opt/node@22/bin:/opt/homebrew/opt/postgresql@17/bin:/opt/homebrew/bin:/usr/bin:/bin'\ncmds=[['node','--version'],['npm','--version'],['npx','--version'],['npx','expo','--version'],['npx','tsc','--version'],['npx','jest','--version'],['npx','eslint','--version'],['npx','--yes','deno@2.9.6','--version'],['psql','--version'],['initdb','--version'],['pg_ctl','--version'],['git','--version'],['rtk','--version'],['python3','--version']]\nversions=[]\nfor cmd in cmds:\n try:\n  a=subprocess.run(cmd,env=env,capture_output=True,text=True)\n  versions.append({'command':cmd,'exit_code':a.returncode,'output':(a.stdout+a.stderr).strip()})\n except FileNotFoundError:\n  a=subprocess.run([str(Path.home()/'.local/bin/rtk'),'--version'],capture_output=True,text=True)\n  versions.append({'command':cmd,'exit_code':a.returncode,'output':a.stdout.strip()})\nversions.append({'platform':platform.platform(),'architecture':platform.machine()})\nversions.append({'installed_packages':{name:json.loads((Path('node_modules')/name/'package.json').read_text())['version'] for name in ['expo','expo/node_modules/@expo/cli','typescript','jest','eslint','@electric-sql/pglite','react','react-dom','react-native','react-test-renderer']}})\n(r/'tool-versions.json').write_text(json.dumps(versions,indent=2)+'\\\\n')\nprint(json.dumps(versions,indent=2))\nprint(subprocess.check_output(['git','status','--short'],text=True))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport subprocess,json,hashlib\nroot=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge')\nhelper=Path.home()/'.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage'\nexpected='b681067b6c162943b7e032839389c514603b5dd3e3ea2f88e2660fe5f23dcaaf'\ndigest=hashlib.sha256(helper.read_bytes()).hexdigest(); assert digest==expected\nhelp_result=subprocess.run([str(helper),'--help'],capture_output=True,text=True)\n(root/'material/bridge-help.txt').write_text(help_result.stdout)\n(root/'material/bridge-discovery.json').write_text(json.dumps({'qualified_helper':'\"'$HOME/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage'\"','sha256':digest,'matches_qualified_sha256':True,'help_exit_code':help_result.returncode,'qualification_reference':'\"'$HOME/.projectos/qualifications/artifact-bridge-ar3-r3/PROJECT_OS_AR3_FINAL_RESULT_REPORT.md'\"','supported_cli_flags':['--artifact-root','--output-dir','--generate-fixture'],'constraint':'Helper requires fixed AR-2 root name, fixture layout and synthetic project/request/job bindings; no CLI identity overrides.'},indent=2)+'\\\\n')\n# Exercise the installed helper exactly; its root preflight precedes credential access.\ncmd=[str(helper),'--artifact-root',str(root/'material'),'--output-dir',str(root/'bridge-output')]\nr=subprocess.run(cmd,capture_output=True,text=True)\n(root/'material/bridge-machine-stdout.json').write_text(r.stdout)\n(root/'material/bridge-machine-stderr.txt').write_text(r.stderr.replace(str(Path.home()),'<HOME>'))\nreceipt=json.loads(r.stdout)\nstatus={'source_status':'LOCAL_GATES_PASSED','evidence_status':'BLOCKED','helper_exit_code':r.returncode,'error_code':receipt.get('error_code'),'helper_receipt':'bridge-machine-stdout.json','receipt_project_identity_matches_job':False,'machine_receipt_note':'Unmodified helper embeds AR-2 synthetic identity even on rejection; this receipt is failure evidence only, not a HomeHuddle staging receipt.','bound_job':json.loads((root/'material/binding.json').read_text()),'command':['\"'$HOME/.projectos/sidecars/artifact-bridge-v1-ar2-candidate/projectos-artifact-stage'\"','--artifact-root','<JOB_ARTIFACT_BRIDGE>/material','--output-dir','<JOB_ARTIFACT_BRIDGE>/bridge-output'],'manifest_created_by_helper':False,'bundle_created_by_helper':False,'published':False,'credentials_accessed':False,'provider_operation_performed':False}\n(root/'material/evidence-stage-status.json').write_text(json.dumps(status,indent=2)+'\\\\n')\nprint('Qualified helper SHA:',digest)\nprint('Direct exit:',r.returncode)\nprint(r.stdout)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py audit-informational npm audit --json'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json,hashlib,subprocess,re\nroot=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge'); r=root/'material'\nb=json.loads((r/'binding.json').read_text())\ndef cmd(args):\n p=subprocess.run(args,text=True,capture_output=True);return {'command':args,'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr}\ndef tree(ref):\n raw=subprocess.check_output(['git','ls-tree','-rz',ref])\n out={}\n for line in raw.split(b'\\\\0'):\n  if not line:continue\n  meta,path=line.split(b'\\\\t',1); mode,typ,oid=meta.decode().split();out[path.decode()]={'mode':mode,'type':typ,'oid':oid}\n return out\nbase=tree(b['base']); final=tree(b['candidate_source_sha']); changed=[k for k in sorted(set(base)|set(final)) if base.get(k)\"'!=final.get(k)]\nassert changed==['\"'package-lock.json','package.json']\nassert final.keys()==base.keys()\nfiles=[]\nfor k,v in final.items():\n path=Path(k)\n assert path.exists()\n blob=subprocess.check_output(['git','hash-object','--',k],text=True).strip()\n assert blob==v['oid'],k\n files.append({'path':k,'base_git_blob':base[k]['oid'],'candidate_git_blob':v['oid'],'working_git_blob':blob,'mode':v['mode'],'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'unchanged_from_base':v==base[k]})\nchecks=[cmd(['git','diff','--check',b['base'],'HEAD']),cmd(['git','diff','--check']),cmd(['git','diff','--exit-code','HEAD']),cmd(['git','status','--porcelain=v1']),cmd(['git','rev-parse','main']),cmd(['git','ls-remote','--exit-code','origin','refs/heads/main'])]\nassert all(x['exit_code']==0 for x in checks)\nassert checks[3]['stdout']==''\nassert checks[4]['stdout'].strip()==b['local_main_untouched']\nassert checks[5]['stdout'].split()[0]==b['base']\nreport={'base':b['base'],'candidate':b['candidate_source_sha'],'tree':b['candidate_source_tree'],'changed_files':changed,'tracked_file_count':len(files),'unchanged_file_count':len(files)-len(changed),'added_files':[],'removed_files':[],'all_working_files_match_candidate':True,'checks':checks,'files':files}\n(r/'source-preservation.json').write_text(json.dumps(report,indent=2)+'\\\\n')\n# Export inventory is metadata only; bundles are compile-only outputs, not deployed.\nexports=[]\nfor directory in ['dist-native-check','dist']:\n entries=[{'path':str(f),'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(Path(directory).rglob('*')) if f.is_file()]\n exports.append({'directory':directory,'file_count':len(entries),'bytes':sum(e['bytes'] for e in entries),'files':entries})\n(r/'export-inventory.json').write_text(json.dumps(exports,indent=2)+'\\\\n')\ncheck=(r/'logs/check.log').read_text(); native=(r/'logs/native-db-short-tmp.log').read_text()\nprint(json.dumps({'tracked':len(files),'unchanged':len(files)-2,'native_PASS_count':native.count('PASS:'),'native_SQL_PASS_count':len(re.findall(r'NOTICE:\\\\s+PASS:',native)),'embedded_PASS_count':len(re.findall(r'\"'^PASS:'\"',check,re.M)),'migrations':len(list(Path('supabase/migrations').glob('*.sql'))),'exports':[{k:e[k] for k in ['directory','file_count','bytes']} for e in exports]},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport shutil,json\nroot=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge')\nmethod=root/'material/capture-method';method.mkdir(exist_ok=True)\nfor name in ['run.py','record-shell.py']:shutil.copyfile(root/'local'/name,method/name)\n# Each shell observer delegates the exact npm lifecycle command to /bin/sh,\n# records its returned exit status, and returns that same status.\nprint('Capture tools retained outside product history.')\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy python3 /Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/local/run.py publish-branch git push --set-upstream origin codex/homehuddle-sdk57-alignment-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json,subprocess,hashlib,re\nr=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material')\nb=json.loads((r/'binding.json').read_text())\na=subprocess.run(['git','ls-remote','--exit-code','origin','refs/heads/main','refs/heads/'+b['work_branch']],capture_output=True,text=True)\nassert a.returncode==0\nrefs={line.split()[1]:line.split()[0] for line in a.stdout.splitlines()}\nassert refs['refs/heads/main']==b['base']\nassert refs['refs/heads/'+b['work_branch']]==b['candidate_source_sha']\nassert subprocess.check_output(['git','rev-parse','main'],text=True).strip()==b['local_main_untouched']\nassert not subprocess.check_output(['git','status','--porcelain=v1'],text=True)\n(r/'publication-verification.json').write_text(json.dumps({'command':['git','ls-remote','--exit-code','origin','refs/heads/main','refs/heads/'+b['work_branch']],'direct_exit_code':a.returncode,'refs':refs,'exact_candidate_published':True,'target_unchanged':True,'local_main_unchanged':True,'worktree_clean':True,'operator_exact_candidate_ci':'NOT_CHECKED_BY_AGENT','merged':False},indent=2)+'\\\\n')\nprint(json.dumps(refs,indent=2))\n# Machine count summary sourced from retained logs, never historical documentation.\nlogs={name:(r/'logs'/f'{name}.log').read_text() for name in ['check','native-db-short-tmp','final-ci','native-export','web-export','audit-informational']}\naudit=json.loads(logs['audit-informational'].split('\\\\n',1)[1].rsplit('\\\\nDIRECT_EXIT_CODE=',1)[0])\ncounts={'jest_suites':22,'jest_tests':84,'jest_snapshots':0,'embedded_sql_assertions':len(re.findall(r'\"'^PASS:'\"',logs['check'],re.M)),'native_sql_assertions':len(re.findall(r'NOTICE:\\\\s+PASS:',logs['native-db-short-tmp'])),'native_concurrency_checks':len(re.findall(r'\"'^PASS:'\"',logs['native-db-short-tmp'],re.M)),'migration_files':len(list(Path('supabase/migrations').glob('*.sql'))),'general_lint_errors':0,'general_lint_warnings':696,'production_lint_errors':0,'production_lint_warnings':0,'npm_ci_added_packages':1210,'npm_ci_audited_packages':1211,'npm_ci_deprecation_warning_lines':len(re.findall(r'\"'^npm warn deprecated '\"',logs['final-ci'],re.M)),'audit':audit['metadata']['vulnerabilities'],'ios_modules':3644,'android_modules':3745,'web_modules':3254,'ios_bundles':1,'android_bundles':1,'web_bundles':3,'native_export_warning_lines':len(re.findall(r'\"'^.*(?:WARN|[Ww]arning|[Dd]eprecat).*$'\"',logs['native-export'],re.M)),'web_export_warning_lines':len(re.findall(r'\"'^.*(?:WARN|[Ww]arning|[Dd]eprecat).*$'\"',logs['web-export'],re.M))}\nassert 'Test Suites: 22 passed, 22 total' in logs['check'] and 'Tests:       84 passed, 84 total' in logs['check']\nassert '696 problems (0 errors, 696 warnings)' in logs['check']\n(r/'gate-counts.json').write_text(json.dumps(counts,indent=2)+'\\\\n')\nprint(json.dumps(counts,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json,subprocess,hashlib,sys,re,datetime\nr=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material')\nversions=json.loads((r/'tool-versions.json').read_text())\nversions.append({'capture_runner_python':sys.version,'npm_script_shell_observer_python':subprocess.check_output(['/usr/bin/python3','--version'],text=True).strip(),'baseline_expo_cli_from_lock':'57.0.26'})\n(r/'tool-versions.json').write_text(json.dumps(versions,indent=2)+'\\\\n')\nb=json.loads((r/'binding.json').read_text()); outcomes=[json.loads(s) for s in (r/'command-outcomes.jsonl').read_text().splitlines()]\nfinal_gates=['final-ci','check','native-db-short-tmp','edge','expo-check','native-export','web-export']\nfor name in final_gates:\n rec=next(x for x in outcomes if x['gate']==name)\n assert rec['exit_code']==0\n assert rec['before_sha256']==rec['after_sha256']\n assert rec['after_sha256']['package-lock.json']==b['candidate_lock_sha256']\nconst=[json.loads(s) for s in (r/'constituent-exits.jsonl').read_text().splitlines()]\nassert len(const)==7 and all(x['exit_code']==0 for x in const)\n# Explicitly retain the scope and provenance of all successful same-candidate runs.\n(r/'same-candidate-verification.json').write_text(json.dumps({'candidate':b['candidate_source_sha'],'tree':b['candidate_source_tree'],'lock_sha256':b['candidate_lock_sha256'],'required_final_gate_names':final_gates,'all_final_direct_exits_zero':True,'unchanged_manifest_lock_hashes_before_and_after_every_final_gate':True,'direct_npm_constituent_exits':const,'base_diagnostic_failures_retained':True,'native_environment_failures_retained':True,'evidence_stage_separate_status':'BLOCKED'},indent=2)+'\\\\n')\n# No upload performed; screen the retained publication material anyway.\nfindings=[]\nfor f in r.rglob('*'):\n if f.is_file():\n  s=f.read_text()\n  for label,pattern in [('absolute_personal_path',r'/(?:Users|home)/[A-Za-z0-9_.-]+/'),('macos_private_temp_path',r'/(?:private/)?var/folders/'),('private_key',r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----'),('secret_key',r'sb_secret_[A-Za-z0-9_-]+'),('github_token',r'gh[pousr]_[A-Za-z0-9]{20,}'),('jwt',r'eyJ[A-Za-z0-9_-]{10,}\\\\.[A-Za-z0-9_-]{10,}\\\\.[A-Za-z0-9_-]{10,}')]:\n   if re.search(pattern,s):findings.append({'path':str(f.relative_to(r)),'rule':label})\nassert not findings,findings\nfinal_checks=[]\nfor cmd in [['git','diff','--check',b['base'],'HEAD'],['git','diff','--check'],['git','diff','--exit-code','HEAD'],['git','status','--porcelain=v1']]:\n a=subprocess.run(cmd,capture_output=True,text=True);assert a.returncode==0 and not a.stdout and not a.stderr\n final_checks.append({'command':cmd,'exit_code':a.returncode,'stdout':a.stdout,'stderr':a.stderr})\n(r/'final-integrity-checks.json').write_text(json.dumps({'timestamp_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checks':final_checks,'publication_material_sensitive_pattern_findings':findings,'scan_is_not_an_independent_security_audit':True},indent=2)+'\\\\n')\nledger={'kind':'local-retention-checksums-only','helper_manifest':False,'published':False,'binding':b,'files':[{'path':str(f.relative_to(r)),'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(r.rglob('*')) if f.is_file() and f.name\"'!='\"'LOCAL-MATERIAL-SHA256.json']}\n(r/'LOCAL-MATERIAL-SHA256.json').write_text(json.dumps(ledger,indent=2)+'\\\\n')\nprint(json.dumps({'material_files_excluding_checksum_ledger':len(ledger['files']),'material_bytes':sum(f['bytes'] for f in ledger['files']),'checksum_ledger_sha256':hashlib.sha256((r/'LOCAL-MATERIAL-SHA256.json').read_bytes()).hexdigest(),'all_required_final_gates_passed':True,'source_worktree_clean':True,'evidence_status':'BLOCKED','helper_error':'INVALID_ARTIFACT_ROOT'},indent=2))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport json,subprocess,hashlib,re,datetime\nr=Path('/Users/haewonkim/.codex-fabric/jobs/CF-9eec5fb85695a39591e5162c.running/artifact-bridge/material');b=json.loads((r/'binding.json').read_text())\nfindings=[]\nfor f in r.rglob('*'):\n if f.is_file():\n  s=f.read_text()\n  for label,pattern in [('absolute_personal_path',r'/(?:Users|home)/[A-Za-z0-9_.-]+/'),('macos_private_temp_path',r'/(?:private/)?var/folders/[A-Za-z0-9_-]{2,}/'),('private_key',r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----'),('secret_key',r'sb_secret_[A-Za-z0-9_-]+'),('github_token',r'gh[pousr]_[A-Za-z0-9]{20,}'),('jwt',r'eyJ[A-Za-z0-9_-]{10,}\\\\.[A-Za-z0-9_-]{10,}\\\\.[A-Za-z0-9_-]{10,}')]:\n   if re.search(pattern,s):findings.append({'path':str(f.relative_to(r)),'rule':label})\nassert not findings,findings\nfinal_checks=[]\nfor cmd in [['git','diff','--check',b['base'],'HEAD'],['git','diff','--check'],['git','diff','--exit-code','HEAD'],['git','status','--porcelain=v1']]:\n a=subprocess.run(cmd,capture_output=True,text=True);assert a.returncode==0 and not a.stdout and not a.stderr\n final_checks.append({'command':cmd,'exit_code':a.returncode,'stdout':a.stdout,'stderr':a.stderr})\n(r/'final-integrity-checks.json').write_text(json.dumps({'timestamp_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checks':final_checks,'publication_material_sensitive_pattern_findings':findings,'scan_note':'Scan matches concrete personal/temp paths; generic path-redaction regexes in capture-method source are not personal paths.','scan_is_not_an_independent_security_audit':True},indent=2)+'\\\\n')\nledger={'kind':'local-retention-checksums-only','helper_manifest':False,'published':False,'binding':b,'files':[{'path':str(f.relative_to(r)),'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(r.rglob('*')) if f.is_file() and f.name\"'!='\"'LOCAL-MATERIAL-SHA256.json']}\n(r/'LOCAL-MATERIAL-SHA256.json').write_text(json.dumps(ledger,indent=2)+'\\\\n')\nprint(json.dumps({'material_files_excluding_checksum_ledger':len(ledger['files']),'material_bytes':sum(f['bytes'] for f in ledger['files']),'checksum_ledger_sha256':hashlib.sha256((r/'LOCAL-MATERIAL-SHA256.json').read_bytes()).hexdigest(),'all_required_final_gates_passed':True,'source_worktree_clean':True,'evidence_status':'BLOCKED','helper_error':'INVALID_ARTIFACT_ROOT'},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport shutil,json,hashlib\njob='CF-9eec5fb85695a39591e5162c'\nsource=Path.home()/'.codex-fabric/jobs'/f'{job}.running'/'artifact-bridge/material'\ntarget=Path.home()/'.codex-fabric/artifacts'/job/'artifact-bridge/material'\nassert not target.exists()\ntarget.parent.mkdir(parents=True,exist_ok=True)\nshutil.copytree(source,target)\nledger=json.loads((target/'LOCAL-MATERIAL-SHA256.json').read_text())\nfor row in ledger['files']:\n f=target/row['path'];assert f.stat().st_size==row['bytes'] and hashlib.sha256(f.read_bytes()).hexdigest()==row['sha256']\nassert (target/'LOCAL-MATERIAL-SHA256.json').read_bytes()==(source/'LOCAL-MATERIAL-SHA256.json').read_bytes()\nprint(json.dumps({'stable_local_retention_root':f'\"'$HOME/.codex-fabric/artifacts/{job}/artifact-bridge/material'\"','files':len(list(target.rglob('*'))),'verified_ledger_entries':len(ledger['files']),'evidence_published':False,'stage_status':'BLOCKED'},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.156.1",
+    "configured_model": "gpt-6-astra",
+    "event_count": 129,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 95.33,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 2478208,
+      "fresh_input_tokens": 121529,
+      "input_tokens": 2599737,
+      "non_reasoning_output_tokens": 18249,
+      "output_tokens": 23490,
+      "reasoning_output_tokens": 5241,
+      "total_processed_tokens": 2623227
+    },
+    "warnings": []
+  },
+  "commits": [
+    {
+      "sha": "7cbb383576dc8e14cbe203529c2e2e5579dee2e1",
+      "subject": "fix: align Expo SDK 57 compatible patches"
+    }
+  ],
+  "diff": {
+    "additions": 63,
+    "changed_files": 2,
+    "commit_count": 1,
+    "deletions": 63
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 2,
+    "items": [
+      {
+        "bytes": 646088,
+        "path": "package-lock.json",
+        "sha256": "afda32e7ba2d177093a832231a7c21326090fd15515765a27c6beec8676df7e0"
+      },
+      {
+        "bytes": 3717,
+        "path": "package.json",
+        "sha256": "22a3f5e394bb1de17f1669df3176b763aa7b21ef07080ac91686f1e4ffaec3b3"
+      }
+    ],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-25T00:41:41Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "763599a80553990d40015028fc46ca209c6360b3",
+    "branch": "codex/homehuddle-sdk57-alignment-v1",
+    "detached_verify": false,
+    "head_sha": "7cbb383576dc8e14cbe203529c2e2e5579dee2e1",
+    "remote_exact_head": true,
+    "remote_head_sha": "7cbb383576dc8e14cbe203529c2e2e5579dee2e1",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "763599a80553990d40015028fc46ca209c6360b3",
+    "work_branch": "codex/homehuddle-sdk57-alignment-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-9eec5fb85695a39591e5162c",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-sdk57-alignment-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-sdk57-alignment-v1"
+  },
+  "operation": "FIX",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-sdk57-alignment-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-25T00:28:15Z",
+  "status": "EXECUTED_CHANGE",
+  "timing": {
+    "execution_seconds": 806,
+    "queue_seconds": 0,
+    "total_seconds": 806
+  },
+  "transport": {
+    "bytes": 5229,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 4915,
+    "prompt_sha256": "6d33ca37a7269b00974812181a3426a4ae7eb75e070b0f485f2e6391c96300ad",
+    "sha256": "9eec5fb85695a39591e5162cc8cb00bdcfb6e7cbd67c72d86d8314cf9173b1fd"
+  }
+}
