@@ -1,0 +1,293 @@
+{
+  "accepted_at": "2026-09-25T15:28:36Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"pwd && git status --short --branch && git rev-parse HEAD && git rev-parse main && git rev-parse 'main\"'^{tree}'\"' && git remote -v && rg --files -g 'AGENTS.md' -g 'package.json' -g 'package-lock.json' -g 'app.json' -g 'app.config.*' -g 'playwright.config.*' -g 'README*' -g 'metro.config.*' -g 'babel.config.*' -g 'tsconfig.json' | head -200\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"git rev-parse 'HEAD\"'^{tree}'\"' && git show -s --format='%H %T %s' HEAD && git show -s --format='%H %T %s' main && git show-ref --verify --quiet refs/remotes/origin/main; printf 'origin_main_ref_exit=%s\\\\n' \\\"\"'$?\"; git ls-remote origin refs/heads/main'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"git status --porcelain=v1 && git diff --quiet && printf 'tracked_diff_exit=%s\\\\n' \\\"\"'$?\" && git diff --cached --quiet && printf '\"'index_diff_exit=%s\\\\n' \\\"\"'$?\" && git branch --show-current'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'cat /Users/haewonkim/.codex/RTK.md && cat /Users/haewonkim/.codex/law.md && find .. -name AGENTS.md -print'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk --version && rtk proxy rg --files -g 'AGENTS.md' -g 'SKILL.md' . && rtk proxy rg --files /Users/haewonkim/.codex | rtk proxy rg -i 'project.?os|visual.?atlas|artifact.?bridge|golden.?ui|ui.?excellence'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy rg --files | rtk proxy sort | head -250'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n \\\"create.*Router|Tabs|Stack|unstable_settings|Redirect|dev.*bypass|mock|Supabase|auth\\\" app src --glob '\"'!**/node_modules/**'\"'\"",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy cat package.json && rtk proxy cat app.json && rtk proxy cat README.md'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n '\"'^export default|''^function |useState'\"\\\\(|Modal|Alert\\\\.|router\\\\.|onPress=|onSubmit|onChangeText' 'app/(app)/(tabs)' 'app/(app)' onboarding --glob '*.tsx'\"",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1,180p' 'app/_layout.tsx' && rtk proxy sed -n '1,180p' 'app/index.tsx' && rtk proxy sed -n '1,220p' 'store/authStore.ts'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1,140p' 'app/(app)/(tabs)/_layout.tsx' && rtk proxy sed -n '1,140p' 'app/(app)/_layout.tsx' && rtk proxy sed -n '1,200p' 'store/huddleStore.ts'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy cat tsconfig.json && rtk proxy cat babel.config.js && rtk proxy cat metro.config.js && rtk proxy cat global.css'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy node --version && rtk proxy npm --version && rtk proxy npm ci'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n \\\"setDevBypass|logo-trigger|DevToolsOverlay|Sign in|onboarding\\\" 'app/index.tsx' 'components/DevToolsOverlay.tsx' '__tests__'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy rg -n \"''^export default function|''^function [A-Z]|<Modal|visible='\"\\\\{|useState\\\\(\\\" 'app/(app)/(tabs)/chores.tsx' 'app/(app)/(tabs)/family.tsx' 'app/(app)/(tabs)/wallet.tsx' 'app/(app)/(tabs)/market.tsx' 'app/(app)/(tabs)/restock.tsx' 'app/(app)/profile.tsx' 'app/(app)/settings' 'app/onboarding' --glob '*.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy cat 'components/DevToolsOverlay.tsx' && rtk proxy cat 'lib/supabase.ts' && rtk proxy cat 'store/onboardingStore.ts'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy command -v chromium chromium-browser google-chrome playwright xdg-open && rtk proxy ls -la'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '250,430p' 'app/index.tsx' && rtk proxy sed -n '1,100p' '__tests__/auth-audit.test.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy rg -n \"INITIAL_|export const|resetToMockData|setCurrentUser\" constants/mockData.ts store/huddleStore.ts'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n \\\"<Text|title=|router\\\\.(push|replace)|onPress=|Alert\\\\.alert|<Switch|TextInput|Modal\\\" 'app/(app)/profile.tsx' 'app/(app)/settings' 'app/onboarding' --glob '*.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python -c 'import importlib.util, os; print(\\\"python_playwright\\\", bool(importlib.util.find_spec(\\\"playwright\\\"))); print(\\\"chrome_candidates\\\", [(p, os.path.exists(p)) for p in [\\\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\\\", \\\"/Applications/Chromium.app/Contents/MacOS/Chromium\\\", \\\"/opt/homebrew/bin/chromium\\\"]]); print(\\\"cache\\\", os.path.exists(os.path.expanduser(\\\"~/Library/Caches/ms-playwright\\\")))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const p=require(\\\"./package.json\\\"); console.log(JSON.stringify({scripts:p.scripts, expo:p.dependencies.expo, react:p.dependencies.react, reactNative:p.dependencies[\\\"react-native\\\"], router:p.dependencies[\\\"expo-router\\\"]}));' && rtk proxy node -e 'console.log(JSON.stringify({expoUrlSet:\"'!!process.env.EXPO_PUBLIC_SUPABASE_URL, expoKeySet:!!process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY}))'\"' && rtk proxy find . -maxdepth 1 -type f -name '.env*' -print\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy npx jest --runInBand'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy curl -I --max-time 5 http://127.0.0.1:8081'",
+      "exit_code": 28,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy ps -Ao pid,etime,stat,command | rtk proxy rg 'expo|metro|playwright|homehuddle'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy ps -p 31360 -o pid,etime,%cpu,%mem,state,command && rtk proxy lsof -nP -iTCP:8081 -sTCP:LISTEN && rtk proxy tail -40 /tmp/expo-start.log'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom playwright.sync_api import sync_playwright\nfrom pathlib import Path\nerrors=[]\nfailed=[]\nconsole=[]\nwith sync_playwright() as p:\n    browser=p.chromium.launch(headless=True, executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', args=['--no-sandbox'])\n    context=browser.new_context(viewport={'width':1440,'height':900}, device_scale_factor=1, locale='en-US', timezone_id='America/Chicago', color_scheme='light', reduced_motion='reduce')\n    page=context.new_page()\n    page.on('pageerror', lambda e: errors.append(str(e)))\n    page.on('console', lambda m: console.append({'type':m.type,'text':m.text}) if m.type in ('error','warning') else None)\n    page.on('requestfailed', lambda r: failed.append({'url':r.url,'error':r.failure}))\n    page.goto('http://127.0.0.1:8081', wait_until='domcontentloaded', timeout=90000)\n    page.wait_for_timeout(8000)\n    print('URL',page.url)\n    print('TITLE',page.title())\n    print('BODY',page.locator('body').inner_text(timeout=10000)[:1800])\n    print('TESTIDS',page.locator('[data-testid]').evaluate_all('(els)=>els.map(e=>e.getAttribute(\\\"data-testid\\\")).slice(0,40)'))\n    print('BUTTONS',page.get_by_role('button').all_text_contents()[:50])\n    if page.locator('[data-testid=\\\"logo-trigger\\\"]').count():\n        page.locator('[data-testid=\\\"logo-trigger\\\"]').click()\n        page.wait_for_timeout(100)\n        page.locator('[data-testid=\\\"logo-trigger\\\"]').click()\n        page.wait_for_timeout(1000)\n        print('AFTER_TWO_TAPS',page.locator('body').inner_text()[-1200:])\n        print('BUTTONS_AFTER',page.get_by_role('button').all_text_contents()[-30:])\n    print('ERRORS',errors)\n    print('FAILED',failed[:30])\n    print('CONSOLE',console[:30])\n    browser.close()\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy curl -sS -D - --max-time 15 http://127.0.0.1:8081/ -o /tmp/homehuddle-response.html'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom playwright.sync_api import sync_playwright\nerrors=[]\nwith sync_playwright() as p:\n  b=p.chromium.launch(headless=True, executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args=['--no-sandbox'])\n  c=b.new_context(viewport={'width':1440,'height':900},device_scale_factor=1,locale='en-US',timezone_id='America/Chicago',color_scheme='light')\n  page=c.new_page(); page.on('pageerror',lambda e:errors.append(str(e)))\n  page.goto('http://127.0.0.1:8081',wait_until='domcontentloaded',timeout=60000); page.wait_for_timeout(1500)\n  page.get_by_text('logo-trigger') if False else None\n  page.locator('[data-testid=\\\"logo-trigger\\\"]').click(); page.wait_for_timeout(100); page.locator('[data-testid=\\\"logo-trigger\\\"]').click(); page.wait_for_timeout(600)\n  print('AUTH_MENU',page.locator('body').inner_text()[-500:])\n  page.get_by_text('Sandbox Demo',exact=True).click(); page.wait_for_timeout(3000)\n  print('APP_URL',page.url)\n  print('APP_TEXT',page.locator('body').inner_text()[:5000])\n  print('DATA_TESTIDS',page.locator('[data-testid]').evaluate_all('(els)=>els.map(e=>e.getAttribute(\\\"data-testid\\\"))'))\n  print('ACCESSIBLE_BUTTONS',page.get_by_role('button').all_text_contents()[:100])\n  print('LINKS',page.get_by_role('link').evaluate_all('(els)=>els.map(e=>({text:e.innerText,href:e.getAttribute(\\\"href\\\")})).slice(0,60)'))\n  print('ERRORS',errors)\n  b.close()\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nfrom urllib.parse import urlparse\nerrors=[]; console=[]; failed=[]; responses=[]\ndef local_url(url):\n  u=urlparse(url); return u.scheme+'://'+u.netloc+u.path\nwith sync_playwright() as p:\n  b=p.chromium.launch(headless=True,executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args=['--no-sandbox'])\n  c=b.new_context(viewport={'width':1440,'height':900},device_scale_factor=1,locale='en-US',timezone_id='America/Chicago',color_scheme='light',reduced_motion='reduce')\n  page=c.new_page(); page.on('pageerror',lambda e:errors.append({'message':str(e),'stack':getattr(e,'stack','')})); page.on('console',lambda m:console.append({'type':m.type,'text':m.text}) if m.type in ('error','warning') else None); page.on('requestfailed',lambda r:failed.append({'url':local_url(r.url),'error':r.failure})); page.on('response',lambda r:responses.append({'status':r.status,'url':local_url(r.url)}) if r.status>=400 else None)\n  page.goto('http://127.0.0.1:8081/',wait_until='domcontentloaded',timeout=60000); page.wait_for_timeout(3000)\n  print('title='+page.title()); print('url='+page.url); print('viewport='+str(page.evaluate('({width:innerWidth,height:innerHeight,dpr:devicePixelRatio})')))\n  print('page_errors='+str(errors)); print('console='+str(console)); print('failed_requests='+str(failed)); print('http_errors='+str(responses))\n  overlays=page.locator('#error-overlay'); print('error_overlay_count='+str(overlays.count()))\n  if overlays.count(): print('error_overlay_text='+overlays.inner_text()[:4000])\n  print('visible_text='+page.locator('body').inner_text()[:2500])\n  print('role_button_count='+str(page.get_by_role('button').count()))\n  print('testids='+str(page.locator('[data-testid]').evaluate_all('(els)=>els.map(e=>e.getAttribute(\\\"data-testid\\\"))')))\n  b.close()\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=local-ui0-fixture-key npm run web -- --port 8081 --clear'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git status --short --branch && rtk proxy git diff --exit-code -- && rtk proxy git diff --cached --exit-code -- && rtk proxy git rev-parse HEAD 'HEAD\"'^{tree}'\"' && rtk proxy git ls-remote origin refs/heads/main && rtk proxy git status --porcelain=v1\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python -c 'import importlib.metadata as m; print(\\\"playwright=\\\"+m.version(\\\"playwright\\\"))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /Applications/Google\\\\ Chrome.app/Contents/MacOS/Google\\\\ Chrome --version\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy npx expo --version'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json, hashlib\nfrom pathlib import Path\nout=Path('/tmp/homehuddle-ui0-perfect-baseline-v1-blocked')\nout.mkdir(parents=True,exist_ok=True)\nruntime={\n  'status':'UI_RUNTIME_BLOCKED',\n  'captured_at_utc':'2026-09-25T15:41:16Z',\n  'source':{'repository':'kimhw8084/homehuddle','branch':'codex/homehuddle-ui0-perfect-baseline-v1','commit':'f8ea259d2f52aba1bc3d4aba7a034625fff33fb2','tree':'0f4515c231891b1e6e1e4cf1b744b2a3bb99ecd1'},\n  'toolchain':{'node':'v20.19.4','npm':'10.8.2','expo_cli':'54.0.23','chrome':'153.0.8010.54','python_playwright':'1.62.0','expo_sdk_declared':'~54.0.33'},\n  'install':{'command':'rtk proxy npm ci','exit_code':0,'summary':'Added 1166 packages; audit reported 40 vulnerabilities (3 low, 20 moderate, 14 high, 3 critical); deprecated dependency notices.'},\n  'runtime_launch':{'command':'rtk proxy env EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=local-ui0-fixture-key npm run web -- --port 8081 --clear','supabase_fixture':'synthetic non-routable local URL and placeholder key; no production credentials used','web_server':'started at http://localhost:8081; Expo web bundle compiled 3128 modules in 7.3 seconds','shutdown_exit_code':130,'shutdown_reason':'intentional SIGINT after confirming runtime blocker'},\n  'expo_sdk_compatibility_warnings':[\n    {'package':'expo','installed':'54.0.33','expected':'~54.0.37'},\n    {'package':'expo-constants','installed':'18.0.13','expected':'~18.0.14'},\n    {'package':'expo-font','installed':'14.0.11','expected':'~14.0.12'},\n    {'package':'expo-image-picker','installed':'17.0.10','expected':'~17.0.11'},\n    {'package':'expo-linking','installed':'8.0.11','expected':'~8.0.12'},\n    {'package':'expo-router','installed':'6.0.23','expected':'~6.0.24'},\n    {'package':'expo-web-browser','installed':'15.0.10','expected':'~15.0.11'},\n    {'package':'jest-expo','installed':'54.0.17','expected':'~54.0.18'}\n  ],\n  'browser_observation':{'url':'http://127.0.0.1:8081/','http_status':200,'title':'HomeHuddle','viewport_css_px':[1440,900],'dpr':1,'locale':'en-US','timezone':'America/Chicago','theme':'light','reduced_motion':'reduce','screenshots':0,'overlay_selector':'#error-overlay','overlay_count':1,'overlay_text_excerpt':'Log 1 of 1; Uncaught Error; this._nativeModule.addListener is not a function; app/index.tsx (305:34); Dismiss; Minimize','overlay_prevented_interaction':True},\n  'page_errors':[\n    {'name':'Error','message':\\\"Cannot manually set color scheme, as dark mode is type 'media'. Please use StyleSheet.setFlag('darkMode', 'class')\\\",'source':'expo-router/entry.bundle:46934; MutationObserver.observe.attributes at :46920','impact':'runtime page error; no visual interaction effect assessed'},\n    {'name':'TypeError','message':'this._nativeModule.addListener is not a function','source':'GyroscopeSensor.addListener; app/index.tsx:305:34; Gyroscope.isAvailableAsync.then callback','root_source':'app/index.tsx lines 302-308','impact':'uncaught Expo LogBox overlay intercepts the auth page and blocks route discovery/capture'}\n  ],\n  'console':[\n    {'type':'warning','text':'[Reanimated] Reduced motion setting is enabled on this device.'},\n    {'type':'warning','text':'\\\"shadow*\\\" style props are deprecated. Use \\\"boxShadow\\\".'},\n    {'type':'warning','text':'props.pointerEvents is deprecated. Use style.pointerEvents'},\n    {'type':'warning','text':'TouchableWithoutFeedback is deprecated. Please use Pressable.'},\n    {'type':'error','text':'Blocked call to navigator.vibrate because user has not tapped on the frame.'},\n    {'type':'warning','text':'expo-sensors: setUpdateInterval() is not supported on web'}\n  ],\n  'network':{'http_responses_status_400_or_greater':[],'failed_requests':[{'url':'http://127.0.0.1:8081/','error':'net::ERR_ABORTED'},{'url':'http://127.0.0.1:8081/','error':'net::ERR_ABORTED'}],'external_requests_used':False},\n  'verification':{'jest_command':'rtk proxy npx jest --runInBand','jest_exit_code':1,'jest_summary':'1 suite failed; 1 test failed. __tests__/auth-audit.test.tsx expects bypass after five logo taps; current app/index.tsx opens the developer modal after two taps and requires an explicit menu choice. Expected mockSetDevBypass(true), calls received: 0.','product_source_changed':False,'worktree_clean_after_run':True,'main_moved':False,'remote_main':'f8ea259d2f52aba1bc3d4aba7a034625fff33fb2','remote_artifact_carrier_checked_or_written':False,'fabric_evidence_lane_touched':False,'notion_touched':False},\n  'capture_decision':{'surface_manifest_frozen':False,'reason':'No screenshots were taken; the uncaught startup error overlay violates the canonical capture precondition and prevented safe UI navigation.','canonical_package_created':False,'reader_pdfs_created':False,'publication_attempted':False,'go_or_acceptance_claimed':False}\n}\n(out/'runtime-console-network.json').write_text(json.dumps(runtime,indent=2)+'\\\\n')\nfinding={\n  'status':'PARTIAL_BLOCKER_EVIDENCE_ONLY',\n  'baseline_status':'UI_RUNTIME_BLOCKED',\n  'findings':[{\n    'id':'HH-UI0-BLOCKER-001','severity':'P1','title':'Web auth startup throws from unsupported gyroscope listener and leaves Expo LogBox over the page',\n    'surface_keys':['auth-root|login|initial|anonymous|light'],\n    'evidence':['runtime-console-network.json#page_errors[1]','runtime-console-network.json#browser_observation'],\n    'task_impact':'The auth entrypoint displays the login content, then a crash overlay intercepts interaction. The six-tab product and supporting routes could not be reached or audited through supported UI navigation.',\n    'root_authority':'platform_adapter',\n    'affected_consumers':['web auth entrypoint','web route discovery from auth','all canonical web capture work requiring auth entry'],\n    'proposed_smallest_bounded_fix':'Guard the gyroscope subscription behind a reliable web/platform capability check and handle subscription rejection; preserve the optional native parallax behavior. Re-verify with reduced motion and confirm no uncaught overlay.',\n    'status':'verified_runtime_blocker','screenshot_sha256':None,'source_changed':False\n  }],\n  'scope_limits':['No visual surfaces were screenshot-audited.','No task-state or accessibility conclusions are asserted beyond the observed auth crash overlay.','No best-so-far pixel baseline is available.','The existing Jest auth check is stale against current two-tap developer-modal behavior; its failure is recorded separately and was not treated as product behavior PASS.']\n}\n(out/'ui0-findings.json').write_text(json.dumps(finding,indent=2)+'\\\\n')\n(out/'ui0-findings.md').write_text('''# HomeHuddle UI0 VERIFY — blocker evidence only\\\\n\\\\n**Status: \"'`UI_RUNTIME_BLOCKED`.** This is not a canonical visual baseline and is not an audit acceptance.'\"\\\\n\\\\n## Verified blocker\\\\n\\\\nThe supported Expo web launch serves the auth screen, then \"'`Gyroscope.addListener` throws `this._nativeModule.addListener is not a function` from `app/index.tsx:305`. Expo LogBox displays an uncaught-error overlay that intercepts the page. Route discovery and screenshot capture therefore stopped.'\"\\\\n\\\\nThe runtime used only a synthetic localhost Supabase URL and placeholder key, with Expo dotenv disabled. It did not use production credentials or contact hosted household data.\\\\n\\\\n## Evidence and limits\\\\n\\\\n- Full page-error, console, network, toolchain, and command evidence: [runtime-console-network.json](runtime-console-network.json).\\\\n- Machine handoff receipt: [visual-atlas-v2-machine-receipt.json](visual-atlas-v2-machine-receipt.json).\\\\n- No screenshot, surface manifest, reader PDF, canonical ZIP, or artifact-carrier publication was produced.\\\\n- Product source stayed clean and unchanged. Remote \"'`main` still matches the specified commit and tree.'\"\\\\n- Existing Jest audit exited 1 because it expects a five-tap auth bypass; current source opens a developer menu after two taps. This automated check is stale and remains a test-authority finding.\\\\n\\\\n## First bounded FIX item\\\\n\\\\nGuard and safely handle the optional gyroscope adapter on web, then repeat the runtime gate before starting the visual audit. No additional UI FIX ordering is claimed without rendered evidence.\\\\n''')\n(out/'proposed-fix-sequence.md').write_text('''# Proposed FIX sequence — partial, blocked\\\\n\\\\n1. **Mandatory runtime unblocker — P1.** In \"'`app/index.tsx`, make the optional gyroscope subscription safe on web and handle adapter errors without an uncaught LogBox. Preserve native motion only when supported. Verify the auth surface in web with reduced motion before proceeding.'\"\\\\n2. **Verification-test drift.** Update the existing auth audit assertion to match the current two-tap developer-menu sequence and explicit menu choice, or revise the test authority if that behavior is obsolete. This is test debt, not a product FIX proven by this run.\\\\n\\\\nFurther UI FIX ranking is blocked until the six-tab product renders without a crash overlay.\\\\n''')\nfor name in ['runtime-console-network.json','ui0-findings.json','ui0-findings.md','proposed-fix-sequence.md']:\n  data=(out/name).read_bytes(); print(hashlib.sha256(data).hexdigest()+'  '+name)\nreceipt={\n  'receipt_version':'visual-atlas-v2',\n  'operation':'VERIFY','request':'homehuddle-ui0-perfect-baseline-v1','project_os_change':'CHG-238','project':'homehuddle','repository':'kimhw8084/homehuddle','alias':'app',\n  'status':'UI_RUNTIME_BLOCKED','target':{'branch':'main','commit':'f8ea259d2f52aba1bc3d4aba7a034625fff33fb2','tree':'0f4515c231891b1e6e1e4cf1b744b2a3bb99ecd1'},\n  'work_branch':'codex/homehuddle-ui0-perfect-baseline-v1','source_changed':False,'worktree_clean':True,'main_moved':False,\n  'runtime_blocker':{'surface':'auth-root','source':'app/index.tsx:305','error':'this._nativeModule.addListener is not a function','evidence':'runtime-console-network.json'},\n  'counts':{'surfaces_screenshot_audited':0,'screenshots':0,'runtime_page_errors':2,'jest_suites_failed':1},\n  'artifacts':{'status':'PARTIAL_BLOCKER_EVIDENCE_ONLY','directory':str(out),'complete_visual_atlas_package':False,'surface_manifest_frozen':False,'reader_pdfs':False,'artifact_bundle_zip':False,'published':False,'artifact_carrier_ref':'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-perfect-baseline-v1','publication_reason':'No canonical package could be produced after the runtime blocker.'},\n  'fabric_evidence_lane':'not touched','notion':'not accessed','product_history':'unchanged','acceptance_or_go_claimed':False,\n  'evidence_hashes':{name:hashlib.sha256((out/name).read_bytes()).hexdigest() for name in ['runtime-console-network.json','ui0-findings.json','ui0-findings.md','proposed-fix-sequence.md']}\n}\n(out/'visual-atlas-v2-machine-receipt.json').write_text(json.dumps(receipt,indent=2)+'\\\\n')\nprint('receipt_sha256='+hashlib.sha256((out/'visual-atlas-v2-machine-receipt.json').read_bytes()).hexdigest())\nprint('evidence_dir='+str(out))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json,hashlib\nfrom pathlib import Path\np=Path('/tmp/homehuddle-ui0-perfect-baseline-v1-blocked')\nr=json.loads((p/'visual-atlas-v2-machine-receipt.json').read_text())\nchecks={name:hashlib.sha256((p/name).read_bytes()).hexdigest()==digest for name,digest in r['evidence_hashes'].items()}\nprint('evidence_hashes_verified='+str(all(checks.values())))\nprint('receipt_sha256='+hashlib.sha256((p/'visual-atlas-v2-machine-receipt.json').read_bytes()).hexdigest())\nprint('files='+str(sorted(x.name for x in p.iterdir())))\nprint('hash_checks='+str(checks))\nPY\nrtk proxy git status --short --branch\nrtk proxy git rev-parse HEAD 'HEAD\"'^{tree}'\"'\nrtk proxy git ls-remote origin refs/heads/main\nrtk proxy git status --porcelain=v1\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.156.1",
+    "configured_model": "gpt-6-luna",
+    "event_count": 87,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 94.94,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 1913856,
+      "fresh_input_tokens": 101909,
+      "input_tokens": 2015765,
+      "non_reasoning_output_tokens": 9409,
+      "output_tokens": 34623,
+      "reasoning_output_tokens": 25214,
+      "total_processed_tokens": 2050388
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-25T15:44:36Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "branch": "codex/homehuddle-ui0-perfect-baseline-v1",
+    "detached_verify": false,
+    "head_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "remote_exact_head": true,
+    "remote_head_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "work_branch": "codex/homehuddle-ui0-perfect-baseline-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-feaf4238879714d3d9022567",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v1"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-perfect-baseline-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-25T15:28:36Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 960,
+    "queue_seconds": 0,
+    "total_seconds": 960
+  },
+  "transport": {
+    "bytes": 12423,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 12095,
+    "prompt_sha256": "cfb6ee6b687c14d6660f9726a73f4a2ad6e1150d55a8ccfb319ef64c60794b1b",
+    "sha256": "feaf4238879714d3d902256727976d427a4f0a805f4465107a78cc54ab25d0a1"
+  }
+}
