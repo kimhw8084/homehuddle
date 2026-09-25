@@ -4,7 +4,6 @@ import {
   Text,
   TouchableOpacity,
   Alert,
-  useColorScheme,
   Dimensions,
   StyleSheet,
   TouchableWithoutFeedback,
@@ -13,11 +12,11 @@ import {
   Switch,
   Platform,
   TextInput,
-  Appearance,
   ColorSchemeName,
   ScrollView
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '../store/authStore';
@@ -273,7 +272,7 @@ const DynamicTyper = () => {
 // --- Main Auth Root View ---
 export default function AuthRootView() {
   const router = useRouter();
-  const systemColorScheme = useColorScheme();
+  const { colorScheme: systemColorScheme, setColorScheme } = useNativeWindColorScheme();
   const { setDevBypass } = useAuthStore();
   
   // State
@@ -298,22 +297,40 @@ export default function AuthRootView() {
 
   // Gyroscope Parallax
   useEffect(() => {
-    let subscription: any;
-    Gyroscope.isAvailableAsync().then((available) => {
-      if (available) {
+    if (Platform.OS === 'web') return;
+
+    let isMounted = true;
+    let subscription: ReturnType<typeof Gyroscope.addListener> | undefined;
+
+    const subscribeToGyroscope = async () => {
+      try {
+        const available = await Gyroscope.isAvailableAsync();
+        if (!isMounted || !available) return;
+
         Gyroscope.setUpdateInterval(50);
         subscription = Gyroscope.addListener(({ x, y }) => {
           bgX.value = withTiming(y * 20, { duration: 100 });
           bgY.value = withTiming(x * 20, { duration: 100 });
         });
+      } catch (error) {
+        if (isMounted) {
+          console.warn('Gyroscope parallax is unavailable; continuing without parallax.', error);
+        }
       }
-    });
-    return () => subscription?.remove();
+    };
+
+    void subscribeToGyroscope();
+    return () => {
+      isMounted = false;
+      subscription?.remove();
+    };
   }, []);
 
   // Entrance Sequence
   useEffect(() => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    if (Platform.OS !== 'web') {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    }
     contentOpacity.value = withDelay(400, withTiming(1, { duration: 800 }));
     sheetY.value = withDelay(600, withSpring(0, SPRING_CONFIG));
     tickerOpacity.value = withDelay(1200, withRepeat(withSequence(withTiming(1, { duration: 1000 }), withDelay(3000, withTiming(0, { duration: 1000 }))), -1, true));
@@ -381,7 +398,7 @@ export default function AuthRootView() {
   const toggleTheme = () => {
     const next = isDark ? 'light' : 'dark';
     setThemeOverride(next);
-    Appearance.setColorScheme(next);
+    setColorScheme(next);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
 
@@ -566,7 +583,7 @@ export default function AuthRootView() {
           <View style={[styles.modalContent, { backgroundColor: isDark ? '#1E293B' : '#FFFFFF' }]}>
             <View className="flex-row justify-between items-center mb-6">
               <Text className="text-xl font-bold text-slate-900 dark:text-white">Developer Control</Text>
-              <TouchableOpacity onPress={() => setDevModalVisible(false)}>
+              <TouchableOpacity testID="developer-control-close" onPress={() => setDevModalVisible(false)}>
                 <X color={isDark ? '#fff' : '#000'} size={24} />
               </TouchableOpacity>
             </View>
