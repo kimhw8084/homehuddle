@@ -1,0 +1,100 @@
+{
+  "alias": "app",
+  "candidate": {
+    "base": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "carrierRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1",
+  "kind": "homehuddle-project-os-evidence-recovery",
+  "operation": "VERIFY",
+  "originalFabricJob": "CF-271ed28547164d4053c0c3f2",
+  "originalRequest": "homehuddle-ui0-runtime-unblock-v2",
+  "project": "homehuddle",
+  "recoveredAt": "2026-09-25T20:00:09Z",
+  "recoveredPackage": {
+    "archiveBytes": 518047,
+    "archivePath": "homehuddle-chg251-r2-evidence.tar.gz",
+    "archiveSha256": "f95262f7218eefc2ea46d27336132957d36e8904466086c574a20bf085de8116",
+    "evidenceDirectory": "CHG-251-r2-evidence",
+    "evidenceManifestEntries": 24,
+    "evidenceManifestPath": "CHG-251-r2-evidence/manifest.json",
+    "evidenceManifestSha256": "fa4810a2102239774ec8319059c57626e930ecd8878191e2bf178628daca38fe",
+    "originalArtifactBridgeStatus": "NOT_UPLOADED",
+    "originalArtifactCarrierSha256": "2d21735dddda40cdccaaa02ae816b03bbc9b592718397683eb56ef0866ac4716",
+    "prestageManifestEntries": 29,
+    "prestageManifestPath": "r2-prestage-manifest.json",
+    "prestageManifestSha256": "9f6b332ae4c9b6f054f608133fb026ad7ebc94781009c94e05e0224fb54650a6"
+  },
+  "recoveryFabricJob": "CF-7335a7ab3871390c163df4ae",
+  "recoveryRequest": "homehuddle-ui0-runtime-unblock-verify-v1",
+  "repository": "kimhw8084/homehuddle",
+  "schemaVersion": 1,
+  "screenshots": [
+    {
+      "bytes": 200608,
+      "height": 900,
+      "path": "screenshots/auth-root-desktop-1440x900.png",
+      "sha256": "6603dcfdbd2d3c72cde90c8b47da2b4dadf2ae77bf7ec29b178214a59c433342",
+      "width": 1440
+    },
+    {
+      "bytes": 62012,
+      "height": 900,
+      "path": "screenshots/developer-control-light-desktop-1440x900.png",
+      "sha256": "06f754702df364033478f35e948e9a75ac5a4121cc4d2fc02c67466c96bfc914",
+      "width": 1440
+    },
+    {
+      "bytes": 69183,
+      "height": 900,
+      "path": "screenshots/developer-control-dark-desktop-1440x900.png",
+      "sha256": "b3cb6feb00bbacd2384f326404de87b1152de925589dc65035d5fbb821836428",
+      "width": 1440
+    },
+    {
+      "bytes": 83815,
+      "height": 844,
+      "path": "screenshots/auth-root-mobile-390x844.png",
+      "sha256": "97869c5d08ba5c5f070eaef3d4d686bfbf962000c7889536867e352f508bf3e4",
+      "width": 390
+    },
+    {
+      "bytes": 42722,
+      "height": 844,
+      "path": "screenshots/developer-control-light-mobile-390x844.png",
+      "sha256": "7fd45adab6c8e2a97eea05280ccfc4c6ff5174466cbc1d721f8e562137a5d274",
+      "width": 390
+    },
+    {
+      "bytes": 41657,
+      "height": 844,
+      "path": "screenshots/developer-control-dark-mobile-390x844.png",
+      "sha256": "be460963e50ca3765d27c6b1d7eba8a7f6f8613bc87da34225180e2241fcd4e9",
+      "width": 390
+    }
+  ],
+  "target": {
+    "branch": "main",
+    "observedRemoteSha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2"
+  },
+  "validation": {
+    "archiveSidecarAndContents": "PASS",
+    "baseBrowserReproduction": "PRESENT",
+    "candidateDesktopMobileBrowserReport": "PRESENT",
+    "candidateIdentityAndDiffScope": "PASS",
+    "fullLint": "FAIL_WITH_PRE_EXISTING_ERRORS",
+    "jest": "PASS",
+    "manifestFileSizesAndSha256": "PASS",
+    "npmCi": "PASS",
+    "screenshotPngSignaturesDimensionsAndSha256": "PASS",
+    "targetAndSourcePostflight": "PASS",
+    "targetedLintExitCode": 0,
+    "typescript": "PASS"
+  },
+  "workBranch": {
+    "head": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "name": "codex/homehuddle-ui0-runtime-unblock-verify-v1",
+    "update": "identity-preserving-fast-forward"
+  }
+}

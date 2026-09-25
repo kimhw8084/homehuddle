@@ -1,0 +1,35 @@
+{
+  "command": "npx eslint app/index.tsx __tests__/auth-audit.test.tsx tailwind.config.js --format json",
+  "exit_code": 0,
+  "files": [
+    {
+      "file": "__tests__/auth-audit.test.tsx",
+      "errors": 0,
+      "warnings": 0,
+      "rules": []
+    },
+    {
+      "file": "app/index.tsx",
+      "errors": 0,
+      "warnings": 10,
+      "rules": [
+        "@typescript-eslint/no-unused-vars",
+        "@typescript-eslint/no-unused-vars",
+        "@typescript-eslint/no-unused-vars",
+        "@typescript-eslint/no-unused-vars",
+        "react-hooks/exhaustive-deps",
+        "react-hooks/exhaustive-deps",
+        "react-hooks/exhaustive-deps",
+        "react-hooks/exhaustive-deps",
+        "react-hooks/exhaustive-deps",
+        "react-hooks/exhaustive-deps"
+      ]
+    },
+    {
+      "file": "tailwind.config.js",
+      "errors": 0,
+      "warnings": 0,
+      "rules": []
+    }
+  ]
+}

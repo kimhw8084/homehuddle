@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-runtime-unblock-v2",
+  "fabricJob": "CF-271ed28547164d4053c0c3f2",
+  "candidateSha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+  "candidateTree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "localStagePath": "/Users/haewonkim/.codex-fabric/jobs/CF-271ed28547164d4053c0c3f2.running/artifact-bridge/homehuddle-ui0-runtime-unblock-v2-package",
+  "projectOsArtifactPath": "/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-251-r2@e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+  "archive": {
+    "file": "homehuddle-chg251-r2-evidence.tar.gz",
+    "bytes": 518047,
+    "sha256": "f95262f7218eefc2ea46d27336132957d36e8904466086c574a20bf085de8116"
+  },
+  "uploadStatus": "NOT_UPLOADED",
+  "providerReadback": null
+}

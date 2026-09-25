@@ -1,0 +1,192 @@
+{
+  "desktop": {
+    "status": 200,
+    "title": "HomeHuddle",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "logBoxVisible": false,
+    "rootText": "HomeHuddle \nRun \nthe \nhouse. \nStop nagging.|\n14,203 CHORES COMPLETED TODAY\n Continue with Apple\nContinue with Google\nContinue with Email\nBy continuing, you agree to our \nTerms\n & \nPrivacy\nHarulo Studio LLC",
+    "rootUrl": "http://127.0.0.1:8083/",
+    "modalVisibleAfterOneTap": false,
+    "modalVisibleAfterTwoTaps": true,
+    "urlBeforeExplicitAction": "http://127.0.0.1:8083/",
+    "darkClassBeforeOverride": false,
+    "darkClassAfterOverride": true,
+    "lightClassAfterReturn": false,
+    "modalVisibleAfterClose": false,
+    "modalVisibleAfterReopenOneTap": false,
+    "modalVisibleAfterReopenTwoTaps": true,
+    "urlBeforeMissionControl": "http://127.0.0.1:8083/",
+    "appUrl": "http://127.0.0.1:8083/",
+    "tabRoleTexts": [
+      "Home",
+      "Chores",
+      "Family",
+      "Wallet",
+      "Market",
+      "Restock"
+    ],
+    "sixTabShellRoleLabels": [
+      "Home",
+      "Chores",
+      "Family",
+      "Wallet",
+      "Market",
+      "Restock"
+    ],
+    "sixTabShellPassed": true,
+    "appTopText": "FRI, SEP 25\nGood Afternoon 👋\n👨🏻\nFAMILY ORBIT\n👨🏻\nHaewon Kim\n25%\n1/4\n👩🏻\nSarah Kim\n25%\n1/4\n👦🏻\nLeo Kim\n17%\n1/6\nGrandparents visiting!\nMom\n0\nSIG NEEDED\n2\nRESTOCK\n0\nEXPIRING\nInbox Review\n2 TASKS PENDING\n1\n4\nTODAY'S TASKS\n25%\n3 left to go\nTAP TO MANAGE →\nDeliveries\nTODAY\nTMR\nALL\ntap / hold\n1 awaiting confirmation today\nKitchen Scale\nAmazon · 2pm - 5pm\nSHOW 1 MORE\n📦\nTONIGHT'S DINNER\nleftovers\nTap for details & recipes\nAutomations\nOne tap to deploy a full chore set\nEDIT\nDELETE\n🛒\nWeekend Grocery\nNo runs yet\nRUN\nEDIT\nDELETE\n🏫\nSchool Morning\nNo runs yet\nRUN\nSHOW 3 MORE\nAppliance Watch\nLong press to reorder · Swipe to edit\nEDIT\nDELETE\nWasher\nAT BASEMENT\n58m\nALMOST\nEDIT\nDELETE\nDryer\nAT BASEMENT\n10m\nRUNNING\nEDIT\nDELETE\nDishwasher\nAT KITCHEN\n1h 35m\nALMOST\nEDIT\nDELETE\nRobot Vacuum\nAT 1ST FLOOR\n2h 25m\nOVERDUE\nEDIT\nDELETE\nAir Purifier\nAT LIVING ROOM\nIDLE\nEDIT\nDELETE\nCoffee Maker\nAT KITCHEN\nIDLE\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠"
+  },
+  "mobile": {
+    "status": 200,
+    "title": "HomeHuddle",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 1
+    },
+    "logBoxVisible": false,
+    "rootText": "HomeHuddle \nRun \nthe \nhouse. \nStop nagging.|\n14,203 CHORES COMPLETED TODAY\n Continue with Apple\nContinue with Google\nContinue with Email\nBy continuing, you agree to our \nTerms\n & \nPrivacy\nHarulo Studio LLC",
+    "modalVisibleAfterOneTap": false,
+    "modalVisibleAfterTwoTaps": true,
+    "darkClassAfterOverride": true,
+    "lightThemeRestored": true
+  },
+  "events": {
+    "desktop": {
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    "mobile": {
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    }
+  },
+  "screenshots": {
+    "auth-root-desktop-1440x900": {
+      "file": "screenshots/auth-root-desktop-1440x900.png",
+      "sha256": "6603dcfdbd2d3c72cde90c8b47da2b4dadf2ae77bf7ec29b178214a59c433342",
+      "bytes": 200608
+    },
+    "developer-control-light-desktop-1440x900": {
+      "file": "screenshots/developer-control-light-desktop-1440x900.png",
+      "sha256": "06f754702df364033478f35e948e9a75ac5a4121cc4d2fc02c67466c96bfc914",
+      "bytes": 62012
+    },
+    "developer-control-dark-desktop-1440x900": {
+      "file": "screenshots/developer-control-dark-desktop-1440x900.png",
+      "sha256": "b3cb6feb00bbacd2384f326404de87b1152de925589dc65035d5fbb821836428",
+      "bytes": 69183
+    },
+    "auth-root-mobile-390x844": {
+      "file": "screenshots/auth-root-mobile-390x844.png",
+      "sha256": "97869c5d08ba5c5f070eaef3d4d686bfbf962000c7889536867e352f508bf3e4",
+      "bytes": 83815
+    },
+    "developer-control-light-mobile-390x844": {
+      "file": "screenshots/developer-control-light-mobile-390x844.png",
+      "sha256": "7fd45adab6c8e2a97eea05280ccfc4c6ff5174466cbc1d721f8e562137a5d274",
+      "bytes": 42722
+    },
+    "developer-control-dark-mobile-390x844": {
+      "file": "screenshots/developer-control-dark-mobile-390x844.png",
+      "sha256": "be460963e50ca3765d27c6b1d7eba8a7f6f8613bc87da34225180e2241fcd4e9",
+      "bytes": 41657
+    }
+  },
+  "playwright": "1.58.2",
+  "candidate": {
+    "sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "base": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "branch": "codex/homehuddle-ui0-runtime-unblock-v2"
+  },
+  "capture": {
+    "browser": "Playwright Chromium 1.58.2",
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "syntheticSupabaseFixture": "http://127.0.0.1:54321",
+    "dotenv": "EXPO_NO_DOTENV=1"
+  }
+}

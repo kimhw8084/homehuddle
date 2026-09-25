@@ -1,0 +1,442 @@
+__tests__/auth-audit.test.tsx | 79 ++++++++++++++++++++++++++++++++++---------
+ app/index.tsx                 | 39 +++++++++++++++------
+ tailwind.config.js            |  1 +
+ 3 files changed, 92 insertions(+), 27 deletions(-)
+
+diff --git a/__tests__/auth-audit.test.tsx b/__tests__/auth-audit.test.tsx
+index e25fd42..ed5cf5e 100644
+--- a/__tests__/auth-audit.test.tsx
++++ b/__tests__/auth-audit.test.tsx
+@@ -1,21 +1,31 @@
+ import React from 'react';
+-import { render, fireEvent, act } from '@testing-library/react-native';
++import { render, fireEvent } from '@testing-library/react-native';
++import * as Haptics from 'expo-haptics';
++import AuthRootView from '../app/index';
+ 
+-// Mocks
+ const mockReplace = jest.fn();
++const mockSetDevBypass = jest.fn();
++const mockSetColorScheme = jest.fn();
++
+ jest.mock('expo-router', () => ({
+   useRouter: () => ({
+     replace: mockReplace,
+   }),
+ }));
+ 
+-const mockSetDevBypass = jest.fn();
+ jest.mock('../store/authStore', () => ({
+   useAuthStore: () => ({
+     setDevBypass: mockSetDevBypass,
+   }),
+ }));
+ 
++jest.mock('nativewind', () => ({
++  useColorScheme: () => ({
++    colorScheme: 'light',
++    setColorScheme: mockSetColorScheme,
++  }),
++}));
++
+ jest.mock('expo-haptics', () => ({
+   impactAsync: jest.fn(),
+   notificationAsync: jest.fn(),
+@@ -23,31 +33,68 @@ jest.mock('expo-haptics', () => ({
+   NotificationFeedbackType: { Success: 'success' },
+ }));
+ 
++jest.mock('expo-sensors', () => ({
++  Gyroscope: {
++    isAvailableAsync: jest.fn().mockResolvedValue(false),
++    setUpdateInterval: jest.fn(),
++    addListener: jest.fn(() => ({ remove: jest.fn() })),
++  },
++}));
++
+ jest.mock('@react-native-community/netinfo', () => ({
+   addEventListener: jest.fn(() => jest.fn()),
+   fetch: jest.fn(),
+ }));
+ 
+-import AuthRootView from '../app/index';
+-
+ describe('AuthRootView Functional Audit', () => {
+-  it('triggers dev bypass after exactly 5 taps on the logo container', async () => {
++  afterEach(() => {
++    jest.useRealTimers();
++    jest.clearAllMocks();
++  });
++
++  it('opens Developer Control after two taps and requires an explicit bypass action', () => {
+     jest.useFakeTimers();
+-    const { getByTestId } = render(<AuthRootView />);
++    const { getByTestId, getByText, queryByText } = render(<AuthRootView />);
+     const trigger = getByTestId('logo-trigger');
+ 
+-    // 4 taps shouldn't trigger anything but light haptics
+-    for(let i = 0; i < 4; i++) {
+-      fireEvent.press(trigger);
+-    }
++    expect(Haptics.notificationAsync).toHaveBeenCalledWith(Haptics.NotificationFeedbackType.Success);
++    expect(Haptics.impactAsync).not.toHaveBeenCalled();
++
++    fireEvent.press(trigger);
++    expect(Haptics.impactAsync).toHaveBeenCalledWith(Haptics.ImpactFeedbackStyle.Light);
++    expect(queryByText('Developer Control')).toBeNull();
+     expect(mockSetDevBypass).not.toHaveBeenCalled();
+     expect(mockReplace).not.toHaveBeenCalled();
+ 
+-    // 5th tap triggers bypass
+     fireEvent.press(trigger);
+-    expect(mockSetDevBypass).toHaveBeenCalledWith(true);
+-    expect(mockReplace).toHaveBeenCalledWith('/(app)');
+-    
+-    jest.useRealTimers();
++    expect(getByText('Developer Control')).toBeTruthy();
++    expect(mockSetDevBypass).not.toHaveBeenCalled();
++    expect(mockReplace).not.toHaveBeenCalled();
++
++    fireEvent.press(getByText('TOGGLE'));
++    expect(getByText('Currently: Dark')).toBeTruthy();
++    fireEvent.press(getByText('TOGGLE'));
++    expect(getByText('Currently: Light')).toBeTruthy();
++    expect(mockSetColorScheme).toHaveBeenNthCalledWith(1, 'dark');
++    expect(mockSetColorScheme).toHaveBeenNthCalledWith(2, 'light');
++    expect(Haptics.impactAsync).toHaveBeenCalledWith(Haptics.ImpactFeedbackStyle.Medium);
++
++    fireEvent.press(getByTestId('developer-control-close'));
++    expect(queryByText('Developer Control')).toBeNull();
++    expect(mockSetDevBypass).not.toHaveBeenCalled();
++    expect(mockReplace).not.toHaveBeenCalled();
++
++    fireEvent.press(trigger);
++    expect(queryByText('Developer Control')).toBeNull();
++    fireEvent.press(trigger);
++    fireEvent.press(getByText('Mission Control'));
++    expect(mockSetDevBypass).toHaveBeenNthCalledWith(1, true);
++    expect(mockReplace).toHaveBeenNthCalledWith(1, '/(app)');
++
++    fireEvent.press(trigger);
++    fireEvent.press(trigger);
++    fireEvent.press(getByText('Instant Bypass Login'));
++    expect(mockSetDevBypass).toHaveBeenNthCalledWith(2, true);
++    expect(mockReplace).toHaveBeenNthCalledWith(2, '/(app)');
+   });
+ });
+diff --git a/app/index.tsx b/app/index.tsx
+index d103ba8..09b5561 100644
+--- a/app/index.tsx
++++ b/app/index.tsx
+@@ -4,7 +4,6 @@ import {
+   Text,
+   TouchableOpacity,
+   Alert,
+-  useColorScheme,
+   Dimensions,
+   StyleSheet,
+   TouchableWithoutFeedback,
+@@ -13,11 +12,11 @@ import {
+   Switch,
+   Platform,
+   TextInput,
+-  Appearance,
+   ColorSchemeName,
+   ScrollView
+ } from 'react-native';
+ import { SafeAreaView } from 'react-native-safe-area-context';
++import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
+ import * as Haptics from 'expo-haptics';
+ import { useRouter } from 'expo-router';
+ import { useAuthStore } from '../store/authStore';
+@@ -273,7 +272,7 @@ const DynamicTyper = () => {
+ // --- Main Auth Root View ---
+ export default function AuthRootView() {
+   const router = useRouter();
+-  const systemColorScheme = useColorScheme();
++  const { colorScheme: systemColorScheme, setColorScheme } = useNativeWindColorScheme();
+   const { setDevBypass } = useAuthStore();
+   
+   // State
+@@ -298,22 +297,40 @@ export default function AuthRootView() {
+ 
+   // Gyroscope Parallax
+   useEffect(() => {
+-    let subscription: any;
+-    Gyroscope.isAvailableAsync().then((available) => {
+-      if (available) {
++    if (Platform.OS === 'web') return;
++
++    let isMounted = true;
++    let subscription: ReturnType<typeof Gyroscope.addListener> | undefined;
++
++    const subscribeToGyroscope = async () => {
++      try {
++        const available = await Gyroscope.isAvailableAsync();
++        if (!isMounted || !available) return;
++
+         Gyroscope.setUpdateInterval(50);
+         subscription = Gyroscope.addListener(({ x, y }) => {
+           bgX.value = withTiming(y * 20, { duration: 100 });
+           bgY.value = withTiming(x * 20, { duration: 100 });
+         });
++      } catch (error) {
++        if (isMounted) {
++          console.warn('Gyroscope parallax is unavailable; continuing without parallax.', error);
++        }
+       }
+-    });
+-    return () => subscription?.remove();
++    };
++
++    void subscribeToGyroscope();
++    return () => {
++      isMounted = false;
++      subscription?.remove();
++    };
+   }, []);
+ 
+   // Entrance Sequence
+   useEffect(() => {
+-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
++    if (Platform.OS !== 'web') {
++      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
++    }
+     contentOpacity.value = withDelay(400, withTiming(1, { duration: 800 }));
+     sheetY.value = withDelay(600, withSpring(0, SPRING_CONFIG));
+     tickerOpacity.value = withDelay(1200, withRepeat(withSequence(withTiming(1, { duration: 1000 }), withDelay(3000, withTiming(0, { duration: 1000 }))), -1, true));
+@@ -381,7 +398,7 @@ export default function AuthRootView() {
+   const toggleTheme = () => {
+     const next = isDark ? 'light' : 'dark';
+     setThemeOverride(next);
+-    Appearance.setColorScheme(next);
++    setColorScheme(next);
+     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+   };
+ 
+@@ -566,7 +583,7 @@ export default function AuthRootView() {
+           <View style={[styles.modalContent, { backgroundColor: isDark ? '#1E293B' : '#FFFFFF' }]}>
+             <View className="flex-row justify-between items-center mb-6">
+               <Text className="text-xl font-bold text-slate-900 dark:text-white">Developer Control</Text>
+-              <TouchableOpacity onPress={() => setDevModalVisible(false)}>
++              <TouchableOpacity testID="developer-control-close" onPress={() => setDevModalVisible(false)}>
+                 <X color={isDark ? '#fff' : '#000'} size={24} />
+               </TouchableOpacity>
+             </View>
+diff --git a/tailwind.config.js b/tailwind.config.js
+index 43130e4..d3110f4 100644
+--- a/tailwind.config.js
++++ b/tailwind.config.js
+@@ -1,5 +1,6 @@
+ /** @type {import('tailwindcss').Config} */
+ module.exports = {
++  darkMode: 'class',
+   content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+   presets: [require("nativewind/preset")],
+   theme: {
+
+Changes:
+
+__tests__/auth-audit.test.tsx
+  @@ -1,21 +1,31 @@
+  -import { render, fireEvent, act } from '@testing-library/react-native';
+  +import { render, fireEvent } from '@testing-library/react-native';
+  +import * as Haptics from 'expo-haptics';
+  +import AuthRootView from '../app/index';
+   
+  -// Mocks
+   const mockReplace = jest.fn();
+  +const mockSetDevBypass = jest.fn();
+  +const mockSetColorScheme = jest.fn();
+  +
+   jest.mock('expo-router', () => ({
+     useRouter: () => ({
+       replace: mockReplace,
+     }),
+   }));
+   
+  -const mockSetDevBypass = jest.fn();
+   jest.mock('../store/authStore', () => ({
+     useAuthStore: () => ({
+       setDevBypass: mockSetDevBypass,
+     }),
+   }));
+   
+  +jest.mock('nativewind', () => ({
+  +  useColorScheme: () => ({
+  +    colorScheme: 'light',
+  +    setColorScheme: mockSetColorScheme,
+  +  }),
+  +}));
+  +
+   jest.mock('expo-haptics', () => ({
+     impactAsync: jest.fn(),
+     notificationAsync: jest.fn(),
+  @@ -23,31 +33,68 @@ jest.mock('expo-haptics', () => ({
+  +jest.mock('expo-sensors', () => ({
+  +  Gyroscope: {
+  +    isAvailableAsync: jest.fn().mockResolvedValue(false),
+  +    setUpdateInterval: jest.fn(),
+  +    addListener: jest.fn(() => ({ remove: jest.fn() })),
+  +  },
+  +}));
+  +
+   jest.mock('@react-native-community/netinfo', () => ({
+     addEventListener: jest.fn(() => jest.fn()),
+     fetch: jest.fn(),
+   }));
+   
+  -import AuthRootView from '../app/index';
+  -
+   describe('AuthRootView Functional Audit', () => {
+  -  it('triggers dev bypass after exactly 5 taps on the logo container', async () => {
+  +  afterEach(() => {
+  +    jest.useRealTimers();
+  +    jest.clearAllMocks();
+  +  });
+  +
+  +  it('opens Developer Control after two taps and requires an explicit bypass action', () => {
+       jest.useFakeTimers();
+  -    const { getByTestId } = render(<AuthRootView />);
+  +    const { getByTestId, getByText, queryByText } = render(<AuthRootView />);
+       const trigger = getByTestId('logo-trigger');
+   
+  -    // 4 taps shouldn't trigger anything but light haptics
+  -    for(let i = 0; i < 4; i++) {
+  -      fireEvent.press(trigger);
+  -    }
+  +    expect(Haptics.notificationAsync).toHaveBeenCalledWith(Haptics.NotificationFeedbackType.Success);
+  +    expect(Haptics.impactAsync).not.toHaveBeenCalled();
+  +
+  +    fireEvent.press(trigger);
+  +    expect(Haptics.impactAsync).toHaveBeenCalledWith(Haptics.ImpactFeedbackStyle.Light);
+  +    expect(queryByText('Developer Control')).toBeNull();
+       expect(mockSetDevBypass).not.toHaveBeenCalled();
+       expect(mockReplace).not.toHaveBeenCalled();
+   
+  -    // 5th tap triggers bypass
+       fireEvent.press(trigger);
+  -    expect(mockSetDevBypass).toHaveBeenCalledWith(true);
+  -    expect(mockReplace).toHaveBeenCalledWith('/(app)');
+  -    
+  -    jest.useRealTimers();
+  +    expect(getByText('Developer Control')).toBeTruthy();
+  +    expect(mockSetDevBypass).not.toHaveBeenCalled();
+  +    expect(mockReplace).not.toHaveBeenCalled();
+  +
+  +    fireEvent.press(getByText('TOGGLE'));
+  +    expect(getByText('Currently: Dark')).toBeTruthy();
+  +    fireEvent.press(getByText('TOGGLE'));
+  +    expect(getByText('Currently: Light')).toBeTruthy();
+  +    expect(mockSetColorScheme).toHaveBeenNthCalledWith(1, 'dark');
+  +    expect(mockSetColorScheme).toHaveBeenNthCalledWith(2, 'light');
+  +    expect(Haptics.impactAsync).toHaveBeenCalledWith(Haptics.ImpactFeedbackStyle.Medium);
+  +
+  +    fireEvent.press(getByTestId('developer-control-close'));
+  +    expect(queryByText('Developer Control')).toBeNull();
+  +    expect(mockSetDevBypass).not.toHaveBeenCalled();
+  +    expect(mockReplace).not.toHaveBeenCalled();
+  +
+  +    fireEvent.press(trigger);
+  +    expect(queryByText('Developer Control')).toBeNull();
+  +    fireEvent.press(trigger);
+  +    fireEvent.press(getByText('Mission Control'));
+  +    expect(mockSetDevBypass).toHaveBeenNthCalledWith(1, true);
+  +    expect(mockReplace).toHaveBeenNthCalledWith(1, '/(app)');
+  +
+  +    fireEvent.press(trigger);
+  +    fireEvent.press(trigger);
+  +    fireEvent.press(getByText('Instant Bypass Login'));
+  +    expect(mockSetDevBypass).toHaveBeenNthCalledWith(2, true);
+  +    expect(mockReplace).toHaveBeenNthCalledWith(2, '/(app)');
+     });
+   });
+  +63 -16
+
+app/index.tsx
+  @@ -4,7 +4,6 @@ import {
+  -  useColorScheme,
+     Dimensions,
+     StyleSheet,
+     TouchableWithoutFeedback,
+  @@ -13,11 +12,11 @@ import {
+  -  Appearance,
+     ColorSchemeName,
+     ScrollView
+   } from 'react-native';
+   import { SafeAreaView } from 'react-native-safe-area-context';
+  +import { useColorScheme as useNativeWindColorScheme } from 'nativewind';
+   import * as Haptics from 'expo-haptics';
+   import { useRouter } from 'expo-router';
+   import { useAuthStore } from '../store/authStore';
+  @@ -273,7 +272,7 @@ const DynamicTyper = () => {
+  -  const systemColorScheme = useColorScheme();
+  +  const { colorScheme: systemColorScheme, setColorScheme } = useNativeWindColorScheme();
+     const { setDevBypass } = useAuthStore();
+     
+     // State
+  @@ -298,22 +297,40 @@ export default function AuthRootView() {
+  -    let subscription: any;
+  -    Gyroscope.isAvailableAsync().then((available) => {
+  -      if (available) {
+  +    if (Platform.OS === 'web') return;
+  +
+  +    let isMounted = true;
+  +    let subscription: ReturnType<typeof Gyroscope.addListener> | undefined;
+  +
+  +    const subscribeToGyroscope = async () => {
+  +      try {
+  +        const available = await Gyroscope.isAvailableAsync();
+  +        if (!isMounted || !available) return;
+  +
+           Gyroscope.setUpdateInterval(50);
+           subscription = Gyroscope.addListener(({ x, y }) => {
+             bgX.value = withTiming(y * 20, { duration: 100 });
+             bgY.value = withTiming(x * 20, { duration: 100 });
+           });
+  +      } catch (error) {
+  +        if (isMounted) {
+  +          console.warn('Gyroscope parallax is unavailable; continuing without parallax.', error);
+  +        }
+         }
+  -    });
+  -    return () => subscription?.remove();
+  +    };
+  +
+  +    void subscribeToGyroscope();
+  +    return () => {
+  +      isMounted = false;
+  +      subscription?.remove();
+  +    };
+     }, []);
+   
+     // Entrance Sequence
+     useEffect(() => {
+  -    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+  +    if (Platform.OS !== 'web') {
+  +      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+  +    }
+       contentOpacity.value = withDelay(400, withTiming(1, { duration: 800 }));
+       sheetY.value = withDelay(600, withSpring(0, SPRING_CONFIG));
+       tickerOpacity.value = withDelay(1200, withRepeat(withSequence(withTiming(1, { duration: 1000 }), withDelay(3000, withTiming(0, { duration: 1000 }))), -1, true));
+  @@ -381,7 +398,7 @@ export default function AuthRootView() {
+  -    Appearance.setColorScheme(next);
+  +    setColorScheme(next);
+       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+     };
+   
+  @@ -566,7 +583,7 @@ export default function AuthRootView() {
+  -              <TouchableOpacity onPress={() => setDevModalVisible(false)}>
+  +              <TouchableOpacity testID="developer-control-close" onPress={() => setDevModalVisible(false)}>
+                   <X color={isDark ? '#fff' : '#000'} size={24} />
+                 </TouchableOpacity>
+               </View>
+  +28 -11
+
+tailwind.config.js
+  @@ -1,5 +1,6 @@
+  +  darkMode: 'class',
+     content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+     presets: [require("nativewind/preset")],
+     theme: {
+  +1 -0

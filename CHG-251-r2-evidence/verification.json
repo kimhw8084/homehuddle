@@ -1,0 +1,343 @@
+{
+  "npm_ci": {
+    "exit_code": 0,
+    "outcome": "PASS",
+    "added_packages": 1166,
+    "audited_packages": 1167,
+    "audit_summary": "40 vulnerabilities (3 low, 20 moderate, 14 high, 3 critical)",
+    "package_files": {
+      "package_json_sha256": "6453669f767d9a09c20bcb658d352bd95470353d6aafb66a4986675a924a9a42",
+      "package_lock_sha256": "359c734f5cb3b365114a8bd9dab465bbeb133e6eff2bae8077c79a76d371f466",
+      "package_manifest_and_lock_changed": false
+    }
+  },
+  "typescript": {
+    "command": "npx tsc --noEmit",
+    "exit_code": 0,
+    "outcome": "PASS",
+    "result": "TypeScript: No errors found"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exit_code": 1,
+    "outcome": "FAIL_WITH_PRE_EXISTING_ERRORS",
+    "errors": 62,
+    "warnings": 424,
+    "full_lint_error_files_unchanged": [
+      "app/(app)/(tabs)/chores.tsx",
+      "app/(app)/(tabs)/index.tsx",
+      "app/(app)/(tabs)/market.tsx",
+      "app/(app)/(tabs)/restock.tsx",
+      "app/(app)/(tabs)/wallet.tsx",
+      "app/(app)/settings/invite.tsx",
+      "app/onboarding/done.tsx",
+      "app/onboarding/profile.tsx",
+      "components/AvatarPicker.tsx",
+      "components/DevToolsOverlay.tsx",
+      "components/WeeklyMenuSection.tsx",
+      "components/games/RandomAssignmentGames.tsx"
+    ],
+    "targeted": {
+      "command": "npx eslint app/index.tsx __tests__/auth-audit.test.tsx tailwind.config.js --format json",
+      "exit_code": 0,
+      "files": [
+        {
+          "file": "__tests__/auth-audit.test.tsx",
+          "errors": 0,
+          "warnings": 0,
+          "rules": []
+        },
+        {
+          "file": "app/index.tsx",
+          "errors": 0,
+          "warnings": 10,
+          "rules": [
+            "@typescript-eslint/no-unused-vars",
+            "@typescript-eslint/no-unused-vars",
+            "@typescript-eslint/no-unused-vars",
+            "@typescript-eslint/no-unused-vars",
+            "react-hooks/exhaustive-deps",
+            "react-hooks/exhaustive-deps",
+            "react-hooks/exhaustive-deps",
+            "react-hooks/exhaustive-deps",
+            "react-hooks/exhaustive-deps",
+            "react-hooks/exhaustive-deps"
+          ]
+        },
+        {
+          "file": "tailwind.config.js",
+          "errors": 0,
+          "warnings": 0,
+          "rules": []
+        }
+      ]
+    },
+    "baseline_comparison": {
+      "command": "npx eslint --stdin --stdin-filename app/index.tsx --format json (source from bound base)",
+      "baseline": {
+        "exit_code": 0,
+        "errors": 0,
+        "warnings": 10,
+        "rules": {
+          "@typescript-eslint/no-unused-vars": 4,
+          "react-hooks/exhaustive-deps": 6
+        }
+      },
+      "candidate": {
+        "errors": 0,
+        "warnings": 10,
+        "rules": {
+          "@typescript-eslint/no-unused-vars": 4,
+          "react-hooks/exhaustive-deps": 6
+        }
+      },
+      "unchangedWarningCounts": true,
+      "fullLintErrorsOutsideChangedFiles": {
+        "app/(app)/(tabs)/chores.tsx": 9,
+        "app/(app)/(tabs)/index.tsx": 6,
+        "app/(app)/(tabs)/market.tsx": 4,
+        "app/(app)/(tabs)/restock.tsx": 8,
+        "app/(app)/(tabs)/wallet.tsx": 7,
+        "app/(app)/settings/invite.tsx": 1,
+        "app/onboarding/done.tsx": 3,
+        "app/onboarding/profile.tsx": 1,
+        "components/AvatarPicker.tsx": 2,
+        "components/DevToolsOverlay.tsx": 7,
+        "components/WeeklyMenuSection.tsx": 11,
+        "components/games/RandomAssignmentGames.tsx": 3
+      }
+    }
+  },
+  "jest": {
+    "command": "npx jest --runInBand",
+    "exit_code": 0,
+    "outcome": "PASS",
+    "suites": 1,
+    "tests": 1,
+    "existing_reanimated_console_warnings": 2
+  },
+  "browser": {
+    "command": "EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=synthetic-local-fixture-token npm run web -- --clear --port 8083",
+    "playwright": "1.58.2",
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1
+      }
+    ],
+    "page_errors": 0,
+    "console_errors": 0,
+    "http_errors": 0,
+    "logbox_visible": false,
+    "startup_vibrate_console_error": false,
+    "developer_control": {
+      "one_tap_opens": false,
+      "two_taps_opens": true,
+      "close_dismisses": true,
+      "reopens_after_two_taps": true,
+      "opening_does_not_navigate": true
+    },
+    "theme_override": {
+      "desktop_light_dark_light": true,
+      "mobile_light_dark_light": true
+    },
+    "six_tab_shell": {
+      "passed": true,
+      "role_labels": [
+        "Home",
+        "Chores",
+        "Family",
+        "Wallet",
+        "Market",
+        "Restock"
+      ]
+    },
+    "failed_requests": {
+      "desktop": [
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "mobile": [
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:8083/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "assessment": "Two localhost document loads ended with net::ERR_ABORTED at each anchor, matching the exact-base run; HTTP status errors were zero."
+    },
+    "console_warnings": {
+      "desktop": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "mobile": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        }
+      ]
+    },
+    "screenshots": {
+      "auth-root-desktop-1440x900": {
+        "path": "screenshots/auth-root-desktop-1440x900.png",
+        "sha256": "6603dcfdbd2d3c72cde90c8b47da2b4dadf2ae77bf7ec29b178214a59c433342",
+        "bytes": 200608,
+        "dimensions": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "developer-control-light-desktop-1440x900": {
+        "path": "screenshots/developer-control-light-desktop-1440x900.png",
+        "sha256": "06f754702df364033478f35e948e9a75ac5a4121cc4d2fc02c67466c96bfc914",
+        "bytes": 62012,
+        "dimensions": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "developer-control-dark-desktop-1440x900": {
+        "path": "screenshots/developer-control-dark-desktop-1440x900.png",
+        "sha256": "b3cb6feb00bbacd2384f326404de87b1152de925589dc65035d5fbb821836428",
+        "bytes": 69183,
+        "dimensions": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "auth-root-mobile-390x844": {
+        "path": "screenshots/auth-root-mobile-390x844.png",
+        "sha256": "97869c5d08ba5c5f070eaef3d4d686bfbf962000c7889536867e352f508bf3e4",
+        "bytes": 83815,
+        "dimensions": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "developer-control-light-mobile-390x844": {
+        "path": "screenshots/developer-control-light-mobile-390x844.png",
+        "sha256": "7fd45adab6c8e2a97eea05280ccfc4c6ff5174466cbc1d721f8e562137a5d274",
+        "bytes": 42722,
+        "dimensions": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "developer-control-dark-mobile-390x844": {
+        "path": "screenshots/developer-control-dark-mobile-390x844.png",
+        "sha256": "be460963e50ca3765d27c6b1d7eba8a7f6f8613bc87da34225180e2241fcd4e9",
+        "bytes": 41657,
+        "dimensions": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    "candidateSha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "report": "runtime/candidate-browser-report.json",
+    "capturedScreenshotHashes": {
+      "auth-root-desktop-1440x900": "6603dcfdbd2d3c72cde90c8b47da2b4dadf2ae77bf7ec29b178214a59c433342",
+      "developer-control-light-desktop-1440x900": "06f754702df364033478f35e948e9a75ac5a4121cc4d2fc02c67466c96bfc914",
+      "developer-control-dark-desktop-1440x900": "b3cb6feb00bbacd2384f326404de87b1152de925589dc65035d5fbb821836428",
+      "auth-root-mobile-390x844": "97869c5d08ba5c5f070eaef3d4d686bfbf962000c7889536867e352f508bf3e4",
+      "developer-control-light-mobile-390x844": "7fd45adab6c8e2a97eea05280ccfc4c6ff5174466cbc1d721f8e562137a5d274",
+      "developer-control-dark-mobile-390x844": "be460963e50ca3765d27c6b1d7eba8a7f6f8613bc87da34225180e2241fcd4e9"
+    }
+  },
+  "source_boundary": {
+    "changed_files": [
+      {
+        "status": "M",
+        "path": "__tests__/auth-audit.test.tsx"
+      },
+      {
+        "status": "M",
+        "path": "app/index.tsx"
+      },
+      {
+        "status": "M",
+        "path": "tailwind.config.js"
+      }
+    ],
+    "numstat": [
+      {
+        "path": "__tests__/auth-audit.test.tsx",
+        "additions": 63,
+        "deletions": 16
+      },
+      {
+        "path": "app/index.tsx",
+        "additions": 25,
+        "deletions": 11
+      },
+      {
+        "path": "tailwind.config.js",
+        "additions": 1,
+        "deletions": 0
+      }
+    ],
+    "package_json_and_lock_unchanged": true,
+    "clean_after_commit": true,
+    "git_diff_check": "PASS"
+  },
+  "candidate": {
+    "sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "parent": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "branch": "codex/homehuddle-ui0-runtime-unblock-v2"
+  }
+}

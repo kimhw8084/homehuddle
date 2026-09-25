@@ -1,0 +1,38 @@
+{
+  "base_sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+  "base_tree": "the bound source tree at exact SHA f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+  "command": "EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=synthetic-local-fixture-token npm run web -- --port 8083; Playwright Chromium 1.58.2 GET http://127.0.0.1:8083/ (1440x900, DPR 1, en-US, America/Chicago)",
+  "response_status": 200,
+  "logbox_visible": true,
+  "page_errors": [
+    "Cannot manually set color scheme, as dark mode is type 'media'. Please use StyleSheet.setFlag('darkMode', 'class')",
+    "this._nativeModule.addListener is not a function"
+  ],
+  "console_errors": [
+    "Blocked call to navigator.vibrate because user hasn't tapped on the frame or any embedded frame yet: https://www.chromestatus.com/feature/5644273861001216."
+  ],
+  "console_warnings": [
+    "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+    "props.pointerEvents is deprecated. Use style.pointerEvents",
+    "TouchableWithoutFeedback is deprecated. Please use Pressable",
+    "[Reanimated] Property [opacity] may be overwritten by a layout animation",
+    "expo-sensors: setUpdateInterval() is not supported on web"
+  ],
+  "failed_requests": [
+    {
+      "url": "http://127.0.0.1:8083/",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8083/",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "http_errors": [],
+  "pinned_versions": {
+    "expo": "54.0.33",
+    "nativewind": "4.2.2",
+    "react_native_css_interop": "0.2.2",
+    "react_native_web": "0.21.2"
+  }
+}

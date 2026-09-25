@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "kind": "homehuddle-chg251-r2-runtime-unblock-candidate",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-runtime-unblock-v2",
+  "fabricJob": "CF-271ed28547164d4053c0c3f2",
+  "operation": "FIX",
+  "targetBranch": "main",
+  "binding": {
+    "baseSha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "remoteMainShaAtAcceptance": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2"
+  },
+  "candidate": {
+    "sha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "parent": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "branch": "codex/homehuddle-ui0-runtime-unblock-v2"
+  },
+  "sourceVerification": {
+    "clean": true,
+    "diffCheck": "PASS",
+    "changedFiles": [
+      {
+        "status": "M",
+        "path": "__tests__/auth-audit.test.tsx"
+      },
+      {
+        "status": "M",
+        "path": "app/index.tsx"
+      },
+      {
+        "status": "M",
+        "path": "tailwind.config.js"
+      }
+    ],
+    "numstat": [
+      {
+        "path": "__tests__/auth-audit.test.tsx",
+        "additions": 63,
+        "deletions": 16
+      },
+      {
+        "path": "app/index.tsx",
+        "additions": 28,
+        "deletions": 11
+      },
+      {
+        "path": "tailwind.config.js",
+        "additions": 1,
+        "deletions": 0
+      }
+    ],
+    "diffStat": "__tests__/auth-audit.test.tsx | 79 ++++++++++++++++++++++++++++++++++---------\n app/index.tsx                 | 39 +++++++++++++++------\n tailwind.config.js            |  1 +\n 3 files changed, 92 insertions(+), 27 deletions(-)"
+  },
+  "targetReadback": {
+    "command": "git ls-remote origin refs/heads/main",
+    "sha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2",
+    "unchangedFromBoundBase": true,
+    "fetchedTrackingSha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2"
+  },
+  "workBranchRemoteReadbackAtCapture": "absent; Fabric owns the R2 remote branch publication after execution",
+  "packageFiles": {
+    "package_json_sha256": "6453669f767d9a09c20bcb658d352bd95470353d6aafb66a4986675a924a9a42",
+    "package_lock_sha256": "359c734f5cb3b365114a8bd9dab465bbeb133e6eff2bae8077c79a76d371f466",
+    "package_manifest_and_lock_changed": false
+  },
+  "pinnedRuntime": {
+    "expo": "54.0.33",
+    "nativewind": "4.2.2",
+    "react_native_css_interop": "0.2.2",
+    "react_native_web": "0.21.2"
+  }
+}

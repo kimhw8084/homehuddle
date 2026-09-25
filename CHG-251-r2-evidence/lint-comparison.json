@@ -1,0 +1,35 @@
+{
+  "command": "npx eslint --stdin --stdin-filename app/index.tsx --format json (source from bound base)",
+  "baseline": {
+    "exit_code": 0,
+    "errors": 0,
+    "warnings": 10,
+    "rules": {
+      "@typescript-eslint/no-unused-vars": 4,
+      "react-hooks/exhaustive-deps": 6
+    }
+  },
+  "candidate": {
+    "errors": 0,
+    "warnings": 10,
+    "rules": {
+      "@typescript-eslint/no-unused-vars": 4,
+      "react-hooks/exhaustive-deps": 6
+    }
+  },
+  "unchangedWarningCounts": true,
+  "fullLintErrorsOutsideChangedFiles": {
+    "app/(app)/(tabs)/chores.tsx": 9,
+    "app/(app)/(tabs)/index.tsx": 6,
+    "app/(app)/(tabs)/market.tsx": 4,
+    "app/(app)/(tabs)/restock.tsx": 8,
+    "app/(app)/(tabs)/wallet.tsx": 7,
+    "app/(app)/settings/invite.tsx": 1,
+    "app/onboarding/done.tsx": 3,
+    "app/onboarding/profile.tsx": 1,
+    "components/AvatarPicker.tsx": 2,
+    "components/DevToolsOverlay.tsx": 7,
+    "components/WeeklyMenuSection.tsx": 11,
+    "components/games/RandomAssignmentGames.tsx": 3
+  }
+}

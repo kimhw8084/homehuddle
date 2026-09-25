@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "LOCAL_PRESTAGE_ONLY",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-runtime-unblock-v2",
+  "fabricJob": "CF-271ed28547164d4053c0c3f2",
+  "candidateSha": "e1a7587b70f19dba471032f9e8b96846ca3efbb3",
+  "normalLocalPaths": {
+    "artifactBridgeStage": "/Users/haewonkim/.codex-fabric/jobs/CF-271ed28547164d4053c0c3f2.running/artifact-bridge/homehuddle-ui0-runtime-unblock-v2-package",
+    "projectOsEvidence": "/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-251-r2@e1a7587b70f19dba471032f9e8b96846ca3efbb3/CHG-251-r2-evidence"
+  },
+  "callableArtifactBridgeProvider": null,
+  "probe": {
+    "callableToolInventoryMatches": [],
+    "localFabricCli": "fabricctl exposes audit JSON publish/refresh only; no evidence-package upload, provider attach, or provider readback command was available.",
+    "postGoIntegrator": "projectos-integrate-stdin is the integration operator and was not invoked."
+  },
+  "providerStageReceipt": null,
+  "providerReadback": null,
+  "note": "Candidate-bound evidence is staged in the active Fabric job Artifact Bridge directory and standard local Project OS evidence tree. This is local prestage only; it is not a provider-side upload receipt."
+}

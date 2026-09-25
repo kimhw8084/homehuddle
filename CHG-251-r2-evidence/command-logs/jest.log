@@ -1,0 +1,110 @@
+  console.warn
+    [Reanimated] Property "opacity" of AnimatedComponent(View) may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.
+
+      55 |   it('opens Developer Control after two taps and requires an explicit bypass action', () => {
+      56 |     jest.useFakeTimers();
+    > 57 |     const { getByTestId, getByText, queryByText } = render(<AuthRootView />);
+         |                                                           ^
+      58 |     const trigger = getByTestId('logo-trigger');
+      59 |
+      60 |     expect(Haptics.notificationAsync).toHaveBeenCalledWith(Haptics.NotificationFeedbackType.Success);
+
+      at Object.warn [as logFunction] (node_modules/react-native-reanimated/src/common/logger.ts:34:15)
+      at logFunction (node_modules/react-native-reanimated/src/common/logger.ts:109:10)
+      at Object.handleLog [as warn] (node_modules/react-native-reanimated/src/common/logger.ts:118:5)
+      at warn (node_modules/react-native-reanimated/src/animationBuilder.tsx:65:12)
+      at maybeReportOverwrittenProperties (node_modules/react-native-reanimated/src/animationBuilder.tsx:94:7)
+      at AnimatedComponent._configureLayoutAnimation (node_modules/react-native-reanimated/src/createAnimatedComponent/AnimatedComponent.tsx:369:19)
+      at new _configureLayoutAnimation (node_modules/react-native-reanimated/src/createAnimatedComponent/AnimatedComponent.tsx:92:12)
+      at _callSuper (node_modules/@babel/runtime/helpers/callSuper.js:5:99)
+      at new AnimatedComponent (node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx:75:18)
+      at updateClassComponent (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:6115:21)
+      at beginWork (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:7488:13)
+      at runWithFiberInDEV (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:1574:13)
+      at performUnitOfWork (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:10972:22)
+      at workLoopSync (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:10816:41)
+      at renderRootSync (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:10797:11)
+      at performWorkOnRoot (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:10349:13)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:2094:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:566:34)
+      at Object.<anonymous>.process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:859:10)
+      at actImplementation (node_modules/@testing-library/react-native/src/act.ts:30:25)
+      at renderWithAct (node_modules/@testing-library/react-native/src/render-act.ts:13:11)
+      at renderInternal (node_modules/@testing-library/react-native/src/render.tsx:69:33)
+      at renderInternal (node_modules/@testing-library/react-native/src/render.tsx:44:10)
+      at Object.<anonymous> (__tests__/auth-audit.test.tsx:57:59)
+
+  console.warn
+    [Reanimated] Property "opacity" of AnimatedComponent(View) may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.
+
+      55 |   it('opens Developer Control after two taps and requires an explicit bypass action', () => {
+      56 |     jest.useFakeTimers();
+    > 57 |     const { getByTestId, getByText, queryByText } = render(<AuthRootView />);
+         |                                                           ^
+      58 |     const trigger = getByTestId('logo-trigger');
+      59 |
+      60 |     expect(Haptics.notificationAsync).toHaveBeenCalledWith(Haptics.NotificationFeedbackType.Success);
+
+      at Object.warn [as logFunction] (node_modules/react-native-reanimated/src/common/logger.ts:34:15)
+      at logFunction (node_modules/react-native-reanimated/src/common/logger.ts:109:10)
+      at Object.handleLog [as warn] (node_modules/react-native-reanimated/src/common/logger.ts:118:5)
+      at warn (node_modules/react-native-reanimated/src/animationBuilder.tsx:65:12)
+      at maybeReportOverwrittenProperties (node_modules/react-native-reanimated/src/animationBuilder.tsx:94:7)
+      at AnimatedComponent._configureLayoutAnimation (node_modules/react-native-reanimated/src/createAnimatedComponent/AnimatedComponent.tsx:369:19)
+      at AnimatedComponent._configureLayoutAnimation [as componentDidMount] (node_modules/react-native-reanimated/src/createAnimatedComponent/AnimatedComponent.tsx:117:10)
+      at Object.react-stack-bottom-frame (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:13999:22)
+      at runWithFiberInDEV (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:1574:13)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8861:21)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8838:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8951:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8951:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8951:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8951:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8838:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8951:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8843:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8838:11)
+      at recursivelyTraverseLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9540:11)
+      at commitLayoutEffectOnFiber (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:8920:11)
+      at flushLayoutEffects (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:11356:13)
+      at commitRoot (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:11310:9)
+      at performWorkOnRoot (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:10445:15)
+      at performWorkOnRootViaSchedulerTask (node_modules/react-test-renderer/cjs/react-test-renderer.development.js:2094:7)
+      at flushActQueue (node_modules/react/cjs/react.development.js:566:34)
+      at Object.<anonymous>.process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:859:10)
+      at actImplementation (node_modules/@testing-library/react-native/src/act.ts:30:25)
+      at renderWithAct (node_modules/@testing-library/react-native/src/render-act.ts:13:11)
+      at renderInternal (node_modules/@testing-library/react-native/src/render.tsx:69:33)
+      at renderInternal (node_modules/@testing-library/react-native/src/render.tsx:44:10)
+      at Object.<anonymous> (__tests__/auth-audit.test.tsx:57:59)
+
+PASS __tests__/auth-audit.test.tsx
+  AuthRootView Functional Audit
+    ✓ opens Developer Control after two taps and requires an explicit bypass action (301 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.043 s, estimated 3 s
+Ran all test suites.
