@@ -6,11 +6,16 @@
     "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
   },
   "carrierRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-runtime-unblock-verify-v1",
+  "initialPublicationReadback": {
+    "commit": "bdc484ab19caaf22db50f4e6ffcf4b280f80410d",
+    "result": "PASS"
+  },
   "kind": "homehuddle-project-os-evidence-recovery",
   "operation": "VERIFY",
   "originalFabricJob": "CF-271ed28547164d4053c0c3f2",
   "originalRequest": "homehuddle-ui0-runtime-unblock-v2",
   "project": "homehuddle",
+  "publishedAt": "2026-09-25T20:04:46Z",
   "recoveredAt": "2026-09-25T20:00:09Z",
   "recoveredPackage": {
     "archiveBytes": 518047,
@@ -74,6 +79,7 @@
       "width": 390
     }
   ],
+  "status": "GIT_PUBLISHED_AWAITING_AUDIT",
   "target": {
     "branch": "main",
     "observedRemoteSha": "f8ea259d2f52aba1bc3d4aba7a034625fff33fb2"
