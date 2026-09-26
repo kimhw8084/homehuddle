@@ -1,0 +1,382 @@
+{
+  "accepted_at": "2026-09-26T23:13:59Z",
+  "changed_files": [
+    {
+      "additions": 96,
+      "deletions": 0,
+      "path": "__tests__/wallet-logic.test.ts",
+      "status": "A"
+    },
+    {
+      "additions": 98,
+      "deletions": 89,
+      "path": "app/(app)/(tabs)/wallet.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 105,
+      "deletions": 0,
+      "path": "utils/wallet-logic.ts",
+      "status": "A"
+    }
+  ],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1288,1305p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy sed -n '1000,1070p' 'app/(app)/(tabs)/wallet.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1278,1335p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy sed -n '990,1018p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy sed -n '1050,1070p' 'app/(app)/(tabs)/wallet.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1460,1560p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy sed -n '1005,1070p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy rg -n 'Dimensions|CHART_W|TAB_W|new Date\\\\(item.expiresDate|status === .active.|status \"'!== .active.'\"' 'app/(app)/(tabs)/wallet.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy cat utils/wallet-logic.ts && rtk proxy sed -n '1278,1328p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy rg -n 'width|Dimensions|CHART_W|TAB_W|resolveEffectiveReward|parseRewardExpiry' 'app/(app)/(tabs)/wallet.tsx' utils/wallet-logic.ts\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npm ci'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --check && rtk git diff --stat && rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx tsc --noEmit'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npm run lint'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest --runInBand'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk npx eslint 'app/(app)/(tabs)/wallet.tsx' __tests__/wallet-logic.test.ts utils/wallet-logic.ts\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy npx eslint 'app/(app)/(tabs)/wallet.tsx' __tests__/wallet-logic.test.ts utils/wallet-logic.ts\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1,180p' app/_layout.tsx && rtk proxy sed -n '560,680p' app/index.tsx && rtk proxy rg -n 'createClient|SUPABASE|EXPO_PUBLIC|Developer Control|Instant Bypass Login' lib store app --glob '\"'!**/node_modules/**'\"' && rtk git ls-remote --heads origin 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1' 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2' 'refs/heads/codex/homehuddle-ui0-wallet-truth-responsive-v2' && rtk proxy playwright --version\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '1,80p' lib/supabase.ts && rtk proxy sed -n '1,240p' store/huddleStore.ts && rtk proxy sed -n '1,140p' store/onboardingStore.ts && rtk git fetch origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1 && rtk git ls-tree -r --name-only refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1 | rtk proxy rg -i 'wallet|baseline|png|json'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n 'walletBag:|currentUser:|setWalletBag:|persist\\\\(|supabase' store/huddleStore.ts store/authStore.ts app/'(app)' -g '*.tsx' -g '*.ts' && rtk proxy cat app/'(app)'/'(tabs)'/_layout.tsx && rtk proxy cat app/'(app)'/_layout.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy curl -I --max-time 3 http://localhost:8081 && rtk proxy ps -Ao pid,command | rtk proxy rg 'expo|metro|8081' | rtk proxy head -20\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy mkdir -p /tmp/homehuddle-wallet-truth-v2/baseline && rtk git show refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1:atlas-failure-recovery/screenshots/wallet-points--mobile-390x844.png > /tmp/homehuddle-wallet-truth-v2/baseline/wallet-points--mobile-390x844.png && rtk git show refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1:atlas-failure-recovery/screenshots/wallet-points--desktop-1440x900.png > /tmp/homehuddle-wallet-truth-v2/baseline/wallet-points--desktop-1440x900.png && rtk git show refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1:atlas-failure-recovery/screenshots/wallet-reward-bag--mobile-390x844.png > /tmp/homehuddle-wallet-truth-v2/baseline/wallet-reward-bag--mobile-390x844.png && rtk git show refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1:atlas-failure-recovery/screenshots/wallet-reward-bag--desktop-1440x900.png > /tmp/homehuddle-wallet-truth-v2/baseline/wallet-reward-bag--desktop-1440x900.png && rtk proxy sips -g pixelWidth -g pixelHeight /tmp/homehuddle-wallet-truth-v2/baseline/*.png && rtk proxy python -c 'import playwright; print(playwright.__file__)'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy ls -l /tmp/homehuddle-wallet-truth-v2/baseline && rtk proxy file /tmp/homehuddle-wallet-truth-v2/baseline/*.png && rtk proxy xxd -l 64 /tmp/homehuddle-wallet-truth-v2/baseline/wallet-points--mobile-390x844.png && rtk proxy git show refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1:atlas-failure-recovery/screenshots/wallet-points--mobile-390x844.png | rtk proxy head -c 40'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nimport subprocess\nref = 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'\nroot = Path('/tmp/homehuddle-wallet-truth-v2/baseline')\nfor name in ['wallet-points--mobile-390x844.png', 'wallet-points--desktop-1440x900.png', 'wallet-reward-bag--mobile-390x844.png', 'wallet-reward-bag--desktop-1440x900.png']:\n    path = f'atlas-failure-recovery/screenshots/{name}'\n    data = subprocess.run(['git', 'show', f'{ref}:{path}'], check=True, stdout=subprocess.PIPE).stdout\n    (root / name).write_bytes(data)\nPY\nrtk proxy file /tmp/homehuddle-wallet-truth-v2/baseline/wallet-points--mobile-390x844.png && rtk proxy sips -g pixelWidth -g pixelHeight /tmp/homehuddle-wallet-truth-v2/baseline/wallet-points--mobile-390x844.png\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n    for name in ['chromium', 'firefox', 'webkit']:\n        browser = getattr(p, name)\n        path = Path(browser.executable_path)\n        print(name, path, path.exists())\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n 'Use Reward|Confirm|Add a note|onNoteChange|Reward used|Use this reward' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy sed -n '740,815p' 'app/(app)/(tabs)/wallet.tsx' && rtk proxy rg -n 'logo-trigger' app/index.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json\nfrom pathlib import Path\nfrom playwright.sync_api import sync_playwright\n\nroot = Path('/tmp/homehuddle-wallet-truth-v2')\n(root / 'screenshots').mkdir(parents=True, exist_ok=True)\nevidence = {'pageErrors': [], 'console': [], 'requestFailures': [], 'httpErrors': [], 'resizeMeasurements': [], 'scenarios': []}\n\ndef geometry(page, label):\n    result = page.evaluate('''() => {\n      const rect = el => { if (\"'!el) return null; const r = el.getBoundingClientRect(); return {x:r.x,y:r.y,width:r.width,height:r.height,left:r.left,right:r.right}; };\n      const chart = document.querySelector('\"'[data-testid=\\\"wallet-chart\\\"]');\n      const svg = chart && chart.querySelector('svg');\n      const sw = document.querySelector('[data-testid=\\\"wallet-tab-switcher\\\"]');\n      const children = sw ? Array.from(sw.children) : [];\n      const pill = children[0];\n      const tabs = children.slice(1,3);\n      const selected = tabs.find(el => el.innerText.includes('My Bag') ? document.body.innerText.includes('Active Rewards') : document.body.innerText.includes('Point History')) || tabs[0];\n      return { viewport:{width:window.innerWidth,height:window.innerHeight,devicePixelRatio:window.devicePixelRatio}, chart:{container:rect(chart),svg:rect(svg),svgWidthAttr:svg?.getAttribute('width')}, switcher:{outer:rect(sw),pill:rect(pill),tabs:tabs.map(rect),selected:rect(selected),pillOffsetFromSelected: pill && selected ? {x:rect(pill).x-rect(selected).x,width:rect(pill).width-rect(selected).width}:null} };\n    }''')\n    result['label'] = label\n    evidence['resizeMeasurements'].append(result)\n    return result\n\nwith sync_playwright() as p:\n    browser = p.chromium.launch(headless=True)\n    context = browser.new_context(viewport={'width':390,'height':844}, locale='en-US', timezone_id='America/Chicago', device_scale_factor=1, color_scheme='light')\n    page = context.new_page()\n    page.on('pageerror', lambda e: evidence['pageErrors'].append(str(e)))\n    page.on('console', lambda m: evidence['console'].append({'type':m.type,'text':m.text}) if m.type in ('error','warning') else None)\n    page.on('requestfailed', lambda r: evidence['requestFailures'].append({'url':r.url,'failure':r.failure}))\n    page.on('response', lambda r: evidence['httpErrors'].append({'url':r.url,'status':r.status}) if r.status >= 400 else None)\n    page.goto('http://127.0.0.1:8081', wait_until='domcontentloaded', timeout=120000)\n    page.get_by_test_id('logo-trigger').wait_for(timeout=60000)\n    page.get_by_test_id('logo-trigger').click()\n    page.get_by_test_id('logo-trigger').click()\n    page.get_by_text('Developer Control', exact=True).wait_for(timeout=10000)\n    page.get_by_text('Instant Bypass Login', exact=True).click()\n    page.wait_for_timeout(1500)\n    page.get_by_text('Wallet', exact=True).last.click()\n    page.locator('[data-testid=\\\"wallet-chart\\\"]').wait_for(timeout=30000)\n    page.wait_for_timeout(1200)\n    evidence['scenarios'].append({'name':'explicit-developer-bypass','result':'passed','route':page.url})\n\n    geometry(page, 'mobile-390x844-initial')\n    page.set_viewport_size({'width':1440,'height':900})\n    page.wait_for_timeout(1200)\n    geometry(page, 'desktop-1440x900-resize-1')\n    page.set_viewport_size({'width':390,'height':844})\n    page.wait_for_timeout(1200)\n    geometry(page, 'mobile-390x844-resize-2')\n    page.screenshot(path=str(root/'screenshots/wallet-points--mobile-390x844.png'), type='png')\n    page.set_viewport_size({'width':1440,'height':900})\n    page.wait_for_timeout(1200)\n    geometry(page, 'desktop-1440x900-canonical')\n    page.screenshot(path=str(root/'screenshots/wallet-points--desktop-1440x900.png'), type='png')\n    page.set_viewport_size({'width':390,'height':844})\n    page.wait_for_timeout(1000)\n    page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag', exact=True).click()\n    page.wait_for_timeout(800)\n    page.evaluate('window.scrollTo(0,0)')\n    page.screenshot(path=str(root/'screenshots/wallet-reward-bag--mobile-390x844.png'), type='png')\n    evidence['scenarios'].append({'name':'mobile-bag-has-no-active-expired-reward','activeSleepInCount':page.get_by_text('Sleep In Day', exact=True).count(),'expiredBadgeCount':page.get_by_text('EXPIRED', exact=True).count()})\n    expired = page.get_by_text('EXPIRED', exact=True).first\n    expired.scroll_into_view_if_needed()\n    page.wait_for_timeout(500)\n    page.screenshot(path=str(root/'screenshots/wallet-expired-history--mobile-390x844.png'), type='png')\n    evidence['scenarios'].append({'name':'expired-history-no-row-actions','expiredVisible':expired.is_visible(),'row':expired.evaluate('''el => { let n=el; for(let i=0;i<8 && n;i++,n=n.parentElement){const t=(n.innerText||'').trim(); if(t.includes('EXPIRED') && t.length < 220) return {text:t,buttons:Array.from(n.querySelectorAll('[role=\\\"button\\\"],button')).map(x=>x.innerText.trim())}; } return null; }''')})\n    page.evaluate('window.scrollTo(0,0)')\n    page.wait_for_timeout(250)\n    page.get_by_text('Use', exact=True).first.click()\n    page.get_by_text('Use \\\"Pizza Night\\\"?', exact=True).wait_for(timeout=10000)\n    evidence['scenarios'].append({'name':'nonexpired-use-opens-confirmation','result':'passed'})\n    page.screenshot(path=str(root/'screenshots/wallet-reward-use--mobile-390x844.png'), type='png')\n    page.get_by_text('Use \\\"Pizza Night\\\"?', exact=True).locator('..').get_by_role('button').click() if False else None\n    # Close the use flow through its visible close icon button.\n    page.keyboard.press('Escape')\n    page.wait_for_timeout(300)\n\n    page.set_viewport_size({'width':1440,'height':900})\n    page.wait_for_timeout(1000)\n    page.screenshot(path=str(root/'screenshots/wallet-reward-bag--desktop-1440x900.png'), type='png')\n    geometry(page, 'desktop-bag-1440x900')\n    page.get_by_text('EXPIRED', exact=True).first.scroll_into_view_if_needed()\n    page.wait_for_timeout(300)\n    page.screenshot(path=str(root/'screenshots/wallet-expired-history--desktop-1440x900.png'), type='png')\n\n    for viewport, name in [({'width':360,'height':800},'360x800'),({'width':1536,'height':864},'1536x864')]:\n        page.set_viewport_size(viewport)\n        page.wait_for_timeout(800)\n        evidence['resizeMeasurements'].append(geometry(page, f'stress-bag-{name}'))\n        page.evaluate('window.scrollTo(0,0)')\n        page.screenshot(path=str(root/f'screenshots/stress-bag--{name}.png'), type='png')\n        page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('Wallet', exact=True).click()\n        page.wait_for_timeout(700)\n        evidence['resizeMeasurements'].append(geometry(page, f'stress-wallet-{name}'))\n        page.screenshot(path=str(root/f'screenshots/stress-wallet--{name}.png'), type='png')\n        page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag', exact=True).click()\n        page.wait_for_timeout(500)\n\n    zoom_context = browser.new_context(viewport={'width':720,'height':450}, locale='en-US', timezone_id='America/Chicago', device_scale_factor=2, color_scheme='light')\n    zoom_page = zoom_context.new_page()\n    zoom_page.on('pageerror', lambda e: evidence['pageErrors'].append(str(e)))\n    zoom_page.on('console', lambda m: evidence['console'].append({'type':m.type,'text':m.text}) if m.type in ('error','warning') else None)\n    zoom_page.on('requestfailed', lambda r: evidence['requestFailures'].append({'url':r.url,'failure':r.failure}))\n    zoom_page.on('response', lambda r: evidence['httpErrors'].append({'url':r.url,'status':r.status}) if r.status >= 400 else None)\n    zoom_page.goto('http://127.0.0.1:8081', wait_until='domcontentloaded', timeout=120000)\n    zoom_page.get_by_test_id('logo-trigger').wait_for(timeout=60000)\n    zoom_page.get_by_test_id('logo-trigger').click(); zoom_page.get_by_test_id('logo-trigger').click()\n    zoom_page.get_by_text('Instant Bypass Login', exact=True).click()\n    zoom_page.wait_for_timeout(1000)\n    zoom_page.get_by_text('Wallet', exact=True).last.click()\n    zoom_page.locator('[data-testid=\\\"wallet-chart\\\"]').wait_for(timeout=30000)\n    zoom_page.wait_for_timeout(500)\n    evidence['resizeMeasurements'].append(geometry(zoom_page, 'stress-wallet-200-percent-effective-css-720x450-dpr2'))\n    zoom_page.screenshot(path=str(root/'screenshots/stress-wallet--200-percent.png'), type='png', scale='device')\n    zoom_page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag', exact=True).click()\n    zoom_page.wait_for_timeout(500)\n    zoom_page.screenshot(path=str(root/'screenshots/stress-bag--200-percent.png'), type='png', scale='device')\n    evidence['scenarios'].append({'name':'200-percent-effective-css-viewport','result':'captured','cssViewport':{'width':720,'height':450},'deviceScaleFactor':2})\n    zoom_context.close()\n    context.close()\n    browser.close()\n\n(root/'runtime-console-network.json').write_text(json.dumps(evidence, indent=2))\nprint(json.dumps({'screenshots':len(list((root/'screenshots').glob('*.png'))),'measurements':len(evidence['resizeMeasurements']),'scenarios':evidence['scenarios'],'pageErrors':evidence['pageErrors'],'requestFailures':evidence['requestFailures'],'httpErrors':evidence['httpErrors'],'console':evidence['console'][:12]}, indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json\nfrom pathlib import Path\np=Path('/tmp/homehuddle-wallet-truth-v2/runtime-console-network.json')\nd=json.loads(p.read_text())\nfor m in d['resizeMeasurements']:\n    chart=m.get('chart',{})\n    switch=m.get('switcher',{})\n    print(m['label'], 'viewport=',m['viewport'], 'svg=',chart.get('svg'), 'switcher=',switch.get('outer'), 'pill=',switch.get('pill'), 'offset=',switch.get('pillOffsetFromSelected'))\nPY\nrtk proxy sips -g pixelWidth -g pixelHeight /tmp/homehuddle-wallet-truth-v2/screenshots/*.png\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json\nfrom pathlib import Path\nfrom playwright.sync_api import sync_playwright\nroot=Path('/tmp/homehuddle-wallet-truth-v2')\nextra={'pageErrors':[],'console':[],'requestFailures':[],'httpErrors':[],'scenarios':[]}\nwith sync_playwright() as p:\n    browser=p.chromium.launch(headless=True)\n    context=browser.new_context(viewport={'width':390,'height':844},locale='en-US',timezone_id='America/Chicago',device_scale_factor=1,color_scheme='light')\n    page=context.new_page()\n    page.on('pageerror',lambda e:extra['pageErrors'].append(str(e)))\n    page.on('console',lambda m:extra['console'].append({'type':m.type,'text':m.text}) if m.type in ('error','warning') else None)\n    page.on('requestfailed',lambda r:extra['requestFailures'].append({'url':r.url,'failure':r.failure}))\n    page.on('response',lambda r:extra['httpErrors'].append({'url':r.url,'status':r.status}) if r.status>=400 else None)\n    page.goto('http://127.0.0.1:8081',wait_until='domcontentloaded',timeout=120000)\n    page.get_by_test_id('logo-trigger').wait_for(timeout=60000)\n    page.get_by_test_id('logo-trigger').click();page.get_by_test_id('logo-trigger').click()\n    page.get_by_text('Instant Bypass Login',exact=True).click()\n    page.wait_for_timeout(1000)\n    page.get_by_text('Wallet',exact=True).last.click()\n    page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag',exact=True).click()\n    page.wait_for_timeout(500)\n    info=page.evaluate('''() => {\n      const leaf = txt => Array.from(document.querySelectorAll('*')).find(e=>e.children.length===0 && e.textContent.trim()===txt);\n      const history=leaf('Reward History'), sleep=leaf('Sleep In Day');\n      let row=sleep; for(let i=0;i<8 && row;i++,row=row.parentElement){if((row.innerText||'').includes('EXPIRED')&&(row.innerText||'').includes('Sleep In Day')&&(row.innerText||'').length<220)break;}\n      const rel=history&&sleep?history.compareDocumentPosition(sleep):0;\n      return {activeHeaderCount:Array.from(document.querySelectorAll('*')).filter(e=>e.children.length===0&&e.textContent.trim()==='Active Rewards').length,historyHeaderPresent:\"'!!history,sleepInCount:Array.from(document.querySelectorAll('\"'*')).filter(e=>e.children.length===0&&e.textContent.trim()==='Sleep In Day').length,sleepInOccursAfterHistory:\"'!!(rel&Node.DOCUMENT_POSITION_FOLLOWING),expiredRowText:row?.innerText||null,expiredRowActions:row?Array.from(row.querySelectorAll('\"'[role=\\\"button\\\"],button')).map(e=>e.innerText.trim()):null};\n    }''')\n    extra['scenarios'].append({'name':'effective-expiry-partition-and-history-actions','result':info})\n    page.get_by_text('Use',exact=True).first.click()\n    modal=page.get_by_text('Use \\\"Pizza Night\\\"?',exact=True)\n    modal.wait_for(state='visible',timeout=10000)\n    page.wait_for_timeout(900)\n    modal_info=modal.evaluate('''e=>{const r=e.getBoundingClientRect();const p=e.parentElement.parentElement;const pr=p.getBoundingClientRect();return {text:e.textContent,header:{x:r.x,y:r.y,width:r.width,height:r.height},panel:{x:pr.x,y:pr.y,width:pr.width,height:pr.height},visible:r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight}}''')\n    extra['scenarios'].append({'name':'nonexpired-use-confirmation-layout','result':modal_info})\n    page.screenshot(path=str(root/'screenshots/wallet-reward-use--mobile-390x844.png'),type='png')\n    browser.close()\npath=root/'runtime-console-network.json'\nbase=json.loads(path.read_text())\nfor key in ('pageErrors','console','requestFailures','httpErrors'):\n    base[key].extend(extra[key])\nbase['scenarios'].extend(extra['scenarios'])\npath.write_text(json.dumps(base,indent=2))\nprint(json.dumps(extra,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --exit-code -- package.json package-lock.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy npx eslint 'app/(app)/(tabs)/wallet.tsx' __tests__/wallet-logic.test.ts utils/wallet-logic.ts\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest --runInBand'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx tsc --noEmit'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git show 46bd155dd55cbd85a29db5722c96d96c4946952b:'app/(app)/(tabs)/wallet.tsx' > 'app/(app)/(tabs)/wallet.baseline.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy npx eslint 'app/(app)/(tabs)/wallet.baseline.tsx'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rm 'app/(app)/(tabs)/wallet.baseline.tsx' && rtk git status --short --branch && rtk git diff --check\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git diff -- 'app/(app)/(tabs)/wallet.tsx' && rtk proxy cat utils/wallet-logic.ts && rtk proxy cat __tests__/wallet-logic.test.ts\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nimport subprocess\nroots=[Path('/Users/haewonkim/.codex-fabric/jobs'),Path('/Users/haewonkim/.codex-fabric/results'),Path('/Users/haewonkim/.codex-fabric/worktrees')]\nneedles=('homehuddle-ui0-wallet-truth-responsive-v1','codex/homehuddle-ui0-wallet-truth-responsive-v1')\nexclude='CF-61d87ee520b620218c716c0c'\nmatches=[]\nfor root in roots:\n    for path in root.rglob('*'):\n        if exclude in path.parts or not path.is_file() or path.name not in {'job.json','prompt.md','lease.json','result.json','receipt.json'}:\n            continue\n        try: text=path.read_text(errors='ignore')\n        except OSError: continue\n        found=[needle for needle in needles if needle in text]\n        if found: matches.append({'path':str(path),'matches':found})\nworktree_branches=[]\nworktrees=Path('/Users/haewonkim/.codex-fabric/worktrees')\nfor path in worktrees.iterdir():\n    if path.is_dir() and (path/'.git').exists():\n        result=subprocess.run(['git','-C',str(path),'branch','--show-current'],capture_output=True,text=True)\n        if 'wallet-truth-responsive-v1' in result.stdout: worktree_branches.append({'path':str(path),'branch':result.stdout.strip()})\nprint({'predecessorMetadataMatches':matches,'predecessorWorktreeBranches':worktree_branches})\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nimport subprocess\nroots=[Path('/Users/haewonkim/.codex-fabric/jobs'),Path('/Users/haewonkim/.codex-fabric/results'),Path('/Users/haewonkim/.codex-fabric/worktrees')]\nneedles=('homehuddle-ui0-wallet-truth-responsive-v1','codex/homehuddle-ui0-wallet-truth-responsive-v1')\ncurrent='CF-61d87ee520b620218c716c0c'\nmatches=[]\nfor root in roots:\n    for path in root.rglob('*'):\n        if any(part.startswith(current) for part in path.parts) or not path.is_file() or path.name not in {'job.json','prompt.md','lease.json','result.json','receipt.json'}:\n            continue\n        try: text=path.read_text(errors='ignore')\n        except OSError: continue\n        found=[needle for needle in needles if needle in text]\n        if found: matches.append({'path':str(path),'matches':found})\nworktree_branches=[]\nfor path in Path('/Users/haewonkim/.codex-fabric/worktrees').iterdir():\n    if path.is_dir() and (path/'.git').exists():\n        result=subprocess.run(['git','-C',str(path),'branch','--show-current'],capture_output=True,text=True)\n        if 'wallet-truth-responsive-v1' in result.stdout: worktree_branches.append({'path':str(path),'branch':result.stdout.strip()})\nprint({'predecessorMetadataMatches':matches,'predecessorWorktreeBranches':worktree_branches})\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --check && rtk git status --short --branch && rtk git diff --exit-code -- package.json package-lock.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy npx eslint __tests__/wallet-logic.test.ts utils/wallet-logic.ts'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest --runInBand'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx tsc --noEmit'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git fetch origin main && rtk git rev-parse FETCH_HEAD && rtk git show -s --format='%H %T' FETCH_HEAD && rtk git ls-remote --heads origin main 'codex/homehuddle-ui0-wallet-truth-responsive-v2' 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2' && rtk git status --short --branch\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git add 'app/(app)/(tabs)/wallet.tsx' __tests__/wallet-logic.test.ts utils/wallet-logic.ts && rtk git diff --cached --check && rtk git diff --cached --stat && rtk git commit -m 'Fix Wallet expiry truth and responsive geometry' && rtk git rev-parse HEAD && rtk git rev-parse HEAD\"'^{tree} && rtk git diff-tree --no-commit-id --name-only -r HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD''^ && rtk git push -u origin codex/homehuddle-ui0-wallet-truth-responsive-v2 && rtk git status --short --branch && rtk git ls-remote --heads origin main '\"'codex/homehuddle-ui0-wallet-truth-responsive-v2'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json, re, hashlib\nfrom datetime import datetime, timezone\nfrom pathlib import Path\nfrom playwright.sync_api import sync_playwright\n\nroot=Path('/tmp/homehuddle-wallet-truth-v2')\nshots=root/'screenshots'\nshots.mkdir(parents=True,exist_ok=True)\nevidence={\n  'runStartedAtUtc':datetime.now(timezone.utc).isoformat(),\n  'sourceCommit':'857ea0ce5de1fd69ddf5c07da39718f89d17487e',\n  'runtimeConfiguration':{'EXPO_NO_DOTENV':'1','locale':'en-US','timezone':'America/Chicago','supabaseFixture':'http://127.0.0.1:54321','remoteSupabaseUsed':False},\n  'pageErrors':[],'consoleErrors':[],'consoleWarnings':[],'requestFailures':[],'httpErrors':[],'externalRequests':[],'resizeMeasurements':[],'scenarios':[]\n}\n\ndef attach(page, label):\n    page.on('pageerror',lambda e:evidence['pageErrors'].append({'session':label,'message':str(e)}))\n    page.on('console',lambda m:evidence['consoleErrors' if m.type=='error' else 'consoleWarnings'].append({'session':label,'text':m.text}) if m.type in ('error','warning') else None)\n    page.on('requestfailed',lambda r:evidence['requestFailures'].append({'session':label,'url':r.url,'failure':r.failure}))\n    page.on('response',lambda r:evidence['httpErrors'].append({'session':label,'url':r.url,'status':r.status}) if r.status>=400 else None)\n    page.on('request',lambda r:evidence['externalRequests'].append({'session':label,'url':r.url}) if not r.url.startswith(('http://127.0.0.1:8081/','ws://127.0.0.1:8081/')) else None)\n\ndef measure(page,label):\n    r=page.evaluate('''() => {\n      const rect=el=>{if(\"'!el)return null;const r=el.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,left:r.left,right:r.right}};\n      const chart=document.querySelector('\"'[data-testid=\\\"wallet-chart\\\"]');\n      const svg=chart&&chart.querySelector('svg');\n      const paths=svg?Array.from(svg.querySelectorAll('path')).map(e=>e.getAttribute('d')||''):[];\n      const nums=paths.map(d=>(d.match(/-?\\\\\\\\d+(?:\\\\\\\\.\\\\\\\\d+)?/g)||[]).map(Number));\n      const areaRight=(paths[0]||'').match(/L\\\\\\\\s*(-?\\\\\\\\d+(?:\\\\\\\\.\\\\\\\\d+)?)\\\\\\\\s+-?\\\\\\\\d+(?:\\\\\\\\.\\\\\\\\d+)?\\\\\\\\s+L\\\\\\\\s+-?\\\\\\\\d+(?:\\\\\\\\.\\\\\\\\d+)?\\\\\\\\s/);\n      const lines=svg?Array.from(svg.querySelectorAll('line')).map(e=>({x1:e.getAttribute('x1'),x2:e.getAttribute('x2'),y1:e.getAttribute('y1'),y2:e.getAttribute('y2')})):[];\n      const circles=svg?Array.from(svg.querySelectorAll('circle')).map(e=>({cx:e.getAttribute('cx'),cy:e.getAttribute('cy')})):[];\n      const sw=document.querySelector('[data-testid=\\\"wallet-tab-switcher\\\"]');\n      const children=sw?Array.from(sw.children):[]; const pill=children[0]; const tabs=children.slice(1,3);\n      const pr=rect(pill); const trs=tabs.map(rect);\n      const selectedIndex=trs.length?trs.reduce((best,v,i)=>Math.abs(v.x-pr.x)<Math.abs(trs[best].x-pr.x)?i:best,0):-1;\n      return {viewport:{width:innerWidth,height:innerHeight,devicePixelRatio},document:{clientWidth:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,bodyScrollWidth:document.body.scrollWidth},chart:{container:rect(chart),svg:rect(svg),svgWidthAttr:svg?.getAttribute('width'),linePathEndX:nums[1]?.length?nums[1].at(-2):null,areaBaselineRightX:areaRight?Number(areaRight[1]):null,svgLines:lines,cursorCircles:circles},switcher:{outer:rect(sw),pill:pr,tabs:trs,selectedLabel:selectedIndex>=0?tabs[selectedIndex].innerText.trim():null,selected:trs[selectedIndex]||null,alignment:{x:pr&&trs[selectedIndex]?pr.x-trs[selectedIndex].x:null,width:pr&&trs[selectedIndex]?pr.width-trs[selectedIndex].width:null}}};\n    }''')\n    r['label']=label\n    evidence['resizeMeasurements'].append(r)\n    return r\n\nwith sync_playwright() as p:\n    browser=p.chromium.launch(headless=True)\n    context=browser.new_context(viewport={'width':390,'height':844},locale='en-US',timezone_id='America/Chicago',device_scale_factor=1,color_scheme='light')\n    page=context.new_page();attach(page,'canonical-session')\n    page.goto('http://127.0.0.1:8081',wait_until='domcontentloaded',timeout=120000)\n    page.get_by_test_id('logo-trigger').wait_for(timeout=60000)\n    page.get_by_test_id('logo-trigger').click();page.get_by_test_id('logo-trigger').click()\n    page.get_by_text('Developer Control',exact=True).wait_for(timeout=10000)\n    page.get_by_text('Instant Bypass Login',exact=True).click()\n    page.wait_for_timeout(1000)\n    page.get_by_text('Wallet',exact=True).last.click()\n    page.locator('[data-testid=\\\"wallet-chart\\\"]').wait_for(timeout=30000)\n    page.wait_for_timeout(900)\n    evidence['scenarios'].append({'name':'visible-developer-control-explicit-bypass','passed':True,'route':page.url})\n\n    measure(page,'resize-390x844-before')\n    page.set_viewport_size({'width':1440,'height':900});page.wait_for_timeout(900)\n    measure(page,'resize-1440x900-middle')\n    page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(900)\n    measure(page,'resize-390x844-after')\n    page.evaluate('window.scrollTo(0,0)');page.screenshot(path=str(shots/'wallet-points--mobile-390x844.png'),type='png')\n    page.set_viewport_size({'width':1440,'height':900});page.wait_for_timeout(900)\n    measure(page,'wallet-points-desktop-canonical')\n    page.evaluate('window.scrollTo(0,0)');page.screenshot(path=str(shots/'wallet-points--desktop-1440x900.png'),type='png')\n\n    page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(700)\n    page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag',exact=True).click();page.wait_for_timeout(500)\n    page.evaluate('window.scrollTo(0,0)');page.screenshot(path=str(shots/'wallet-reward-bag--mobile-390x844.png'),type='png')\n    partition=page.evaluate('''() => {\n      const leaf=t=>Array.from(document.querySelectorAll('*')).find(e=>e.children.length===0&&e.textContent.trim()===t);\n      const active=leaf('Active Rewards'),history=leaf('Reward History'),sleep=leaf('Sleep In Day'),expired=leaf('EXPIRED');\n      let row=expired;for(let i=0;i<10&&row;i++,row=row.parentElement){const t=(row.innerText||'');if(t.includes('EXPIRED')&&t.includes('Sleep In Day')&&t.length<260)break;}\n      let activeUse=leaf('Use');for(let i=0;i<10&&activeUse;i++,activeUse=activeUse.parentElement){const t=(activeUse.innerText||'');if(t.includes('Pizza Night')&&t.length<260)break;}\n      return {activeRewardsHeaderPresent:\"'!!active,historyHeaderPresent:!!history,expiredRewardNameOccurrences:Array.from(document.querySelectorAll('\"'*')).filter(e=>e.children.length===0&&e.textContent.trim()==='Sleep In Day').length,expiredRewardIsAfterHistory:\"'!!(history&&sleep&&(history.compareDocumentPosition(sleep)&Node.DOCUMENT_POSITION_FOLLOWING)),expiredHistoryRowText:row?.innerText||null,expiredHistoryRowActions:row?Array.from(row.querySelectorAll('\"'[role=\\\"button\\\"],button')).map(e=>e.innerText.trim()):[],activeUseRowText:activeUse?.innerText||null};\n    }''')\n    evidence['scenarios'].append({'name':'effective-expiry-partition-and-history-actions','result':partition})\n    expired=page.get_by_text('EXPIRED',exact=True).first\n    expired.scroll_into_view_if_needed();page.wait_for_timeout(250)\n    page.screenshot(path=str(shots/'wallet-expired-history--mobile-390x844.png'),type='png')\n    page.get_by_text('Use',exact=True).first.click()\n    modal=page.get_by_text('Use \\\"Pizza Night\\\"?',exact=True);modal.wait_for(state='visible',timeout=10000);page.wait_for_timeout(700)\n    note=page.get_by_placeholder('e.g. Enjoyed with the whole family\"'!'\"')\n    evidence['scenarios'].append({'name':'nonexpired-use-opens-note-confirmation','passed':modal.is_visible() and note.is_visible(),'noteInputVisible':note.is_visible()})\n    page.screenshot(path=str(shots/'wallet-reward-use--mobile-390x844.png'),type='png')\n    page.keyboard.press('Escape');page.wait_for_timeout(300)\n\n    page.set_viewport_size({'width':1440,'height':900});page.wait_for_timeout(700)\n    measure(page,'wallet-bag-desktop-canonical')\n    page.evaluate('window.scrollTo(0,0)');page.screenshot(path=str(shots/'wallet-reward-bag--desktop-1440x900.png'),type='png')\n    page.get_by_text('EXPIRED',exact=True).first.scroll_into_view_if_needed();page.wait_for_timeout(250)\n    page.screenshot(path=str(shots/'wallet-expired-history--desktop-1440x900.png'),type='png')\n\n    for viewport,name in [({'width':360,'height':800},'360x800'),({'width':1536,'height':864},'1536x864')]:\n      page.set_viewport_size(viewport);page.wait_for_timeout(650);page.evaluate('window.scrollTo(0,0)')\n      measure(page,f'stress-bag-{name}');page.screenshot(path=str(shots/f'stress-bag--{name}.png'),type='png')\n      page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('Wallet',exact=True).click();page.wait_for_timeout(650)\n      measure(page,f'stress-wallet-{name}');page.screenshot(path=str(shots/f'stress-wallet--{name}.png'),type='png')\n      page.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag',exact=True).click();page.wait_for_timeout(350)\n    context.close()\n\n    zoom=browser.new_context(viewport={'width':720,'height':450},locale='en-US',timezone_id='America/Chicago',device_scale_factor=2,color_scheme='light')\n    zp=zoom.new_page();attach(zp,'zoom-200-percent-effective-viewport')\n    zp.goto('http://127.0.0.1:8081',wait_until='domcontentloaded',timeout=120000)\n    zp.get_by_test_id('logo-trigger').wait_for(timeout=60000);zp.get_by_test_id('logo-trigger').click();zp.get_by_test_id('logo-trigger').click()\n    zp.get_by_text('Instant Bypass Login',exact=True).click();zp.wait_for_timeout(900);zp.get_by_text('Wallet',exact=True).last.click()\n    zp.locator('[data-testid=\\\"wallet-chart\\\"]').wait_for(timeout=30000);zp.wait_for_timeout(600)\n    measure(zp,'stress-wallet-200-percent-effective-css-720x450-dpr2')\n    zp.screenshot(path=str(shots/'stress-wallet--200-percent.png'),type='png',scale='device')\n    zp.locator('[data-testid=\\\"wallet-tab-switcher\\\"]').get_by_text('My Bag',exact=True).click();zp.wait_for_timeout(400)\n    measure(zp,'stress-bag-200-percent-effective-css-720x450-dpr2')\n    zp.screenshot(path=str(shots/'stress-bag--200-percent.png'),type='png',scale='device')\n    evidence['scenarios'].append({'name':'200-percent-web-zoom-effective-css-viewport','passed':True,'cssViewport':{'width':720,'height':450},'devicePixelRatio':2,'walletAndBagCaptured':True})\n    zoom.close();browser.close()\n\nevidence['runCompletedAtUtc']=datetime.now(timezone.utc).isoformat()\nevidence['sourceTree']='add34f611ec80ba46ced7f3db8f3114e6cf157de'\n(root/'runtime-console-network.json').write_text(json.dumps(evidence,indent=2))\nprint(json.dumps({'scenarios':evidence['scenarios'],'measurements':[{'label':m['label'],'viewport':m['viewport'],'svg':m['chart']['svg'],'linePathEndX':m['chart']['linePathEndX'],'areaBaselineRightX':m['chart']['areaBaselineRightX'],'baselineX2':m['chart']['svgLines'][0]['x2'] if m['chart']['svgLines'] else None,'switcher':m['switcher']['outer'],'pill':m['switcher']['pill'],'selected':m['switcher']['selectedLabel'],'alignment':m['switcher']['alignment'],'overflow':m['document']['scrollWidth']-m['document']['clientWidth']} for m in evidence['resizeMeasurements']],'pageErrors':evidence['pageErrors'],'consoleErrors':evidence['consoleErrors'],'httpErrors':evidence['httpErrors'],'requestFailures':evidence['requestFailures'],'externalRequests':evidence['externalRequests'],'consoleWarnings':len(evidence['consoleWarnings'])},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nimport json,hashlib,struct\nfrom pathlib import Path\nroot=Path('/tmp/homehuddle-wallet-truth-v2')\nd=json.loads((root/'runtime-console-network.json').read_text())\nprint('console warning unique:')\nfor row in dict.fromkeys(x['text'] for x in d['consoleWarnings']): print('-',row[:180].replace('\\\\n',' '))\nprint('counts',len(d['consoleWarnings']),len(d['consoleErrors']),len(d['pageErrors']),len(d['requestFailures']),len(d['httpErrors']),len(d['externalRequests']))\nfor p in sorted((root/'screenshots').glob('*.png')):\n b=p.read_bytes();w,h=struct.unpack('>II',b[16:24]);print(p.name,w,h,len(b),hashlib.sha256(b).hexdigest())\nPY\nrtk git rev-parse refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1 && rtk git diff --stat 46bd155dd55cbd85a29db5722c96d96c4946952b...HEAD && rtk git status --short --branch\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npm run lint'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nfrom datetime import datetime, timezone\nimport json, shutil, zipfile, hashlib, struct\n\nroot=Path('/tmp/homehuddle-wallet-truth-v2')\npub=root/'publish'\nif pub.exists(): shutil.rmtree(pub)\n(pub/'screenshots').mkdir(parents=True)\nsource_commit='857ea0ce5de1fd69ddf5c07da39718f89d17487e'\nsource_tree='add34f611ec80ba46ced7f3db8f3114e6cf157de'\nbase_commit='46bd155dd55cbd85a29db5722c96d96c4946952b'\nbase_tree='a66760b6df143a87e894d5fe636f152ea73f6bea'\nruntime=json.loads((root/'runtime-console-network.json').read_text())\nfor image in (root/'screenshots').glob('*.png'):\n    shutil.copy2(image,pub/'screenshots'/image.name)\n\ndef sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()\n\ndef measurement(label): return next(m for m in runtime['resizeMeasurements'] if m['label']==label)\n\nreceipt={\n  'format':'project-os-candidate-receipt/v1',\n  'createdAtUtc':datetime.now(timezone.utc).isoformat(),\n  'project':'homehuddle','repository':'kimhw8084/homehuddle','alias':'app','operation':'FIX',\n  'request':'homehuddle-ui0-wallet-truth-responsive-v2',\n  'workBranch':'codex/homehuddle-ui0-wallet-truth-responsive-v2',\n  'base':{'ref':'main','commit':base_commit,'tree':base_tree},\n  'candidate':{'commit':source_commit,'tree':source_tree,'parent':base_commit,'remoteBranch':'refs/heads/codex/homehuddle-ui0-wallet-truth-responsive-v2'},\n  'remoteMainPostflight':{'commit':base_commit,'tree':base_tree,'unchanged':True},\n  'predecessorRecovery':{\n    'request':'homehuddle-ui0-wallet-truth-responsive-v1',\n    'result':'NO_PREDECESSOR_JOB_WORKTREE_OR_SOURCE_DELTA_FOUND',\n    'search':'Fabric jobs/results/worktrees metadata, local worktree branches, and remote R1 work/evidence/artifact refs; current R2 job prompt excluded from predecessor results.'\n  },\n  'diff':{\n    'allowed':True,\n    'files':['app/(app)/(tabs)/wallet.tsx','__tests__/wallet-logic.test.ts','utils/wallet-logic.ts'],\n    'stat':{'insertions':299,'deletions':89},\n    'packageJsonUnchanged':True,'packageLockUnchanged':True,'initialBagUnchanged':True\n  },\n  'fabricEvidenceRef':'not authored; Fabric-owned'\n}\n(pub/'candidate-receipt.json').write_text(json.dumps(receipt,indent=2)+'\\\\n')\n\nverification={\n  'format':'project-os-verification/v1','sourceCommit':source_commit,'sourceTree':source_tree,'baseCommit':base_commit,\n  'sourceDiffScope':'PASS','onlyChangedFiles':receipt['diff']['files'],'packageFilesUnchanged':True,\n  'commands':[\n    {'command':'npm ci','result':'PASS','note':'Installed from unchanged package-lock.json. npm audit reported 40 dependency advisories (3 low, 20 moderate, 14 high, 3 critical).'},\n    {'command':'npx tsc --noEmit','result':'PASS','output':'TypeScript: No errors found'},\n    {'command':'npm run lint','result':'PRE-EXISTING_LINT_DEBT','output':'480 problems: 62 errors and 418 warnings. Current wallet.tsx has the same 7 pre-existing errors as base@46bd155; no new changed-file errors. New wallet helper/test have 0 lint errors.'},\n    {'command':'npx jest --runInBand','result':'PASS','suites':2,'tests':11,'authAudit':'PASS; existing auth audit test unchanged'}\n  ],\n  'runtime':{\n    'result':'PASS_WITH_RECORDED_BASELINE_WARNINGS',\n    'route':'http://127.0.0.1:8081/wallet','developerControlVisible':True,'explicitBypassUsed':True,\n    'pageErrors':len(runtime['pageErrors']),'consoleErrors':len(runtime['consoleErrors']),'httpStatusesAtLeast400':len(runtime['httpErrors']),\n    'externalRequests':len(runtime['externalRequests']),'localNavigationAborts':len(runtime['requestFailures']),\n    'consoleWarningEvents':len(runtime['consoleWarnings']),'distinctConsoleWarnings':len(set(x['text'] for x in runtime['consoleWarnings'])),\n    'runtimeEvidence':'runtime-console-network.json'\n  },\n  'visual':{\n    'canonicalPngs':['wallet-points--desktop-1440x900.png','wallet-points--mobile-390x844.png','wallet-reward-bag--desktop-1440x900.png','wallet-reward-bag--mobile-390x844.png'],\n    'stressPngs':['stress-wallet--360x800.png','stress-bag--360x800.png','stress-wallet--1536x864.png','stress-bag--1536x864.png','stress-wallet--200-percent.png','stress-bag--200-percent.png'],\n    'sameSessionResize':'PASS 390x844 -> 1440x900 -> 390x844 with no reload',\n    'expiredHistoryActions':'PASS; row exposes no buttons',\n    'nonexpiredUseConfirmation':'PASS; note input visible'\n  }\n}\n(pub/'verification.json').write_text(json.dumps(verification,indent=2)+'\\\\n')\n\ntruth={\n  'format':'homehuddle-wallet-truth-report/v1','sourceCommit':source_commit,'baseCommit':base_commit,\n  'authority':'utils/wallet-logic.ts resolveEffectiveReward + parseRewardExpiry',\n  'semantics':{\n    'storedExpired':'remains expired and nonactionable',\n    'storedUsed':'remains historical/used even after its expiry',\n    'activeValidElapsedExpiry':'resolves to expired/history/nonactionable',\n    'activeValidFutureExpiry':'remains active/actionable',\n    'noYearMonthDay':'interpreted in current local UI year',\n    'explicitYearAndIso':'preserve stated year; ISO timestamps preserve instant',\n    'invalidExpiry':'unknown date is retained as an honest nonexpired/actionable state; it cannot fabricate expiry',\n    'gifted':'retains historical, nonactionable treatment'\n  },\n  'actions':['Active partition, history partition, row expiry display, Use, Gift, Resell, delayed action confirmations, and Use confirmation commit all use the same effective reward authority.'],\n  'observedFixture':{\n    'reward':'Sleep In Day','storedStatus':'active','expiresDate':'Sun, Mar 14','uiYear':2026,\n    'effectiveStatus':'expired','location':'Reward History','treatment':'EXPIRED badge and red expiry text','rowActions':[]\n  },\n  'activeControl':{'reward':'Pizza Night','storedStatus':'active','expiresDate':None,'effectiveStatus':'active','useFlow':'confirmation and note field opened'},\n  'fixtureDataChanged':False,'schemaBackendOrSupabaseChanges':False\n}\n(pub/'wallet-truth-report.json').write_text(json.dumps(truth,indent=2)+'\\\\n')\n\nresize_labels=['resize-390x844-before','resize-1440x900-middle','resize-390x844-after','wallet-points-desktop-canonical','wallet-bag-desktop-canonical','stress-bag-360x800','stress-wallet-360x800','stress-bag-1536x864','stress-wallet-1536x864','stress-wallet-200-percent-effective-css-720x450-dpr2','stress-bag-200-percent-effective-css-720x450-dpr2']\nmeasurements=[measurement(label) for label in resize_labels]\nresponsive={\n  'format':'homehuddle-responsive-geometry/v1','sourceCommit':source_commit,'browser':'Chromium/Playwright','locale':'en-US','timezone':'America/Chicago',\n  'measurements':measurements,\n  'sameMountedResizeSequence':[measurement(label) for label in resize_labels[:3]],\n  'assertions':{\n    'chartWidthIsMeasuredContainerWidth':True,\n    'lineAndAreaEndpointsTrackSvgWidth':True,\n    'baselineTracksSvgWidth':True,\n    'mobileToDesktopToMobileSvgWidths':[300,1350,300],\n    'mobileToDesktopToMobileSwitcherWidths':[342,1392,342],\n    'pillAlignedExactlyWithSelectedHalf':True,\n    'measuredPillSelectedSegmentOffsetsPx':{'x':0,'width':0},\n    'stressHorizontalOverflowCssPx':0,\n    'touchIndexWidthMapping':'covered by wallet-logic Jest test'\n  }\n}\n(pub/'responsive-geometry.json').write_text(json.dumps(responsive,indent=2)+'\\\\n')\nshutil.copy2(root/'runtime-console-network.json',pub/'runtime-console-network.json')\n\nreview='''# Wallet visual review\\\\n\\\\nCandidate \"'`857ea0ce5de1fd69ddf5c07da39718f89d17487e` compared with AR-88 baseline `refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1` at `b1f3af00863dafaa036c056e60393dc41c54edcc`. The same mobile and desktop viewport sizes were inspected.'\"\\\\n\\\\n## Intended changes\\\\n\\\\n- The active \"'`Sleep In Day` fixture whose no-year expiry is `Sun, Mar 14` now resolves in UI year 2026, appears under Reward History with `EXPIRED` treatment, and has no Use/Gift/Resell row actions. `Pizza Night` remains active and its Use confirmation with note input still opens.'\"\\\\n- At 1440×900, the graph now fills the balance-card content width (1,350 CSS px). The baseline screenshot showed the graph constrained to a mobile-width strip. At 390×844, the graph remains 300 CSS px wide and retains its authored height and mobile density.\\\\n- The Wallet/My Bag sliding pill matches the selected segment at both sizes. Runtime measurements show zero x/width difference from its selected half.\\\\n\\\\n## Canonical candidate screenshots\\\\n\\\\n- \"'`screenshots/wallet-points--mobile-390x844.png`'\"\\\\n- \"'`screenshots/wallet-points--desktop-1440x900.png`'\"\\\\n- \"'`screenshots/wallet-reward-bag--mobile-390x844.png`'\"\\\\n- \"'`screenshots/wallet-reward-bag--desktop-1440x900.png`'\"\\\\n\\\\nThe reward bag candidate differs from the baseline at the effective expired reward and the switcher geometry. The wallet points candidate differs at desktop graph width and switcher geometry. No other visible product surface changed in the inspected Wallet pages.\\\\n\\\\n## Stress review\\\\n\\\\nLossless captures cover 360×800, 1536×864, and a 200% effective zoom viewport (720×450 CSS px at DPR 2) on Wallet and My Bag. Measured document horizontal overflow was 0 CSS px in all tested viewports. Additional captures show the expired history row and the nonexpired Use/note confirmation.\\\\n'''\n(pub/'visual-review.md').write_text(review)\n\n# Inventory lists every bundled file except itself and the archive to avoid recursive hashes.\ndef png_info(path):\n    data=path.read_bytes()\n    if data[:8] \"'!= b'\"'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n': return None\n    return {'width':struct.unpack('>I',data[16:20])[0],'height':struct.unpack('>I',data[20:24])[0],'signature':'89504e470d0a1a0a'}\nfiles=[]\nfor path in sorted(pub.rglob('*')):\n    if path.is_file() and path.name not in {'artifact-inventory.json','artifact-bundle.zip','artifact-bundle.sha256.json'}:\n        rel=path.relative_to(pub).as_posix()\n        entry={'path':rel,'bytes':path.stat().st_size,'sha256':sha(path)}\n        info=png_info(path)\n        if info: entry['png']=info\n        files.append(entry)\ninventory={'format':'sha256-inventory/v1','scope':'All report and screenshot files in artifact-bundle.zip; inventory file and the containing bundle are excluded to avoid self-reference.','files':files}\n(pub/'artifact-inventory.json').write_text(json.dumps(inventory,indent=2)+'\\\\n')\narchive=pub/'artifact-bundle.zip'\nwith zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as zf:\n    for path in sorted(pub.rglob('*')):\n        if not path.is_file() or path.name in {'artifact-bundle.zip','artifact-bundle.sha256.json'}: continue\n        rel=path.relative_to(pub).as_posix()\n        info=zipfile.ZipInfo(rel,date_time=(2026,9,26,0,0,0))\n        info.compress_type=zipfile.ZIP_STORED if path.suffix.lower()=='.png' else zipfile.ZIP_DEFLATED\n        info.external_attr=0o100644<<16\n        zf.writestr(info,path.read_bytes())\nbundle={'format':'sha256-bundle/v1','path':'artifact-bundle.zip','bytes':archive.stat().st_size,'sha256':sha(archive),'inventorySha256':sha(pub/'artifact-inventory.json')}\n(pub/'artifact-bundle.sha256.json').write_text(json.dumps(bundle,indent=2)+'\\\\n')\nprint(json.dumps({'publishDir':str(pub),'files':len(files),'screenshots':len(list((pub/'screenshots').glob('*.png'))),'bundle':bundle,'canonical':[x for x in files if x['path'].split('/')[-1] in verification['visual']['canonicalPngs']]},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git config user.name && rtk proxy git config user.email && rtk proxy ls -la /tmp/homehuddle-wallet-truth-v2/publish'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nimport shutil\nsrc=Path('/tmp/homehuddle-wallet-truth-v2/publish')\ndst=Path('/tmp/homehuddle-wallet-truth-v2/artifact-repo')\nif dst.exists(): shutil.rmtree(dst)\nshutil.copytree(src,dst,ignore=shutil.ignore_patterns('.git'))\nPY\nrtk git ls-remote --heads origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2\nrtk git init --initial-branch=main /tmp/homehuddle-wallet-truth-v2/artifact-repo\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo config user.name 'Haewon Kim'\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo config user.email 'kimhw8084@gmail.com'\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo add .\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo diff --cached --check\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo status --short\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo commit -m 'Publish Wallet truth responsive v2 evidence'\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo rev-parse HEAD\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo rev-parse HEAD\"'^{tree}\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo remote add origin https://github.com/kimhw8084/homehuddle.git\nrtk git -C /tmp/homehuddle-wallet-truth-v2/artifact-repo push origin HEAD:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2:refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2 && rtk git rev-parse refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2 && rtk git rev-parse refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2''^{tree} && rtk git ls-remote --heads origin main '\"'codex/homehuddle-ui0-wallet-truth-responsive-v2' 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2' 'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python - <<'PY'\nfrom pathlib import Path\nimport subprocess,json,hashlib,struct,zipfile,io\nref='refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2'\npub=Path('/tmp/homehuddle-wallet-truth-v2/publish')\nentries={}\nout=subprocess.run(['git','ls-tree','-r','-z',ref],check=True,stdout=subprocess.PIPE).stdout\nfor item in out.split(b'\\\\0'):\n    if not item: continue\n    meta,path=item.split(b'\\\\t',1)\n    mode,kind,blob=meta.decode().split()\n    entries[path.decode()]=blob\n\ndef blob(path):\n    return subprocess.run(['git','cat-file','blob',entries[path]],check=True,stdout=subprocess.PIPE).stdout\n\ndef digest(data):return hashlib.sha256(data).hexdigest()\nreceipt=json.loads(blob('candidate-receipt.json'))\nverification=json.loads(blob('verification.json'))\ninventory=json.loads(blob('artifact-inventory.json'))\nbundle_meta=json.loads(blob('artifact-bundle.sha256.json'))\nbundle=blob('artifact-bundle.zip')\nassert receipt['candidate']['commit']=='857ea0ce5de1fd69ddf5c07da39718f89d17487e'\nassert receipt['candidate']['tree']=='add34f611ec80ba46ced7f3db8f3114e6cf157de'\nassert receipt['base']['commit']=='46bd155dd55cbd85a29db5722c96d96c4946952b'\nassert digest(bundle)==bundle_meta['sha256']\nassert digest(blob('artifact-inventory.json'))==bundle_meta['inventorySha256']\nwith zipfile.ZipFile(io.BytesIO(bundle)) as zf:\n    assert zf.testzip() is None\n    zip_names=set(zf.namelist())\n    for item in inventory['files']:\n        data=zf.read(item['path'])\n        assert len(data)==item['bytes'] and digest(data)==item['sha256'], item['path']\nreport_paths=['candidate-receipt.json','verification.json','wallet-truth-report.json','responsive-geometry.json','runtime-console-network.json','visual-review.md']\nreports={path:{'sha256':digest(blob(path)),'matchesLocal':blob(path)==(pub/path).read_bytes()} for path in report_paths}\ncanonical={}\nexpected={\n 'screenshots/wallet-points--desktop-1440x900.png':(1440,900),\n 'screenshots/wallet-points--mobile-390x844.png':(390,844),\n 'screenshots/wallet-reward-bag--desktop-1440x900.png':(1440,900),\n 'screenshots/wallet-reward-bag--mobile-390x844.png':(390,844),\n}\nfor path,dims in expected.items():\n    data=blob(path)\n    width,height=struct.unpack('>II',data[16:24])\n    assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and (width,height)==dims\n    canonical[path]={'signature':'89504e470d0a1a0a','width':width,'height':height,'bytes':len(data),'sha256':digest(data),'matchesLocal':data==(pub/path).read_bytes()}\nassert verification['sourceCommit']==receipt['candidate']['commit']\nprint(json.dumps({'artifactCommit':subprocess.run(['git','rev-parse',ref],check=True,capture_output=True,text=True).stdout.strip(),'artifactTree':subprocess.run(['git','rev-parse',ref+'\"'^{tree}'\"'],check=True,capture_output=True,text=True).stdout.strip(),'candidate':receipt['candidate'],'reports':reports,'canonicalPngReadback':canonical,'bundle':{'bytes':len(bundle),'sha256':digest(bundle),'matchesSidecar':digest(bundle)==bundle_meta['sha256'],'zipTest':'PASS','inventoryFilesVerified':len(inventory['files'])}},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'EXPO_NO_DOTENV=1 TZ=America/Chicago LANG=en_US.UTF-8 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=local-fixture-anon-key rtk npm run web -- --port 8081'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git status --short --branch && rtk git show -s --format='%H%n%T%n%P%n%s' HEAD && rtk git diff --stat 46bd155dd55cbd85a29db5722c96d96c4946952b...HEAD && rtk git diff-tree --no-commit-id --name-only -r HEAD && rtk git ls-remote --heads origin main 'codex/homehuddle-ui0-wallet-truth-responsive-v2' 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2' 'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 173,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 97.9,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 13080832,
+      "fresh_input_tokens": 281218,
+      "input_tokens": 13362050,
+      "non_reasoning_output_tokens": 35685,
+      "output_tokens": 91961,
+      "reasoning_output_tokens": 56276,
+      "total_processed_tokens": 13454011
+    },
+    "warnings": []
+  },
+  "commits": [
+    {
+      "sha": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+      "subject": "Fix Wallet expiry truth and responsive geometry"
+    }
+  ],
+  "diff": {
+    "additions": 299,
+    "changed_files": 3,
+    "commit_count": 1,
+    "deletions": 89
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-26T23:51:04Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "branch": "codex/homehuddle-ui0-wallet-truth-responsive-v2",
+    "detached_verify": false,
+    "head_sha": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+    "remote_exact_head": true,
+    "remote_head_sha": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "work_branch": "codex/homehuddle-ui0-wallet-truth-responsive-v2",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-61d87ee520b620218c716c0c",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-wallet-truth-responsive-v2"
+  },
+  "operation": "FIX",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-wallet-truth-responsive-v2",
+  "schema_version": 1,
+  "started_at": "2026-09-26T23:13:59Z",
+  "status": "EXECUTED_CHANGE",
+  "timing": {
+    "execution_seconds": 2225,
+    "queue_seconds": 0,
+    "total_seconds": 2225
+  },
+  "transport": {
+    "bytes": 9306,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 8968,
+    "prompt_sha256": "8e08c6ecef0cb3890ba95c9af97a5f16d5da8ee4412aa7cf203255a784c32801",
+    "sha256": "61d87ee520b620218c716c0c957c28bd109725ef361a7c82c2d3d3b42d2c6393"
+  }
+}
