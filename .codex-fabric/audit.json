@@ -1,0 +1,288 @@
+{
+  "accepted_at": "2026-09-26T19:50:00Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc 'cat /Users/haewonkim/.codex/RTK.md && cat /Users/haewonkim/.codex/law.md && pwd && git status --short --branch && git remote -v && git rev-parse HEAD && git rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg --files -g 'AGENTS.md' -g '*artifact*' -g '*job*' -g '*result*' -g '*atlas*' -g '*capture*' -g '\"'!node_modules'\"' -g '\"'!vendor'\"' . /Users/haewonkim/.codex-fabric 2>/dev/null | head -200\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk rg --files /Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff* /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b 2>/dev/null | sort | head -250'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cat /Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff.executed/job.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cat /Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff.executed/lease.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cat /Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff.executed/prompt.md'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk jq '.' /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/failure-triage.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk jq '.' /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/surface-manifest.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk jq '.' /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/capture-report.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n -F 'CF-27a4b3bc5a11ea2651ffb3ff' /Users/haewonkim/.codex-fabric --glob '\"'!repos/**'\"' --glob '\"'!runs/**'\"' --glob '\"'!evidence/**'\"' --glob '\"'!project-os-artifacts/**'\"' --glob '\"'!*.pyc'\"' 2>/dev/null | head -80\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'import json,pathlib,hashlib,struct; r=pathlib.Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b\\\"); tri=json.loads((r/\\\"failure-triage.json\\\").read_text()); rep=json.loads((r/\\\"visual-atlas/capture-report.json\\\").read_text()); man=r/\\\"visual-atlas/surface-manifest.json\\\"; print(\\\"triage keys\\\",list(tri)); print(\\\"safe\\\",tri.get(\\\"safe_sweep_complete\\\"),\\\"attempted\\\",tri.get(\\\"sweep_attempted_count\\\"),\\\"png_count\\\",tri.get(\\\"provisional_png_count\\\")); print(\\\"failed keys\\\",tri.get(\\\"failed_surface_keys\\\")); print(\\\"runner keys\\\",list(tri.get(\\\"runner_reported_failed_surface_keys\\\",[]))); print(\\\"false roots\\\",tri.get(\\\"false_positive_root_route_checks\\\")); print(\\\"query mismatches\\\",tri.get(\\\"query_route_mismatches\\\")); print(\\\"report keys\\\",list(rep)); print(\\\"manifest sha256\\\",hashlib.sha256(man.read_bytes()).hexdigest(),\\\"bytes\\\",man.stat().st_size); print(\\\"report summary\\\",{k:rep.get(k) for k in rep if k not in (\\\"rows\\\",\\\"surfaces\\\",\\\"captures\\\",\\\"screenshots\\\",\\\"results\\\")}); print(\\\"root files\\\",sorted(p.name for p in r.iterdir() if p.is_file())); print(\\\"atlas files\\\",sorted(p.name for p in (r/\\\"visual-atlas\\\").iterdir() if p.is_file())); print(\\\"png count\\\",sum(1 for p in (r/\\\"visual-atlas/screenshots\\\").glob(\\\"*.png\\\"))); print(\\\"report shapes\\\", {k:(type(v).__name__,len(v) if hasattr(v,\\\"__len__\\\") else None) for k,v in rep.items()}); print(\\\"job source root\\\"); j=json.loads(pathlib.Path(\\\"/Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff.executed/job.json\\\").read_text()); print(\\\"job identity\\\",{k:j.get(k) for k in (\\\"job_id\\\",\\\"project_id\\\",\\\"operation\\\",\\\"request\\\",\\\"routes\\\")})' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'import json,pathlib,hashlib,struct,collections,subprocess; root=pathlib.Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b\\\"); tri=json.loads((root/\\\"failure-triage.json\\\").read_text()); rep=json.loads((root/\\\"visual-atlas/capture-report.json\\\").read_text()); man=json.loads((root/\\\"visual-atlas/surface-manifest.json\\\").read_text()); print(\\\"manifest top keys\\\",list(man)); print(\\\"surface len\\\",len(man.get(\\\"surfaces\\\",[])),\\\"sample keys\\\",[x.get(\\\"surface_key\\\") or x.get(\\\"key\\\") for x in man.get(\\\"surfaces\\\",[])[:5]]); results=rep[\\\"capture_results\\\"]; print(\\\"result row sample\\\",{k:results[0].get(k) for k in (\\\"surface_key\\\",\\\"status\\\",\\\"failures\\\",\\\"route\\\",\\\"captured_route\\\")}); print(\\\"screenshot metadata sample\\\",results[0].get(\\\"screenshots\\\")); print(\\\"failed row details\\\"); failed=set(tri[\\\"failed_surface_keys\\\"]); rows={x[\\\"surface_key\\\"]:x for x in results};\nfor k in tri[\\\"failed_surface_keys\\\"]: print(k,rows.get(k,{}).get(\\\"status\\\"),rows.get(k,{}).get(\\\"failures\\\"),{vp:(v.get(\\\"artifact\\\"),v.get(\\\"sha256\\\"),v.get(\\\"dimensions\\\"),v.get(\\\"passed\\\")) for vp,v in rows.get(k,{}).get(\\\"screenshots\\\",{}).items()});\nprint(\\\"captured inventory\\\",sum(1 for row in results for v in row.get(\\\"screenshots\\\",{}).values() if v.get(\\\"artifact\\\")),\\\"physical\\\",sum(1 for p in (root/\\\"visual-atlas/screenshots\\\").glob(\\\"*.png\\\"))); print(\\\"optional\\\",[(name,(root/name).exists(),(root/\\\"visual-atlas\\\"/name).exists()) for name in (\\\"capture-authority.json\\\",\\\"source-runtime-inventory.json\\\")]); print(\\\"manifest mutation\\\",tri.get(\\\"manifest_mutation_count\\\"),\\\"source changed triage\\\",tri.get(\\\"product_source_changed\\\"),\\\"report\\\",rep.get(\\\"manifest_mutation_count\\\"),rep.get(\\\"product_source_changed\\\"))' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1 && rtk git -C /Users/haewonkim/.codex-fabric/repos/homehuddle status --short --branch && rtk git -C /Users/haewonkim/.codex-fabric/repos/homehuddle rev-parse HEAD && rtk git -C /Users/haewonkim/.codex-fabric/repos/homehuddle rev-parse HEAD''^{tree} && rtk git -C /Users/haewonkim/.codex-fabric/repos/homehuddle diff --quiet && rtk git -C /Users/haewonkim/.codex-fabric/repos/homehuddle diff --cached --quiet'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport json, pathlib, hashlib, struct, collections, sys\nroot=pathlib.Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b')\njob=json.loads(pathlib.Path('/Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff.executed/job.json').read_text())\ntri=json.loads((root/'failure-triage.json').read_text())\nrep=json.loads((root/'visual-atlas/capture-report.json').read_text())\nmanifest_path=root/'visual-atlas/surface-manifest.json'\nmanifest=json.loads(manifest_path.read_text())\nexpected_sha='30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277'\nsource='46bd155dd55cbd85a29db5722c96d96c4946952b'; tree='a66760b6df143a87e894d5fe636f152ea73f6bea'\nassert job['job_id']=='CF-27a4b3bc5a11ea2651ffb3ff' and job['request']=='homehuddle-ui0-atlas-capture-v1' and job['project_id']=='homehuddle' and job['operation']=='VERIFY'\nassert job['routes'][0]['base']==source and job['routes'][0]['target']=='main'\nassert tri['request']==rep['request']=='homehuddle-ui0-atlas-capture-v1' and tri['source_sha']==rep['source_sha']==source and tri['tree_sha']==rep['tree_sha']==tree\nassert hashlib.sha256(manifest_path.read_bytes()).hexdigest()==expected_sha==tri['manifest_sha256']==rep['manifest_sha256']\nassert tri['safe_sweep_complete'] is True and tri['sweep_attempted_count']==65 and tri['provisional_png_count']==98\nassert tri['manifest_mutation_count']==rep['manifest_mutation_count']==0 and tri['product_source_changed'] is False and rep['product_source_changed'] is False\nmkeys=[s['surface_key'] for s in manifest['surfaces']]\nassert len(mkeys)==65 and len(set(mkeys))==65 and manifest['surface_count']==65\nrkeys=[r['surface_key'] for r in rep['capture_results']]\nassert len(rkeys)==65 and len(set(rkeys))==65 and set(rkeys)==set(mkeys)\nfkeys=tri['failed_surface_keys']; assert len(fkeys)==tri['failed_surface_count'] and len(fkeys)==len(set(fkeys)) and set(fkeys)<=set(mkeys)\nrows={r['surface_key']:r for r in rep['capture_results']}\nfor k in fkeys: assert rows[k]['status']=='FAILED' and rows[k].get('failures')\nfalsekeys=tri['false_positive_root_route_checks']['surface_keys']\nassert not (set(falsekeys)&set(fkeys))\nassert set(falsekeys)<=set(mkeys)\nqkeys={q['surface_key'] for q in tri['query_route_mismatches']}\nassert qkeys<=set(fkeys)\nrefs={}; failures_with_png=[]\nfor row in rep['capture_results']:\n  for vp, rec in row.get('screenshots',{}).items():\n    if not rec.get('artifact'): continue\n    rel=rec['artifact']; assert rel.startswith('screenshots/') and '..' not in pathlib.PurePosixPath(rel).parts\n    assert rel not in refs, f'duplicate referenced path {rel}'\n    refs[rel]=(row['surface_key'],vp,rec)\n    f=root/'visual-atlas'/rel; assert f.is_file(), f'missing {rel}'\n    data=f.read_bytes(); assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n', f'bad signature {rel}'\n    w,h=struct.unpack('>II',data[16:24]); dims=rec.get('dimensions')\n    assert dims is None or [w,h]==dims, f'dimension mismatch {rel}: {[w,h]} \"'!= {dims}'\"'\n    sh=hashlib.sha256(data).hexdigest(); assert not rec.get('sha256') or sh==rec['sha256'], f'hash mismatch {rel}'\n    if row['surface_key'] in fkeys: failures_with_png.append(rel)\nactual={p.relative_to(root/'visual-atlas').as_posix() for p in (root/'visual-atlas/screenshots').glob('*.png')}\nassert len(refs)==98 and len(actual)==98 and actual==set(refs)\nassert len(failures_with_png)==len(set(failures_with_png))\nassert (root/'runtime-server.log').is_file() and (root/'capture-runner.py').is_file()\nassert (root/'visual-atlas/runtime-console-network.json').is_file()\nassert not (root/'capture-authority.json').exists() and not (root/'visual-atlas/capture-authority.json').exists()\nassert not (root/'source-runtime-inventory.json').exists() and not (root/'visual-atlas/source-runtime-inventory.json').exists()\nprint(json.dumps({'job_identity':'verified','manifest_sha256':expected_sha,'surface_count':len(mkeys),'attempted_count':len(rkeys),'failed_surface_count':len(fkeys),'failed_surface_keys':fkeys,'false_positive_root_route_keys':falsekeys,'query_route_mismatch_keys':sorted(qkeys),'triage_flags_separate':'verified','provisional_png_count':len(refs),'failed_surface_provisional_png_count':len(failures_with_png),'all_png_signatures_dimensions_hashes':'verified','unreferenced_or_missing_pngs':0,'manifest_mutation_count':0,'product_source_changed':False,'optional_files_present':[]},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch && rtk git rev-parse HEAD && rtk git rev-parse HEAD''^{tree} && rtk git diff --quiet'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'import tempfile,subprocess,pathlib,hashlib,sys; remote=\\\"https://github.com/kimhw8084/homehuddle.git\\\"; refs=[(\\\"refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1\\\",\\\"refs/heads/r5\\\"),(\\\"refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1\\\",\\\"refs/heads/r6evidence\\\")]; expected={\\\"r5\\\":\\\"0ef561e869f4bc53a2c473691bd3bd84b599f9a8\\\",\\\"r5tree\\\":\\\"fec6217a46defc2a7301a809b007801f5c5235d8\\\",\\\"r6evidence\\\":\\\"b1200b0b0519e798a42959da9672c83497ba6415\\\"}; td=tempfile.TemporaryDirectory(prefix=\\\"hh-r7-authority-\\\"); gd=pathlib.Path(td.name)/\\\"repo.git\\\"; subprocess.run([\\\"git\\\",\\\"init\\\",\\\"--bare\\\",str(gd)],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE); args=[\\\"git\\\",\\\"--git-dir\\\",str(gd),\\\"fetch\\\",\\\"--depth=1\\\",remote]+[f\\\"+{src}:{dst}\\\" for src,dst in refs]; subprocess.run(args,check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True); run=lambda *a: subprocess.run([\\\"git\\\",\\\"--git-dir\\\",str(gd),*a],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True).stdout.strip(); r5=run(\\\"rev-parse\\\",\\\"refs/heads/r5\\\"); r5tree=run(\\\"rev-parse\\\",\\\"refs/heads/r5\"'^{tree}\"); r6=run(\"rev-parse\",\"refs/heads/r6evidence\"); blob=run(\"rev-parse\",\"refs/heads/r5:manifest-validation/surface-manifest.validated.json\"); raw=subprocess.run([\"git\",\"--git-dir\",str(gd),\"cat-file\",\"blob\",blob],check=True,stdout=subprocess.PIPE).stdout; paths=run(\"ls-tree\",\"-r\",\"--name-only\",\"refs/heads/r6evidence\").splitlines(); print(\"R5\",r5,\"tree\",r5tree,\"manifest_blob_sha256\",hashlib.sha256(raw).hexdigest()); print(\"R6 evidence\",r6,\"tree\",run(\"rev-parse\",\"refs/heads/r6evidence''^{tree}\")); print(\"R6 evidence tree paths\",paths); assert r5==expected[\"r5\"] and r5tree==expected[\"r5tree\"] and hashlib.sha256(raw).hexdigest()==\"30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277\" and r6==expected[\"r6evidence\"]'\"' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'import tempfile,subprocess,pathlib,json; remote=\\\"https://github.com/kimhw8084/homehuddle.git\\\"; td=tempfile.TemporaryDirectory(prefix=\\\"hh-r6-audit-\\\"); gd=pathlib.Path(td.name)/\\\"repo.git\\\"; subprocess.run([\\\"git\\\",\\\"init\\\",\\\"--bare\\\",str(gd)],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE); subprocess.run([\\\"git\\\",\\\"--git-dir\\\",str(gd),\\\"fetch\\\",\\\"--depth=1\\\",remote,\\\"+refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1:refs/heads/r6\\\"],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE); raw=subprocess.run([\\\"git\\\",\\\"--git-dir\\\",str(gd),\\\"show\\\",\\\"refs/heads/r6:.codex-fabric/audit.json\\\"],check=True,stdout=subprocess.PIPE).stdout; print(raw.decode(\\\"utf-8\\\",errors=\\\"replace\\\")[:12000])' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'import tempfile,subprocess,pathlib,json; remote=\\\"https://github.com/kimhw8084/homehuddle.git\\\"; td=tempfile.TemporaryDirectory(prefix=\\\"hh-r6-audit-\\\"); gd=pathlib.Path(td.name)/\\\"repo.git\\\"; subprocess.run([\\\"git\\\",\\\"init\\\",\\\"--bare\\\",str(gd)],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE); subprocess.run([\\\"git\\\",\\\"--git-dir\\\",str(gd),\\\"fetch\\\",\\\"--depth=1\\\",remote,\\\"+refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1:refs/heads/r6\\\"],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE); raw=subprocess.run([\\\"git\\\",\\\"--git-dir\\\",str(gd),\\\"show\\\",\\\"refs/heads/r6:.codex-fabric/audit.json\\\"],check=True,stdout=subprocess.PIPE).stdout; d=json.loads(raw); print(\\\"audit keys\\\",list(d)); print(\\\"changed_files\\\",d.get(\\\"changed_files\\\")); print(\\\"check_count\\\",len(d.get(\\\"checks\\\",[]))); print(\\\"artifact-related checks\\\"); print(\\\"\\\\n\\\".join(json.dumps({k:c.get(k) for k in (\\\"exit_code\\\",\\\"type\\\",\\\"command\\\")})[:1600] for c in d.get(\\\"checks\\\",[]) if any(s in c.get(\\\"command\\\",\\\"\\\").lower() for s in (\\\"artifact\\\",\\\"capture\\\",\\\"project-os-artifacts\\\",\\\"failure-triage\\\")))); print(\\\"audit tail\\\",{k:v for k,v in d.items() if k\"'!=\"checks\"})'\"' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'from pathlib import Path; p=Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R7@46bd155dd55cbd85a29db5722c96d96c4946952b\\\"); print(\\\"destination_exists\\\",p.exists()); print(\\\"children\\\",[x.name for x in p.iterdir()] if p.exists() else [])' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'from pathlib import Path; import json; base=Path(\\\"/Users/haewonkim/.codex-fabric\\\"); pat=\\\"CF-c0b7d389585073cf73583109\\\"; print(\\\"matching_job_entries\\\",[str(p) for p in (base/\\\"jobs\\\").glob(pat+\\\"*\\\")]); print(\\\"matching_worktrees\\\",[str(p) for p in (base/\\\"worktrees\\\").glob(pat+\\\"*\\\")]); print(\\\"running_job_dirs\\\",[p.name for p in (base/\\\"jobs\\\").glob(\\\"*.running\\\")][:40])' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk jq '{job_id,project_id,operation,request,routes}' /Users/haewonkim/.codex-fabric/jobs/CF-c0b7d389585073cf73583109.running/job.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport datetime, hashlib, json, os, pathlib, shutil, struct, tempfile, zipfile\nsource=pathlib.Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b')\ncurrent_job_path=pathlib.Path('/Users/haewonkim/.codex-fabric/jobs/CF-c0b7d389585073cf73583109.running/job.json')\njob=json.loads(current_job_path.read_text())\nr6job=json.loads(pathlib.Path('/Users/haewonkim/.codex-fabric/jobs/CF-27a4b3bc5a11ea2651ffb3ff.executed/job.json').read_text())\ntri_path=source/'failure-triage.json'; report_path=source/'visual-atlas/capture-report.json'; manifest_path=source/'visual-atlas/surface-manifest.json'\ntri=json.loads(tri_path.read_text()); report=json.loads(report_path.read_text()); manifest=json.loads(manifest_path.read_text())\nsource_sha='46bd155dd55cbd85a29db5722c96d96c4946952b'; tree_sha='a66760b6df143a87e894d5fe636f152ea73f6bea'; manifest_sha='30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277'\nassert job['job_id']=='CF-c0b7d389585073cf73583109' and job['request']=='homehuddle-ui0-atlas-failure-recovery-v1' and job['project_id']=='homehuddle' and job['operation']=='VERIFY'\nassert job['routes'][0]['base']==source_sha and job['routes'][0]['target']=='main'\nassert r6job['job_id']=='CF-27a4b3bc5a11ea2651ffb3ff' and r6job['request']=='homehuddle-ui0-atlas-capture-v1'\nassert tri['safe_sweep_complete'] is True and tri['sweep_attempted_count']==65 and tri['provisional_png_count']==98\nassert tri['source_sha']==report['source_sha']==source_sha and tri['tree_sha']==report['tree_sha']==tree_sha\nassert hashlib.sha256(manifest_path.read_bytes()).hexdigest()==manifest_sha==tri['manifest_sha256']==report['manifest_sha256']\nassert tri['manifest_mutation_count']==report['manifest_mutation_count']==0 and tri['product_source_changed'] is False and report['product_source_changed'] is False\nmanifest_keys=[s['surface_key'] for s in manifest['surfaces']]; report_rows=report['capture_results']; row_keys=[x['surface_key'] for x in report_rows]\nassert len(manifest_keys)==65 and len(set(manifest_keys))==65 and set(manifest_keys)==set(row_keys) and len(row_keys)==65\nfailed=tri['failed_surface_keys']; assert len(failed)==tri['failed_surface_count']==len(set(failed)) and set(failed)<=set(manifest_keys)\nrows={x['surface_key']:x for x in report_rows}\nfor key in failed: assert rows[key]['status']=='FAILED' and rows[key].get('failures')\nfalse_keys=tri['false_positive_root_route_checks']['surface_keys']; assert set(false_keys)<=set(manifest_keys) and not (set(false_keys)&set(failed))\nquery_keys={x['surface_key'] for x in tri['query_route_mismatches']}; assert query_keys<=set(failed)\nrefs={}; screenshots=source/'visual-atlas/screenshots'\nfor row in report_rows:\n    for viewport,record in row.get('screenshots',{}).items():\n        if not record.get('artifact'): continue\n        rel=record['artifact']; assert rel.startswith('screenshots/') and '..' not in pathlib.PurePosixPath(rel).parts and rel not in refs\n        refs[rel]=(row['surface_key'],viewport,record)\n        p=source/'visual-atlas'/rel; data=p.read_bytes(); assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'\n        dimensions=list(struct.unpack('>II',data[16:24])); assert not record.get('dimensions') or dimensions==record['dimensions']\n        assert not record.get('sha256') or hashlib.sha256(data).hexdigest()==record['sha256']\nactual={p.relative_to(source/'visual-atlas').as_posix() for p in screenshots.glob('*.png')}\nassert len(refs)==98 and len(actual)==98 and actual==set(refs)\nroot_files={\n 'failure-triage.json':tri_path,\n 'capture-report.json':report_path,\n 'runtime-console-network.json':source/'visual-atlas/runtime-console-network.json',\n 'surface-manifest.json':manifest_path,\n 'runtime-server.log':source/'runtime-server.log',\n 'capture-runner.py':source/'capture-runner.py',\n}\nfor optional in ('capture-authority.json','source-runtime-inventory.json'):\n    candidates=[source/optional,source/'visual-atlas'/optional]\n    present=[p for p in candidates if p.is_file()]\n    if present: root_files[optional]=present[0]\nfor p in root_files.values(): assert p.is_file()\nroot_files.update({rel:source/'visual-atlas'/rel for rel in sorted(refs)})\nparent=pathlib.Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R7@46bd155dd55cbd85a29db5722c96d96c4946952b')\nfinal=parent/'atlas-failure-recovery'; assert not parent.exists() and not final.exists()\nparent.mkdir(parents=True,exist_ok=True)\nwith tempfile.TemporaryDirectory(prefix='.atlas-failure-recovery-stage-',dir=parent) as td:\n    package=pathlib.Path(td)/'atlas-failure-recovery'; package.mkdir()\n    (package/'screenshots').mkdir()\n    file_rows=[]\n    for rel,src in sorted(root_files.items()):\n        dest=package/rel; dest.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(src,dest)\n        raw=dest.read_bytes(); original=src.read_bytes(); assert raw==original\n        file_rows.append({'path':rel,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})\n    recovered_bytes=sum(x['bytes'] for x in file_rows)\n    bundle_paths=[x['path'] for x in file_rows]+['recovery-receipt.json']\n    receipt={\n      'schema':'project-os-atlas-failure-recovery-receipt-v1',\n      'project':'homehuddle','operation':'VERIFY',\n      'recovery_request':'homehuddle-ui0-atlas-failure-recovery-v1',\n      'recovery_fabric_job':'CF-c0b7d389585073cf73583109',\n      'original_request':'homehuddle-ui0-atlas-capture-v1',\n      'original_fabric_job':'CF-27a4b3bc5a11ea2651ffb3ff',\n      'original_normal_fabric_evidence_ref':'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1',\n      'original_normal_fabric_evidence_commit':'b1200b0b0519e798a42959da9672c83497ba6415',\n      'original_retained_artifact_root':str(source),\n      'accepted_manifest_authority':{'audit_record':'AR-85','r5_artifact_ref':'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1','r5_artifact_commit':'0ef561e869f4bc53a2c473691bd3bd84b599f9a8','r5_artifact_tree':'fec6217a46defc2a7301a809b007801f5c5235d8','manifest_sha256':manifest_sha},\n      'source_sha':source_sha,'tree_sha':tree_sha,\n      'safe_sweep_complete':True,'attempted_surface_count':65,\n      'provisional_png_count':98,'failed_surface_count':len(failed),\n      'failed_surface_keys':failed,\n      'false_positive_root_route_checks':tri['false_positive_root_route_checks'],\n      'query_route_mismatches':tri['query_route_mismatches'],\n      'manifest_mutation_count':0,\n      'recovered_file_count':len(file_rows),'recovered_bytes':recovered_bytes,'recovered_files':file_rows,\n      'bundle_member_count':len(bundle_paths),'bundle_member_paths':sorted(bundle_paths),\n      'recapture_performed':False,'product_source_changed':False,\n      'r6_fabric_audit':{'ref':'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1','commit':'b1200b0b0519e798a42959da9672c83497ba6415','status':'EXECUTED_NO_CHANGE','changed_files':[],'head_sha':source_sha,'worktree_clean':True,'remote_exact_head':True}\n    }\n    receipt_path=package/'recovery-receipt.json'\n    receipt_path.write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\\\\n')\n    zip_path=package/'artifact-bundle.zip'\n    with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_STORED) as zf:\n        for p in sorted(package.rglob('*')):\n            if not p.is_file() or p==zip_path: continue\n            rel=p.relative_to(package).as_posix(); info=zipfile.ZipInfo(rel,(1980,1,1,0,0,0)); info.compress_type=zipfile.ZIP_STORED; info.external_attr=0o100644<<16\n            zf.writestr(info,p.read_bytes())\n    with zipfile.ZipFile(zip_path) as zf:\n        assert zf.testzip() is None\n        infos={i.filename:i for i in zf.infolist()}; assert set(infos)==set(bundle_paths)\n        for rel in bundle_paths:\n            assert zf.read(rel)==(package/rel).read_bytes()\n    bundle_sha=hashlib.sha256(zip_path.read_bytes()).hexdigest(); bundle_size=zip_path.stat().st_size\n    assert len(list((package/'screenshots').glob('*.png')))==98\n    os.replace(package,final)\nprint(json.dumps({'package_path':str(final),'source_file_count':len(file_rows),'source_bytes':recovered_bytes,'provisional_png_count':98,'failed_surface_count':len(failed),'failed_surface_keys':failed,'bundle_sha256':bundle_sha,'bundle_bytes':bundle_size,'bundle_members':len(bundle_paths),'optional_files':[n for n in ('capture-authority.json','source-runtime-inventory.json') if (final/n).exists()]},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git var GIT_AUTHOR_IDENT && rtk git var GIT_COMMITTER_IDENT'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport hashlib, json, pathlib, shutil, struct, subprocess, tempfile, zipfile\nremote='https://github.com/kimhw8084/homehuddle.git'\nartifact_ref='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'\nsource_sha='46bd155dd55cbd85a29db5722c96d96c4946952b'\npackage=pathlib.Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R7@46bd155dd55cbd85a29db5722c96d96c4946952b/atlas-failure-recovery')\nworkspace=pathlib.Path('/Users/haewonkim/.codex-fabric/worktrees/CF-c0b7d389585073cf73583109')\ndef run(args, cwd=None, check=True):\n    p=subprocess.run(args,cwd=cwd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)\n    if check and p.returncode: raise RuntimeError(f'{args[0]} {args[1:]} failed ({p.returncode}): {p.stderr[-1200:]}')\n    return p.stdout.strip(),p.stderr.strip(),p.returncode\nassert package.is_dir()\nexpected_paths={p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file()}\nassert 'artifact-bundle.zip' in expected_paths and 'recovery-receipt.json' in expected_paths\nwith tempfile.TemporaryDirectory(prefix='hh-atlas-recovery-git-') as td:\n    td=pathlib.Path(td); repo=td/'repo'; repo.mkdir()\n    run(['git','init','-b','main',str(repo)])\n    shutil.copytree(package,repo/'atlas-failure-recovery')\n    name=run(['git','-C',str(workspace),'config','user.name'])[0]\n    email=run(['git','-C',str(workspace),'config','user.email'])[0]\n    run(['git','-C',str(repo),'config','user.name',name]); run(['git','-C',str(repo),'config','user.email',email])\n    run(['git','-C',str(repo),'add','atlas-failure-recovery'])\n    run(['git','-C',str(repo),'commit','-m','Publish HomeHuddle atlas failure recovery evidence'])\n    commit=run(['git','-C',str(repo),'rev-parse','HEAD'])[0]\n    tree=run(['git','-C',str(repo),'rev-parse','HEAD\"'^{tree}'\"'])[0]\n    assert not run(['git','-C',str(repo),'rev-list','--parents','-n','1','HEAD'])[0].split()[1:]\n    committed={x.split('\\\\t',1)[1] for x in run(['git','-C',str(repo),'ls-tree','-r','--name-only','HEAD'])[0].splitlines()}\n    assert committed=={f'atlas-failure-recovery/{p}' for p in expected_paths}\n    run(['git','-C',str(repo),'remote','add','origin',remote])\n    refs,_,_=run(['git','-C',str(repo),'ls-remote','origin','refs/heads/main',artifact_ref])\n    observed=dict(line.split('\\\\t',1)[::-1] for line in refs.splitlines())\n    assert observed.get('refs/heads/main')==source_sha, f'remote main drifted: {observed.get(\\\"refs/heads/main\\\")}'\n    assert artifact_ref not in observed, f'target ref already exists: {observed[artifact_ref]}'\n    run(['git','-C',str(repo),'push','origin',f'HEAD:{artifact_ref}'])\n    # Fresh remote readback into a separate bare repository.\n    bare=td/'readback.git'; run(['git','init','--bare',str(bare)])\n    run(['git','--git-dir',str(bare),'fetch','--depth=1',remote,f'+{artifact_ref}:refs/heads/readback'])\n    read_commit=run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback'])[0]\n    read_tree=run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback\"'^{tree}'\"'])[0]\n    assert read_commit==commit and read_tree==tree\n    remote_paths=run(['git','--git-dir',str(bare),'ls-tree','-r','--name-only','refs/heads/readback'])[0].splitlines()\n    assert set(remote_paths)=={f'atlas-failure-recovery/{p}' for p in expected_paths}\n    def blob(path):\n        return subprocess.run(['git','--git-dir',str(bare),'show',f'refs/heads/readback:{path}'],check=True,stdout=subprocess.PIPE).stdout\n    for rel in sorted(expected_paths):\n        assert blob(f'atlas-failure-recovery/{rel}')==(package/rel).read_bytes(), f'readback mismatch: {rel}'\n    receipt=json.loads(blob('atlas-failure-recovery/recovery-receipt.json'))\n    tri_bytes=blob('atlas-failure-recovery/failure-triage.json')\n    report_bytes=blob('atlas-failure-recovery/capture-report.json')\n    manifest_bytes=blob('atlas-failure-recovery/surface-manifest.json')\n    assert hashlib.sha256(tri_bytes).hexdigest()==receipt['recovered_files'][0]['sha256'] if receipt['recovered_files'][0]['path']=='capture-runner.py' else True\n    assert hashlib.sha256(manifest_bytes).hexdigest()=='30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277'\n    tri=json.loads(tri_bytes); report=json.loads(report_bytes)\n    assert tri['failed_surface_keys']==receipt['failed_surface_keys'] and tri['false_positive_root_route_checks']==receipt['false_positive_root_route_checks'] and tri['query_route_mismatches']==receipt['query_route_mismatches']\n    screenshot_paths=[p for p in remote_paths if p.startswith('atlas-failure-recovery/screenshots/') and p.endswith('.png')]\n    assert len(screenshot_paths)==98\n    failed_keys=set(receipt['failed_surface_keys']); report_rows={r['surface_key']:r for r in report['capture_results']}\n    failed_png_paths=[]\n    for row in report['capture_results']:\n        for vp,rec in row.get('screenshots',{}).items():\n            if rec.get('artifact') and row['surface_key'] in failed_keys:\n                failed_png_paths.append(('atlas-failure-recovery/'+rec['artifact'],rec))\n    for path,rec in failed_png_paths:\n        data=blob(path); assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'; dims=list(struct.unpack('>II',data[16:24])); assert dims==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']\n    success_row=next(r for r in report['capture_results'] if r['status']=='PASSED' and {'desktop','mobile'}<=set(r.get('screenshots',{})) and all(r['screenshots'][v].get('artifact') for v in ('desktop','mobile')))\n    success_paths=[]\n    for vp in ('desktop','mobile'):\n        rec=success_row['screenshots'][vp]; path='atlas-failure-recovery/'+rec['artifact']; data=blob(path)\n        assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and list(struct.unpack('>II',data[16:24]))==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']\n        success_paths.append(path)\n    bundle=blob('atlas-failure-recovery/artifact-bundle.zip'); bundle_sha=hashlib.sha256(bundle).hexdigest()\n    with zipfile.ZipFile(package/'artifact-bundle.zip') as zf:\n        members=set(zf.namelist()); assert members==set(receipt['bundle_member_paths']) and zf.testzip() is None\n    assert hashlib.sha256((package/'artifact-bundle.zip').read_bytes()).hexdigest()==bundle_sha\n    refs_after,_,_=run(['git','ls-remote',remote,'refs/heads/main',artifact_ref])\n    remote_after=dict(line.split('\\\\t',1)[::-1] for line in refs_after.splitlines())\n    assert remote_after.get('refs/heads/main')==source_sha and remote_after.get(artifact_ref)==commit\n    print(json.dumps({'git_artifact_ref':artifact_ref,'git_artifact_commit':commit,'git_artifact_tree':tree,'remote_readback_commit':read_commit,'remote_readback_tree':read_tree,'remote_package_verified':True,'failure_triage_sha256':hashlib.sha256(tri_bytes).hexdigest(),'capture_report_sha256':hashlib.sha256(report_bytes).hexdigest(),'manifest_sha256':hashlib.sha256(manifest_bytes).hexdigest(),'provisional_png_count':len(screenshot_paths),'failed_surface_png_count':len(failed_png_paths),'successful_surface_key':success_row['surface_key'],'successful_desktop_mobile_paths':success_paths,'bundle_sha256':bundle_sha,'bundle_member_count':len(members),'remote_main_sha':remote_after['refs/heads/main']},indent=2))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport hashlib, json, pathlib, shutil, struct, subprocess, tempfile, zipfile\nremote='https://github.com/kimhw8084/homehuddle.git'\nartifact_ref='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'\nsource_sha='46bd155dd55cbd85a29db5722c96d96c4946952b'\npackage=pathlib.Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R7@46bd155dd55cbd85a29db5722c96d96c4946952b/atlas-failure-recovery')\nworkspace=pathlib.Path('/Users/haewonkim/.codex-fabric/worktrees/CF-c0b7d389585073cf73583109')\ndef run(args, cwd=None, check=True):\n    p=subprocess.run(args,cwd=cwd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)\n    if check and p.returncode: raise RuntimeError(f'{args[0]} {args[1:]} failed ({p.returncode}): {p.stderr[-1200:]}')\n    return p.stdout.strip(),p.stderr.strip(),p.returncode\nassert package.is_dir()\nexpected_paths={p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file()}\nwith tempfile.TemporaryDirectory(prefix='hh-atlas-recovery-git-') as td:\n    td=pathlib.Path(td); repo=td/'repo'; repo.mkdir()\n    run(['git','init','-b','main',str(repo)])\n    shutil.copytree(package,repo/'atlas-failure-recovery')\n    name=run(['git','-C',str(workspace),'config','user.name'])[0]; email=run(['git','-C',str(workspace),'config','user.email'])[0]\n    run(['git','-C',str(repo),'config','user.name',name]); run(['git','-C',str(repo),'config','user.email',email])\n    run(['git','-C',str(repo),'add','atlas-failure-recovery'])\n    run(['git','-C',str(repo),'commit','-m','Publish HomeHuddle atlas failure recovery evidence'])\n    commit=run(['git','-C',str(repo),'rev-parse','HEAD'])[0]; tree=run(['git','-C',str(repo),'rev-parse','HEAD\"'^{tree}'\"'])[0]\n    assert len(run(['git','-C',str(repo),'rev-list','--parents','-n','1','HEAD'])[0].split())==1\n    committed=set(run(['git','-C',str(repo),'ls-tree','-r','--name-only','HEAD'])[0].splitlines())\n    assert committed=={f'atlas-failure-recovery/{p}' for p in expected_paths}\n    run(['git','-C',str(repo),'remote','add','origin',remote])\n    refs,_,_=run(['git','-C',str(repo),'ls-remote','origin','refs/heads/main',artifact_ref])\n    observed={ref:sha for sha,ref in (line.split('\\\\t',1) for line in refs.splitlines())}\n    assert observed.get('refs/heads/main')==source_sha, f'remote main drifted: {observed.get(\\\"refs/heads/main\\\")}'\n    assert artifact_ref not in observed, f'target ref already exists: {observed[artifact_ref]}'\n    run(['git','-C',str(repo),'push','origin',f'HEAD:{artifact_ref}'])\n    bare=td/'readback.git'; run(['git','init','--bare',str(bare)])\n    run(['git','--git-dir',str(bare),'fetch','--depth=1',remote,f'+{artifact_ref}:refs/heads/readback'])\n    read_commit=run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback'])[0]\n    read_tree=run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback\"'^{tree}'\"'])[0]\n    assert read_commit==commit and read_tree==tree\n    remote_paths=run(['git','--git-dir',str(bare),'ls-tree','-r','--name-only','refs/heads/readback'])[0].splitlines()\n    assert set(remote_paths)=={f'atlas-failure-recovery/{p}' for p in expected_paths}\n    def blob(path): return subprocess.run(['git','--git-dir',str(bare),'show',f'refs/heads/readback:{path}'],check=True,stdout=subprocess.PIPE).stdout\n    for rel in sorted(expected_paths): assert blob(f'atlas-failure-recovery/{rel}')==(package/rel).read_bytes(), f'readback mismatch: {rel}'\n    receipt=json.loads(blob('atlas-failure-recovery/recovery-receipt.json'))\n    record_hashes={x['path']:x['sha256'] for x in receipt['recovered_files']}\n    tri_bytes=blob('atlas-failure-recovery/failure-triage.json'); report_bytes=blob('atlas-failure-recovery/capture-report.json'); manifest_bytes=blob('atlas-failure-recovery/surface-manifest.json')\n    for rel,data in [('failure-triage.json',tri_bytes),('capture-report.json',report_bytes),('surface-manifest.json',manifest_bytes)]: assert hashlib.sha256(data).hexdigest()==record_hashes[rel]\n    assert hashlib.sha256(manifest_bytes).hexdigest()=='30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277'\n    tri=json.loads(tri_bytes); report=json.loads(report_bytes)\n    assert tri['failed_surface_keys']==receipt['failed_surface_keys'] and tri['false_positive_root_route_checks']==receipt['false_positive_root_route_checks'] and tri['query_route_mismatches']==receipt['query_route_mismatches']\n    screenshot_paths=[p for p in remote_paths if p.startswith('atlas-failure-recovery/screenshots/') and p.endswith('.png')]; assert len(screenshot_paths)==98\n    failed_keys=set(receipt['failed_surface_keys']); failed_png_paths=[]\n    for row in report['capture_results']:\n        for viewport,rec in row.get('screenshots',{}).items():\n            if rec.get('artifact') and row['surface_key'] in failed_keys: failed_png_paths.append(('atlas-failure-recovery/'+rec['artifact'],rec))\n    for path,rec in failed_png_paths:\n        data=blob(path); assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'; assert list(struct.unpack('>II',data[16:24]))==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']\n    success_row=next(r for r in report['capture_results'] if r['status']=='PASSED' and {'desktop','mobile'}<=set(r.get('screenshots',{})) and all(r['screenshots'][v].get('artifact') for v in ('desktop','mobile')))\n    success_paths=[]\n    for vp in ('desktop','mobile'):\n        rec=success_row['screenshots'][vp]; path='atlas-failure-recovery/'+rec['artifact']; data=blob(path)\n        assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and list(struct.unpack('>II',data[16:24]))==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']; success_paths.append(path)\n    bundle=blob('atlas-failure-recovery/artifact-bundle.zip'); bundle_sha=hashlib.sha256(bundle).hexdigest()\n    with zipfile.ZipFile(package/'artifact-bundle.zip') as zf: members=set(zf.namelist()); assert members==set(receipt['bundle_member_paths']) and zf.testzip() is None\n    assert hashlib.sha256((package/'artifact-bundle.zip').read_bytes()).hexdigest()==bundle_sha\n    refs_after,_,_=run(['git','ls-remote',remote,'refs/heads/main',artifact_ref])\n    remote_after={ref:sha for sha,ref in (line.split('\\\\t',1) for line in refs_after.splitlines())}\n    assert remote_after.get('refs/heads/main')==source_sha and remote_after.get(artifact_ref)==commit\n    print(json.dumps({'git_artifact_ref':artifact_ref,'git_artifact_commit':commit,'git_artifact_tree':tree,'remote_readback_commit':read_commit,'remote_readback_tree':read_tree,'remote_package_verified':True,'failure_triage_sha256':hashlib.sha256(tri_bytes).hexdigest(),'capture_report_sha256':hashlib.sha256(report_bytes).hexdigest(),'manifest_sha256':hashlib.sha256(manifest_bytes).hexdigest(),'provisional_png_count':len(screenshot_paths),'failed_surface_png_count':len(failed_png_paths),'successful_surface_key':success_row['surface_key'],'successful_desktop_mobile_paths':success_paths,'bundle_sha256':bundle_sha,'bundle_member_count':len(members),'remote_main_sha':remote_after['refs/heads/main']},indent=2))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python -c 'import json,pathlib; root=pathlib.Path(\\\"/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R7@46bd155dd55cbd85a29db5722c96d96c4946952b/atlas-failure-recovery\\\"); rep=json.loads((root/\\\"capture-report.json\\\").read_text()); tri=json.loads((root/\\\"failure-triage.json\\\").read_text()); fails=set(tri[\\\"failed_surface_keys\\\"]); print(\\\"row statuses\\\",{s:sum(1 for r in rep[\\\"capture_results\\\"] if r[\\\"status\\\"]==s) for s in {r[\\\"status\\\"] for r in rep[\\\"capture_results\\\"]}}); print(\\\"eligible\\\",[(r[\\\"surface_key\\\"],r[\\\"status\\\"],{vp:(x.get(\\\"passed\\\"),x.get(\\\"ready_before\\\",{}).get(\\\"passed\\\"),x.get(\\\"ready_after\\\",{}).get(\\\"passed\\\"),x.get(\\\"artifact\\\")) for vp,x in r.get(\\\"screenshots\\\",{}).items()}) for r in rep[\\\"capture_results\\\"] if r[\\\"surface_key\\\"] not in fails and all(r.get(\\\"screenshots\\\",{}).get(vp,{}).get(\\\"passed\\\") and r.get(\\\"screenshots\\\",{}).get(vp,{}).get(\\\"ready_before\\\",{}).get(\\\"passed\\\") and r.get(\\\"screenshots\\\",{}).get(vp,{}).get(\\\"ready_after\\\",{}).get(\\\"passed\\\") for vp in (\\\"desktop\\\",\\\"mobile\\\"))][:5])' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport hashlib, io, json, pathlib, struct, subprocess, tempfile, zipfile\nremote='https://github.com/kimhw8084/homehuddle.git'; ref='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'\nexpected_commit='b1f3af00863dafaa036c056e60393dc41c54edcc'; source_sha='46bd155dd55cbd85a29db5722c96d96c4946952b'\npackage=pathlib.Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R7@46bd155dd55cbd85a29db5722c96d96c4946952b/atlas-failure-recovery')\ndef run(args):\n    p=subprocess.run(args,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)\n    if p.returncode: raise RuntimeError(f'{args} failed: {p.stderr[-1000:]}')\n    return p.stdout.strip()\nwith tempfile.TemporaryDirectory(prefix='hh-atlas-recovery-readback-') as td:\n    bare=pathlib.Path(td)/'fresh.git'; run(['git','init','--bare',str(bare)])\n    run(['git','--git-dir',str(bare),'fetch','--depth=1',remote,f'+{ref}:refs/heads/readback'])\n    commit=run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback']); tree=run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback\"'^{tree}'\"'])\n    assert commit==expected_commit\n    parent_line=run(['git','--git-dir',str(bare),'rev-list','--parents','-n','1','refs/heads/readback']); assert len(parent_line.split())==1\n    paths=run(['git','--git-dir',str(bare),'ls-tree','-r','--name-only','refs/heads/readback']).splitlines()\n    local={p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file()}\n    assert set(paths)=={f'atlas-failure-recovery/{p}' for p in local}\n    def blob(rel): return subprocess.run(['git','--git-dir',str(bare),'show',f'refs/heads/readback:atlas-failure-recovery/{rel}'],stdout=subprocess.PIPE,check=True).stdout\n    for rel in sorted(local): assert blob(rel)==(package/rel).read_bytes(),f'byte mismatch {rel}'\n    receipt_bytes=blob('recovery-receipt.json'); receipt=json.loads(receipt_bytes)\n    tri_bytes=blob('failure-triage.json'); report_bytes=blob('capture-report.json'); manifest_bytes=blob('surface-manifest.json')\n    hashes={x['path']:x['sha256'] for x in receipt['recovered_files']}\n    assert hashlib.sha256(tri_bytes).hexdigest()==hashes['failure-triage.json']\n    assert hashlib.sha256(report_bytes).hexdigest()==hashes['capture-report.json']\n    manifest_sha=hashlib.sha256(manifest_bytes).hexdigest(); assert manifest_sha=='30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277'==hashes['surface-manifest.json']\n    tri=json.loads(tri_bytes); report=json.loads(report_bytes)\n    assert receipt['recovery_fabric_job']=='CF-c0b7d389585073cf73583109' and receipt['original_fabric_job']=='CF-27a4b3bc5a11ea2651ffb3ff'\n    assert receipt['source_sha']==source_sha and receipt['tree_sha']=='a66760b6df143a87e894d5fe636f152ea73f6bea'\n    assert receipt['recapture_performed'] is False and receipt['product_source_changed'] is False and receipt['safe_sweep_complete'] is True\n    assert receipt['attempted_surface_count']==65 and receipt['provisional_png_count']==98 and receipt['failed_surface_count']==18\n    assert tri['failed_surface_keys']==receipt['failed_surface_keys'] and tri['false_positive_root_route_checks']==receipt['false_positive_root_route_checks'] and tri['query_route_mismatches']==receipt['query_route_mismatches']\n    screenshot_paths=[x for x in paths if x.startswith('atlas-failure-recovery/screenshots/') and x.endswith('.png')]\n    report_pngs={rec['artifact']:(row['surface_key'],vp,rec) for row in report['capture_results'] for vp,rec in row.get('screenshots',{}).items() if rec.get('artifact')}\n    assert len(screenshot_paths)==98 and {x.removeprefix('atlas-failure-recovery/') for x in screenshot_paths}==set(report_pngs)\n    failed_keys=set(receipt['failed_surface_keys']); failed_png_count=0\n    for rel,(key,vp,rec) in report_pngs.items():\n        if key not in failed_keys: continue\n        data=blob(rel); assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and list(struct.unpack('>II',data[16:24]))==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']; failed_png_count+=1\n    success=next(row for row in report['capture_results'] if row['surface_key'] not in failed_keys and all(row.get('screenshots',{}).get(vp,{}).get('passed') and row['screenshots'][vp].get('ready_before',{}).get('passed') and row['screenshots'][vp].get('ready_after',{}).get('passed') for vp in ('desktop','mobile')))\n    success_paths=[]\n    for vp in ('desktop','mobile'):\n        rec=success['screenshots'][vp]; rel=rec['artifact']; data=blob(rel)\n        assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and list(struct.unpack('>II',data[16:24]))==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']; success_paths.append(rel)\n    bundle=blob('artifact-bundle.zip'); bundle_sha=hashlib.sha256(bundle).hexdigest()\n    with zipfile.ZipFile(io.BytesIO(bundle)) as zf:\n        members=set(zf.namelist()); assert members==set(receipt['bundle_member_paths']) and len(members)==receipt['bundle_member_count'] and zf.testzip() is None\n        for rel in members: assert zf.read(rel)==blob(rel)\n    assert hashlib.sha256((package/'artifact-bundle.zip').read_bytes()).hexdigest()==bundle_sha\n    print(json.dumps({'artifact_ref':ref,'commit':commit,'tree':tree,'isolated_parentless_history':True,'receipt_verified':True,'failure_triage_sha256':hashlib.sha256(tri_bytes).hexdigest(),'capture_report_sha256':hashlib.sha256(report_bytes).hexdigest(),'manifest_sha256':manifest_sha,'provisional_png_paths':len(screenshot_paths),'failed_surface_provisional_pngs_verified':failed_png_count,'successful_surface_key':success['surface_key'],'successful_desktop_mobile_verified':success_paths,'bundle_sha256':bundle_sha,'bundle_member_count':len(members),'remote_byte_readback':'all files match local package'},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --quiet'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --cached --quiet'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport hashlib,json,pathlib,struct,subprocess,tempfile\nremote='https://github.com/kimhw8084/homehuddle.git'; ref='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1'; expected='b1f3af00863dafaa036c056e60393dc41c54edcc'\ndef run(a):\n p=subprocess.run(a,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)\n if p.returncode: raise RuntimeError(p.stderr)\n return p.stdout.strip()\nwith tempfile.TemporaryDirectory(prefix='hh-success-png-readback-') as td:\n bare=pathlib.Path(td)/'fresh.git'; run(['git','init','--bare',str(bare)]); run(['git','--git-dir',str(bare),'fetch','--depth=1',remote,f'+{ref}:refs/heads/readback'])\n assert run(['git','--git-dir',str(bare),'rev-parse','refs/heads/readback'])==expected\n def blob(path): return subprocess.run(['git','--git-dir',str(bare),'show',f'refs/heads/readback:atlas-failure-recovery/{path}'],stdout=subprocess.PIPE,check=True).stdout\n report=json.loads(blob('capture-report.json')); tri=json.loads(blob('failure-triage.json')); row=next(x for x in report['capture_results'] if x['surface_key']=='onboarding-welcome')\n assert row['status']=='CAPTURED' and row['surface_key'] not in tri['failed_surface_keys']\n checks=[]\n for vp in ('desktop','mobile'):\n  rec=row['screenshots'][vp]; data=blob(rec['artifact']); dims=list(struct.unpack('>II',data[16:24]))\n  assert rec['passed'] and rec['ready_before']['passed'] and rec['ready_after']['passed'] and data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and dims==rec['dimensions'] and hashlib.sha256(data).hexdigest()==rec['sha256']\n  checks.append({'viewport':vp,'path':rec['artifact'],'dimensions':dims,'sha256':rec['sha256']})\n print(json.dumps({'readback_commit':expected,'successful_surface_key':'onboarding-welcome','screenshots':checks},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 81,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 93.57,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 1559040,
+      "fresh_input_tokens": 107158,
+      "input_tokens": 1666198,
+      "non_reasoning_output_tokens": 16223,
+      "output_tokens": 36775,
+      "reasoning_output_tokens": 20552,
+      "total_processed_tokens": 1702973
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-26T20:02:03Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "branch": "codex/homehuddle-ui0-atlas-failure-recovery-v1",
+    "detached_verify": false,
+    "head_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "remote_exact_head": true,
+    "remote_head_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "work_branch": "codex/homehuddle-ui0-atlas-failure-recovery-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-c0b7d389585073cf73583109",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-atlas-failure-recovery-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-26T19:50:01Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 722,
+    "queue_seconds": 1,
+    "total_seconds": 723
+  },
+  "transport": {
+    "bytes": 7288,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 6949,
+    "prompt_sha256": "366db5504098bc7524dfa36c0df5595ac5ecfc6b021472b03421fede82973092",
+    "sha256": "c0b7d389585073cf73583109a6f52f1b22619751120182b8ebf1f6f3860aaf91"
+  }
+}
