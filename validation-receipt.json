@@ -1,0 +1,41 @@
+{
+  "project_os_manifest_validation": 1,
+  "ok": true,
+  "status": "GIT_PUBLISHED_AWAITING_AUDIT",
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "request": "homehuddle-ui0-manifest-validate-v1",
+  "operation": "VERIFY",
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "source_tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "source_changed": false,
+  "input_surface_count": 69,
+  "canonical_surface_count": 65,
+  "classification_counts": {
+    "A": 57,
+    "B": 8,
+    "C": 0,
+    "D": 3,
+    "E": 1,
+    "F": 0,
+    "G": 0
+  },
+  "supplemental_obligation_counts": {
+    "A": 0,
+    "B": 0,
+    "C": 1,
+    "D": 4,
+    "E": 3,
+    "F": 1,
+    "G": 0
+  },
+  "git_artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1",
+  "git_artifact_commit": "0ef561e869f4bc53a2c473691bd3bd84b599f9a8",
+  "artifact_tree": "fec6217a46defc2a7301a809b007801f5c5235d8",
+  "git_evidence_ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-manifest-validate-v1",
+  "verified_package": "manifest-validation/",
+  "manifest_sha256": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277",
+  "bundle_sha256": "6a606bc1d9618c006c896203e2013dda54233f2b3dbf49ed712086bec4f5a2ee",
+  "error_code": null
+}
