@@ -1,0 +1,59 @@
+{
+  "schema": "homehuddle-ui0-remote-readback-v1",
+  "verified_at_utc": "2026-09-25",
+  "artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-perfect-baseline-v2-resume2",
+  "artifact_commit": "26901a8d6d9507da872402e5b6099f7978f8d7d6",
+  "fresh_remote_ref_match": true,
+  "main_ref": "refs/heads/main",
+  "main_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "main_unchanged": true,
+  "preserved_refs": {
+    "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2": "7855864d8285f58696aad8e661d54344295a582f",
+    "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2-resume1": "032bccb5b29729d8bad6481117ce14ac48da83b6"
+  },
+  "source_tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "hashes": {
+    "manifest": "8a4bbf45f0185b7cceaf1a260d1d7403b4107539badf96469cdf7b57fd990fcd",
+    "capture_report": "16b5697467c279c60db91b5ffced7c99e81f4da9b2a1ec82f3c27e6650037d6b",
+    "reader_index": "c8ec83aab491c215319411eeb7cb1d0442ae24f2e6c29cc93167fc392491fa51",
+    "desktop_pdf": "7a793fa236f63a79f88f032106f81eed67bdef641fc234da5ffa243783baad9b",
+    "mobile_pdf": "d2ff89f2fca435d06a99b64ccefb764c7382d5a3cc3c612c93eb2a05d7d73f5a",
+    "bundle": "705e964fbeb7c8804f4106eda75369723245c84368f31fd3d403bd97ac259d20"
+  },
+  "bundle_crc_ok": true,
+  "canonical_png_entries": 138,
+  "sampled_canonical_pngs": {
+    "auth-entry--desktop-1440x900.png": {
+      "sha256": "4b25bd3eceeb09b48ce9301180265e339203ce13f88cc518a86351f10f21f98a",
+      "signature": "89504e470d0a1a0a",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    "auth-entry--mobile-390x844.png": {
+      "sha256": "ed233964be3a625fbd969cc832e355c60739a2f2828be4241d084be4170a36f2",
+      "signature": "89504e470d0a1a0a",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    "chores-reschedule--desktop-1440x900.png": {
+      "sha256": "0a153f35ee60dc2207df1fa7362a8b873595ee14cea066ecc74c62da15947af2",
+      "signature": "89504e470d0a1a0a",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    "chores-reschedule--mobile-390x844.png": {
+      "sha256": "39a967dca91cc229f4eb502b474109c429eb6b8e714e36399c64878dc05a4945",
+      "signature": "89504e470d0a1a0a",
+      "dimensions": [
+        390,
+        844
+      ]
+    }
+  }
+}

@@ -1,0 +1,902 @@
+{
+  "schema": "homehuddle-ui0-stress-holdout-report-v1",
+  "fix_order_frozen_before_holdouts": true,
+  "fix_order_sha256": "6cd2bc0c40f3235d3ac00102af99e6b069599288c9c00c82d026082af9536434",
+  "profile_counts": {
+    "holdout-1366x768": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-1920x1080": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-360x800": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-landscape-844x390": {
+      "available": 6,
+      "expected": 6
+    },
+    "holdout-1536x864": {
+      "available": 6,
+      "expected": 6
+    },
+    "holdout-414x896": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-reduced-motion-390x844": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-dark-system-390x844": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-dark-390x844": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-dark-overlays": {
+      "available": 6,
+      "expected": 6
+    },
+    "stress-long-text-390x844": {
+      "available": 1,
+      "expected": 1
+    },
+    "stress-long-text-expanded-390x844": {
+      "available": 1,
+      "expected": 1
+    }
+  },
+  "metric_rows": [
+    {
+      "profile": "holdout-1536x864",
+      "surface": "home",
+      "filename": "holdout-1536x864--home.png",
+      "width": 1536,
+      "height": 864,
+      "bytes": 152917,
+      "sha256": "aabd1506ce04d1755694c27fbc73c6d4d0175cd0fe0b23c378263a8ce6d01fed",
+      "horizontalOverflow": false,
+      "innerWidth": 1536,
+      "innerHeight": 864,
+      "dpr": 1,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-1536x864",
+      "surface": "chores",
+      "filename": "holdout-1536x864--chores.png",
+      "width": 1536,
+      "height": 864,
+      "bytes": 95598,
+      "sha256": "834014a4a3a6678e11be2445087f1fcb7574b0f5498e1c0f5690e3af2831d323",
+      "horizontalOverflow": false,
+      "innerWidth": 1536,
+      "innerHeight": 864,
+      "dpr": 1,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-1536x864",
+      "surface": "family",
+      "filename": "holdout-1536x864--family.png",
+      "width": 1536,
+      "height": 864,
+      "bytes": 109910,
+      "sha256": "c369acc0e6a0039efcc0ec63fa7155bdbe71609f4b6aadca52ca485f6f1416bc",
+      "horizontalOverflow": false,
+      "innerWidth": 1536,
+      "innerHeight": 864,
+      "dpr": 1,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-1536x864",
+      "surface": "wallet",
+      "filename": "holdout-1536x864--wallet.png",
+      "width": 1536,
+      "height": 864,
+      "bytes": 63600,
+      "sha256": "ebe46478e935869cbb0594f6b656ea8fff49edd51ce81136cda9cc425b78266a",
+      "horizontalOverflow": false,
+      "innerWidth": 1536,
+      "innerHeight": 864,
+      "dpr": 1,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-1536x864",
+      "surface": "market",
+      "filename": "holdout-1536x864--market.png",
+      "width": 1536,
+      "height": 864,
+      "bytes": 96438,
+      "sha256": "8a3b84cfcb0c6a78b6d5c8f9455aefeb20fcc2ee657d39ab0dcf856ac3567ba1",
+      "horizontalOverflow": false,
+      "innerWidth": 1536,
+      "innerHeight": 864,
+      "dpr": 1,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-1536x864",
+      "surface": "restock",
+      "filename": "holdout-1536x864--restock.png",
+      "width": 1536,
+      "height": 864,
+      "bytes": 52094,
+      "sha256": "139fff195304f3458b0624ae24f4c78337703c02e762499c0f489985fff70c5d",
+      "horizontalOverflow": false,
+      "innerWidth": 1536,
+      "innerHeight": 864,
+      "dpr": 1,
+      "scrollWidth": 1536,
+      "scrollHeight": 864,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-414x896",
+      "surface": "home",
+      "filename": "holdout-414x896--home.png",
+      "width": 414,
+      "height": 896,
+      "bytes": 102189,
+      "sha256": "fba19d52b6ecd3be19bd3819a7f82ed601f46b80bcf7557f38ec298c034740d4",
+      "horizontalOverflow": false,
+      "innerWidth": 414,
+      "innerHeight": 896,
+      "dpr": 1,
+      "scrollWidth": 414,
+      "scrollHeight": 896,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-414x896",
+      "surface": "chores",
+      "filename": "holdout-414x896--chores.png",
+      "width": 414,
+      "height": 896,
+      "bytes": 82908,
+      "sha256": "46b9de90a05bb4bc1dd2fc2a3ca92b3a7cd136808249b8a84edbd64966bbfdce",
+      "horizontalOverflow": false,
+      "innerWidth": 414,
+      "innerHeight": 896,
+      "dpr": 1,
+      "scrollWidth": 414,
+      "scrollHeight": 896,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-414x896",
+      "surface": "family",
+      "filename": "holdout-414x896--family.png",
+      "width": 414,
+      "height": 896,
+      "bytes": 82616,
+      "sha256": "176ef9924958989aaf4b7de9e9ca7fc18e1e59b5da5aaee4e1a617afdfbcf0b5",
+      "horizontalOverflow": false,
+      "innerWidth": 414,
+      "innerHeight": 896,
+      "dpr": 1,
+      "scrollWidth": 414,
+      "scrollHeight": 896,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-414x896",
+      "surface": "wallet",
+      "filename": "holdout-414x896--wallet.png",
+      "width": 414,
+      "height": 896,
+      "bytes": 57292,
+      "sha256": "580701a9fbc691e1d4cfdde649d49b94977a37e7ce8dd407cb195d101c5fb76c",
+      "horizontalOverflow": false,
+      "innerWidth": 414,
+      "innerHeight": 896,
+      "dpr": 1,
+      "scrollWidth": 414,
+      "scrollHeight": 896,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-414x896",
+      "surface": "market",
+      "filename": "holdout-414x896--market.png",
+      "width": 414,
+      "height": 896,
+      "bytes": 88808,
+      "sha256": "8e334e19f4bfc8a7fdaa7450029f79d6f8dfaa6c16172e641e8af496f01a3c85",
+      "horizontalOverflow": false,
+      "innerWidth": 414,
+      "innerHeight": 896,
+      "dpr": 1,
+      "scrollWidth": 414,
+      "scrollHeight": 896,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "holdout-414x896",
+      "surface": "restock",
+      "filename": "holdout-414x896--restock.png",
+      "width": 414,
+      "height": 896,
+      "bytes": 45900,
+      "sha256": "6bc0bdbc3ee42fb6c710585e7af87fdcde2906bec981226040b64f0a0dabb2d2",
+      "horizontalOverflow": false,
+      "innerWidth": 414,
+      "innerHeight": 896,
+      "dpr": 1,
+      "scrollWidth": 414,
+      "scrollHeight": 896,
+      "colorScheme": "light",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-reduced-motion-390x844",
+      "surface": "home",
+      "filename": "stress-reduced-motion-390x844--home.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 92802,
+      "sha256": "659f761bdc4f744ed4d05ec2d2c6675807cf14bad6ad99a32f7a982ae23ffb9f",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "light",
+      "reducedMotion": true,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-reduced-motion-390x844",
+      "surface": "chores",
+      "filename": "stress-reduced-motion-390x844--chores.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 76294,
+      "sha256": "3996af7303064f31450e290469da3c1dfbe73853d27c2e289e6227946231ba40",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "light",
+      "reducedMotion": true,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-reduced-motion-390x844",
+      "surface": "family",
+      "filename": "stress-reduced-motion-390x844--family.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 69956,
+      "sha256": "b81ca9bf3bec7d3e80ef37ce97f3f73975f0af131cf28de0cae81aa93672514c",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "light",
+      "reducedMotion": true,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-reduced-motion-390x844",
+      "surface": "wallet",
+      "filename": "stress-reduced-motion-390x844--wallet.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 51080,
+      "sha256": "0c67ff3a13fe65d47b57c7c027af91e3c8c54f5940adb1528f07fc59fb4178ca",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "light",
+      "reducedMotion": true,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-reduced-motion-390x844",
+      "surface": "market",
+      "filename": "stress-reduced-motion-390x844--market.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 82920,
+      "sha256": "6eed6c73b469605e52cf0ae6886f95c46130b39acf419a59c4edd565410b860f",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "light",
+      "reducedMotion": true,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-reduced-motion-390x844",
+      "surface": "restock",
+      "filename": "stress-reduced-motion-390x844--restock.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 45446,
+      "sha256": "ca17cc51a0abb11cacb3bcb6a6df03421ac781e977bf71ea7b0f99c9f60fa467",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "light",
+      "reducedMotion": true,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-dark-system-390x844",
+      "surface": "home",
+      "filename": "stress-dark-system-390x844--home.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 92799,
+      "sha256": "fe8d85db515eae92b2324dd73d9a3aedc9c0fe21c00fa5db33100aa2082a4b6b",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "dark",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-dark-system-390x844",
+      "surface": "chores",
+      "filename": "stress-dark-system-390x844--chores.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 76294,
+      "sha256": "3996af7303064f31450e290469da3c1dfbe73853d27c2e289e6227946231ba40",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "dark",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-dark-system-390x844",
+      "surface": "family",
+      "filename": "stress-dark-system-390x844--family.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 76626,
+      "sha256": "40e0a0af7555108f99075d0346a60be42a3b55daab34e8f373e862e28caebd28",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "dark",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-dark-system-390x844",
+      "surface": "wallet",
+      "filename": "stress-dark-system-390x844--wallet.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 51053,
+      "sha256": "e2332f403f444ccfaf6898cc27f7333ac627b6b4dd8ba8247c9470bf71583def",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "dark",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-dark-system-390x844",
+      "surface": "market",
+      "filename": "stress-dark-system-390x844--market.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 82920,
+      "sha256": "6eed6c73b469605e52cf0ae6886f95c46130b39acf419a59c4edd565410b860f",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "dark",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-dark-system-390x844",
+      "surface": "restock",
+      "filename": "stress-dark-system-390x844--restock.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 45446,
+      "sha256": "ca17cc51a0abb11cacb3bcb6a6df03421ac781e977bf71ea7b0f99c9f60fa467",
+      "horizontalOverflow": false,
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "colorScheme": "dark",
+      "reducedMotion": false,
+      "tabCount": 6
+    },
+    {
+      "profile": "stress-200pct-zoom",
+      "surface": "Home browser zoom probe",
+      "before": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1,
+        "visualWidth": 1440
+      },
+      "after": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1,
+        "visualWidth": 1440
+      },
+      "attempts": [
+        {
+          "key": "Control+Plus",
+          "ok": false,
+          "error": "Error: keyboard.press: Unknown key: \"Plus\""
+        },
+        {
+          "key": "Control+Plus",
+          "ok": false,
+          "error": "Error: keyboard.press: Unknown key: \"Plus\""
+        },
+        {
+          "key": "Control+Plus",
+          "ok": false,
+          "error": "Error: keyboard.press: Unknown key: \"Plus\""
+        },
+        {
+          "key": "Control+Plus",
+          "ok": false,
+          "error": "Error: keyboard.press: Unknown key: \"Plus\""
+        }
+      ],
+      "verified200pct": false
+    }
+  ],
+  "event_summary": {
+    "console": 216,
+    "requestfailed": 12
+  },
+  "event_count": 228,
+  "evidence_files": [
+    {
+      "path": "stress-evidence/holdout-1366x768--chores.png",
+      "sha256": "131e6dec16986801ea59a8cc9b0e06d801dfea09f6b0bc492a67c74e341236b5",
+      "bytes": 86378
+    },
+    {
+      "path": "stress-evidence/holdout-1366x768--family.png",
+      "sha256": "ff61a7c1457a5cab2301cd97a5081a0e456af36862eb5c283773e02eecd862ba",
+      "bytes": 100488
+    },
+    {
+      "path": "stress-evidence/holdout-1366x768--home.png",
+      "sha256": "7bcf57c2b3596cf3c89161dd1684158a63ed907e73b90a0e45d54899af55f53f",
+      "bytes": 140856
+    },
+    {
+      "path": "stress-evidence/holdout-1366x768--market.png",
+      "sha256": "f7caa8d56c30751a8954be7f66bb83eebe026e7e8fde250aac134872abeabbc1",
+      "bytes": 86445
+    },
+    {
+      "path": "stress-evidence/holdout-1366x768--restock.png",
+      "sha256": "162da2cb08d5f08c6e6b2ffc79eb3575dc86bd588d374730339bdb3f03f99d7f",
+      "bytes": 50964
+    },
+    {
+      "path": "stress-evidence/holdout-1366x768--wallet.png",
+      "sha256": "e3f162fa0c4f9137fa345f3695158bf7edf90765edf320546347f1399be60bd3",
+      "bytes": 53979
+    },
+    {
+      "path": "stress-evidence/holdout-1536x864--chores.png",
+      "sha256": "834014a4a3a6678e11be2445087f1fcb7574b0f5498e1c0f5690e3af2831d323",
+      "bytes": 95598
+    },
+    {
+      "path": "stress-evidence/holdout-1536x864--family.png",
+      "sha256": "c369acc0e6a0039efcc0ec63fa7155bdbe71609f4b6aadca52ca485f6f1416bc",
+      "bytes": 109910
+    },
+    {
+      "path": "stress-evidence/holdout-1536x864--home.png",
+      "sha256": "aabd1506ce04d1755694c27fbc73c6d4d0175cd0fe0b23c378263a8ce6d01fed",
+      "bytes": 152917
+    },
+    {
+      "path": "stress-evidence/holdout-1536x864--market.png",
+      "sha256": "8a3b84cfcb0c6a78b6d5c8f9455aefeb20fcc2ee657d39ab0dcf856ac3567ba1",
+      "bytes": 96438
+    },
+    {
+      "path": "stress-evidence/holdout-1536x864--restock.png",
+      "sha256": "139fff195304f3458b0624ae24f4c78337703c02e762499c0f489985fff70c5d",
+      "bytes": 52094
+    },
+    {
+      "path": "stress-evidence/holdout-1536x864--wallet.png",
+      "sha256": "ebe46478e935869cbb0594f6b656ea8fff49edd51ce81136cda9cc425b78266a",
+      "bytes": 63600
+    },
+    {
+      "path": "stress-evidence/holdout-414x896--chores.png",
+      "sha256": "46b9de90a05bb4bc1dd2fc2a3ca92b3a7cd136808249b8a84edbd64966bbfdce",
+      "bytes": 82908
+    },
+    {
+      "path": "stress-evidence/holdout-414x896--family.png",
+      "sha256": "176ef9924958989aaf4b7de9e9ca7fc18e1e59b5da5aaee4e1a617afdfbcf0b5",
+      "bytes": 82616
+    },
+    {
+      "path": "stress-evidence/holdout-414x896--home.png",
+      "sha256": "fba19d52b6ecd3be19bd3819a7f82ed601f46b80bcf7557f38ec298c034740d4",
+      "bytes": 102189
+    },
+    {
+      "path": "stress-evidence/holdout-414x896--market.png",
+      "sha256": "8e334e19f4bfc8a7fdaa7450029f79d6f8dfaa6c16172e641e8af496f01a3c85",
+      "bytes": 88808
+    },
+    {
+      "path": "stress-evidence/holdout-414x896--restock.png",
+      "sha256": "6bc0bdbc3ee42fb6c710585e7af87fdcde2906bec981226040b64f0a0dabb2d2",
+      "bytes": 45900
+    },
+    {
+      "path": "stress-evidence/holdout-414x896--wallet.png",
+      "sha256": "580701a9fbc691e1d4cfdde649d49b94977a37e7ce8dd407cb195d101c5fb76c",
+      "bytes": 57292
+    },
+    {
+      "path": "stress-evidence/stress-1920x1080--chores.png",
+      "sha256": "054889ae951714eb2e21cde6ecda734413801d5c47340608b8740d577f40debd",
+      "bytes": 119798
+    },
+    {
+      "path": "stress-evidence/stress-1920x1080--family.png",
+      "sha256": "bbb4ac41a92b49fcbc5911103f54e16d88cad02eb0a8204c7a9a6494d79dd047",
+      "bytes": 129778
+    },
+    {
+      "path": "stress-evidence/stress-1920x1080--home.png",
+      "sha256": "913d3d39750e6506b0183dd9a8ee430a0bcfe46e745f31b1a4e2509e5de31018",
+      "bytes": 182597
+    },
+    {
+      "path": "stress-evidence/stress-1920x1080--market.png",
+      "sha256": "10d59336bd337b9cbe10dcbfad815c273b3481d7b37b425654f40d56a6f21a91",
+      "bytes": 120410
+    },
+    {
+      "path": "stress-evidence/stress-1920x1080--restock.png",
+      "sha256": "bceee74dce56ae43fb3e4369f442162c5ea593953c3db02ddec80d4046d93649",
+      "bytes": 55030
+    },
+    {
+      "path": "stress-evidence/stress-1920x1080--wallet.png",
+      "sha256": "259403e48171e49833379a8af9c11524973bfcc69f05edebdcfe496fbe29eb56",
+      "bytes": 81214
+    },
+    {
+      "path": "stress-evidence/stress-360x800--chores.png",
+      "sha256": "9f5ee97681ce982b595a3cbd13669df5eaddbb1c150ada570d7ecd764d6ed947",
+      "bytes": 72053
+    },
+    {
+      "path": "stress-evidence/stress-360x800--family.png",
+      "sha256": "bb335b7cd9b8ac02c747a49a1549a0dc821b36a69b909eb8ff7cd3d8a792f23d",
+      "bytes": 61096
+    },
+    {
+      "path": "stress-evidence/stress-360x800--home.png",
+      "sha256": "2fd32ada614f4fba926428027bf8e0586ad7e7a0a408b4a109e550badfe807f3",
+      "bytes": 87259
+    },
+    {
+      "path": "stress-evidence/stress-360x800--market.png",
+      "sha256": "4aebbb522837c0de57a7bd6c51e7d475639483364295cbf74a913804536dfd13",
+      "bytes": 78656
+    },
+    {
+      "path": "stress-evidence/stress-360x800--restock.png",
+      "sha256": "3e4c841c7d2355df6859d1327c9e3aaa921cbda43ff9190fcc9da9fac15266a6",
+      "bytes": 44976
+    },
+    {
+      "path": "stress-evidence/stress-360x800--wallet.png",
+      "sha256": "e71e2cf7839d0e85a67ded37a55c37d80d0e042921f6b079d77739b90c5dca00",
+      "bytes": 47606
+    },
+    {
+      "path": "stress-evidence/stress-dark-390x844--chores.png",
+      "sha256": "40c9853c713b1ab0ed3fdb5ee66269483b57972e62fdd111101d09f2fb03ec52",
+      "bytes": 76839
+    },
+    {
+      "path": "stress-evidence/stress-dark-390x844--family.png",
+      "sha256": "40e0a0af7555108f99075d0346a60be42a3b55daab34e8f373e862e28caebd28",
+      "bytes": 76626
+    },
+    {
+      "path": "stress-evidence/stress-dark-390x844--home.png",
+      "sha256": "7f99a4d83e80de87d1a149a630f43daabad2cb92bca00668fbc7c5b1b811dbcd",
+      "bytes": 92606
+    },
+    {
+      "path": "stress-evidence/stress-dark-390x844--market.png",
+      "sha256": "6eed6c73b469605e52cf0ae6886f95c46130b39acf419a59c4edd565410b860f",
+      "bytes": 82920
+    },
+    {
+      "path": "stress-evidence/stress-dark-390x844--restock.png",
+      "sha256": "ca17cc51a0abb11cacb3bcb6a6df03421ac781e977bf71ea7b0f99c9f60fa467",
+      "bytes": 45446
+    },
+    {
+      "path": "stress-evidence/stress-dark-390x844--wallet.png",
+      "sha256": "e2332f403f444ccfaf6898cc27f7333ac627b6b4dd8ba8247c9470bf71583def",
+      "bytes": 51053
+    },
+    {
+      "path": "stress-evidence/stress-dark-overlays--chores-filter.png",
+      "sha256": "1a0866b81c7d0d9cdb617c5357d6a7a007403db7a242246eb47f0746c1654b96",
+      "bytes": 42922
+    },
+    {
+      "path": "stress-evidence/stress-dark-overlays--family-bulletin.png",
+      "sha256": "f07a869552786f3beb42ae1c7c00537d194d7f95f219cf3523f620d41886afb7",
+      "bytes": 44676
+    },
+    {
+      "path": "stress-evidence/stress-dark-overlays--home-dinner.png",
+      "sha256": "c8af34ef7efb1d67ca513a2d624b53040c0b9be4bf4a8d70d4f37e1c5cefb6cd",
+      "bytes": 63191
+    },
+    {
+      "path": "stress-evidence/stress-dark-overlays--market-flash-sale.png",
+      "sha256": "ae2f17b8447a3249cc0bf83a380d402eed5fc6f2a80aa11c2372358c1c7f1492",
+      "bytes": 56379
+    },
+    {
+      "path": "stress-evidence/stress-dark-overlays--restock-quick-add.png",
+      "sha256": "8533cc57003be8e985bd08c84843f7d7ac9e597d52689b70f1be44f322fa12f1",
+      "bytes": 53616
+    },
+    {
+      "path": "stress-evidence/stress-dark-overlays--wallet-use.png",
+      "sha256": "3a7d454358f07217cbc661d794bc812e1072ef54ad1a71c5bd5122ee8b4d22a2",
+      "bytes": 58894
+    },
+    {
+      "path": "stress-evidence/stress-dark-system-390x844--chores.png",
+      "sha256": "3996af7303064f31450e290469da3c1dfbe73853d27c2e289e6227946231ba40",
+      "bytes": 76294
+    },
+    {
+      "path": "stress-evidence/stress-dark-system-390x844--family.png",
+      "sha256": "40e0a0af7555108f99075d0346a60be42a3b55daab34e8f373e862e28caebd28",
+      "bytes": 76626
+    },
+    {
+      "path": "stress-evidence/stress-dark-system-390x844--home.png",
+      "sha256": "fe8d85db515eae92b2324dd73d9a3aedc9c0fe21c00fa5db33100aa2082a4b6b",
+      "bytes": 92799
+    },
+    {
+      "path": "stress-evidence/stress-dark-system-390x844--market.png",
+      "sha256": "6eed6c73b469605e52cf0ae6886f95c46130b39acf419a59c4edd565410b860f",
+      "bytes": 82920
+    },
+    {
+      "path": "stress-evidence/stress-dark-system-390x844--restock.png",
+      "sha256": "ca17cc51a0abb11cacb3bcb6a6df03421ac781e977bf71ea7b0f99c9f60fa467",
+      "bytes": 45446
+    },
+    {
+      "path": "stress-evidence/stress-dark-system-390x844--wallet.png",
+      "sha256": "e2332f403f444ccfaf6898cc27f7333ac627b6b4dd8ba8247c9470bf71583def",
+      "bytes": 51053
+    },
+    {
+      "path": "stress-evidence/stress-landscape-844x390--chores.png",
+      "sha256": "c607ba82dfbdbe214e1616734528f38261d9f9d59bf845937209ab84ae1f05ba",
+      "bytes": 47452
+    },
+    {
+      "path": "stress-evidence/stress-landscape-844x390--family.png",
+      "sha256": "fa58b7f19bbdf4ad9ecd5bc3881c1dba336e9a4dad7ed852cdc8e746096c1284",
+      "bytes": 43504
+    },
+    {
+      "path": "stress-evidence/stress-landscape-844x390--home.png",
+      "sha256": "939aebf5a520bca53df96524299239455bcca4345cbf000414dfc50615acac1c",
+      "bytes": 44550
+    },
+    {
+      "path": "stress-evidence/stress-landscape-844x390--market.png",
+      "sha256": "8b9890260b3bfb4fa356bb0146b473154927f42ea3bfed4a7589cb01634928ad",
+      "bytes": 49293
+    },
+    {
+      "path": "stress-evidence/stress-landscape-844x390--restock.png",
+      "sha256": "4a1ea58194df12e62998baa7bcbb3587af8c9ea61f61dde501abe675bd460b97",
+      "bytes": 36003
+    },
+    {
+      "path": "stress-evidence/stress-landscape-844x390--wallet.png",
+      "sha256": "2c1523eb226728e9591a742310113ea39d5a37d2fa35ed58f1870591ab04bf99",
+      "bytes": 32209
+    },
+    {
+      "path": "stress-evidence/stress-long-text-390x844--chores.png",
+      "sha256": "47de5292eb4c89fd2bc516001d9648c886609d4d7bfef5a4824a73bbd29156ba",
+      "bytes": 77697
+    },
+    {
+      "path": "stress-evidence/stress-long-text-expanded-390x844--chores.png",
+      "sha256": "86f5e81a2ad2b0a070546e85ecd7056ed7256249ea7fe897a7b3e24d55c1db5e",
+      "bytes": 74539
+    },
+    {
+      "path": "stress-evidence/stress-reduced-motion-390x844--chores.png",
+      "sha256": "3996af7303064f31450e290469da3c1dfbe73853d27c2e289e6227946231ba40",
+      "bytes": 76294
+    },
+    {
+      "path": "stress-evidence/stress-reduced-motion-390x844--family.png",
+      "sha256": "b81ca9bf3bec7d3e80ef37ce97f3f73975f0af131cf28de0cae81aa93672514c",
+      "bytes": 69956
+    },
+    {
+      "path": "stress-evidence/stress-reduced-motion-390x844--home.png",
+      "sha256": "659f761bdc4f744ed4d05ec2d2c6675807cf14bad6ad99a32f7a982ae23ffb9f",
+      "bytes": 92802
+    },
+    {
+      "path": "stress-evidence/stress-reduced-motion-390x844--market.png",
+      "sha256": "6eed6c73b469605e52cf0ae6886f95c46130b39acf419a59c4edd565410b860f",
+      "bytes": 82920
+    },
+    {
+      "path": "stress-evidence/stress-reduced-motion-390x844--restock.png",
+      "sha256": "ca17cc51a0abb11cacb3bcb6a6df03421ac781e977bf71ea7b0f99c9f60fa467",
+      "bytes": 45446
+    },
+    {
+      "path": "stress-evidence/stress-reduced-motion-390x844--wallet.png",
+      "sha256": "0c67ff3a13fe65d47b57c7c027af91e3c8c54f5940adb1528f07fc59fb4178ca",
+      "bytes": 51080
+    },
+    {
+      "path": "stress-landscape-scroll-probe.json",
+      "sha256": "c2768816588d7e679f02ded72db377b86bc5f0ddbd37f1d86c9e1c0d31c2cc21",
+      "bytes": 1590
+    }
+  ],
+  "findings": [
+    "No horizontal document overflow was measured in the newly run holdout/reduced-motion/system-dark metrics. Pixel review is not exhaustive.",
+    "Dark system preference was active across six tabs, but product rendered light.",
+    "The first override harness left an overlay intercepting navigation; rerun contexts isolated per profile.",
+    "200 percent browser zoom remained unverified: Playwright key probes did not change CSS viewport width/DPR.",
+    "Long chore-name probe failed before form input opened; no long-text claim.",
+    "Short-height open-keyboard and dark shared-overlay families remain unproven.",
+    "A first long-text attempt used the wrong placeholder; the corrected ordinary Add Chore flow created a long QA task in a disposable context. The list ellipsizes it; the full string remains in the DOM and the row expands.",
+    "All six shared overlay families were captured with dark system preference active; every screenshot retained light palette colors.",
+    "200 percent browser zoom remains unverified; page width and DPR did not change under supported Playwright keyboard input.",
+    "Short-height open-keyboard/IME behavior remains unproven.",
+    "At 844x390 landscape the first Chores task row is below/behind persistent tab navigation; hit testing reaches tab layer and ordinary wheel/drag did not scroll the list. This is grouped into HH-UI0-001."
+  ],
+  "failures": [
+    {
+      "profile": "stress-200pct-zoom",
+      "status": "unresolved_unverified",
+      "attempts": [
+        "Control+Plus rejected by Playwright key parser",
+        "Control+Shift+Equal accepted but did not alter innerWidth, visualViewport or DPR"
+      ],
+      "result": "No 200 percent browser zoom/reflow assertion claimed."
+    },
+    {
+      "profile": "stress-long-text-first-attempt",
+      "status": "harness selector corrected",
+      "attempts": [
+        "Initial probe used stale placeholder e.g. Empty Dishwasher and failed to locate the actual e.g. Clean the kitchen counter field.",
+        "Corrected ordinary New Chore path created a 78-character QA title in disposable context; both collapsed and expanded list states captured."
+      ],
+      "result": "Not a product blocker; title ellipsis noted as follow-up hypothesis."
+    }
+  ],
+  "additional_event_summaries": {
+    "dark_overlay": {
+      "console": 98,
+      "requestfailed": 12
+    },
+    "long_text": {
+      "console": 28,
+      "requestfailed": 2
+    },
+    "long_text_expanded": "No instrumentation attached; interaction was pointer-only."
+  },
+  "coverage_limits": [
+    "No short-height open-keyboard/IME run.",
+    "Long household/member names were not exercised; long QA Chore title was.",
+    "Long item/reward names not committed or rendered in list; create forms remain available but those stress states are unproven.",
+    "All dark primary tabs and six major shared overlay families exercised; all rendered light palette.",
+    "Dark themed product surfaces were not distinct; no extra canonical keys added.",
+    "The 844x390 landscape Chores task remains inaccessible at the tested scroll position; this is a confirmed failure, not an unverified pass."
+  ]
+}

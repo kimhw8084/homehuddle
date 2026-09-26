@@ -1,0 +1,174 @@
+{
+  "schema": "homehuddle-ui0-source-runtime-inventory-v1",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-perfect-baseline-v2-resume2",
+  "operation": "VERIFY",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "source_changed": false,
+  "worktree": {
+    "path": "/Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb",
+    "branch": "codex/homehuddle-ui0-perfect-baseline-v2",
+    "head": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "status": "clean at last check"
+  },
+  "remote_main": {
+    "ref": "refs/heads/main",
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "verified_before_capture": true
+  },
+  "runtime": {
+    "os": "macOS Darwin 25.6.0 arm64",
+    "node": "v20.19.4",
+    "npm": "10.8.2",
+    "expo_cli": "54.0.23",
+    "jest": "29.7.0",
+    "eslint": "9.39.3",
+    "typescript": "5.9.3",
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12",
+    "browser": "Playwright-managed Chromium",
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "DPR": 1,
+    "canonical_viewports_css_px": [
+      [
+        1440,
+        900
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "fullPage": false
+  },
+  "install": {
+    "command": "npm ci",
+    "exit_code": 0,
+    "summary": "Added 1166 packages; audited 1167; 40 vulnerabilities: 3 low, 20 moderate, 14 high, 3 critical; deprecated transitive packages logged.",
+    "log": "original run codex.events.jsonl item_7"
+  },
+  "read_only_checks": [
+    {
+      "command": "tsc --noEmit",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "jest --runInBand",
+      "exit_code": 0,
+      "result": "PASS 1 suite, 1 test; Reanimated warning present."
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 1,
+      "result": "62 errors and 424 warnings; existing project lint debt."
+    }
+  ],
+  "runtime_launch": "EXPO_NO_DOTENV=1, synthetic local Supabase URL http://127.0.0.1:54321, nonsecret placeholder; two-tap Developer Control and explicit Instant Bypass Login. No production credentials/data.",
+  "route_discovery": {
+    "authority": "Exact routed source plus fresh Playwright runtime navigation",
+    "entry_route": "/",
+    "route_ownership": [
+      "app/_layout.tsx",
+      "app/(app)/_layout.tsx",
+      "app/(app)/(tabs)/_layout.tsx"
+    ],
+    "primary_tabs": [
+      "Home",
+      "Chores",
+      "Family",
+      "Wallet",
+      "Market",
+      "Restock"
+    ],
+    "runtime_verified": [
+      "auth entry",
+      "two-tap Developer Control opens; explicit Instant Bypass Login routes to app",
+      "six-tab shell and each tab URL",
+      "Home top-right avatar opens /profile",
+      "Profile links to personal-info/privacy/notifications/household/invite/chore-history/help/about",
+      "Chore History Completed and Deleted modes"
+    ],
+    "supporting_routes": [
+      "/onboarding",
+      "/onboarding/profile",
+      "/onboarding/family",
+      "/onboarding/done",
+      "/profile",
+      "/settings/personal-info",
+      "/settings/privacy",
+      "/settings/notifications",
+      "/settings/household",
+      "/settings/invite",
+      "/settings/chore-history",
+      "/settings/help",
+      "/settings/about"
+    ],
+    "aliases": [
+      {
+        "route": "/(app)/(tabs)",
+        "maps_to": "Home dashboard after authenticated/onboarded dispatch"
+      },
+      {
+        "route": "/settings/chore-history?tab=deleted",
+        "maps_to": "settings-chore-history-deleted"
+      }
+    ],
+    "unreachable_route_candidates": [
+      {
+        "route": "/settings/completed-chores",
+        "source": "app/(app)/settings/completed-chores.tsx",
+        "reason": "No normal in-app navigation call site found in active source search; excluded pending runtime reachability proof."
+      }
+    ],
+    "pre_capture_discovery_screenshots": "Provisional trigger probes were taken before the final freeze, including several invalid target attempts. All provisional PNGs were deleted before this corrected freeze; none are included in the canonical package. Final canonical capture starts after this freeze.",
+    "route_warning": "Expo desktop route warning lists a nested settings name; linked Settings destinations were observed to navigate in the fresh runtime.",
+    "unreachable_surface_candidates": [
+      {
+        "surface_key": "restock-pantry-check",
+        "route": "/restock",
+        "source": "app/(app)/(tabs)/restock.tsx",
+        "reason": "pendingIngredients initializes to [] and only resets to []; no current call site populates it, so the conditional pantry/recipe modal cannot be reached through the current product."
+      }
+    ],
+    "surface_aliases": [
+      {
+        "alias": "restock-item-detail",
+        "maps_to": "restock-inventory",
+        "reason": "No separate detail renderer exists; inventory rows show the item facts inline. Tapping a row expands its editor, represented by restock-item-edit."
+      }
+    ],
+    "superseded_freeze": {
+      "reason": "Source/runtime verification showed the initial manifest incorrectly modeled Family member editing and two unreachable/non-distinct Restock surfaces. The 70-key draft was invalidated; its PNG probes were discarded and this corrected manifest is the sole final freeze.",
+      "provisional_pngs_deleted": 74
+    }
+  },
+  "capture_script": "/tmp/homehuddle-capture-resume2.js",
+  "saved_runs": [
+    {
+      "id": "CF-b996dcba9bca21b3369a84fb",
+      "status": "FAILED_MODEL after server/auth failure; retained clean source and earlier evidence."
+    },
+    {
+      "id": "CF-0c72ecb43d80c05f1eecbee4",
+      "status": "FAILED_MODEL after no source changes; earlier evidence preserved."
+    }
+  ],
+  "exact_command_output_file": "command-results.json",
+  "objective_metrics": {
+    "canonical_surfaces": 70,
+    "canonical_expected_pngs": 140,
+    "canonical_valid_pngs": 138,
+    "stress_pngs": 62,
+    "source_changed": false,
+    "lint_errors": 62,
+    "lint_warnings": 424
+  }
+}

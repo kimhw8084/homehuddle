@@ -1,0 +1,2970 @@
+{
+  "schema": "project-os-visual-atlas-surface-manifest-v3",
+  "manifest_status": "FROZEN_BEFORE_CANONICAL_CAPTURE",
+  "project": "homehuddle",
+  "change": "CHG-238 R2",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "request": "homehuddle-ui0-perfect-baseline-v2",
+  "operation": "VERIFY",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "fixture": {
+    "kind": "local-development-seeded-mock",
+    "role": "Parent/editor via explicit Developer Control bypass",
+    "fixture_label": "LOCAL DEV FIXTURE - seeded names/objects are not household truth",
+    "supabase": {
+      "dotenv": "EXPO_NO_DOTENV=1",
+      "url": "http://127.0.0.1:54321",
+      "key_kind": "non-secret local placeholder"
+    },
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "theme": "light default",
+    "native_voiceover_talkback": "not executed"
+  },
+  "discovery": {
+    "authority": "Exact routed source plus fresh Playwright runtime navigation",
+    "entry_route": "/",
+    "route_ownership": [
+      "app/_layout.tsx",
+      "app/(app)/_layout.tsx",
+      "app/(app)/(tabs)/_layout.tsx"
+    ],
+    "primary_tabs": [
+      "Home",
+      "Chores",
+      "Family",
+      "Wallet",
+      "Market",
+      "Restock"
+    ],
+    "runtime_verified": [
+      "auth entry",
+      "two-tap Developer Control opens; explicit Instant Bypass Login routes to app",
+      "six-tab shell and each tab URL",
+      "Home top-right avatar opens /profile",
+      "Profile links to personal-info/privacy/notifications/household/invite/chore-history/help/about",
+      "Chore History Completed and Deleted modes"
+    ],
+    "supporting_routes": [
+      "/onboarding",
+      "/onboarding/profile",
+      "/onboarding/family",
+      "/onboarding/done",
+      "/profile",
+      "/settings/personal-info",
+      "/settings/privacy",
+      "/settings/notifications",
+      "/settings/household",
+      "/settings/invite",
+      "/settings/chore-history",
+      "/settings/help",
+      "/settings/about"
+    ],
+    "aliases": [
+      {
+        "route": "/(app)/(tabs)",
+        "maps_to": "Home dashboard after authenticated/onboarded dispatch"
+      },
+      {
+        "route": "/settings/chore-history?tab=deleted",
+        "maps_to": "settings-chore-history-deleted"
+      }
+    ],
+    "unreachable_route_candidates": [
+      {
+        "route": "/settings/completed-chores",
+        "source": "app/(app)/settings/completed-chores.tsx",
+        "reason": "No normal in-app navigation call site found in active source search; excluded pending runtime reachability proof."
+      }
+    ],
+    "pre_capture_discovery_screenshots": "Provisional trigger probes were taken before the final freeze, including several invalid target attempts. All provisional PNGs were deleted before this corrected freeze; none are included in the canonical package. Final canonical capture starts after this freeze.",
+    "route_warning": "Expo desktop route warning lists a nested settings name; linked Settings destinations were observed to navigate in the fresh runtime.",
+    "unreachable_surface_candidates": [
+      {
+        "surface_key": "restock-pantry-check",
+        "route": "/restock",
+        "source": "app/(app)/(tabs)/restock.tsx",
+        "reason": "pendingIngredients initializes to [] and only resets to []; no current call site populates it, so the conditional pantry/recipe modal cannot be reached through the current product."
+      }
+    ],
+    "surface_aliases": [
+      {
+        "alias": "restock-item-detail",
+        "maps_to": "restock-inventory",
+        "reason": "No separate detail renderer exists; inventory rows show the item facts inline. Tapping a row expands its editor, represented by restock-item-edit."
+      }
+    ],
+    "superseded_freeze": {
+      "reason": "Source/runtime verification showed the initial manifest incorrectly modeled Family member editing and two unreachable/non-distinct Restock surfaces. The 70-key draft was invalidated; its PNG probes were discarded and this corrected manifest is the sole final freeze.",
+      "provisional_pngs_deleted": 74
+    }
+  },
+  "canonical": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1,
+      "fullPage": false
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 1,
+      "fullPage": false
+    },
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "browserChromeExcluded": true,
+    "png": "lossless",
+    "defaultTheme": "light",
+    "fontsAssets": "wait for document.fonts.ready plus network/font settle"
+  },
+  "surfaces": [
+    {
+      "surface_key": "auth-entry",
+      "label": "Authentication entry",
+      "route": "/",
+      "owner": "app/index.tsx",
+      "entry_point": "Fresh local web launch; Developer Control opens only after two logo taps; bypass requires explicit action.",
+      "state": {
+        "mode": "unauthenticated auth entry",
+        "theme": "light",
+        "role": "unauthenticated",
+        "fixture": "synthetic local Supabase endpoint; no production credentials"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "PLAT-01"
+      ],
+      "source_files": [
+        "app/index.tsx",
+        "app/_layout.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/auth-entry--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/auth-entry--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Authentication entry rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "label": "Onboarding welcome",
+      "route": "/onboarding",
+      "owner": "app/onboarding/index.tsx",
+      "entry_point": "Developer Tools > Simulate First Launch; first-run welcome.",
+      "state": {
+        "mode": "first-run welcome",
+        "fixture": "disposable local browser state"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-11",
+        "PLAT-01"
+      ],
+      "source_files": [
+        "app/onboarding/index.tsx",
+        "store/onboardingStore.ts"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/onboarding-welcome--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/onboarding-welcome--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Onboarding welcome rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "label": "Onboarding profile",
+      "route": "/onboarding/profile",
+      "owner": "app/onboarding/profile.tsx",
+      "entry_point": "Onboarding welcome > Get Started.",
+      "state": {
+        "mode": "profile form",
+        "validation": "blank submit/recoverable validation applicable"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-10",
+        "CMP-15",
+        "CMP-11"
+      ],
+      "source_files": [
+        "app/onboarding/profile.tsx",
+        "components/AvatarPicker.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/onboarding-profile--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/onboarding-profile--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Onboarding profile rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "onboarding-family",
+      "label": "Onboarding household members",
+      "route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "entry_point": "Onboarding profile > Next; add/edit member sheet is a child state.",
+      "state": {
+        "mode": "family members; create/edit member sheet is separate surface"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/onboarding-family--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/onboarding-family--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Onboarding household members rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "label": "Onboarding complete",
+      "route": "/onboarding/done",
+      "owner": "app/onboarding/done.tsx",
+      "entry_point": "Onboarding family > Finish setup.",
+      "state": {
+        "mode": "setup completion; local onboarding state only"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-11",
+        "CMP-18"
+      ],
+      "source_files": [
+        "app/onboarding/done.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/onboarding-complete--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/onboarding-complete--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Onboarding complete rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-dashboard",
+      "label": "Home dashboard",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home tab after explicit local dev bypass.",
+      "state": {
+        "mode": "populated seeded home; local/mock truth only"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25",
+        "CMP-28"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx",
+        "store/huddleStore.ts"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-dashboard--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-dashboard--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home dashboard rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-today-all",
+      "label": "Chores all-scope workspace",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores tab; All scope; selected date is fixture date.",
+      "state": {
+        "mode": "populated day view; all scope"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-25",
+        "CMP-28"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx",
+        "components/ChoreModals.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-today-all--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-today-all--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores all-scope workspace rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "label": "Chores personal-scope workspace",
+      "route": "/chores?filter=Me",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores > Me segmented scope.",
+      "state": {
+        "mode": "selected My/Me scope; fixture role Parent"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [
+        "/chores with filter=Me is a state parameter, not a route alias"
+      ],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-my-scope--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-my-scope--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores personal-scope workspace rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "label": "Chores expanded calendar",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores date strip > expand calendar > Month mode.",
+      "state": {
+        "mode": "expanded month calendar; selected date and task list visible"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-25",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-calendar-month--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-calendar-month--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores expanded calendar rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-hub",
+      "label": "Family hub",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family tab.",
+      "state": {
+        "mode": "populated seeded family, meal and activity sections"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-hub--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-hub--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family hub rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-points",
+      "label": "Wallet points workspace",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet tab; Points/Wallet subview.",
+      "state": {
+        "mode": "populated local wallet/points and chart"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-points--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-points--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet points workspace rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "label": "Wallet reward bag",
+      "route": "/wallet?tab=bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet > Bag tab; Home deep-link intent also supplies tab=bag.",
+      "state": {
+        "mode": "bag/history subview",
+        "query_parameter": "tab=bag"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [
+        "Home wallet deep-link /wallet?tab=bag"
+      ],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-reward-bag--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-reward-bag--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet reward bag rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-catalog",
+      "label": "Market catalog",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Market tab.",
+      "state": {
+        "mode": "populated local rewards catalog"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-catalog--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-catalog--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market catalog rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "restock-inventory",
+      "label": "Restock inventory",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "entry_point": "Restock tab.",
+      "state": {
+        "mode": "populated locally seeded categories/items"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx",
+        "store/huddleStore.ts"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/restock-inventory--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/restock-inventory--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Restock inventory rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "profile-center",
+      "label": "Profile and settings center",
+      "route": "/profile",
+      "owner": "app/(app)/profile.tsx",
+      "entry_point": "Home top-right profile avatar.",
+      "state": {
+        "mode": "profile/settings navigation; fixture account labels"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/profile.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/profile-center--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/profile-center--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Profile and settings center rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "label": "Personal information",
+      "route": "/settings/personal-info",
+      "owner": "app/(app)/settings/personal-info.tsx",
+      "entry_point": "Profile center > Personal information. Name/email/phone/location form; UI labels placeholders are noted by source.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/settings/personal-info.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-personal-info--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-personal-info--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Personal information rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "label": "Privacy and security",
+      "route": "/settings/privacy",
+      "owner": "app/(app)/settings/privacy.tsx",
+      "entry_point": "Profile center > Privacy and security. Privacy and Security settings route; Password & Security and Privacy labels resolve to this same route.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10",
+        "CMP-13"
+      ],
+      "source_files": [
+        "app/(app)/settings/privacy.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-privacy-security--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-privacy-security--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Privacy and security rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-notifications",
+      "label": "Notification preferences",
+      "route": "/settings/notifications",
+      "owner": "app/(app)/settings/notifications.tsx",
+      "entry_point": "Profile center > Notification preferences. Toggle settings are local screen state; no persisted backend claim.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10"
+      ],
+      "source_files": [
+        "app/(app)/settings/notifications.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-notifications--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-notifications--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Notification preferences rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-household",
+      "label": "Household settings",
+      "route": "/settings/household",
+      "owner": "app/(app)/settings/household.tsx",
+      "entry_point": "Profile center > Household settings. Household/member/prefs fixture view; UI only.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/settings/household.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-household--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-household--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Household settings rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-invite",
+      "label": "Invite family",
+      "route": "/settings/invite",
+      "owner": "app/(app)/settings/invite.tsx",
+      "entry_point": "Profile center > Invite family. Local invite-code/share screen; no invite is sent during capture.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-18"
+      ],
+      "source_files": [
+        "app/(app)/settings/invite.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-invite--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-invite--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Invite family rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "label": "Chore history completed",
+      "route": "/settings/chore-history",
+      "owner": "app/(app)/settings/chore-history.tsx",
+      "entry_point": "Profile center > Chore history completed. Completed history tab; local seeded list.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/settings/chore-history.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-chore-history-completed--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-chore-history-completed--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chore history completed rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "label": "Chore history deleted",
+      "route": "/settings/chore-history?tab=deleted",
+      "owner": "app/(app)/settings/chore-history?tab=deleted.tsx",
+      "entry_point": "Profile center > Chore history deleted. Chore history Deleted tab; source link also routes from Chores with tab=deleted.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-19",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/settings/chore-history?tab=deleted.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-chore-history-deleted--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-chore-history-deleted--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chore history deleted rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-help",
+      "label": "Help center",
+      "route": "/settings/help",
+      "owner": "app/(app)/settings/help.tsx",
+      "entry_point": "Profile center > Help center. FAQ/contact topics; no external message is sent.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/settings/help.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-help--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-help--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Help center rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "settings-about",
+      "label": "About HomeHuddle",
+      "route": "/settings/about",
+      "owner": "app/(app)/settings/about.tsx",
+      "entry_point": "Profile center > About HomeHuddle. About/version details.",
+      "state": {
+        "mode": "normal support screen; local fixture"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/settings/about.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/settings-about--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/settings-about--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected About HomeHuddle rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "label": "Home family/account switcher",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home HUD people control; opens local family selector.",
+      "state": {
+        "mode": "family/account selection overlay",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-family-switcher--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-family-switcher--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home family/account switcher rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "label": "Home chore approval inbox",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home > Inbox Review card.",
+      "state": {
+        "mode": "pending approvals review overlay",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-inbox-review--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-inbox-review--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home chore approval inbox rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "label": "Home delivery create form",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home Deliveries > plus/add control; create form is opened but not saved.",
+      "state": {
+        "mode": "create delivery form",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-delivery-add--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-delivery-add--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home delivery create form rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "label": "Home delivery calendar",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home Deliveries > calendar control.",
+      "state": {
+        "mode": "delivery month/calendar view",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-07",
+        "CMP-14",
+        "CMP-15",
+        "CMP-25"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-delivery-calendar--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-delivery-calendar--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home delivery calendar rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "label": "Home delivery history",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home Deliveries merged calendar/history control > press and hold to open history.",
+      "state": {
+        "mode": "delivery history overlay",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-delivery-history--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-delivery-history--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home delivery history rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "label": "Home announcement board",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home announcement ticker/card.",
+      "state": {
+        "mode": "announcement board; add/edit state exercised separately in matrix",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-announcement-board--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-announcement-board--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home announcement board rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "label": "Home weekly dinner planner",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home Tonight's Dinner card.",
+      "state": {
+        "mode": "weekly meal planner modal",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-dinner-planner--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-dinner-planner--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home weekly dinner planner rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-automation-create",
+      "label": "Home automation create form",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home Automations section > add control.",
+      "state": {
+        "mode": "create automation form",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-28"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-automation-create--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-automation-create--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home automation create form rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "label": "Home appliance create form",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "entry_point": "Home Appliance Watch > add appliance control.",
+      "state": {
+        "mode": "create machine/appliance form",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/home-appliance-create--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/home-appliance-create--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Home appliance create form rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-create",
+      "label": "Chores create form",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores bottom plus > Add Chore; leave draft unsaved.",
+      "state": {
+        "mode": "create chore form with recurring/points/time/Restock link controls",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-create--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-create--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores create form rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-edit",
+      "label": "Chores edit form",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores selected chore > edit action; preserve source fixture by closing without save.",
+      "state": {
+        "mode": "edit chore form populated from local seed",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-edit--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-edit--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores edit form rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "label": "Chores expanded task detail",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Expand a seeded chore row; record object/action detail.",
+      "state": {
+        "mode": "selected/expanded chore row",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-expanded-task--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-expanded-task--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores expanded task detail rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "label": "Chores sort and filter sheet",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores filter/sort icon beside row sort controls.",
+      "state": {
+        "mode": "sort/filter sheet; no filter committed unless reversible",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-06",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-filter-sort--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-filter-sort--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores sort and filter sheet rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-assignment",
+      "label": "Chores assignment sheet",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Seeded unassigned chore > Assign; do not change assignee unless local object identity is verified.",
+      "state": {
+        "mode": "assign-member sheet",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-06",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-assignment--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-assignment--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores assignment sheet rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "label": "Chores reschedule/date picker",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Seeded chore > Reschedule; leave chosen date uncommitted.",
+      "state": {
+        "mode": "date picker/defer overlay",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-07",
+        "CMP-14",
+        "CMP-15",
+        "CMP-25"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-reschedule--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-reschedule--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores reschedule/date picker rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "label": "Chores game picker",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores random assignment/game control > game picker.",
+      "state": {
+        "mode": "game picker; idle state",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-29"
+      ],
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-game-picker--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-game-picker--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores game picker rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "label": "Chores random assignment",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Select a local chore > random assignment > selected game/participants; do not commit assignment.",
+      "state": {
+        "mode": "random assignment workflow before final assignment",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20",
+        "CMP-29"
+      ],
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-random-assignment--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-random-assignment--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores random assignment rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "label": "Chores bulk selection mode",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Chores selection control > choose one visible fixture row; do not execute bulk action.",
+      "state": {
+        "mode": "selected mode; one task selected",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-09",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-bulk-selection--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-bulk-selection--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores bulk selection mode rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "label": "Chores completed section expanded",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "entry_point": "Show Completed disclosure.",
+      "state": {
+        "mode": "expanded completed list",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/chores-completed-expanded--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/chores-completed-expanded--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Chores completed section expanded rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-member-detail",
+      "label": "Family member detail sheet",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family member card > select seeded member.",
+      "state": {
+        "mode": "selected member sheet",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-member-detail--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-member-detail--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family member detail sheet rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-member-editor",
+      "label": "Onboarding family member edit modal",
+      "route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "entry_point": "Onboarding Family step > pencil on an existing member; leave draft unsaved.",
+      "state": {
+        "mode": "edit family member modal with prefilled fields",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-member-editor--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-member-editor--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family member edit mode rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-announcements",
+      "label": "Family announcements manager",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family announcement widget > manage.",
+      "state": {
+        "mode": "announcement management overlay",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-announcements--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-announcements--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family announcements manager rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-wishlist",
+      "label": "Family wishlist",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family wishlist widget.",
+      "state": {
+        "mode": "wishlist view/add/delete overlay; do not delete seed",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-wishlist--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-wishlist--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family wishlist rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "label": "Family activity expanded",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family activity widget disclosure.",
+      "state": {
+        "mode": "expanded activity data",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-activity-expanded--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-activity-expanded--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family activity expanded rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-heatmap",
+      "label": "Family activity heatmap",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family activity heatmap control.",
+      "state": {
+        "mode": "member filter heatmap modal",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-heatmap--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-heatmap--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family activity heatmap rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "label": "Family meal voting",
+      "route": "/family",
+      "owner": "components/WeeklyMenuSection.tsx",
+      "entry_point": "Family meal planner > voting.",
+      "state": {
+        "mode": "weekly meal vote modal; local fixture only",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "source_files": [
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-meal-voting--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-meal-voting--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family meal voting rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-meal-results",
+      "label": "Family meal results",
+      "route": "/family",
+      "owner": "components/WeeklyMenuSection.tsx",
+      "entry_point": "Family meal planner > results/history.",
+      "state": {
+        "mode": "results modal",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "source_files": [
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-meal-results--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-meal-results--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family meal results rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "label": "Wallet savings goal create",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet > Add Goal; leave draft unsaved.",
+      "state": {
+        "mode": "create goal form",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-goal-create--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-goal-create--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet savings goal create rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "label": "Wallet savings goal contribution",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet seeded goal > Contribute; leave amount uncommitted.",
+      "state": {
+        "mode": "contribute form",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-goal-contribute--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-goal-contribute--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet savings goal contribution rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "label": "Wallet reward use/note",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet bag item > Use reward; leave note unsaved/uncommitted.",
+      "state": {
+        "mode": "reward use modal",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-reward-use--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-reward-use--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet reward use/note rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "label": "Wallet bag item note editor",
+      "route": "/wallet?tab=bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet bag item > note control.",
+      "state": {
+        "mode": "note draft editor",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-bag-item-note--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-bag-item-note--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet bag item note editor rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "label": "Wallet activity search and filter",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "entry_point": "Wallet activity > open search/filter and enter a no-result query; clear before exit.",
+      "state": {
+        "mode": "search/no-results state",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-09",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/wallet-activity-search--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/wallet-activity-search--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Wallet activity search and filter rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-item-detail",
+      "label": "Market item detail/action menu",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Select seeded reward card or long-press alternative.",
+      "state": {
+        "mode": "selected reward detail/context menu",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-item-detail--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-item-detail--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market item detail/action menu rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-item-create",
+      "label": "Market reward create",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Market > Add menu > create item; leave unsaved.",
+      "state": {
+        "mode": "create reward editor",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-item-create--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-item-create--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market reward create rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-item-edit",
+      "label": "Market reward edit",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Seeded reward > Edit.",
+      "state": {
+        "mode": "edit reward editor populated from seed",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-item-edit--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-item-edit--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market reward edit rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-item-restock",
+      "label": "Market inventory restock",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Seeded reward context menu > restock.",
+      "state": {
+        "mode": "restock quantity editor; do not commit",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-item-restock--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-item-restock--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market inventory restock rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-price-history",
+      "label": "Market price/reward history",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Seeded reward > price/history control.",
+      "state": {
+        "mode": "price history view",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-price-history--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-price-history--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market price/reward history rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "label": "Market flash sale editor",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Market > Flash Sale; leave unsaved.",
+      "state": {
+        "mode": "create flash sale editor",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-flash-sale--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-flash-sale--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market flash sale editor rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "label": "Market redemption confirmation",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "entry_point": "Seeded affordable reward > Redeem > inspect confirmation; cancel before commit.",
+      "state": {
+        "mode": "redemption confirmation before effect",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-05",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/market-redeem-confirmation--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/market-redeem-confirmation--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Market redemption confirmation rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "restock-item-create",
+      "label": "Restock quick add item",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "entry_point": "Restock quick-add control; leave draft unsaved.",
+      "state": {
+        "mode": "create restock item",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/restock-item-create--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/restock-item-create--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Restock quick add item rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "label": "Restock item edit form",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "entry_point": "Seeded item > edit; do not save.",
+      "state": {
+        "mode": "edit restock item",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/restock-item-edit--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/restock-item-edit--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Restock item edit form rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "restock-filter",
+      "label": "Restock filters",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "entry_point": "Restock filter bar > open filter state.",
+      "state": {
+        "mode": "filter panel; apply and clear only local fixture state",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/restock-filter--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/restock-filter--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Restock filters rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "label": "Restock completed/history expanded",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "entry_point": "Restock history disclosure.",
+      "state": {
+        "mode": "completed/history expansion",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/restock-history-expanded--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/restock-history-expanded--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Restock completed/history expanded rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "label": "Restock category expansion",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "entry_point": "Expand/collapse a seeded restock category; capture expanded state.",
+      "state": {
+        "mode": "expanded category list; no reorder mutation",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/restock-category-expanded--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/restock-category-expanded--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Restock category expansion rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-member-create",
+      "label": "Onboarding family member create modal",
+      "route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "entry_point": "Onboarding Family step > Add Family Member; leave draft unsaved.",
+      "state": {
+        "mode": "create family member modal with blank/default fields",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-member-editor--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-member-editor--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family member edit mode rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "label": "Family widget layout edit mode",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "entry_point": "Family tab > Edit; keep layout draft unchanged.",
+      "state": {
+        "mode": "Family widget layout editing with move/resize/remove controls visible",
+        "theme": "light",
+        "fixture": "local mock seed; action not submitted unless stated"
+      },
+      "component_families": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "aliases": [],
+      "canonical": {
+        "desktop": {
+          "artifact": "screenshots/family-layout-edit--desktop-1440x900.png",
+          "width": 1440,
+          "height": 900,
+          "dpr": 1,
+          "fullPage": false
+        },
+        "mobile": {
+          "artifact": "screenshots/family-layout-edit--mobile-390x844.png",
+          "width": 390,
+          "height": 844,
+          "dpr": 1,
+          "fullPage": false
+        }
+      },
+      "runtime_ready_assertion": "Expected Family hub rendered under local Developer Control fixture; no unresolved loading/error overlay."
+    }
+  ],
+  "surface_count": 70,
+  "expected_screenshot_count": 140,
+  "freeze_time_utc": "2026-09-25T22:34:50+00:00"
+}

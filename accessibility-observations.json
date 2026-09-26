@@ -1,0 +1,77 @@
+{
+  "schema": "homehuddle-ui0-accessibility-observations-v1",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "scope": "Web Playwright only; native assistive technology not executed.",
+  "observations": [
+    {
+      "topic": "Tab semantics",
+      "status": "observed",
+      "evidence": "Six named tab roles successfully operated in Playwright; screen-reader announcement order not proven."
+    },
+    {
+      "topic": "Holdout overflow metrics",
+      "status": "observed",
+      "evidence": "New holdout, reduced-motion and system-dark profile metrics found no horizontal document overflow; this is not a pixel or zoom pass."
+    },
+    {
+      "topic": "Reschedule task action",
+      "status": "defect",
+      "evidence": "Desktop calendar action/header clipped; mobile action visible."
+    },
+    {
+      "topic": "Expired reward state",
+      "status": "defect",
+      "evidence": "Expired reward remains actionable through Use."
+    },
+    {
+      "topic": "Keyboard-only and focus visibility",
+      "status": "unproven",
+      "evidence": "No complete keyboard/focus-ring trace."
+    },
+    {
+      "topic": "Dialog Escape/Back/focus return/draft",
+      "status": "unproven",
+      "evidence": "Overlays captured without systematic dismissal and return-focus challenge."
+    },
+    {
+      "topic": "200 percent zoom",
+      "status": "not_verified",
+      "evidence": "Chromium keyboard attempts did not change CSS viewport width, visual viewport or DPR; no reflow pass."
+    },
+    {
+      "topic": "Long task name list scan",
+      "status": "observed_with_follow_up",
+      "evidence": "Long title is ellipsized but full string remains in DOM and expanded row; similar-prefix collision not tested."
+    },
+    {
+      "topic": "Reduced motion",
+      "status": "preference_exercised",
+      "evidence": "Six tabs captured under reduce preference; equivalence and interruption unproven."
+    },
+    {
+      "topic": "Dark theme",
+      "status": "system_preference_exercised_rendered_light",
+      "evidence": "Six tabs tested with dark media preference; product pixels remained light. Major dark overlay family not verified."
+    },
+    {
+      "topic": "VoiceOver/TalkBack",
+      "status": "unproven",
+      "evidence": "Not executed in browser audit."
+    },
+    {
+      "topic": "Household Settings controls",
+      "status": "defect",
+      "evidence": "Pointer activation on Add, Manage and Sarah Kim leaves route/content unchanged; DOM targets have no role/aria; see household-control-probe.json."
+    },
+    {
+      "topic": "Landscape Chores row hit testing",
+      "status": "defect",
+      "evidence": "At 844x390 Check Mail is y=374 under persistent tabs; elementFromPoint resolves the nav layer; ordinary wheel/drag does not scroll."
+    }
+  ],
+  "severity_policy": "No aggregate score; blockers remain individually visible."
+}

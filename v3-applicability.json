@@ -1,0 +1,4162 @@
+{
+  "schema": "homehuddle-ui0-v3-applicability-v1",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "authority_status": {
+    "named_requirements": "Mapped from explicit audit criteria supplied in task.",
+    "lawbook_v3_clause_ids": "not present in saved run or accessible local contract files; no numeric IDs invented.",
+    "join_definitions": "JOIN-01 through JOIN-09 IDs supplied but definitions unavailable; all unproven.",
+    "limitation": "Not an exact clause certification; BLOCK-003 remains."
+  },
+  "universal_named_requirements": [
+    "task hierarchy and recovery",
+    "six-tab information architecture",
+    "typographic hierarchy/wrapping",
+    "expert density/progressive disclosure",
+    "spacing/layout/safe areas",
+    "shape/material hierarchy",
+    "color and contrast",
+    "icon semantics/hit area",
+    "avatars and imagery fallback",
+    "causal motion/haptics",
+    "navigation/history/deep links",
+    "overlay modality/scroll/focus/Escape",
+    "forms/validation/draft/IME",
+    "search/filter/sort/count",
+    "gesture alternatives/cancellation",
+    "pending/saved/failed/undo feedback",
+    "data/chart units/provenance",
+    "responsive recomposition",
+    "web accessibility/keyboard/zoom/reduced motion",
+    "performance/craft/runtime noise",
+    "copy/trust/child purchase pressure",
+    "family value comprehension"
+  ],
+  "platform_families": [
+    "React Native Web browser viewport",
+    "desktop pointer/keyboard",
+    "mobile touch/reflow",
+    "landscape short height",
+    "system theme",
+    "reduced motion",
+    "native VoiceOver/TalkBack unproven"
+  ],
+  "join_closure": [
+    {
+      "join_id": "JOIN-01",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-02",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-03",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-04",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-05",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-06",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-07",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-08",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-09",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    }
+  ],
+  "surfaces": [
+    {
+      "surface_key": "auth-entry",
+      "route": "/",
+      "source_files": [
+        "app/index.tsx",
+        "app/_layout.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "PLAT-01"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "route": "/onboarding",
+      "source_files": [
+        "app/onboarding/index.tsx",
+        "store/onboardingStore.ts"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-11",
+        "PLAT-01"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "route": "/onboarding/profile",
+      "source_files": [
+        "app/onboarding/profile.tsx",
+        "components/AvatarPicker.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-10",
+        "CMP-15",
+        "CMP-11"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "onboarding-family",
+      "route": "/onboarding/family",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "route": "/onboarding/done",
+      "source_files": [
+        "app/onboarding/done.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-11",
+        "CMP-18"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-dashboard",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx",
+        "store/huddleStore.ts"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25",
+        "CMP-28"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-today-all",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx",
+        "components/ChoreModals.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-25",
+        "CMP-28"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "route": "/chores?filter=Me",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-25",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-hub",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-points",
+      "route": "/wallet",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "route": "/wallet?tab=bag",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-catalog",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "restock-inventory",
+      "route": "/restock",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx",
+        "store/huddleStore.ts"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "profile-center",
+      "route": "/profile",
+      "source_files": [
+        "app/(app)/profile.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "route": "/settings/personal-info",
+      "source_files": [
+        "app/(app)/settings/personal-info.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "route": "/settings/privacy",
+      "source_files": [
+        "app/(app)/settings/privacy.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10",
+        "CMP-13"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-notifications",
+      "route": "/settings/notifications",
+      "source_files": [
+        "app/(app)/settings/notifications.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-household",
+      "route": "/settings/household",
+      "source_files": [
+        "app/(app)/settings/household.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-invite",
+      "route": "/settings/invite",
+      "source_files": [
+        "app/(app)/settings/invite.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-18"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "route": "/settings/chore-history",
+      "source_files": [
+        "app/(app)/settings/chore-history.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "route": "/settings/chore-history?tab=deleted",
+      "source_files": [
+        "app/(app)/settings/chore-history?tab=deleted.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-19",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-help",
+      "route": "/settings/help",
+      "source_files": [
+        "app/(app)/settings/help.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "settings-about",
+      "route": "/settings/about",
+      "source_files": [
+        "app/(app)/settings/about.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-07",
+        "CMP-14",
+        "CMP-15",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-automation-create",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-28"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "route": "/",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-create",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-edit",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-06",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-assignment",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-06",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-07",
+        "CMP-14",
+        "CMP-15",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "route": "/chores",
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-29"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "route": "/chores",
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20",
+        "CMP-29"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-09",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "route": "/chores",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-member-detail",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-member-editor",
+      "route": "/onboarding/family",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-announcements",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-wishlist",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-heatmap",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "route": "/family",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-meal-results",
+      "route": "/family",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "route": "/wallet",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "route": "/wallet",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "route": "/wallet",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "route": "/wallet?tab=bag",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "route": "/wallet",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-09",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-item-detail",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-item-create",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-item-edit",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-item-restock",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-price-history",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "route": "/market",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-05",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "restock-item-create",
+      "route": "/restock",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "route": "/restock",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "restock-filter",
+      "route": "/restock",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "route": "/restock",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "route": "/restock",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-member-create",
+      "route": "/onboarding/family",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "route": "/family",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "applicable_universal_named_requirements": [
+        "task hierarchy and recovery",
+        "six-tab information architecture",
+        "typographic hierarchy/wrapping",
+        "expert density/progressive disclosure",
+        "spacing/layout/safe areas",
+        "shape/material hierarchy",
+        "color and contrast",
+        "icon semantics/hit area",
+        "avatars and imagery fallback",
+        "causal motion/haptics",
+        "navigation/history/deep links",
+        "overlay modality/scroll/focus/Escape",
+        "forms/validation/draft/IME",
+        "search/filter/sort/count",
+        "gesture alternatives/cancellation",
+        "pending/saved/failed/undo feedback",
+        "data/chart units/provenance",
+        "responsive recomposition",
+        "web accessibility/keyboard/zoom/reduced motion",
+        "performance/craft/runtime noise",
+        "copy/trust/child purchase pressure",
+        "family value comprehension"
+      ],
+      "platform_families": [
+        "web browser viewport",
+        "pointer/keyboard",
+        "touch/reflow",
+        "system theme",
+        "reduced motion"
+      ],
+      "component_clause_status": "CMP IDs preserved from frozen manifest; exact definitions unavailable.",
+      "join_applicability": {
+        "JOIN-01": "potentially-applicable-unproven",
+        "JOIN-02": "potentially-applicable-unproven",
+        "JOIN-03": "potentially-applicable-unproven",
+        "JOIN-04": "potentially-applicable-unproven",
+        "JOIN-05": "potentially-applicable-unproven",
+        "JOIN-06": "potentially-applicable-unproven",
+        "JOIN-07": "potentially-applicable-unproven",
+        "JOIN-08": "potentially-applicable-unproven",
+        "JOIN-09": "potentially-applicable-unproven"
+      }
+    }
+  ]
+}

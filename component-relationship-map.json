@@ -1,0 +1,1611 @@
+{
+  "schema": "homehuddle-ui0-component-relationship-map-v1",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "catalog_status": "JOIN definitions unavailable; do not infer exact semantics.",
+  "join_registry": [
+    {
+      "join_id": "JOIN-01",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-02",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-03",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-04",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-05",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-06",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-07",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-08",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    },
+    {
+      "join_id": "JOIN-09",
+      "status": "unproven",
+      "reason": "Definitions absent from retained inputs; potential relationship remains visible."
+    }
+  ],
+  "relationship_dimensions": [
+    "focus ownership/return",
+    "Back/Escape",
+    "scroll ownership",
+    "overlay portal/layer",
+    "selection",
+    "shared state identity",
+    "async validity"
+  ],
+  "edges": [
+    {
+      "surface_key": "auth-entry",
+      "route": "/",
+      "owner": "app/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "PLAT-01"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "route": "/onboarding",
+      "owner": "app/onboarding/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-11",
+        "PLAT-01"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "route": "/onboarding/profile",
+      "owner": "app/onboarding/profile.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-10",
+        "CMP-15",
+        "CMP-11"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "onboarding-family",
+      "route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "route": "/onboarding/done",
+      "owner": "app/onboarding/done.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-11",
+        "CMP-18"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-dashboard",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25",
+        "CMP-28"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-today-all",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-25",
+        "CMP-28"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": {
+          "status": "observed_defect_844x390",
+          "evidence": "stress-landscape-scroll-probe.json: scrollTop remains 0; Check Mail bounds y=374; hit test resolves to tab layer."
+        },
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "route": "/chores?filter=Me",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-25",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-hub",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-points",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "route": "/wallet?tab=bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-catalog",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "restock-inventory",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "profile-center",
+      "route": "/profile",
+      "owner": "app/(app)/profile.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-03",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "route": "/settings/personal-info",
+      "owner": "app/(app)/settings/personal-info.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "route": "/settings/privacy",
+      "owner": "app/(app)/settings/privacy.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10",
+        "CMP-13"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-notifications",
+      "route": "/settings/notifications",
+      "owner": "app/(app)/settings/notifications.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-household",
+      "route": "/settings/household",
+      "owner": "app/(app)/settings/household.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-10",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-invite",
+      "route": "/settings/invite",
+      "owner": "app/(app)/settings/invite.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-18"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "route": "/settings/chore-history",
+      "owner": "app/(app)/settings/chore-history.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "route": "/settings/chore-history?tab=deleted",
+      "owner": "app/(app)/settings/chore-history?tab=deleted.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-19",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-help",
+      "route": "/settings/help",
+      "owner": "app/(app)/settings/help.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-10",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "settings-about",
+      "route": "/settings/about",
+      "owner": "app/(app)/settings/about.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-07",
+        "CMP-14",
+        "CMP-15",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-automation-create",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-28"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-03",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-create",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-edit",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-06",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-assignment",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-06",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-07",
+        "CMP-14",
+        "CMP-15",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": {
+          "status": "responsive_defect_observed",
+          "evidence": "Canonical desktop sheet clips its action; grouped with landscape task occlusion under HH-UI0-001."
+        },
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-29"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20",
+        "CMP-29"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-09",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-member-detail",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-member-editor",
+      "route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-announcements",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-13",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-wishlist",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-heatmap",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "route": "/family",
+      "owner": "components/WeeklyMenuSection.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-meal-results",
+      "route": "/family",
+      "owner": "components/WeeklyMenuSection.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "route": "/wallet?tab=bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-09",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-item-detail",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-item-create",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-item-edit",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-item-restock",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-price-history",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20",
+        "CMP-24"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-07",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-05",
+        "CMP-14",
+        "CMP-15",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "restock-item-create",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-06",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "restock-filter",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-09",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-09",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-13",
+        "CMP-20",
+        "CMP-28"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-member-create",
+      "route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "component_family_ids": [
+        "CMP-01",
+        "CMP-03",
+        "CMP-04",
+        "CMP-05",
+        "CMP-10",
+        "CMP-14",
+        "CMP-15",
+        "CMP-20"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "component_family_ids": [
+        "CMP-11",
+        "CMP-01",
+        "CMP-13",
+        "CMP-18",
+        "CMP-20",
+        "CMP-24",
+        "CMP-25"
+      ],
+      "relations": {
+        "focus": "unproven; anchor capture only",
+        "back_escape": "unproven except route navigation reached; return behavior not comprehensively measured",
+        "scroll_ownership": "unproven; some long screens were scrolled to reach anchor",
+        "overlay_portal": "overlay visible when applicable; portal/backdrop ownership unproven",
+        "selection": "frozen state only observed",
+        "shared_state": "local mock state only; no production persistence inferred",
+        "async_validity": "unproven; no stale response/race/failure oracle"
+      }
+    }
+  ]
+}
