@@ -1,0 +1,72 @@
+{
+  "accepted_at": "2026-09-26T01:09:01Z",
+  "changed_files": [],
+  "checks": [],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": null,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": null,
+    "usage": {},
+    "warnings": []
+  },
+  "commits": [],
+  "diff": null,
+  "error_code": "CODEX_EXIT_NONZERO",
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": null,
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": "CODEX_EXECUTION",
+  "finished_at": "2026-09-26T01:10:12Z",
+  "git": {},
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-0c72ecb43d80c05f1eecbee4",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2-resume1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2-resume1"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": true,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-perfect-baseline-v2-resume1",
+  "schema_version": 1,
+  "started_at": "2026-09-26T01:09:01Z",
+  "status": "FAILED_MODEL",
+  "timing": {
+    "execution_seconds": 71,
+    "queue_seconds": 0,
+    "total_seconds": 71
+  },
+  "transport": {
+    "bytes": 17753,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 17408,
+    "prompt_sha256": "85206a4463e64081693ae19059482825e9fd3495b929f594ed138265f2fa1458",
+    "sha256": "0c72ecb43d80c05f1eecbee4a7404d067be7286a1385e5736b88d8aa5f975542"
+  }
+}
