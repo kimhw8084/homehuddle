@@ -1,0 +1,1687 @@
+{
+  "schema": "project-os-source-evidence-index-v1",
+  "source_binding": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "file_integrity": {
+    "app/(app)/(tabs)/chores.tsx": {
+      "sha256": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128",
+      "bytes": 368524,
+      "line_count": 6715,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/(tabs)/chores.tsx"
+    },
+    "app/(app)/(tabs)/family.tsx": {
+      "sha256": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606",
+      "bytes": 118801,
+      "line_count": 1695,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/(tabs)/family.tsx"
+    },
+    "app/(app)/(tabs)/index.tsx": {
+      "sha256": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793",
+      "bytes": 204701,
+      "line_count": 3582,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/(tabs)/index.tsx"
+    },
+    "app/(app)/(tabs)/market.tsx": {
+      "sha256": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df",
+      "bytes": 105085,
+      "line_count": 1911,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/(tabs)/market.tsx"
+    },
+    "app/(app)/(tabs)/restock.tsx": {
+      "sha256": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e",
+      "bytes": 63176,
+      "line_count": 1310,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/(tabs)/restock.tsx"
+    },
+    "app/(app)/(tabs)/wallet.tsx": {
+      "sha256": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce",
+      "bytes": 91502,
+      "line_count": 1757,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/(tabs)/wallet.tsx"
+    },
+    "app/(app)/profile.tsx": {
+      "sha256": "114649a4f79a8e43a10dccd62a52db9819a8a82a499c0fdeda0a590852608cc2",
+      "bytes": 16077,
+      "line_count": 522,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/profile.tsx"
+    },
+    "app/(app)/settings/about.tsx": {
+      "sha256": "a83c9d9793abc73763266a0c8fb14f6135f3a7550620526e313b4264ee67f335",
+      "bytes": 5639,
+      "line_count": 220,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/about.tsx"
+    },
+    "app/(app)/settings/chore-history.tsx": {
+      "sha256": "5e00d8baab05cf15e8d2a372889b68301469ae0a0b8d8ae81ed948125a48e1d9",
+      "bytes": 23085,
+      "line_count": 463,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/chore-history.tsx"
+    },
+    "app/(app)/settings/completed-chores.tsx": {
+      "sha256": "db64e0f69a8273dc7ca42ba7acac45248ddaa75a186cb0ecae7304e4d20f1b9f",
+      "bytes": 5423,
+      "line_count": 209,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/completed-chores.tsx"
+    },
+    "app/(app)/settings/help.tsx": {
+      "sha256": "7b8bf5eee533289693764879523b89102f884fba413134006596a3d47acc5400",
+      "bytes": 5871,
+      "line_count": 226,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/help.tsx"
+    },
+    "app/(app)/settings/household.tsx": {
+      "sha256": "b7fb68ce0a87bd6ebbd27e476811a7f33384fb135de774f733b210c0adfffad4",
+      "bytes": 6654,
+      "line_count": 262,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/household.tsx"
+    },
+    "app/(app)/settings/invite.tsx": {
+      "sha256": "f83962e0b54779225058139040a47f43cbda593884a0f818fe45291c7261f885",
+      "bytes": 5834,
+      "line_count": 230,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/invite.tsx"
+    },
+    "app/(app)/settings/notifications.tsx": {
+      "sha256": "5714690d3f6b22920ed5a620f8103a4278a2f01947ebdb739dbda3e55672a382",
+      "bytes": 6255,
+      "line_count": 244,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/notifications.tsx"
+    },
+    "app/(app)/settings/personal-info.tsx": {
+      "sha256": "00634f4d00222de462c3a08fbb529a78f73988bc99194125bdd98a973d851370",
+      "bytes": 7814,
+      "line_count": 244,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/personal-info.tsx"
+    },
+    "app/(app)/settings/privacy.tsx": {
+      "sha256": "ae03e3eb6023516ea48b1b4b7892b6ea2b9c4ede3eb1dc7b34f326231799a642",
+      "bytes": 5485,
+      "line_count": 215,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/(app)/settings/privacy.tsx"
+    },
+    "app/_layout.tsx": {
+      "sha256": "840e2275ada88b81f92450bc378b32807e2f5ba81f6675554a8117e5fc6b3328",
+      "bytes": 1958,
+      "line_count": 67,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/_layout.tsx"
+    },
+    "app/index.tsx": {
+      "sha256": "d304cd9c21087e68675eac3d2e9163735c7f29a2d302c1146821b894fabfdcf9",
+      "bytes": 27776,
+      "line_count": 751,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/index.tsx"
+    },
+    "app/onboarding/done.tsx": {
+      "sha256": "5aa1e127ded2c881865592dee357b727ec72521ababc4755d1ba197ed9f3f77d",
+      "bytes": 6087,
+      "line_count": 192,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/onboarding/done.tsx"
+    },
+    "app/onboarding/family.tsx": {
+      "sha256": "975cdebb752616abd98fc3a42fceb1435434a4d0fceb962e34f49962c678e7ab",
+      "bytes": 14797,
+      "line_count": 431,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/onboarding/family.tsx"
+    },
+    "app/onboarding/index.tsx": {
+      "sha256": "0c73d54d91508588e5e8fcb3251cae895802bf1189cb8ddd0756d508db380140",
+      "bytes": 4788,
+      "line_count": 193,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/onboarding/index.tsx"
+    },
+    "app/onboarding/profile.tsx": {
+      "sha256": "39d1c4068d979eedd6264db8fcb6c114f1d27cc75f41e3c28ed141eaef146a18",
+      "bytes": 8575,
+      "line_count": 269,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "app/onboarding/profile.tsx"
+    },
+    "components/AvatarPicker.tsx": {
+      "sha256": "6b3b0296b79216b36c46adde21b749318fa78701808ab935384ae9f6024aa286",
+      "bytes": 16120,
+      "line_count": 522,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "components/AvatarPicker.tsx"
+    },
+    "components/ChoreModals.tsx": {
+      "sha256": "eefa9c5b4d5336e927567366275cfb2621de1059bb7cf4dfe0702ae2472b834e",
+      "bytes": 27403,
+      "line_count": 550,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "components/ChoreModals.tsx"
+    },
+    "components/DevToolsOverlay.tsx": {
+      "sha256": "b5eea635496927b3afd62ca1db63793322bb0ae3fcd1bd71f964fa1224dbe648",
+      "bytes": 7054,
+      "line_count": 266,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "components/DevToolsOverlay.tsx"
+    },
+    "components/WeeklyMenuSection.tsx": {
+      "sha256": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2",
+      "bytes": 127051,
+      "line_count": 2007,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "components/WeeklyMenuSection.tsx"
+    },
+    "components/games/RandomAssignmentGames.tsx": {
+      "sha256": "89a0dc87ff962eb966a727fec35fdb45b27e098636bf241e5bcce583376a7d2a",
+      "bytes": 108278,
+      "line_count": 2016,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "components/games/RandomAssignmentGames.tsx"
+    },
+    "store/huddleStore.ts": {
+      "sha256": "94ac0ca8d9cd9842dd6ebafe560d90a804559c61b00624afbe022deeb851b41a",
+      "bytes": 39282,
+      "line_count": 750,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "store/huddleStore.ts"
+    },
+    "store/onboardingStore.ts": {
+      "sha256": "08a8584bb521a8fc7aec97879c856c81978df7a69340c62fd9820c2993e46527",
+      "bytes": 345,
+      "line_count": 13,
+      "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+      "workspace_path": "store/onboardingStore.ts"
+    }
+  },
+  "row_evidence": [
+    {
+      "surface_key": "auth-entry",
+      "owner": "app/index.tsx",
+      "r4_owner_claim": "app/index.tsx",
+      "source_files": [
+        "app/index.tsx",
+        "app/_layout.tsx"
+      ],
+      "source_file_sha256": {
+        "app/index.tsx": "d304cd9c21087e68675eac3d2e9163735c7f29a2d302c1146821b894fabfdcf9",
+        "app/_layout.tsx": "840e2275ada88b81f92450bc378b32807e2f5ba81f6675554a8117e5fc6b3328"
+      },
+      "r4_entry_point_claim": "Fresh local web launch; Developer Control opens only after two logo taps; bypass requires explicit action.",
+      "runtime_assertion": "Continue with Apple",
+      "citations": []
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "owner": "app/onboarding/index.tsx",
+      "r4_owner_claim": "app/onboarding/index.tsx",
+      "source_files": [
+        "app/onboarding/index.tsx",
+        "store/onboardingStore.ts"
+      ],
+      "source_file_sha256": {
+        "app/onboarding/index.tsx": "0c73d54d91508588e5e8fcb3251cae895802bf1189cb8ddd0756d508db380140",
+        "store/onboardingStore.ts": "08a8584bb521a8fc7aec97879c856c81978df7a69340c62fd9820c2993e46527"
+      },
+      "r4_entry_point_claim": "Developer Tools > Simulate First Launch; first-run welcome.",
+      "runtime_assertion": "Get Started",
+      "citations": []
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "owner": "app/onboarding/profile.tsx",
+      "r4_owner_claim": "app/onboarding/profile.tsx",
+      "source_files": [
+        "app/onboarding/profile.tsx",
+        "components/AvatarPicker.tsx"
+      ],
+      "source_file_sha256": {
+        "app/onboarding/profile.tsx": "39d1c4068d979eedd6264db8fcb6c114f1d27cc75f41e3c28ed141eaef146a18",
+        "components/AvatarPicker.tsx": "6b3b0296b79216b36c46adde21b749318fa78701808ab935384ae9f6024aa286"
+      },
+      "r4_entry_point_claim": "Onboarding welcome > Get Started.",
+      "runtime_assertion": "Set Up Your Profile",
+      "citations": []
+    },
+    {
+      "surface_key": "onboarding-family",
+      "owner": "app/onboarding/family.tsx",
+      "r4_owner_claim": "app/onboarding/family.tsx",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/onboarding/family.tsx": "975cdebb752616abd98fc3a42fceb1435434a4d0fceb962e34f49962c678e7ab"
+      },
+      "r4_entry_point_claim": "Onboarding profile > Next; add/edit member sheet is a child state.",
+      "runtime_assertion": "Your Family",
+      "citations": []
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "owner": "app/onboarding/done.tsx",
+      "r4_owner_claim": "app/onboarding/done.tsx",
+      "source_files": [
+        "app/onboarding/done.tsx"
+      ],
+      "source_file_sha256": {
+        "app/onboarding/done.tsx": "5aa1e127ded2c881865592dee357b727ec72521ababc4755d1ba197ed9f3f77d"
+      },
+      "r4_entry_point_claim": "Onboarding family > Finish setup.",
+      "runtime_assertion": "You're all set!",
+      "citations": []
+    },
+    {
+      "surface_key": "home-dashboard",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx",
+        "store/huddleStore.ts"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793",
+        "store/huddleStore.ts": "94ac0ca8d9cd9842dd6ebafe560d90a804559c61b00624afbe022deeb851b41a"
+      },
+      "r4_entry_point_claim": "Home tab after explicit local dev bypass.",
+      "runtime_assertion": "FAMILY ORBIT",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-today-all",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx",
+        "components/ChoreModals.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128",
+        "components/ChoreModals.tsx": "eefa9c5b4d5336e927567366275cfb2621de1059bb7cf4dfe0702ae2472b834e"
+      },
+      "r4_entry_point_claim": "Chores tab; All scope; selected date is fixture date.",
+      "runtime_assertion": "TODAY'S FOCUS",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Chores > Me segmented scope.",
+      "runtime_assertion": "ME",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Chores date strip > expand calendar > Month mode.",
+      "runtime_assertion": "September 2026",
+      "citations": []
+    },
+    {
+      "surface_key": "family-hub",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606",
+        "components/WeeklyMenuSection.tsx": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2"
+      },
+      "r4_entry_point_claim": "Family tab.",
+      "runtime_assertion": "Family Hub",
+      "citations": []
+    },
+    {
+      "surface_key": "wallet-points",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet tab; Points/Wallet subview.",
+      "runtime_assertion": "Point History",
+      "citations": []
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet > Bag tab; Home deep-link intent also supplies tab=bag.",
+      "runtime_assertion": "My Bag",
+      "citations": []
+    },
+    {
+      "surface_key": "market-catalog",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Market tab.",
+      "runtime_assertion": "Movie Night",
+      "citations": []
+    },
+    {
+      "surface_key": "restock-inventory",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx",
+        "store/huddleStore.ts"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e",
+        "store/huddleStore.ts": "94ac0ca8d9cd9842dd6ebafe560d90a804559c61b00624afbe022deeb851b41a"
+      },
+      "r4_entry_point_claim": "Restock tab.",
+      "runtime_assertion": "Sourdough Bread",
+      "citations": []
+    },
+    {
+      "surface_key": "profile-center",
+      "owner": "app/(app)/profile.tsx",
+      "r4_owner_claim": "app/(app)/profile.tsx",
+      "source_files": [
+        "app/(app)/profile.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/profile.tsx": "114649a4f79a8e43a10dccd62a52db9819a8a82a499c0fdeda0a590852608cc2"
+      },
+      "r4_entry_point_claim": "Home top-right profile avatar.",
+      "runtime_assertion": "Personal Info",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "owner": "app/(app)/settings/personal-info.tsx",
+      "r4_owner_claim": "app/(app)/settings/personal-info.tsx",
+      "source_files": [
+        "app/(app)/settings/personal-info.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/personal-info.tsx": "00634f4d00222de462c3a08fbb529a78f73988bc99194125bdd98a973d851370"
+      },
+      "r4_entry_point_claim": "Profile center > Personal information. Name/email/phone/location form; UI labels placeholders are noted by source.",
+      "runtime_assertion": "Personal Info",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "owner": "app/(app)/settings/privacy.tsx",
+      "r4_owner_claim": "app/(app)/settings/privacy.tsx",
+      "source_files": [
+        "app/(app)/settings/privacy.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/privacy.tsx": "ae03e3eb6023516ea48b1b4b7892b6ea2b9c4ede3eb1dc7b34f326231799a642"
+      },
+      "r4_entry_point_claim": "Profile center > Privacy and security. Privacy and Security settings route; Password & Security and Privacy labels resolve to this same route.",
+      "runtime_assertion": "Privacy & Security",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-notifications",
+      "owner": "app/(app)/settings/notifications.tsx",
+      "r4_owner_claim": "app/(app)/settings/notifications.tsx",
+      "source_files": [
+        "app/(app)/settings/notifications.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/notifications.tsx": "5714690d3f6b22920ed5a620f8103a4278a2f01947ebdb739dbda3e55672a382"
+      },
+      "r4_entry_point_claim": "Profile center > Notification preferences. Toggle settings are local screen state; no persisted backend claim.",
+      "runtime_assertion": "Notifications",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-household",
+      "owner": "app/(app)/settings/household.tsx",
+      "r4_owner_claim": "app/(app)/settings/household.tsx",
+      "source_files": [
+        "app/(app)/settings/household.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/household.tsx": "b7fb68ce0a87bd6ebbd27e476811a7f33384fb135de774f733b210c0adfffad4"
+      },
+      "r4_entry_point_claim": "Profile center > Household settings. Household/member/prefs fixture view; UI only.",
+      "runtime_assertion": "Household Settings",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-invite",
+      "owner": "app/(app)/settings/invite.tsx",
+      "r4_owner_claim": "app/(app)/settings/invite.tsx",
+      "source_files": [
+        "app/(app)/settings/invite.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/invite.tsx": "f83962e0b54779225058139040a47f43cbda593884a0f818fe45291c7261f885"
+      },
+      "r4_entry_point_claim": "Profile center > Invite family. Local invite-code/share screen; no invite is sent during capture.",
+      "runtime_assertion": "Invite Family",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "owner": "app/(app)/settings/chore-history.tsx",
+      "r4_owner_claim": "app/(app)/settings/chore-history.tsx",
+      "source_files": [
+        "app/(app)/settings/chore-history.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/chore-history.tsx": "5e00d8baab05cf15e8d2a372889b68301469ae0a0b8d8ae81ed948125a48e1d9"
+      },
+      "r4_entry_point_claim": "Profile center > Chore history completed. Completed history tab; local seeded list.",
+      "runtime_assertion": "Chore History",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "owner": "app/(app)/settings/chore-history.tsx",
+      "r4_owner_claim": "app/(app)/settings/chore-history?tab=deleted.tsx",
+      "source_files": [
+        "app/(app)/settings/chore-history.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/chore-history.tsx": "5e00d8baab05cf15e8d2a372889b68301469ae0a0b8d8ae81ed948125a48e1d9"
+      },
+      "r4_entry_point_claim": "Profile center > Chore history deleted. Chore history Deleted tab; source link also routes from Chores with tab=deleted.",
+      "runtime_assertion": "Deleted",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-help",
+      "owner": "app/(app)/settings/help.tsx",
+      "r4_owner_claim": "app/(app)/settings/help.tsx",
+      "source_files": [
+        "app/(app)/settings/help.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/help.tsx": "7b8bf5eee533289693764879523b89102f884fba413134006596a3d47acc5400"
+      },
+      "r4_entry_point_claim": "Profile center > Help center. FAQ/contact topics; no external message is sent.",
+      "runtime_assertion": "Help Center",
+      "citations": []
+    },
+    {
+      "surface_key": "settings-about",
+      "owner": "app/(app)/settings/about.tsx",
+      "r4_owner_claim": "app/(app)/settings/about.tsx",
+      "source_files": [
+        "app/(app)/settings/about.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/settings/about.tsx": "a83c9d9793abc73763266a0c8fb14f6135f3a7550620526e313b4264ee67f335"
+      },
+      "r4_entry_point_claim": "Profile center > About HomeHuddle. About/version details.",
+      "runtime_assertion": "About HomeHuddle",
+      "citations": []
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home HUD people control; opens local family selector.",
+      "runtime_assertion": "Family Orbit",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/index.tsx",
+          "lines": "640-686",
+          "claim": "AmbientHUD renders icon-only family selector; measured runtime bounds are recorded."
+        }
+      ]
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home > Inbox Review card.",
+      "runtime_assertion": "Well Done!",
+      "citations": []
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home Deliveries > plus/add control; create form is opened but not saved.",
+      "runtime_assertion": "WHAT'S ARRIVING?",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/index.tsx",
+          "lines": "1991-2008",
+          "claim": "Visible merged calendar/history and add delivery controls with icon-only Pressables."
+        }
+      ]
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home Deliveries > calendar control.",
+      "runtime_assertion": "Sep 2026",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/index.tsx",
+          "lines": "1991-2002",
+          "claim": "Calendar icon control is a tap target in the delivery header."
+        }
+      ]
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home Deliveries merged calendar/history control > press and hold to open history.",
+      "runtime_assertion": "Delivery History",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/index.tsx",
+          "lines": "1991-2002",
+          "claim": "History is the same visible merged control with long-press behavior."
+        }
+      ]
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home announcement ticker/card.",
+      "runtime_assertion": "Announcements",
+      "citations": []
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home Tonight's Dinner card.",
+      "runtime_assertion": "This Week Vote Results",
+      "citations": []
+    },
+    {
+      "surface_key": "home-automation-create",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home Automations section > add control.",
+      "runtime_assertion": "New Automation",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/index.tsx",
+          "lines": "3513-3518",
+          "claim": "Automations section exposes icon-only plus control."
+        }
+      ]
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/index.tsx": "0f4ec69f29bb5a79f1fe31db11a177811ef079b0b72522f238853ddfe3641793"
+      },
+      "r4_entry_point_claim": "Home Appliance Watch > add appliance control.",
+      "runtime_assertion": "New Appliance",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/index.tsx",
+          "lines": "2724-2744",
+          "claim": "Appliance Watch section exposes icon-only plus control."
+        }
+      ]
+    },
+    {
+      "surface_key": "chores-create",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Chores bottom plus > Add Chore; leave draft unsaved.",
+      "runtime_assertion": "New Chore",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/chores.tsx",
+          "lines": "6258-6270",
+          "claim": "Add Chore floating action button uses icon-only Plus."
+        }
+      ]
+    },
+    {
+      "surface_key": "chores-edit",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Chores selected chore > edit action; preserve source fixture by closing without save.",
+      "runtime_assertion": "Edit Chore",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Expand a seeded chore row; record object/action detail.",
+      "runtime_assertion": "Edit Chore",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Chores filter/sort icon beside row sort controls.",
+      "runtime_assertion": "Sort & Filter",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/chores.tsx",
+          "lines": "6144-6155",
+          "claim": "Icon-only Filter button opens Sort & Filter."
+        }
+      ]
+    },
+    {
+      "surface_key": "chores-assignment",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Seeded unassigned chore > Assign; do not change assignee unless local object identity is verified.",
+      "runtime_assertion": "Who's doing this?",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Seeded chore > Reschedule; leave chosen date uncommitted.",
+      "runtime_assertion": "Reschedule Chore",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "source_file_sha256": {
+        "components/games/RandomAssignmentGames.tsx": "89a0dc87ff962eb966a727fec35fdb45b27e098636bf241e5bcce583376a7d2a"
+      },
+      "r4_entry_point_claim": "Chores random assignment/game control > game picker.",
+      "runtime_assertion": "Random Games",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/chores.tsx",
+          "lines": "6138-6144",
+          "claim": "Icon-only Dices control opens game picker."
+        }
+      ]
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "source_file_sha256": {
+        "components/games/RandomAssignmentGames.tsx": "89a0dc87ff962eb966a727fec35fdb45b27e098636bf241e5bcce583376a7d2a"
+      },
+      "r4_entry_point_claim": "Select a local chore > random assignment > selected game/participants; do not commit assignment.",
+      "runtime_assertion": "Pick a Game",
+      "citations": []
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Chores selection control > choose one visible fixture row; do not execute bulk action.",
+      "runtime_assertion": "Cancel Selection",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/chores.tsx",
+          "lines": "1376",
+          "claim": "Visible row long-press enters selection."
+        },
+        {
+          "file": "app/(app)/(tabs)/chores.tsx",
+          "lines": "1771",
+          "claim": "unstable_batchedUpdates call associated with runtime exception."
+        },
+        {
+          "file": "app/(app)/(tabs)/chores.tsx",
+          "lines": "1941",
+          "claim": "Drag-end callback also invokes the API."
+        }
+      ]
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      },
+      "r4_entry_point_claim": "Show Completed disclosure.",
+      "runtime_assertion": "Deep Clean Oven",
+      "citations": []
+    },
+    {
+      "surface_key": "family-member-detail",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606"
+      },
+      "r4_entry_point_claim": "Family member card > select seeded member.",
+      "runtime_assertion": "Close Profile",
+      "citations": []
+    },
+    {
+      "surface_key": "family-member-editor",
+      "owner": "app/onboarding/family.tsx",
+      "r4_owner_claim": "app/onboarding/family.tsx",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/onboarding/family.tsx": "975cdebb752616abd98fc3a42fceb1435434a4d0fceb962e34f49962c678e7ab"
+      },
+      "r4_entry_point_claim": "Onboarding Family step > pencil on an existing member; leave draft unsaved.",
+      "runtime_assertion": "Edit Member",
+      "citations": [
+        {
+          "file": "app/onboarding/family.tsx",
+          "lines": "166-179",
+          "claim": "Member row exposes distinct pencil edit action."
+        },
+        {
+          "file": "app/onboarding/family.tsx",
+          "lines": "203-205",
+          "claim": "Shared modal renderer."
+        }
+      ]
+    },
+    {
+      "surface_key": "family-announcements",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606"
+      },
+      "r4_entry_point_claim": "Family announcement widget > manage.",
+      "runtime_assertion": "Bulletin Board",
+      "citations": []
+    },
+    {
+      "surface_key": "family-wishlist",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606"
+      },
+      "r4_entry_point_claim": "Family wishlist widget.",
+      "runtime_assertion": "Add a Wish",
+      "citations": []
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606"
+      },
+      "r4_entry_point_claim": "Family activity widget disclosure.",
+      "runtime_assertion": "Show less",
+      "citations": []
+    },
+    {
+      "surface_key": "family-heatmap",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606"
+      },
+      "r4_entry_point_claim": "Family activity heatmap control.",
+      "runtime_assertion": "52 weeks of family activity",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/family.tsx",
+          "lines": "532",
+          "claim": "Heatmap modal."
+        },
+        {
+          "file": "app/(app)/(tabs)/family.tsx",
+          "lines": "619-620",
+          "claim": "Activity heading."
+        },
+        {
+          "file": "app/(app)/(tabs)/family.tsx",
+          "lines": "1056-1062",
+          "claim": "52 weeks control."
+        }
+      ]
+    },
+    {
+      "surface_key": "family-meal-results",
+      "owner": "components/WeeklyMenuSection.tsx",
+      "r4_owner_claim": "components/WeeklyMenuSection.tsx",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "source_file_sha256": {
+        "components/WeeklyMenuSection.tsx": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2"
+      },
+      "r4_entry_point_claim": "Family meal planner > results/history.",
+      "runtime_assertion": "Results",
+      "citations": []
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet > Add Goal; leave draft unsaved.",
+      "runtime_assertion": "New Savings Fund",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/wallet.tsx",
+          "lines": "1562-1566",
+          "claim": "Icon-only plus opens visible New Savings Fund form."
+        }
+      ]
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet seeded goal > Contribute; leave amount uncommitted.",
+      "runtime_assertion": "0 / 1 pts saved",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/wallet.tsx",
+          "lines": "1562-1566",
+          "claim": "Visible Add Goal control and form entry point."
+        },
+        {
+          "file": "app/(app)/(tabs)/wallet.tsx",
+          "lines": "947-999",
+          "claim": "Goal form labels and Create Fund action."
+        }
+      ]
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet bag item > Use reward; leave note unsaved/uncommitted.",
+      "runtime_assertion": "Use \"Sleep In Day\"?",
+      "citations": []
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet bag item > note control.",
+      "runtime_assertion": "Note (optional)",
+      "citations": []
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      },
+      "r4_entry_point_claim": "Wallet activity > open search/filter and enter a no-result query; clear before exit.",
+      "runtime_assertion": "R5 no match",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/wallet.tsx",
+          "lines": "617-620",
+          "claim": "Point History search icon control."
+        },
+        {
+          "file": "app/(app)/(tabs)/wallet.tsx",
+          "lines": "649-656",
+          "claim": "Search field appears with placeholder."
+        }
+      ]
+    },
+    {
+      "surface_key": "market-item-detail",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Select seeded reward card or long-press alternative.",
+      "runtime_assertion": "Movie Night",
+      "citations": []
+    },
+    {
+      "surface_key": "market-item-create",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Market > Add menu > create item; leave unsaved.",
+      "runtime_assertion": "Add to Market",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "1800-1815",
+          "claim": "Icon-only Add Item floating action button."
+        }
+      ]
+    },
+    {
+      "surface_key": "market-item-edit",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Seeded reward > Edit.",
+      "runtime_assertion": "Save Changes",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "296-300",
+          "claim": "New/Edit form title."
+        },
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "524",
+          "claim": "Add to Market/Save Changes action."
+        },
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "1800-1815",
+          "claim": "Add Item floating action button."
+        }
+      ]
+    },
+    {
+      "surface_key": "market-item-restock",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Seeded reward context menu > restock.",
+      "runtime_assertion": "Current stock: 1",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "543-563",
+          "claim": "Restock form and stock assertion."
+        },
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "1800-1815",
+          "claim": "Add Item floating action button."
+        }
+      ]
+    },
+    {
+      "surface_key": "market-price-history",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Seeded reward > price/history control.",
+      "runtime_assertion": "Price history",
+      "citations": []
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Market > Flash Sale; leave unsaved.",
+      "runtime_assertion": "New Flash Sale",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/market.tsx",
+          "lines": "1817-1826",
+          "claim": "Icon-only flash sale floating action button."
+        }
+      ]
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      },
+      "r4_entry_point_claim": "Seeded affordable reward > Redeem > inspect confirmation; cancel before commit.",
+      "runtime_assertion": "Confirm?",
+      "citations": []
+    },
+    {
+      "surface_key": "restock-item-create",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      },
+      "r4_entry_point_claim": "Restock quick-add control; leave draft unsaved.",
+      "runtime_assertion": "FREQUENT ITEMS",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "1036-1045",
+          "claim": "Icon-only header Quick Add control."
+        },
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "1064-1070",
+          "claim": "Quick Add panel heading and FREQUENT ITEMS."
+        }
+      ]
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      },
+      "r4_entry_point_claim": "Seeded item > edit; do not save.",
+      "runtime_assertion": "Save Changes",
+      "citations": []
+    },
+    {
+      "surface_key": "restock-filter",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      },
+      "r4_entry_point_claim": "Restock filter bar > open filter state.",
+      "runtime_assertion": "Trader Joe's",
+      "citations": []
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      },
+      "r4_entry_point_claim": "Restock history disclosure.",
+      "runtime_assertion": "R5 disposable item",
+      "citations": [
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "1036-1045",
+          "claim": "Quick Add icon-only header control."
+        },
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "908-946",
+          "claim": "Normal completion interaction and pending timer."
+        },
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "1276-1281",
+          "claim": "History control."
+        }
+      ]
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      },
+      "r4_entry_point_claim": "Expand/collapse a seeded restock category; capture expanded state.",
+      "runtime_assertion": "BAKERY & BREAD",
+      "citations": []
+    },
+    {
+      "surface_key": "family-member-create",
+      "owner": "app/onboarding/family.tsx",
+      "r4_owner_claim": "app/onboarding/family.tsx",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "source_file_sha256": {
+        "app/onboarding/family.tsx": "975cdebb752616abd98fc3a42fceb1435434a4d0fceb962e34f49962c678e7ab"
+      },
+      "r4_entry_point_claim": "Onboarding Family step > Add Family Member; leave draft unsaved.",
+      "runtime_assertion": "Add Member",
+      "citations": [
+        {
+          "file": "app/onboarding/family.tsx",
+          "lines": "182-186",
+          "claim": "Add Family Member opens create state."
+        },
+        {
+          "file": "app/onboarding/family.tsx",
+          "lines": "203-205",
+          "claim": "Shared modal renderer."
+        }
+      ]
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "r4_owner_claim": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/family.tsx": "911c853b14b23d92eaaf71486b10c341a3360b6e2468eaed796ced8e28e4d606",
+        "components/WeeklyMenuSection.tsx": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2"
+      },
+      "r4_entry_point_claim": "Family tab > Edit; keep layout draft unchanged.",
+      "runtime_assertion": "Done",
+      "citations": []
+    }
+  ],
+  "targeted_source_citations": {
+    "family-member-create": [
+      {
+        "file": "app/onboarding/family.tsx",
+        "lines": "182-186",
+        "claim": "Add Family Member opens create state."
+      },
+      {
+        "file": "app/onboarding/family.tsx",
+        "lines": "203-205",
+        "claim": "Shared modal renderer."
+      }
+    ],
+    "family-member-editor": [
+      {
+        "file": "app/onboarding/family.tsx",
+        "lines": "166-179",
+        "claim": "Member row exposes distinct pencil edit action."
+      },
+      {
+        "file": "app/onboarding/family.tsx",
+        "lines": "203-205",
+        "claim": "Shared modal renderer."
+      }
+    ],
+    "wallet-goal-contribute": [
+      {
+        "file": "app/(app)/(tabs)/wallet.tsx",
+        "lines": "1562-1566",
+        "claim": "Visible Add Goal control and form entry point."
+      },
+      {
+        "file": "app/(app)/(tabs)/wallet.tsx",
+        "lines": "947-999",
+        "claim": "Goal form labels and Create Fund action."
+      }
+    ],
+    "chores-bulk-selection": [
+      {
+        "file": "app/(app)/(tabs)/chores.tsx",
+        "lines": "1376",
+        "claim": "Visible row long-press enters selection."
+      },
+      {
+        "file": "app/(app)/(tabs)/chores.tsx",
+        "lines": "1771",
+        "claim": "unstable_batchedUpdates call associated with runtime exception."
+      },
+      {
+        "file": "app/(app)/(tabs)/chores.tsx",
+        "lines": "1941",
+        "claim": "Drag-end callback also invokes the API."
+      }
+    ],
+    "family-meal-voting": [
+      {
+        "file": "store/huddleStore.ts",
+        "lines": "357-371",
+        "claim": "Seed votes cover all members."
+      },
+      {
+        "file": "store/huddleStore.ts",
+        "lines": "387",
+        "claim": "Default phase is voting."
+      },
+      {
+        "file": "components/WeeklyMenuSection.tsx",
+        "lines": "1605-1609",
+        "claim": "Mount invokes phase check."
+      },
+      {
+        "file": "store/huddleStore.ts",
+        "lines": "609-612",
+        "claim": "Phase transition logic."
+      },
+      {
+        "file": "components/WeeklyMenuSection.tsx",
+        "lines": "1626-1633",
+        "claim": "Header displays Results after phase advance."
+      }
+    ],
+    "restock-pantry-check": [
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "885",
+        "claim": "pendingIngredients initializes empty."
+      },
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "1018-1024",
+        "claim": "Conditional pantry check."
+      }
+    ],
+    "family-heatmap": [
+      {
+        "file": "app/(app)/(tabs)/family.tsx",
+        "lines": "532",
+        "claim": "Heatmap modal."
+      },
+      {
+        "file": "app/(app)/(tabs)/family.tsx",
+        "lines": "619-620",
+        "claim": "Activity heading."
+      },
+      {
+        "file": "app/(app)/(tabs)/family.tsx",
+        "lines": "1056-1062",
+        "claim": "52 weeks control."
+      }
+    ],
+    "restock-history-expanded": [
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "1036-1045",
+        "claim": "Quick Add icon-only header control."
+      },
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "908-946",
+        "claim": "Normal completion interaction and pending timer."
+      },
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "1276-1281",
+        "claim": "History control."
+      }
+    ],
+    "restock-item-create": [
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "1036-1045",
+        "claim": "Icon-only header Quick Add control."
+      },
+      {
+        "file": "app/(app)/(tabs)/restock.tsx",
+        "lines": "1064-1070",
+        "claim": "Quick Add panel heading and FREQUENT ITEMS."
+      }
+    ],
+    "market-item-edit": [
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "296-300",
+        "claim": "New/Edit form title."
+      },
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "524",
+        "claim": "Add to Market/Save Changes action."
+      },
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "1800-1815",
+        "claim": "Add Item floating action button."
+      }
+    ],
+    "market-item-restock": [
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "543-563",
+        "claim": "Restock form and stock assertion."
+      },
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "1800-1815",
+        "claim": "Add Item floating action button."
+      }
+    ],
+    "home-delivery-add": [
+      {
+        "file": "app/(app)/(tabs)/index.tsx",
+        "lines": "1991-2008",
+        "claim": "Visible merged calendar/history and add delivery controls with icon-only Pressables."
+      }
+    ],
+    "home-delivery-calendar": [
+      {
+        "file": "app/(app)/(tabs)/index.tsx",
+        "lines": "1991-2002",
+        "claim": "Calendar icon control is a tap target in the delivery header."
+      }
+    ],
+    "home-delivery-history": [
+      {
+        "file": "app/(app)/(tabs)/index.tsx",
+        "lines": "1991-2002",
+        "claim": "History is the same visible merged control with long-press behavior."
+      }
+    ],
+    "home-family-switcher": [
+      {
+        "file": "app/(app)/(tabs)/index.tsx",
+        "lines": "640-686",
+        "claim": "AmbientHUD renders icon-only family selector; measured runtime bounds are recorded."
+      }
+    ],
+    "home-automation-create": [
+      {
+        "file": "app/(app)/(tabs)/index.tsx",
+        "lines": "3513-3518",
+        "claim": "Automations section exposes icon-only plus control."
+      }
+    ],
+    "home-appliance-create": [
+      {
+        "file": "app/(app)/(tabs)/index.tsx",
+        "lines": "2724-2744",
+        "claim": "Appliance Watch section exposes icon-only plus control."
+      }
+    ],
+    "chores-create": [
+      {
+        "file": "app/(app)/(tabs)/chores.tsx",
+        "lines": "6258-6270",
+        "claim": "Add Chore floating action button uses icon-only Plus."
+      }
+    ],
+    "chores-filter-sort": [
+      {
+        "file": "app/(app)/(tabs)/chores.tsx",
+        "lines": "6144-6155",
+        "claim": "Icon-only Filter button opens Sort & Filter."
+      }
+    ],
+    "chores-game-picker": [
+      {
+        "file": "app/(app)/(tabs)/chores.tsx",
+        "lines": "6138-6144",
+        "claim": "Icon-only Dices control opens game picker."
+      }
+    ],
+    "wallet-goal-create": [
+      {
+        "file": "app/(app)/(tabs)/wallet.tsx",
+        "lines": "1562-1566",
+        "claim": "Icon-only plus opens visible New Savings Fund form."
+      }
+    ],
+    "wallet-activity-search": [
+      {
+        "file": "app/(app)/(tabs)/wallet.tsx",
+        "lines": "617-620",
+        "claim": "Point History search icon control."
+      },
+      {
+        "file": "app/(app)/(tabs)/wallet.tsx",
+        "lines": "649-656",
+        "claim": "Search field appears with placeholder."
+      }
+    ],
+    "market-item-create": [
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "1800-1815",
+        "claim": "Icon-only Add Item floating action button."
+      }
+    ],
+    "market-flash-sale": [
+      {
+        "file": "app/(app)/(tabs)/market.tsx",
+        "lines": "1817-1826",
+        "claim": "Icon-only flash sale floating action button."
+      }
+    ],
+    "developer-controls-and-simulators": [
+      {
+        "file": "app/index.tsx",
+        "lines": "585-646",
+        "claim": "Developer Control and local bypass."
+      },
+      {
+        "file": "components/DevToolsOverlay.tsx",
+        "lines": "110",
+        "claim": "Simulate First Launch."
+      }
+    ]
+  },
+  "navigation_searches": [
+    {
+      "query": "completed-chores OR /settings/completed-chores",
+      "scope": "active Product app/ and components/",
+      "result": "Route file exists; no normal in-app navigation call site found."
+    }
+  ],
+  "runtime_source_mirror": {
+    "tracked_files_compared": 86,
+    "mismatches": 0,
+    "workspace_worktree_clean": true
+  }
+}

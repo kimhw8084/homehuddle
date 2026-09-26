@@ -1,0 +1,221 @@
+{
+  "schema": "project-os-r5-manifest-validation-recovery-lineage-v1",
+  "request": "homehuddle-ui0-manifest-validate-v1",
+  "operation": "VERIFY",
+  "source_verification_before_retained_file_use": {
+    "workspace_head": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "workspace_tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "worktree_clean": true,
+    "runtime_copy_tracked_files_compared": 86,
+    "runtime_copy_mismatches": 0,
+    "remote_main_observed": "46bd155dd55cbd85a29db5722c96d96c4946952b"
+  },
+  "bound_source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "r4": {
+    "job_id": "CF-bccac3bb847101ea7a8f4eeb",
+    "request": "homehuddle-ui0-perfect-baseline-v4-final",
+    "manifest_sha256": "567f8193e579776abd64b5f1bb4c4b5464af0260aea0caf4d0b51cdc5d51bf59",
+    "manifest_status": "FINAL_FROZEN_FOR_CANONICAL_CAPTURE",
+    "surface_count": 69,
+    "failure_code": "MANIFEST_REPAIR_SCOPE_EXCEEDED",
+    "failure_receipt_sha256": "3b4d86a08c69310c2f60f6004d977a084eeef085dec98be23c7d2ddda49278da",
+    "manifest_repair_sha256": "15319113b9faa6838b8136102d184952a01b51f6561e3541cc43c217895975ee",
+    "recovery_lineage_sha256": "b92926843deb61dd2b260392b3c6be89e525919779f90a5223e25c8282746c34",
+    "recovery_lineage": {
+      "schema": "project-os-recovery-lineage-v1",
+      "recorded_at_utc": "2026-09-26T14:09:59Z",
+      "current_job_id": "CF-a96f62f3d990810cb38a012f",
+      "current_request": "homehuddle-ui0-perfect-baseline-v3-recovery",
+      "predecessor": {
+        "job_id": "CF-b996dcba9bca21b3369a84fb",
+        "request": "homehuddle-ui0-perfect-baseline-v2",
+        "job_metadata": "/Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed/job.json",
+        "retained_worktree": "/Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb",
+        "status": "FAILED_MODEL",
+        "recovery_required": true,
+        "worktree_retained": true,
+        "retry_safe": false,
+        "model_rerun_safe": false
+      },
+      "bound_source": {
+        "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+        "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+        "remote_target": "main",
+        "observed_remote_main_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b"
+      },
+      "candidate_manifest": {
+        "path": "/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json",
+        "sha256": "8a4bbf45f0185b7cceaf1a260d1d7403b4107539badf96469cdf7b57fd990fcd",
+        "freeze_time_utc": "2026-09-25T22:34:50+00:00",
+        "manifest_status": "FROZEN_BEFORE_CANONICAL_CAPTURE",
+        "surface_count": 70,
+        "source": {
+          "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+          "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+          "remote_target": "main"
+        },
+        "superseded_freeze": {
+          "reason": "Source/runtime verification showed the initial manifest incorrectly modeled Family member editing and two unreachable/non-distinct Restock surfaces. The 70-key draft was invalidated; its PNG probes were discarded and this corrected manifest is the sole final freeze.",
+          "provisional_pngs_deleted": 74
+        },
+        "preserved_copy": "/Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery/rejected-candidate-surface-manifest.json",
+        "promoted_as_final_manifest": false
+      },
+      "retained_validation": {
+        "path": "/tmp/homehuddle-ui0-perfect-baseline-v2-resume2/package-validation.json",
+        "sha256": "bba74c5a375632b5ec8b20d8b2ff474963d2492483bb63b299261bcaa8b4786f",
+        "complete": false,
+        "manifest_path_collisions": {
+          "screenshots/family-member-editor--desktop-1440x900.png": [
+            {
+              "surface_key": "family-member-editor",
+              "viewport": "desktop"
+            },
+            {
+              "surface_key": "family-member-create",
+              "viewport": "desktop"
+            }
+          ],
+          "screenshots/family-member-editor--mobile-390x844.png": [
+            {
+              "surface_key": "family-member-editor",
+              "viewport": "mobile"
+            },
+            {
+              "surface_key": "family-member-create",
+              "viewport": "mobile"
+            }
+          ]
+        },
+        "missing_key_viewports": [
+          [
+            "family-meal-voting",
+            "desktop-1440x900"
+          ],
+          [
+            "family-meal-voting",
+            "mobile-390x844"
+          ]
+        ],
+        "blockers": [
+          "STATE_UNREACHABLE_IN_DETERMINISTIC_FIXTURE",
+          "SURFACE_MANIFEST_ARTIFACT_PATH_COLLISION",
+          "AUDIT_CLAUSE_CATALOG_UNAVAILABLE",
+          "STRESS_PROFILE_COVERAGE_INCOMPLETE",
+          "CAPTURE_EVENT_RETENTION_GAP"
+        ],
+        "preserved_copy": "/Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery/predecessor-package-validation.json"
+      },
+      "decision": {
+        "status": "RECOVERY_DISCOVERY_INVALID",
+        "reason": "The retained frozen manifest cannot uniquely bind the create and edit Family states to canonical PNG artifacts, and its retained validation also marks both family-meal-voting canonical anchors unreachable/missing.",
+        "runtime_or_capture_started_for_current_job": false,
+        "product_source_modified": false
+      }
+    }
+  },
+  "r3": {
+    "job_id": "CF-a96f62f3d990810cb38a012f",
+    "request": "homehuddle-ui0-perfect-baseline-v3-recovery",
+    "manifest_sha256": "8a4bbf45f0185b7cceaf1a260d1d7403b4107539badf96469cdf7b57fd990fcd",
+    "surface_count": 70,
+    "recovery_lineage_sha256": "b92926843deb61dd2b260392b3c6be89e525919779f90a5223e25c8282746c34",
+    "recovery_lineage": {
+      "schema": "project-os-recovery-lineage-v1",
+      "recorded_at_utc": "2026-09-26T14:09:59Z",
+      "current_job_id": "CF-a96f62f3d990810cb38a012f",
+      "current_request": "homehuddle-ui0-perfect-baseline-v3-recovery",
+      "predecessor": {
+        "job_id": "CF-b996dcba9bca21b3369a84fb",
+        "request": "homehuddle-ui0-perfect-baseline-v2",
+        "job_metadata": "/Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed/job.json",
+        "retained_worktree": "/Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb",
+        "status": "FAILED_MODEL",
+        "recovery_required": true,
+        "worktree_retained": true,
+        "retry_safe": false,
+        "model_rerun_safe": false
+      },
+      "bound_source": {
+        "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+        "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+        "remote_target": "main",
+        "observed_remote_main_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b"
+      },
+      "candidate_manifest": {
+        "path": "/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json",
+        "sha256": "8a4bbf45f0185b7cceaf1a260d1d7403b4107539badf96469cdf7b57fd990fcd",
+        "freeze_time_utc": "2026-09-25T22:34:50+00:00",
+        "manifest_status": "FROZEN_BEFORE_CANONICAL_CAPTURE",
+        "surface_count": 70,
+        "source": {
+          "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+          "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+          "remote_target": "main"
+        },
+        "superseded_freeze": {
+          "reason": "Source/runtime verification showed the initial manifest incorrectly modeled Family member editing and two unreachable/non-distinct Restock surfaces. The 70-key draft was invalidated; its PNG probes were discarded and this corrected manifest is the sole final freeze.",
+          "provisional_pngs_deleted": 74
+        },
+        "preserved_copy": "/Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery/rejected-candidate-surface-manifest.json",
+        "promoted_as_final_manifest": false
+      },
+      "retained_validation": {
+        "path": "/tmp/homehuddle-ui0-perfect-baseline-v2-resume2/package-validation.json",
+        "sha256": "bba74c5a375632b5ec8b20d8b2ff474963d2492483bb63b299261bcaa8b4786f",
+        "complete": false,
+        "manifest_path_collisions": {
+          "screenshots/family-member-editor--desktop-1440x900.png": [
+            {
+              "surface_key": "family-member-editor",
+              "viewport": "desktop"
+            },
+            {
+              "surface_key": "family-member-create",
+              "viewport": "desktop"
+            }
+          ],
+          "screenshots/family-member-editor--mobile-390x844.png": [
+            {
+              "surface_key": "family-member-editor",
+              "viewport": "mobile"
+            },
+            {
+              "surface_key": "family-member-create",
+              "viewport": "mobile"
+            }
+          ]
+        },
+        "missing_key_viewports": [
+          [
+            "family-meal-voting",
+            "desktop-1440x900"
+          ],
+          [
+            "family-meal-voting",
+            "mobile-390x844"
+          ]
+        ],
+        "blockers": [
+          "STATE_UNREACHABLE_IN_DETERMINISTIC_FIXTURE",
+          "SURFACE_MANIFEST_ARTIFACT_PATH_COLLISION",
+          "AUDIT_CLAUSE_CATALOG_UNAVAILABLE",
+          "STRESS_PROFILE_COVERAGE_INCOMPLETE",
+          "CAPTURE_EVENT_RETENTION_GAP"
+        ],
+        "preserved_copy": "/Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery/predecessor-package-validation.json"
+      },
+      "decision": {
+        "status": "RECOVERY_DISCOVERY_INVALID",
+        "reason": "The retained frozen manifest cannot uniquely bind the create and edit Family states to canonical PNG artifacts, and its retained validation also marks both family-meal-voting canonical anchors unreachable/missing.",
+        "runtime_or_capture_started_for_current_job": false,
+        "product_source_modified": false
+      }
+    },
+    "use": "Lineage and prior repairs only; not current capture authority."
+  }
+}

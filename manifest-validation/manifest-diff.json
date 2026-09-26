@@ -1,0 +1,531 @@
+{
+  "schema": "project-os-manifest-validation-diff-v1",
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "operation": "VERIFY",
+  "request": "homehuddle-ui0-manifest-validate-v1",
+  "change": "CHG-238 R5",
+  "prior_manifest_sha256": "567f8193e579776abd64b5f1bb4c4b5464af0260aea0caf4d0b51cdc5d51bf59",
+  "validated_manifest_sha256": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277",
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "source_tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "original_row_count": 69,
+  "final_canonical_surface_count": 65,
+  "classification_counts": {
+    "A": 57,
+    "B": 8,
+    "C": 0,
+    "D": 3,
+    "E": 1,
+    "F": 0,
+    "G": 0
+  },
+  "added_surface_keys": [],
+  "removed_from_canonical_surface_keys": [
+    "chores-bulk-selection",
+    "market-item-detail",
+    "restock-category-expanded",
+    "wallet-bag-item-note"
+  ],
+  "reclassified_keys": [
+    {
+      "surface_key": "onboarding-family",
+      "to": "B",
+      "reason": "Profile name and Continue required."
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "to": "B",
+      "reason": "Visible onboarding progression required."
+    },
+    {
+      "surface_key": "family-member-create",
+      "to": "B",
+      "reason": "Distinct Add modal after normal profile progression."
+    },
+    {
+      "surface_key": "family-member-editor",
+      "to": "B",
+      "reason": "Distinct edit modal after normal profile progression."
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "to": "B",
+      "reason": "Seed is empty; use visible Add Goal UI first."
+    },
+    {
+      "surface_key": "market-item-edit",
+      "to": "B",
+      "reason": "Create a disposable local item via visible form."
+    },
+    {
+      "surface_key": "market-item-restock",
+      "to": "B",
+      "reason": "Create a disposable local item via visible form."
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "to": "B",
+      "reason": "Create/complete a disposable local item via visible UI."
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "to": "E",
+      "reason": "Runtime exception prevents assertion."
+    }
+  ],
+  "metadata_repairs": [
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "field": "owner/source_files",
+      "from": "query-suffixed pseudo owner",
+      "to": "app/(app)/settings/chore-history.tsx"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "field": "entry_point/state",
+      "repair": "remove false seeded-goal claim; normal Add Goal then Contribute."
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "field": "entry_point/state",
+      "repair": "assert current Vote Results modal."
+    },
+    {
+      "surface_key": "family-meal-results",
+      "field": "entry_point/state",
+      "repair": "retain current seeded Results state."
+    },
+    {
+      "surface_key": "family-heatmap",
+      "field": "entry_point/state",
+      "repair": "visible 52 weeks control."
+    },
+    {
+      "surface_key": "restock-item-create",
+      "field": "entry_point/assertion",
+      "repair": "Quick Add opens FREQUENT ITEMS without creating item."
+    },
+    {
+      "surface_key": "market-item-edit and market-item-restock",
+      "field": "entry_point/state",
+      "repair": "use locally UI-created temporary market item."
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "field": "entry_point/state",
+      "repair": "normal visible add/complete flow; fresh-context reset."
+    },
+    {
+      "surface_key": "three alias keys",
+      "field": "canonical owner aliases",
+      "repair": "consolidate to existing persistent renderer."
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "field": "canonical placement",
+      "repair": "move failed state to E obligation."
+    }
+  ],
+  "entry_recipe_repairs": [
+    {
+      "surface_key": "auth-entry",
+      "recipe_id": "auth-entry",
+      "classification": "A"
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "recipe_id": "onboarding-welcome",
+      "classification": "A"
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "recipe_id": "onboarding-profile",
+      "classification": "A"
+    },
+    {
+      "surface_key": "onboarding-family",
+      "recipe_id": "onboarding-family",
+      "classification": "B"
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "recipe_id": "onboarding-complete",
+      "classification": "B"
+    },
+    {
+      "surface_key": "home-dashboard",
+      "recipe_id": "home-dashboard",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-today-all",
+      "recipe_id": "chores-today-all",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "recipe_id": "chores-my-scope",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "recipe_id": "chores-calendar-month",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-hub",
+      "recipe_id": "family-hub",
+      "classification": "A"
+    },
+    {
+      "surface_key": "wallet-points",
+      "recipe_id": "wallet-points",
+      "classification": "A"
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "recipe_id": "wallet-reward-bag",
+      "classification": "A"
+    },
+    {
+      "surface_key": "market-catalog",
+      "recipe_id": "market-catalog",
+      "classification": "A"
+    },
+    {
+      "surface_key": "restock-inventory",
+      "recipe_id": "restock-inventory",
+      "classification": "A"
+    },
+    {
+      "surface_key": "profile-center",
+      "recipe_id": "profile-center",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "recipe_id": "settings-personal-info",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "recipe_id": "settings-privacy-security",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-notifications",
+      "recipe_id": "settings-notifications",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-household",
+      "recipe_id": "settings-household",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-invite",
+      "recipe_id": "settings-invite",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "recipe_id": "settings-chore-history-completed",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "recipe_id": "settings-chore-history-deleted",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-help",
+      "recipe_id": "settings-help",
+      "classification": "A"
+    },
+    {
+      "surface_key": "settings-about",
+      "recipe_id": "settings-about",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "recipe_id": "home-family-switcher",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "recipe_id": "home-inbox-review",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "recipe_id": "home-delivery-add",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "recipe_id": "home-delivery-calendar",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "recipe_id": "home-delivery-history",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "recipe_id": "home-announcement-board",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "recipe_id": "home-dinner-planner",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-automation-create",
+      "recipe_id": "home-automation-create",
+      "classification": "A"
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "recipe_id": "home-appliance-create",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-create",
+      "recipe_id": "chores-create",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-edit",
+      "recipe_id": "chores-edit",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "recipe_id": "chores-expanded-task",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "recipe_id": "chores-filter-sort",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-assignment",
+      "recipe_id": "chores-assignment",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "recipe_id": "chores-reschedule",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "recipe_id": "chores-game-picker",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "recipe_id": "chores-random-assignment",
+      "classification": "A"
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "recipe_id": "chores-completed-expanded",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-member-detail",
+      "recipe_id": "family-member-detail",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-member-editor",
+      "recipe_id": "family-member-editor",
+      "classification": "B"
+    },
+    {
+      "surface_key": "family-announcements",
+      "recipe_id": "family-announcements",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-wishlist",
+      "recipe_id": "family-wishlist",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "recipe_id": "family-activity-expanded",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-heatmap",
+      "recipe_id": "family-heatmap",
+      "classification": "A"
+    },
+    {
+      "surface_key": "family-meal-results",
+      "recipe_id": "family-meal-results",
+      "classification": "A"
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "recipe_id": "wallet-goal-create",
+      "classification": "A"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "recipe_id": "wallet-goal-contribute",
+      "classification": "B"
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "recipe_id": "wallet-reward-use",
+      "classification": "A"
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "recipe_id": "wallet-activity-search",
+      "classification": "A"
+    },
+    {
+      "surface_key": "market-item-create",
+      "recipe_id": "market-item-create",
+      "classification": "A"
+    },
+    {
+      "surface_key": "market-item-edit",
+      "recipe_id": "market-item-edit",
+      "classification": "B"
+    },
+    {
+      "surface_key": "market-item-restock",
+      "recipe_id": "market-item-restock",
+      "classification": "B"
+    },
+    {
+      "surface_key": "market-price-history",
+      "recipe_id": "market-price-history",
+      "classification": "A"
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "recipe_id": "market-flash-sale",
+      "classification": "A"
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "recipe_id": "market-redeem-confirmation",
+      "classification": "A"
+    },
+    {
+      "surface_key": "restock-item-create",
+      "recipe_id": "restock-item-create",
+      "classification": "A"
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "recipe_id": "restock-item-edit",
+      "classification": "A"
+    },
+    {
+      "surface_key": "restock-filter",
+      "recipe_id": "restock-filter",
+      "classification": "A"
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "recipe_id": "restock-history-expanded",
+      "classification": "B"
+    },
+    {
+      "surface_key": "family-member-create",
+      "recipe_id": "family-member-create",
+      "classification": "B"
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "recipe_id": "family-layout-edit",
+      "classification": "A"
+    }
+  ],
+  "canonical_keys": [
+    "auth-entry",
+    "chores-assignment",
+    "chores-calendar-month",
+    "chores-completed-expanded",
+    "chores-create",
+    "chores-edit",
+    "chores-expanded-task",
+    "chores-filter-sort",
+    "chores-game-picker",
+    "chores-my-scope",
+    "chores-random-assignment",
+    "chores-reschedule",
+    "chores-today-all",
+    "family-activity-expanded",
+    "family-announcements",
+    "family-heatmap",
+    "family-hub",
+    "family-layout-edit",
+    "family-meal-results",
+    "family-member-create",
+    "family-member-detail",
+    "family-member-editor",
+    "family-wishlist",
+    "home-announcement-board",
+    "home-appliance-create",
+    "home-automation-create",
+    "home-dashboard",
+    "home-delivery-add",
+    "home-delivery-calendar",
+    "home-delivery-history",
+    "home-dinner-planner",
+    "home-family-switcher",
+    "home-inbox-review",
+    "market-catalog",
+    "market-flash-sale",
+    "market-item-create",
+    "market-item-edit",
+    "market-item-restock",
+    "market-price-history",
+    "market-redeem-confirmation",
+    "onboarding-complete",
+    "onboarding-family",
+    "onboarding-profile",
+    "onboarding-welcome",
+    "profile-center",
+    "restock-filter",
+    "restock-history-expanded",
+    "restock-inventory",
+    "restock-item-create",
+    "restock-item-edit",
+    "settings-about",
+    "settings-chore-history-completed",
+    "settings-chore-history-deleted",
+    "settings-help",
+    "settings-household",
+    "settings-invite",
+    "settings-notifications",
+    "settings-personal-info",
+    "settings-privacy-security",
+    "wallet-activity-search",
+    "wallet-goal-contribute",
+    "wallet-goal-create",
+    "wallet-points",
+    "wallet-reward-bag",
+    "wallet-reward-use"
+  ],
+  "canonical_key_count": 65,
+  "canonical_artifact_path_count": 130,
+  "duplicate_canonical_surface_keys": [],
+  "canonical_artifact_path_collisions": [],
+  "manifest_status": "VALIDATED_PENDING_INDEPENDENT_AUDIT",
+  "full_canonical_screenshot_set_captured": false
+}

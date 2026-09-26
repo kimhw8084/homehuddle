@@ -1,0 +1,3055 @@
+{
+  "schema": "project-os-capture-recipes-v1",
+  "source_binding": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "canonical_surface_count": 65,
+  "recipe_count": 65,
+  "recipes": [
+    {
+      "surface_key": "auth-entry",
+      "classification": "A",
+      "start_context": "auth-root",
+      "route_navigation_intent": "Open unauthenticated auth root /.",
+      "ordered_visible_user_actions": [],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Continue with Apple",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "classification": "A",
+      "start_context": "onboarding",
+      "route_navigation_intent": "Open clean /onboarding fixture and follow visible onboarding controls.",
+      "ordered_visible_user_actions": [],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Get Started",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "classification": "A",
+      "start_context": "onboarding",
+      "route_navigation_intent": "Open clean /onboarding fixture and follow visible onboarding controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Select visible Get Started",
+          "selector": {
+            "kind": "visible text",
+            "label": "Get Started"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Set Up Your Profile",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "onboarding-family",
+      "classification": "B",
+      "start_context": "onboarding",
+      "route_navigation_intent": "Open clean /onboarding fixture and follow visible onboarding controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open /onboarding in a new context",
+          "selector": {
+            "kind": "route",
+            "label": "/onboarding"
+          }
+        },
+        {
+          "action": "Activate Get Started",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Get Started"
+          }
+        },
+        {
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": {
+            "kind": "textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…"
+          },
+          "value": "Haewon Kim"
+        },
+        {
+          "action": "Activate Continue",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Your Family",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "classification": "B",
+      "start_context": "onboarding",
+      "route_navigation_intent": "Open clean /onboarding fixture and follow visible onboarding controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open /onboarding in a new context",
+          "selector": {
+            "kind": "route",
+            "label": "/onboarding"
+          }
+        },
+        {
+          "action": "Activate Get Started",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Get Started"
+          }
+        },
+        {
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": {
+            "kind": "textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…"
+          },
+          "value": "Haewon Kim"
+        },
+        {
+          "action": "Activate Continue",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          }
+        },
+        {
+          "action": "Activate Continue on Your Family",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "You're all set!",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "home-dashboard",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "FAMILY ORBIT",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-today-all",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "TODAY'S FOCUS",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores?filter=Me in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Activate ME",
+          "selector": {
+            "kind": "visible pressable text",
+            "label": "ME"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "ME",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "September 2026",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-hub",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Family Hub",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "wallet-points",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Wallet tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Wallet"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Point History",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /wallet?tab=bag in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Wallet tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Wallet"
+          }
+        },
+        {
+          "action": "Select visible My Bag",
+          "selector": {
+            "kind": "visible text",
+            "label": "My Bag"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "My Bag",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "market-catalog",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Market"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Movie Night",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "restock-inventory",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /restock in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Restock tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Restock"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Sourdough Bread",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "profile-center",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /profile in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Personal Info",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/personal-info in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Personal Info",
+          "selector": {
+            "kind": "visible text",
+            "label": "Personal Info"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Personal Info",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/privacy in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Privacy",
+          "selector": {
+            "kind": "visible text",
+            "label": "Privacy"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Privacy & Security",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-notifications",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/notifications in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Notification Settings",
+          "selector": {
+            "kind": "visible text",
+            "label": "Notification Settings"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Notifications",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-household",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/household in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Household Settings",
+          "selector": {
+            "kind": "visible text",
+            "label": "Household Settings"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Household Settings",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-invite",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/invite in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Invite Family",
+          "selector": {
+            "kind": "visible text",
+            "label": "Invite Family"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Invite Family",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/chore-history in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Chore History",
+          "selector": {
+            "kind": "visible text",
+            "label": "Chore History"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Chore History",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/chore-history?tab=deleted in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Chore History",
+          "selector": {
+            "kind": "visible text",
+            "label": "Chore History"
+          }
+        },
+        {
+          "action": "Select visible Deleted",
+          "selector": {
+            "kind": "visible text",
+            "label": "Deleted"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Deleted",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-help",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/help in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible Help Center",
+          "selector": {
+            "kind": "visible text",
+            "label": "Help Center"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Help Center",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "settings-about",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /settings/about in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "top-right profile avatar (source AmbientHUD; header geometry)",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "top-right profile avatar (source AmbientHUD; header geometry)"
+          }
+        },
+        {
+          "action": "Select visible About HomeHuddle",
+          "selector": {
+            "kind": "visible text",
+            "label": "About HomeHuddle"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "About HomeHuddle",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=header, anchor=None, slot=0, bounds={'i': 0, 'txt': '', 'x': 242, 'y': 8, 'w': 56, 'h': 56, 'cx': 270, 'cy': 36}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Family Orbit",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Select visible Inbox Review",
+          "selector": {
+            "kind": "visible text",
+            "label": "Inbox Review"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Well Done!",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Deliveries', slot=1, bounds={'i': 12, 'txt': '', 'x': 344.46875, 'y': 490, 'w': 34, 'h': 34, 'cx': 361.46875, 'cy': 507}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "WHAT'S ARRIVING?",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Deliveries', slot=0, bounds={'i': 11, 'txt': '', 'x': 269.46875, 'y': 490, 'w': 65, 'h': 34, 'cx': 301.96875, 'cy': 507}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Sep 2026",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Deliveries', slot=0, bounds={'i': 11, 'txt': '', 'x': 269.46875, 'y': 490, 'w': 65, 'h': 34, 'cx': 301.96875, 'cy': 507}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Delivery History",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Select visible Grandparents visiting!",
+          "selector": {
+            "kind": "visible text",
+            "label": "Grandparents visiting!"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Announcements",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Select visible Tap for details & recipes",
+          "selector": {
+            "kind": "visible text",
+            "label": "Tap for details & recipes"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "This Week Vote Results",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "home-automation-create",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Automations', slot=0, bounds={'i': 11, 'txt': '', 'x': 334, 'y': 445, 'w': 32, 'h': 32, 'cx': 350, 'cy': 461}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "New Automation",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route / in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Appliance Watch', slot=0, bounds={'i': 6, 'txt': '', 'x': 334, 'y': 445, 'w': 32, 'h': 32, 'cx': 350, 'cy': 461}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "New Appliance",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "chores-create",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=fab, anchor=None, slot=1, bounds={'i': 53, 'txt': '', 'x': 230, 'y': 684, 'w': 60, 'h': 60, 'cx': 260, 'cy': 714}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "New Chore",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "chores-edit",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Select visible Clean Microwave",
+          "selector": {
+            "kind": "visible text",
+            "label": "Clean Microwave"
+          }
+        },
+        {
+          "action": "Select visible Edit Chore",
+          "selector": {
+            "kind": "visible text",
+            "label": "Edit Chore"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Edit Chore",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Select visible Empty Kitchen Trash",
+          "selector": {
+            "kind": "visible text",
+            "label": "Empty Kitchen Trash"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Edit Chore",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=toolbar, anchor=None, slot=1, bounds={'i': 31, 'txt': '', 'x': 346, 'y': 214, 'w': 30, 'h': 30, 'cx': 361, 'cy': 229}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Sort & Filter",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "chores-assignment",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Select visible Empty Kitchen Trash",
+          "selector": {
+            "kind": "visible text",
+            "label": "Empty Kitchen Trash"
+          }
+        },
+        {
+          "action": "Swipe left on named visible row",
+          "selector": {
+            "kind": "named visible row gesture",
+            "evidence": "visible left-swipe on row 'Empty Kitchen Trash' (220px across measured row bounds)"
+          }
+        },
+        {
+          "action": "Activate Assign",
+          "selector": {
+            "kind": "visible pressable text",
+            "label": "Assign"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Who's doing this?",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Select visible Water Front Plants",
+          "selector": {
+            "kind": "visible text",
+            "label": "Water Front Plants"
+          }
+        },
+        {
+          "action": "Swipe left on named visible row",
+          "selector": {
+            "kind": "named visible row gesture",
+            "evidence": "visible left-swipe on row 'Water Front Plants' (220px across measured row bounds)"
+          }
+        },
+        {
+          "action": "Activate Reschedule",
+          "selector": {
+            "kind": "visible pressable text",
+            "label": "Reschedule"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Reschedule Chore",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=toolbar, anchor=None, slot=0, bounds={'i': 30, 'txt': '', 'x': 310, 'y': 214, 'w': 30, 'h': 30, 'cx': 325, 'cy': 229}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Random Games",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Select visible Empty Kitchen Trash",
+          "selector": {
+            "kind": "visible text",
+            "label": "Empty Kitchen Trash"
+          }
+        },
+        {
+          "action": "Swipe left on named visible row",
+          "selector": {
+            "kind": "named visible row gesture",
+            "evidence": "visible left-swipe on row 'Water Front Plants' (220px across measured row bounds)"
+          }
+        },
+        {
+          "action": "Activate Reassign",
+          "selector": {
+            "kind": "visible pressable text",
+            "label": "Reassign"
+          }
+        },
+        {
+          "action": "Select visible Let a Game Decide",
+          "selector": {
+            "kind": "visible text",
+            "label": "Let a Game Decide"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Pick a Game",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /chores in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Chores tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Chores"
+          }
+        },
+        {
+          "action": "Activate Show completed (3)",
+          "selector": {
+            "kind": "visible pressable text",
+            "label": "Show completed (3)"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Deep Clean Oven",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-member-detail",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        },
+        {
+          "action": "Select visible Sarah Kim",
+          "selector": {
+            "kind": "visible text",
+            "label": "Sarah Kim"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Close Profile",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-member-editor",
+      "classification": "B",
+      "start_context": "onboarding",
+      "route_navigation_intent": "Open clean /onboarding fixture and follow visible onboarding controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open /onboarding in a new context",
+          "selector": {
+            "kind": "route",
+            "label": "/onboarding"
+          }
+        },
+        {
+          "action": "Activate Get Started",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Get Started"
+          }
+        },
+        {
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": {
+            "kind": "textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…"
+          },
+          "value": "Haewon Kim"
+        },
+        {
+          "action": "Activate Continue",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          }
+        },
+        {
+          "action": "Open Sarah Kim edit modal and leave draft unsaved",
+          "selector": {
+            "kind": "icon-only member action",
+            "label": "Sarah Kim",
+            "source_evidence": "app/onboarding/family.tsx lines 166-179; measured bounds in runtime steps"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Edit Member",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "family-announcements",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        },
+        {
+          "action": "Select visible Bulletin",
+          "selector": {
+            "kind": "visible text",
+            "label": "Bulletin"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Bulletin Board",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-wishlist",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        },
+        {
+          "action": "Select visible Wishlist",
+          "selector": {
+            "kind": "visible text",
+            "label": "Wishlist"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Add a Wish",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        },
+        {
+          "action": "Select visible Show more · 17 more",
+          "selector": {
+            "kind": "visible text",
+            "label": "Show more · 17 more"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Show less",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-heatmap",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        },
+        {
+          "action": "scroll Family tab to the Chore Heatmap card",
+          "selector": {
+            "kind": "visible text anchor",
+            "evidence": "scroll Family tab to the Chore Heatmap card"
+          }
+        },
+        {
+          "action": "Select visible 52 weeks",
+          "selector": {
+            "kind": "visible text",
+            "label": "52 weeks"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "52 weeks of family activity",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-meal-results",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Results",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Wallet tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Wallet"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Wallet', slot=0, bounds={'i': 16, 'txt': '', 'x': 204.75, 'y': 10, 'w': 38, 'h': 38, 'cx': 223.75, 'cy': 29}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "New Savings Fund",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "classification": "B",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open Wallet tab",
+          "selector": {
+            "kind": "visible tab text",
+            "label": "Wallet"
+          }
+        },
+        {
+          "action": "Open New Savings Fund",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "mode=near; anchor=Wallet; slot=0; bounds x=204.75 y=10 w=38 h=38"
+          }
+        },
+        {
+          "action": "Enter R5 Disposable Goal and target 1; keep default assignee",
+          "selector": {
+            "kind": "visible labeled textboxes",
+            "labels": [
+              "Goal Name",
+              "Target Points"
+            ]
+          },
+          "values": [
+            "R5 Disposable Goal",
+            "1"
+          ]
+        },
+        {
+          "action": "Activate Create Fund to create local disposable goal",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Create Fund"
+          }
+        },
+        {
+          "action": "Open Contribute Points; do not submit contribution",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Contribute Points"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "0 / 1 pts saved",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Wallet tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Wallet"
+          }
+        },
+        {
+          "action": "Select visible My Bag",
+          "selector": {
+            "kind": "visible text",
+            "label": "My Bag"
+          }
+        },
+        {
+          "action": "Select visible Use",
+          "selector": {
+            "kind": "visible text",
+            "label": "Use"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Use \"Sleep In Day\"?",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Wallet tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Wallet"
+          }
+        },
+        {
+          "action": "scroll Point History card into an unobstructed viewport",
+          "selector": {
+            "kind": "visible text anchor",
+            "evidence": "scroll Point History card into an unobstructed viewport"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Point History', slot=0, bounds={'i': 23, 'txt': '', 'x': 320, 'y': 415, 'w': 25, 'h': 25, 'cx': 332.5, 'cy': 427.5}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        },
+        {
+          "action": "Fill visible input",
+          "selector": {
+            "kind": "placeholder text",
+            "label": "Search chores…"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "R5 no match",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "market-item-create",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Market"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=fab, anchor=None, slot=0, bounds={'i': 38, 'txt': '', 'x': 230, 'y': 684, 'w': 60, 'h': 60, 'cx': 260, 'cy': 714}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Add to Market",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "market-item-edit",
+      "classification": "B",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible tab text",
+            "label": "Market"
+          }
+        },
+        {
+          "action": "Open New Market Item",
+          "selector": {
+            "kind": "icon-only floating action button",
+            "runtime_bounds": "mode=fab; slot=0; x=230 y=684 w=60 h=60"
+          }
+        },
+        {
+          "action": "Create R5 Disposable Market Item locally with Limited stock 1; activate Add to Market",
+          "selector": {
+            "kind": "visible form controls",
+            "labels": [
+              "New Market Item",
+              "Add to Market"
+            ]
+          },
+          "fixture_data": "Limited; stock 1"
+        },
+        {
+          "action": "Long-press R5 Disposable Market Item",
+          "selector": {
+            "kind": "named visible row",
+            "label": "R5 Disposable Market Item"
+          }
+        },
+        {
+          "action": "Open Edit Item and stop before commit",
+          "selector": {
+            "kind": "visible action text",
+            "label": "Edit Item"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Save Changes",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "market-item-restock",
+      "classification": "B",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible tab text",
+            "label": "Market"
+          }
+        },
+        {
+          "action": "Open New Market Item",
+          "selector": {
+            "kind": "icon-only floating action button",
+            "runtime_bounds": "mode=fab; slot=0; x=230 y=684 w=60 h=60"
+          }
+        },
+        {
+          "action": "Create R5 Disposable Market Item locally with Limited stock 1; activate Add to Market",
+          "selector": {
+            "kind": "visible form controls",
+            "labels": [
+              "New Market Item",
+              "Add to Market"
+            ]
+          },
+          "fixture_data": "Limited; stock 1"
+        },
+        {
+          "action": "Long-press R5 Disposable Market Item",
+          "selector": {
+            "kind": "named visible row",
+            "label": "R5 Disposable Market Item"
+          }
+        },
+        {
+          "action": "Open Add Stock and stop before commit",
+          "selector": {
+            "kind": "visible action text",
+            "label": "Add Stock"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Current stock: 1",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "market-price-history",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Market"
+          }
+        },
+        {
+          "action": "long press visible market item Movie Night",
+          "selector": {
+            "kind": "visible action observed by runtime probe",
+            "label": "long press visible market item Movie Night"
+          }
+        },
+        {
+          "action": "Select visible Price History",
+          "selector": {
+            "kind": "visible text",
+            "label": "Price History"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Price history",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Market"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=fab, anchor=None, slot=1, bounds={'i': 39, 'txt': '', 'x': 306, 'y': 684, 'w': 60, 'h': 60, 'cx': 336, 'cy': 714}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "New Flash Sale",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /market in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Market tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Market"
+          }
+        },
+        {
+          "action": "Select visible 150",
+          "selector": {
+            "kind": "visible text",
+            "label": "150"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Confirm?",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "restock-item-create",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /restock in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Restock tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Restock"
+          }
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=near, anchor='Restock', slot=1, bounds={'i': 16, 'txt': '', 'x': 326, 'y': 9, 'w': 40, 'h': 40, 'cx': 346, 'cy': 29}",
+            "source_owner": "surface owner; see source-evidence-index"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "FREQUENT ITEMS",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /restock in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Restock tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Restock"
+          }
+        },
+        {
+          "action": "Select visible Whole Milk",
+          "selector": {
+            "kind": "visible text",
+            "label": "Whole Milk"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Save Changes",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "restock-filter",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /restock in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Restock tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Restock"
+          }
+        },
+        {
+          "action": "Select visible Store",
+          "selector": {
+            "kind": "visible text",
+            "label": "Store"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Trader Joe's",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "classification": "B",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /restock in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open Restock tab",
+          "selector": {
+            "kind": "visible tab text",
+            "label": "Restock"
+          }
+        },
+        {
+          "action": "Open Quick Add",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "mode=near; anchor=Restock; slot=1; x=326 y=9 w=40 h=40"
+          }
+        },
+        {
+          "action": "Enter R5 disposable item and tap visible Plus",
+          "selector": {
+            "kind": "named visible item",
+            "label": "R5 disposable item"
+          }
+        },
+        {
+          "action": "Complete that temporary row with visible checkbox; wait for the 2-second confirmation",
+          "selector": {
+            "kind": "named row checkbox",
+            "label": "R5 disposable item"
+          }
+        },
+        {
+          "action": "Open History",
+          "selector": {
+            "kind": "visible button text",
+            "label": "History"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "R5 disposable item",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data.",
+      "icon_control_evidence": "Runtime anchor and measured bounds are recorded in the action or runtime row; no text label is rendered for those controls. Prefer visible text/role selectors whenever present."
+    },
+    {
+      "surface_key": "family-member-create",
+      "classification": "B",
+      "start_context": "onboarding",
+      "route_navigation_intent": "Open clean /onboarding fixture and follow visible onboarding controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Open /onboarding in a new context",
+          "selector": {
+            "kind": "route",
+            "label": "/onboarding"
+          }
+        },
+        {
+          "action": "Activate Get Started",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Get Started"
+          }
+        },
+        {
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": {
+            "kind": "textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…"
+          },
+          "value": "Haewon Kim"
+        },
+        {
+          "action": "Activate Continue",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          }
+        },
+        {
+          "action": "Open Add Family Member and leave draft unsaved",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Add Family Member"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+      "normal_local_fixture_state_changed": true,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Add Member",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "classification": "A",
+      "start_context": "seeded-app",
+      "route_navigation_intent": "Open route /family in a new isolated context and follow the visible Product controls.",
+      "ordered_visible_user_actions": [
+        {
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "fixture_bootstrap": true
+        },
+        {
+          "action": "Open Family tab",
+          "selector": {
+            "kind": "visible label",
+            "label": "Family"
+          }
+        },
+        {
+          "action": "Select visible Edit",
+          "selector": {
+            "kind": "visible text",
+            "label": "Edit"
+          }
+        }
+      ],
+      "required_precondition": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+      "normal_local_fixture_state_changed": false,
+      "reset_strategy": "Close this isolated BrowserContext and create a fresh context from the deterministic seed before another surface; never reuse local disposable data.",
+      "forbidden_shortcuts": [
+        "No direct Zustand/store setter.",
+        "No DOM mutation.",
+        "No React internals.",
+        "No hidden JavaScript evaluation that changes Product state.",
+        "No production credentials, provider action, external delivery, purchase, or destructive live action."
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "value": "Done",
+        "runtime_observed": true
+      },
+      "dismissal_recovery_path": "Use visible Cancel, Close, or back and leave drafts unsubmitted. Close the BrowserContext to discard any disposable prerequisite data."
+    }
+  ]
+}

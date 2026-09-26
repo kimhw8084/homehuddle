@@ -1,0 +1,200 @@
+{
+  "schema": "project-os-noncanonical-obligations-v1",
+  "source_binding": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "supplemental_obligation_counts": {
+    "A": 0,
+    "B": 0,
+    "C": 1,
+    "D": 4,
+    "E": 3,
+    "F": 1,
+    "G": 0
+  },
+  "items": [
+    {
+      "surface_key": "chores-bulk-selection",
+      "classification": "E",
+      "canonical_current_atlas": false,
+      "rationale": "Source defines ordinary long-press selection but current web runtime throws before the selected mode can render; preserve as repair obligation without changing Product source.",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "runtime_validation_reference": "chores-bulk-selection",
+      "expected_ready_assertion": "Cancel Selection",
+      "observed_error": "expected visible assertion 'Cancel Selection' absent from current active viewport text",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/chores.tsx": "b22aed74121f8187ec7811f279988b62842ccdf2047426b84fcc6437349c5128"
+      }
+    },
+    {
+      "surface_key": "market-item-detail",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "market-catalog",
+      "rationale": "Long-pressing Movie Night did not render a separate detail state; the catalog remains visible and distinct interactions are represented by other states.",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "runtime_validation_reference": "market-item-detail",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      }
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "restock-inventory",
+      "rationale": "The default seeded inventory already renders this category expanded; no distinct persistent state is produced.",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "runtime_validation_reference": "restock-category-expanded",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      }
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "wallet-reward-use",
+      "rationale": "The optional note input is part of the persistent Use reward modal; no separate note renderer exists.",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "runtime_validation_reference": "wallet-bag-item-note",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      }
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "classification": "C",
+      "canonical_current_atlas": false,
+      "qualification_status": "LATER_LIFECYCLE_QUALIFICATION_OBLIGATION",
+      "rationale": "Seeded votes cover all three members and WeeklyMenuSection advances phase on mount; current deterministic UI exposes Results. No hidden state or lifecycle mutation is allowed to force Voting.",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx",
+        "store/huddleStore.ts"
+      ],
+      "source_citations": [
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "357-371",
+          "claim": "Seeded votes cover all three members."
+        },
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "387",
+          "claim": "Default menuPhase is voting."
+        },
+        {
+          "file": "components/WeeklyMenuSection.tsx",
+          "lines": "1605-1609",
+          "claim": "Mount check advances phase."
+        },
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "609-612",
+          "claim": "Voting advances at family-size voter count."
+        },
+        {
+          "file": "components/WeeklyMenuSection.tsx",
+          "lines": "1626-1633",
+          "claim": "Header opens Results after phase advance."
+        }
+      ],
+      "source_file_sha256": {
+        "components/WeeklyMenuSection.tsx": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2",
+        "store/huddleStore.ts": "94ac0ca8d9cd9842dd6ebafe560d90a804559c61b00624afbe022deeb851b41a"
+      }
+    },
+    {
+      "surface_key": "restock-item-detail",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "restock-inventory",
+      "rationale": "No separate detail renderer; rows show facts inline and tapping opens the separately represented editor.",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      }
+    },
+    {
+      "surface_key": "restock-pantry-check",
+      "classification": "E",
+      "canonical_current_atlas": false,
+      "rationale": "pendingIngredients initializes empty with no normal Product call site populating it; conditional pantry modal is unreachable.",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_citations": [
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "885",
+          "claim": "pendingIngredients initializes empty."
+        },
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "1018-1024",
+          "claim": "Pantry check is conditional on pending ingredients."
+        }
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      }
+    },
+    {
+      "surface_key": "/settings/completed-chores",
+      "classification": "E",
+      "canonical_current_atlas": false,
+      "rationale": "Route source exists but no normal in-app navigation call site was found in active source search.",
+      "source_files": [
+        "app/(app)/settings/completed-chores.tsx"
+      ],
+      "source_search": {
+        "terms": [
+          "completed-chores",
+          "/settings/completed-chores"
+        ],
+        "result": "No normal in-app navigation call site found."
+      },
+      "source_file_sha256": {
+        "app/(app)/settings/completed-chores.tsx": "db64e0f69a8273dc7ca42ba7acac45248ddaa75a186cb0ecae7304e4d20f1b9f"
+      }
+    },
+    {
+      "surface_key": "developer-controls-and-simulators",
+      "classification": "F",
+      "canonical_current_atlas": false,
+      "rationale": "Developer Control, Instant Bypass Login, and Simulate First Launch are local fixture/development tooling, not Product UX.",
+      "source_files": [
+        "app/index.tsx",
+        "components/DevToolsOverlay.tsx"
+      ],
+      "source_citations": [
+        {
+          "file": "app/index.tsx",
+          "lines": "585-646",
+          "claim": "Developer Control and explicit Instant Bypass Login."
+        },
+        {
+          "file": "components/DevToolsOverlay.tsx",
+          "lines": "110",
+          "claim": "Simulate First Launch control."
+        }
+      ],
+      "source_file_sha256": {
+        "app/index.tsx": "d304cd9c21087e68675eac3d2e9163735c7f29a2d302c1146821b894fabfdcf9",
+        "components/DevToolsOverlay.tsx": "b5eea635496927b3afd62ca1db63793322bb0ae3fcd1bd71f964fa1224dbe648"
+      }
+    }
+  ],
+  "external_or_destructive_current_canonical_items": []
+}

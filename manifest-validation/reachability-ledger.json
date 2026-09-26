@@ -1,0 +1,1280 @@
+{
+  "schema": "project-os-reachability-ledger-v1",
+  "request": "homehuddle-ui0-manifest-validate-v1",
+  "source_binding": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "input_surface_count": 69,
+  "canonical_surface_count": 65,
+  "classification_counts": {
+    "A": 57,
+    "B": 8,
+    "C": 0,
+    "D": 3,
+    "E": 1,
+    "F": 0,
+    "G": 0
+  },
+  "rows": [
+    {
+      "surface_key": "auth-entry",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/index.tsx",
+      "source_files": [
+        "app/index.tsx",
+        "app/_layout.tsx"
+      ],
+      "prior_entry_point_claim": "Fresh local web launch; Developer Control opens only after two logo taps; bypass requires explicit action.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Continue with Apple",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "auth-entry",
+      "runtime_evidence_reference": "auth-entry"
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/onboarding",
+      "owner": "app/onboarding/index.tsx",
+      "source_files": [
+        "app/onboarding/index.tsx",
+        "store/onboardingStore.ts"
+      ],
+      "prior_entry_point_claim": "Developer Tools > Simulate First Launch; first-run welcome.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Get Started",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "onboarding-welcome",
+      "runtime_evidence_reference": "onboarding-welcome"
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/onboarding/profile",
+      "owner": "app/onboarding/profile.tsx",
+      "source_files": [
+        "app/onboarding/profile.tsx",
+        "components/AvatarPicker.tsx"
+      ],
+      "prior_entry_point_claim": "Onboarding welcome > Get Started.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Set Up Your Profile",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "onboarding-profile",
+      "runtime_evidence_reference": "onboarding-profile"
+    },
+    {
+      "surface_key": "onboarding-family",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "prior_entry_point_claim": "Onboarding profile > Next; add/edit member sheet is a child state.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Your Family",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "onboarding-family",
+      "runtime_evidence_reference": "onboarding-family"
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/onboarding/done",
+      "owner": "app/onboarding/done.tsx",
+      "source_files": [
+        "app/onboarding/done.tsx"
+      ],
+      "prior_entry_point_claim": "Onboarding family > Finish setup.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "You're all set!",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "onboarding-complete",
+      "runtime_evidence_reference": "onboarding-complete"
+    },
+    {
+      "surface_key": "home-dashboard",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx",
+        "store/huddleStore.ts"
+      ],
+      "prior_entry_point_claim": "Home tab after explicit local dev bypass.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "FAMILY ORBIT",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-dashboard",
+      "runtime_evidence_reference": "home-dashboard"
+    },
+    {
+      "surface_key": "chores-today-all",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx",
+        "components/ChoreModals.tsx"
+      ],
+      "prior_entry_point_claim": "Chores tab; All scope; selected date is fixture date.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "TODAY'S FOCUS",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-today-all",
+      "runtime_evidence_reference": "chores-today-all"
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores?filter=Me",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Chores > Me segmented scope.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "ME",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-my-scope",
+      "runtime_evidence_reference": "chores-my-scope"
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Chores date strip > expand calendar > Month mode.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "September 2026",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-calendar-month",
+      "runtime_evidence_reference": "chores-calendar-month"
+    },
+    {
+      "surface_key": "family-hub",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "prior_entry_point_claim": "Family tab.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Family Hub",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-hub",
+      "runtime_evidence_reference": "family-hub"
+    },
+    {
+      "surface_key": "wallet-points",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet tab; Points/Wallet subview.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Point History",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "wallet-points",
+      "runtime_evidence_reference": "wallet-points"
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/wallet?tab=bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet > Bag tab; Home deep-link intent also supplies tab=bag.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "My Bag",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "wallet-reward-bag",
+      "runtime_evidence_reference": "wallet-reward-bag"
+    },
+    {
+      "surface_key": "market-catalog",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Market tab.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Movie Night",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "market-catalog",
+      "runtime_evidence_reference": "market-catalog"
+    },
+    {
+      "surface_key": "restock-inventory",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx",
+        "store/huddleStore.ts"
+      ],
+      "prior_entry_point_claim": "Restock tab.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Sourdough Bread",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "restock-inventory",
+      "runtime_evidence_reference": "restock-inventory"
+    },
+    {
+      "surface_key": "profile-center",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/profile",
+      "owner": "app/(app)/profile.tsx",
+      "source_files": [
+        "app/(app)/profile.tsx"
+      ],
+      "prior_entry_point_claim": "Home top-right profile avatar.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Personal Info",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "profile-center",
+      "runtime_evidence_reference": "profile-center"
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/personal-info",
+      "owner": "app/(app)/settings/personal-info.tsx",
+      "source_files": [
+        "app/(app)/settings/personal-info.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Personal information. Name/email/phone/location form; UI labels placeholders are noted by source.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Personal Info",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-personal-info",
+      "runtime_evidence_reference": "settings-personal-info"
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/privacy",
+      "owner": "app/(app)/settings/privacy.tsx",
+      "source_files": [
+        "app/(app)/settings/privacy.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Privacy and security. Privacy and Security settings route; Password & Security and Privacy labels resolve to this same route.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Privacy & Security",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-privacy-security",
+      "runtime_evidence_reference": "settings-privacy-security"
+    },
+    {
+      "surface_key": "settings-notifications",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/notifications",
+      "owner": "app/(app)/settings/notifications.tsx",
+      "source_files": [
+        "app/(app)/settings/notifications.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Notification preferences. Toggle settings are local screen state; no persisted backend claim.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Notifications",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-notifications",
+      "runtime_evidence_reference": "settings-notifications"
+    },
+    {
+      "surface_key": "settings-household",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/household",
+      "owner": "app/(app)/settings/household.tsx",
+      "source_files": [
+        "app/(app)/settings/household.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Household settings. Household/member/prefs fixture view; UI only.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Household Settings",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-household",
+      "runtime_evidence_reference": "settings-household"
+    },
+    {
+      "surface_key": "settings-invite",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/invite",
+      "owner": "app/(app)/settings/invite.tsx",
+      "source_files": [
+        "app/(app)/settings/invite.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Invite family. Local invite-code/share screen; no invite is sent during capture.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Invite Family",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-invite",
+      "runtime_evidence_reference": "settings-invite"
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/chore-history",
+      "owner": "app/(app)/settings/chore-history.tsx",
+      "source_files": [
+        "app/(app)/settings/chore-history.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Chore history completed. Completed history tab; local seeded list.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Chore History",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-chore-history-completed",
+      "runtime_evidence_reference": "settings-chore-history-completed"
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/chore-history?tab=deleted",
+      "owner": "app/(app)/settings/chore-history?tab=deleted.tsx",
+      "source_files": [
+        "app/(app)/settings/chore-history?tab=deleted.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Chore history deleted. Chore history Deleted tab; source link also routes from Chores with tab=deleted.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Deleted",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-chore-history-deleted",
+      "runtime_evidence_reference": "settings-chore-history-deleted"
+    },
+    {
+      "surface_key": "settings-help",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/help",
+      "owner": "app/(app)/settings/help.tsx",
+      "source_files": [
+        "app/(app)/settings/help.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > Help center. FAQ/contact topics; no external message is sent.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Help Center",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-help",
+      "runtime_evidence_reference": "settings-help"
+    },
+    {
+      "surface_key": "settings-about",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/settings/about",
+      "owner": "app/(app)/settings/about.tsx",
+      "source_files": [
+        "app/(app)/settings/about.tsx"
+      ],
+      "prior_entry_point_claim": "Profile center > About HomeHuddle. About/version details.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "About HomeHuddle",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "settings-about",
+      "runtime_evidence_reference": "settings-about"
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home HUD people control; opens local family selector.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Family Orbit",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-family-switcher",
+      "runtime_evidence_reference": "home-family-switcher"
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home > Inbox Review card.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Well Done!",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-inbox-review",
+      "runtime_evidence_reference": "home-inbox-review"
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home Deliveries > plus/add control; create form is opened but not saved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "WHAT'S ARRIVING?",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-delivery-add",
+      "runtime_evidence_reference": "home-delivery-add"
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home Deliveries > calendar control.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Sep 2026",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-delivery-calendar",
+      "runtime_evidence_reference": "home-delivery-calendar"
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home Deliveries merged calendar/history control > press and hold to open history.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Delivery History",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-delivery-history",
+      "runtime_evidence_reference": "home-delivery-history"
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home announcement ticker/card.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Announcements",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-announcement-board",
+      "runtime_evidence_reference": "home-announcement-board"
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home Tonight's Dinner card.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "This Week Vote Results",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-dinner-planner",
+      "runtime_evidence_reference": "home-dinner-planner"
+    },
+    {
+      "surface_key": "home-automation-create",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home Automations section > add control.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "New Automation",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-automation-create",
+      "runtime_evidence_reference": "home-automation-create"
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/",
+      "owner": "app/(app)/(tabs)/index.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/index.tsx"
+      ],
+      "prior_entry_point_claim": "Home Appliance Watch > add appliance control.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "New Appliance",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "home-appliance-create",
+      "runtime_evidence_reference": "home-appliance-create"
+    },
+    {
+      "surface_key": "chores-create",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Chores bottom plus > Add Chore; leave draft unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "New Chore",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-create",
+      "runtime_evidence_reference": "chores-create"
+    },
+    {
+      "surface_key": "chores-edit",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Chores selected chore > edit action; preserve source fixture by closing without save.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Edit Chore",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-edit",
+      "runtime_evidence_reference": "chores-edit"
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Expand a seeded chore row; record object/action detail.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Edit Chore",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-expanded-task",
+      "runtime_evidence_reference": "chores-expanded-task"
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Chores filter/sort icon beside row sort controls.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Sort & Filter",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-filter-sort",
+      "runtime_evidence_reference": "chores-filter-sort"
+    },
+    {
+      "surface_key": "chores-assignment",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded unassigned chore > Assign; do not change assignee unless local object identity is verified.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Who's doing this?",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-assignment",
+      "runtime_evidence_reference": "chores-assignment"
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded chore > Reschedule; leave chosen date uncommitted.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Reschedule Chore",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-reschedule",
+      "runtime_evidence_reference": "chores-reschedule"
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "prior_entry_point_claim": "Chores random assignment/game control > game picker.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Random Games",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-game-picker",
+      "runtime_evidence_reference": "chores-game-picker"
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "components/games/RandomAssignmentGames.tsx"
+      ],
+      "prior_entry_point_claim": "Select a local chore > random assignment > selected game/participants; do not commit assignment.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Pick a Game",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-random-assignment",
+      "runtime_evidence_reference": "chores-random-assignment"
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "classification": "E",
+      "canonical_current_atlas": false,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Chores selection control > choose one visible fixture row; do not execute bulk action.",
+      "runtime_status": "failed",
+      "runtime_expected_assertion": "Cancel Selection",
+      "runtime_observed_contains_assertion": false,
+      "rationale": "Runtime error before selected-mode assertion; source feature preserved as a repair obligation.",
+      "alias_of": null,
+      "capture_recipe_id": null,
+      "runtime_evidence_reference": "chores-bulk-selection"
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/chores",
+      "owner": "app/(app)/(tabs)/chores.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/chores.tsx"
+      ],
+      "prior_entry_point_claim": "Show Completed disclosure.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Deep Clean Oven",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "chores-completed-expanded",
+      "runtime_evidence_reference": "chores-completed-expanded"
+    },
+    {
+      "surface_key": "family-member-detail",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "prior_entry_point_claim": "Family member card > select seeded member.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Close Profile",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-member-detail",
+      "runtime_evidence_reference": "family-member-detail"
+    },
+    {
+      "surface_key": "family-member-editor",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "prior_entry_point_claim": "Onboarding Family step > pencil on an existing member; leave draft unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Edit Member",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "family-member-editor",
+      "runtime_evidence_reference": "family-member-editor"
+    },
+    {
+      "surface_key": "family-announcements",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "prior_entry_point_claim": "Family announcement widget > manage.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Bulletin Board",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-announcements",
+      "runtime_evidence_reference": "family-announcements"
+    },
+    {
+      "surface_key": "family-wishlist",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "prior_entry_point_claim": "Family wishlist widget.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Add a Wish",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-wishlist",
+      "runtime_evidence_reference": "family-wishlist"
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "prior_entry_point_claim": "Family activity widget disclosure.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Show less",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-activity-expanded",
+      "runtime_evidence_reference": "family-activity-expanded"
+    },
+    {
+      "surface_key": "family-heatmap",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx"
+      ],
+      "prior_entry_point_claim": "Family activity heatmap control.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "52 weeks of family activity",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-heatmap",
+      "runtime_evidence_reference": "family-heatmap"
+    },
+    {
+      "surface_key": "family-meal-results",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "components/WeeklyMenuSection.tsx",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "prior_entry_point_claim": "Family meal planner > results/history.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Results",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-meal-results",
+      "runtime_evidence_reference": "family-meal-results"
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet > Add Goal; leave draft unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "New Savings Fund",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "wallet-goal-create",
+      "runtime_evidence_reference": "wallet-goal-create"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet seeded goal > Contribute; leave amount uncommitted.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "0 / 1 pts saved",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "wallet-goal-contribute",
+      "runtime_evidence_reference": "wallet-goal-contribute"
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet bag item > Use reward; leave note unsaved/uncommitted.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Use \"Sleep In Day\"?",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "wallet-reward-use",
+      "runtime_evidence_reference": "wallet-reward-use"
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "source_route": "/wallet?tab=bag",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet bag item > note control.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Note (optional)",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "The optional note input is part of the persistent Use reward modal; no separate note renderer exists.",
+      "alias_of": "wallet-reward-use",
+      "capture_recipe_id": null,
+      "runtime_evidence_reference": "wallet-bag-item-note"
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/wallet",
+      "owner": "app/(app)/(tabs)/wallet.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "prior_entry_point_claim": "Wallet activity > open search/filter and enter a no-result query; clear before exit.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "R5 no match",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "wallet-activity-search",
+      "runtime_evidence_reference": "wallet-activity-search"
+    },
+    {
+      "surface_key": "market-item-detail",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Select seeded reward card or long-press alternative.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Movie Night",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Long-pressing Movie Night did not render a separate detail state; the catalog remains visible and distinct interactions are represented by other states.",
+      "alias_of": "market-catalog",
+      "capture_recipe_id": null,
+      "runtime_evidence_reference": "market-item-detail"
+    },
+    {
+      "surface_key": "market-item-create",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Market > Add menu > create item; leave unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Add to Market",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "market-item-create",
+      "runtime_evidence_reference": "market-item-create"
+    },
+    {
+      "surface_key": "market-item-edit",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded reward > Edit.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Save Changes",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "market-item-edit",
+      "runtime_evidence_reference": "market-item-edit"
+    },
+    {
+      "surface_key": "market-item-restock",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded reward context menu > restock.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Current stock: 1",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "market-item-restock",
+      "runtime_evidence_reference": "market-item-restock"
+    },
+    {
+      "surface_key": "market-price-history",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded reward > price/history control.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Price history",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "market-price-history",
+      "runtime_evidence_reference": "market-price-history"
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Market > Flash Sale; leave unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "New Flash Sale",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "market-flash-sale",
+      "runtime_evidence_reference": "market-flash-sale"
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/market",
+      "owner": "app/(app)/(tabs)/market.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded affordable reward > Redeem > inspect confirmation; cancel before commit.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Confirm?",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "market-redeem-confirmation",
+      "runtime_evidence_reference": "market-redeem-confirmation"
+    },
+    {
+      "surface_key": "restock-item-create",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "prior_entry_point_claim": "Restock quick-add control; leave draft unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "FREQUENT ITEMS",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "restock-item-create",
+      "runtime_evidence_reference": "restock-item-create"
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "prior_entry_point_claim": "Seeded item > edit; do not save.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Save Changes",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "restock-item-edit",
+      "runtime_evidence_reference": "restock-item-edit"
+    },
+    {
+      "surface_key": "restock-filter",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "prior_entry_point_claim": "Restock filter bar > open filter state.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Trader Joe's",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "restock-filter",
+      "runtime_evidence_reference": "restock-filter"
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "prior_entry_point_claim": "Restock history disclosure.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "R5 disposable item",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "restock-history-expanded",
+      "runtime_evidence_reference": "restock-history-expanded"
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "source_route": "/restock",
+      "owner": "app/(app)/(tabs)/restock.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "prior_entry_point_claim": "Expand/collapse a seeded restock category; capture expanded state.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "BAKERY & BREAD",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "The default seeded inventory already renders this category expanded; no distinct persistent state is produced.",
+      "alias_of": "restock-inventory",
+      "capture_recipe_id": null,
+      "runtime_evidence_reference": "restock-category-expanded"
+    },
+    {
+      "surface_key": "family-member-create",
+      "classification": "B",
+      "canonical_current_atlas": true,
+      "source_route": "/onboarding/family",
+      "owner": "app/onboarding/family.tsx",
+      "source_files": [
+        "app/onboarding/family.tsx"
+      ],
+      "prior_entry_point_claim": "Onboarding Family step > Add Family Member; leave draft unsaved.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Add Member",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached through visible ordinary interaction changing only disposable local session/fixture data.",
+      "alias_of": null,
+      "capture_recipe_id": "family-member-create",
+      "runtime_evidence_reference": "family-member-create"
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "classification": "A",
+      "canonical_current_atlas": true,
+      "source_route": "/family",
+      "owner": "app/(app)/(tabs)/family.tsx",
+      "source_files": [
+        "app/(app)/(tabs)/family.tsx",
+        "components/WeeklyMenuSection.tsx"
+      ],
+      "prior_entry_point_claim": "Family tab > Edit; keep layout draft unchanged.",
+      "runtime_status": "passed",
+      "runtime_expected_assertion": "Done",
+      "runtime_observed_contains_assertion": true,
+      "rationale": "Reached via ordinary visible navigation/selection from deterministic local fixture.",
+      "alias_of": null,
+      "capture_recipe_id": "family-layout-edit",
+      "runtime_evidence_reference": "family-layout-edit"
+    }
+  ],
+  "supplemental_obligation_counts": {
+    "A": 0,
+    "B": 0,
+    "C": 1,
+    "D": 4,
+    "E": 3,
+    "F": 1,
+    "G": 0
+  }
+}
