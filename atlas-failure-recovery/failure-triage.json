@@ -1,0 +1,321 @@
+{
+  "schema": "project-os-visual-atlas-failure-triage-v1",
+  "request": "homehuddle-ui0-atlas-capture-v1",
+  "operation": "VERIFY",
+  "project": "homehuddle",
+  "error_code": "CAPTURE_RECIPE_FAILED",
+  "safe_sweep_complete": true,
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "tree_sha": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "r5_artifact_commit": "0ef561e869f4bc53a2c473691bd3bd84b599f9a8",
+  "r5_artifact_tree": "fec6217a46defc2a7301a809b007801f5c5235d8",
+  "manifest_sha256": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277",
+  "surface_count": 65,
+  "sweep_attempted_count": 65,
+  "provisional_png_count": 98,
+  "runner_reported_failed_surface_keys": [
+    "auth-entry",
+    "home-dashboard",
+    "chores-my-scope",
+    "wallet-reward-bag",
+    "settings-chore-history-deleted",
+    "home-family-switcher",
+    "home-inbox-review",
+    "home-delivery-add",
+    "home-delivery-calendar",
+    "home-delivery-history",
+    "home-announcement-board",
+    "home-dinner-planner",
+    "home-automation-create",
+    "home-appliance-create",
+    "chores-reschedule",
+    "chores-random-assignment",
+    "chores-completed-expanded",
+    "family-member-detail",
+    "family-activity-expanded",
+    "wallet-goal-contribute",
+    "wallet-activity-search",
+    "market-item-edit",
+    "market-item-restock",
+    "market-price-history",
+    "market-redeem-confirmation",
+    "family-layout-edit"
+  ],
+  "false_positive_root_route_checks": {
+    "surface_keys": [
+      "auth-entry",
+      "home-dashboard",
+      "home-family-switcher",
+      "home-inbox-review",
+      "home-delivery-add",
+      "home-delivery-calendar",
+      "home-announcement-board",
+      "home-dinner-planner"
+    ],
+    "reason": "The runner's slash normalizer compared identical expected and actual '/' values as unequal; these rows had both screenshots and ready assertions."
+  },
+  "failed_surface_keys": [
+    "chores-my-scope",
+    "wallet-reward-bag",
+    "settings-chore-history-deleted",
+    "home-delivery-history",
+    "home-automation-create",
+    "home-appliance-create",
+    "chores-reschedule",
+    "chores-random-assignment",
+    "chores-completed-expanded",
+    "family-member-detail",
+    "family-activity-expanded",
+    "wallet-goal-contribute",
+    "wallet-activity-search",
+    "market-item-edit",
+    "market-item-restock",
+    "market-price-history",
+    "market-redeem-confirmation",
+    "family-layout-edit"
+  ],
+  "failed_surface_count": 18,
+  "query_route_mismatches": [
+    {
+      "surface_key": "wallet-reward-bag",
+      "expected_route": "/wallet?tab=bag",
+      "captured_route": "/wallet",
+      "ready_assertion_passed": true,
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "expected_route": "/settings/chore-history?tab=deleted",
+      "captured_route": "/settings/chore-history",
+      "ready_assertion_passed": true,
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    }
+  ],
+  "failure_rows": [
+    {
+      "surface_key": "auth-entry",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-dashboard",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "failure_classes": [
+        "ready_assertion_failed",
+        "route_mismatch"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "failure_classes": [
+        "route_mismatch"
+      ],
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "home-automation-create",
+      "failure_classes": [
+        "ready_assertion_failed",
+        "route_mismatch"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "failure_classes": [
+        "ready_assertion_failed",
+        "route_mismatch"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "family-member-detail",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "market-item-edit",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "market-item-restock",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "market-price-history",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "failure_classes": [
+        "ready_assertion_failed"
+      ],
+      "screenshots_written": []
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "failure_classes": [
+        "recipe_execution_failed"
+      ],
+      "screenshots_written": []
+    }
+  ],
+  "publication": "not attempted",
+  "stress_holdout": "not run because all 130 canonical screenshots did not succeed",
+  "manifest_mutation_count": 0,
+  "product_source_changed": false
+}

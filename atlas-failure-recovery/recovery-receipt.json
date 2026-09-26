@@ -1,0 +1,724 @@
+{
+  "schema": "project-os-atlas-failure-recovery-receipt-v1",
+  "project": "homehuddle",
+  "operation": "VERIFY",
+  "recovery_request": "homehuddle-ui0-atlas-failure-recovery-v1",
+  "recovery_fabric_job": "CF-c0b7d389585073cf73583109",
+  "original_request": "homehuddle-ui0-atlas-capture-v1",
+  "original_fabric_job": "CF-27a4b3bc5a11ea2651ffb3ff",
+  "original_normal_fabric_evidence_ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1",
+  "original_normal_fabric_evidence_commit": "b1200b0b0519e798a42959da9672c83497ba6415",
+  "original_retained_artifact_root": "/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "accepted_manifest_authority": {
+    "audit_record": "AR-85",
+    "r5_artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1",
+    "r5_artifact_commit": "0ef561e869f4bc53a2c473691bd3bd84b599f9a8",
+    "r5_artifact_tree": "fec6217a46defc2a7301a809b007801f5c5235d8",
+    "manifest_sha256": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277"
+  },
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "tree_sha": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "safe_sweep_complete": true,
+  "attempted_surface_count": 65,
+  "provisional_png_count": 98,
+  "failed_surface_count": 18,
+  "failed_surface_keys": [
+    "chores-my-scope",
+    "wallet-reward-bag",
+    "settings-chore-history-deleted",
+    "home-delivery-history",
+    "home-automation-create",
+    "home-appliance-create",
+    "chores-reschedule",
+    "chores-random-assignment",
+    "chores-completed-expanded",
+    "family-member-detail",
+    "family-activity-expanded",
+    "wallet-goal-contribute",
+    "wallet-activity-search",
+    "market-item-edit",
+    "market-item-restock",
+    "market-price-history",
+    "market-redeem-confirmation",
+    "family-layout-edit"
+  ],
+  "false_positive_root_route_checks": {
+    "surface_keys": [
+      "auth-entry",
+      "home-dashboard",
+      "home-family-switcher",
+      "home-inbox-review",
+      "home-delivery-add",
+      "home-delivery-calendar",
+      "home-announcement-board",
+      "home-dinner-planner"
+    ],
+    "reason": "The runner's slash normalizer compared identical expected and actual '/' values as unequal; these rows had both screenshots and ready assertions."
+  },
+  "query_route_mismatches": [
+    {
+      "surface_key": "wallet-reward-bag",
+      "expected_route": "/wallet?tab=bag",
+      "captured_route": "/wallet",
+      "ready_assertion_passed": true,
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "expected_route": "/settings/chore-history?tab=deleted",
+      "captured_route": "/settings/chore-history",
+      "ready_assertion_passed": true,
+      "screenshots_written": [
+        "mobile",
+        "desktop"
+      ]
+    }
+  ],
+  "manifest_mutation_count": 0,
+  "recovered_file_count": 104,
+  "recovered_bytes": 8613444,
+  "recovered_files": [
+    {
+      "path": "capture-report.json",
+      "bytes": 1346215,
+      "sha256": "8d50d0f91bd4e9a9112b5833fcf73f433395b923fecaa3e4c9cb760853da3ce1"
+    },
+    {
+      "path": "capture-runner.py",
+      "bytes": 64337,
+      "sha256": "c39b9bdb2b5d4552f384183a5d22f8d756009c4bbcc40056a67fd6285c7c0de0"
+    },
+    {
+      "path": "failure-triage.json",
+      "bytes": 7835,
+      "sha256": "10fca0347d1492daf602a08914b73440acb51de74510b17327481b3ac5606c29"
+    },
+    {
+      "path": "runtime-console-network.json",
+      "bytes": 822699,
+      "sha256": "dd5c2627d35a0107c7f7d140c36059faf9b98637bc3679827e8c29ddda55e05d"
+    },
+    {
+      "path": "runtime-server.log",
+      "bytes": 16279,
+      "sha256": "a94dc73e3fc91cdb8ef02e3c4ce8e3ef5ef5d34d512df6e80979d8341fa97bb3"
+    },
+    {
+      "path": "screenshots/auth-entry--desktop-1440x900.png",
+      "bytes": 105332,
+      "sha256": "031ffbc3b24f8303b75c1ddd54eebe79ace9df80f739b2d745a0ed46997d13c0"
+    },
+    {
+      "path": "screenshots/auth-entry--mobile-390x844.png",
+      "bytes": 82344,
+      "sha256": "4c81f54198ded90175119de79d07bce200a878b62aa2737750fbb6de2890a600"
+    },
+    {
+      "path": "screenshots/chores-assignment--desktop-1440x900.png",
+      "bytes": 80107,
+      "sha256": "d13d080fe846e2317ca38e1f50b897518e32e9f4ec5ee3090836930a286e9b9d"
+    },
+    {
+      "path": "screenshots/chores-assignment--mobile-390x844.png",
+      "bytes": 63786,
+      "sha256": "4476dc473a8382bcd87cbceeddc7d1d8a1006981f4813813f9d5a7ed12530d6e"
+    },
+    {
+      "path": "screenshots/chores-calendar-month--desktop-1440x900.png",
+      "bytes": 100320,
+      "sha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1"
+    },
+    {
+      "path": "screenshots/chores-calendar-month--mobile-390x844.png",
+      "bytes": 76795,
+      "sha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe"
+    },
+    {
+      "path": "screenshots/chores-create--desktop-1440x900.png",
+      "bytes": 80804,
+      "sha256": "8b2719ed903da9ebdc9bba436840216259f43e612c8f4f2a2506ccd26a49a35e"
+    },
+    {
+      "path": "screenshots/chores-create--mobile-390x844.png",
+      "bytes": 51853,
+      "sha256": "c6a7dfb420ce730960ad09a076b970668d5c683ca2a20fd7944011a7a48efd6e"
+    },
+    {
+      "path": "screenshots/chores-edit--desktop-1440x900.png",
+      "bytes": 81615,
+      "sha256": "c657b500652de4d5216f91cb4b6463eef0808581041ef3171f4d7c6e87523c7c"
+    },
+    {
+      "path": "screenshots/chores-edit--mobile-390x844.png",
+      "bytes": 61834,
+      "sha256": "7d6a2afb2cc09440a4d566e16ecfdca232ff2e08ebba450914a969bff10fb5ba"
+    },
+    {
+      "path": "screenshots/chores-expanded-task--desktop-1440x900.png",
+      "bytes": 98829,
+      "sha256": "f270706d66707fd576a1d55cb5bb8af67fe4e62f77b51b93f771cbce7e05e477"
+    },
+    {
+      "path": "screenshots/chores-expanded-task--mobile-390x844.png",
+      "bytes": 75078,
+      "sha256": "8da265d872d8ab81b8e4f4ed72498a658b796d1d93ef6ee63e8a68f7a6b15557"
+    },
+    {
+      "path": "screenshots/chores-filter-sort--desktop-1440x900.png",
+      "bytes": 58164,
+      "sha256": "ec7aecc679ce6f237df75f03ec518ee556c2202dedaca33bef4c8d7b2b8d303a"
+    },
+    {
+      "path": "screenshots/chores-filter-sort--mobile-390x844.png",
+      "bytes": 41530,
+      "sha256": "ab57a160072ac056354aebd2afcca9fe20b6377f1f27f06212316f28a3036c4e"
+    },
+    {
+      "path": "screenshots/chores-game-picker--desktop-1440x900.png",
+      "bytes": 30662,
+      "sha256": "1481be3f4d8282d2946f3b5ede2d90e128805418ce518836560075f2279f452f"
+    },
+    {
+      "path": "screenshots/chores-game-picker--mobile-390x844.png",
+      "bytes": 25763,
+      "sha256": "09d2ece38a4a3f6a62d37f73329f61ff496db7458e2a66bd113d65199c5c8e41"
+    },
+    {
+      "path": "screenshots/chores-today-all--desktop-1440x900.png",
+      "bytes": 100320,
+      "sha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1"
+    },
+    {
+      "path": "screenshots/chores-today-all--mobile-390x844.png",
+      "bytes": 76795,
+      "sha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe"
+    },
+    {
+      "path": "screenshots/family-announcements--desktop-1440x900.png",
+      "bytes": 51634,
+      "sha256": "f554ad2a7b64839f15f7097da6ff91a291bc1fde45d4f705d28323b577a6222a"
+    },
+    {
+      "path": "screenshots/family-announcements--mobile-390x844.png",
+      "bytes": 44755,
+      "sha256": "fe72a2c41d666a5eadc531d2a0be76710c05d9e050576738705ccab5cd0c7968"
+    },
+    {
+      "path": "screenshots/family-heatmap--desktop-1440x900.png",
+      "bytes": 36048,
+      "sha256": "32555b1537a960b96b37a06641361304ba41820a7f01042a97fac059923e7a0c"
+    },
+    {
+      "path": "screenshots/family-heatmap--mobile-390x844.png",
+      "bytes": 29063,
+      "sha256": "bd4d1ac2375581ccd0d63d7860495f61815b8cc5f041984fe38a23d6ce4acea2"
+    },
+    {
+      "path": "screenshots/family-hub--desktop-1440x900.png",
+      "bytes": 98411,
+      "sha256": "00a82e70c23a5ea70b828cbf52481647baa185e917b1e777907a3a19fc06428f"
+    },
+    {
+      "path": "screenshots/family-hub--mobile-390x844.png",
+      "bytes": 70456,
+      "sha256": "6dc4de56fb7a7192de030a83dd920c941811d6ad13bc229cc7122a942cc919bb"
+    },
+    {
+      "path": "screenshots/family-meal-results--desktop-1440x900.png",
+      "bytes": 98411,
+      "sha256": "00a82e70c23a5ea70b828cbf52481647baa185e917b1e777907a3a19fc06428f"
+    },
+    {
+      "path": "screenshots/family-meal-results--mobile-390x844.png",
+      "bytes": 70456,
+      "sha256": "6dc4de56fb7a7192de030a83dd920c941811d6ad13bc229cc7122a942cc919bb"
+    },
+    {
+      "path": "screenshots/family-member-create--desktop-1440x900.png",
+      "bytes": 54826,
+      "sha256": "920c011ae0028c032828251f838e0510f73fb72b0c268a89e2adbe0615774e0f"
+    },
+    {
+      "path": "screenshots/family-member-create--mobile-390x844.png",
+      "bytes": 42909,
+      "sha256": "44bbb8bc5f4f6350ffef875f3d44510793a799ffe8a8186254f07e2d41df26b1"
+    },
+    {
+      "path": "screenshots/family-member-editor--desktop-1440x900.png",
+      "bytes": 58235,
+      "sha256": "9d88380be4504f03e42637dd59245ea4a6faa57f007d8db78b50e294dd7cd379"
+    },
+    {
+      "path": "screenshots/family-member-editor--mobile-390x844.png",
+      "bytes": 46158,
+      "sha256": "76c03ae0545f862d91723a51b1537d055d12d01b8d65ec4f1ecd3f90b9143fb7"
+    },
+    {
+      "path": "screenshots/family-wishlist--desktop-1440x900.png",
+      "bytes": 17362,
+      "sha256": "0b13a9b9181901b3cb6ad1dc314c40d1a5d7afe56e9fbf7b856561ec44b8fc0f"
+    },
+    {
+      "path": "screenshots/family-wishlist--mobile-390x844.png",
+      "bytes": 13634,
+      "sha256": "8ddfb7a12cac533c1a09b4032e86e8e52c054a698dfce7013b9106e11456e0a5"
+    },
+    {
+      "path": "screenshots/home-announcement-board--desktop-1440x900.png",
+      "bytes": 98827,
+      "sha256": "a5d7805c9588a94ab1fe54ff0840a771db401ed7e1a7ad6390a3a6f768e3a89c"
+    },
+    {
+      "path": "screenshots/home-announcement-board--mobile-390x844.png",
+      "bytes": 70724,
+      "sha256": "655a5bc5c75f8d1014e39dfb4482d92519232429d164ce9dd105221df0611149"
+    },
+    {
+      "path": "screenshots/home-dashboard--desktop-1440x900.png",
+      "bytes": 153673,
+      "sha256": "ba6d3ee25923010ae3124af0f307e34c268b819f6f4b652afccc60b4079ba077"
+    },
+    {
+      "path": "screenshots/home-dashboard--mobile-390x844.png",
+      "bytes": 92238,
+      "sha256": "076529675c11e0a06263a32d97cb942bbfa96da28ab1b891cb2c57a3685b99c6"
+    },
+    {
+      "path": "screenshots/home-delivery-add--desktop-1440x900.png",
+      "bytes": 62209,
+      "sha256": "3d20f88223e6262fb3d4e11516a223184ba681278b8d6cd87950f087313e4f3b"
+    },
+    {
+      "path": "screenshots/home-delivery-add--mobile-390x844.png",
+      "bytes": 53281,
+      "sha256": "78f245666e3acd4ba2a91d032599ca1b0f80fcd3ff7c3f53a15b2a6a1a064b5c"
+    },
+    {
+      "path": "screenshots/home-delivery-calendar--desktop-1440x900.png",
+      "bytes": 145274,
+      "sha256": "de14720acf339b20cd5cf56325611dca9bb36d7e6fec5da5345c9bf0b5041cfa"
+    },
+    {
+      "path": "screenshots/home-delivery-calendar--mobile-390x844.png",
+      "bytes": 55138,
+      "sha256": "26c92b06b9aeedb462b4d45c1d4fd09ef075606d0b285e92b1e37b765809c18e"
+    },
+    {
+      "path": "screenshots/home-dinner-planner--desktop-1440x900.png",
+      "bytes": 101687,
+      "sha256": "a5eb604223a3e638b55cd374607608f619be175632ea8d32bb2694ca54bbc46c"
+    },
+    {
+      "path": "screenshots/home-dinner-planner--mobile-390x844.png",
+      "bytes": 74983,
+      "sha256": "84e77a5c961fa387984cf627e2ecf2c3f50198da7992a50798a78f856b8e933a"
+    },
+    {
+      "path": "screenshots/home-family-switcher--desktop-1440x900.png",
+      "bytes": 163885,
+      "sha256": "3aff5e20e013ccb6a00d71ef4715521f3b75ed6b295e0f7614a9219456f0d7c0"
+    },
+    {
+      "path": "screenshots/home-family-switcher--mobile-390x844.png",
+      "bytes": 104500,
+      "sha256": "f625e7fe6f4ca50388fa9e4a4d1ef4f122d585622a43a4b683463b0dd74f93ce"
+    },
+    {
+      "path": "screenshots/home-inbox-review--desktop-1440x900.png",
+      "bytes": 63191,
+      "sha256": "9cafbe6a02f909582dbd95f24b23f0e7c643ea68c7a7d44e3ca292a490933cb1"
+    },
+    {
+      "path": "screenshots/home-inbox-review--mobile-390x844.png",
+      "bytes": 45101,
+      "sha256": "65138e15bcdeb19b0100fef5c498af2bee9613a0a9b0f6d80a1be4db13bf24bb"
+    },
+    {
+      "path": "screenshots/market-catalog--desktop-1440x900.png",
+      "bytes": 101393,
+      "sha256": "bf0397ed4f802cb56f741ca09eb2bc34723aa15c0bcc3913ccc60292584793f4"
+    },
+    {
+      "path": "screenshots/market-catalog--mobile-390x844.png",
+      "bytes": 82920,
+      "sha256": "6eed6c73b469605e52cf0ae6886f95c46130b39acf419a59c4edd565410b860f"
+    },
+    {
+      "path": "screenshots/market-flash-sale--desktop-1440x900.png",
+      "bytes": 70228,
+      "sha256": "3650da347f6cf77d30aaacb5df7bb2b35fd1f9464869d68b642615988b2cada6"
+    },
+    {
+      "path": "screenshots/market-flash-sale--mobile-390x844.png",
+      "bytes": 55225,
+      "sha256": "97d0e0c338d441761e70e5c38b6076533bb8f0d1b1d48a4dfe795a07e1731481"
+    },
+    {
+      "path": "screenshots/market-item-create--desktop-1440x900.png",
+      "bytes": 71851,
+      "sha256": "888a72011c632f2b4117929eb486bbc3d61cf217fa71aabdbfa40611a3c67653"
+    },
+    {
+      "path": "screenshots/market-item-create--mobile-390x844.png",
+      "bytes": 54585,
+      "sha256": "b82cd23e97155b36d5c95a1d149f3df919e30df97ba3e07296fb63ce59d3fbe4"
+    },
+    {
+      "path": "screenshots/onboarding-complete--desktop-1440x900.png",
+      "bytes": 53057,
+      "sha256": "233542e23f9b0cb7c17a8d875b308573072d0cbfdf8b0fe36f46dc58191c02a4"
+    },
+    {
+      "path": "screenshots/onboarding-complete--mobile-390x844.png",
+      "bytes": 17179,
+      "sha256": "73c19a84656bd5f944d0f4a0a28d931eb8f7066968a9b847a7efd3c85d286b5e"
+    },
+    {
+      "path": "screenshots/onboarding-family--desktop-1440x900.png",
+      "bytes": 49692,
+      "sha256": "e83ef950d8c33d98caa262be3ce03966d65fc1da99c3161cad768f7537b39fc8"
+    },
+    {
+      "path": "screenshots/onboarding-family--mobile-390x844.png",
+      "bytes": 43453,
+      "sha256": "3c6f5eba29d4e2fc7ae93a1d21b06da314c5f6978cb64600e723049ed6b0d036"
+    },
+    {
+      "path": "screenshots/onboarding-profile--desktop-1440x900.png",
+      "bytes": 48546,
+      "sha256": "736e00fb0fa01e1f8f352b4dc8db24499a35e72531ac591a767e538e7b09b499"
+    },
+    {
+      "path": "screenshots/onboarding-profile--mobile-390x844.png",
+      "bytes": 42115,
+      "sha256": "0b98fe67fde7fd1defba8d1b62e3422e697feebe9e9c6c5993c4944511c48181"
+    },
+    {
+      "path": "screenshots/onboarding-welcome--desktop-1440x900.png",
+      "bytes": 62243,
+      "sha256": "a7b30547c441df9b43d64fc4bf018ce7b35026c6adf38b12b7fb039827435705"
+    },
+    {
+      "path": "screenshots/onboarding-welcome--mobile-390x844.png",
+      "bytes": 53886,
+      "sha256": "a427a904e71a886724c2e44aa49fff41352f8aaa707f8a896e861e8131da30aa"
+    },
+    {
+      "path": "screenshots/profile-center--desktop-1440x900.png",
+      "bytes": 70619,
+      "sha256": "e84056c6261797d7ca638c571aa695f1036fb1d48c3cfe9b2e009de8bbce4ed8"
+    },
+    {
+      "path": "screenshots/profile-center--mobile-390x844.png",
+      "bytes": 56531,
+      "sha256": "e9538a0cecdb9bc01afa3fa3ac7b8527a8cdb1633d7357344cf8bd852f0a6cc2"
+    },
+    {
+      "path": "screenshots/restock-filter--desktop-1440x900.png",
+      "bytes": 55912,
+      "sha256": "313a18d6e0b794b4ecc92757af4c1290c45976958684c3e0e0e5050a44055156"
+    },
+    {
+      "path": "screenshots/restock-filter--mobile-390x844.png",
+      "bytes": 48908,
+      "sha256": "1752d12321b31df9b6136f525fc7848564099ccb56cb58423f2ab2edfef058bb"
+    },
+    {
+      "path": "screenshots/restock-history-expanded--desktop-1440x900.png",
+      "bytes": 69571,
+      "sha256": "38175618a91d03dbb029be897b5bdfc626c13c4c6b4ba6affb9a181d4bfb87e3"
+    },
+    {
+      "path": "screenshots/restock-history-expanded--mobile-390x844.png",
+      "bytes": 60101,
+      "sha256": "38e59ce344f61b7f87f2183e0b758e2305281b0a34e79ceb196765f07432c4e1"
+    },
+    {
+      "path": "screenshots/restock-inventory--desktop-1440x900.png",
+      "bytes": 52111,
+      "sha256": "bd644e0c5722cc6eb03bd2b017fb912dd4b7b4a86e19a9765571bcc644b1bd34"
+    },
+    {
+      "path": "screenshots/restock-inventory--mobile-390x844.png",
+      "bytes": 45446,
+      "sha256": "ca17cc51a0abb11cacb3bcb6a6df03421ac781e977bf71ea7b0f99c9f60fa467"
+    },
+    {
+      "path": "screenshots/restock-item-create--desktop-1440x900.png",
+      "bytes": 61248,
+      "sha256": "e443ad5c00b11c3f8273c8101b1177cb0880add8d5a408ac117db292c150348d"
+    },
+    {
+      "path": "screenshots/restock-item-create--mobile-390x844.png",
+      "bytes": 53616,
+      "sha256": "8533cc57003be8e985bd08c84843f7d7ac9e597d52689b70f1be44f322fa12f1"
+    },
+    {
+      "path": "screenshots/restock-item-edit--desktop-1440x900.png",
+      "bytes": 59218,
+      "sha256": "5b58618c648d73935628f17820bc5ff2bc06ee06752bebb8dd5e85b85d60a2f1"
+    },
+    {
+      "path": "screenshots/restock-item-edit--mobile-390x844.png",
+      "bytes": 51605,
+      "sha256": "02f1ddb7736fc81647b55e583bbe7d7fd3234816996e601b8b6b49fc068717ac"
+    },
+    {
+      "path": "screenshots/settings-about--desktop-1440x900.png",
+      "bytes": 58483,
+      "sha256": "4bb2215d290114716040964ee225349ab8aac2a6238a8e44b9c3dfee996cb798"
+    },
+    {
+      "path": "screenshots/settings-about--mobile-390x844.png",
+      "bytes": 49907,
+      "sha256": "958d0a013ddc7ca8cd5a089d56b9a1b44584b39b859999f01eb9182a23ffc81c"
+    },
+    {
+      "path": "screenshots/settings-chore-history-completed--desktop-1440x900.png",
+      "bytes": 88606,
+      "sha256": "89045a3ec1c3b6148d747653a7450b2181c233cc06bcbabb6110be4da491ab59"
+    },
+    {
+      "path": "screenshots/settings-chore-history-completed--mobile-390x844.png",
+      "bytes": 74697,
+      "sha256": "21532cb2b9f6de91bf8f06f383051ae2e2fb341a07fa617631776725a97743ca"
+    },
+    {
+      "path": "screenshots/settings-chore-history-deleted--desktop-1440x900.png",
+      "bytes": 24029,
+      "sha256": "f8c913cb213533822f2c1d533226553980a5a1c10846c6b91276498f6a9521f2"
+    },
+    {
+      "path": "screenshots/settings-chore-history-deleted--mobile-390x844.png",
+      "bytes": 19658,
+      "sha256": "78a85b641197d2263588ea8a33e72afb6b0a95ed34721e17f6c99b9e43c80bfa"
+    },
+    {
+      "path": "screenshots/settings-help--desktop-1440x900.png",
+      "bytes": 55209,
+      "sha256": "e1d2317865d697249f0dc422d0209a20ee7519eefe86429e75213277cbaf1bb1"
+    },
+    {
+      "path": "screenshots/settings-help--mobile-390x844.png",
+      "bytes": 48008,
+      "sha256": "9650e91e4501b908874c32ddd4c09806f92409d0c511efbbf8c73074ec0b730f"
+    },
+    {
+      "path": "screenshots/settings-household--desktop-1440x900.png",
+      "bytes": 54421,
+      "sha256": "8c6ba0344689e85635285f78e0b5e7f3494e4782c506b522d3fb071261e94b4a"
+    },
+    {
+      "path": "screenshots/settings-household--mobile-390x844.png",
+      "bytes": 47343,
+      "sha256": "0a44dfae16e7809702dafe898d73820391aa924729b1fe9fab1c5c26bf0dccff"
+    },
+    {
+      "path": "screenshots/settings-invite--desktop-1440x900.png",
+      "bytes": 53374,
+      "sha256": "7430069a87d3da5d7e20476cd6a5c48bbf37ff29db7a1b6cba4e4182d4bc4403"
+    },
+    {
+      "path": "screenshots/settings-invite--mobile-390x844.png",
+      "bytes": 46596,
+      "sha256": "086006d2d42a234a40187c8ad00b04ab4c986ef716c957c717a26bdf0d0b4b20"
+    },
+    {
+      "path": "screenshots/settings-notifications--desktop-1440x900.png",
+      "bytes": 58359,
+      "sha256": "da9e6cdbacc41acc186d046797663d9d22e2ae2f8e87c8f9d19832c09930f1f7"
+    },
+    {
+      "path": "screenshots/settings-notifications--mobile-390x844.png",
+      "bytes": 51082,
+      "sha256": "d796d0611095b432547434cbb28c62d02f8554fdcb8934010b6c9b2b3eb9ae96"
+    },
+    {
+      "path": "screenshots/settings-personal-info--desktop-1440x900.png",
+      "bytes": 47815,
+      "sha256": "f067175ec06f9ab3a38b4125fdf5eb922dfa6ebe9bb219afea6f5039fdd21c72"
+    },
+    {
+      "path": "screenshots/settings-personal-info--mobile-390x844.png",
+      "bytes": 41758,
+      "sha256": "ddeb9c8a225953843432fe4a659f6f8be344761b09b2e04fd847d5f8e06e93a3"
+    },
+    {
+      "path": "screenshots/settings-privacy-security--desktop-1440x900.png",
+      "bytes": 58789,
+      "sha256": "c3f3f7410762c1b13e71b319f0d60b0f78b9cf754c6a59b4c8b5e20b80b97f12"
+    },
+    {
+      "path": "screenshots/settings-privacy-security--mobile-390x844.png",
+      "bytes": 51778,
+      "sha256": "1c9f13a1bea87a07043f7938625b44e1d8bd32515299e58922a9d3918830f5d5"
+    },
+    {
+      "path": "screenshots/wallet-goal-create--desktop-1440x900.png",
+      "bytes": 64463,
+      "sha256": "1aae3c8873d887f91b087e775a40956dad2a87da2786bd0a2a743a07569cfba0"
+    },
+    {
+      "path": "screenshots/wallet-goal-create--mobile-390x844.png",
+      "bytes": 57638,
+      "sha256": "9bf37a17d0d1cb25a8d7d7cbbe71755ad358ca24300e7873ffedc0df6f797808"
+    },
+    {
+      "path": "screenshots/wallet-points--desktop-1440x900.png",
+      "bytes": 63609,
+      "sha256": "8bf3daaab0b5c8be5b8807d4f69028d560ab99de938c0b0fda293fc5b8bde031"
+    },
+    {
+      "path": "screenshots/wallet-points--mobile-390x844.png",
+      "bytes": 50083,
+      "sha256": "4103b84739e802d1702043393985d298f1040c36f9213d4cf9381418b8faa682"
+    },
+    {
+      "path": "screenshots/wallet-reward-bag--desktop-1440x900.png",
+      "bytes": 88683,
+      "sha256": "256d48ba2f898b263db1b5ff9ae21dd5d4cabd3fc6e0ae8bf692de26fa08c229"
+    },
+    {
+      "path": "screenshots/wallet-reward-bag--mobile-390x844.png",
+      "bytes": 77331,
+      "sha256": "52ce2c513f8d452a8c316012197ac7a4020652e8edb2789121df4a4b007494a6"
+    },
+    {
+      "path": "screenshots/wallet-reward-use--desktop-1440x900.png",
+      "bytes": 74292,
+      "sha256": "9a6faf359eef53f25d32dcb40c1522792fdd27930fb1a0313bdda75d4eefb6b6"
+    },
+    {
+      "path": "screenshots/wallet-reward-use--mobile-390x844.png",
+      "bytes": 58890,
+      "sha256": "083d7cb95031b7824ff70db7f006391c56e8bd8688de3e189219931e94094805"
+    },
+    {
+      "path": "surface-manifest.json",
+      "bytes": 90919,
+      "sha256": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277"
+    }
+  ],
+  "bundle_member_count": 105,
+  "bundle_member_paths": [
+    "capture-report.json",
+    "capture-runner.py",
+    "failure-triage.json",
+    "recovery-receipt.json",
+    "runtime-console-network.json",
+    "runtime-server.log",
+    "screenshots/auth-entry--desktop-1440x900.png",
+    "screenshots/auth-entry--mobile-390x844.png",
+    "screenshots/chores-assignment--desktop-1440x900.png",
+    "screenshots/chores-assignment--mobile-390x844.png",
+    "screenshots/chores-calendar-month--desktop-1440x900.png",
+    "screenshots/chores-calendar-month--mobile-390x844.png",
+    "screenshots/chores-create--desktop-1440x900.png",
+    "screenshots/chores-create--mobile-390x844.png",
+    "screenshots/chores-edit--desktop-1440x900.png",
+    "screenshots/chores-edit--mobile-390x844.png",
+    "screenshots/chores-expanded-task--desktop-1440x900.png",
+    "screenshots/chores-expanded-task--mobile-390x844.png",
+    "screenshots/chores-filter-sort--desktop-1440x900.png",
+    "screenshots/chores-filter-sort--mobile-390x844.png",
+    "screenshots/chores-game-picker--desktop-1440x900.png",
+    "screenshots/chores-game-picker--mobile-390x844.png",
+    "screenshots/chores-today-all--desktop-1440x900.png",
+    "screenshots/chores-today-all--mobile-390x844.png",
+    "screenshots/family-announcements--desktop-1440x900.png",
+    "screenshots/family-announcements--mobile-390x844.png",
+    "screenshots/family-heatmap--desktop-1440x900.png",
+    "screenshots/family-heatmap--mobile-390x844.png",
+    "screenshots/family-hub--desktop-1440x900.png",
+    "screenshots/family-hub--mobile-390x844.png",
+    "screenshots/family-meal-results--desktop-1440x900.png",
+    "screenshots/family-meal-results--mobile-390x844.png",
+    "screenshots/family-member-create--desktop-1440x900.png",
+    "screenshots/family-member-create--mobile-390x844.png",
+    "screenshots/family-member-editor--desktop-1440x900.png",
+    "screenshots/family-member-editor--mobile-390x844.png",
+    "screenshots/family-wishlist--desktop-1440x900.png",
+    "screenshots/family-wishlist--mobile-390x844.png",
+    "screenshots/home-announcement-board--desktop-1440x900.png",
+    "screenshots/home-announcement-board--mobile-390x844.png",
+    "screenshots/home-dashboard--desktop-1440x900.png",
+    "screenshots/home-dashboard--mobile-390x844.png",
+    "screenshots/home-delivery-add--desktop-1440x900.png",
+    "screenshots/home-delivery-add--mobile-390x844.png",
+    "screenshots/home-delivery-calendar--desktop-1440x900.png",
+    "screenshots/home-delivery-calendar--mobile-390x844.png",
+    "screenshots/home-dinner-planner--desktop-1440x900.png",
+    "screenshots/home-dinner-planner--mobile-390x844.png",
+    "screenshots/home-family-switcher--desktop-1440x900.png",
+    "screenshots/home-family-switcher--mobile-390x844.png",
+    "screenshots/home-inbox-review--desktop-1440x900.png",
+    "screenshots/home-inbox-review--mobile-390x844.png",
+    "screenshots/market-catalog--desktop-1440x900.png",
+    "screenshots/market-catalog--mobile-390x844.png",
+    "screenshots/market-flash-sale--desktop-1440x900.png",
+    "screenshots/market-flash-sale--mobile-390x844.png",
+    "screenshots/market-item-create--desktop-1440x900.png",
+    "screenshots/market-item-create--mobile-390x844.png",
+    "screenshots/onboarding-complete--desktop-1440x900.png",
+    "screenshots/onboarding-complete--mobile-390x844.png",
+    "screenshots/onboarding-family--desktop-1440x900.png",
+    "screenshots/onboarding-family--mobile-390x844.png",
+    "screenshots/onboarding-profile--desktop-1440x900.png",
+    "screenshots/onboarding-profile--mobile-390x844.png",
+    "screenshots/onboarding-welcome--desktop-1440x900.png",
+    "screenshots/onboarding-welcome--mobile-390x844.png",
+    "screenshots/profile-center--desktop-1440x900.png",
+    "screenshots/profile-center--mobile-390x844.png",
+    "screenshots/restock-filter--desktop-1440x900.png",
+    "screenshots/restock-filter--mobile-390x844.png",
+    "screenshots/restock-history-expanded--desktop-1440x900.png",
+    "screenshots/restock-history-expanded--mobile-390x844.png",
+    "screenshots/restock-inventory--desktop-1440x900.png",
+    "screenshots/restock-inventory--mobile-390x844.png",
+    "screenshots/restock-item-create--desktop-1440x900.png",
+    "screenshots/restock-item-create--mobile-390x844.png",
+    "screenshots/restock-item-edit--desktop-1440x900.png",
+    "screenshots/restock-item-edit--mobile-390x844.png",
+    "screenshots/settings-about--desktop-1440x900.png",
+    "screenshots/settings-about--mobile-390x844.png",
+    "screenshots/settings-chore-history-completed--desktop-1440x900.png",
+    "screenshots/settings-chore-history-completed--mobile-390x844.png",
+    "screenshots/settings-chore-history-deleted--desktop-1440x900.png",
+    "screenshots/settings-chore-history-deleted--mobile-390x844.png",
+    "screenshots/settings-help--desktop-1440x900.png",
+    "screenshots/settings-help--mobile-390x844.png",
+    "screenshots/settings-household--desktop-1440x900.png",
+    "screenshots/settings-household--mobile-390x844.png",
+    "screenshots/settings-invite--desktop-1440x900.png",
+    "screenshots/settings-invite--mobile-390x844.png",
+    "screenshots/settings-notifications--desktop-1440x900.png",
+    "screenshots/settings-notifications--mobile-390x844.png",
+    "screenshots/settings-personal-info--desktop-1440x900.png",
+    "screenshots/settings-personal-info--mobile-390x844.png",
+    "screenshots/settings-privacy-security--desktop-1440x900.png",
+    "screenshots/settings-privacy-security--mobile-390x844.png",
+    "screenshots/wallet-goal-create--desktop-1440x900.png",
+    "screenshots/wallet-goal-create--mobile-390x844.png",
+    "screenshots/wallet-points--desktop-1440x900.png",
+    "screenshots/wallet-points--mobile-390x844.png",
+    "screenshots/wallet-reward-bag--desktop-1440x900.png",
+    "screenshots/wallet-reward-bag--mobile-390x844.png",
+    "screenshots/wallet-reward-use--desktop-1440x900.png",
+    "screenshots/wallet-reward-use--mobile-390x844.png",
+    "surface-manifest.json"
+  ],
+  "recapture_performed": false,
+  "product_source_changed": false,
+  "r6_fabric_audit": {
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-capture-v1",
+    "commit": "b1200b0b0519e798a42959da9672c83497ba6415",
+    "status": "EXECUTED_NO_CHANGE",
+    "changed_files": [],
+    "head_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "worktree_clean": true,
+    "remote_exact_head": true
+  }
+}
