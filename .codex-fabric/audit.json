@@ -1,0 +1,188 @@
+{
+  "accepted_at": "2026-09-26T14:05:12Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"cat /Users/haewonkim/.codex/RTK.md && cat /Users/haewonkim/.codex/law.md && pwd && rg --files -g 'AGENTS.md' -g 'package.json' -g 'surface-manifest.json' -g 'README*' | head -80\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch && rtk git remote -v && rtk git rev-parse HEAD && rtk git rev-parse HEAD''^{tree} && rtk git branch --show-current && rtk rg --files -g '\"'AGENTS.md' -g '*manifest*' -g '*recovery*' -g '*capture*' | head -120 && rtk cat package.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk ls -la /Users/haewonkim/.codex-fabric && rtk ls -la /Users/haewonkim/.codex-fabric/worktrees && rtk ls -la /Users/haewonkim/.codex-fabric/worktrees/CF-a96f62f3d990810cb38a012f && rtk find /Users/haewonkim/.codex-fabric -maxdepth 5 -type f | head -160'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk ls -la /Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb && rtk find /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb -maxdepth 4 -type f && rtk find /Users/haewonkim/.codex-fabric/evidence -maxdepth 6 -path '*homehuddle*' -print && rtk find /Users/haewonkim/.codex-fabric/project-os-artifacts -maxdepth 5 -path '*homehuddle*' -print && rtk ls -la /Users/haewonkim/.codex-fabric/jobs/CF-a96f62f3d990810cb38a012f\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-perfect-baseline-v3-recovery refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v3-recovery && rtk ls -la /Users/haewonkim/.codex-fabric/jobs && rtk ls -la /Users/haewonkim/.codex-fabric/state && rtk ls -la /Users/haewonkim/.codex-fabric/evidence && rtk ls -la /Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb/.codex-fabric'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk ls -la /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed && rtk proxy find /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed -maxdepth 4 -type f && rtk proxy find /Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb -maxdepth 3 -iname '*manifest*' -o -iname '*inventory*' -o -iname '*state*' -o -iname '*relationship*' && rtk rg --hidden --no-messages 'CF-b996dcba9bca21b3369a84fb|homehuddle-ui0-perfect-baseline-v2' /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed /Users/haewonkim/.codex-fabric/state /Users/haewonkim/.codex-fabric/logs\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk cat /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed/job.json && rtk cat /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed/lease.json && rtk rg -n 'manifest|freeze|retained|worktree|artifact|capture|recovery' /Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed/prompt.md && rtk proxy find /Users/haewonkim/.codex-fabric/artifacts/CF-b996dcba9bca21b3369a84fb -type d -name node_modules -prune -o -type f -print && rtk proxy find /Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb -type d -name node_modules -prune -o -type d -name .expo -prune -o -type f -print | rtk rg 'manifest|inventory|state|relationship|report|freeze|recovery|capture|atlas|lineage|task'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git fetch --no-tags origin refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v2 && rtk git ls-tree -r --name-only FETCH_HEAD && rtk git log -1 --format=fuller FETCH_HEAD && rtk ls -la /Users/haewonkim/.codex-fabric/evidence/homehuddle && rtk ls -la /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle && rtk proxy find /Users/haewonkim/.codex-fabric/artifacts -type d -name node_modules -prune -o -type f -print | rtk rg -i 'homehuddle|ui0-perfect-baseline|b996dcba'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy find /Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb -path '*/node_modules' -prune -o -path '*/.expo' -prune -o -type f -print | rtk rg -i '(manifest|inventory|state|relationship|report|freeze|recovery|capture|atlas|lineage|matrix)' && rtk git -C /Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb status --short --branch && rtk ls -la /Users/haewonkim/.codex-fabric/artifacts && rtk ls -la /Users/haewonkim/.codex-fabric/evidence && rtk ls -la /Users/haewonkim/.codex-fabric/project-os-artifacts\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg --hidden --files -g 'surface-manifest.json' -g 'recovery-lineage.json' -g '*inventory*.json' -g '*state*matrix*.json' -g '*relationship*map*.json' /Users/haewonkim/.codex-fabric && rtk rg --hidden --no-messages -n 'homehuddle-ui0-perfect-baseline-v2|CF-b996dcba9bca21b3369a84fb' /Users/haewonkim/.codex-fabric -g '\"'!**/node_modules/**'\"' -g '\"'!**/*.png'\"' -g '\"'!**/*.zip'\"' -g '\"'!**/*.bin'\"' && rtk proxy find /Users/haewonkim/.codex-fabric -path '*/node_modules' -prune -o -path '*/.git' -prune -o -type f -name '*b996*' -print\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk ls -la /Users/haewonkim/.codex-fabric/results/CF-b996dcba9bca21b3369a84fb && rtk ls -la /Users/haewonkim/.codex-fabric/results/CF-0c72ecb43d80c05f1eecbee4 && rtk ls -la /Users/haewonkim/.codex-fabric/results/CF-80bff0b02159b4ca8cb316c0 && rtk ls -la /tmp/homehuddle-ui0-perfect-baseline-v2 && rtk ls -la /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas && rtk ls -la /Users/haewonkim/.codex-fabric/jobs/CF-80bff0b02159b4ca8cb316c0.executed'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy jq 'keys' /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json && rtk proxy jq '.' /Users/haewonkim/.codex-fabric/results/CF-b996dcba9bca21b3369a84fb/result.json && rtk proxy jq '.' /Users/haewonkim/.codex-fabric/results/CF-0c72ecb43d80c05f1eecbee4/result.json && rtk proxy jq '.' /Users/haewonkim/.codex-fabric/results/CF-80bff0b02159b4ca8cb316c0/result.json && rtk proxy shasum -a 256 /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json && rtk rg -n -i 'manifest|freeze|provisional|deleted|refreeze|recovery' /Users/haewonkim/.codex-fabric/results/CF-b996dcba9bca21b3369a84fb/codex.events.jsonl /Users/haewonkim/.codex-fabric/results/CF-0c72ecb43d80c05f1eecbee4/codex.events.jsonl /Users/haewonkim/.codex-fabric/results/CF-80bff0b02159b4ca8cb316c0/codex.events.jsonl\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy jq '{schema,manifest_status,project,change,repository,alias,request,operation,source,freeze_time_utc,surface_count,expected_screenshot_count,canonical,discovery}' /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json && rtk proxy jq '.surfaces[0]' /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json && rtk proxy find /tmp -maxdepth 1 -type d -name 'homehuddle*' -print && rtk rg -n -i 'supersed|family-member-create|family-member-editor|restock-item-detail|restock-pantry-check|freeze|corrected manifest|provisional.*PNG|PNG.*deleted' /Users/haewonkim/.codex-fabric/results/CF-80bff0b02159b4ca8cb316c0/codex.events.jsonl /Users/haewonkim/.codex-fabric/results/CF-b996dcba9bca21b3369a84fb/codex.events.jsonl /Users/haewonkim/.codex-fabric/results/CF-0c72ecb43d80c05f1eecbee4/codex.events.jsonl\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy jq '[.surfaces[] | select(.surface_key|startswith(\\\"family-member-\\\")) | {surface_key,route,owner,entry_point,state,source_files,desktop_artifact:.canonical.desktop.artifact,mobile_artifact:.canonical.mobile.artifact}]' /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json && rtk proxy jq '[.surfaces[] | select(.surface_key|startswith(\\\"restock-\\\")) | {surface_key,route,owner,desktop_artifact:.canonical.desktop.artifact,mobile_artifact:.canonical.mobile.artifact}]' /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json && rtk proxy jq '{manifest_sha256:.manifest_sha256,complete,missing_key_viewports,manifest_path_collisions,blockers}' /tmp/homehuddle-ui0-perfect-baseline-v2-resume2/package-validation.json && rtk git -C /Users/haewonkim/.codex-fabric/worktrees/CF-a96f62f3d990810cb38a012f status --short --branch && rtk git -C /Users/haewonkim/.codex-fabric/worktrees/CF-a96f62f3d990810cb38a012f rev-parse HEAD\"'^{tree} && rtk ls -la /Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, shutil\n\njob_id = 'CF-a96f62f3d990810cb38a012f'\nroot = Path('/Users/haewonkim/.codex-fabric/artifacts') / job_id / 'recovery'\nroot.mkdir(parents=True, exist_ok=True)\nmanifest_path = Path('/tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json')\nvalidation_path = Path('/tmp/homehuddle-ui0-perfect-baseline-v2-resume2/package-validation.json')\nmanifest_bytes = manifest_path.read_bytes()\nmanifest = json.loads(manifest_bytes)\nvalidation_bytes = validation_path.read_bytes()\nvalidation = json.loads(validation_bytes)\n\npath_owners = {}\nfor surface in manifest['surfaces']:\n    for viewport in ('desktop', 'mobile'):\n        path = surface['canonical'][viewport]['artifact']\n        path_owners.setdefault(path, []).append({'surface_key': surface['surface_key'], 'viewport': viewport})\ncollisions = {p: owners for p, owners in path_owners.items() if len(owners) > 1}\nmanifest_sha = hashlib.sha256(manifest_bytes).hexdigest()\nvalidation_sha = hashlib.sha256(validation_bytes).hexdigest()\nshutil.copyfile(manifest_path, root / 'rejected-candidate-surface-manifest.json')\nshutil.copyfile(validation_path, root / 'predecessor-package-validation.json')\n\nlineage = {\n    'schema': 'project-os-recovery-lineage-v1',\n    'recorded_at_utc': '2026-09-26T14:09:59Z',\n    'current_job_id': job_id,\n    'current_request': 'homehuddle-ui0-perfect-baseline-v3-recovery',\n    'predecessor': {\n        'job_id': 'CF-b996dcba9bca21b3369a84fb',\n        'request': 'homehuddle-ui0-perfect-baseline-v2',\n        'job_metadata': '/Users/haewonkim/.codex-fabric/jobs/CF-b996dcba9bca21b3369a84fb.failed/job.json',\n        'retained_worktree': '/Users/haewonkim/.codex-fabric/worktrees/CF-b996dcba9bca21b3369a84fb',\n        'status': 'FAILED_MODEL',\n        'recovery_required': True,\n        'worktree_retained': True,\n        'retry_safe': False,\n        'model_rerun_safe': False\n    },\n    'bound_source': {\n        'sha': '46bd155dd55cbd85a29db5722c96d96c4946952b',\n        'tree': 'a66760b6df143a87e894d5fe636f152ea73f6bea',\n        'remote_target': 'main',\n        'observed_remote_main_sha': '46bd155dd55cbd85a29db5722c96d96c4946952b'\n    },\n    'candidate_manifest': {\n        'path': str(manifest_path),\n        'sha256': manifest_sha,\n        'freeze_time_utc': manifest.get('freeze_time_utc'),\n        'manifest_status': manifest.get('manifest_status'),\n        'surface_count': manifest.get('surface_count'),\n        'source': manifest.get('source'),\n        'superseded_freeze': manifest.get('discovery', {}).get('superseded_freeze'),\n        'preserved_copy': str(root / 'rejected-candidate-surface-manifest.json'),\n        'promoted_as_final_manifest': False\n    },\n    'retained_validation': {\n        'path': str(validation_path),\n        'sha256': validation_sha,\n        'complete': validation.get('complete'),\n        'manifest_path_collisions': collisions,\n        'missing_key_viewports': validation.get('missing_key_viewports'),\n        'blockers': validation.get('blockers'),\n        'preserved_copy': str(root / 'predecessor-package-validation.json')\n    },\n    'decision': {\n        'status': 'RECOVERY_DISCOVERY_INVALID',\n        'reason': 'The retained frozen manifest cannot uniquely bind the create and edit Family states to canonical PNG artifacts, and its retained validation also marks both family-meal-voting canonical anchors unreachable/missing.',\n        'runtime_or_capture_started_for_current_job': False,\n        'product_source_modified': False\n    }\n}\n(root / 'recovery-lineage.json').write_text(json.dumps(lineage, indent=2) + '\\\\n')\nreceipt = {\n    'schema': 'project_os_visual_atlas',\n    'version': 2,\n    'ok': False,\n    'status': 'FAILED_RECOVERY_DISCOVERY_INVALID',\n    'project': 'homehuddle',\n    'request': 'homehuddle-ui0-perfect-baseline-v3-recovery',\n    'operation': 'VERIFY',\n    'source_sha': '46bd155dd55cbd85a29db5722c96d96c4946952b',\n    'tree_sha': 'a66760b6df143a87e894d5fe636f152ea73f6bea',\n    'source_changed': False,\n    'surface_count': manifest.get('surface_count'),\n    'screenshot_count': 0,\n    'git_artifact_ref': None,\n    'git_artifact_commit': None,\n    'git_package_verified': False,\n    'manifest_sha256': manifest_sha,\n    'bundle_sha256': None,\n    'review_desktop_sha256': None,\n    'review_mobile_sha256': None,\n    'error_code': 'RECOVERY_DISCOVERY_INVALID',\n    'failure_reasons': [\n        {\n            'code': 'MANIFEST_ARTIFACT_PATH_COLLISION',\n            'artifacts': collisions\n        },\n        {\n            'code': 'RETAINED_REQUIRED_SURFACE_UNREACHABLE',\n            'surface_key': 'family-meal-voting',\n            'missing_viewports': validation.get('missing_key_viewports')\n        }\n    ],\n    'runtime_started': False,\n    'canonical_capture_started': False,\n    'observed_remote_main_sha': '46bd155dd55cbd85a29db5722c96d96c4946952b',\n    'product_worktree_clean': True,\n    'recovery_lineage_path': str(root / 'recovery-lineage.json')\n}\n(root / 'failure-receipt.json').write_text(json.dumps(receipt, indent=2) + '\\\\n')\nprint(json.dumps({\n    'artifact_root': str(root),\n    'manifest_sha256': manifest_sha,\n    'validation_sha256': validation_sha,\n    'surface_count': manifest.get('surface_count'),\n    'collision_paths': sorted(collisions),\n    'missing_key_viewports': validation.get('missing_key_viewports'),\n    'files': sorted(p.name for p in root.iterdir())\n}, indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main && rtk git rev-parse HEAD && rtk git rev-parse HEAD''^{tree} && rtk git status --short --branch && rtk proxy shasum -a 256 /tmp/homehuddle-ui0-perfect-baseline-v2/visual-atlas/surface-manifest.json /Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery/rejected-candidate-surface-manifest.json && rtk proxy jq '\"'{ok,status,request,error_code,source_changed,canonical_capture_started,manifest_sha256,failure_reasons}' /Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery/failure-receipt.json && rtk proxy find /Users/haewonkim/.codex-fabric/artifacts/CF-a96f62f3d990810cb38a012f/recovery -maxdepth 1 -type f -print\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 40,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 90.76,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 1002752,
+      "fresh_input_tokens": 102122,
+      "input_tokens": 1104874,
+      "non_reasoning_output_tokens": 6139,
+      "output_tokens": 18369,
+      "reasoning_output_tokens": 12230,
+      "total_processed_tokens": 1123243
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-26T14:11:27Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "branch": "codex/homehuddle-ui0-perfect-baseline-v3-recovery",
+    "detached_verify": false,
+    "head_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "remote_exact_head": true,
+    "remote_head_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "work_branch": "codex/homehuddle-ui0-perfect-baseline-v3-recovery",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-a96f62f3d990810cb38a012f",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v3-recovery",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-perfect-baseline-v3-recovery"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-perfect-baseline-v3-recovery",
+  "schema_version": 1,
+  "started_at": "2026-09-26T14:05:13Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 374,
+    "queue_seconds": 1,
+    "total_seconds": 375
+  },
+  "transport": {
+    "bytes": 8408,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 8063,
+    "prompt_sha256": "d6ba3b43b3c24c15b3fe05b5cdda3d7d98784647d72b76f4f907e8d636c537e2",
+    "sha256": "a96f62f3d990810cb38a012f152dd22f1f562adcc94efbbaa1feb60988712af1"
+  }
+}
