@@ -1,0 +1,38 @@
+{
+  "format": "homehuddle-wallet-truth-report/v1",
+  "sourceCommit": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+  "baseCommit": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "authority": "utils/wallet-logic.ts resolveEffectiveReward + parseRewardExpiry",
+  "semantics": {
+    "storedExpired": "remains expired and nonactionable",
+    "storedUsed": "remains historical/used even after its expiry",
+    "activeValidElapsedExpiry": "resolves to expired/history/nonactionable",
+    "activeValidFutureExpiry": "remains active/actionable",
+    "noYearMonthDay": "interpreted in current local UI year",
+    "explicitYearAndIso": "preserve stated year; ISO timestamps preserve instant",
+    "invalidExpiry": "unknown date is retained as an honest nonexpired/actionable state; it cannot fabricate expiry",
+    "gifted": "retains historical, nonactionable treatment"
+  },
+  "actions": [
+    "Active partition, history partition, row expiry display, Use, Gift, Resell, delayed action confirmations, and Use confirmation commit all use the same effective reward authority."
+  ],
+  "observedFixture": {
+    "reward": "Sleep In Day",
+    "storedStatus": "active",
+    "expiresDate": "Sun, Mar 14",
+    "uiYear": 2026,
+    "effectiveStatus": "expired",
+    "location": "Reward History",
+    "treatment": "EXPIRED badge and red expiry text",
+    "rowActions": []
+  },
+  "activeControl": {
+    "reward": "Pizza Night",
+    "storedStatus": "active",
+    "expiresDate": null,
+    "effectiveStatus": "active",
+    "useFlow": "confirmation and note field opened"
+  },
+  "fixtureDataChanged": false,
+  "schemaBackendOrSupabaseChanges": false
+}

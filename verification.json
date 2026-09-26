@@ -1,0 +1,70 @@
+{
+  "format": "project-os-verification/v1",
+  "sourceCommit": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+  "sourceTree": "add34f611ec80ba46ced7f3db8f3114e6cf157de",
+  "baseCommit": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "sourceDiffScope": "PASS",
+  "onlyChangedFiles": [
+    "app/(app)/(tabs)/wallet.tsx",
+    "__tests__/wallet-logic.test.ts",
+    "utils/wallet-logic.ts"
+  ],
+  "packageFilesUnchanged": true,
+  "commands": [
+    {
+      "command": "npm ci",
+      "result": "PASS",
+      "note": "Installed from unchanged package-lock.json. npm audit reported 40 dependency advisories (3 low, 20 moderate, 14 high, 3 critical)."
+    },
+    {
+      "command": "npx tsc --noEmit",
+      "result": "PASS",
+      "output": "TypeScript: No errors found"
+    },
+    {
+      "command": "npm run lint",
+      "result": "PRE-EXISTING_LINT_DEBT",
+      "output": "480 problems: 62 errors and 418 warnings. Current wallet.tsx has the same 7 pre-existing errors as base@46bd155; no new changed-file errors. New wallet helper/test have 0 lint errors."
+    },
+    {
+      "command": "npx jest --runInBand",
+      "result": "PASS",
+      "suites": 2,
+      "tests": 11,
+      "authAudit": "PASS; existing auth audit test unchanged"
+    }
+  ],
+  "runtime": {
+    "result": "PASS_WITH_RECORDED_BASELINE_WARNINGS",
+    "route": "http://127.0.0.1:8081/wallet",
+    "developerControlVisible": true,
+    "explicitBypassUsed": true,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "httpStatusesAtLeast400": 0,
+    "externalRequests": 0,
+    "localNavigationAborts": 4,
+    "consoleWarningEvents": 34,
+    "distinctConsoleWarnings": 7,
+    "runtimeEvidence": "runtime-console-network.json"
+  },
+  "visual": {
+    "canonicalPngs": [
+      "wallet-points--desktop-1440x900.png",
+      "wallet-points--mobile-390x844.png",
+      "wallet-reward-bag--desktop-1440x900.png",
+      "wallet-reward-bag--mobile-390x844.png"
+    ],
+    "stressPngs": [
+      "stress-wallet--360x800.png",
+      "stress-bag--360x800.png",
+      "stress-wallet--1536x864.png",
+      "stress-bag--1536x864.png",
+      "stress-wallet--200-percent.png",
+      "stress-bag--200-percent.png"
+    ],
+    "sameSessionResize": "PASS 390x844 -> 1440x900 -> 390x844 with no reload",
+    "expiredHistoryActions": "PASS; row exposes no buttons",
+    "nonexpiredUseConfirmation": "PASS; note input visible"
+  }
+}

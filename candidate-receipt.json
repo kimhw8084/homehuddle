@@ -1,0 +1,47 @@
+{
+  "format": "project-os-candidate-receipt/v1",
+  "createdAtUtc": "2026-09-26T23:48:46.222964+00:00",
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "operation": "FIX",
+  "request": "homehuddle-ui0-wallet-truth-responsive-v2",
+  "workBranch": "codex/homehuddle-ui0-wallet-truth-responsive-v2",
+  "base": {
+    "ref": "main",
+    "commit": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "candidate": {
+    "commit": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+    "tree": "add34f611ec80ba46ced7f3db8f3114e6cf157de",
+    "parent": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "remoteBranch": "refs/heads/codex/homehuddle-ui0-wallet-truth-responsive-v2"
+  },
+  "remoteMainPostflight": {
+    "commit": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "unchanged": true
+  },
+  "predecessorRecovery": {
+    "request": "homehuddle-ui0-wallet-truth-responsive-v1",
+    "result": "NO_PREDECESSOR_JOB_WORKTREE_OR_SOURCE_DELTA_FOUND",
+    "search": "Fabric jobs/results/worktrees metadata, local worktree branches, and remote R1 work/evidence/artifact refs; current R2 job prompt excluded from predecessor results."
+  },
+  "diff": {
+    "allowed": true,
+    "files": [
+      "app/(app)/(tabs)/wallet.tsx",
+      "__tests__/wallet-logic.test.ts",
+      "utils/wallet-logic.ts"
+    ],
+    "stat": {
+      "insertions": 299,
+      "deletions": 89
+    },
+    "packageJsonUnchanged": true,
+    "packageLockUnchanged": true,
+    "initialBagUnchanged": true
+  },
+  "fabricEvidenceRef": "not authored; Fabric-owned"
+}

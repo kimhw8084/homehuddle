@@ -1,0 +1,1204 @@
+{
+  "runStartedAtUtc": "2026-09-26T23:43:09.912604+00:00",
+  "sourceCommit": "857ea0ce5de1fd69ddf5c07da39718f89d17487e",
+  "runtimeConfiguration": {
+    "EXPO_NO_DOTENV": "1",
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "supabaseFixture": "http://127.0.0.1:54321",
+    "remoteSupabaseUsed": false
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "consoleWarnings": [
+    {
+      "session": "canonical-session",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "session": "canonical-session",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "session": "canonical-session",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "session": "canonical-session",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "canonical-session",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    }
+  ],
+  "requestFailures": [
+    {
+      "session": "canonical-session",
+      "url": "http://127.0.0.1:8081/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "session": "canonical-session",
+      "url": "http://127.0.0.1:8081/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "url": "http://127.0.0.1:8081/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "session": "zoom-200-percent-effective-viewport",
+      "url": "http://127.0.0.1:8081/",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "httpErrors": [],
+  "externalRequests": [],
+  "resizeMeasurements": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 300,
+          "height": 140,
+          "left": 45,
+          "right": 345
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 300,
+          "height": 140,
+          "left": 45,
+          "right": 345
+        },
+        "svgWidthAttr": "300",
+        "linePathEndX": 300,
+        "areaBaselineRightX": 300,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "300",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "300",
+            "cy": "10"
+          },
+          {
+            "cx": "300",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 342,
+          "height": 49,
+          "left": 24,
+          "right": 366
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 166,
+          "height": 39,
+          "left": 29,
+          "right": 195
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 166,
+            "height": 39,
+            "left": 29,
+            "right": 195
+          },
+          {
+            "x": 195,
+            "y": 67,
+            "width": 166,
+            "height": 39,
+            "left": 195,
+            "right": 361
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 166,
+          "height": 39,
+          "left": 29,
+          "right": 195
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "resize-390x844-before"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 1350,
+          "height": 140,
+          "left": 45,
+          "right": 1395
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 1350,
+          "height": 140,
+          "left": 45,
+          "right": 1395
+        },
+        "svgWidthAttr": "1350",
+        "linePathEndX": 1350,
+        "areaBaselineRightX": 1350,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "1350",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "1350",
+            "cy": "10"
+          },
+          {
+            "cx": "1350",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 1392,
+          "height": 49,
+          "left": 24,
+          "right": 1416
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 691,
+          "height": 39,
+          "left": 29,
+          "right": 720
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 691,
+            "height": 39,
+            "left": 29,
+            "right": 720
+          },
+          {
+            "x": 720,
+            "y": 67,
+            "width": 691,
+            "height": 39,
+            "left": 720,
+            "right": 1411
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 691,
+          "height": 39,
+          "left": 29,
+          "right": 720
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "resize-1440x900-middle"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 300,
+          "height": 140,
+          "left": 45,
+          "right": 345
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 300,
+          "height": 140,
+          "left": 45,
+          "right": 345
+        },
+        "svgWidthAttr": "300",
+        "linePathEndX": 300,
+        "areaBaselineRightX": 300,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "300",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "300",
+            "cy": "10"
+          },
+          {
+            "cx": "300",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 342,
+          "height": 49,
+          "left": 24,
+          "right": 366
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 166,
+          "height": 39,
+          "left": 29,
+          "right": 195
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 166,
+            "height": 39,
+            "left": 29,
+            "right": 195
+          },
+          {
+            "x": 195,
+            "y": 67,
+            "width": 166,
+            "height": 39,
+            "left": 195,
+            "right": 361
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 166,
+          "height": 39,
+          "left": 29,
+          "right": 195
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "resize-390x844-after"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 1350,
+          "height": 140,
+          "left": 45,
+          "right": 1395
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 1350,
+          "height": 140,
+          "left": 45,
+          "right": 1395
+        },
+        "svgWidthAttr": "1350",
+        "linePathEndX": 1350,
+        "areaBaselineRightX": 1350,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "1350",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "1350",
+            "cy": "10"
+          },
+          {
+            "cx": "1350",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 1392,
+          "height": 49,
+          "left": 24,
+          "right": 1416
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 691,
+          "height": 39,
+          "left": 29,
+          "right": 720
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 691,
+            "height": 39,
+            "left": 29,
+            "right": 720
+          },
+          {
+            "x": 720,
+            "y": 67,
+            "width": 691,
+            "height": 39,
+            "left": 720,
+            "right": 1411
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 691,
+          "height": 39,
+          "left": 29,
+          "right": 720
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "wallet-points-desktop-canonical"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "chart": {
+        "container": null,
+        "svg": null,
+        "svgWidthAttr": null,
+        "linePathEndX": null,
+        "areaBaselineRightX": null,
+        "svgLines": [],
+        "cursorCircles": []
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 1392,
+          "height": 49,
+          "left": 24,
+          "right": 1416
+        },
+        "pill": {
+          "x": 720,
+          "y": 67,
+          "width": 691,
+          "height": 39,
+          "left": 720,
+          "right": 1411
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 691,
+            "height": 39,
+            "left": 29,
+            "right": 720
+          },
+          {
+            "x": 720,
+            "y": 67,
+            "width": 691,
+            "height": 39,
+            "left": 720,
+            "right": 1411
+          }
+        ],
+        "selectedLabel": "My Bag",
+        "selected": {
+          "x": 720,
+          "y": 67,
+          "width": 691,
+          "height": 39,
+          "left": 720,
+          "right": 1411
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "wallet-bag-desktop-canonical"
+    },
+    {
+      "viewport": {
+        "width": 360,
+        "height": 800,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "bodyScrollWidth": 360
+      },
+      "chart": {
+        "container": null,
+        "svg": null,
+        "svgWidthAttr": null,
+        "linePathEndX": null,
+        "areaBaselineRightX": null,
+        "svgLines": [],
+        "cursorCircles": []
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 312,
+          "height": 49,
+          "left": 24,
+          "right": 336
+        },
+        "pill": {
+          "x": 180,
+          "y": 67,
+          "width": 151,
+          "height": 39,
+          "left": 180,
+          "right": 331
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 151,
+            "height": 39,
+            "left": 29,
+            "right": 180
+          },
+          {
+            "x": 180,
+            "y": 67,
+            "width": 151,
+            "height": 39,
+            "left": 180,
+            "right": 331
+          }
+        ],
+        "selectedLabel": "My Bag",
+        "selected": {
+          "x": 180,
+          "y": 67,
+          "width": 151,
+          "height": 39,
+          "left": 180,
+          "right": 331
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "stress-bag-360x800"
+    },
+    {
+      "viewport": {
+        "width": 360,
+        "height": 800,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "bodyScrollWidth": 360
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 270,
+          "height": 140,
+          "left": 45,
+          "right": 315
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 270,
+          "height": 140,
+          "left": 45,
+          "right": 315
+        },
+        "svgWidthAttr": "270",
+        "linePathEndX": 270,
+        "areaBaselineRightX": 270,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "270",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "270",
+            "cy": "10"
+          },
+          {
+            "cx": "270",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 312,
+          "height": 49,
+          "left": 24,
+          "right": 336
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 151,
+          "height": 39,
+          "left": 29,
+          "right": 180
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 151,
+            "height": 39,
+            "left": 29,
+            "right": 180
+          },
+          {
+            "x": 180,
+            "y": 67,
+            "width": 151,
+            "height": 39,
+            "left": 180,
+            "right": 331
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 151,
+          "height": 39,
+          "left": 29,
+          "right": 180
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "stress-wallet-360x800"
+    },
+    {
+      "viewport": {
+        "width": 1536,
+        "height": 864,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 1536,
+        "scrollWidth": 1536,
+        "bodyScrollWidth": 1536
+      },
+      "chart": {
+        "container": null,
+        "svg": null,
+        "svgWidthAttr": null,
+        "linePathEndX": null,
+        "areaBaselineRightX": null,
+        "svgLines": [],
+        "cursorCircles": []
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 1488,
+          "height": 49,
+          "left": 24,
+          "right": 1512
+        },
+        "pill": {
+          "x": 768,
+          "y": 67,
+          "width": 739,
+          "height": 39,
+          "left": 768,
+          "right": 1507
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 739,
+            "height": 39,
+            "left": 29,
+            "right": 768
+          },
+          {
+            "x": 768,
+            "y": 67,
+            "width": 739,
+            "height": 39,
+            "left": 768,
+            "right": 1507
+          }
+        ],
+        "selectedLabel": "My Bag",
+        "selected": {
+          "x": 768,
+          "y": 67,
+          "width": 739,
+          "height": 39,
+          "left": 768,
+          "right": 1507
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "stress-bag-1536x864"
+    },
+    {
+      "viewport": {
+        "width": 1536,
+        "height": 864,
+        "devicePixelRatio": 1
+      },
+      "document": {
+        "clientWidth": 1536,
+        "scrollWidth": 1536,
+        "bodyScrollWidth": 1536
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 1446,
+          "height": 140,
+          "left": 45,
+          "right": 1491
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 1446,
+          "height": 140,
+          "left": 45,
+          "right": 1491
+        },
+        "svgWidthAttr": "1446",
+        "linePathEndX": 1446,
+        "areaBaselineRightX": 1446,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "1446",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "1446",
+            "cy": "10"
+          },
+          {
+            "cx": "1446",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 1488,
+          "height": 49,
+          "left": 24,
+          "right": 1512
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 739,
+          "height": 39,
+          "left": 29,
+          "right": 768
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 739,
+            "height": 39,
+            "left": 29,
+            "right": 768
+          },
+          {
+            "x": 768,
+            "y": 67,
+            "width": 739,
+            "height": 39,
+            "left": 768,
+            "right": 1507
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 739,
+          "height": 39,
+          "left": 29,
+          "right": 768
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "stress-wallet-1536x864"
+    },
+    {
+      "viewport": {
+        "width": 720,
+        "height": 450,
+        "devicePixelRatio": 2
+      },
+      "document": {
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "bodyScrollWidth": 720
+      },
+      "chart": {
+        "container": {
+          "x": 45,
+          "y": 374,
+          "width": 630,
+          "height": 140,
+          "left": 45,
+          "right": 675
+        },
+        "svg": {
+          "x": 45,
+          "y": 374,
+          "width": 630,
+          "height": 140,
+          "left": 45,
+          "right": 675
+        },
+        "svgWidthAttr": "630",
+        "linePathEndX": 630,
+        "areaBaselineRightX": 630,
+        "svgLines": [
+          {
+            "x1": "0",
+            "x2": "630",
+            "y1": "120",
+            "y2": "120"
+          }
+        ],
+        "cursorCircles": [
+          {
+            "cx": "630",
+            "cy": "10"
+          },
+          {
+            "cx": "630",
+            "cy": "10"
+          }
+        ]
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 672,
+          "height": 49,
+          "left": 24,
+          "right": 696
+        },
+        "pill": {
+          "x": 29,
+          "y": 67,
+          "width": 331,
+          "height": 39,
+          "left": 29,
+          "right": 360
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 331,
+            "height": 39,
+            "left": 29,
+            "right": 360
+          },
+          {
+            "x": 360,
+            "y": 67,
+            "width": 331,
+            "height": 39,
+            "left": 360,
+            "right": 691
+          }
+        ],
+        "selectedLabel": "Wallet",
+        "selected": {
+          "x": 29,
+          "y": 67,
+          "width": 331,
+          "height": 39,
+          "left": 29,
+          "right": 360
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "stress-wallet-200-percent-effective-css-720x450-dpr2"
+    },
+    {
+      "viewport": {
+        "width": 720,
+        "height": 450,
+        "devicePixelRatio": 2
+      },
+      "document": {
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "bodyScrollWidth": 720
+      },
+      "chart": {
+        "container": null,
+        "svg": null,
+        "svgWidthAttr": null,
+        "linePathEndX": null,
+        "areaBaselineRightX": null,
+        "svgLines": [],
+        "cursorCircles": []
+      },
+      "switcher": {
+        "outer": {
+          "x": 24,
+          "y": 62,
+          "width": 672,
+          "height": 49,
+          "left": 24,
+          "right": 696
+        },
+        "pill": {
+          "x": 360,
+          "y": 67,
+          "width": 331,
+          "height": 39,
+          "left": 360,
+          "right": 691
+        },
+        "tabs": [
+          {
+            "x": 29,
+            "y": 67,
+            "width": 331,
+            "height": 39,
+            "left": 29,
+            "right": 360
+          },
+          {
+            "x": 360,
+            "y": 67,
+            "width": 331,
+            "height": 39,
+            "left": 360,
+            "right": 691
+          }
+        ],
+        "selectedLabel": "My Bag",
+        "selected": {
+          "x": 360,
+          "y": 67,
+          "width": 331,
+          "height": 39,
+          "left": 360,
+          "right": 691
+        },
+        "alignment": {
+          "x": 0,
+          "width": 0
+        }
+      },
+      "label": "stress-bag-200-percent-effective-css-720x450-dpr2"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "visible-developer-control-explicit-bypass",
+      "passed": true,
+      "route": "http://127.0.0.1:8081/wallet"
+    },
+    {
+      "name": "effective-expiry-partition-and-history-actions",
+      "result": {
+        "activeRewardsHeaderPresent": true,
+        "historyHeaderPresent": true,
+        "expiredRewardNameOccurrences": 1,
+        "expiredRewardIsAfterHistory": true,
+        "expiredHistoryRowText": "Sleep In Day\nEXPIRED",
+        "expiredHistoryRowActions": [],
+        "activeUseRowText": "\ud83c\udf55\nPizza Night\n200 pts \u00b7 Purchased Fri, Feb 28\nUse"
+      }
+    },
+    {
+      "name": "nonexpired-use-opens-note-confirmation",
+      "passed": true,
+      "noteInputVisible": true
+    },
+    {
+      "name": "200-percent-web-zoom-effective-css-viewport",
+      "passed": true,
+      "cssViewport": {
+        "width": 720,
+        "height": 450
+      },
+      "devicePixelRatio": 2,
+      "walletAndBagCaptured": true
+    }
+  ],
+  "runCompletedAtUtc": "2026-09-26T23:43:31.160406+00:00",
+  "sourceTree": "add34f611ec80ba46ced7f3db8f3114e6cf157de"
+}

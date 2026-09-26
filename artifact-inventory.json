@@ -1,0 +1,166 @@
+{
+  "format": "sha256-inventory/v1",
+  "scope": "All report and screenshot files in artifact-bundle.zip; inventory file and the containing bundle are excluded to avoid self-reference.",
+  "files": [
+    {
+      "path": "candidate-receipt.json",
+      "bytes": 1657,
+      "sha256": "74458f2810bf2c1bf30722a25c17c9f0e27d2e473aa7cacc3501f76a5bdaaa2a"
+    },
+    {
+      "path": "responsive-geometry.json",
+      "bytes": 27364,
+      "sha256": "7f2f855058d68cb2aa3a69065fa9c924d07e8c6e96671bd46f480cd651b7aff1"
+    },
+    {
+      "path": "runtime-console-network.json",
+      "bytes": 35168,
+      "sha256": "384d08f39e4b4763d89360e2cf836cf8de533d7dc7392d85b699905cfcbe0140"
+    },
+    {
+      "path": "screenshots/stress-bag--1536x864.png",
+      "bytes": 77749,
+      "sha256": "ceeeee1298c41ad69423c43e00219778206d3bbdd14cd7e321ca53e95615ada5",
+      "png": {
+        "width": 1536,
+        "height": 864,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/stress-bag--200-percent.png",
+      "bytes": 95675,
+      "sha256": "73b15a9909fa0f4dd24752888c419c9f6e72eb89ca16ba0733e61778e180c905",
+      "png": {
+        "width": 1440,
+        "height": 900,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/stress-bag--360x800.png",
+      "bytes": 68455,
+      "sha256": "f24bb9339a02847a960b4797d9511595ca32f1e9eb1ad53891afbd0c38e51718",
+      "png": {
+        "width": 360,
+        "height": 800,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/stress-wallet--1536x864.png",
+      "bytes": 62182,
+      "sha256": "4184b7a2069fcf3c5f589c80276321b44df9c0623b70364f7625e7b08711b54b",
+      "png": {
+        "width": 1536,
+        "height": 864,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/stress-wallet--200-percent.png",
+      "bytes": 85660,
+      "sha256": "5dba37c058a7e4dc639290c9d54a43d1c86f8f045f1305bdf5b8ccb4025f2dfa",
+      "png": {
+        "width": 1440,
+        "height": 900,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/stress-wallet--360x800.png",
+      "bytes": 47146,
+      "sha256": "61d2e4e3da51ca774c8947c2b0fc139a2907baaed4c3b43299c0353524414b75",
+      "png": {
+        "width": 360,
+        "height": 800,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-expired-history--desktop-1440x900.png",
+      "bytes": 77820,
+      "sha256": "9e8d19f17672527c0bb69014509508e56b22702ea011a267787753d17eadc59b",
+      "png": {
+        "width": 1440,
+        "height": 900,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-expired-history--mobile-390x844.png",
+      "bytes": 68580,
+      "sha256": "3bf1f10bbe75ea5e3d4587b5fdede977ad621bbb35aeb5bff915abd26ac10456",
+      "png": {
+        "width": 390,
+        "height": 844,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-points--desktop-1440x900.png",
+      "bytes": 65419,
+      "sha256": "3d29c60c590c64b8c5e80fb234fc5210f0c567f9a8b3f6ff63cc18ebb906485f",
+      "png": {
+        "width": 1440,
+        "height": 900,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-points--mobile-390x844.png",
+      "bytes": 50156,
+      "sha256": "9339370274d5284e20a27da3875dfe3f0352565a18f559f7b10bbd549dd4b888",
+      "png": {
+        "width": 390,
+        "height": 844,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-reward-bag--desktop-1440x900.png",
+      "bytes": 77820,
+      "sha256": "9e8d19f17672527c0bb69014509508e56b22702ea011a267787753d17eadc59b",
+      "png": {
+        "width": 1440,
+        "height": 900,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-reward-bag--mobile-390x844.png",
+      "bytes": 68580,
+      "sha256": "3bf1f10bbe75ea5e3d4587b5fdede977ad621bbb35aeb5bff915abd26ac10456",
+      "png": {
+        "width": 390,
+        "height": 844,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "screenshots/wallet-reward-use--mobile-390x844.png",
+      "bytes": 60396,
+      "sha256": "b508c6181ca4913a110e8de337c809ad16f9409874eab58f197ce1d6e4cc7b3b",
+      "png": {
+        "width": 390,
+        "height": 844,
+        "signature": "89504e470d0a1a0a"
+      }
+    },
+    {
+      "path": "verification.json",
+      "bytes": 2358,
+      "sha256": "19f7392ff555bd2f86e89eea4f1df04257c3e2afa3fea3a314566a7b9e374b65"
+    },
+    {
+      "path": "visual-review.md",
+      "bytes": 1842,
+      "sha256": "927a3d89d518dcf83979c35034654c9cbbf4b52a2b9aed4d8c6da6b4e2243c34"
+    },
+    {
+      "path": "wallet-truth-report.json",
+      "bytes": 1623,
+      "sha256": "d4a12fe710d53cc5d176dc0406548aef851a2ba9135a3c16a22ab33a4d40264d"
+    }
+  ]
+}
