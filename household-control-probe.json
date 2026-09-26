@@ -1,0 +1,47 @@
+{
+  "schema": "homehuddle-household-control-probe-v1",
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "route": "/settings/household",
+  "entry_path": "Home avatar > Profile > Household Settings",
+  "viewport": [
+    390,
+    844
+  ],
+  "actions": [
+    {
+      "target": "Add",
+      "dom": {
+        "tag": "DIV",
+        "role": null,
+        "aria_label": null
+      },
+      "route_unchanged": true,
+      "visible_text_unchanged": true,
+      "dialog_count": 0
+    },
+    {
+      "target": "Manage",
+      "dom": {
+        "tag": "DIV",
+        "role": null,
+        "aria_label": null
+      },
+      "route_unchanged": true,
+      "visible_text_unchanged": true,
+      "dialog_count": 0
+    },
+    {
+      "target": "Sarah Kim member row",
+      "dom": {
+        "tag": "DIV",
+        "role": null,
+        "aria_label": null
+      },
+      "route_unchanged": true,
+      "visible_text_unchanged": true,
+      "dialog_count": 0
+    }
+  ],
+  "source_observation": "settings/household.tsx Add and Manage TouchableOpacity elements have no onPress; MemberRow is a View containing a chevron.",
+  "result": "Repeated pointer activation produces no navigation, dialog or visible change. Keyboard behavior unproven."
+}

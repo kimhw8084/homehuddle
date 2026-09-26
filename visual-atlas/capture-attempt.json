@@ -1,0 +1,375 @@
+{
+  "rows": [],
+  "failures": [
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "route": "/family",
+      "error": "Error: surface blocked: fixture menuPhase=results; family members Haewon Kim, Sarah Kim, Leo Kim have already voted; no user-visible path to reopen voting; Results modal only offers scheduling"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "route": "/family",
+      "error": "Error: surface blocked: fixture menuPhase=results; family members Haewon Kim, Sarah Kim, Leo Kim have already voted; no user-visible path to reopen voting; Results modal only offers scheduling"
+    }
+  ],
+  "events": [
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "desktop-1440x900",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/family"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "viewport": "mobile-390x844",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:8083/family"
+    }
+  ]
+}

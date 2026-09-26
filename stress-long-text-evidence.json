@@ -1,0 +1,193 @@
+{
+  "schema": "homehuddle-ui0-long-text-stress-v1",
+  "create_capture": {
+    "row": {
+      "profile": "stress-long-text-390x844",
+      "surface": "chores",
+      "filename": "stress-long-text-390x844--chores.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 77697,
+      "sha256": "47de5292eb4c89fd2bc516001d9648c886609d4d7bfef5a4824a73bbd29156ba",
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "horizontalOverflow": false,
+      "fixture": "QA long chore created in disposable browser context; no production data"
+    },
+    "long_name": "QA Long chore name for pathological wrapping and dense family scanning 0123456789",
+    "events": [
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+      },
+      {
+        "kind": "requestfailed",
+        "url": "http://127.0.0.1:8083/",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "kind": "requestfailed",
+        "url": "http://127.0.0.1:8083/",
+        "failure": "net::ERR_ABORTED"
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "error",
+        "message": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      },
+      {
+        "kind": "console",
+        "level": "warning",
+        "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      }
+    ],
+    "fixture_disposed": true
+  },
+  "expanded_capture": {
+    "profile": "stress-long-text-expanded-390x844",
+    "filename": "stress-long-text-expanded-390x844--chores.png",
+    "sha256": "86f5e81a2ad2b0a070546e85ecd7056ed7256249ea7fe897a7b3e24d55c1db5e",
+    "bytes": 74539,
+    "width": 390,
+    "height": 844,
+    "full_text_in_dom": true,
+    "row_before": {
+      "tag": "DIV",
+      "text": "QA Long chore name for pathological wrapping and dense family scanning 0123456789",
+      "aria": null,
+      "title": null,
+      "style": "ellipsis",
+      "numberOfLines": null
+    },
+    "row_visible_after_tap": true,
+    "screenshot_path": "/tmp/homehuddle-ui0-perfect-baseline-v2-resume2/stress-evidence/stress-long-text-expanded-390x844--chores.png"
+  },
+  "disposable_browser_contexts": true,
+  "production_data_used": false
+}

@@ -1,0 +1,204 @@
+{
+  "schema": "homehuddle-ui0-dimension-review-v1",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea"
+  },
+  "pixel_scope": "All available canonical light anchors were swept by prior desktop/mobile contact sheets. Detailed pixel/behavior inspection is concentrated on the cited workflow and defect samples; this is not an independent full-page audit of every pixel.",
+  "surfaces": 70,
+  "dimensions": [
+    {
+      "dimension": "task hierarchy",
+      "status": "partial",
+      "observation": "The Chores reschedule confirmation clips at desktop; Family voting has no next-cycle action from results; expired Wallet reward is still actionable.",
+      "finding_refs": [
+        "HH-UI0-001",
+        "HH-UI0-002",
+        "HH-UI0-003"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "information architecture",
+      "status": "partial",
+      "observation": "All six named tabs operate in web runtime; settings route emits a known nested-settings warning and Household Settings actions are inert.",
+      "finding_refs": [
+        "HH-UI0-006",
+        "HH-UI0-008"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "typography",
+      "status": "partial",
+      "observation": "Home typewriter captures are intentionally time-dependent; a 78-character chore title is ellipsized in list and retained in DOM. Long household/member/item names remain unproven.",
+      "finding_refs": [
+        "HH-UI0-007",
+        "HYP-UI0-001"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "density",
+      "status": "partial",
+      "observation": "Dense Chores sections and Home dashboard widgets remain useful; long Chore title truncation needs similar-prefix challenge. Preserve expert workflow.",
+      "finding_refs": [
+        "HYP-UI0-001"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "spacing/layout",
+      "status": "partial",
+      "observation": "Desktop month calendar extends past modal bounds; mobile calendar fits its task actions. Other layout families sampled in contact sheets.",
+      "finding_refs": [
+        "HH-UI0-001"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "shape/material",
+      "status": "sampled_no_mandatory_finding",
+      "observation": "Rounded cards, sheets and raised actions remain authored/product-specific; contact-sheet scan only outside issue evidence. Do not genericize.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "color",
+      "status": "partial",
+      "observation": "Six main tabs and six shared overlay families were exercised with dark media preference; screens continued rendering light palette. Contrast/color-vision checks unproven.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "icons",
+      "status": "partial",
+      "observation": "Tab icons retain labels; Household member chevrons imply navigation despite non-interactive rows and no semantics. Hit-target measurement otherwise unproven.",
+      "finding_refs": [
+        "HH-UI0-008"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "imagery/avatars",
+      "status": "partial",
+      "observation": "Local fixture member avatars are emoji/fallback-like; no production avatar/network failure claim. Crop and broken remote assets not tested.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "motion/haptics",
+      "status": "partial",
+      "observation": "Auth typewriter and ambient motion are visible; reduced-motion preference was used across all six tabs, but motion equivalence/interruption is unproven. Reanimated warning observed.",
+      "finding_refs": [
+        "HH-UI0-005"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "navigation",
+      "status": "partial",
+      "observation": "Six-tab roles/routes operate; household Add/Manage/member rows no-op; nested settings route warning persists. Back/history return-state coverage incomplete.",
+      "finding_refs": [
+        "HH-UI0-006",
+        "HH-UI0-008"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "sheets/dialogs/overlays",
+      "status": "partial",
+      "observation": "Wallet reward confirmation and Chores reschedule sheets render; Chores desktop action is clipped. Escape/Back/focus return/keyboard occlusion unproven.",
+      "finding_refs": [
+        "HH-UI0-001",
+        "HH-UI0-003"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "forms",
+      "status": "partial",
+      "observation": "Onboarding profile and multiple create/edit forms captured; submit, draft retention, IME, validation timing and short-height keyboard behavior mostly unproven.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "search/filter/sort",
+      "status": "partial",
+      "observation": "Chores filter/sort, Wallet no-results search and Restock filter are represented; applied count, clear/reset and cross-state consistency not fully challenged.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "gestures",
+      "status": "partial",
+      "observation": "Chores swipe-to-reschedule and long-press/bulk path were used; cancellation and keyboard alternatives not systematically challenged.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "feedback",
+      "status": "partial",
+      "observation": "Restock completed history captured after undo window; no server pending/failure/partial/unknown outcomes inferred. Expired reward has conflicting state/action.",
+      "finding_refs": [
+        "HH-UI0-003"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "data/charts",
+      "status": "partial",
+      "observation": "Wallet points/chart and chore counts are local mock fixture values; unit/timeframe/freshness/backend truth are not inferred. Auth fixed count lacks provenance.",
+      "finding_refs": [
+        "HH-UI0-007"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "responsive composition",
+      "status": "partial",
+      "observation": "At 1440x900 the Chores calendar action/header clip; at 844x390 the first Chores row is underneath the persistent tabs and wheel/drag do not move it. Other six-tab profiles captured; 200 percent browser zoom remains unverified.",
+      "finding_refs": [
+        "HH-UI0-001"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "accessibility",
+      "status": "partial",
+      "observation": "Household Settings controls lack roles/response. At landscape Chores the row hit-test reaches tab layer. Keyboard-only, zoom, focus, native VoiceOver/TalkBack remain unproven.",
+      "finding_refs": [
+        "HH-UI0-001",
+        "HH-UI0-008"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "performance/craft",
+      "status": "partial",
+      "observation": "No user-visible jank established; retained logs show Reanimated, deprecated style and native-driver fallback warnings. Canonical event retention has a gap.",
+      "finding_refs": [
+        "HH-UI0-005"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "copy/trust",
+      "status": "partial",
+      "observation": "Auth screen hard-codes 14,203 chores completed today with no source; expired reward says both Active and Expired. Local fixture names remain explicitly labeled in evidence.",
+      "finding_refs": [
+        "HH-UI0-003",
+        "HH-UI0-007"
+      ],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    },
+    {
+      "dimension": "monetizable value comprehension",
+      "status": "sampled",
+      "observation": "Home communicates daily load/progress and Inbox Review; Chores clarifies responsibility. No paywall or purchase pressure added; value impact not user-tested.",
+      "finding_refs": [],
+      "coverage": "surface-specific applicability is mapped in v3-applicability.json; unlisted behavior remains unproven"
+    }
+  ],
+  "aggregate_score": null
+}

@@ -1,0 +1,748 @@
+{
+  "schema": "homehuddle-ui0-dark-overlay-stress-v1",
+  "dark_overlay_captures": [
+    {
+      "profile": "stress-dark-overlays",
+      "surface": "home-dinner",
+      "filename": "stress-dark-overlays--home-dinner.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 63191,
+      "sha256": "c8af34ef7efb1d67ca513a2d624b53040c0b9be4bf4a8d70d4f37e1c5cefb6cd",
+      "darkPreference": true,
+      "scrollWidth": 390,
+      "overlayText": "asala\nIndian · 50m\n2\nVOTES\n🥘\nKorean Bibimbap\nKorean · 40m\n2\nVOTES\n🍜\nRamen Bowl\nJapanese · 40m\n2\nVOTES\n🍣\nSalmon Teriyaki\nAsian · 30m\n1\nVOTES\n🍖\nBBQ Ribs\nAmerican · 3h\n1\nVOTES\n🍝\nSpaghetti Bolognese\nItalian · 1h\n1\nVOTES",
+      "horizontalOverflow": false
+    },
+    {
+      "profile": "stress-dark-overlays",
+      "surface": "chores-filter",
+      "filename": "stress-dark-overlays--chores-filter.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 42922,
+      "sha256": "1a0866b81c7d0d9cdb617c5357d6a7a007403db7a242246eb47f0746c1654b96",
+      "darkPreference": true,
+      "scrollWidth": 390,
+      "overlayText": "SHOW COMPLETED (3)\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠\nSort & Filter\nSORT BY\nTitle\nTime\nPoints\nTap once ↑ · twice ↓ · again to clear\nASSIGNEE\nEveryone\nSHOW ONLY\nRecurring tasks\nPhoto required\nNudged\nOverdue\nApply",
+      "horizontalOverflow": false
+    },
+    {
+      "profile": "stress-dark-overlays",
+      "surface": "family-bulletin",
+      "filename": "stress-dark-overlays--family-bulletin.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 44676,
+      "sha256": "f07a869552786f3beb42ae1c7c00537d194d7f95f219cf3523f620d41886afb7",
+      "darkPreference": true,
+      "scrollWidth": 390,
+      "overlayText": "om\nGrandma and Grandpa are both visiting this weekend — please clean your rooms by Friday evening!\n❤️\n2\n🎉\n1\n🔥\n👍\nAlex has soccer practice at 5 PM. Don't forget your cleats!\nDad • 9/25/2026\n❤️\n🎉\n🔥\n👍\nPost Announcement",
+      "horizontalOverflow": false
+    },
+    {
+      "profile": "stress-dark-overlays",
+      "surface": "wallet-use",
+      "filename": "stress-dark-overlays--wallet-use.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 58894,
+      "sha256": "3a7d454358f07217cbc661d794bc812e1072ef54ad1a71c5bd5122ee8b4d22a2",
+      "darkPreference": true,
+      "scrollWidth": 390,
+      "overlayText": " pts · Redeemed Feb 10\n✓ Used on Feb 10\n\"Watched football all day\"\nShow 1 more  ·  1 left\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠\nUse \"Sleep In Day\"?\nMarks as used and moves to history.\nNOTE (OPTIONAL)\nCancel\nUse It!",
+      "horizontalOverflow": false
+    },
+    {
+      "profile": "stress-dark-overlays",
+      "surface": "market-flash-sale",
+      "filename": "stress-dark-overlays--market-flash-sale.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 56379,
+      "sha256": "ae2f17b8447a3249cc0bf83a380d402eed5fc6f2a80aa11c2372358c1c7f1492",
+      "darkPreference": true,
+      "scrollWidth": 390,
+      "overlayText": "ne day\n180\nOut of stock\nLong press to restock\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠\n⚡\nNew Flash Sale\nAPPLY TO\n🏪 All\n📂 Category\n📦 Items\nDISCOUNT\n10%\n20%\n30%\nCustom\nDURATION\n1h\n4h\n12h\n1d\nCustom\n⚡ Launch Flash Sale",
+      "horizontalOverflow": false
+    },
+    {
+      "profile": "stress-dark-overlays",
+      "surface": "restock-quick-add",
+      "filename": "stress-dark-overlays--restock-quick-add.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 53616,
+      "sha256": "8533cc57003be8e985bd08c84843f7d7ac9e597d52689b70f1be44f322fa12f1",
+      "darkPreference": true,
+      "scrollWidth": 390,
+      "overlayText": "\n1 loaf\nMom\n3h ago\nTrader Joe's\nDAIRY & EGGS\n2\nDELETE\nWhole Milk\n1 gal\nMom\n10m ago\nCostco\nOrganic Valley\nURGENT\nDELETE\nEggs\n2 dozen\nDad\n1h ago\nCostco\nKirkland\n🌱 Organic\nURGENT\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠",
+      "horizontalOverflow": false
+    }
+  ],
+  "failures": [],
+  "events": [
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "home-dinner",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "chores-filter",
+      "kind": "console",
+      "level": "error",
+      "message": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "family-bulletin",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "wallet-use",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "market-flash-sale",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "surface": "restock-quick-add",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    }
+  ],
+  "dark_preference_active": true,
+  "visual_result": "All six overlay families captured while prefers-color-scheme was dark; screenshot pixels retained the light palette."
+}

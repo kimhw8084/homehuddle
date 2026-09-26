@@ -1,0 +1,67 @@
+{
+  "schema": "homehuddle-landscape-chores-scroll-probe-v1",
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "profile": "844x390 landscape",
+  "route": "/chores",
+  "entry_path": "Developer Control bypass > Chores tab",
+  "viewport_css_px": [
+    844,
+    390
+  ],
+  "observed_task": {
+    "title": "Check Mail",
+    "bounding_box": {
+      "x": 67,
+      "y": 374,
+      "width": 722,
+      "height": 18
+    },
+    "center_hit_test": {
+      "tag": "DIV",
+      "text": "HomeChoresFamilyWalletMarketRestock",
+      "role": null,
+      "aria": null,
+      "layer_class": "r-bottom...r-pointerEvents"
+    },
+    "covered_by_persistent_tab_bar": true
+  },
+  "scroll_container": {
+    "top": 64,
+    "client_height": 326,
+    "scroll_height": 1598,
+    "scroll_top_before": 0,
+    "scroll_top_after_wheel_attempts": 0,
+    "scroll_top_after_pointer_drag_attempts": 0,
+    "overflow_y": "auto"
+  },
+  "ordinary_input_probes": {
+    "mouse_wheel": [
+      180,
+      280,
+      420,
+      700,
+      1000
+    ],
+    "pointer_drag_starts": [
+      [
+        400,
+        285
+      ],
+      [
+        200,
+        280
+      ],
+      [
+        500,
+        250
+      ]
+    ],
+    "result": "No scroll or task-row movement; task hit target resolves to persistent bottom tab layer."
+  },
+  "screenshot": {
+    "path": "stress-evidence/stress-landscape-844x390--chores.png",
+    "sha256": "c607ba82dfbdbe214e1616734528f38261d9f9d59bf845937209ab84ae1f05ba",
+    "bytes": 47452
+  },
+  "defect_detection_status": "Observed product task-access failure; no harness timeout used as a PASS."
+}

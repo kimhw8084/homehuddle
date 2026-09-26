@@ -1,0 +1,22 @@
+{
+  "schema": "project_os_visual_atlas",
+  "version": 2,
+  "ok": false,
+  "status": "FAILED_BLOCKED",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-perfect-baseline-v2-resume2",
+  "operation": "VERIFY",
+  "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+  "source_tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+  "source_changed": false,
+  "surface_count": 70,
+  "screenshot_count": 138,
+  "git_artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-perfect-baseline-v2-resume2",
+  "git_commit": null,
+  "git_package_verified": false,
+  "manifest_sha256": "8a4bbf45f0185b7cceaf1a260d1d7403b4107539badf96469cdf7b57fd990fcd",
+  "bundle_sha256": null,
+  "review_desktop_pdf_sha256": "7a793fa236f63a79f88f032106f81eed67bdef641fc234da5ffa243783baad9b",
+  "review_mobile_pdf_sha256": "d2ff89f2fca435d06a99b64ccefb764c7382d5a3cc3c612c93eb2a05d7d73f5a",
+  "error_code": "ATLAS_INCOMPLETE:STATE_UNREACHABLE_IN_DETERMINISTIC_FIXTURE+SURFACE_MANIFEST_ARTIFACT_PATH_COLLISION+AUDIT_CLAUSE_CATALOG_UNAVAILABLE+STRESS_PROFILE_COVERAGE_INCOMPLETE+CAPTURE_EVENT_RETENTION_GAP"
+}

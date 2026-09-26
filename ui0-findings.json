@@ -1,0 +1,510 @@
+{
+  "schema": "homehuddle-ui0-findings-v1",
+  "source": {
+    "sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "remote_target": "main"
+  },
+  "finding_count": 8,
+  "findings": [
+    {
+      "id": "HH-UI0-001",
+      "severity": "P1",
+      "title": "Chores task/action content is clipped at desktop and landscape heights",
+      "class": "mandatory product defect",
+      "surface_keys": [
+        "chores-reschedule",
+        "chores-today-all"
+      ],
+      "evidence": [
+        {
+          "surface_key": "chores-reschedule",
+          "viewport": "desktop-1440x900",
+          "screenshot": "screenshots/chores-reschedule--desktop-1440x900.png",
+          "sha256": "0a153f35ee60dc2207df1fa7362a8b873595ee14cea066ecc74c62da15947af2",
+          "observation": "At 1440x900 square-cell month calendar extends beyond modal viewport; header/close and confirm action are clipped."
+        },
+        {
+          "surface_key": "chores-reschedule",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/chores-reschedule--mobile-390x844.png",
+          "sha256": "39a967dca91cc229f4eb502b474109c429eb6b8e714e36399c64878dc05a4945",
+          "observation": "At 390x844 month controls, selected date and Reschedule Task action are visible together."
+        },
+        {
+          "surface_key": "chores-today-all",
+          "viewport": "844x390 landscape stress",
+          "screenshot": "stress-evidence/stress-landscape-844x390--chores.png",
+          "sha256": "c607ba82dfbdbe214e1616734528f38261d9f9d59bf845937209ab84ae1f05ba",
+          "trace": "stress-landscape-scroll-probe.json",
+          "observation": "Check Mail text begins at y=374 in a 390px viewport; its center hit-test resolves to the fixed tab bar. Wheel/drag attempts leave the main ScrollView scrollTop at 0."
+        }
+      ],
+      "principles": [
+        "responsive composition",
+        "task completion visibility",
+        "overlay modality"
+      ],
+      "relationships": [
+        "focus",
+        "scroll ownership",
+        "Back/Escape"
+      ],
+      "impact": "At 1440x900 the Chores reschedule header/confirm controls are clipped. At 844x390 the first task row is covered by the persistent tab bar and input attempts do not scroll it into the usable viewport, blocking ordinary chore actions.",
+      "root_authority": "composition",
+      "affected_consumers": [
+        "Chores reschedule sheet",
+        "shared month calendar geometry"
+      ],
+      "smallest_bounded_fix": "Correct Chores vertical composition and scroll ownership at short heights so the task list scrolls above the persistent tab bar; independently constrain the month sheet and keep title/close/primary action visible.",
+      "closure_evidence": [
+        "1440x900 and 1366x768 reschedule anchors",
+        "1536x864 holdout",
+        "390x844 and 844x390 task row is visible and hit-testable",
+        "wheel and touch/pointer scroll moves Chores content above tabs",
+        "keyboard path",
+        "task oracle for Check Mail and selected reschedule date"
+      ],
+      "regression_risks": [
+        "day-cell hit area",
+        "minimum-date navigation",
+        "short-height scroll ownership",
+        "mobile geometry",
+        "tab target visibility"
+      ]
+    },
+    {
+      "id": "HH-UI0-002",
+      "severity": "P1",
+      "title": "Weekly voting cannot be reopened from the seeded results phase",
+      "class": "mandatory product/reachability defect",
+      "surface_keys": [
+        "family-meal-voting",
+        "family-meal-results"
+      ],
+      "evidence": [
+        {
+          "surface_key": "family-meal-results",
+          "viewport": "desktop-1440x900",
+          "screenshot": "screenshots/family-meal-results--desktop-1440x900.png",
+          "sha256": "4592cb7da2275bfec491568b001fc22765abb00a8e4c15e7aff36a34642fae16",
+          "observation": "Results dialog is the ordinary UI state; voting key unavailable."
+        },
+        {
+          "surface_key": "family-meal-results",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/family-meal-results--mobile-390x844.png",
+          "sha256": "e6b1e54299d57f006b534ac217744318e61b8cec5f8232cc65c240ac321f7c79",
+          "observation": "Same results phase at mobile; canonical voting anchor not captured."
+        }
+      ],
+      "principles": [
+        "navigation/state-transition completeness",
+        "task hierarchy",
+        "visible next action"
+      ],
+      "relationships": [
+        "shared state",
+        "selection",
+        "async validity"
+      ],
+      "impact": "Family cannot start the next weekly vote through an ordinary visible action in audited runtime; voting workflow cannot be verified.",
+      "root_authority": "Product contract",
+      "affected_consumers": [
+        "WeeklyMenuSection",
+        "Family meal planner",
+        "local menu phase transition"
+      ],
+      "smallest_bounded_fix": "Add an explicit next-cycle transition at the weekly boundary while preserving prior results and schedule.",
+      "closure_evidence": [
+        "ordinary results-to-next-week path",
+        "no/partial/all vote, schedule, cycle, repeat and stale-state oracles",
+        "both viewport anchors"
+      ],
+      "regression_risks": [
+        "loss of prior results",
+        "accidental reset",
+        "schedule association",
+        "duplicate voting"
+      ]
+    },
+    {
+      "id": "HH-UI0-003",
+      "severity": "P2",
+      "title": "Expired reward remains actionable under Active Rewards",
+      "class": "mandatory product defect",
+      "surface_keys": [
+        "wallet-reward-bag",
+        "wallet-reward-use"
+      ],
+      "evidence": [
+        {
+          "surface_key": "wallet-reward-bag",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/wallet-reward-bag--mobile-390x844.png",
+          "sha256": "b0361831f482116c22acfd0c3337da2908bd6991434b2cfef5c8fbed8eb9410f",
+          "observation": "Sleep In Day is under Active Rewards with Expired label and active Use button."
+        },
+        {
+          "surface_key": "wallet-reward-use",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/wallet-reward-use--mobile-390x844.png",
+          "sha256": "3a7d454358f07217cbc661d794bc812e1072ef54ad1a71c5bd5122ee8b4d22a2",
+          "observation": "Expired item opens Use It confirmation."
+        }
+      ],
+      "principles": [
+        "truthful state",
+        "task safety",
+        "feedback and consequence",
+        "copy/trust"
+      ],
+      "relationships": [
+        "shared state",
+        "async validity",
+        "confirmation/result"
+      ],
+      "impact": "Household sees contradictory reward status and can attempt to use an expired item.",
+      "root_authority": "interaction-state",
+      "affected_consumers": [
+        "Wallet active rewards",
+        "reward use sheet",
+        "status/history derivation"
+      ],
+      "smallest_bounded_fix": "Remove expired rewards from actionable Active list or disable Use and provide explanation/history.",
+      "closure_evidence": [
+        "same object active/expiring/expired/used/history",
+        "assert no expired reward has actionable Use",
+        "retain notes and identity"
+      ],
+      "regression_risks": [
+        "undated rewards",
+        "timezone boundary",
+        "history status",
+        "valid reward wrongly disabled"
+      ]
+    },
+    {
+      "id": "HH-UI0-004",
+      "severity": "P2",
+      "title": "Seeded Market curator names do not match fixture household identities",
+      "class": "fixture/Product contract finding",
+      "surface_keys": [
+        "market-item-detail",
+        "market-item-restock"
+      ],
+      "evidence": [
+        {
+          "surface_key": "market-item-detail",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/market-item-detail--mobile-390x844.png",
+          "sha256": "9430256c5b3991ee02265ef523b065e1443744b7aaf2f8f55f06aceafe62d179",
+          "observation": "Ice Cream context identifies curator-only controls and disables Add Stock for active seeded account."
+        },
+        {
+          "surface_key": "market-item-restock",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/market-item-restock--mobile-390x844.png",
+          "sha256": "c4cf27cb9dc8d7508dfe5ce9b6ad6166dfc28c1e5758bff6a5464bb124d8c91f",
+          "observation": "Disposable QA item QA Restock Fixture with stock 2 exposes Add Stock editor."
+        }
+      ],
+      "principles": [
+        "role clarity",
+        "truthful fixture provenance",
+        "feedback"
+      ],
+      "relationships": [
+        "role differentiation",
+        "selection",
+        "shared state"
+      ],
+      "impact": "Expected manager cannot use some seeded Market actions; QA used a labeled disposable in-memory item. This does not establish production authorization behavior.",
+      "root_authority": "Product contract",
+      "affected_consumers": [
+        "Market curator display",
+        "fixture member ID mapping",
+        "edit/restock permissions"
+      ],
+      "smallest_bounded_fix": "Bind seeded curators to deterministic member IDs while preserving non-owner restrictions.",
+      "closure_evidence": [
+        "owner/non-owner checks",
+        "eligible purchaser",
+        "empty/out-of-stock"
+      ],
+      "regression_risks": [
+        "wrong member grants",
+        "fixture assumptions leaking to production"
+      ]
+    },
+    {
+      "id": "HH-UI0-005",
+      "severity": "P3",
+      "title": "Repeated animation and deprecated-style warnings remain",
+      "class": "mandatory craft debt",
+      "surface_keys": [
+        "family-meal-results"
+      ],
+      "evidence": [
+        {
+          "trace": "capture-report.json final attempt events",
+          "observation": "Reanimated shared-value read during render plus deprecated shadow* and pointerEvents warnings; baseline also reports browser native-driver fallback."
+        }
+      ],
+      "principles": [
+        "performance/craft",
+        "motion and reduced-motion",
+        "platform adapter"
+      ],
+      "relationships": [
+        "motion interruption",
+        "async validity"
+      ],
+      "impact": "No user-visible jank proven; repeated warnings reduce runtime fault signal.",
+      "root_authority": "shared component",
+      "affected_consumers": [
+        "WeeklyMenuSection",
+        "React Native Web styles",
+        "shared animation primitives"
+      ],
+      "smallest_bounded_fix": "Remove render-time shared-value reads and replace deprecated web style props after task blockers.",
+      "closure_evidence": [
+        "sound/faulty warning controls",
+        "affected route no longer warns",
+        "motion/reduced-motion parity"
+      ],
+      "regression_risks": [
+        "transition timing",
+        "gesture cancellation",
+        "native parity"
+      ]
+    },
+    {
+      "id": "HH-UI0-006",
+      "severity": "P3",
+      "title": "Nested settings route and browser animation fallback require closure",
+      "class": "navigation/platform debt",
+      "surface_keys": [
+        "profile-center",
+        "settings-personal-info",
+        "settings-privacy-security",
+        "settings-notifications",
+        "settings-household",
+        "settings-invite",
+        "settings-chore-history-completed",
+        "settings-chore-history-deleted",
+        "settings-help",
+        "settings-about"
+      ],
+      "evidence": [
+        {
+          "trace": "retained original browser audit notes",
+          "observation": "Desktop nested settings route warning and Animated native-driver fallback; no task failure isolated."
+        }
+      ],
+      "principles": [
+        "navigation/history",
+        "platform adapter",
+        "runtime noise"
+      ],
+      "relationships": [
+        "Back/Escape",
+        "focus return",
+        "deep link"
+      ],
+      "impact": "Direct link, Back and return-state closure remains incomplete.",
+      "root_authority": "navigation",
+      "affected_consumers": [
+        "profile/settings route tree",
+        "browser animation adapter"
+      ],
+      "smallest_bounded_fix": "Correct only the nested route ownership and web fallback configuration after blocker fixes.",
+      "closure_evidence": [
+        "direct-link/Back/return matrix",
+        "desktop warning-free route",
+        "six-tab navigation unchanged"
+      ],
+      "regression_risks": [
+        "deep links",
+        "tab persistence",
+        "browser history"
+      ]
+    },
+    {
+      "id": "HH-UI0-007",
+      "severity": "P2",
+      "title": "Auth screen displays an unproven fixed social-proof count",
+      "class": "mandatory trust/copy defect",
+      "surface_keys": [
+        "auth-entry"
+      ],
+      "evidence": [
+        {
+          "surface_key": "auth-entry",
+          "viewport": "desktop-1440x900",
+          "screenshot": "screenshots/auth-entry--desktop-1440x900.png",
+          "sha256": "4b25bd3eceeb09b48ce9301180265e339203ce13f88cc518a86351f10f21f98a",
+          "source_file": "app/index.tsx:475",
+          "observation": "Auth screen states “14,203 chores completed today”; source embeds this literal with no displayed provenance or current measurement."
+        },
+        {
+          "surface_key": "auth-entry",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/auth-entry--mobile-390x844.png",
+          "sha256": "ed233964be3a625fbd969cc832e355c60739a2f2828be4241d084be4170a36f2",
+          "source_file": "app/index.tsx:475",
+          "observation": "Same fixed claim in mobile sign-in sheet."
+        }
+      ],
+      "principles": [
+        "copy/trust",
+        "truthful data provenance",
+        "no fabricated social proof"
+      ],
+      "relationships": [
+        "async validity",
+        "shared state"
+      ],
+      "impact": "New households may interpret a hard-coded claim as a current real platform metric. It creates trust risk at the first entry point.",
+      "root_authority": "copy",
+      "affected_consumers": [
+        "Auth root desktop",
+        "Auth root mobile",
+        "social-proof ticker"
+      ],
+      "smallest_bounded_fix": "Remove the number or replace it with a live, sourced, privacy-safe aggregate whose time window and provenance are supportable.",
+      "closure_evidence": [
+        "source-backed metric definition and refresh path, or claim removed",
+        "desktop/mobile auth anchors",
+        "runtime data is not implied by a local fixture"
+      ],
+      "regression_risks": [
+        "reintroducing an unsupported count",
+        "claim losing intended friendly tone"
+      ]
+    },
+    {
+      "id": "HH-UI0-008",
+      "severity": "P2",
+      "title": "Household Settings presents inert Add, Manage and member-row affordances",
+      "class": "mandatory interaction/accessibility defect",
+      "surface_keys": [
+        "settings-household"
+      ],
+      "evidence": [
+        {
+          "surface_key": "settings-household",
+          "viewport": "mobile-390x844",
+          "screenshot": "screenshots/settings-household--mobile-390x844.png",
+          "sha256": "0a44dfae16e7809702dafe898d73820391aa924729b1fe9fab1c5c26bf0dccff",
+          "trace": "household-control-probe.json",
+          "observation": "Rendered Household Settings shows Manage, Add and right chevrons for each member. Pointer probes on Add, Manage and Sarah Kim left route/body unchanged and opened no dialog; each target was a DIV with no role/aria label. Source app/(app)/settings/household.tsx implements Add/Manage without onPress and member rows as a View."
+        },
+        {
+          "surface_key": "settings-household",
+          "viewport": "desktop-1440x900",
+          "screenshot": "screenshots/settings-household--desktop-1440x900.png",
+          "sha256": "8c6ba0344689e85635285f78e0b5e7f3494e4782c506b522d3fb071261e94b4a",
+          "observation": "Same household-management screen at desktop anchor."
+        }
+      ],
+      "principles": [
+        "task completion and next action",
+        "web accessibility and keyboard path",
+        "truthful affordances",
+        "navigation/recovery"
+      ],
+      "relationships": [
+        "focus",
+        "Back/Escape",
+        "selection",
+        "shared state"
+      ],
+      "impact": "Household managers may try to add or edit members from Settings and receive no response. The screen has no keyboard role for the apparent controls.",
+      "root_authority": "interaction-state",
+      "affected_consumers": [
+        "Household Settings",
+        "family member management",
+        "settings navigation",
+        "web semantic adapter"
+      ],
+      "smallest_bounded_fix": "Wire Add and Manage to real supported workflows or render them as non-actionable status; make member rows keyboard-operable only if their chevrons promise navigation.",
+      "closure_evidence": [
+        "pointer and keyboard probes produce same intended action",
+        "semantic roles/names and focus visible",
+        "add/edit/save/cancel and return path for the same fixture member"
+      ],
+      "regression_risks": [
+        "duplicate entry points with onboarding/invite",
+        "accidental member deletion",
+        "role consistency",
+        "keyboard focus return"
+      ]
+    }
+  ],
+  "optional_aesthetic_hypotheses": [
+    {
+      "id": "HYP-UI0-001",
+      "surface_key": "chores-today-all",
+      "status": "follow-up hypothesis, not mandatory defect",
+      "evidence": {
+        "path": "stress-evidence/stress-long-text-390x844--chores.png",
+        "sha256": "47de5292eb4c89fd2bc516001d9648c886609d4d7bfef5a4824a73bbd29156ba"
+      },
+      "observation": "A 78-character QA chore name is ellipsized in the dense list; full text remains in the DOM and row expands. Similar-prefix collisions were not challenged.",
+      "next_probe": "Compare two long names with the same first 30 characters; verify search and expanded/edit views distinguish them before considering row-height changes."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BLOCK-001",
+      "code": "STATE_UNREACHABLE_IN_DETERMINISTIC_FIXTURE",
+      "evidence": "family-meal-voting missing at both anchors; current results screenshots show all three fixture members voted; no ordinary next-cycle action; store reset method has no visible caller."
+    },
+    {
+      "id": "BLOCK-002",
+      "code": "SURFACE_MANIFEST_ARTIFACT_PATH_COLLISION",
+      "evidence": "family-member-create and family-member-editor both point to editor screenshots in frozen manifest; distinct key-named create PNGs exist, but frozen mapping cannot be corrected."
+    },
+    {
+      "id": "BLOCK-003",
+      "code": "AUDIT_CLAUSE_CATALOG_UNAVAILABLE",
+      "evidence": "Retained run and accessible local inputs have no authoritative Golden UI v3 clause IDs or JOIN-01..09 definitions; no numeric mappings are invented."
+    },
+    {
+      "id": "BLOCK-004",
+      "code": "STRESS_PROFILE_COVERAGE_INCOMPLETE",
+      "evidence": "200 percent browser zoom and short-height open-keyboard/IME remain unverified. Long chore name was captured in a disposable context; list ellipsizes while DOM retains full text."
+    },
+    {
+      "id": "BLOCK-005",
+      "code": "CAPTURE_EVENT_RETENTION_GAP",
+      "evidence": "Rolling capture-progress writer kept valid rows but replaced earlier event arrays; only final voting attempt events survive."
+    }
+  ],
+  "baseline_metrics": {
+    "source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "source_tree": "a66760b6df143a87e894d5fe636f152ea73f6bea",
+    "surface_keys": 70,
+    "valid_canonical_screenshots": 138,
+    "expected_canonical_screenshots": 140,
+    "keys_with_both_anchors": 69,
+    "holdout_and_stress_screenshots": 62,
+    "desktop_pdf_pages": 69,
+    "mobile_pdf_pages": 69,
+    "typecheck": "pass",
+    "jest": "pass: 1 suite / 1 test",
+    "lint": "62 errors / 424 warnings",
+    "p0_findings": 0,
+    "p1_findings": 2,
+    "total_findings": 8
+  },
+  "best_so_far_protected_surfaces": [
+    "Home household digest and utility widgets",
+    "Chores categories, assignment, calendar, bulk selection and random game assignment",
+    "Family member, heatmap and activity capability",
+    "Wallet balance history and reward bag",
+    "Market sales/redeem and catalog flows",
+    "Restock category organization, quick add and completed-item history"
+  ]
+}

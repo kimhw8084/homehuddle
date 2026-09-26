@@ -1,0 +1,143 @@
+{
+  "rows": [
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "path": "screenshots/auth-entry--desktop-1440x900.png",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "full_page": false,
+      "format": "png",
+      "bytes": 200752,
+      "sha256": "4b25bd3eceeb09b48ce9301180265e339203ce13f88cc518a86351f10f21f98a",
+      "route": "/",
+      "fixture": "synthetic local Supabase endpoint; no production credentials",
+      "theme": "light",
+      "status": "captured",
+      "state_evidence": "HomeHuddle auth root and settled sign-in sheet after 2100 ms entrance-settle wait",
+      "state_assertion": "verified"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "path": "screenshots/auth-entry--mobile-390x844.png",
+      "width": 390,
+      "height": 844,
+      "dpr": 1,
+      "full_page": false,
+      "format": "png",
+      "bytes": 83446,
+      "sha256": "ed233964be3a625fbd969cc832e355c60739a2f2828be4241d084be4170a36f2",
+      "route": "/",
+      "fixture": "synthetic local Supabase endpoint; no production credentials",
+      "theme": "light",
+      "status": "captured",
+      "state_evidence": "HomeHuddle auth root and settled sign-in sheet after 2100 ms entrance-settle wait",
+      "state_assertion": "verified"
+    }
+  ],
+  "events": [
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "desktop-1440x900",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "kind": "console",
+      "level": "warning",
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    },
+    {
+      "surface_key": "auth-entry",
+      "viewport": "mobile-390x844",
+      "kind": "requestfailed",
+      "url": "http://127.0.0.1:8083/",
+      "method": "HEAD",
+      "failure": "net::ERR_ABORTED",
+      "page_url": "http://127.0.0.1:8083/"
+    }
+  ],
+  "settle_delay_ms": 2100
+}
