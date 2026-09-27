@@ -1,0 +1,324 @@
+{
+  "schema": "project-os-harness-defect-log-v1",
+  "source_binding": {
+    "sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "resolved_defect_count": 29,
+  "unresolved_defect_count": 0,
+  "product_blocker_count": 0,
+  "authority_contradiction_count": 0,
+  "defects": [
+    {
+      "surface_key": "auth-entry",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-dashboard",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "PATH_NORMALIZATION"
+      ],
+      "finding": "R6 root pathname normalization treated equal root slash paths as unequal.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "QUERY_ROUTE_BOOKKEEPING"
+      ],
+      "finding": "R6 required a consumed entry query to remain in the settled URL although ready state passed.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "QUERY_ROUTE_BOOKKEEPING"
+      ],
+      "finding": "R6 required a consumed entry query to remain in the settled URL although ready state passed.",
+      "resolution": "Use root-equivalent path normalization and independent query-intent evidence.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SELECTOR_AMBIGUITY"
+      ],
+      "finding": "The unscoped ME text selector matched unrelated task and appliance text. The current recipe selects Me inside the visible Chores scope segment.",
+      "resolution": "Use the source-identified All/Me scope segment and assert the resulting local scope state.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "WRONG_ACTION_OWNERSHIP",
+        "REQUIRED_SCROLLING"
+      ],
+      "finding": "The icon-only geometric slot did not identify the delivery history owner in the dashboard layout.",
+      "resolution": "Scroll to the visible tap / hold delivery helper and long-press its source-owned calendar/history control.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-automation-create",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "WRONG_ACTION_OWNERSHIP",
+        "REQUIRED_SCROLLING"
+      ],
+      "finding": "The old icon slot did not bind the add action to the Automations card header.",
+      "resolution": "Scroll to Automations and activate its visible trailing header control.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "WRONG_ACTION_OWNERSHIP",
+        "REQUIRED_SCROLLING"
+      ],
+      "finding": "The old icon slot did not bind the add action to the Appliance Watch card header.",
+      "resolution": "Scroll to Appliance Watch and activate its visible trailing header control.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SELECTOR_AMBIGUITY",
+        "WRONG_ACTION_OWNERSHIP",
+        "REQUIRED_SCROLLING"
+      ],
+      "finding": "The generic Reschedule label did not prove which visible chore row owned the action; initial row text also needed a render wait.",
+      "resolution": "Wait for Water Front Plants, swipe that row, and select Reschedule by matching its visible row bounds.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "WRONG_ACTION_OWNERSHIP",
+        "SELECTOR_AMBIGUITY",
+        "POST_ACTION_EVIDENCE_TIMING"
+      ],
+      "finding": "R6 selected unassigned Empty Kitchen Trash while its swipe evidence named assigned Water Front Plants; after opening the game option, label evidence was read after it changed.",
+      "resolution": "Select and swipe the assigned Water Front Plants row, scope Reassign to that row, then capture label evidence before activation.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "STALE_TEXT_OR_COUNT",
+        "POST_ACTION_EVIDENCE_TIMING"
+      ],
+      "finding": "The accepted action embedded a seeded completed count and the runner tried to read the label after activation changed it.",
+      "resolution": "Match the current visible Show completed (N) label and record it before clicking.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "family-member-detail",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SELECTOR_AMBIGUITY",
+        "WRONG_ACTION_OWNERSHIP"
+      ],
+      "finding": "Clicking nested Sarah Kim text was intercepted by the focusable profile card hit target.",
+      "resolution": "Activate the visible Sarah Kim profile-card Pressable with its normal keyboard Enter interaction.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "STALE_TEXT_OR_COUNT",
+        "POST_ACTION_EVIDENCE_TIMING"
+      ],
+      "finding": "The visible Show more count is dynamic and the runner attempted to read the old label after expansion.",
+      "resolution": "Match the current Show more · N more control and record its label before activation.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "POST_ACTION_EVIDENCE_TIMING"
+      ],
+      "finding": "Create Fund changed the visible form state; the runner read the button label after activation and stopped before the next valid action.",
+      "resolution": "Record Create Fund before activation, wait for form completion, then open Contribute Points without submitting.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "REQUIRED_SCROLLING",
+        "STALE_OR_MISSING_ACTION_VALUE",
+        "READY_ASSERTION_MODEL"
+      ],
+      "finding": "The old scroll-anchor evidence parser could not recover Point History, the placeholder action omitted its fill value, and the ready check treated an input value as page text.",
+      "resolution": "Anchor directly to Point History, visibly fill R5 no match, and assert the textbox value plus the source-defined empty state.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "market-item-edit",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "STALE_FIXTURE_NAME",
+        "MISSING_VISIBLE_PRECONDITION"
+      ],
+      "finding": "The old disposable row name did not match the current recipe fixture and the current form defaults to Fixed days, requiring a normal visible Never selection.",
+      "resolution": "Create R1 Disposable Market Item with Limited stock 1 and visibly choose Never expiry before Add to Market.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "market-item-restock",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "STALE_FIXTURE_NAME",
+        "MISSING_VISIBLE_PRECONDITION"
+      ],
+      "finding": "The old disposable row name did not match the current recipe fixture and the current form defaults to Fixed days, requiring a normal visible Never selection.",
+      "resolution": "Create R1 Disposable Market Item with Limited stock 1 and visibly choose Never expiry before Add to Market.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "market-price-history",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SELECTOR_AMBIGUITY",
+        "WRONG_ACTION_OWNERSHIP",
+        "POST_ACTION_EVIDENCE_TIMING"
+      ],
+      "finding": "The old long-press helper split Movie Night and acted on the last word Night; the follow-up label was also read after the menu changed.",
+      "resolution": "Long-press the full visible Movie Night label and record Price History before activation.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SELECTOR_AMBIGUITY",
+        "WRONG_ACTION_OWNERSHIP"
+      ],
+      "finding": "An unscoped 150 price text could resolve to another card and did not establish the Movie Night redemption intent.",
+      "resolution": "Select the visible 150-point control scoped to the Movie Night reward card.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SELECTOR_AMBIGUITY",
+        "WRONG_ACTION_OWNERSHIP",
+        "REQUIRED_SCROLLING"
+      ],
+      "finding": "The generic Edit selector resolved to a different off-viewport control instead of the Family Hub header action.",
+      "resolution": "Scroll Family Hub into view and activate the Edit control anchored to that header.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "family-heatmap",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "SCROLL_ANCHOR_PARSER_DEFECT"
+      ],
+      "finding": "Current recipe adaptation left the visible text anchor empty when AR-85 described the Chore Heatmap card only in free-form evidence.",
+      "resolution": "Anchor directly to the visible Chore Heatmap heading and then assert 52 weeks of family activity.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "CURRENT_SEED_TARGET_EXPIRED",
+        "STALE_FIXTURE_STATE"
+      ],
+      "finding": "The formerly named Sleep In Day reward is expired under the current deterministic runtime. The same active-use confirmation renderer remains available for Pizza Night.",
+      "resolution": "Open Use from the currently active Pizza Night card and assert Use \"Pizza Night\"?.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "classification": "HARNESS_DEFECT",
+      "cause_types": [
+        "STALE_TEXT_OR_CAPITALIZATION"
+      ],
+      "finding": "Current owner source renders HISTORY (N), while the accepted recipe searched for exact History.",
+      "resolution": "Match the current visible HISTORY (N) section label and record it before activation.",
+      "final_recipe_status": "RECIPE_VALIDATED_CURRENT_SOURCE"
+    }
+  ],
+  "unresolved_product_breakage": []
+}

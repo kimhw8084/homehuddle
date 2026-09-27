@@ -1,0 +1,35 @@
+{
+  "schema": "project-os-current-source-authority-v1",
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "request": "homehuddle-ui0-atlas-recipes-current-v1",
+  "operation": "VERIFY",
+  "registered_target": "main",
+  "source_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "tree_sha": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "work_branch": "codex/homehuddle-ui0-atlas-recipes-current-v1",
+  "work_branch_head": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "work_branch_tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "remote_main_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "remote_main_matches_bound_source": true,
+  "product_worktree_clean": true,
+  "source_changed": false,
+  "ar85_lineage": {
+    "artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1",
+    "commit": "0ef561e869f4bc53a2c473691bd3bd84b599f9a8",
+    "tree": "fec6217a46defc2a7301a809b007801f5c5235d8",
+    "manifest_sha256": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277"
+  },
+  "r7_failure_evidence": {
+    "artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-failure-recovery-v1",
+    "commit": "b1f3af00863dafaa036c056e60393dc41c54edcc",
+    "failure_triage_path": "atlas-failure-recovery/failure-triage.json"
+  },
+  "current_source_diff_assessment": "BOUNDARY_ACCEPTED",
+  "canonical_surface_count": 66,
+  "expected_screenshot_count": 132,
+  "validated_recipe_count": 66,
+  "canonical_screenshots_captured": false,
+  "target_artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1"
+}

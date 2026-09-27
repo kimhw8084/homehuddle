@@ -1,0 +1,51 @@
+{
+  "schema": "project-os-current-source-diff-assessment-v1",
+  "comparison": {
+    "from_source_sha": "46bd155dd55cbd85a29db5722c96d96c4946952b",
+    "to_source_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "to_tree_sha": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "decision": "BOUNDARY_ACCEPTED",
+  "source_scope_drift": false,
+  "changed_product_path_count": 7,
+  "changed_product_paths": [
+    {
+      "path": "__tests__/safe-batched-updates.test.ts",
+      "change_status": "A",
+      "assessment": "added small regression test for CHG-279 batching helper"
+    },
+    {
+      "path": "__tests__/wallet-logic.test.ts",
+      "change_status": "A",
+      "assessment": "added focused regression coverage for CHG-278 wallet reward logic"
+    },
+    {
+      "path": "app/(app)/(tabs)/chores.tsx",
+      "change_status": "M",
+      "assessment": "CHG-279 chore batching and normally reachable bulk selection UI"
+    },
+    {
+      "path": "app/(app)/(tabs)/wallet.tsx",
+      "change_status": "M",
+      "assessment": "CHG-278 wallet truth and responsive rendering repair"
+    },
+    {
+      "path": "components/DevToolsOverlay.tsx",
+      "change_status": "M",
+      "assessment": "CHG-279 development overlay priority/reachability repair"
+    },
+    {
+      "path": "utils/safeBatchedUpdates.ts",
+      "change_status": "A",
+      "assessment": "small CHG-279 batching helper"
+    },
+    {
+      "path": "utils/wallet-logic.ts",
+      "change_status": "A",
+      "assessment": "small CHG-278 wallet domain helper"
+    }
+  ],
+  "route_ownership_changes_outside_wallet_chores_devtools_helpers_tests": [],
+  "unrelated_surface_ownership_changes": 0,
+  "summary": "The entire source delta is confined to Wallet, Chores, DevToolsOverlay, and the four small helper/test files associated with CHG-278 and CHG-279."
+}

@@ -1,0 +1,202 @@
+{
+  "schema": "project-os-route-normalization-report-v1",
+  "contract_version": 1,
+  "function_name": "normalize_route_evidence",
+  "function_spec_python": "def normalize_route_evidence(actual_url, expected_route, query_policy, ready_passed):\n    actual = urlsplit(actual_url); expected = urlsplit(expected_route)\n    canonical_path = lambda p: \"/\" if not p or p == \"/\" else p\n    pathname_passed = canonical_path(actual.path) == canonical_path(expected.path)\n    if not expected.query: query_passed = not actual.query\n    elif query_policy == \"preserved\": query_passed = actual.query == expected.query\n    elif query_policy == \"consumed\": query_passed = bool(ready_passed)\n    else: query_passed = False  # fail closed\n    return pathname_passed and query_passed",
+  "rules": [
+    "Empty path and / canonicalize to /.",
+    "Compare pathname independently from query intent.",
+    "Preserved query intent requires exact settled query equality.",
+    "Consumed query intent is proven by the visible navigation action, correct settled pathname, and passed ready assertion; the settled URL need not retain that query.",
+    "An undeclared query fails. Unknown policies fail closed."
+  ],
+  "consumed_query_surface_keys": [
+    "chores-my-scope",
+    "settings-chore-history-deleted",
+    "wallet-reward-bag"
+  ],
+  "controls": [
+    {
+      "name": "root-identical-slashes",
+      "kind": "sound",
+      "actual_url": "/",
+      "expected_route_intent": "/",
+      "query_policy": "preserved",
+      "ready_assertion_passed": true,
+      "expected_passed": true,
+      "observed": {
+        "passed": true,
+        "actual_pathname": "/",
+        "expected_pathname": "/",
+        "actual_query": "",
+        "expected_query_intent": "",
+        "query_policy": "preserved",
+        "pathname_passed": true,
+        "query_evidence_passed": true,
+        "reason": "no query intent is declared, so no settled query is accepted"
+      }
+    },
+    {
+      "name": "empty-expected-root",
+      "kind": "sound",
+      "actual_url": "/",
+      "expected_route_intent": "",
+      "query_policy": "preserved",
+      "ready_assertion_passed": true,
+      "expected_passed": true,
+      "observed": {
+        "passed": true,
+        "actual_pathname": "/",
+        "expected_pathname": "/",
+        "actual_query": "",
+        "expected_query_intent": "",
+        "query_policy": "preserved",
+        "pathname_passed": true,
+        "query_evidence_passed": true,
+        "reason": "no query intent is declared, so no settled query is accepted"
+      }
+    },
+    {
+      "name": "root-does-not-match-home",
+      "kind": "faulty-control-rejected",
+      "actual_url": "/home",
+      "expected_route_intent": "/",
+      "query_policy": "preserved",
+      "ready_assertion_passed": true,
+      "expected_passed": false,
+      "observed": {
+        "passed": false,
+        "actual_pathname": "/home",
+        "expected_pathname": "/",
+        "actual_query": "",
+        "expected_query_intent": "",
+        "query_policy": "preserved",
+        "pathname_passed": false,
+        "query_evidence_passed": true,
+        "reason": "no query intent is declared, so no settled query is accepted"
+      }
+    },
+    {
+      "name": "consumed-wallet-bag-query",
+      "kind": "sound",
+      "actual_url": "/wallet",
+      "expected_route_intent": "/wallet?tab=bag",
+      "query_policy": "consumed",
+      "ready_assertion_passed": true,
+      "expected_passed": true,
+      "observed": {
+        "passed": true,
+        "actual_pathname": "/wallet",
+        "expected_pathname": "/wallet",
+        "actual_query": "",
+        "expected_query_intent": "tab=bag",
+        "query_policy": "consumed",
+        "pathname_passed": true,
+        "query_evidence_passed": true,
+        "reason": "visible navigation intent plus passed renderer-state assertion proves a consumed query intent"
+      }
+    },
+    {
+      "name": "consumed-query-needs-ready-state",
+      "kind": "faulty-control-rejected",
+      "actual_url": "/wallet",
+      "expected_route_intent": "/wallet?tab=bag",
+      "query_policy": "consumed",
+      "ready_assertion_passed": false,
+      "expected_passed": false,
+      "observed": {
+        "passed": false,
+        "actual_pathname": "/wallet",
+        "expected_pathname": "/wallet",
+        "actual_query": "",
+        "expected_query_intent": "tab=bag",
+        "query_policy": "consumed",
+        "pathname_passed": true,
+        "query_evidence_passed": false,
+        "reason": "visible navigation intent plus passed renderer-state assertion proves a consumed query intent"
+      }
+    },
+    {
+      "name": "consumed-query-needs-correct-path",
+      "kind": "faulty-control-rejected",
+      "actual_url": "/settings/chore-history",
+      "expected_route_intent": "/wallet?tab=bag",
+      "query_policy": "consumed",
+      "ready_assertion_passed": true,
+      "expected_passed": false,
+      "observed": {
+        "passed": false,
+        "actual_pathname": "/settings/chore-history",
+        "expected_pathname": "/wallet",
+        "actual_query": "",
+        "expected_query_intent": "tab=bag",
+        "query_policy": "consumed",
+        "pathname_passed": false,
+        "query_evidence_passed": true,
+        "reason": "visible navigation intent plus passed renderer-state assertion proves a consumed query intent"
+      }
+    },
+    {
+      "name": "preserved-query-exact",
+      "kind": "sound",
+      "actual_url": "/settings/chore-history?tab=deleted",
+      "expected_route_intent": "/settings/chore-history?tab=deleted",
+      "query_policy": "preserved",
+      "ready_assertion_passed": true,
+      "expected_passed": true,
+      "observed": {
+        "passed": true,
+        "actual_pathname": "/settings/chore-history",
+        "expected_pathname": "/settings/chore-history",
+        "actual_query": "tab=deleted",
+        "expected_query_intent": "tab=deleted",
+        "query_policy": "preserved",
+        "pathname_passed": true,
+        "query_evidence_passed": true,
+        "reason": "Product contract preserves the entry query exactly"
+      }
+    },
+    {
+      "name": "preserved-query-missing",
+      "kind": "faulty-control-rejected",
+      "actual_url": "/settings/chore-history",
+      "expected_route_intent": "/settings/chore-history?tab=deleted",
+      "query_policy": "preserved",
+      "ready_assertion_passed": true,
+      "expected_passed": false,
+      "observed": {
+        "passed": false,
+        "actual_pathname": "/settings/chore-history",
+        "expected_pathname": "/settings/chore-history",
+        "actual_query": "",
+        "expected_query_intent": "tab=deleted",
+        "query_policy": "preserved",
+        "pathname_passed": true,
+        "query_evidence_passed": false,
+        "reason": "Product contract preserves the entry query exactly"
+      }
+    },
+    {
+      "name": "unexpected-query-without-intent",
+      "kind": "faulty-control-rejected",
+      "actual_url": "/wallet?tab=bag",
+      "expected_route_intent": "/wallet",
+      "query_policy": "preserved",
+      "ready_assertion_passed": true,
+      "expected_passed": false,
+      "observed": {
+        "passed": false,
+        "actual_pathname": "/wallet",
+        "expected_pathname": "/wallet",
+        "actual_query": "tab=bag",
+        "expected_query_intent": "",
+        "query_policy": "preserved",
+        "pathname_passed": true,
+        "query_evidence_passed": false,
+        "reason": "no query intent is declared, so no settled query is accepted"
+      }
+    }
+  ],
+  "controls_passed": 9,
+  "controls_failed": 0
+}

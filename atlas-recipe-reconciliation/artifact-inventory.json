@@ -1,0 +1,61 @@
+{
+  "schema": "project-os-atlas-recipe-package-inventory-v1",
+  "source_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "source_tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "canonical_surface_count": 66,
+  "expected_screenshot_count": 132,
+  "actual_screenshots_in_package": 0,
+  "files": [
+    {
+      "path": "artifact-bundle.zip",
+      "bytes": 138173,
+      "sha256": "de8c6e09d61bfcc349a88e40353ad0fe6989d643aeb5dd9b3316772d8b3ce455"
+    },
+    {
+      "path": "capture-recipes.current.json",
+      "bytes": 160275,
+      "sha256": "bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608"
+    },
+    {
+      "path": "current-source-authority.json",
+      "bytes": 1652,
+      "sha256": "ceb6e9c15123ae0e95dc7fc196f68c78dfe39fd0145ba97524702327588ffe39"
+    },
+    {
+      "path": "current-source-diff-assessment.json",
+      "bytes": 1826,
+      "sha256": "67b352ba3899923ce89e9fe8ebff20fd1043df56074c783c24fb91730ba1b847"
+    },
+    {
+      "path": "failed-recipe-reconciliation.json",
+      "bytes": 245801,
+      "sha256": "c31d33930b4cf0cd44953d56f6c61acc16c16bc00783b7ae651442c55da93ffd"
+    },
+    {
+      "path": "harness-defect-log.json",
+      "bytes": 14650,
+      "sha256": "e14a1fcfe16dc95753d31c72960735585debbccd43e9cabf2fed8906ef6c596f"
+    },
+    {
+      "path": "noncanonical-obligations.json",
+      "bytes": 8901,
+      "sha256": "6a77564cd00b0ac26b15daf0f366d4af87d564f6d97c9a0a80cbdc0539aa8a07"
+    },
+    {
+      "path": "recipe-validation-report.json",
+      "bytes": 2110881,
+      "sha256": "8addc24e79926a4ca906c529e9941e39dee57cf1c5ad3ed4906e262dabae79f8"
+    },
+    {
+      "path": "route-normalization-report.json",
+      "bytes": 7574,
+      "sha256": "4e08b7bb101ca3dd2375b18467d3d2d1bd0b0be8a8505445e0726e89fb3d362c"
+    },
+    {
+      "path": "surface-manifest.current.json",
+      "bytes": 93576,
+      "sha256": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4"
+    }
+  ],
+  "inventory_self_hash_excluded": true
+}
