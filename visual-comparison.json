@@ -1,0 +1,108 @@
+{
+  "comparisonAuthority": "AR-88 accepted normal Chores baseline screenshots from project artifact ref project-os-artifacts/homehuddle/homehuddle-ui0-perfect-baseline-v2-resume2",
+  "ar88ChoresSourceBlob": "ca54cea2ec318fd64f417c6b4a0e92dd188f09b6",
+  "boundBaseChoresSourceBlob": "ca54cea2ec318fd64f417c6b4a0e92dd188f09b6",
+  "baselineLocalDate": "2026-09-25 (Fri)",
+  "candidateLocalDate": "2026-09-26 (Sat), en-US / America/Chicago",
+  "candidateAgainstBoundBase": {
+    "chores-today-all--desktop-1440x900.png": {
+      "baseSha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1",
+      "candidateSha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1",
+      "pixelIdentical": true,
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "chores-today-all--mobile-390x844.png": {
+      "baseSha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe",
+      "candidateSha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe",
+      "pixelIdentical": true,
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  },
+  "candidateAgainstAR88": {
+    "desktop": {
+      "baselineSha256": "6ea8440e5680d674e5e3b1175e1a4d44e38aca00f9aee2b8ffb9550a1a8b86c7",
+      "candidateSha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "allPixels": 1296000,
+      "changedPixels": 6550,
+      "changedFraction": 0.00505401,
+      "meanAbsoluteChannelError": 0.312342,
+      "diffBBox": [
+        40,
+        62,
+        1431,
+        114
+      ],
+      "regions": {
+        "calendarDateHeader": {
+          "pixels": 213120,
+          "changedPixels": 6550,
+          "changedFraction": 0.03073386,
+          "meanAbsoluteChannelError": 1.899376,
+          "diffBBox": [
+            40,
+            62,
+            1431,
+            114
+          ]
+        },
+        "screenBody": {
+          "pixels": 1082880,
+          "changedPixels": 0,
+          "changedFraction": 0.0,
+          "meanAbsoluteChannelError": 0.0,
+          "diffBBox": null
+        }
+      }
+    },
+    "mobile": {
+      "baselineSha256": "3996af7303064f31450e290469da3c1dfbe73853d27c2e289e6227946231ba40",
+      "candidateSha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "allPixels": 329160,
+      "changedPixels": 1796,
+      "changedFraction": 0.00545631,
+      "meanAbsoluteChannelError": 0.288648,
+      "diffBBox": [
+        40,
+        62,
+        368,
+        114
+      ],
+      "regions": {
+        "calendarDateHeader": {
+          "pixels": 57720,
+          "changedPixels": 1796,
+          "changedFraction": 0.03111573,
+          "meanAbsoluteChannelError": 1.646073,
+          "diffBBox": [
+            40,
+            62,
+            368,
+            114
+          ]
+        },
+        "screenBody": {
+          "pixels": 271440,
+          "changedPixels": 0,
+          "changedFraction": 0.0,
+          "meanAbsoluteChannelError": 0.0,
+          "diffBBox": null
+        }
+      }
+    }
+  },
+  "interpretation": "Candidate normal screenshots exactly match the exact-bound-base captures. Against AR-88, all changed pixels are confined to the calendar date strip because the local date advanced by one day; the Chores body is pixel-identical at both canonical viewports."
+}

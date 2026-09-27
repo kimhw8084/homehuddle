@@ -1,0 +1,87 @@
+{
+  "algorithm": "SHA-256",
+  "ordering": "ascending UTF-8 relative path",
+  "files": [
+    {
+      "path": "base-runtime-repro.json",
+      "bytes": 4416,
+      "sha256": "c822295c6c3a4b19b6cc2de9640a434ed222d7a84af9a13e4d27fb83fd358bb5"
+    },
+    {
+      "path": "batch-compatibility-report.json",
+      "bytes": 5877,
+      "sha256": "344846ea6d0540456edd49b34c1e182959d148fff85dee0f226f075668b4404f"
+    },
+    {
+      "path": "bulk-disabled-interactions.json",
+      "bytes": 1481,
+      "sha256": "d375ec04dff8c78ca9828055bf776fcbb563564379c5c2aa2363049d1d56dfe4"
+    },
+    {
+      "path": "candidate-receipt.json",
+      "bytes": 1519,
+      "sha256": "6ef6e4d45922f39b346719ad5948547c61d8d708efdb7323801474b36962f426"
+    },
+    {
+      "path": "gesture-ownership-report.json",
+      "bytes": 4234,
+      "sha256": "cfbbcd3df21d4814e15af34cee9abb59f6908858fa4e7aa392ad99843dff9c7a"
+    },
+    {
+      "path": "runtime-console-network.json",
+      "bytes": 30426,
+      "sha256": "67e487beefc7325ba1fc3514b2c79365a95e48822da88f2727b7649dd657bf86"
+    },
+    {
+      "path": "runtime-observations.json",
+      "bytes": 26038,
+      "sha256": "1eabf1f3a5a60ef836295f19099ca9838f4e66410f9bbec2bd869281b4941afb"
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--desktop-1440x900.png",
+      "bytes": 91540,
+      "sha256": "785bde6681fb54048d2f53a5bd64ec4b52bb56a9c3463058cb0d4a2744bb2f66"
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--mobile-390x844.png",
+      "bytes": 70563,
+      "sha256": "e6e1bacb5aedd2e178be13752cd9991d5aab97fef9bebe3269dbf8fd2f982b9f"
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--stress-200-percent-195x422.png",
+      "bytes": 22858,
+      "sha256": "40732808aa2bdd41e55a24684dee36885f1d7d63548413b8cf0eaf6480a854ed"
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--stress-360x800.png",
+      "bytes": 67989,
+      "sha256": "b777fb5cccf9e953f00e9625b2141655651cb7703fef1fbadeff53dcf52d5e0f"
+    },
+    {
+      "path": "screenshots/chores-today-all--desktop-1440x900.png",
+      "bytes": 100320,
+      "sha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1"
+    },
+    {
+      "path": "screenshots/chores-today-all--mobile-390x844.png",
+      "bytes": 76795,
+      "sha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 3428,
+      "sha256": "45f359c582c28509b36ce27fd33fec2a0c19f03684bfceaf52f419f8cb5fa9a3"
+    },
+    {
+      "path": "visual-comparison.json",
+      "bytes": 3501,
+      "sha256": "a2db709cd870c72bef7fa8e1798861218a582b0650b38838a11a8ecdeac21565"
+    },
+    {
+      "path": "visual-review.md",
+      "bytes": 1939,
+      "sha256": "760ba9bd0ec19d800e419d8fe3153abbca196c0ac23e8f13ef90afdab3034398"
+    }
+  ],
+  "exclusions": "This inventory excludes itself, artifact-bundle.zip, and artifact-bundle-sha256.json to avoid recursive hashing."
+}

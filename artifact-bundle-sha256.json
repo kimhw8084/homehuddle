@@ -1,0 +1,7 @@
+{
+  "algorithm": "SHA-256",
+  "file": "artifact-bundle.zip",
+  "sha256": "62d902314e53354705bba9a7febb8c2a810df8c28698db865610008d2654e92b",
+  "bytes": 432994,
+  "inventory": "artifact-inventory.json included in archive; inventory covers payload files and excludes recursive metadata as documented."
+}

@@ -1,0 +1,728 @@
+{
+  "locale": "en-US",
+  "timezone": "America/Chicago",
+  "source": "exact Expo web worktree source with EXPO_NO_DOTENV=1 and loopback-only Supabase URL",
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "context": "canonical-and-drag",
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    }
+  ],
+  "consoleWarnings": [
+    {
+      "context": "canonical-and-drag",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    }
+  ],
+  "failedRequests": [
+    {
+      "context": "canonical-and-drag",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "context": "canonical-and-drag",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    }
+  ],
+  "httpErrors": [],
+  "dialogs": [],
+  "steps": [
+    {
+      "name": "normal-chores-visible",
+      "title": "HomeHuddle",
+      "choreCircles": 13,
+      "developerControlClosed": true
+    },
+    {
+      "name": "bulk-entry",
+      "circle": "chore-completion-circle-v18",
+      "label": "Deselect Check Mail",
+      "selectedState": "true",
+      "count": 1,
+      "actionBar": "Bulk selection actions"
+    },
+    {
+      "name": "circle-toggle",
+      "initialSelected": "chore-completion-circle-v18",
+      "toggled": "chore-completion-circle-v9",
+      "countAfterAdd": 2,
+      "countAfterRemove": 1
+    },
+    {
+      "name": "exit-clears-selection",
+      "actionBarHidden": true,
+      "countHidden": true,
+      "circleRestored": "Complete Check Mail"
+    },
+    {
+      "name": "content-no-move-drag",
+      "target": "chore-content-v18",
+      "activeStyleDuringHold": [
+        {
+          "tag": "DIV",
+          "testID": "chore-content-v18",
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "10"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "0"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "0.6",
+          "transform": "none",
+          "zIndex": "0"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "zIndex": "0"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "auto"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "0"
+        }
+      ],
+      "orderBefore": [
+        "chore-content-v18",
+        "chore-content-v9",
+        "chore-content-v6",
+        "chore-content-v13",
+        "chore-content-v1",
+        "chore-content-v2",
+        "chore-content-v4",
+        "chore-content-v3",
+        "chore-content-v5",
+        "chore-content-v7",
+        "chore-content-v14",
+        "chore-content-v8",
+        "chore-content-v10"
+      ],
+      "orderAfter": [
+        "chore-content-v18",
+        "chore-content-v9",
+        "chore-content-v6",
+        "chore-content-v13",
+        "chore-content-v1",
+        "chore-content-v2",
+        "chore-content-v4",
+        "chore-content-v3",
+        "chore-content-v5",
+        "chore-content-v7",
+        "chore-content-v14",
+        "chore-content-v8",
+        "chore-content-v10"
+      ],
+      "unchanged": true
+    },
+    {
+      "name": "bulk-actions-smoke",
+      "selected": "chore-completion-circle-v18",
+      "assignDialog": null,
+      "assignNoOp": true,
+      "deferDialog": null,
+      "deferSheetOpened": true,
+      "deferSheetCanceled": true,
+      "committed": false
+    },
+    {
+      "name": "bulk-360x800",
+      "viewport": {
+        "width": 360,
+        "height": 800,
+        "dpr": 1
+      },
+      "document": {
+        "width": 360,
+        "height": 800
+      },
+      "bar": {
+        "x": 0,
+        "y": 651,
+        "right": 360,
+        "bottom": 715,
+        "width": 360,
+        "height": 64
+      },
+      "tabList": {
+        "x": 0,
+        "y": 725,
+        "right": 360,
+        "bottom": 775,
+        "width": 360,
+        "height": 50
+      },
+      "actions": [
+        {
+          "id": "bulk-selection-action-bar",
+          "x": 0,
+          "y": 651,
+          "right": 360,
+          "bottom": 715,
+          "width": 360,
+          "height": 64,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-count",
+          "x": 20,
+          "y": 675,
+          "right": 48,
+          "bottom": 691,
+          "width": 28,
+          "height": 16,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-complete",
+          "x": 63.328125,
+          "y": 663,
+          "right": 103.328125,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-assign",
+          "x": 118.65625,
+          "y": 663,
+          "right": 158.65625,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-defer",
+          "x": 174,
+          "y": 663,
+          "right": 214,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-delete",
+          "x": 229.328125,
+          "y": 663,
+          "right": 269.328125,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-exit",
+          "x": 284.65625,
+          "y": 663,
+          "right": 324.65625,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "bulk-200-percent-effective-195x422",
+      "viewport": {
+        "width": 195,
+        "height": 422,
+        "dpr": 1
+      },
+      "document": {
+        "width": 195,
+        "height": 422
+      },
+      "bar": {
+        "x": 0,
+        "y": 233,
+        "right": 195,
+        "bottom": 337,
+        "width": 195,
+        "height": 104
+      },
+      "tabList": {
+        "x": 0,
+        "y": 347,
+        "right": 195,
+        "bottom": 397,
+        "width": 195,
+        "height": 50
+      },
+      "actions": [
+        {
+          "id": "bulk-selection-action-bar",
+          "x": 0,
+          "y": 233,
+          "right": 195,
+          "bottom": 337,
+          "width": 195,
+          "height": 104,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-count",
+          "x": 20,
+          "y": 277,
+          "right": 48,
+          "bottom": 293,
+          "width": 28,
+          "height": 16,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-complete",
+          "x": 49.75,
+          "y": 245,
+          "right": 89.75,
+          "bottom": 285,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-assign",
+          "x": 91.5,
+          "y": 245,
+          "right": 131.5,
+          "bottom": 285,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-defer",
+          "x": 133.25,
+          "y": 245,
+          "right": 173.25,
+          "bottom": 285,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-delete",
+          "x": 63.65625,
+          "y": 285,
+          "right": 103.65625,
+          "bottom": 325,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-exit",
+          "x": 119.328125,
+          "y": 285,
+          "right": 159.328125,
+          "bottom": 325,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "exit-clears-selection",
+      "actionBarHidden": true,
+      "countHidden": true,
+      "circleRestored": "Complete Check Mail"
+    },
+    {
+      "name": "selection-has-no-side-effect",
+      "orderStable": true,
+      "visibleChoreContentStable": true,
+      "order": [
+        "chore-content-v18",
+        "chore-content-v9",
+        "chore-content-v6",
+        "chore-content-v13",
+        "chore-content-v1",
+        "chore-content-v2",
+        "chore-content-v4",
+        "chore-content-v3",
+        "chore-content-v5",
+        "chore-content-v7",
+        "chore-content-v14",
+        "chore-content-v8",
+        "chore-content-v10"
+      ]
+    }
+  ],
+  "measurements": {
+    "bulk-360x800": {
+      "viewport": {
+        "width": 360,
+        "height": 800,
+        "dpr": 1
+      },
+      "document": {
+        "width": 360,
+        "height": 800
+      },
+      "bar": {
+        "x": 0,
+        "y": 651,
+        "right": 360,
+        "bottom": 715,
+        "width": 360,
+        "height": 64
+      },
+      "tabList": {
+        "x": 0,
+        "y": 725,
+        "right": 360,
+        "bottom": 775,
+        "width": 360,
+        "height": 50
+      },
+      "actions": [
+        {
+          "id": "bulk-selection-action-bar",
+          "x": 0,
+          "y": 651,
+          "right": 360,
+          "bottom": 715,
+          "width": 360,
+          "height": 64,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-count",
+          "x": 20,
+          "y": 675,
+          "right": 48,
+          "bottom": 691,
+          "width": 28,
+          "height": 16,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-complete",
+          "x": 63.328125,
+          "y": 663,
+          "right": 103.328125,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-assign",
+          "x": 118.65625,
+          "y": 663,
+          "right": 158.65625,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-defer",
+          "x": 174,
+          "y": 663,
+          "right": 214,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-delete",
+          "x": 229.328125,
+          "y": 663,
+          "right": 269.328125,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-exit",
+          "x": 284.65625,
+          "y": 663,
+          "right": 324.65625,
+          "bottom": 703,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        }
+      ]
+    },
+    "bulk-200-percent-effective-195x422": {
+      "viewport": {
+        "width": 195,
+        "height": 422,
+        "dpr": 1
+      },
+      "document": {
+        "width": 195,
+        "height": 422
+      },
+      "bar": {
+        "x": 0,
+        "y": 233,
+        "right": 195,
+        "bottom": 337,
+        "width": 195,
+        "height": 104
+      },
+      "tabList": {
+        "x": 0,
+        "y": 347,
+        "right": 195,
+        "bottom": 397,
+        "width": 195,
+        "height": 50
+      },
+      "actions": [
+        {
+          "id": "bulk-selection-action-bar",
+          "x": 0,
+          "y": 233,
+          "right": 195,
+          "bottom": 337,
+          "width": 195,
+          "height": 104,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-count",
+          "x": 20,
+          "y": 277,
+          "right": 48,
+          "bottom": 293,
+          "width": 28,
+          "height": 16,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-complete",
+          "x": 49.75,
+          "y": 245,
+          "right": 89.75,
+          "bottom": 285,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-assign",
+          "x": 91.5,
+          "y": 245,
+          "right": 131.5,
+          "bottom": 285,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-defer",
+          "x": 133.25,
+          "y": 245,
+          "right": 173.25,
+          "bottom": 285,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-delete",
+          "x": 63.65625,
+          "y": 285,
+          "right": 103.65625,
+          "bottom": 325,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        },
+        {
+          "id": "bulk-selection-exit",
+          "x": 119.328125,
+          "y": 285,
+          "right": 159.328125,
+          "bottom": 325,
+          "width": 40,
+          "height": 40,
+          "visible": true
+        }
+      ]
+    }
+  },
+  "logBoxDetected": false,
+  "logBoxText": []
+}

@@ -1,0 +1,62 @@
+{
+  "base": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+  "tree": "add34f611ec80ba46ced7f3db8f3114e6cf157de",
+  "failureReproduced": true,
+  "locale": "en-US",
+  "timezone": "America/Chicago",
+  "dotenvDisabled": true,
+  "supabaseUrl": "http://127.0.0.1:54321",
+  "step": {
+    "name": "base-content-longpress-drag-end",
+    "target": "chore-content-v18",
+    "targetText": "Check Mail",
+    "dragActiveStyle": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "0.6"
+    ],
+    "pageErrorsAfterDrag": [
+      {
+        "message": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function",
+        "stack": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\n    at handleDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212288:60)\n    at onDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212691:11)\n    at Object.current (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:287762:61)\n    at http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:289407:20\n    at http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:230431:64"
+      }
+    ],
+    "dragError": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function",
+    "logBoxVisible": true,
+    "bodyErrorText": "(3)\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠\n!\n(0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\nLog 1 of 1\nUncaught Error\n(0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\nSource\n \n 1769 |\n     })\n;\n \n 1770 |\n>\n 1"
+  },
+  "pageErrors": [
+    {
+      "message": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function",
+      "stack": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\n    at handleDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212288:60)\n    at onDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212691:11)\n    at Object.current (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:287762:61)\n    at http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:289407:20\n    at http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:230431:64"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 901,
+        "column": 32,
+        "lineNumber": 901,
+        "columnNumber": 32
+      }
+    }
+  ],
+  "httpErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://localhost:8082/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "url": "http://localhost:8082/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    }
+  ]
+}

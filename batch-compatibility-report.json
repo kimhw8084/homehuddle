@@ -1,0 +1,138 @@
+{
+  "rootCause": {
+    "exactBaseRuntimeError": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function",
+    "source": "app/(app)/(tabs)/chores.tsx",
+    "callStack": "handleDragEnd -> DraggableFlatList.props.onDragEnd",
+    "actualWebPrimitive": "react-native-web@0.21.0 exports unstable_batchedUpdates as undefined in this locked runtime."
+  },
+  "exactBaseReproduction": {
+    "failureReproduced": true,
+    "logBoxVisible": true,
+    "sourceLocation": "at handleDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212288:60)",
+    "step": {
+      "name": "base-content-longpress-drag-end",
+      "target": "chore-content-v18",
+      "targetText": "Check Mail",
+      "dragActiveStyle": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0.6"
+      ],
+      "pageErrorsAfterDrag": [
+        {
+          "message": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function",
+          "stack": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\n    at handleDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212288:60)\n    at onDragEnd (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:212691:11)\n    at Object.current (http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:287762:61)\n    at http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:289407:20\n    at http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:230431:64"
+        }
+      ],
+      "dragError": "TypeError: (0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function",
+      "logBoxVisible": true,
+      "bodyErrorText": "(3)\nHome\nChores\nFamily\nWallet\nMarket\nRestock\n🛠\n!\n(0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\nLog 1 of 1\nUncaught Error\n(0 , _reactNativeWebDistIndex.unstable_batchedUpdates) is not a function\nSource\n \n 1769 |\n     })\n;\n \n 1770 |\n>\n 1"
+    }
+  },
+  "fix": {
+    "helper": "utils/safeBatchedUpdates.ts",
+    "semantics": "Call the imported React Native batching primitive only when typeof primitive === function; otherwise call callback synchronously. Exceptions propagate unchanged.",
+    "callSites": [
+      "drag-end reorder: section and chore updates",
+      "mount-only overdue/streak updates"
+    ],
+    "dependencyChanges": false,
+    "reactDomImportAdded": false,
+    "reorderNoMove": "A drag end whose flattened row identity sequence is unchanged skips store writes; changed-order reorder keeps the existing reassignment, section, and priorityIndex calculations."
+  },
+  "unitCoverage": {
+    "callablePrimitiveInvokedOnce": true,
+    "callbackInvokedExactlyOnce": true,
+    "undefinedAndNonCallableFallbacks": true,
+    "callbackExceptionsPropagate": true,
+    "suite": "__tests__/safe-batched-updates.test.ts"
+  },
+  "candidateRuntime": {
+    "pageErrors": [],
+    "logBoxDetected": false,
+    "httpErrors": [],
+    "contentNoMoveDrag": {
+      "name": "content-no-move-drag",
+      "target": "chore-content-v18",
+      "activeStyleDuringHold": [
+        {
+          "tag": "DIV",
+          "testID": "chore-content-v18",
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "10"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "0"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "0.6",
+          "transform": "none",
+          "zIndex": "0"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "zIndex": "0"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "auto"
+        },
+        {
+          "tag": "DIV",
+          "testID": null,
+          "opacity": "1",
+          "transform": "none",
+          "zIndex": "0"
+        }
+      ],
+      "orderBefore": [
+        "chore-content-v18",
+        "chore-content-v9",
+        "chore-content-v6",
+        "chore-content-v13",
+        "chore-content-v1",
+        "chore-content-v2",
+        "chore-content-v4",
+        "chore-content-v3",
+        "chore-content-v5",
+        "chore-content-v7",
+        "chore-content-v14",
+        "chore-content-v8",
+        "chore-content-v10"
+      ],
+      "orderAfter": [
+        "chore-content-v18",
+        "chore-content-v9",
+        "chore-content-v6",
+        "chore-content-v13",
+        "chore-content-v1",
+        "chore-content-v2",
+        "chore-content-v4",
+        "chore-content-v3",
+        "chore-content-v5",
+        "chore-content-v7",
+        "chore-content-v14",
+        "chore-content-v8",
+        "chore-content-v10"
+      ],
+      "unchanged": true
+    },
+    "mount": "Exact-source Chores route mounted without web batching error. The overdue/streak call site shares the tested helper; no hidden store data was changed to fabricate overdue rows."
+  }
+}

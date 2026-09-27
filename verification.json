@@ -1,0 +1,100 @@
+{
+  "freshBaseProof": {
+    "branch": "codex/homehuddle-ui0-chores-bulk-web-v1",
+    "baseSha": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "baseTree": "add34f611ec80ba46ced7f3db8f3114e6cf157de",
+    "remoteMainShaBefore": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "remoteMainShaAfter": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "candidateParent": "20c4240576c9a1793f1d741d0bfbba549e5e1b37"
+  },
+  "dependencyInstall": {
+    "command": "npm ci",
+    "result": "PASS on exact-base worktree and candidate worktree",
+    "packageJsonChanged": false,
+    "packageLockChanged": false,
+    "dependencyChanges": false
+  },
+  "typescript": {
+    "command": "npx tsc --noEmit",
+    "exitCode": 0,
+    "result": "PASS"
+  },
+  "jest": {
+    "command": "npx jest --runInBand",
+    "exitCode": 0,
+    "suitesPassed": 3,
+    "suitesTotal": 3,
+    "testsPassed": 18,
+    "testsTotal": 18,
+    "includes": "auth audit, wallet logic, safe batching boundary",
+    "result": "PASS",
+    "existingWarning": "Reanimated opacity/layout-animation warning appears in auth-audit test output."
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exitCode": 1,
+    "result": "Historical repository lint debt remains: 62 errors and 418 warnings in full project run.",
+    "changedFileComparison": {
+      "candidateChangedFiles": 3,
+      "exactBaseChoresErrors": 9,
+      "candidateChoresErrors": 9,
+      "newErrors": 0,
+      "safeBatchHelperErrors": 0,
+      "safeBatchTestErrors": 0,
+      "result": "No new changed-file ESLint errors; existing Chores errors are unchanged."
+    }
+  },
+  "runtime": {
+    "command": "Expo web exact source; EXPO_NO_DOTENV=1; loopback-only synthetic Supabase URL/key; en-US; America/Chicago",
+    "normalAndBulkScreenshots": true,
+    "pageErrors": 0,
+    "httpErrorsAtLeast400": 0,
+    "unexpectedFailedRequests": 0,
+    "logBoxDetected": false,
+    "batchingExceptionDetected": false
+  },
+  "canonicalPngs": {
+    "chores-today-all--desktop-1440x900.png": {
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 1440,
+      "height": 900,
+      "sha256": "f928a43ee1847088770261407aabf92369edbda047e7f7b1bf21c131048949a1",
+      "bytes": 100320
+    },
+    "chores-today-all--mobile-390x844.png": {
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 390,
+      "height": 844,
+      "sha256": "1198a60b538bd78e83566d13bc2466da615fcf62a250cb25c6a296edd35e6cfe",
+      "bytes": 76795
+    },
+    "chores-bulk-selection--desktop-1440x900.png": {
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 1440,
+      "height": 900,
+      "sha256": "785bde6681fb54048d2f53a5bd64ec4b52bb56a9c3463058cb0d4a2744bb2f66",
+      "bytes": 91540
+    },
+    "chores-bulk-selection--mobile-390x844.png": {
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 390,
+      "height": 844,
+      "sha256": "e6e1bacb5aedd2e178be13752cd9991d5aab97fef9bebe3269dbf8fd2f982b9f",
+      "bytes": 70563
+    },
+    "chores-bulk-selection--stress-360x800.png": {
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 360,
+      "height": 800,
+      "sha256": "b777fb5cccf9e953f00e9625b2141655651cb7703fef1fbadeff53dcf52d5e0f",
+      "bytes": 67989
+    },
+    "chores-bulk-selection--stress-200-percent-195x422.png": {
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 195,
+      "height": 422,
+      "sha256": "40732808aa2bdd41e55a24684dee36885f1d7d63548413b8cf0eaf6480a854ed",
+      "bytes": 22858
+    }
+  }
+}

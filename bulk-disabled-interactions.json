@@ -1,0 +1,57 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "fixture": "fresh disposable browser context; en-US; America/Chicago; synthetic local Supabase only",
+  "bulkModeEnteredThrough": "completion circle normal long-press",
+  "pendingCircle": "chore-completion-circle-v18",
+  "contentTarget": "chore-content-v18",
+  "contentLongPress": {
+    "heldForMs": 450,
+    "orderUnchanged": true,
+    "selectedCount": "1",
+    "rowStylesDuringHold": [
+      {
+        "testID": "chore-content-v18",
+        "opacity": "1",
+        "transform": "none"
+      },
+      {
+        "testID": null,
+        "opacity": "1",
+        "transform": "none"
+      },
+      {
+        "testID": null,
+        "opacity": "1",
+        "transform": "none"
+      },
+      {
+        "testID": null,
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "testID": null,
+        "opacity": "1",
+        "transform": "none"
+      },
+      {
+        "testID": null,
+        "opacity": "1",
+        "transform": "none"
+      }
+    ]
+  },
+  "horizontalSwipe": {
+    "orderUnchanged": true,
+    "selectedState": "true",
+    "bulkActionBarVisible": true
+  },
+  "pageErrors": [],
+  "sourceReadback": {
+    "contentLongPress": "app/(app)/(tabs)/chores.tsx:1426 — onLongPress is undefined when bulkSelectMode is true.",
+    "swipe": "app/(app)/(tabs)/chores.tsx:1654-1661 — right actions omitted and ReanimatedSwipeable enabled={!isDragging && !bulkSelectMode}."
+  }
+}

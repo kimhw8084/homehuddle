@@ -1,0 +1,134 @@
+{
+  "ownership": {
+    "completionSelectCircle": "Tap preserves completion semantics; 400 ms long-press on current/past pending chore enters bulk selection.",
+    "content": "Tap expands; 200 ms long-press initiates drag/reorder.",
+    "bulkMode": "Content drag and swipe actions stay disabled."
+  },
+  "circleZoneRuntime": {
+    "testID": "chore-completion-circle-v18",
+    "chore": "Check Mail",
+    "labelAfterEntry": "Deselect Check Mail",
+    "selectedCount": 1,
+    "selectedCheckState": "true",
+    "actionBarAccessibilityLabel": "Bulk selection actions",
+    "circleToggles": {
+      "countAfterAdd": 2,
+      "countAfterRemove": 1
+    },
+    "exitClearsModeAndIds": true,
+    "visibleContentAndOrderUnchangedOnEntryExit": true
+  },
+  "contentZoneRuntime": {
+    "testID": "chore-content-v18",
+    "longPressActivatedDragStyle": true,
+    "releaseCycle": "safe no-move drag end",
+    "orderBefore": [
+      "chore-content-v18",
+      "chore-content-v9",
+      "chore-content-v6",
+      "chore-content-v13",
+      "chore-content-v1",
+      "chore-content-v2",
+      "chore-content-v4",
+      "chore-content-v3",
+      "chore-content-v5",
+      "chore-content-v7",
+      "chore-content-v14",
+      "chore-content-v8",
+      "chore-content-v10"
+    ],
+    "orderAfter": [
+      "chore-content-v18",
+      "chore-content-v9",
+      "chore-content-v6",
+      "chore-content-v13",
+      "chore-content-v1",
+      "chore-content-v2",
+      "chore-content-v4",
+      "chore-content-v3",
+      "chore-content-v5",
+      "chore-content-v7",
+      "chore-content-v14",
+      "chore-content-v8",
+      "chore-content-v10"
+    ],
+    "unchanged": true,
+    "batchingPageError": false
+  },
+  "bulkModeDragSwipeDisabledRuntime": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fixture": "fresh disposable browser context; en-US; America/Chicago; synthetic local Supabase only",
+    "bulkModeEnteredThrough": "completion circle normal long-press",
+    "pendingCircle": "chore-completion-circle-v18",
+    "contentTarget": "chore-content-v18",
+    "contentLongPress": {
+      "heldForMs": 450,
+      "orderUnchanged": true,
+      "selectedCount": "1",
+      "rowStylesDuringHold": [
+        {
+          "testID": "chore-content-v18",
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    "horizontalSwipe": {
+      "orderUnchanged": true,
+      "selectedState": "true",
+      "bulkActionBarVisible": true
+    },
+    "pageErrors": [],
+    "sourceReadback": {
+      "contentLongPress": "app/(app)/(tabs)/chores.tsx:1426 — onLongPress is undefined when bulkSelectMode is true.",
+      "swipe": "app/(app)/(tabs)/chores.tsx:1654-1661 — right actions omitted and ReanimatedSwipeable enabled={!isDragging && !bulkSelectMode}."
+    }
+  },
+  "bulkActionReachability": {
+    "assignButton": "Reached and clicked; React Native Web Alert.alert produced no dialog/sheet, so no assignment was committed.",
+    "deferButton": "Existing Reschedule Chore sheet opened and was canceled; no defer committed.",
+    "completeDelete": "Not committed."
+  },
+  "semantics": {
+    "circleAccessibleLabelAndHint": true,
+    "circleSelectedState": "aria-checked plus accessibility checked/selected state",
+    "actionBarTestID": "bulk-selection-action-bar",
+    "exitTestID": "bulk-selection-exit",
+    "exitAccessibleLabel": "Exit bulk selection",
+    "bulkActionButtonsLabeled": [
+      "Complete selected chores",
+      "Assign selected chores",
+      "Defer selected chores",
+      "Delete selected chores"
+    ]
+  },
+  "accessibilityLimitation": "Native VoiceOver/TalkBack and a non-gesture alternative for long-press-only bulk entry were not tested; remain unproven."
+}

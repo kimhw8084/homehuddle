@@ -1,0 +1,480 @@
+{
+  "environment": {
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "source": "exact Expo web worktree source with EXPO_NO_DOTENV=1 and loopback-only Supabase URL",
+    "dotenvDisabled": true,
+    "supabase": "loopback-only synthetic fixture"
+  },
+  "candidateTotals": {
+    "pageErrors": 0,
+    "consoleErrors": 2,
+    "consoleWarnings": 34,
+    "failedRequests": 4,
+    "httpResponsesAtLeast400": 0,
+    "logBoxDetected": false
+  },
+  "classifications": {
+    "pageErrors": "None.",
+    "consoleErrors": "Two occurrences of the React 19 element.ref compatibility warning, one per independent browser context; same exact message occurs on exact base (one occurrence in the base probe), so classified as pre-existing. No unstable_batchedUpdates console error.",
+    "consoleWarnings": "All seven distinct warning signatures were also present in the exact-base probe; candidate warning count is higher because the candidate was exercised in two contexts and through more screens/interactions. No warning was hidden.",
+    "failedRequests": "Four ERR_ABORTED localhost root requests occurred during app route navigation/reload in two contexts (two per context); no unexpected failed requests.",
+    "httpErrors": "None."
+  },
+  "consoleErrorsRaw": [
+    {
+      "context": "canonical-and-drag",
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    }
+  ],
+  "consoleWarningsRaw": [
+    {
+      "context": "canonical-and-drag",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "canonical-and-drag",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    }
+  ],
+  "warningKinds": [
+    {
+      "count": 2,
+      "message": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "presentOnExactBase": true
+    },
+    {
+      "count": 2,
+      "message": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "presentOnExactBase": true
+    },
+    {
+      "count": 2,
+      "message": "TouchableWithoutFeedback is deprecated. Please use Pressable.",
+      "presentOnExactBase": true
+    },
+    {
+      "count": 4,
+      "message": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "presentOnExactBase": true
+    },
+    {
+      "count": 2,
+      "message": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]",
+      "presentOnExactBase": true
+    },
+    {
+      "count": 2,
+      "message": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md",
+      "presentOnExactBase": true
+    },
+    {
+      "count": 20,
+      "message": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "presentOnExactBase": true
+    }
+  ],
+  "pageErrorsRaw": [],
+  "failedRequestsRaw": [
+    {
+      "context": "canonical-and-drag",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "context": "canonical-and-drag",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    },
+    {
+      "context": "fresh-disposable-fixture",
+      "url": "http://localhost:8081/",
+      "error": "net::ERR_ABORTED",
+      "navigation": false
+    }
+  ],
+  "httpErrorsRaw": [],
+  "dialogsRaw": [],
+  "logBoxText": [],
+  "supplementalBulkDragSwipeCheck": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "fixture": "fresh disposable browser context; en-US; America/Chicago; synthetic local Supabase only",
+    "bulkModeEnteredThrough": "completion circle normal long-press",
+    "pendingCircle": "chore-completion-circle-v18",
+    "contentTarget": "chore-content-v18",
+    "contentLongPress": {
+      "heldForMs": 450,
+      "orderUnchanged": true,
+      "selectedCount": "1",
+      "rowStylesDuringHold": [
+        {
+          "testID": "chore-content-v18",
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        },
+        {
+          "testID": null,
+          "opacity": "1",
+          "transform": "none"
+        }
+      ]
+    },
+    "horizontalSwipe": {
+      "orderUnchanged": true,
+      "selectedState": "true",
+      "bulkActionBarVisible": true
+    },
+    "pageErrors": [],
+    "sourceReadback": {
+      "contentLongPress": "app/(app)/(tabs)/chores.tsx:1426 — onLongPress is undefined when bulkSelectMode is true.",
+      "swipe": "app/(app)/(tabs)/chores.tsx:1654-1661 — right actions omitted and ReanimatedSwipeable enabled={!isDragging && !bulkSelectMode}."
+    }
+  },
+  "baseConsoleErrorsRaw": [
+    {
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 901,
+        "column": 32,
+        "lineNumber": 901,
+        "columnNumber": 32
+      }
+    }
+  ],
+  "baseConsoleWarningsRaw": [
+    {
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\".",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 23820,
+        "column": 14,
+        "lineNumber": 23820,
+        "columnNumber": 14
+      }
+    },
+    {
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 23820,
+        "column": 14,
+        "lineNumber": 23820,
+        "columnNumber": 14
+      }
+    },
+    {
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 23820,
+        "column": 14,
+        "lineNumber": 23820,
+        "columnNumber": 14
+      }
+    },
+    {
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 63073,
+        "column": 16,
+        "lineNumber": 63073,
+        "columnNumber": 16
+      }
+    },
+    {
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 34831,
+        "column": 16,
+        "lineNumber": 34831,
+        "columnNumber": 16
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    },
+    {
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details.",
+      "location": {
+        "url": "http://localhost:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable",
+        "line": 232917,
+        "column": 18,
+        "lineNumber": 232917,
+        "columnNumber": 18
+      }
+    }
+  ]
+}

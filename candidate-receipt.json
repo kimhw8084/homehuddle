@@ -1,0 +1,33 @@
+{
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "operation": "FIX",
+  "request": "homehuddle-ui0-chores-bulk-web-v1",
+  "workBranch": "codex/homehuddle-ui0-chores-bulk-web-v1",
+  "registeredTarget": "main",
+  "boundBaseSha": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+  "boundBaseTree": "add34f611ec80ba46ced7f3db8f3114e6cf157de",
+  "candidateSha": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+  "candidateTree": "82e504414c4a92014d0134fde1f857d15e326130",
+  "candidateParent": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+  "remoteWorkBranchSha": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+  "mainRemoteSha": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+  "sourceDiff": {
+    "files": [
+      "app/(app)/(tabs)/chores.tsx",
+      "utils/safeBatchedUpdates.ts",
+      "__tests__/safe-batched-updates.test.ts"
+    ],
+    "insertions": 98,
+    "deletions": 13,
+    "packageJsonChanged": false,
+    "packageLockChanged": false
+  },
+  "manifestAuthority": "AR-85",
+  "triggerState": "R5 excluded chores-bulk-selection after exact web runtime batching crash; exact-base reproduction is included in batch-compatibility-report.json.",
+  "artifactRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v1",
+  "fabricEvidenceRef": "Not authored or replaced; Fabric owns refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-chores-bulk-web-v1.",
+  "goDecision": "Not issued by this candidate author. Await independent GO.",
+  "preparedDate": "2026-09-26"
+}
