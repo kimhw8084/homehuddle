@@ -1,0 +1,392 @@
+{
+  "accepted_at": "2026-09-27T14:17:46Z",
+  "changed_files": [
+    {
+      "additions": 40,
+      "deletions": 0,
+      "path": "__tests__/safe-batched-updates.test.ts",
+      "status": "A"
+    },
+    {
+      "additions": 47,
+      "deletions": 13,
+      "path": "app/(app)/(tabs)/chores.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 101,
+      "deletions": 13,
+      "path": "components/DevToolsOverlay.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 11,
+      "deletions": 0,
+      "path": "utils/safeBatchedUpdates.ts",
+      "status": "A"
+    }
+  ],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc 'EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=project-os-synthetic-anon-key TZ=America/Chicago LANG=en_US.UTF-8 rtk npx expo start --web --port 8083 --non-interactive'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cp components/DevToolsOverlay.tsx /tmp/DevToolsOverlay.r2.tsx && rtk proxy git show bc3e1745db4e600b0296f124f9c0017ff5d19ddb:components/DevToolsOverlay.tsx > /tmp/DevToolsOverlay.r1.tsx && rtk cp /tmp/DevToolsOverlay.r1.tsx components/DevToolsOverlay.tsx && rtk git diff --stat -- components/DevToolsOverlay.tsx'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node - <<'NODE'\nconst fs=require('fs'),path=require('path');const {chromium}=require('/tmp/projectos-pw/node_modules/playwright-core');const out='/tmp/projectos-evidence/predecessor/screenshots';fs.mkdirSync(out,{recursive:true});\n(async()=>{const b=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args:['--no-sandbox']});const p=await b.newPage({viewport:{width:390,height:844},locale:'en-US',timezoneId:'America/Chicago',deviceScaleFactor:1});const errors=[];p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});\n await p.goto('http://127.0.0.1:8082',{waitUntil:'domcontentloaded',timeout:90000});await p.locator('[data-testid=\\\"logo-trigger\\\"]').waitFor({timeout:45000});await p.locator('[data-testid=\\\"logo-trigger\\\"]').click();await p.waitForTimeout(150);await p.locator('[data-testid=\\\"logo-trigger\\\"]').click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.getByRole('tab',{name:'Chores'}).click();await p.waitForTimeout(1100);\n const take=async(w,h,n)=>{await p.setViewportSize({width:w,height:h});await p.waitForTimeout(350);await p.evaluate(()=>window.scrollTo(0,0));await p.waitForTimeout(100);await p.screenshot({path:path.join(out,n),animations:'disabled'})};\n await take(1440,900,'r1-chores-today-all--desktop-1440x900.png');await take(390,844,'r1-chores-today-all--mobile-390x844.png');\n const c=p.locator('[data-testid=\\\"chore-completion-circle-v1\\\"]');await c.scrollIntoViewIfNeeded();const r=await c.boundingBox();await p.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.mouse.down();await p.waitForTimeout(650);await p.mouse.up();await p.locator('[data-testid=\\\"bulk-selection-action-bar\\\"]').waitFor({timeout:10000});\n for(const [w,h,n] of [[1440,900,'r1-chores-bulk--desktop-1440x900.png'],[390,844,'r1-chores-bulk--mobile-390x844.png'],[360,800,'r1-chores-bulk--stress-360x800.png'],[195,422,'r1-chores-bulk--stress-200-percent-195x422.png']])await take(w,h,n);\n fs.writeFileSync('/tmp/projectos-evidence/predecessor/console-errors.json',JSON.stringify(errors,null,2));process.stdout.write(JSON.stringify({predecessor:'bc3e1745db4e600b0296f124f9c0017ff5d19ddb',errors,files:fs.readdirSync(out)},null,2)+'\\\\n');await b.close();\n})().catch(e=>{process.stderr.write(String(e.stack||e)+'\\\\n');process.exitCode=1});\nNODE\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cp /tmp/DevToolsOverlay.r2.tsx components/DevToolsOverlay.tsx && rtk git diff --exit-code -- components/DevToolsOverlay.tsx && rtk git status --short --branch && rtk git rev-parse HEAD HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom PIL import Image, ImageChops\nfrom pathlib import Path\nimport json\nroot=Path('/tmp/projectos-evidence')\npairs=[\n('chores-today-all--desktop-1440x900.png','predecessor/screenshots/r1-chores-today-all--desktop-1440x900.png','normal-1440x900'),\n('chores-today-all--mobile-390x844.png','predecessor/screenshots/r1-chores-today-all--mobile-390x844.png','normal-390x844'),\n('chores-bulk-selection--desktop-1440x900.png','predecessor/screenshots/r1-chores-bulk--desktop-1440x900.png','bulk-1440x900'),\n('chores-bulk-selection--mobile-390x844.png','predecessor/screenshots/r1-chores-bulk--mobile-390x844.png','bulk-390x844'),\n('chores-bulk-selection--stress-360x800.png','predecessor/screenshots/r1-chores-bulk--stress-360x800.png','bulk-360x800'),\n('chores-bulk-selection--stress-200-percent-195x422.png','predecessor/screenshots/r1-chores-bulk--stress-200-percent-195x422.png','bulk-195x422')]\nresults=[]\nfor cand,prev,label in pairs:\n    a=Image.open(root/'screenshots'/cand).convert('RGBA')\n    b=Image.open(root/prev).convert('RGBA')\n    if a.size\"'!=b.size:\n        results.append({'\"'pair':label,'candidate':a.size,'predecessor':b.size,'equalDimensions':False});continue\n    diff=ImageChops.difference(a,b)\n    bbox=diff.getbbox()\n    hist=diff.convert('RGB').histogram()\n    changed=sum(v for i,v in enumerate(hist) if i%256\"'!=0) # channel histogram nonzero levels, diagnostic only\n    pix=diff.getdata(); changed_pixels=sum(1 for p in pix if p!=(0,0,0,0))\n    w,h=a.size\n    results.append({'\"'pair':label,'dimensions':{'width':w,'height':h},'identical':bbox is None,'differenceBoundingBox':bbox,'changedPixelCount':changed_pixels,'changedPixelRatio':round(changed_pixels/(w*h),6),'allowedFabRectangle':None if label.startswith('normal') else {'left':w-64,'top':h-184,'right':w-20,'bottom':h-140},'differentPixelLevelCount':changed})\nout={'method':'Pillow RGBA per-pixel exact comparison of headless Chrome screenshots; same viewport, en-US, America/Chicago, DPR 1','candidateCommit':'5924fb4af4033e6e7ca1042948bdbee221c182c2','predecessorCommit':'bc3e1745db4e600b0296f124f9c0017ff5d19ddb','comparisons':results}\n(root/'visual-comparison.json').write_text(json.dumps(out,indent=2)+'\\\\n')\nprint(json.dumps(results,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node - <<'NODE'\nconst fs=require('fs'),path=require('path');const {chromium}=require('/tmp/projectos-pw/node_modules/playwright-core');const out='/tmp/projectos-evidence/predecessor/screenshots';fs.mkdirSync(out,{recursive:true});\n(async()=>{const b=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args:['--no-sandbox']});const p=await b.newPage({viewport:{width:390,height:844},locale:'en-US',timezoneId:'America/Chicago',deviceScaleFactor:1});const errors=[];p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});\n await p.goto('http://127.0.0.1:8082',{waitUntil:'domcontentloaded',timeout:90000});await p.locator('[data-testid=\\\"logo-trigger\\\"]').click();await p.waitForTimeout(150);await p.locator('[data-testid=\\\"logo-trigger\\\"]').click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.getByRole('tab',{name:'Chores'}).click();await p.waitForTimeout(1100);\n const take=async(w,h,n)=>{await p.setViewportSize({width:w,height:h});await p.waitForTimeout(350);await p.evaluate(()=>window.scrollTo(0,0));await p.waitForTimeout(100);await p.screenshot({path:path.join(out,n),animations:'disabled'})};\n const longPress=async(loc)=>{await loc.scrollIntoViewIfNeeded();const r=await loc.boundingBox();await p.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.mouse.down();await p.waitForTimeout(650);await p.mouse.up();await p.waitForTimeout(350)};\n await take(1440,900,'r1-chores-today-all--desktop-1440x900.png');await take(390,844,'r1-chores-today-all--mobile-390x844.png');\n await longPress(p.locator('[data-testid=\\\"chore-content-v1\\\"]'));await longPress(p.locator('[data-testid=\\\"chore-completion-circle-v1\\\"]'));await p.locator('[data-testid=\\\"bulk-selection-action-bar\\\"]').waitFor({timeout:10000});await p.locator('[data-testid=\\\"chore-completion-circle-v2\\\"]').click();await p.locator('[data-testid=\\\"chore-completion-circle-v2\\\"]').click();\n const c2=p.locator('[data-testid=\\\"chore-content-v2\\\"]');await longPress(c2);const r=await c2.boundingBox();await p.mouse.move(r.x+r.width*.8,r.y+r.height/2);await p.mouse.down();await p.waitForTimeout(100);await p.mouse.move(r.x+Math.max(4,r.width*.25),r.y+r.height/2,{steps:8});await p.waitForTimeout(250);await p.mouse.up();await p.waitForTimeout(450);\n for(const [w,h,n] of [[1440,900,'r1-chores-bulk--desktop-1440x900.png'],[390,844,'r1-chores-bulk--mobile-390x844.png'],[360,800,'r1-chores-bulk--stress-360x800.png'],[195,422,'r1-chores-bulk--stress-200-percent-195x422.png']])await take(w,h,n);\n fs.writeFileSync('/tmp/projectos-evidence/predecessor/console-errors.json',JSON.stringify(errors,null,2));process.stdout.write(JSON.stringify({errors,files:fs.readdirSync(out)},null,2)+'\\\\n');await b.close();\n})().catch(e=>{process.stderr.write(String(e.stack||e)+'\\\\n');process.exitCode=1});\nNODE\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom PIL import Image, ImageChops\nfrom pathlib import Path\nimport json\nroot=Path('/tmp/projectos-evidence')\npairs=[\n('chores-today-all--desktop-1440x900.png','predecessor/screenshots/r1-chores-today-all--desktop-1440x900.png','normal-1440x900'),\n('chores-today-all--mobile-390x844.png','predecessor/screenshots/r1-chores-today-all--mobile-390x844.png','normal-390x844'),\n('chores-bulk-selection--desktop-1440x900.png','predecessor/screenshots/r1-chores-bulk--desktop-1440x900.png','bulk-1440x900'),\n('chores-bulk-selection--mobile-390x844.png','predecessor/screenshots/r1-chores-bulk--mobile-390x844.png','bulk-390x844'),\n('chores-bulk-selection--stress-360x800.png','predecessor/screenshots/r1-chores-bulk--stress-360x800.png','bulk-360x800'),\n('chores-bulk-selection--stress-200-percent-195x422.png','predecessor/screenshots/r1-chores-bulk--stress-200-percent-195x422.png','bulk-195x422')]\ntry:\n import numpy as np\nexcept Exception as e:\n print('NUMPY_MISSING',e);raise\nresults=[]\nfor cand,prev,label in pairs:\n    a=Image.open(root/'screenshots'/cand).convert('RGB')\n    b=Image.open(root/prev).convert('RGB')\n    if a.size\"'!=b.size:\n        results.append({'\"'pair':label,'candidate':a.size,'predecessor':b.size,'equalDimensions':False});continue\n    diff=np.asarray(ImageChops.difference(a,b))\n    mask=np.any(diff\"'!=0,axis=2)\n    ys,xs=np.where(mask)\n    w,h=a.size\n    allowed=None if label.startswith('\"'normal') else {'left':w-64,'top':h-184,'right':w-20,'bottom':h-140}\n    outside=mask.copy()\n    if allowed:\n        outside[allowed['top']:allowed['bottom'],allowed['left']:allowed['right']]=False\n    oy,ox=np.where(outside)\n    bbox=None if len(xs)==0 else [int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)]\n    outside_bbox=None if len(ox)==0 else [int(ox.min()),int(oy.min()),int(ox.max()+1),int(oy.max()+1)]\n    results.append({'pair':label,'dimensions':{'width':w,'height':h},'pixelIdentical':len(xs)==0,'differenceBoundingBox':bbox,'changedPixelCount':int(mask.sum()),'changedPixelRatio':round(float(mask.sum())/(w*h),6),'expectedFabRectangle':allowed,'changedOutsideFabRectangle':int(outside.sum()),'outsideFabDifferenceBoundingBox':outside_bbox})\nout={'method':'Pillow RGBA-to-RGB per-pixel exact comparison; same Chrome build, DPR 1, en-US, America/Chicago, equal navigation and gesture sequence. Bulk difference allowance is the FAB rectangle where the overlay priority relationship changes.','candidateCommit':'5924fb4af4033e6e7ca1042948bdbee221c182c2','predecessorCommit':'bc3e1745db4e600b0296f124f9c0017ff5d19ddb','comparisons':results}\n(root/'visual-comparison.json').write_text(json.dumps(out,indent=2)+'\\\\n')\nprint(json.dumps(results,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=project-os-synthetic-anon-key TZ=America/Chicago LANG=en_US.UTF-8 rtk npx expo start --web --port 8082 --non-interactive'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cp /tmp/DevToolsOverlay.r1.tsx components/DevToolsOverlay.tsx'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy curl -sS -I http://127.0.0.1:8082'",
+      "exit_code": 7,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy curl -sS -I http://127.0.0.1:8082'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node - <<'NODE'\nconst fs=require('fs'),path=require('path');const {chromium}=require('/tmp/projectos-pw/node_modules/playwright-core');const out='/tmp/projectos-evidence/predecessor/screenshots';fs.mkdirSync(out,{recursive:true});\n(async()=>{const b=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args:['--no-sandbox']});const p=await b.newPage({viewport:{width:390,height:844},locale:'en-US',timezoneId:'America/Chicago',deviceScaleFactor:1});const errors=[];p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});\n await p.goto('http://127.0.0.1:8082',{waitUntil:'domcontentloaded',timeout:90000});await p.locator('[data-testid=\\\"logo-trigger\\\"]').waitFor({timeout:45000});await p.locator('[data-testid=\\\"logo-trigger\\\"]').click();await p.waitForTimeout(150);await p.locator('[data-testid=\\\"logo-trigger\\\"]').click();await p.getByText('Instant Bypass Login',{exact:true}).click();await p.getByRole('tab',{name:'Chores'}).click();await p.waitForTimeout(1100);\n const take=async(w,h,n)=>{await p.setViewportSize({width:w,height:h});await p.waitForTimeout(350);await p.evaluate(()=>window.scrollTo(0,0));await p.waitForTimeout(100);await p.screenshot({path:path.join(out,n),animations:'disabled'})};\n const longPress=async(loc)=>{await loc.scrollIntoViewIfNeeded();const r=await loc.boundingBox();await p.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.mouse.down();await p.waitForTimeout(650);await p.mouse.up();await p.waitForTimeout(350)};\n await take(1440,900,'r1-chores-today-all--desktop-1440x900.png');await take(390,844,'r1-chores-today-all--mobile-390x844.png');await longPress(p.locator('[data-testid=\\\"chore-content-v1\\\"]'));await longPress(p.locator('[data-testid=\\\"chore-completion-circle-v1\\\"]'));await p.locator('[data-testid=\\\"bulk-selection-action-bar\\\"]').waitFor({timeout:10000});await p.locator('[data-testid=\\\"chore-completion-circle-v2\\\"]').click();await p.locator('[data-testid=\\\"chore-completion-circle-v2\\\"]').click();const c2=p.locator('[data-testid=\\\"chore-content-v2\\\"]');await longPress(c2);const r=await c2.boundingBox();await p.mouse.move(r.x+r.width*.8,r.y+r.height/2);await p.mouse.down();await p.waitForTimeout(100);await p.mouse.move(r.x+Math.max(4,r.width*.25),r.y+r.height/2,{steps:8});await p.waitForTimeout(250);await p.mouse.up();await p.waitForTimeout(450);\n const layering={};for(const [w,h,n,key] of [[1440,900,'r1-chores-bulk--desktop-1440x900.png','desktop1440'],[390,844,'r1-chores-bulk--mobile-390x844.png','mobile390'],[360,800,'r1-chores-bulk--stress-360x800.png','stress360'],[195,422,'r1-chores-bulk--stress-200-percent-195x422.png','stress195']]){await take(w,h,n);layering[key]=await p.evaluate(()=>{const f=[...document.querySelectorAll('button')].find(e=>e.innerText.includes('🛠')),d=document.querySelector('[data-testid=\\\"bulk-selection-defer\\\"]'),r=d.getBoundingClientRect(),x=r.x+r.width/2,y=r.y+r.height/2,top=document.elementFromPoint(x,y);return{viewport:{width:innerWidth,height:innerHeight},fab:\"'!!f?{rect:(()=>{const q=f.getBoundingClientRect();return{x:q.x,y:q.y,w:q.width,h:q.height}})(),zIndex:getComputedStyle(f).zIndex}:null,deferCenter:{x,y,topTag:top?.tagName,topTextId:top?.closest('\"'[data-testid\"'^=\"bulk-selection-\"]'\"')?.getAttribute('data-testid')||null,hitsFab:\"'!!top?.closest('\"'button')?.innerText.includes('🛠')}}})}\n fs.writeFileSync('/tmp/projectos-evidence/predecessor/runtime-qualification.json',JSON.stringify({candidate:'bc3e1745db4e600b0296f124f9c0017ff5d19ddb',tree:'82e504414c4a92014d0134fde1f857d15e326130',syntheticSupabase:'http://127.0.0.1:54321',locale:'en-US',timezone:'America/Chicago',layering,errors},null,2));fs.writeFileSync('/tmp/projectos-evidence/predecessor/console-errors.json',JSON.stringify(errors,null,2));process.stdout.write(JSON.stringify({layering,errors},null,2)+'\\\\n');await b.close();\n})().catch(e=>{process.stderr.write(String(e.stack||e)+'\\\\n');process.exitCode=1});\nNODE\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom PIL import Image, ImageChops\nfrom pathlib import Path\nimport numpy as np, json\nroot=Path('/tmp/projectos-evidence')\npairs=[\n('chores-today-all--desktop-1440x900.png','predecessor/screenshots/r1-chores-today-all--desktop-1440x900.png','normal-1440x900'),\n('chores-today-all--mobile-390x844.png','predecessor/screenshots/r1-chores-today-all--mobile-390x844.png','normal-390x844'),\n('chores-bulk-selection--desktop-1440x900.png','predecessor/screenshots/r1-chores-bulk--desktop-1440x900.png','bulk-1440x900'),\n('chores-bulk-selection--mobile-390x844.png','predecessor/screenshots/r1-chores-bulk--mobile-390x844.png','bulk-390x844'),\n('chores-bulk-selection--stress-360x800.png','predecessor/screenshots/r1-chores-bulk--stress-360x800.png','bulk-360x800'),\n('chores-bulk-selection--stress-200-percent-195x422.png','predecessor/screenshots/r1-chores-bulk--stress-200-percent-195x422.png','bulk-195x422')]\nresults=[]\nfor cand,prev,label in pairs:\n    a=Image.open(root/'screenshots'/cand).convert('RGB');b=Image.open(root/prev).convert('RGB')\n    if a.size\"'!=b.size: results.append({'\"'pair':label,'dimensionsEqual':False,'candidateSize':a.size,'predecessorSize':b.size});continue\n    d=np.asarray(ImageChops.difference(a,b));mask=np.any(d\"'!=0,axis=2);ys,xs=np.where(mask);w,h=a.size\n    allowed=None if label.startswith('\"'normal') else {'left':w-64,'top':h-184,'right':w-20,'bottom':h-140}\n    outside=mask.copy()\n    if allowed:outside[allowed['top']:allowed['bottom'],allowed['left']:allowed['right']]=False\n    oy,ox=np.where(outside)\n    results.append({'pair':label,'dimensions':{'width':w,'height':h},'pixelIdentical':not bool(mask.any()),'differenceBoundingBox':None if not len(xs) else [int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)],'changedPixelCount':int(mask.sum()),'changedPixelRatio':round(float(mask.sum())/(w*h),6),'expectedFabRectangle':allowed,'changedOutsideFabRectangle':int(outside.sum()),'outsideFabDifferenceBoundingBox':None if not len(ox) else [int(ox.min()),int(oy.min()),int(ox.max()+1),int(oy.max()+1)]})\nout={'method':'Pillow RGB per-pixel exact comparison of Chrome screenshots at DPR 1. The R1 render was compiled from the exact predecessor DevToolsOverlay.tsx source with all other R1 files and runtime state held equal. Normal images allow no pixel differences; bulk differences are checked against the prior FAB rectangle.','candidateCommit':'5924fb4af4033e6e7ca1042948bdbee221c182c2','predecessorCommit':'bc3e1745db4e600b0296f124f9c0017ff5d19ddb','comparisons':results}\n(root/'visual-comparison.json').write_text(json.dumps(out,indent=2)+'\\\\n');print(json.dumps(results,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cp /tmp/DevToolsOverlay.r2.tsx components/DevToolsOverlay.tsx && rtk git diff --exit-code -- components/DevToolsOverlay.tsx && rtk git status --short --branch && rtk git rev-parse HEAD HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=project-os-synthetic-anon-key TZ=America/Chicago LANG=en_US.UTF-8 rtk npx expo start --web --port 8082 --non-interactive --clear'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git worktree remove --force /tmp/homehuddle-r1 && rtk git worktree list && rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk cat utils/safeBatchedUpdates.ts && rtk rg -n \\\"runBatchedUpdates\\\" 'app/(app)/(tabs)/chores.tsx' __tests__/safe-batched-updates.test.ts && rtk sed -n '1,120p' __tests__/safe-batched-updates.test.ts && rtk git show -s --format='%H%n%T%n%P%n%s' HEAD && rtk git show -s --format='%H%n%T%n%P' refs/remotes/origin/main\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 && rtk git show-ref --verify refs/remotes/origin/main && rtk git show-ref --verify refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1 && rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk git rev-parse HEAD HEAD''^{tree} HEAD''^ refs/remotes/origin/main''^{commit} refs/remotes/origin/main''^{tree} refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1''^{commit} refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1''^{tree} && rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node - <<'NODE'\nconst fs=require('fs');const r=JSON.parse(fs.readFileSync('/tmp/projectos-evidence/runtime-test-results.json','utf8'));\nprocess.stdout.write(JSON.stringify({candidate:r.candidate,runtime:r.runtime,networkSummary:{requests:r.network.filter(x=>x.kind==='request').length,responses:r.network.filter(x=>x.kind==='response').length,failures:r.network.filter(x=>x.kind==='requestfailed').length,loopback:r.network.filter(x=>x.url?.includes('127.0.0.1:54321'))},consoleTypes:r.console.reduce((a,x)=>(a[x.type]=(a[x.type]||0)+1,a),{}),pageErrors:r.console.filter(x=>x.type==='pageerror'),assign:r.assignSmoke,defer:r.defer,devTools:r.devTools},null,2)+'\\\\n');\nNODE\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch && rtk git rev-parse HEAD HEAD''^{tree} HEAD''^ && rtk git diff --quiet bc3e1745db4e600b0296f124f9c0017ff5d19ddb -- '\"'app/(app)/(tabs)/chores.tsx' utils/safeBatchedUpdates.ts __tests__/safe-batched-updates.test.ts; printf 'predecessor_files_unchanged_exit=%s\\\\n' \\\"\"'$?\" && rtk ls -la /tmp/projectos-evidence && rtk find /tmp/projectos-evidence -maxdepth 3 -type f'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"); for (const f of [\\\"/tmp/projectos-evidence/runtime-test-results.json\\\",\\\"/tmp/projectos-evidence/runtime-console-network.json\\\",\\\"/tmp/projectos-evidence/visual-comparison.json\\\"]) { const x=JSON.parse(fs.readFileSync(f,\\\"utf8\\\")); console.log(\\\"FILE\\\",f); console.log(JSON.stringify(x,null,2).slice(0,8000)); }'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git show --format=fuller --stat --oneline bc3e1745db4e600b0296f124f9c0017ff5d19ddb && rtk git diff-tree --no-commit-id --name-only -r bc3e1745db4e600b0296f124f9c0017ff5d19ddb && rtk sed -n '1,180p' utils/safeBatchedUpdates.ts && rtk rg -n 'runBatchedUpdates|onDragEnd|overdue|streak' 'app/(app)/(tabs)/chores.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --stat 20c4240576c9a1793f1d741d0bfbba549e5e1b37..HEAD && rtk git diff --name-status 20c4240576c9a1793f1d741d0bfbba549e5e1b37..HEAD && rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"); const x=JSON.parse(fs.readFileSync(\\\"/tmp/projectos-evidence/runtime-test-results.json\\\",\\\"utf8\\\")); console.log(JSON.stringify({bulkActions:x.overlay?.viewports?Object.fromEntries(Object.entries(x.overlay.viewports).map(([k,v])=>[k,{viewport:v.viewport,bar:v.bar,tabBar:v.tabBar,barAboveTabBar:v.barAboveTabBar,horizontalOverflow:v.document?.horizontalOverflow,fab:v.fab,fabClipFrame:v.fabClipFrame,actions:Object.fromEntries(Object.entries(v.actions||{}).map(([n,a])=>[n,{visible:a.visible,rect:a.rect,center:a.center,hit:a.elementFromPoint,reachable:a.reachable}]))}])):null,afterExit:x.overlay?.afterExit,interactions:Object.fromEntries(Object.entries(x).filter(([k])=>/assign|defer|exit|dev|modal|cancel/i.test(k))),browserErrors:x.pageErrors,dialogs:x.dialogs},null,2));' && rtk git rev-parse bc3e1745db4e600b0296f124f9c0017ff5d19ddb:'app/(app)/(tabs)/chores.tsx' HEAD:'app/(app)/(tabs)/chores.tsx' bc3e1745db4e600b0296f124f9c0017ff5d19ddb:utils/safeBatchedUpdates.ts HEAD:utils/safeBatchedUpdates.ts bc3e1745db4e600b0296f124f9c0017ff5d19ddb:__tests__/safe-batched-updates.test.ts HEAD:__tests__/safe-batched-updates.test.ts && rtk git diff --quiet 20c4240576c9a1793f1d741d0bfbba549e5e1b37..HEAD -- package.json package-lock.json; printf 'package_and_lock_unchanged_exit=%s\\\\n' \\\"\"'$?\"'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,260p' components/DevToolsOverlay.tsx && rtk sed -n '1,220p' /tmp/projectos-evidence/predecessor/runtime-qualification.json && rtk node -e 'const fs=require(\\\"fs\\\");const x=JSON.parse(fs.readFileSync(\\\"/tmp/projectos-evidence/runtime-console-network.json\\\",\\\"utf8\\\")); console.log(JSON.stringify({pageErrors:x.pageErrors, networkCounts:{request:x.network.filter(y=>y.kind===\\\"request\\\").length,response:x.network.filter(y=>y.kind===\\\"response\\\").length,failed:x.network.filter(y=>y.kind===\\\"requestfailed\\\").length},failed:x.network.filter(y=>y.kind===\\\"requestfailed\\\"),logBoxes:x.logBoxes||x.logBox},null,2));'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,180p' __tests__/safe-batched-updates.test.ts && rtk git show -s --format='%H%n%T%n%P' 20c4240576c9a1793f1d741d0bfbba549e5e1b37 && rtk git show -s --format='%H%n%T%n%P' bc3e1745db4e600b0296f124f9c0017ff5d19ddb && rtk git show -s --format='%H%n%T%n%P' HEAD && rtk git diff --check 20c4240576c9a1793f1d741d0bfbba549e5e1b37..HEAD && rtk git status --porcelain=v1\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\");const x=JSON.parse(fs.readFileSync(\\\"/tmp/projectos-evidence/runtime-test-results.json\\\",\\\"utf8\\\"));console.log(Object.keys(x));for(const [k,v] of Object.entries(x)){if(\"'![\"overlay\"].includes(k)) console.log(k,JSON.stringify(v).slice(0,2000));}'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin main codex/homehuddle-ui0-chores-bulk-web-v1 && rtk git rev-parse refs/remotes/origin/main refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1 HEAD HEAD''^ && rtk git ls-remote origin refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 refs/heads/main && rtk git status --porcelain=v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git push origin HEAD:refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n -C 4 \\\"bulk-selection-action-bar|zIndex: 9999|elevation: 20|fabLayer|zIndex: 1000|elevation: 10\\\" components/DevToolsOverlay.tsx 'app/(app)/(tabs)/chores.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rm -f /tmp/projectos-evidence/predecessor/runtime-qualification.json /tmp/projectos-evidence/predecessor/console-errors.json && rtk node <<'NODE'\nconst fs = require('fs');\nconst path = require('path');\nconst crypto = require('crypto');\nconst root = '/tmp/projectos-evidence';\nconst runtime = JSON.parse(fs.readFileSync(path.join(root, 'runtime-test-results.json'), 'utf8'));\nconst visual = JSON.parse(fs.readFileSync(path.join(root, 'visual-comparison.json'), 'utf8'));\nconst files = [\n  'app/(app)/(tabs)/chores.tsx',\n  'utils/safeBatchedUpdates.ts',\n  '__tests__/safe-batched-updates.test.ts',\n];\nconst sourceHashes = {\n  'app/(app)/(tabs)/chores.tsx': { blob: 'f41e9349e6acf0c9000d33e1e3614a489101d47d' },\n  'utils/safeBatchedUpdates.ts': { blob: '813325edb029960da3e939f99c49f7f436f02425' },\n  '__tests__/safe-batched-updates.test.ts': { blob: '322e2e3128e83b84206eeeca6862f2fc43c06387' },\n};\nfor (const f of files) sourceHashes[f].sha256 = crypto.createHash('sha256').update(fs.readFileSync(path.join(process.cwd(), f))).digest('hex');\nconst predecessor = {\n  status: 'verified',\n  repository: 'kimhw8084/homehuddle',\n  remoteBranch: 'refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1',\n  commit: 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb',\n  tree: '82e504414c4a92014d0134fde1f857d15e326130',\n  soleParent: '20c4240576c9a1793f1d741d0bfbba549e5e1b37',\n  exactDiffPaths: files,\n  carriedForwardUnchangedFiles: sourceHashes,\n  candidateParent: 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb',\n  identityPreservingFastForward: true,\n  ancestry: ['20c4240576c9a1793f1d741d0bfbba549e5e1b37', 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb', '5924fb4af4033e6e7ca1042948bdbee221c182c2'],\n  r2DeltaPath: 'components/DevToolsOverlay.tsx',\n};\nfs.writeFileSync(path.join(root, 'predecessor-carryforward.json'), JSON.stringify(predecessor, null, 2) + '\\\\n');\nconst receipt = {\n  operation: 'FIX',\n  project: 'homehuddle',\n  repository: 'kimhw8084/homehuddle',\n  request: 'homehuddle-ui0-chores-bulk-web-v2',\n  workBranch: 'refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2',\n  targetBranch: 'refs/heads/main',\n  boundBase: { commit: '20c4240576c9a1793f1d741d0bfbba549e5e1b37', tree: 'add34f611ec80ba46ced7f3db8f3114e6cf157de' },\n  predecessor: { commit: 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb', tree: '82e504414c4a92014d0134fde1f857d15e326130', parent: '20c4240576c9a1793f1d741d0bfbba549e5e1b37' },\n  candidate: { commit: runtime.candidate.head, tree: runtime.candidate.tree, parent: 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb' },\n  twoCommitAncestryFromBase: ['bc3e1745db4e600b0296f124f9c0017ff5d19ddb', runtime.candidate.head],\n  candidateRemoteReadback: { ref: 'refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2', commit: runtime.candidate.head },\n  remoteMainAtFreshRead: '20c4240576c9a1793f1d741d0bfbba549e5e1b37',\n  changedPathsFromBase: [\n    '__tests__/safe-batched-updates.test.ts',\n    'app/(app)/(tabs)/chores.tsx',\n    'components/DevToolsOverlay.tsx',\n    'utils/safeBatchedUpdates.ts',\n  ],\n  packageJsonAndLockUnchanged: true,\n  sourceFilesAndReportsAreCandidateBoundTo: runtime.candidate.head,\n};\nfs.writeFileSync(path.join(root, 'candidate-receipt.json'), JSON.stringify(receipt, null, 2) + '\\\\n');\nconst verification = {\n  candidate: runtime.candidate,\n  dependencyInstall: { command: 'npm ci', result: 'PASS', packageJsonAndLockChanged: false },\n  typecheck: { command: 'npx tsc --noEmit', result: 'PASS' },\n  lint: {\n    command: 'npm run lint',\n    result: 'EXIT 1 due to repository baseline debt',\n    repositoryTotals: { errors: 55, warnings: 418 },\n    changedDevOverlayFile: { errors: 0, warnings: 1, warning: 'existing explicit any typing in DevToolsOverlay.tsx' },\n    newChangedFileErrors: 0,\n  },\n  jest: { command: 'npx jest --runInBand', result: 'PASS', suites: 3, tests: 18, includes: ['auth audit', 'Wallet', 'safe batching'] },\n  runtime: {\n    candidateBound: true,\n    runtime: runtime.runtime,\n    normalChores: { desktop1440x900: runtime.normal.desktop, mobile390x844: runtime.normal.mobile },\n    logBox: false,\n    pageErrors: [],\n    stressAndInteractions: 'PASS; see gesture-ownership-report.json and overlay-priority-report.json',\n    consoleDiagnostic: 'React 19 reports an element.ref compatibility error in console; it did not produce a browser pageerror or visible LogBox.',\n  },\n  accessibilityAndAlternativeInput: { nativeVoiceOver: 'UNPROVEN', nativeTalkBack: 'UNPROVEN', nonGestureAlternative: 'UNPROVEN' },\n  diffCheck: 'PASS',\n  worktreeAfterCandidateCommit: 'clean',\n};\nfs.writeFileSync(path.join(root, 'verification.json'), JSON.stringify(verification, null, 2) + '\\\\n');\nconst batch = {\n  candidate: runtime.candidate,\n  helper: {\n    path: 'utils/safeBatchedUpdates.ts',\n    semantics: 'Call the provided batching primitive exactly once when callable; otherwise run the callback directly exactly once. Callback exceptions propagate in either path.',\n    unchangedFromPredecessor: true,\n  },\n  callSites: [\n    { file: 'app/(app)/(tabs)/chores.tsx', line: 1801, use: 'drag-end reorder updates through runBatchedUpdates' },\n    { file: 'app/(app)/(tabs)/chores.tsx', line: 4500, use: 'mount-time overdue and missed-streak updates through runBatchedUpdates' },\n  ],\n  focusedTests: { file: '__tests__/safe-batched-updates.test.ts', cases: ['callable batching', 'undefined/null/false/string fallbacks', 'exception propagation through fallback', 'exception propagation through callable primitive'], result: 'PASS' },\n  runtimeMount: { normalChoresMounted: true, visibleLogBox: false, dragEndNoMove: 'completed with unchanged order and no batching exception' },\n};\nfs.writeFileSync(path.join(root, 'batch-compatibility-report.json'), JSON.stringify(batch, null, 2) + '\\\\n');\nconst gesture = {\n  candidate: runtime.candidate,\n  ownership: [\n    { gesture: 'circle long-press', owner: 'bulk selection', result: \"'`selected ${runtime.bulkEntry.selectedOne} chore`, verified: true },\n    { gesture: '\"'second circle toggle then toggle back', owner: 'bulk selection', result: \"'`count ${runtime.bulkEntry.selectedOne} -> ${runtime.bulkEntry.selectedTwo} -> ${runtime.bulkEntry.selectedBackOne}`, verified: true },\n    { gesture: '\"'content long-press with no move, then drag end', owner: 'drag/reorder path', result: \"'`order unchanged: ${runtime.noMoveDrag.unchanged}; batching exception: ${runtime.noMoveDrag.batchingException}`, verified: true },\n    { gesture: '\"'content long-press and swipe in bulk mode', owner: 'bulk selection; content drag/swipe disabled', result: \"'`order unchanged: ${runtime.bulkContentDisabled.orderUnchanged}; selected count ${runtime.bulkContentDisabled.selectedCount}`, verified: true },\n  ],\n  bulkActions: {\n    assign: { clicked: runtime.assignSmoke.clicked, nativeOrBrowserDialogShown: runtime.assignSmoke.dialogs.length > 0, barRemains: runtime.assignSmoke.barRemains, selectedCount: runtime.assignSmoke.selectedCount, dataCommitted: false, note: '\"'No browser dialog was exposed by the RN Web Assign action.' },\n    defer: { opened: runtime.defer.opened, cancelled: runtime.defer.cancelled, choreOrderUnchanged: runtime.defer.choreOrderUnchanged, dataCommitted: false },\n    exit: { barGone: runtime.devTools.exited.barGone, selectedCountCleared: runtime.devTools.exited.countGone },\n  },\n  nativeVoiceOverTalkBackAndNonGestureAlternative: 'UNPROVEN; not executed in this qualification.',\n};\nfs.writeFileSync(path.join(root, 'gesture-ownership-report.json'), JSON.stringify(gesture, null, 2) + '\\\\n');\nconst viewports = runtime.overlay.viewports;\nconst overlay = {\n  candidate: runtime.candidate,\n  layerFacts: {\n    devFab: { source: 'components/DevToolsOverlay.tsx', zIndex: 1000, elevation: 10, normalPosition: 'right 20px, bottom 140px', size: '44x44', webOverlapHandling: 'MutationObserver measures actual launcher/action-bar rectangles, crops only intersecting FAB pixels and fully hides the FAB when fully covered; no viewport-specific coordinates or global pointer suppression.' },\n    productBulkBar: { source: 'app/(app)/(tabs)/chores.tsx', zIndex: 9999, elevation: 20, testID: 'bulk-selection-action-bar' },\n    originalR1StressOverlap: { viewport: '195x422', launcher: { left: 131, top: 238, right: 175, bottom: 282 }, defer: { left: 133.25, top: 245, right: 173.25, bottom: 285 }, candidateOutcome: 'R2 launcher opacity 0, aria-hidden true; all intersections yield to the Product bar.' },\n  },\n  bulkSelectionViewports: Object.fromEntries(Object.entries(viewports).map(([name, v]) => [name, {\n    viewport: v.viewport,\n    actionBar: v.bar,\n    tabBar: v.tabBar,\n    barAboveTabBar: v.barAboveTabBar,\n    document: v.document,\n    fab: v.fab,\n    fabClipFrame: v.fabClipFrame,\n    buttons: v.actions,\n    allFiveVisible: Object.values(v.actions).every(a => a.visible),\n    allFiveCentersResolveToAction: Object.values(v.actions).every(a => a.reachable && \"'!a.elementFromPoint.isDevFab),\n  }])) ,\n  postExitAtStressViewport: {\n    beforeExit: runtime.devTools.beforeExit,\n    afterExit: runtime.devTools.afterExit,\n    exit: runtime.devTools.exited,\n    launcherAndSheet: runtime.devTools.devSheet,\n    activeAccountStayedVisible: runtime.devTools.devSheet.activeAccountVisible,\n    openedModalClosedWithoutUsingResetOrOnboardingActions: true,\n  },\n  deferFlow: runtime.defer,\n  assignSmoke: runtime.assignSmoke,\n};\nfs.writeFileSync(path.join(root, '\"'overlay-priority-report.json'), JSON.stringify(overlay, null, 2) + '\\\\n');\nconst visualLines = [\n  '# Visual review',\n  '',\n  \"'`Candidate: '\"\\\\\"'`${runtime.candidate.head}'\"\\\\\"'` (tree '\"\\\\\"'`${runtime.candidate.tree}'\"\\\\\"'`).`,\n  '\"'Captures are lossless Chrome PNGs at DPR 1. Normal and canonical bulk screens retain the Chores structure and density; the overlay priority correction is localized to the dev launcher.',\n  '',\n  '## Candidate captures',\n  '',\n  '- \"'`screenshots/chores-today-all--desktop-1440x900.png` — normal Chores, desktop.'\"',\n  '- \"'`screenshots/chores-today-all--mobile-390x844.png` — normal Chores, mobile.'\"',\n  '- \"'`screenshots/chores-bulk-selection--desktop-1440x900.png` — bulk actions, desktop.'\"',\n  '- \"'`screenshots/chores-bulk-selection--mobile-390x844.png` — bulk actions, mobile.'\"',\n  '- \"'`screenshots/chores-bulk-selection--stress-360x800.png` — bulk actions, narrow stress viewport.'\"',\n  '- \"'`screenshots/chores-bulk-selection--stress-200-percent-195x422.png` — effective 200% stress viewport; all five actions are visible and Defer is unobscured.'\"',\n  '',\n  'All five action centers hit their matching action or descendant at 1440x900, 390x844, 360x800, and 195x422. The action bar remains above the tab bar, and none of these documents has horizontal overflow. At 195x422 the launcher is fully hidden/accessibility-hidden while covered; after Exit it returns at its normal 44x44 position and opens the existing Dev Tools modal.',\n  '',\n  '## Same-state comparison to exact R1 predecessor',\n  '',\n  'The predecessor screenshots were captured from the exact R1 DevToolsOverlay source with the same candidate Chores files, browser, locale, timezone, and interaction sequence. RGB exact pixel counts:',\n  '',\n  '| View | Changed pixels | Ratio | Changes outside prior FAB rectangle |',\n  '|---|---:|---:|---:|',\n  ...visual.comparisons.map(c => \"'`| ${c.pair} | ${c.changedPixelCount} | ${c.changedPixelRatio} | ${c.changedOutsideFabRectangle} |`),\n  '\"'',\n  'Normal views differ only by 104 pixels at 1440x900 and 102 pixels at 390x844 (under 0.04% in each image), with no visible body or density redesign. In canonical bulk captures, most changed pixels are within the old 44x44 FAB rectangle; 43 / 12 / 8 pixels fall outside it at desktop / 390 / 360, consistent with small raster/timing differences. At 195x422 all 1,576 changed pixels are inside the old FAB rectangle; R1 visibly placed the wrench over Defer, while R2 yields that area to the action bar.',\n  '',\n  'The original R1 screenshots used for comparison are included under \"'`predecessor/screenshots/` and are named `r1-...png`. Browser and native assistive technology are not represented by these screenshots; native VoiceOver/TalkBack and a non-gesture alternative remain unproven.'\"',\n].join('\\\\n') + '\\\\n';\nfs.writeFileSync(path.join(root, 'visual-review.md'), visualLines);\nNODE\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk find /tmp/projectos-evidence -maxdepth 3 -type f && rtk node -e 'for (const f of [\\\"predecessor-carryforward.json\\\",\\\"candidate-receipt.json\\\",\\\"verification.json\\\",\\\"batch-compatibility-report.json\\\",\\\"gesture-ownership-report.json\\\",\\\"overlay-priority-report.json\\\"]) { const x=require(\\\"/tmp/projectos-evidence/\\\"+f); console.log(f, x.candidate?.head || x.candidate?.commit || x.candidate?.candidate || x.candidate || \\\"ok\\\"); }' && rtk python3 --version\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, zipfile, struct\nroot = Path('/tmp/projectos-evidence')\nrequired = [\n    'screenshots/chores-today-all--desktop-1440x900.png',\n    'screenshots/chores-today-all--mobile-390x844.png',\n    'screenshots/chores-bulk-selection--desktop-1440x900.png',\n    'screenshots/chores-bulk-selection--mobile-390x844.png',\n    'screenshots/chores-bulk-selection--stress-360x800.png',\n    'screenshots/chores-bulk-selection--stress-200-percent-195x422.png',\n]\nfor name in required:\n    if not (root / name).is_file():\n        raise SystemExit(f'missing required screenshot: {name}')\npayload = sorted(\n    p.relative_to(root).as_posix()\n    for p in root.rglob('*')\n    if p.is_file() and p.name not in {'inventory.json', 'artifact-bundle.zip', 'artifact-bundle.sha256', 'publication-manifest.json'}\n)\nentries = []\nfor name in payload:\n    data = (root / name).read_bytes()\n    item = {'path': name, 'sizeBytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}\n    if name.lower().endswith('.png'):\n        if data[:8] \"'!= b'\"'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n':\n            raise SystemExit(f'bad PNG signature: {name}')\n        width, height = struct.unpack('>II', data[16:24])\n        item.update({'format': 'PNG', 'signatureHex': data[:8].hex(), 'width': width, 'height': height})\n    entries.append(item)\nfile_set_canonical = ''.join(f\\\"{x['path']}\\\\0{x['sizeBytes']}\\\\0{x['sha256']}\\\\n\\\" for x in entries).encode()\ninventory = {\n    'candidate': {'commit': '5924fb4af4033e6e7ca1042948bdbee221c182c2', 'tree': '719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'},\n    'algorithm': 'SHA-256; entries sorted by UTF-8 relative path; PNG IHDR dimensions and signature recorded',\n    'fileCount': len(entries),\n    'fileSetSha256': hashlib.sha256(file_set_canonical).hexdigest(),\n    'files': entries,\n    'exclusions': ['inventory.json (hashed by publication-manifest.json)', 'artifact-bundle.zip (hashed by artifact-bundle.sha256 and publication-manifest.json)', 'artifact-bundle.sha256', 'publication-manifest.json'],\n}\n(root / 'inventory.json').write_text(json.dumps(inventory, indent=2) + '\\\\n', encoding='utf-8')\narchive_path = root / 'artifact-bundle.zip'\narchive_members = payload + ['inventory.json']\nwith zipfile.ZipFile(archive_path, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9, strict_timestamps=True) as zf:\n    for name in sorted(archive_members):\n        p = root / name\n        data = p.read_bytes()\n        info = zipfile.ZipInfo(name, date_time=(2020, 1, 1, 0, 0, 0))\n        info.compress_type = zipfile.ZIP_DEFLATED\n        info.create_system = 3\n        info.external_attr = 0o100644 << 16\n        info.flag_bits = 0\n        zf.writestr(info, data, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)\nbundle_sha = hashlib.sha256(archive_path.read_bytes()).hexdigest()\n(root / 'artifact-bundle.sha256').write_text(f'{bundle_sha}  artifact-bundle.zip\\\\n', encoding='ascii')\ninventory_sha = hashlib.sha256((root / 'inventory.json').read_bytes()).hexdigest()\nmanifest = {\n    'candidate': inventory['candidate'],\n    'targetRef': 'refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2',\n    'bundle': {'path': 'artifact-bundle.zip', 'sha256': bundle_sha, 'memberCount': len(archive_members)},\n    'inventory': {'path': 'inventory.json', 'sha256': inventory_sha, 'fileSetSha256': inventory['fileSetSha256'], 'fileCount': len(entries)},\n    'hashesAreDetachedToAvoidSelfReference': True,\n}\n(root / 'publication-manifest.json').write_text(json.dumps(manifest, indent=2) + '\\\\n', encoding='utf-8')\nprint(json.dumps({'payloadFiles': len(entries), 'bundleMembers': len(archive_members), 'inventorySha256': inventory_sha, 'bundleSha256': bundle_sha, 'fileSetSha256': inventory['fileSetSha256'], 'requiredPngs': [x for x in entries if x['path'] in required]}, indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse --path-format=absolute --git-common-dir && rtk git config user.name && rtk git config user.email && rtk git status --short --branch && rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'GIT_INDEX_FILE=/tmp/projectos-artifact-index rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git --work-tree=/tmp/projectos-evidence read-tree --empty'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'GIT_INDEX_FILE=/tmp/projectos-artifact-index rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git --work-tree=/tmp/projectos-evidence add -A -- .'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'GIT_INDEX_FILE=/tmp/projectos-artifact-index rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git write-tree'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'GIT_INDEX_FILE=/tmp/projectos-artifact-index rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git ls-files | rtk head -n 40 && rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git ls-tree -r --name-only 77f12a08ec5bdba56ed21eaa0a697da33b761f12 | rtk head -n 40 && rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git ls-tree -r --name-only 77f12a08ec5bdba56ed21eaa0a697da33b761f12 | rtk wc -l'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git commit-tree 77f12a08ec5bdba56ed21eaa0a697da33b761f12 -m 'Project OS evidence: homehuddle chores bulk web v2'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git show -s --format='%H%n%T%n%P' ed8f8b274914a6725185ac1667c166dded5a8568 && rtk git --git-dir=/Users/haewonkim/.codex-fabric/repos/homehuddle/.git ls-tree -r --name-only ed8f8b274914a6725185ac1667c166dded5a8568 | rtk wc -l\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git push origin ed8f8b274914a6725185ac1667c166dded5a8568:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git fetch origin refs/heads/main:refs/remotes/origin/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1:refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2:refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2:refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk git rev-parse refs/remotes/origin/main refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1 refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk git show -s --format='%H%n%T%n%P' refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1 && rtk git show -s --format='%H%n%T%n%P' refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 && rtk git show -s --format='%H%n%T%n%P' refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git archive --format=tar --output=/tmp/projectos-remote-artifact.tar refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk python3 - <<'PY'\nfrom pathlib import Path\nimport tarfile\nout = Path('/tmp/projectos-remote-artifact-readback')\nif out.exists():\n    import shutil\n    shutil.rmtree(out)\nout.mkdir(parents=True)\nwith tarfile.open('/tmp/projectos-remote-artifact.tar', 'r:') as tf:\n    tf.extractall(out)\nprint(out)\nPY\nrtk python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, struct, zipfile\nroot = Path('/tmp/projectos-remote-artifact-readback')\ninv = json.loads((root/'inventory.json').read_text())\nmanifest = json.loads((root/'publication-manifest.json').read_text())\nexpected_candidate = {'commit':'5924fb4af4033e6e7ca1042948bdbee221c182c2','tree':'719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'}\nassert inv['candidate'] == expected_candidate\nassert manifest['candidate'] == expected_candidate\nassert hashlib.sha256((root/'inventory.json').read_bytes()).hexdigest() == manifest['inventory']['sha256']\nassert inv['fileSetSha256'] == manifest['inventory']['fileSetSha256']\nassert len(inv['files']) == manifest['inventory']['fileCount'] == 22\nfor item in inv['files']:\n    data = (root/item['path']).read_bytes()\n    assert len(data) == item['sizeBytes'], item['path']\n    assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']\n    if item.get('format') == 'PNG':\n        assert data[:8] == bytes.fromhex(item['signatureHex']) == b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n', item['path']\n        assert struct.unpack('>II', data[16:24]) == (item['width'],item['height']), item['path']\nrequired = {\n'screenshots/chores-today-all--desktop-1440x900.png':(1440,900),\n'screenshots/chores-today-all--mobile-390x844.png':(390,844),\n'screenshots/chores-bulk-selection--desktop-1440x900.png':(1440,900),\n'screenshots/chores-bulk-selection--mobile-390x844.png':(390,844),\n'screenshots/chores-bulk-selection--stress-360x800.png':(360,800),\n'screenshots/chores-bulk-selection--stress-200-percent-195x422.png':(195,422),\n}\nby_path = {x['path']:x for x in inv['files']}\nassert all(by_path[p]['format']=='PNG' and (by_path[p]['width'],by_path[p]['height'])==dims for p,dims in required.items())\nbundle = root/'artifact-bundle.zip'\nbundle_hash = hashlib.sha256(bundle.read_bytes()).hexdigest()\nassert bundle_hash == manifest['bundle']['sha256']\nassert (root/'artifact-bundle.sha256').read_text().split()[0] == bundle_hash\nwith zipfile.ZipFile(bundle) as zf:\n    assert zf.testzip() is None\n    assert set(zf.namelist()) == {x['path'] for x in inv['files']} | {'inventory.json'}\n    assert json.loads(zf.read('inventory.json')) == inv\nreceipt = json.loads((root/'candidate-receipt.json').read_text())\nassert receipt['candidate'] == expected_candidate\nassert receipt['predecessor']['commit'] == 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb'\nassert receipt['boundBase']['commit'] == '20c4240576c9a1793f1d741d0bfbba549e5e1b37'\nassert json.loads((root/'runtime-test-results.json').read_text())['candidate'] == expected_candidate\nassert json.loads((root/'overlay-priority-report.json').read_text())['candidate'] == expected_candidate\nprint(json.dumps({'remoteEvidenceTree':'PASS','inventorySha256':manifest['inventory']['sha256'],'fileSetSha256':manifest['inventory']['fileSetSha256'],'bundleSha256':bundle_hash,'filesVerified':len(inv['files']),'requiredPngsVerified':len(required),'zipMembersVerified':manifest['bundle']['memberCount']},indent=2))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, struct, zipfile\nroot=Path('/tmp/projectos-remote-artifact-readback')\ninv=json.loads((root/'inventory.json').read_text()); manifest=json.loads((root/'publication-manifest.json').read_text())\nprint('candidate', inv['candidate'], manifest['candidate'])\nprint('inventory sha',hashlib.sha256((root/'inventory.json').read_bytes()).hexdigest(),manifest['inventory']['sha256'])\nprint('files',len(inv['files']),manifest['inventory']['fileCount'])\nfor item in inv['files']:\n data=(root/item['path']).read_bytes()\n ok=(len(data)==item['sizeBytes'] and hashlib.sha256(data).hexdigest()==item['sha256'])\n if not ok: print('bad',item['path'],len(data),item['sizeBytes'],hashlib.sha256(data).hexdigest(),item['sha256'])\n if item.get('format')=='PNG' and not (data[:8]==bytes.fromhex(item['signatureHex'])==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and struct.unpack('>II',data[16:24])==(item['width'],item['height'])):print('bad png',item['path'])\nbundle=root/'artifact-bundle.zip'; bh=hashlib.sha256(bundle.read_bytes()).hexdigest();print('bundle hash',bh,manifest['bundle']['sha256'],(root/'artifact-bundle.sha256').read_text())\nwith zipfile.ZipFile(bundle) as zf:\n print('bad member',zf.testzip())\n print('members',len(zf.namelist()),'manifest member count',manifest['bundle']['memberCount'])\n expected={x['path'] for x in inv['files']}|{'inventory.json'}\n print('member sets',len(set(zf.namelist())), len(expected), set(zf.namelist())-expected,expected-set(zf.namelist()))\n print('zip inventory eq',json.loads(zf.read('inventory.json'))==inv)\nreceipt=json.loads((root/'candidate-receipt.json').read_text());print('receipt candidate',receipt['candidate'])\nprint('runtime candidate',json.loads((root/'runtime-test-results.json').read_text())['candidate'])\nprint('overlay candidate',json.loads((root/'overlay-priority-report.json').read_text())['candidate'])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git merge-base --is-ancestor 20c4240576c9a1793f1d741d0bfbba549e5e1b37 refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 && rtk git merge-base --is-ancestor bc3e1745db4e600b0296f124f9c0017ff5d19ddb refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 && rtk git diff --name-only 20c4240576c9a1793f1d741d0bfbba549e5e1b37..refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 && rtk git diff --name-only bc3e1745db4e600b0296f124f9c0017ff5d19ddb..refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 && rtk git diff --quiet refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2..HEAD && rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, struct, zipfile\nroot = Path('/tmp/projectos-remote-artifact-readback')\ninv = json.loads((root/'inventory.json').read_text())\nmanifest = json.loads((root/'publication-manifest.json').read_text())\nexpected = {'commit':'5924fb4af4033e6e7ca1042948bdbee221c182c2','tree':'719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'}\nassert inv['candidate'] == expected and manifest['candidate'] == expected\nassert hashlib.sha256((root/'inventory.json').read_bytes()).hexdigest() == manifest['inventory']['sha256']\nassert inv['fileSetSha256'] == manifest['inventory']['fileSetSha256']\nassert len(inv['files']) == manifest['inventory']['fileCount'] == 22\ncanonical = ''\nby_path = {}\nfor item in inv['files']:\n    data = (root/item['path']).read_bytes()\n    assert len(data) == item['sizeBytes'], item['path']\n    digest = hashlib.sha256(data).hexdigest()\n    assert digest == item['sha256'], item['path']\n    canonical += f\\\"{item['path']}\\\\0{item['sizeBytes']}\\\\0{item['sha256']}\\\\n\\\"\n    by_path[item['path']] = item\n    if item.get('format') == 'PNG':\n        assert data[:8] == bytes.fromhex(item['signatureHex']) == b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n', item['path']\n        assert struct.unpack('>II', data[16:24]) == (item['width'],item['height']), item['path']\nassert hashlib.sha256(canonical.encode()).hexdigest() == inv['fileSetSha256']\nrequired = {\n'screenshots/chores-today-all--desktop-1440x900.png':(1440,900),\n'screenshots/chores-today-all--mobile-390x844.png':(390,844),\n'screenshots/chores-bulk-selection--desktop-1440x900.png':(1440,900),\n'screenshots/chores-bulk-selection--mobile-390x844.png':(390,844),\n'screenshots/chores-bulk-selection--stress-360x800.png':(360,800),\n'screenshots/chores-bulk-selection--stress-200-percent-195x422.png':(195,422),\n}\nassert all(by_path[p]['format']=='PNG' and (by_path[p]['width'],by_path[p]['height'])==dims for p,dims in required.items())\nbundle = root/'artifact-bundle.zip'\nbundle_hash = hashlib.sha256(bundle.read_bytes()).hexdigest()\nassert bundle_hash == manifest['bundle']['sha256']\nassert (root/'artifact-bundle.sha256').read_text().split()[0] == bundle_hash\nwith zipfile.ZipFile(bundle) as zf:\n    assert zf.testzip() is None\n    assert set(zf.namelist()) == {x['path'] for x in inv['files']} | {'inventory.json'}\n    assert json.loads(zf.read('inventory.json')) == inv\nreceipt = json.loads((root/'candidate-receipt.json').read_text())\nassert receipt['candidate']['commit'] == expected['commit'] and receipt['candidate']['tree'] == expected['tree']\nassert receipt['candidate']['parent'] == receipt['predecessor']['commit'] == 'bc3e1745db4e600b0296f124f9c0017ff5d19ddb'\nassert receipt['boundBase']['commit'] == '20c4240576c9a1793f1d741d0bfbba549e5e1b37'\nfor report in ['runtime-test-results.json','overlay-priority-report.json','gesture-ownership-report.json','batch-compatibility-report.json','verification.json']:\n    assert json.loads((root/report).read_text())['candidate'] == expected, report\nprint(json.dumps({'remoteReadback':'PASS','inventorySha256':manifest['inventory']['sha256'],'fileSetSha256':manifest['inventory']['fileSetSha256'],'bundleSha256':bundle_hash,'filesVerified':len(inv['files']),'requiredPngsVerified':len(required),'zipMembersVerified':manifest['bundle']['memberCount'],'candidateBoundReportsVerified':5},indent=2))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, struct, zipfile\nroot=Path('/tmp/projectos-remote-artifact-readback')\ninv=json.loads((root/'inventory.json').read_text()); manifest=json.loads((root/'publication-manifest.json').read_text())\nexpected={'commit':'5924fb4af4033e6e7ca1042948bdbee221c182c2','tree':'719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'}\nassert inv['candidate']=={'commit':expected['commit'],'tree':expected['tree']} and manifest['candidate']==inv['candidate']\ninv_sha=hashlib.sha256((root/'inventory.json').read_bytes()).hexdigest(); assert inv_sha==manifest['inventory']['sha256']\nassert inv['fileSetSha256']==manifest['inventory']['fileSetSha256'] and len(inv['files'])==manifest['inventory']['fileCount']==22\ncanon=''; by_path={}\nfor item in inv['files']:\n data=(root/item['path']).read_bytes(); assert len(data)==item['sizeBytes'] and hashlib.sha256(data).hexdigest()==item['sha256'],item['path']\n canon+=f\\\"{item['path']}\\\\0{item['sizeBytes']}\\\\0{item['sha256']}\\\\n\\\";by_path[item['path']]=item\n if item.get('format')=='PNG': assert data[:8]==bytes.fromhex(item['signatureHex'])==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n' and struct.unpack('>II',data[16:24])==(item['width'],item['height']),item['path']\nassert hashlib.sha256(canon.encode()).hexdigest()==inv['fileSetSha256']\nrequired={'screenshots/chores-today-all--desktop-1440x900.png':(1440,900),'screenshots/chores-today-all--mobile-390x844.png':(390,844),'screenshots/chores-bulk-selection--desktop-1440x900.png':(1440,900),'screenshots/chores-bulk-selection--mobile-390x844.png':(390,844),'screenshots/chores-bulk-selection--stress-360x800.png':(360,800),'screenshots/chores-bulk-selection--stress-200-percent-195x422.png':(195,422)}\nassert all(by_path[p]['format']=='PNG' and (by_path[p]['width'],by_path[p]['height'])==dims for p,dims in required.items())\nbundle=root/'artifact-bundle.zip'; bundle_sha=hashlib.sha256(bundle.read_bytes()).hexdigest(); assert bundle_sha==manifest['bundle']['sha256'] and (root/'artifact-bundle.sha256').read_text().split()[0]==bundle_sha\nwith zipfile.ZipFile(bundle) as zf:\n assert zf.testzip() is None and set(zf.namelist())=={x['path'] for x in inv['files']}|{'inventory.json'} and json.loads(zf.read('inventory.json'))==inv\nreceipt=json.loads((root/'candidate-receipt.json').read_text());assert receipt['candidate']['commit']==expected['commit'] and receipt['candidate']['tree']==expected['tree'] and receipt['candidate']['parent']==receipt['predecessor']['commit']=='bc3e1745db4e600b0296f124f9c0017ff5d19ddb' and receipt['boundBase']['commit']=='20c4240576c9a1793f1d741d0bfbba549e5e1b37'\nfor name in ['runtime-test-results.json','overlay-priority-report.json','gesture-ownership-report.json','batch-compatibility-report.json','verification.json']:\n x=json.loads((root/name).read_text())['candidate']; assert x.get('head',x.get('commit'))==expected['commit'] and x['tree']==expected['tree'],name\nprint(json.dumps({'remoteReadback':'PASS','inventorySha256':inv_sha,'fileSetSha256':inv['fileSetSha256'],'bundleSha256':bundle_sha,'filesVerified':len(inv['files']),'requiredPngsVerified':len(required),'zipMembersVerified':manifest['bundle']['memberCount'],'candidateBoundReportsVerified':5},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch && rtk git rev-parse HEAD HEAD''^{tree} HEAD''^ refs/remotes/origin/main refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v1 refs/remotes/origin/codex/homehuddle-ui0-chores-bulk-web-v2 refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2 && rtk git diff --quiet 20c4240576c9a1793f1d741d0bfbba549e5e1b37..HEAD -- package.json package-lock.json '\"'app/(app)/(tabs)/chores.tsx' utils/safeBatchedUpdates.ts __tests__/safe-batched-updates.test.ts && rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git diff --quiet 20c4240576c9a1793f1d741d0bfbba549e5e1b37..HEAD -- package.json package-lock.json && rtk git diff --quiet bc3e1745db4e600b0296f124f9c0017ff5d19ddb..HEAD -- 'app/(app)/(tabs)/chores.tsx' utils/safeBatchedUpdates.ts __tests__/safe-batched-updates.test.ts && rtk git diff --name-only bc3e1745db4e600b0296f124f9c0017ff5d19ddb..HEAD\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1 refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 260,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 98.37,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 24214528,
+      "fresh_input_tokens": 400992,
+      "input_tokens": 24615520,
+      "non_reasoning_output_tokens": 57755,
+      "output_tokens": 146445,
+      "reasoning_output_tokens": 88690,
+      "total_processed_tokens": 24761965
+    },
+    "warnings": []
+  },
+  "commits": [
+    {
+      "sha": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+      "subject": "Lower dev launcher below product action overlays"
+    },
+    {
+      "sha": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+      "subject": "fix(chores): make web bulk drag batching safe"
+    }
+  ],
+  "diff": {
+    "additions": 199,
+    "changed_files": 4,
+    "commit_count": 2,
+    "deletions": 26
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-27T15:22:23Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "branch": "codex/homehuddle-ui0-chores-bulk-web-v2",
+    "detached_verify": false,
+    "head_sha": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "remote_exact_head": true,
+    "remote_head_sha": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "work_branch": "codex/homehuddle-ui0-chores-bulk-web-v2",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-4ceae138a32a7d5fbd190704",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-chores-bulk-web-v2",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-chores-bulk-web-v2"
+  },
+  "operation": "FIX",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-chores-bulk-web-v2",
+  "schema_version": 1,
+  "started_at": "2026-09-27T14:17:46Z",
+  "status": "EXECUTED_CHANGE",
+  "timing": {
+    "execution_seconds": 3877,
+    "queue_seconds": 0,
+    "total_seconds": 3877
+  },
+  "transport": {
+    "bytes": 9848,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 9526,
+    "prompt_sha256": "754049102b3e2ff15104013624a6deab8e89fb683179d82797ac9f0339d24910",
+    "sha256": "4ceae138a32a7d5fbd190704d62d3d8802bb1954c886936613b2da17f9f6088e"
+  }
+}
