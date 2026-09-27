@@ -1,0 +1,19 @@
+{
+  "candidate": {
+    "commit": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "targetRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-chores-bulk-web-v2",
+  "bundle": {
+    "path": "artifact-bundle.zip",
+    "sha256": "b768563b7469b885106dea7854978dd19f415efe4aae79cd748e38195c51d8dc",
+    "memberCount": 23
+  },
+  "inventory": {
+    "path": "inventory.json",
+    "sha256": "338e45978c37ac366406dbe760e1c6a2a8be0d210b0e574dab79f7174a0a27ff",
+    "fileSetSha256": "caceb7627442de68b2067a24d9de480acae879839b35b1f58af9e013d6d39177",
+    "fileCount": 22
+  },
+  "hashesAreDetachedToAvoidSelfReference": true
+}

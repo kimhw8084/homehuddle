@@ -1,0 +1,175 @@
+{
+  "candidate": {
+    "commit": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "algorithm": "SHA-256; entries sorted by UTF-8 relative path; PNG IHDR dimensions and signature recorded",
+  "fileCount": 22,
+  "fileSetSha256": "caceb7627442de68b2067a24d9de480acae879839b35b1f58af9e013d6d39177",
+  "files": [
+    {
+      "path": "batch-compatibility-report.json",
+      "sizeBytes": 1212,
+      "sha256": "b03ce9f2f30f9aa4dc965f7ab519f4bc37f0411d0239a063add19c53c3c628a6"
+    },
+    {
+      "path": "candidate-receipt.json",
+      "sizeBytes": 1449,
+      "sha256": "ad0253a4be483b1a1aad8b32d5403b003e4ee74525dc1d6bbca0dd5dc121bdbc"
+    },
+    {
+      "path": "gesture-ownership-report.json",
+      "sizeBytes": 1475,
+      "sha256": "bb69c6fa791dccb1641e2420708786b6a8ba02138ef5294013016e34267e9dba"
+    },
+    {
+      "path": "overlay-priority-report.json",
+      "sizeBytes": 15632,
+      "sha256": "c5f86d7e048d6e4dfe8ffb58f6ffbdcb5beb53a57b25bcbef4f1149f6bab90c7"
+    },
+    {
+      "path": "predecessor-carryforward.json",
+      "sizeBytes": 1378,
+      "sha256": "8b4da78b9383ea23cc450312f94127c626a27be518483e9736e0f1983b231397"
+    },
+    {
+      "path": "predecessor/screenshots/r1-chores-bulk--desktop-1440x900.png",
+      "sizeBytes": 88248,
+      "sha256": "3e43ae6b79ab906dc6392edb4b4db387790e4721b259c6613f5bdeff9fac5883",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "predecessor/screenshots/r1-chores-bulk--mobile-390x844.png",
+      "sizeBytes": 66287,
+      "sha256": "9eee1b1ae534327147ce9e45be9db3223baccd38035166d09c8bb99772391c08",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "predecessor/screenshots/r1-chores-bulk--stress-200-percent-195x422.png",
+      "sizeBytes": 19748,
+      "sha256": "7d5577d45d8ee28a49ee91dd7f72970eb515f7f776aabed9ac7b12314c44299e",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 195,
+      "height": 422
+    },
+    {
+      "path": "predecessor/screenshots/r1-chores-bulk--stress-360x800.png",
+      "sizeBytes": 63241,
+      "sha256": "a11b03173398740a6e5d3fc475f003a14cc631a399d79b4ec97b46ebcc910411",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "path": "predecessor/screenshots/r1-chores-today-all--desktop-1440x900.png",
+      "sizeBytes": 96148,
+      "sha256": "6129bfdc32961a843e00ff40ad688502ca43225f0f590d0684572e4209a38069",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "predecessor/screenshots/r1-chores-today-all--mobile-390x844.png",
+      "sizeBytes": 72162,
+      "sha256": "9a11694eb0d8bfb55b665b0468d01f3fc1421b2968d244e0cd55ecd6fb22366b",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "runtime-console-network.json",
+      "sizeBytes": 8602,
+      "sha256": "597c7b292876fe08dab335dc960bb0eb98ec1fd5d1b7c58bfda6328843ad68d8"
+    },
+    {
+      "path": "runtime-test-results.json",
+      "sizeBytes": 25197,
+      "sha256": "36216bf26ed44f199d1f2f78587adac62e1926f5994fc4d35aae0e8319fe5144"
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--desktop-1440x900.png",
+      "sizeBytes": 87900,
+      "sha256": "28e32230223027c8b16a9b88833d628ade877a3d514ef28a3d71d6a49055f0bc",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--mobile-390x844.png",
+      "sizeBytes": 65991,
+      "sha256": "32754e5541b1525cc0362662aefe2fcdb2d3c9af13775f5a87a8e02590c5542b",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--stress-200-percent-195x422.png",
+      "sizeBytes": 18675,
+      "sha256": "2d16d0fdedbb2d03d816fe458d5222bf95fa477bcc964469c48b333458e8f815",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 195,
+      "height": 422
+    },
+    {
+      "path": "screenshots/chores-bulk-selection--stress-360x800.png",
+      "sizeBytes": 62963,
+      "sha256": "32c088088307aa6414d3d1cd4be143173b2ef81ba903b441ad51fce5012825c9",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "path": "screenshots/chores-today-all--desktop-1440x900.png",
+      "sizeBytes": 96169,
+      "sha256": "422c388170f142980c0060d7f46043a8789503cbd2e0b9dc16c9a07e88563031",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "screenshots/chores-today-all--mobile-390x844.png",
+      "sizeBytes": 72191,
+      "sha256": "bb65e1706830d7ff3be627b175cc46e14842fd9204ec634486016eee36af2092",
+      "format": "PNG",
+      "signatureHex": "89504e470d0a1a0a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "verification.json",
+      "sizeBytes": 2237,
+      "sha256": "5de3985c82e3d7122f812d0ffaacdb1ab178f3eb20b2ff93037abbd4fb85b26c"
+    },
+    {
+      "path": "visual-comparison.json",
+      "sizeBytes": 3729,
+      "sha256": "5baabde7dc8909f642e276f1ae4891c6802701e46dcc646e308d3b60fe9b4040"
+    },
+    {
+      "path": "visual-review.md",
+      "sizeBytes": 2656,
+      "sha256": "fc580b5769877c104d1f1a1ff4edbe8add2d5a99c427f377c56f1aa017980c81"
+    }
+  ],
+  "exclusions": [
+    "inventory.json (hashed by publication-manifest.json)",
+    "artifact-bundle.zip (hashed by artifact-bundle.sha256 and publication-manifest.json)",
+    "artifact-bundle.sha256",
+    "publication-manifest.json"
+  ]
+}

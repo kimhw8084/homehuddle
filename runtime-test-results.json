@@ -1,0 +1,860 @@
+{
+  "candidate": {
+    "head": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "runtime": {
+    "url": "http://127.0.0.1:8082",
+    "EXPO_NO_DOTENV": "1",
+    "supabaseUrl": "http://127.0.0.1:54321",
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "browser": "Google Chrome headless",
+    "deviceScaleFactor": 1
+  },
+  "normal": {
+    "desktop": {
+      "url": "http://127.0.0.1:8082/chores",
+      "tabSelected": "true",
+      "v1Visible": true,
+      "headerText": "SEP 2026\nALL\nME\nSun\n27\nMon\n28\nTue\n29\nWed\n30\n",
+      "logBox": false
+    },
+    "mobile": {
+      "url": "http://127.0.0.1:8082/chores",
+      "tabSelected": "true",
+      "v1Visible": true,
+      "headerText": "SEP 2026\nALL\nME\nSun\n27\nMon\n28\nTue\n29\nWed\n30\n",
+      "logBox": false
+    }
+  },
+  "noMoveDrag": {
+    "unchanged": true,
+    "before": [
+      "chore-content-v18",
+      "chore-content-v9",
+      "chore-content-v6",
+      "chore-content-v13",
+      "chore-content-v1",
+      "chore-content-v2",
+      "chore-content-v4",
+      "chore-content-v3",
+      "chore-content-v5",
+      "chore-content-v7",
+      "chore-content-v14",
+      "chore-content-v8",
+      "chore-content-v10"
+    ],
+    "after": [
+      "chore-content-v18",
+      "chore-content-v9",
+      "chore-content-v6",
+      "chore-content-v13",
+      "chore-content-v1",
+      "chore-content-v2",
+      "chore-content-v4",
+      "chore-content-v3",
+      "chore-content-v5",
+      "chore-content-v7",
+      "chore-content-v14",
+      "chore-content-v8",
+      "chore-content-v10"
+    ],
+    "batchingException": false
+  },
+  "bulkEntry": {
+    "selectedOne": "1",
+    "selectedTwo": "2",
+    "selectedBackOne": "1"
+  },
+  "bulkContentDisabled": {
+    "orderUnchanged": true,
+    "selectedCount": "1"
+  },
+  "overlay": {
+    "viewports": {
+      "desktop1440": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "document": {
+          "clientWidth": 1440,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false
+        },
+        "bar": {
+          "x": 0,
+          "y": 751,
+          "width": 1440,
+          "height": 64,
+          "bottom": 815
+        },
+        "tabBar": {
+          "x": 0,
+          "y": 825,
+          "width": 1440,
+          "height": 50,
+          "top": 825
+        },
+        "barAboveTabBar": true,
+        "fab": {
+          "x": 1376,
+          "y": 716,
+          "width": 44,
+          "height": 44,
+          "opacity": "1",
+          "ariaHidden": null,
+          "zIndex": "1000"
+        },
+        "fabClipFrame": {
+          "x": 1376,
+          "y": 716,
+          "width": 44,
+          "height": 35,
+          "overflow": "hidden",
+          "pointerEvents": "none"
+        },
+        "actions": {
+          "complete": {
+            "visible": true,
+            "rect": {
+              "x": 243.33,
+              "y": 763,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 263.33,
+              "y": 783
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-complete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "assign": {
+            "visible": true,
+            "rect": {
+              "x": 478.66,
+              "y": 763,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 498.66,
+              "y": 783
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-assign",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "defer": {
+            "visible": true,
+            "rect": {
+              "x": 714,
+              "y": 763,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 734,
+              "y": 783
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-defer",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "delete": {
+            "visible": true,
+            "rect": {
+              "x": 949.33,
+              "y": 763,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 969.33,
+              "y": 783
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-delete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "exit": {
+            "visible": true,
+            "rect": {
+              "x": 1184.66,
+              "y": 763,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 1204.66,
+              "y": 783
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-exit",
+              "isDevFab": false
+            },
+            "reachable": true
+          }
+        }
+      },
+      "mobile390": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false
+        },
+        "bar": {
+          "x": 0,
+          "y": 695,
+          "width": 390,
+          "height": 64,
+          "bottom": 759
+        },
+        "tabBar": {
+          "x": 0,
+          "y": 769,
+          "width": 390,
+          "height": 50,
+          "top": 769
+        },
+        "barAboveTabBar": true,
+        "fab": {
+          "x": 326,
+          "y": 660,
+          "width": 44,
+          "height": 44,
+          "opacity": "1",
+          "ariaHidden": null,
+          "zIndex": "1000"
+        },
+        "fabClipFrame": {
+          "x": 326,
+          "y": 660,
+          "width": 44,
+          "height": 35,
+          "overflow": "hidden",
+          "pointerEvents": "none"
+        },
+        "actions": {
+          "complete": {
+            "visible": true,
+            "rect": {
+              "x": 68.33,
+              "y": 707,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 88.33,
+              "y": 727
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-complete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "assign": {
+            "visible": true,
+            "rect": {
+              "x": 128.66,
+              "y": 707,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 148.66,
+              "y": 727
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-assign",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "defer": {
+            "visible": true,
+            "rect": {
+              "x": 189,
+              "y": 707,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 209,
+              "y": 727
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-defer",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "delete": {
+            "visible": true,
+            "rect": {
+              "x": 249.33,
+              "y": 707,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 269.33,
+              "y": 727
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-delete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "exit": {
+            "visible": true,
+            "rect": {
+              "x": 309.66,
+              "y": 707,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 329.66,
+              "y": 727
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-exit",
+              "isDevFab": false
+            },
+            "reachable": true
+          }
+        }
+      },
+      "stress360": {
+        "viewport": {
+          "width": 360,
+          "height": 800
+        },
+        "document": {
+          "clientWidth": 360,
+          "scrollWidth": 360,
+          "bodyScrollWidth": 360,
+          "horizontalOverflow": false
+        },
+        "bar": {
+          "x": 0,
+          "y": 651,
+          "width": 360,
+          "height": 64,
+          "bottom": 715
+        },
+        "tabBar": {
+          "x": 0,
+          "y": 725,
+          "width": 360,
+          "height": 50,
+          "top": 725
+        },
+        "barAboveTabBar": true,
+        "fab": {
+          "x": 296,
+          "y": 616,
+          "width": 44,
+          "height": 44,
+          "opacity": "1",
+          "ariaHidden": null,
+          "zIndex": "1000"
+        },
+        "fabClipFrame": {
+          "x": 296,
+          "y": 616,
+          "width": 44,
+          "height": 35,
+          "overflow": "hidden",
+          "pointerEvents": "none"
+        },
+        "actions": {
+          "complete": {
+            "visible": true,
+            "rect": {
+              "x": 63.33,
+              "y": 663,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 83.33,
+              "y": 683
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-complete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "assign": {
+            "visible": true,
+            "rect": {
+              "x": 118.66,
+              "y": 663,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 138.66,
+              "y": 683
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-assign",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "defer": {
+            "visible": true,
+            "rect": {
+              "x": 174,
+              "y": 663,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 194,
+              "y": 683
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-defer",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "delete": {
+            "visible": true,
+            "rect": {
+              "x": 229.33,
+              "y": 663,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 249.33,
+              "y": 683
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-delete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "exit": {
+            "visible": true,
+            "rect": {
+              "x": 284.66,
+              "y": 663,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 304.66,
+              "y": 683
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-exit",
+              "isDevFab": false
+            },
+            "reachable": true
+          }
+        }
+      },
+      "stress195": {
+        "viewport": {
+          "width": 195,
+          "height": 422
+        },
+        "document": {
+          "clientWidth": 195,
+          "scrollWidth": 195,
+          "bodyScrollWidth": 195,
+          "horizontalOverflow": false
+        },
+        "bar": {
+          "x": 0,
+          "y": 233,
+          "width": 195,
+          "height": 104,
+          "bottom": 337
+        },
+        "tabBar": {
+          "x": 0,
+          "y": 347,
+          "width": 195,
+          "height": 50,
+          "top": 347
+        },
+        "barAboveTabBar": true,
+        "fab": {
+          "x": 131,
+          "y": 238,
+          "width": 44,
+          "height": 44,
+          "opacity": "0",
+          "ariaHidden": "true",
+          "zIndex": "1000"
+        },
+        "fabClipFrame": {
+          "x": 131,
+          "y": 238,
+          "width": 44,
+          "height": 44,
+          "overflow": "hidden",
+          "pointerEvents": "none"
+        },
+        "actions": {
+          "complete": {
+            "visible": true,
+            "rect": {
+              "x": 49.75,
+              "y": 245,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 69.75,
+              "y": 265
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-complete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "assign": {
+            "visible": true,
+            "rect": {
+              "x": 91.5,
+              "y": 245,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 111.5,
+              "y": 265
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-assign",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "defer": {
+            "visible": true,
+            "rect": {
+              "x": 133.25,
+              "y": 245,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 153.25,
+              "y": 265
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-defer",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "delete": {
+            "visible": true,
+            "rect": {
+              "x": 63.66,
+              "y": 285,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 83.66,
+              "y": 305
+            },
+            "elementFromPoint": {
+              "tag": "svg",
+              "actionTestId": "bulk-selection-delete",
+              "isDevFab": false
+            },
+            "reachable": true
+          },
+          "exit": {
+            "visible": true,
+            "rect": {
+              "x": 119.33,
+              "y": 285,
+              "width": 40,
+              "height": 40
+            },
+            "center": {
+              "x": 139.33,
+              "y": 305
+            },
+            "elementFromPoint": {
+              "tag": "path",
+              "actionTestId": "bulk-selection-exit",
+              "isDevFab": false
+            },
+            "reachable": true
+          }
+        }
+      }
+    }
+  },
+  "assignSmoke": {
+    "clicked": true,
+    "dialogs": [],
+    "barRemains": true,
+    "selectedCount": "1"
+  },
+  "devTools": {
+    "beforeExit": {
+      "viewport": {
+        "width": 195,
+        "height": 422
+      },
+      "fabRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameOpacity": "0",
+      "framePointer": "none",
+      "ariaHidden": "true",
+      "centerTopIsFab": false
+    },
+    "exited": {
+      "barGone": true,
+      "countGone": true
+    },
+    "afterExit": {
+      "viewport": {
+        "width": 195,
+        "height": 422
+      },
+      "fabRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameOpacity": "1",
+      "framePointer": "none",
+      "ariaHidden": null,
+      "centerTopIsFab": true
+    },
+    "devSheet": {
+      "opened": true,
+      "activeAccountVisible": true,
+      "closed": true
+    }
+  },
+  "defer": {
+    "clickedViaTestSelectorAt": {
+      "width": 195,
+      "height": 422
+    },
+    "opened": true,
+    "barExited": true,
+    "cancelled": true,
+    "choreOrderUnchanged": true
+  },
+  "supabaseCheck": {
+    "url": "http://127.0.0.1:54321/auth/v1/settings",
+    "status": 200,
+    "body": {
+      "disable_signup": false,
+      "external": {}
+    }
+  },
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "log",
+      "text": "Running application \"main\" with appParams:\n {rootTag: #root, hydrate: undefined} \nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."
+    },
+    {
+      "type": "warning",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "type": "warning",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "type": "warning",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "type": "warning",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "type": "warning",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "error",
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    }
+  ],
+  "network": [
+    {
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable"
+    },
+    {
+      "kind": "request",
+      "method": "HEAD",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "request",
+      "method": "HEAD",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "requestfailed",
+      "error": "net::ERR_ABORTED",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "requestfailed",
+      "error": "net::ERR_ABORTED",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:54321/auth/v1/settings"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:54321/auth/v1/settings"
+    }
+  ]
+}

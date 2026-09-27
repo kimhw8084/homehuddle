@@ -1,0 +1,35 @@
+{
+  "status": "verified",
+  "repository": "kimhw8084/homehuddle",
+  "remoteBranch": "refs/heads/codex/homehuddle-ui0-chores-bulk-web-v1",
+  "commit": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+  "tree": "82e504414c4a92014d0134fde1f857d15e326130",
+  "soleParent": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+  "exactDiffPaths": [
+    "app/(app)/(tabs)/chores.tsx",
+    "utils/safeBatchedUpdates.ts",
+    "__tests__/safe-batched-updates.test.ts"
+  ],
+  "carriedForwardUnchangedFiles": {
+    "app/(app)/(tabs)/chores.tsx": {
+      "blob": "f41e9349e6acf0c9000d33e1e3614a489101d47d",
+      "sha256": "9a86f048457afe76d1c6d9a9579cdee92aba64211ca7e2db9999cbd01788d5ce"
+    },
+    "utils/safeBatchedUpdates.ts": {
+      "blob": "813325edb029960da3e939f99c49f7f436f02425",
+      "sha256": "010f7d36c5431e42035d3967f068ef3168ed4b529672fb66d14d46bca4f2ee75"
+    },
+    "__tests__/safe-batched-updates.test.ts": {
+      "blob": "322e2e3128e83b84206eeeca6862f2fc43c06387",
+      "sha256": "d3697d6465eb2cdd74c3613fce4bc809dd82660b0972404a836c3e492a42e80b"
+    }
+  },
+  "candidateParent": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+  "identityPreservingFastForward": true,
+  "ancestry": [
+    "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+    "5924fb4af4033e6e7ca1042948bdbee221c182c2"
+  ],
+  "r2DeltaPath": "components/DevToolsOverlay.tsx"
+}

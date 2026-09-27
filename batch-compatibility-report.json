@@ -1,0 +1,38 @@
+{
+  "candidate": {
+    "head": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "helper": {
+    "path": "utils/safeBatchedUpdates.ts",
+    "semantics": "Call the provided batching primitive exactly once when callable; otherwise run the callback directly exactly once. Callback exceptions propagate in either path.",
+    "unchangedFromPredecessor": true
+  },
+  "callSites": [
+    {
+      "file": "app/(app)/(tabs)/chores.tsx",
+      "line": 1801,
+      "use": "drag-end reorder updates through runBatchedUpdates"
+    },
+    {
+      "file": "app/(app)/(tabs)/chores.tsx",
+      "line": 4500,
+      "use": "mount-time overdue and missed-streak updates through runBatchedUpdates"
+    }
+  ],
+  "focusedTests": {
+    "file": "__tests__/safe-batched-updates.test.ts",
+    "cases": [
+      "callable batching",
+      "undefined/null/false/string fallbacks",
+      "exception propagation through fallback",
+      "exception propagation through callable primitive"
+    ],
+    "result": "PASS"
+  },
+  "runtimeMount": {
+    "normalChoresMounted": true,
+    "visibleLogBox": false,
+    "dragEndNoMove": "completed with unchanged order and no batching exception"
+  }
+}

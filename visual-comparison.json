@@ -1,0 +1,166 @@
+{
+  "method": "Pillow RGB per-pixel exact comparison of Chrome screenshots at DPR 1. The R1 render was compiled from the exact predecessor DevToolsOverlay.tsx source with all other R1 files and runtime state held equal. Normal images allow no pixel differences; bulk differences are checked against the prior FAB rectangle.",
+  "candidateCommit": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+  "predecessorCommit": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+  "comparisons": [
+    {
+      "pair": "normal-1440x900",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        331,
+        719,
+        1420,
+        859
+      ],
+      "changedPixelCount": 104,
+      "changedPixelRatio": 8e-05,
+      "expectedFabRectangle": null,
+      "changedOutsideFabRectangle": 104,
+      "outsideFabDifferenceBoundingBox": [
+        331,
+        719,
+        1420,
+        859
+      ]
+    },
+    {
+      "pair": "normal-390x844",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        251,
+        663,
+        370,
+        721
+      ],
+      "changedPixelCount": 102,
+      "changedPixelRatio": 0.00031,
+      "expectedFabRectangle": null,
+      "changedOutsideFabRectangle": 102,
+      "outsideFabDifferenceBoundingBox": [
+        251,
+        663,
+        370,
+        721
+      ]
+    },
+    {
+      "pair": "bulk-1440x900",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        246,
+        751,
+        1416,
+        857
+      ],
+      "changedPixelCount": 283,
+      "changedPixelRatio": 0.000218,
+      "expectedFabRectangle": {
+        "left": 1376,
+        "top": 716,
+        "right": 1420,
+        "bottom": 760
+      },
+      "changedOutsideFabRectangle": 43,
+      "outsideFabDifferenceBoundingBox": [
+        246,
+        765,
+        1222,
+        857
+      ]
+    },
+    {
+      "pair": "bulk-390x844",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        99,
+        663,
+        370,
+        744
+      ],
+      "changedPixelCount": 300,
+      "changedPixelRatio": 0.000911,
+      "expectedFabRectangle": {
+        "left": 326,
+        "top": 660,
+        "right": 370,
+        "bottom": 704
+      },
+      "changedOutsideFabRectangle": 12,
+      "outsideFabDifferenceBoundingBox": [
+        99,
+        710,
+        348,
+        744
+      ]
+    },
+    {
+      "pair": "bulk-360x800",
+      "dimensions": {
+        "width": 360,
+        "height": 800
+      },
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        184,
+        619,
+        340,
+        700
+      ],
+      "changedPixelCount": 297,
+      "changedPixelRatio": 0.001031,
+      "expectedFabRectangle": {
+        "left": 296,
+        "top": 616,
+        "right": 340,
+        "bottom": 660
+      },
+      "changedOutsideFabRectangle": 8,
+      "outsideFabDifferenceBoundingBox": [
+        184,
+        681,
+        212,
+        700
+      ]
+    },
+    {
+      "pair": "bulk-195x422",
+      "dimensions": {
+        "width": 195,
+        "height": 422
+      },
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        131,
+        238,
+        175,
+        282
+      ],
+      "changedPixelCount": 1576,
+      "changedPixelRatio": 0.019152,
+      "expectedFabRectangle": {
+        "left": 131,
+        "top": 238,
+        "right": 175,
+        "bottom": 282
+      },
+      "changedOutsideFabRectangle": 0,
+      "outsideFabDifferenceBoundingBox": null
+    }
+  ]
+}

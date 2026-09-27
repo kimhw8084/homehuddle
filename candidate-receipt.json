@@ -1,0 +1,39 @@
+{
+  "operation": "FIX",
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "request": "homehuddle-ui0-chores-bulk-web-v2",
+  "workBranch": "refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2",
+  "targetBranch": "refs/heads/main",
+  "boundBase": {
+    "commit": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+    "tree": "add34f611ec80ba46ced7f3db8f3114e6cf157de"
+  },
+  "predecessor": {
+    "commit": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+    "tree": "82e504414c4a92014d0134fde1f857d15e326130",
+    "parent": "20c4240576c9a1793f1d741d0bfbba549e5e1b37"
+  },
+  "candidate": {
+    "commit": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "parent": "bc3e1745db4e600b0296f124f9c0017ff5d19ddb"
+  },
+  "twoCommitAncestryFromBase": [
+    "bc3e1745db4e600b0296f124f9c0017ff5d19ddb",
+    "5924fb4af4033e6e7ca1042948bdbee221c182c2"
+  ],
+  "candidateRemoteReadback": {
+    "ref": "refs/heads/codex/homehuddle-ui0-chores-bulk-web-v2",
+    "commit": "5924fb4af4033e6e7ca1042948bdbee221c182c2"
+  },
+  "remoteMainAtFreshRead": "20c4240576c9a1793f1d741d0bfbba549e5e1b37",
+  "changedPathsFromBase": [
+    "__tests__/safe-batched-updates.test.ts",
+    "app/(app)/(tabs)/chores.tsx",
+    "components/DevToolsOverlay.tsx",
+    "utils/safeBatchedUpdates.ts"
+  ],
+  "packageJsonAndLockUnchanged": true,
+  "sourceFilesAndReportsAreCandidateBoundTo": "5924fb4af4033e6e7ca1042948bdbee221c182c2"
+}

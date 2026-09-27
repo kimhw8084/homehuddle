@@ -1,0 +1,685 @@
+{
+  "candidate": {
+    "head": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "layerFacts": {
+    "devFab": {
+      "source": "components/DevToolsOverlay.tsx",
+      "zIndex": 1000,
+      "elevation": 10,
+      "normalPosition": "right 20px, bottom 140px",
+      "size": "44x44",
+      "webOverlapHandling": "MutationObserver measures actual launcher/action-bar rectangles, crops only intersecting FAB pixels and fully hides the FAB when fully covered; no viewport-specific coordinates or global pointer suppression."
+    },
+    "productBulkBar": {
+      "source": "app/(app)/(tabs)/chores.tsx",
+      "zIndex": 9999,
+      "elevation": 20,
+      "testID": "bulk-selection-action-bar"
+    },
+    "originalR1StressOverlap": {
+      "viewport": "195x422",
+      "launcher": {
+        "left": 131,
+        "top": 238,
+        "right": 175,
+        "bottom": 282
+      },
+      "defer": {
+        "left": 133.25,
+        "top": 245,
+        "right": 173.25,
+        "bottom": 285
+      },
+      "candidateOutcome": "R2 launcher opacity 0, aria-hidden true; all intersections yield to the Product bar."
+    }
+  },
+  "bulkSelectionViewports": {
+    "desktop1440": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "actionBar": {
+        "x": 0,
+        "y": 751,
+        "width": 1440,
+        "height": 64,
+        "bottom": 815
+      },
+      "tabBar": {
+        "x": 0,
+        "y": 825,
+        "width": 1440,
+        "height": 50,
+        "top": 825
+      },
+      "barAboveTabBar": true,
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "horizontalOverflow": false
+      },
+      "fab": {
+        "x": 1376,
+        "y": 716,
+        "width": 44,
+        "height": 44,
+        "opacity": "1",
+        "ariaHidden": null,
+        "zIndex": "1000"
+      },
+      "fabClipFrame": {
+        "x": 1376,
+        "y": 716,
+        "width": 44,
+        "height": 35,
+        "overflow": "hidden",
+        "pointerEvents": "none"
+      },
+      "buttons": {
+        "complete": {
+          "visible": true,
+          "rect": {
+            "x": 243.33,
+            "y": 763,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 263.33,
+            "y": 783
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-complete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "assign": {
+          "visible": true,
+          "rect": {
+            "x": 478.66,
+            "y": 763,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 498.66,
+            "y": 783
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-assign",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "defer": {
+          "visible": true,
+          "rect": {
+            "x": 714,
+            "y": 763,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 734,
+            "y": 783
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-defer",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "delete": {
+          "visible": true,
+          "rect": {
+            "x": 949.33,
+            "y": 763,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 969.33,
+            "y": 783
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-delete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "exit": {
+          "visible": true,
+          "rect": {
+            "x": 1184.66,
+            "y": 763,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 1204.66,
+            "y": 783
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-exit",
+            "isDevFab": false
+          },
+          "reachable": true
+        }
+      },
+      "allFiveVisible": true,
+      "allFiveCentersResolveToAction": true
+    },
+    "mobile390": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionBar": {
+        "x": 0,
+        "y": 695,
+        "width": 390,
+        "height": 64,
+        "bottom": 759
+      },
+      "tabBar": {
+        "x": 0,
+        "y": 769,
+        "width": 390,
+        "height": 50,
+        "top": 769
+      },
+      "barAboveTabBar": true,
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false
+      },
+      "fab": {
+        "x": 326,
+        "y": 660,
+        "width": 44,
+        "height": 44,
+        "opacity": "1",
+        "ariaHidden": null,
+        "zIndex": "1000"
+      },
+      "fabClipFrame": {
+        "x": 326,
+        "y": 660,
+        "width": 44,
+        "height": 35,
+        "overflow": "hidden",
+        "pointerEvents": "none"
+      },
+      "buttons": {
+        "complete": {
+          "visible": true,
+          "rect": {
+            "x": 68.33,
+            "y": 707,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 88.33,
+            "y": 727
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-complete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "assign": {
+          "visible": true,
+          "rect": {
+            "x": 128.66,
+            "y": 707,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 148.66,
+            "y": 727
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-assign",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "defer": {
+          "visible": true,
+          "rect": {
+            "x": 189,
+            "y": 707,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 209,
+            "y": 727
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-defer",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "delete": {
+          "visible": true,
+          "rect": {
+            "x": 249.33,
+            "y": 707,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 269.33,
+            "y": 727
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-delete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "exit": {
+          "visible": true,
+          "rect": {
+            "x": 309.66,
+            "y": 707,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 329.66,
+            "y": 727
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-exit",
+            "isDevFab": false
+          },
+          "reachable": true
+        }
+      },
+      "allFiveVisible": true,
+      "allFiveCentersResolveToAction": true
+    },
+    "stress360": {
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "actionBar": {
+        "x": 0,
+        "y": 651,
+        "width": 360,
+        "height": 64,
+        "bottom": 715
+      },
+      "tabBar": {
+        "x": 0,
+        "y": 725,
+        "width": 360,
+        "height": 50,
+        "top": 725
+      },
+      "barAboveTabBar": true,
+      "document": {
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "bodyScrollWidth": 360,
+        "horizontalOverflow": false
+      },
+      "fab": {
+        "x": 296,
+        "y": 616,
+        "width": 44,
+        "height": 44,
+        "opacity": "1",
+        "ariaHidden": null,
+        "zIndex": "1000"
+      },
+      "fabClipFrame": {
+        "x": 296,
+        "y": 616,
+        "width": 44,
+        "height": 35,
+        "overflow": "hidden",
+        "pointerEvents": "none"
+      },
+      "buttons": {
+        "complete": {
+          "visible": true,
+          "rect": {
+            "x": 63.33,
+            "y": 663,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 83.33,
+            "y": 683
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-complete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "assign": {
+          "visible": true,
+          "rect": {
+            "x": 118.66,
+            "y": 663,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 138.66,
+            "y": 683
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-assign",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "defer": {
+          "visible": true,
+          "rect": {
+            "x": 174,
+            "y": 663,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 194,
+            "y": 683
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-defer",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "delete": {
+          "visible": true,
+          "rect": {
+            "x": 229.33,
+            "y": 663,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 249.33,
+            "y": 683
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-delete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "exit": {
+          "visible": true,
+          "rect": {
+            "x": 284.66,
+            "y": 663,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 304.66,
+            "y": 683
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-exit",
+            "isDevFab": false
+          },
+          "reachable": true
+        }
+      },
+      "allFiveVisible": true,
+      "allFiveCentersResolveToAction": true
+    },
+    "stress195": {
+      "viewport": {
+        "width": 195,
+        "height": 422
+      },
+      "actionBar": {
+        "x": 0,
+        "y": 233,
+        "width": 195,
+        "height": 104,
+        "bottom": 337
+      },
+      "tabBar": {
+        "x": 0,
+        "y": 347,
+        "width": 195,
+        "height": 50,
+        "top": 347
+      },
+      "barAboveTabBar": true,
+      "document": {
+        "clientWidth": 195,
+        "scrollWidth": 195,
+        "bodyScrollWidth": 195,
+        "horizontalOverflow": false
+      },
+      "fab": {
+        "x": 131,
+        "y": 238,
+        "width": 44,
+        "height": 44,
+        "opacity": "0",
+        "ariaHidden": "true",
+        "zIndex": "1000"
+      },
+      "fabClipFrame": {
+        "x": 131,
+        "y": 238,
+        "width": 44,
+        "height": 44,
+        "overflow": "hidden",
+        "pointerEvents": "none"
+      },
+      "buttons": {
+        "complete": {
+          "visible": true,
+          "rect": {
+            "x": 49.75,
+            "y": 245,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 69.75,
+            "y": 265
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-complete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "assign": {
+          "visible": true,
+          "rect": {
+            "x": 91.5,
+            "y": 245,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 111.5,
+            "y": 265
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-assign",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "defer": {
+          "visible": true,
+          "rect": {
+            "x": 133.25,
+            "y": 245,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 153.25,
+            "y": 265
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-defer",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "delete": {
+          "visible": true,
+          "rect": {
+            "x": 63.66,
+            "y": 285,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 83.66,
+            "y": 305
+          },
+          "elementFromPoint": {
+            "tag": "svg",
+            "actionTestId": "bulk-selection-delete",
+            "isDevFab": false
+          },
+          "reachable": true
+        },
+        "exit": {
+          "visible": true,
+          "rect": {
+            "x": 119.33,
+            "y": 285,
+            "width": 40,
+            "height": 40
+          },
+          "center": {
+            "x": 139.33,
+            "y": 305
+          },
+          "elementFromPoint": {
+            "tag": "path",
+            "actionTestId": "bulk-selection-exit",
+            "isDevFab": false
+          },
+          "reachable": true
+        }
+      },
+      "allFiveVisible": true,
+      "allFiveCentersResolveToAction": true
+    }
+  },
+  "postExitAtStressViewport": {
+    "beforeExit": {
+      "viewport": {
+        "width": 195,
+        "height": 422
+      },
+      "fabRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameOpacity": "0",
+      "framePointer": "none",
+      "ariaHidden": "true",
+      "centerTopIsFab": false
+    },
+    "afterExit": {
+      "viewport": {
+        "width": 195,
+        "height": 422
+      },
+      "fabRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameRect": {
+        "x": 131,
+        "y": 238,
+        "w": 44,
+        "h": 44
+      },
+      "frameOpacity": "1",
+      "framePointer": "none",
+      "ariaHidden": null,
+      "centerTopIsFab": true
+    },
+    "exit": {
+      "barGone": true,
+      "countGone": true
+    },
+    "launcherAndSheet": {
+      "opened": true,
+      "activeAccountVisible": true,
+      "closed": true
+    },
+    "activeAccountStayedVisible": true,
+    "openedModalClosedWithoutUsingResetOrOnboardingActions": true
+  },
+  "deferFlow": {
+    "clickedViaTestSelectorAt": {
+      "width": 195,
+      "height": 422
+    },
+    "opened": true,
+    "barExited": true,
+    "cancelled": true,
+    "choreOrderUnchanged": true
+  },
+  "assignSmoke": {
+    "clicked": true,
+    "dialogs": [],
+    "barRemains": true,
+    "selectedCount": "1"
+  }
+}

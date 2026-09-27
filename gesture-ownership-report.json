@@ -1,0 +1,53 @@
+{
+  "candidate": {
+    "head": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "ownership": [
+    {
+      "gesture": "circle long-press",
+      "owner": "bulk selection",
+      "result": "selected 1 chore",
+      "verified": true
+    },
+    {
+      "gesture": "second circle toggle then toggle back",
+      "owner": "bulk selection",
+      "result": "count 1 -> 2 -> 1",
+      "verified": true
+    },
+    {
+      "gesture": "content long-press with no move, then drag end",
+      "owner": "drag/reorder path",
+      "result": "order unchanged: true; batching exception: false",
+      "verified": true
+    },
+    {
+      "gesture": "content long-press and swipe in bulk mode",
+      "owner": "bulk selection; content drag/swipe disabled",
+      "result": "order unchanged: true; selected count 1",
+      "verified": true
+    }
+  ],
+  "bulkActions": {
+    "assign": {
+      "clicked": true,
+      "nativeOrBrowserDialogShown": false,
+      "barRemains": true,
+      "selectedCount": "1",
+      "dataCommitted": false,
+      "note": "No browser dialog was exposed by the RN Web Assign action."
+    },
+    "defer": {
+      "opened": true,
+      "cancelled": true,
+      "choreOrderUnchanged": true,
+      "dataCommitted": false
+    },
+    "exit": {
+      "barGone": true,
+      "selectedCountCleared": true
+    }
+  },
+  "nativeVoiceOverTalkBackAndNonGestureAlternative": "UNPROVEN; not executed in this qualification."
+}

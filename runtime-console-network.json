@@ -1,0 +1,162 @@
+{
+  "candidate": {
+    "head": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "runtime": {
+    "url": "http://127.0.0.1:8082",
+    "EXPO_NO_DOTENV": "1",
+    "supabaseUrl": "http://127.0.0.1:54321",
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "browser": "Google Chrome headless",
+    "deviceScaleFactor": 1
+  },
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "log",
+      "text": "Running application \"main\" with appParams:\n {rootTag: #root, hydrate: undefined} \nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."
+    },
+    {
+      "type": "warning",
+      "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+    },
+    {
+      "type": "warning",
+      "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+    },
+    {
+      "type": "warning",
+      "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "type": "warning",
+      "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+    },
+    {
+      "type": "warning",
+      "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "warning",
+      "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+    },
+    {
+      "type": "error",
+      "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    }
+  ],
+  "network": [
+    {
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8082/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable"
+    },
+    {
+      "kind": "request",
+      "method": "HEAD",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "request",
+      "method": "HEAD",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "requestfailed",
+      "error": "net::ERR_ABORTED",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "requestfailed",
+      "error": "net::ERR_ABORTED",
+      "url": "http://127.0.0.1:8082/"
+    },
+    {
+      "kind": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:54321/auth/v1/settings"
+    },
+    {
+      "kind": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:54321/auth/v1/settings"
+    }
+  ],
+  "supabaseCheck": {
+    "url": "http://127.0.0.1:54321/auth/v1/settings",
+    "status": 200,
+    "body": {
+      "disable_signup": false,
+      "external": {}
+    }
+  }
+}

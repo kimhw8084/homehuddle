@@ -1,0 +1,79 @@
+{
+  "candidate": {
+    "head": "5924fb4af4033e6e7ca1042948bdbee221c182c2",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "dependencyInstall": {
+    "command": "npm ci",
+    "result": "PASS",
+    "packageJsonAndLockChanged": false
+  },
+  "typecheck": {
+    "command": "npx tsc --noEmit",
+    "result": "PASS"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "result": "EXIT 1 due to repository baseline debt",
+    "repositoryTotals": {
+      "errors": 55,
+      "warnings": 418
+    },
+    "changedDevOverlayFile": {
+      "errors": 0,
+      "warnings": 1,
+      "warning": "existing explicit any typing in DevToolsOverlay.tsx"
+    },
+    "newChangedFileErrors": 0
+  },
+  "jest": {
+    "command": "npx jest --runInBand",
+    "result": "PASS",
+    "suites": 3,
+    "tests": 18,
+    "includes": [
+      "auth audit",
+      "Wallet",
+      "safe batching"
+    ]
+  },
+  "runtime": {
+    "candidateBound": true,
+    "runtime": {
+      "url": "http://127.0.0.1:8082",
+      "EXPO_NO_DOTENV": "1",
+      "supabaseUrl": "http://127.0.0.1:54321",
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "browser": "Google Chrome headless",
+      "deviceScaleFactor": 1
+    },
+    "normalChores": {
+      "desktop1440x900": {
+        "url": "http://127.0.0.1:8082/chores",
+        "tabSelected": "true",
+        "v1Visible": true,
+        "headerText": "SEP 2026\nALL\nME\nSun\n27\nMon\n28\nTue\n29\nWed\n30\n",
+        "logBox": false
+      },
+      "mobile390x844": {
+        "url": "http://127.0.0.1:8082/chores",
+        "tabSelected": "true",
+        "v1Visible": true,
+        "headerText": "SEP 2026\nALL\nME\nSun\n27\nMon\n28\nTue\n29\nWed\n30\n",
+        "logBox": false
+      }
+    },
+    "logBox": false,
+    "pageErrors": [],
+    "stressAndInteractions": "PASS; see gesture-ownership-report.json and overlay-priority-report.json",
+    "consoleDiagnostic": "React 19 reports an element.ref compatibility error in console; it did not produce a browser pageerror or visible LogBox."
+  },
+  "accessibilityAndAlternativeInput": {
+    "nativeVoiceOver": "UNPROVEN",
+    "nativeTalkBack": "UNPROVEN",
+    "nonGestureAlternative": "UNPROVEN"
+  },
+  "diffCheck": "PASS",
+  "worktreeAfterCandidateCommit": "clean"
+}
