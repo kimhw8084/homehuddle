@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   ScrollView,
   StyleSheet,
   SafeAreaView,
+  Platform,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useHuddleStore } from '../store/huddleStore';
@@ -18,9 +19,8 @@ if (!__DEV__) {
 }
 
 export function DevToolsOverlay() {
-  if (!__DEV__) return null;
-
   const [open, setOpen] = useState(false);
+  const [fabOverlap, setFabOverlap] = useState({ hidden: false, cropTop: 0, cropBottom: 0 });
   const router = useRouter();
   const currentUser = useHuddleStore((s) => s.currentUser);
   const setCurrentUser = useHuddleStore((s) => s.setCurrentUser);
@@ -30,16 +30,90 @@ export function DevToolsOverlay() {
 
   const activeAccount = familyMembers.find((m) => m.name === currentUser) ?? familyMembers[0];
 
+  useEffect(() => {
+    if (Platform.OS !== 'web' || typeof document === 'undefined') return;
+
+    // RN Web stacks this sibling over the tab screen, so clip only pixels the product bar covers.
+    const updateProductOverlap = () => {
+      const fab = document.querySelector('[data-testid="dev-tools-launcher"]');
+      const actionBar = document.querySelector('[data-testid="bulk-selection-action-bar"]');
+      if (!fab || !actionBar) {
+        setFabOverlap((current) => current.hidden || current.cropTop || current.cropBottom
+          ? { hidden: false, cropTop: 0, cropBottom: 0 }
+          : current);
+        return;
+      }
+
+      const fabRect = fab.getBoundingClientRect();
+      const actionRect = actionBar.getBoundingClientRect();
+      const overlaps = fabRect.left < actionRect.right
+        && fabRect.right > actionRect.left
+        && fabRect.top < actionRect.bottom
+        && fabRect.bottom > actionRect.top;
+      const fullyCovered = actionRect.left <= fabRect.left
+        && actionRect.right >= fabRect.right
+        && actionRect.top <= fabRect.top
+        && actionRect.bottom >= fabRect.bottom;
+      const next = !overlaps
+        ? { hidden: false, cropTop: 0, cropBottom: 0 }
+        : fullyCovered
+          ? { hidden: true, cropTop: 0, cropBottom: 0 }
+          : actionRect.top > fabRect.top
+            ? { hidden: false, cropTop: 0, cropBottom: Math.min(fabRect.height, fabRect.bottom - actionRect.top) }
+            : actionRect.bottom < fabRect.bottom
+              ? { hidden: false, cropTop: Math.min(fabRect.height, actionRect.bottom - fabRect.top), cropBottom: 0 }
+              : { hidden: true, cropTop: 0, cropBottom: 0 };
+      setFabOverlap((current) => current.hidden === next.hidden
+        && current.cropTop === next.cropTop
+        && current.cropBottom === next.cropBottom ? current : next);
+    };
+
+    const observer = new MutationObserver(updateProductOverlap);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    window.addEventListener('resize', updateProductOverlap);
+    updateProductOverlap();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateProductOverlap);
+    };
+  }, []);
+
+  if (!__DEV__) return null;
+
   return (
     <>
       {/* FAB */}
-      <TouchableOpacity
-        onPress={() => setOpen(true)}
-        style={styles.fab}
-        activeOpacity={0.8}
+      <View
+        pointerEvents="box-none"
+        style={styles.fabLayer}
       >
-        <Text style={styles.fabIcon}>🛠</Text>
-      </TouchableOpacity>
+        <View
+          pointerEvents={fabOverlap.hidden ? 'none' : 'box-none'}
+          style={[
+            styles.fabFrame,
+            {
+              height: 44 - fabOverlap.cropTop - fabOverlap.cropBottom,
+              bottom: 140 + fabOverlap.cropBottom,
+            },
+            fabOverlap.hidden && styles.fabHidden,
+          ]}
+        >
+          <TouchableOpacity
+            testID="dev-tools-launcher"
+            accessibilityRole="button"
+            accessibilityLabel="Open Dev Tools"
+            accessibilityElementsHidden={fabOverlap.hidden}
+            importantForAccessibility={fabOverlap.hidden ? 'no-hide-descendants' : 'auto'}
+            aria-hidden={fabOverlap.hidden}
+            onPress={() => setOpen(true)}
+            style={[styles.fab, { top: -fabOverlap.cropTop }]}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.fabIcon}>🛠</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
 
       {/* Bottom sheet modal */}
       <Modal
@@ -130,23 +204,37 @@ export function DevToolsOverlay() {
 }
 
 const styles = StyleSheet.create({
+  fabLayer: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 1000,
+    elevation: 10,
+  },
+  fabFrame: {
+    position: 'absolute',
+    right: 20,
+    bottom: 140,
+    width: 44,
+    height: 44,
+    overflow: 'hidden',
+  },
   fab: {
     position: 'absolute',
-    bottom: 140,
-    right: 20,
+    top: 0,
+    right: 0,
     width: 44,
     height: 44,
     borderRadius: 22,
     backgroundColor: '#1C1C1E',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 9999,
-    elevation: 9999,
     borderWidth: 1,
     borderColor: '#3A3A3C',
   },
   fabIcon: {
     fontSize: 20,
+  },
+  fabHidden: {
+    opacity: 0,
   },
   backdrop: {
     flex: 1,

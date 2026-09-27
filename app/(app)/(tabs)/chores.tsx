@@ -29,6 +29,7 @@ import Animated, {
   runOnJS, Layout, interpolate, Extrapolation,
 } from 'react-native-reanimated';
 import Svg, { Circle as SvgCircle, Path } from 'react-native-svg';
+import { runBatchedUpdates } from '../../../utils/safeBatchedUpdates';
 
 const AnimatedCircle = Animated.createAnimatedComponent(SvgCircle);
 import { GestureHandlerRootView, Swipeable, Gesture, GestureDetector, PanGestureHandler, TouchableOpacity as GHTouchableOpacity } from 'react-native-gesture-handler';
@@ -1366,6 +1367,24 @@ const RestockStyleChoreItem = React.memo(({
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {/* CIRCLE ZONE - Today/past: complete on tap, bulk on long-press. Future: bulk on single tap. */}
         <Pressable
+          testID={`chore-completion-circle-${chore.id}`}
+          accessibilityRole={bulkSelectMode ? 'checkbox' : 'button'}
+          accessibilityLabel={bulkSelectMode
+            ? `${isSelected ? 'Deselect' : 'Select'} ${chore.title}`
+            : isFutureChore
+              ? `Select ${chore.title}`
+              : chore.status === 'completed'
+                ? `Reopen ${chore.title}`
+                : `Complete ${chore.title}`}
+          accessibilityHint={bulkSelectMode
+            ? 'Tap to toggle this chore in bulk selection'
+            : isFutureChore
+              ? 'Tap to enter bulk selection'
+              : chore.status !== 'completed'
+                ? 'Tap to complete this chore. Long press to enter bulk selection.'
+                : undefined}
+          accessibilityState={bulkSelectMode ? { checked: isSelected, selected: isSelected } : undefined}
+          aria-checked={bulkSelectMode ? isSelected : undefined}
           onPress={
             bulkSelectMode
               ? () => { if (justEnteredBulkRef.current) { justEnteredBulkRef.current = false; return; } onSelectToggle?.(chore.id); }
@@ -1402,6 +1421,7 @@ const RestockStyleChoreItem = React.memo(({
 
         {/* CARD CONTENT ZONE - Tapping here expands for active chores (to Edit) or photo proof */}
         <Pressable
+          testID={`chore-content-${chore.id}`}
           onPress={(chore.status !== 'completed' || chore.photoRequired) ? onToggleExpand : undefined}
           onLongPress={chore.status === 'completed' || bulkSelectMode ? undefined : () => { onDragStart?.(); }}
           delayLongPress={200}
@@ -1768,12 +1788,23 @@ const TodayChoreList = ({
       }
     });
 
-    unstable_batchedUpdates(() => {
-      choreUpdates.forEach(u => onReassign(u.id, u.sectionId, u.priorityIndex));
-      sectionUpdates.forEach(u => {
-        updateSection(u.id, { priorityIndex: u.priorityIndex });
-      });
+    const unchangedOrder = data.length === flatData.length && data.every((row, index) => {
+      const originalRow = flatData[index];
+      if (!originalRow) return false;
+      if (row.type === 'chore') {
+        return originalRow.type === 'chore' && row.chore.id === originalRow.chore.id;
+      }
+      return originalRow.type === 'section-header' && row.section.id === originalRow.section.id;
     });
+
+    if (!unchangedOrder) {
+      runBatchedUpdates(unstable_batchedUpdates, () => {
+        choreUpdates.forEach(u => onReassign(u.id, u.sectionId, u.priorityIndex));
+        sectionUpdates.forEach(u => {
+          updateSection(u.id, { priorityIndex: u.priorityIndex });
+        });
+      });
+    }
     // Haptic feedback only on drag completion
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     };
@@ -4466,7 +4497,7 @@ export default function ChoresView() {
     });
 
     if (overdueUpdates.length > 0) {
-      unstable_batchedUpdates(() => {
+      runBatchedUpdates(unstable_batchedUpdates, () => {
         overdueUpdates.forEach(u => updateChore(u.id, u.updates));
       });
     }
@@ -6397,6 +6428,9 @@ export default function ChoresView() {
         {/* HAR-35: Bulk select action bar — sits above the 85pt tab bar */}
         {bulkSelectMode && (
           <Animated.View
+            testID="bulk-selection-action-bar"
+            accessibilityRole="toolbar"
+            accessibilityLabel="Bulk selection actions"
             entering={FadeInDown.duration(150)}
             exiting={FadeOut.duration(150)}
             style={{
@@ -6407,25 +6441,25 @@ export default function ChoresView() {
               zIndex: 9999, elevation: 20,
             }}
           >
-            <Text style={{ color: '#94A3B8', fontSize: 13, fontWeight: '800', width: 28, textAlign: 'center' }}>
+            <Text testID="bulk-selection-count" accessibilityLabel={`${selectedChoreIds.size} chores selected`} style={{ color: '#94A3B8', fontSize: 13, fontWeight: '800', width: 28, textAlign: 'center' }}>
               {selectedChoreIds.size}
             </Text>
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+            <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
               {selectedDate <= getTodayStr() && (
-                <TouchableOpacity onPress={handleBulkComplete} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#10B981', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
+                <TouchableOpacity testID="bulk-selection-complete" accessibilityRole="button" accessibilityLabel="Complete selected chores" onPress={handleBulkComplete} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#10B981', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
                   <CheckCircle2 size={20} color="white" />
                 </TouchableOpacity>
               )}
-              <TouchableOpacity onPress={handleBulkAssign} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#8B5CF6', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
+              <TouchableOpacity testID="bulk-selection-assign" accessibilityRole="button" accessibilityLabel="Assign selected chores" onPress={handleBulkAssign} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#8B5CF6', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
                 <UserCheck size={20} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity onPress={handleBulkDefer} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#3B82F6', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
+              <TouchableOpacity testID="bulk-selection-defer" accessibilityRole="button" accessibilityLabel="Defer selected chores" onPress={handleBulkDefer} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#3B82F6', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
                 <Clock size={20} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity onPress={handleBulkDelete} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#EF4444', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
+              <TouchableOpacity testID="bulk-selection-delete" accessibilityRole="button" accessibilityLabel="Delete selected chores" onPress={handleBulkDelete} disabled={selectedChoreIds.size === 0} style={{ backgroundColor: '#EF4444', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
                 <Trash2 size={20} color="white" />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => { setBulkSelectMode(false); setSelectedChoreIds(new Set()); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); }} style={{ backgroundColor: '#475569', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
+              <TouchableOpacity testID="bulk-selection-exit" accessibilityRole="button" accessibilityLabel="Exit bulk selection" onPress={() => { setBulkSelectMode(false); setSelectedChoreIds(new Set()); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); }} style={{ backgroundColor: '#475569', width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
                 <X size={20} color="white" />
               </TouchableOpacity>
             </View>
