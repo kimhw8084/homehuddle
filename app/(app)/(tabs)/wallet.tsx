@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import {
-  View, Text, TouchableOpacity, ScrollView, Dimensions, Alert, TextInput, PanResponder, KeyboardAvoidingView, Platform,
+  View, Text, TouchableOpacity, ScrollView, Alert, TextInput, PanResponder, KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -14,8 +14,7 @@ import {
   CheckCircle2, History, Search, X, Plus, Target, Trash2,
 } from 'lucide-react-native';
 import { Modal, Pressable } from 'react-native';
-
-const { width } = Dimensions.get('window');
+import { getWalletChartIndex, getWalletChartPoints, getWalletTabWidth, parseRewardExpiry, resolveEffectiveReward } from '../../../utils/wallet-logic';
 
 // ─── DESIGN TOKENS ────────────────────────────────────────────────
 const C = {
@@ -116,7 +115,7 @@ type Goal = {
   contributions: Record<string, number>; // memberName → pts contributed
 };
 
-type BagStatus = 'active' | 'used' | 'expired';
+type BagStatus = 'active' | 'used' | 'expired' | 'gifted';
 
 type BagItem = {
   id: string;
@@ -158,34 +157,11 @@ const INITIAL_BAG: BagItem[] = [
 ];
 
 // ─── CHART ────────────────────────────────────────────────────────
-// Chart width = screen width - 48px screen padding - 40px card padding
-const CHART_W = width - 48 - 40;
 const CHART_H = 140;
 const PAD = { top: 10, bottom: 20 };
 
-function getChartPts(data: number[]) {
-  const min = Math.min(...data);
-  const max = Math.max(...data);
-  const range = Math.max(max - min, 1);
-  return data.map((v, i) => ({
-    x: (i / (data.length - 1)) * CHART_W,
-    y: PAD.top + (1 - (v - min) / range) * (CHART_H - PAD.top - PAD.bottom),
-    v,
-  }));
-}
-
-function buildLine(pts: ReturnType<typeof getChartPts>): string {
-  let d = `M ${pts[0].x} ${pts[0].y}`;
-  for (let i = 1; i < pts.length; i++) {
-    const cx = (pts[i - 1].x + pts[i].x) / 2;
-    d += ` C ${cx} ${pts[i - 1].y}, ${cx} ${pts[i].y}, ${pts[i].x} ${pts[i].y}`;
-  }
-  return d;
-}
-
-function buildArea(pts: ReturnType<typeof getChartPts>, line: string): string {
-  const b = CHART_H - PAD.bottom;
-  return `${line} L ${pts[pts.length - 1].x} ${b} L ${pts[0].x} ${b} Z`;
+function getChartPts(data: number[], width: number) {
+  return getWalletChartPoints(data, width, CHART_H, PAD.top, PAD.bottom);
 }
 
 // ─── ANIMATED SVG PATH ────────────────────────────────────────────
@@ -213,6 +189,7 @@ type Period = '7D' | '14D' | '30D';
 function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }: { member: string; onScrollLock: (locked: boolean) => void; currentBalance: number; chores: { assignee: string | null; completedBy?: string | null; status: string; completedAt?: number | string | null; points: number }[] }) {
   const [period, setPeriod] = useState<Period>('30D');
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
+  const [chartWidth, setChartWidth] = useState(0);
   const touching = useRef(false);
 
   const sliceN = ({ '7D': 7, '14D': 14, '30D': 30 } as const)[period];
@@ -271,8 +248,8 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
   // Derive current target y positions from data
   const targetPts = useMemo(() => {
     const resampled = resample(slicedData, N_PTS);
-    return getChartPts(resampled);
-  }, [slicedData]);
+    return getChartPts(resampled, chartWidth);
+  }, [slicedData, chartWidth]);
 
   // Animate y values whenever member or period changes
   useEffect(() => {
@@ -284,7 +261,7 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
   // Animated line path
   const animatedLineProps = useAnimatedProps(() => {
     'worklet';
-    const fixedX = Array.from({ length: N_PTS }, (_, i) => (i / (N_PTS - 1)) * CHART_W);
+    const fixedX = Array.from({ length: N_PTS }, (_, i) => (i / (N_PTS - 1)) * chartWidth);
     let d = `M ${fixedX[0].toFixed(2)} ${yVals[0].value.toFixed(2)}`;
     for (let i = 1; i < N_PTS; i++) {
       const cx = (fixedX[i - 1] + fixedX[i]) / 2;
@@ -295,7 +272,7 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
 
   const animatedAreaProps = useAnimatedProps(() => {
     'worklet';
-    const fixedX = Array.from({ length: N_PTS }, (_, i) => (i / (N_PTS - 1)) * CHART_W);
+    const fixedX = Array.from({ length: N_PTS }, (_, i) => (i / (N_PTS - 1)) * chartWidth);
     let d = `M ${fixedX[0].toFixed(2)} ${yVals[0].value.toFixed(2)}`;
     for (let i = 1; i < N_PTS; i++) {
       const cx = (fixedX[i - 1] + fixedX[i]) / 2;
@@ -310,9 +287,8 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
   const curPt = targetPts[Math.round((idx / Math.max(1, slicedData.length - 1)) * (N_PTS - 1))];
 
   const resolveIdx = useCallback((locationX: number) => {
-    const clamped = Math.max(0, Math.min(CHART_W, locationX));
-    return Math.min(slicedData.length - 1, Math.max(0, Math.round((clamped / CHART_W) * (slicedData.length - 1))));
-  }, [slicedData.length]);
+    return getWalletChartIndex(locationX, chartWidth, slicedData.length);
+  }, [chartWidth, slicedData.length]);
 
   return (
     <View>
@@ -355,7 +331,12 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
 
       {/* Chart — captures touch entirely; blocks vertical scroll while finger is down */}
       <View
-        style={{ width: CHART_W, height: CHART_H }}
+        testID="wallet-chart"
+        style={{ width: '100%', height: CHART_H }}
+        onLayout={event => {
+          const nextWidth = event.nativeEvent.layout.width;
+          setChartWidth(current => current === nextWidth ? current : nextWidth);
+        }}
         // Claim the responder unconditionally so parent ScrollView never gets it
         onStartShouldSetResponder={() => true}
         onMoveShouldSetResponder={() => true}
@@ -377,7 +358,7 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
         onResponderRelease={() => { touching.current = false; onScrollLock(false); setHoverIdx(null); }}
         onResponderTerminate={() => { touching.current = false; onScrollLock(false); setHoverIdx(null); }}
       >
-        <Svg width={CHART_W} height={CHART_H}>
+        <Svg width={chartWidth} height={CHART_H}>
           <Defs>
             <LinearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
               <Stop offset="0%" stopColor={color} stopOpacity="0.2" />
@@ -386,7 +367,7 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
           </Defs>
           <AnimatedPath animatedProps={animatedAreaProps} fill={`url(#${gradId})`} />
           <AnimatedPath animatedProps={animatedLineProps} fill="none" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
-          <Line x1={0} y1={CHART_H - PAD.bottom} x2={CHART_W} y2={CHART_H - PAD.bottom} stroke={C.mutedBorder} strokeWidth={1} />
+          <Line x1={0} y1={CHART_H - PAD.bottom} x2={chartWidth} y2={CHART_H - PAD.bottom} stroke={C.mutedBorder} strokeWidth={1} />
           {hoverIdx !== null && (
             <Line x1={curPt?.x} y1={PAD.top} x2={curPt?.x} y2={CHART_H - PAD.bottom} stroke={C.subtext} strokeWidth={1} strokeDasharray="4,3" />
           )}
@@ -401,15 +382,12 @@ function PointsGraph({ member, onScrollLock, currentBalance, chores: allChores }
 
 function formatDate(dateStr: string) {
   if (dateStr === 'Today' || dateStr === 'Yesterday' || dateStr === 'Tomorrow') return dateStr;
-  
-  // Try to parse if it's a date string
-  const d = new Date(dateStr);
-  if (!isNaN(d.getTime())) {
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  const expiry = parseRewardExpiry(dateStr);
+  if (expiry.kind === 'valid') {
+    return new Date(expiry.at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   }
-  
-  // For mock data like "Mon", "Sun", "Last week", we'll just keep them but clean them up if needed.
-  // Ideally history would always show dates.
+
   return dateStr;
 }
 
@@ -448,8 +426,9 @@ function ActiveBagItemRow({
 }) {
   const ref = useRef<Swipeable>(null);
   const isSwiping = useRef(false);
+  const actionable = resolveEffectiveReward(item).actionable;
 
-  const renderRightActions = item.gifted ? undefined : () => (
+  const renderRightActions = !actionable || item.gifted ? undefined : () => (
     <View style={{ width: 80, paddingLeft: 8, alignSelf: 'stretch' }}>
       <TouchableOpacity
         onPress={() => { ref.current?.close(); onResell(item); }}
@@ -462,7 +441,7 @@ function ActiveBagItemRow({
     </View>
   );
 
-  const renderLeftActions = () => (
+  const renderLeftActions = actionable ? () => (
     <View style={{ width: 80, paddingRight: 8, alignSelf: 'stretch' }}>
       <TouchableOpacity
         onPress={() => { ref.current?.close(); onGift(item); }}
@@ -473,7 +452,7 @@ function ActiveBagItemRow({
         <Text style={{ fontSize: 9, fontWeight: '900', color: '#fff', textTransform: 'uppercase', marginTop: 4, letterSpacing: 0.5 }}>Gift</Text>
       </TouchableOpacity>
     </View>
-  );
+  ) : undefined;
 
   return (
     <View style={{ borderRadius: 12, marginBottom: 12 }}>
@@ -504,10 +483,18 @@ function ActiveBagItemRow({
             </View>
             <Text style={{ fontSize: 12, color: C.subtext }}>{item.pts} pts · Purchased {item.claimedDate}</Text>
             {!!item.expiresDate && (() => {
-              const expMs = new Date(item.expiresDate!).getTime();
-              const hoursLeft = isNaN(expMs) ? null : Math.floor((expMs - Date.now()) / 3600000);
-              const isUrgent = hoursLeft !== null && hoursLeft <= 48 && hoursLeft > 0;
-              const label = isNaN(expMs) ? `Expires ${item.expiresDate}` : hoursLeft !== null && hoursLeft <= 0 ? 'Expired' : hoursLeft !== null && hoursLeft < 24 ? `Expires in ${hoursLeft}h` : `Expires ${new Date(expMs).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}`;
+              const effective = resolveEffectiveReward(item);
+              const exp = effective.expiry;
+              const millisecondsLeft = exp.kind === 'valid' ? exp.at - Date.now() : null;
+              const hoursLeft = millisecondsLeft === null ? null : Math.floor(millisecondsLeft / 3600000);
+              const isUrgent = effective.actionable && millisecondsLeft !== null && millisecondsLeft <= 48 * 3600000 && millisecondsLeft > 0;
+              const label = effective.status === 'expired'
+                ? 'Expired'
+                : exp.kind !== 'valid'
+                  ? `Expires ${item.expiresDate}`
+                  : hoursLeft !== null && hoursLeft < 24
+                    ? hoursLeft <= 0 ? 'Expires today' : `Expires in ${hoursLeft}h`
+                    : `Expires ${new Date(exp.at).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}`;
               return (
                 <>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
@@ -523,13 +510,13 @@ function ActiveBagItemRow({
               );
             })()}
           </View>
-          <TouchableOpacity
+          {actionable && <TouchableOpacity
             activeOpacity={0.8}
             onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); onUse(item); }}
             style={{ backgroundColor: C.accent, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 8, borderWidth: 0 }}
           >
             <Text style={{ fontSize: 12, fontWeight: '900', color: '#fff' }}>Use</Text>
-          </TouchableOpacity>
+          </TouchableOpacity>}
         </View>
       </View>
     </Swipeable>
@@ -539,7 +526,8 @@ function ActiveBagItemRow({
 
 // ─── HISTORY ITEM ─────────────────────────────────────────────────
 function HistoryItemRow({ item }: { item: BagItem }) {
-  const isExpired = item.status === 'expired';
+  const effective = resolveEffectiveReward(item);
+  const isExpired = effective.status === 'expired';
   return (
     <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 14, paddingVertical: 13, borderBottomWidth: 1, borderBottomColor: C.mutedBorder }}>
       <View style={{ width: 44, height: 44, borderRadius: 14, backgroundColor: isExpired ? C.muted : C.greenBg, alignItems: 'center', justifyContent: 'center' }}>
@@ -1010,13 +998,15 @@ const CONFETTI_COLORS = ['#6366F1','#10B981','#F59E0B','#EF4444','#EC4899','#3B8
 const N_PIECES = 36;
 type CPiece = { x: number; color: string; size: number; delay: number; rotDir: number };
 
-const CONFETTI_PIECES: CPiece[] = Array.from({ length: N_PIECES }, (_, i) => ({
-  x: (i / N_PIECES) * width + (Math.random() * (width / N_PIECES) - width / N_PIECES / 2),
-  color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
-  size: 6 + Math.round(Math.random() * 6),
-  delay: Math.round(Math.random() * 400),
-  rotDir: Math.random() > 0.5 ? 1 : -1,
-}));
+function makeConfettiPieces(width: number): CPiece[] {
+  return Array.from({ length: N_PIECES }, (_, i) => ({
+    x: (i / N_PIECES) * width + (Math.random() * (width / N_PIECES) - width / N_PIECES / 2),
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    size: 6 + Math.round(Math.random() * 6),
+    delay: Math.round(Math.random() * 400),
+    rotDir: Math.random() > 0.5 ? 1 : -1,
+  }));
+}
 
 const AnimatedRect = Animated.createAnimatedComponent(View);
 
@@ -1030,7 +1020,7 @@ function ConfettiPiece({ piece, screenHeight }: { piece: CPiece; screenHeight: n
     y.value   = withDelay(piece.delay, withTiming(screenHeight + 40, { duration: dur, easing: Easing.in(Easing.quad) }));
     rot.value = withDelay(piece.delay, withTiming(piece.rotDir * 720, { duration: dur }));
     op.value  = withDelay(piece.delay + dur - 400, withTiming(0, { duration: 400 }));
-  }, []);
+  }, [piece.delay, piece.rotDir, screenHeight]);
 
   const style = useAnimatedStyle(() => ({
     position: 'absolute',
@@ -1048,17 +1038,25 @@ function ConfettiPiece({ piece, screenHeight }: { piece: CPiece; screenHeight: n
 }
 
 function ConfettiOverlay({ onDone }: { onDone: () => void }) {
-  const { height: screenHeight } = Dimensions.get('window');
+  const [overlaySize, setOverlaySize] = useState({ width: 0, height: 0 });
+  const pieces = useMemo(() => makeConfettiPieces(overlaySize.width), [overlaySize.width]);
   useEffect(() => {
-    const maxDelay = Math.max(...CONFETTI_PIECES.map(p => p.delay));
+    const maxDelay = Math.max(...pieces.map(p => p.delay));
     const timer = setTimeout(onDone, maxDelay + 1800 * 2 + 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [onDone, pieces]);
 
   return (
-    <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} pointerEvents="none">
-      {CONFETTI_PIECES.map((p, i) => (
-        <ConfettiPiece key={i} piece={p} screenHeight={screenHeight} />
+    <View
+      style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+      pointerEvents="none"
+      onLayout={event => {
+        const { width, height } = event.nativeEvent.layout;
+        setOverlaySize(current => current.width === width && current.height === height ? current : { width, height });
+      }}
+    >
+      {pieces.map((p, i) => (
+        <ConfettiPiece key={i} piece={p} screenHeight={overlaySize.height} />
       ))}
     </View>
   );
@@ -1293,34 +1291,34 @@ function GoalProgressCard({ goal, onDelete, onComplete, onContribute, contributo
 }
 
 // ─── TAB SWITCHER — sliding pill ──────────────────────────────────
-const TAB_W = (width - 48 - 8) / 2; // (screen - 24*2 margin - 4*2 padding) / 2
-
 function TabSwitcher({ tab, onTabChange }: { tab: Tab; onTabChange: (t: Tab) => void }) {
-  const slideX = useSharedValue(tab === 'wallet' ? 0 : TAB_W);
+  const [switcherWidth, setSwitcherWidth] = useState(0);
+  const tabWidth = getWalletTabWidth(switcherWidth);
+  const slideX = useSharedValue(tab === 'wallet' ? 0 : tabWidth);
 
   useEffect(() => {
-    slideX.value = withTiming(tab === 'wallet' ? 0 : TAB_W, {
+    slideX.value = withTiming(tab === 'wallet' ? 0 : tabWidth, {
       duration: 280,
       easing: Easing.out(Easing.cubic),
     });
-  }, [tab]);
+  }, [tab, tabWidth]);
 
   const animPillStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: slideX.value }],
   }));
 
   return (
-    <View style={{
+    <View testID="wallet-tab-switcher" style={{
       marginHorizontal: 24, marginBottom: 14,
       backgroundColor: C.muted, borderRadius: 12,
       padding: 4, borderWidth: 1, borderColor: C.mutedBorder,
       flexDirection: 'row',
-    }}>
+    }} onLayout={event => setSwitcherWidth(event.nativeEvent.layout.width)}>
       {/* Sliding pill */}
       <Animated.View style={[animPillStyle, {
         position: 'absolute',
         top: 4, left: 4,
-        width: TAB_W,
+        width: tabWidth,
         bottom: 4,
         backgroundColor: C.card,
         borderRadius: 10,
@@ -1401,11 +1399,17 @@ export default function WalletScreen() {
   const [showGoalForm, setShowGoalForm] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [scrollEnabled, setScrollEnabled] = useState(true);
+  const [statusNow, setStatusNow] = useState(() => new Date());
   const [undoItem, setUndoItem] = useState<{ item: BagItem; prev: BagItem } | null>(null);
   const undoTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const scrollRef = useRef<ScrollView>(null);
   const [noteModal, setNoteModal] = useState<{ item: BagItem } | null>(null);
   const [noteText, setNoteText] = useState('');
+
+  useEffect(() => {
+    const timer = setInterval(() => setStatusNow(new Date()), 60_000);
+    return () => clearInterval(timer);
+  }, []);
 
   const showUndo = useCallback((prev: BagItem, next: BagItem) => {
     if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
@@ -1476,12 +1480,11 @@ export default function WalletScreen() {
     const FAR_FUTURE = new Date('9999-12-31').getTime();
     const parseDate = (s: string | null) => {
       if (!s) return FAR_FUTURE;
-      if (s === 'Today') return new Date().getTime();
-      const d = new Date(s);
-      return isNaN(d.getTime()) ? FAR_FUTURE : d.getTime();
+      const expiry = parseRewardExpiry(s, statusNow);
+      return expiry.kind === 'valid' ? expiry.at : FAR_FUTURE;
     };
     return bag
-      .filter(b => b.member === selectedMember && b.status === 'active')
+      .filter(b => b.member === selectedMember && resolveEffectiveReward(b, statusNow).status === 'active')
       .sort((a, b) => {
         const hasExpA = !!a.expiresDate;
         const hasExpB = !!b.expiresDate;
@@ -1491,20 +1494,22 @@ export default function WalletScreen() {
         // both have no expiry — sort by purchase date ascending (earlier purchase = higher up)
         return parseDate(a.claimedDate) - parseDate(b.claimedDate);
       });
-  }, [bag, selectedMember]);
-  const historyBag  = useMemo(() => bag.filter(b => b.member === selectedMember && b.status !== 'active'), [bag, selectedMember]);
+  }, [bag, selectedMember, statusNow]);
+  const historyBag  = useMemo(() => bag.filter(b => b.member === selectedMember && resolveEffectiveReward(b, statusNow).status !== 'active'), [bag, selectedMember, statusNow]);
   const storeMember = familyMembers.find(m => m.name === selectedMember);
   const member      = storeMember
     ? { name: storeMember.name, avatar: storeMember.avatar, color: '#4F46E5' }
     : (FAMILY_MEMBERS.find(m => m.name === selectedMember) ?? FAMILY_MEMBERS[0]);;
 
   const handleResell = useCallback((item: BagItem) => {
+    if (!resolveEffectiveReward(item).actionable) return;
     Alert.alert(
       `Resell "${item.name}"?`,
       `You'll get back ${item.pts} pts and the item is removed from your bag.`,
       [
         { text: 'Cancel', style: 'cancel' },
         { text: `Resell for ${item.pts} pts`, onPress: () => {
+          if (!resolveEffectiveReward(item).actionable) return;
           Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
           setBag(prev => prev.filter(b => b.id !== item.id));
           // Credit points back to the member
@@ -1512,9 +1517,10 @@ export default function WalletScreen() {
         }},
       ],
     );
-  }, []);
+  }, [setBag, updateMemberStats]);
 
   const handleGift = useCallback((item: BagItem) => {
+    if (!resolveEffectiveReward(item).actionable) return;
     const others = familyMembers.filter((m: any) => m.name !== item.member);
     Alert.alert(
       `Gift "${item.name}"?`,
@@ -1524,27 +1530,30 @@ export default function WalletScreen() {
         ...others.map(m => ({
           text: `${m.avatar} ${m.name}`,
           onPress: () => {
+            if (!resolveEffectiveReward(item).actionable) return;
             Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
             setBag(prev => prev.map(b => b.id === item.id ? { ...b, member: m.name, gifted: true } : b));
           },
         })),
       ],
     );
-  }, []);
+  }, [familyMembers, setBag]);
 
   const handleUse = useCallback((item: BagItem) => {
+    if (!resolveEffectiveReward(item).actionable) return;
     setNoteText('');
     setNoteModal({ item });
   }, []);
 
   const commitUse = useCallback((item: BagItem, note: string | null) => {
+    if (!resolveEffectiveReward(item).actionable) return;
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     const today = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
     const next: BagItem = { ...item, status: 'used', usedDate: today, note: note ?? item.note };
     setBag(prev => prev.map(b => b.id === item.id ? next : b));
     addWalletTransaction({ member: item.member, label: `Used: ${item.name}`, pts: -item.pts, date: today, icon: item.emoji });
     showUndo(item, next);
-  }, [showUndo, addWalletTransaction]);
+  }, [setBag, showUndo, addWalletTransaction]);
 
   return (
     <View style={{ flex: 1, backgroundColor: C.bg }}>
@@ -1673,7 +1682,7 @@ export default function WalletScreen() {
               {/* Active rewards */}
               <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
                 <Text style={{ fontSize: 17, fontWeight: '900', color: C.text }}>Active Rewards</Text>
-                <Text style={{ fontSize: 11, color: C.subtext, fontWeight: '600' }}>← Gift   Resell →</Text>
+                {activeBag.length > 0 && <Text style={{ fontSize: 11, color: C.subtext, fontWeight: '600' }}>← Gift   Resell →</Text>}
               </View>
 
               {activeBag.length === 0 ? (
