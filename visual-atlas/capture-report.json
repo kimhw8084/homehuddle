@@ -1,0 +1,3461 @@
+{
+  "schema": "project-os-visual-atlas-capture-report-v2",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-final-atlas-current-v1",
+  "operation": "VERIFY",
+  "status": "FAILED_CAPTURE_RECIPE",
+  "error_code": "CAPTURE_RECIPE_FAILED",
+  "source": {
+    "sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "source_changed": false,
+    "worktree_clean": true,
+    "work_branch": "codex/homehuddle-ui0-final-atlas-current-v1",
+    "work_head": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "work_tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "authority": {
+    "ar96_commit": "705d18724e4b4ac3621206aad8926bbf55c53db8",
+    "ar96_tree": "5dc725715ac98ea55ad7d6c0a5369a0b39d41029",
+    "manifest_sha256": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4",
+    "recipes_sha256": "bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608",
+    "manifest_mutation_count": 0,
+    "recipe_mutation_count": 0
+  },
+  "counts": {
+    "canonical_surface_count": 66,
+    "expected_screenshot_count": 132,
+    "provisional_screenshot_count": 24,
+    "captured_surface_count": 12,
+    "failed_surface_count": 54,
+    "failed_surface_viewport_pair_count": 108,
+    "failed_recipe_start_pairs": 98,
+    "other_failed_pairs": 10
+  },
+  "canonical_readers": {
+    "status": "not_generated",
+    "reason": "The canonical sweep failed; partial PDFs would violate the 66-page reader contract.",
+    "desktop_page_count": null,
+    "mobile_page_count": null
+  },
+  "stress_holdout": {
+    "status": "not_run",
+    "reason": "Stress and holdout work is allowed only after all 132 canonical captures succeed."
+  },
+  "publication": {
+    "success_atlas": false,
+    "failure_evidence_package": "prepared_for_git_publication",
+    "immutable": true
+  },
+  "surfaces": [
+    {
+      "surface_key": "auth-entry",
+      "label": "Authentication entry",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "auth-root",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "auth-entry",
+          "viewport": "mobile",
+          "artifact": "screenshots/auth-entry--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "7a98ce15e38dcb95f2f388373e4f2734cdc96192876b78e8548901d97e84774a",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:20:22.283Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Continue with Apple",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 2203,
+          "provisional": true
+        },
+        {
+          "surface_key": "auth-entry",
+          "viewport": "desktop",
+          "artifact": "screenshots/auth-entry--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "8c8c6cd3d1d5f6981df27041a41dfe6c732a9553f1b8bad33d44df490e6cd791",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:20:22.657Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Continue with Apple",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 2607,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Continue with Apple"
+      },
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/",
+        "actual": "/",
+        "policy": "preserved"
+      },
+      "actions": [],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "onboarding-welcome",
+      "label": "Onboarding welcome",
+      "classification": "A",
+      "expected_route": "/onboarding",
+      "route_query_policy": "preserved",
+      "start_context": "onboarding",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "onboarding-welcome",
+          "viewport": "mobile",
+          "artifact": "screenshots/onboarding-welcome--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "ca5e31b43260a06047d978f3a0f9a780e0d0414ca298118458aa18a6e71dc177",
+          "settled_route": "http://localhost:8081/onboarding",
+          "capture_time_utc": "2026-09-27T20:20:24.466Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Get Started",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 1750,
+          "provisional": true
+        },
+        {
+          "surface_key": "onboarding-welcome",
+          "viewport": "desktop",
+          "artifact": "screenshots/onboarding-welcome--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "adacf2647f1ba5d58cccb15d5164a47aebfa1966b2ae145e7e1e0c8845873f04",
+          "settled_route": "http://localhost:8081/onboarding",
+          "capture_time_utc": "2026-09-27T20:20:24.807Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Get Started",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 2090,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Get Started"
+      },
+      "settled_route": "http://localhost:8081/onboarding",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/onboarding",
+        "actual": "/onboarding",
+        "policy": "preserved"
+      },
+      "actions": [],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "onboarding-profile",
+      "label": "Onboarding profile",
+      "classification": "A",
+      "expected_route": "/onboarding/profile",
+      "route_query_policy": "preserved",
+      "start_context": "onboarding",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "onboarding-profile",
+          "viewport": "mobile",
+          "artifact": "screenshots/onboarding-profile--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "749370d076f10e90e5fbe368cd9b6ea596746c5298f7475b1120c6d5dc0dbcd2",
+          "settled_route": "http://localhost:8081/onboarding/profile",
+          "capture_time_utc": "2026-09-27T20:20:26.776Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Set Up Your Profile",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 1965,
+          "provisional": true
+        },
+        {
+          "surface_key": "onboarding-profile",
+          "viewport": "desktop",
+          "artifact": "screenshots/onboarding-profile--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "f28ce395265eb6da018c050d6b4ef646260b2f8d31610fbcbfaf5b6798cd8b50",
+          "settled_route": "http://localhost:8081/onboarding/profile",
+          "capture_time_utc": "2026-09-27T20:20:27.116Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Set Up Your Profile",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 2316,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Set Up Your Profile"
+      },
+      "settled_route": "http://localhost:8081/onboarding/profile",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/onboarding/profile",
+        "actual": "/onboarding/profile",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Select visible Get Started",
+          "selector": "visible text",
+          "result": "passed",
+          "elapsed_ms": 108
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "onboarding-family",
+      "label": "Onboarding household members",
+      "classification": "B",
+      "expected_route": "/onboarding/family",
+      "route_query_policy": "preserved",
+      "start_context": "onboarding",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "onboarding-family",
+          "viewport": "mobile",
+          "artifact": "screenshots/onboarding-family--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "1647c2367aba2a8d68327ffd0dd02a4f0b3071b16a2d97b362555c0fad03895c",
+          "settled_route": "http://localhost:8081/onboarding/family",
+          "capture_time_utc": "2026-09-27T20:20:30.201Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Your Family",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 3070,
+          "provisional": true
+        },
+        {
+          "surface_key": "onboarding-family",
+          "viewport": "desktop",
+          "artifact": "screenshots/onboarding-family--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "925e7c3c09f52d0eaeae5c8e83f4fca8d60b07bcdd06add6603c3ccaa58cb3c3",
+          "settled_route": "http://localhost:8081/onboarding/family",
+          "capture_time_utc": "2026-09-27T20:20:30.540Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Your Family",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 3410,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Your Family"
+      },
+      "settled_route": "http://localhost:8081/onboarding/family",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/onboarding/family",
+        "actual": "/onboarding/family",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Open /onboarding in a new context",
+          "selector": "route",
+          "result": "passed",
+          "elapsed_ms": 669
+        },
+        {
+          "index": 2,
+          "action": "Activate Get Started",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 94
+        },
+        {
+          "index": 3,
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": "textbox placeholder",
+          "result": "passed",
+          "elapsed_ms": 15
+        },
+        {
+          "index": 4,
+          "action": "Activate Continue",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 57
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "onboarding-complete",
+      "label": "Onboarding complete",
+      "classification": "B",
+      "expected_route": "/onboarding/done",
+      "route_query_policy": "preserved",
+      "start_context": "onboarding",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "onboarding-complete",
+          "viewport": "mobile",
+          "artifact": "screenshots/onboarding-complete--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "d0862a77becc7a35e692840130d9d7548274bea9c1682a19ccec7573fda9187c",
+          "settled_route": "http://localhost:8081/onboarding/done",
+          "capture_time_utc": "2026-09-27T20:20:33.825Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "You're all set!",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 3282,
+          "provisional": true
+        },
+        {
+          "surface_key": "onboarding-complete",
+          "viewport": "desktop",
+          "artifact": "screenshots/onboarding-complete--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "9e97e9f142a5aaeeeda1fbafbe3b2ab5975870cb76f2e09e6c2f58045614d0cf",
+          "settled_route": "http://localhost:8081/onboarding/done",
+          "capture_time_utc": "2026-09-27T20:20:34.168Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "You're all set!",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 3628,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "You're all set!"
+      },
+      "settled_route": "http://localhost:8081/onboarding/done",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/onboarding/done",
+        "actual": "/onboarding/done",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Open /onboarding in a new context",
+          "selector": "route",
+          "result": "passed",
+          "elapsed_ms": 678
+        },
+        {
+          "index": 2,
+          "action": "Activate Get Started",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 110
+        },
+        {
+          "index": 3,
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": "textbox placeholder",
+          "result": "passed",
+          "elapsed_ms": 17
+        },
+        {
+          "index": 4,
+          "action": "Activate Continue",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 80
+        },
+        {
+          "index": 5,
+          "action": "Activate Continue on Your Family",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 59
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-dashboard",
+      "label": "Home dashboard",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "home-dashboard",
+          "viewport": "mobile",
+          "artifact": "screenshots/home-dashboard--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "1e397bf3bc24cef3cf999b4220a4e51ee999c7056cda4c07b17b9e8a1d28b5dc",
+          "settled_route": "/",
+          "capture_time_utc": "2026-09-27T20:07:11.865Z",
+          "ready_assertion": {
+            "expected": "FAMILY ORBIT",
+            "dom_text": "Family Orbit",
+            "css_text_transform": "uppercase",
+            "result": "passed"
+          },
+          "capture_elapsed_ms": null,
+          "provisional": true
+        },
+        {
+          "surface_key": "home-dashboard",
+          "viewport": "desktop",
+          "artifact": "screenshots/home-dashboard--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "950c2b15352fdbc9644d4f679e3baa1fc5e7ac7fef269ae2c9c9a3f5269d0b9e",
+          "settled_route": "/",
+          "capture_time_utc": "2026-09-27T20:07:12.458Z",
+          "ready_assertion": {
+            "expected": "FAMILY ORBIT",
+            "dom_text": "Family Orbit",
+            "css_text_transform": "uppercase",
+            "result": "passed"
+          },
+          "capture_elapsed_ms": null,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": [
+        {
+          "expected": "FAMILY ORBIT",
+          "dom_text": "Family Orbit",
+          "css_text_transform": "uppercase",
+          "result": "passed"
+        },
+        {
+          "expected": "FAMILY ORBIT",
+          "dom_text": "Family Orbit",
+          "css_text_transform": "uppercase",
+          "result": "passed"
+        }
+      ],
+      "settled_route": "/",
+      "route_evidence": null,
+      "actions": [
+        {
+          "action": "Two visible logo taps opened Developer Control",
+          "result": "passed"
+        },
+        {
+          "action": "Visible Instant Bypass Login",
+          "result": "passed"
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox observed before provisional capture"
+    },
+    {
+      "surface_key": "chores-today-all",
+      "label": "Chores all-scope workspace",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-today-all",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-today-all",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "label": "Chores personal-scope workspace",
+      "classification": "A",
+      "expected_route": "/chores?filter=Me",
+      "route_query_policy": "consumed",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-my-scope",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-my-scope",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "label": "Chores expanded calendar",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-calendar-month",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-calendar-month",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-hub",
+      "label": "Family hub",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-hub",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-hub",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "wallet-points",
+      "label": "Wallet points workspace",
+      "classification": "A",
+      "expected_route": "/wallet",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "wallet-points",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "wallet-points",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "label": "Wallet reward bag",
+      "classification": "A",
+      "expected_route": "/wallet?tab=bag",
+      "route_query_policy": "consumed",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "wallet-reward-bag",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "wallet-reward-bag",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-catalog",
+      "label": "Market catalog",
+      "classification": "A",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-catalog",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "market-catalog",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "restock-inventory",
+      "label": "Restock inventory",
+      "classification": "A",
+      "expected_route": "/restock",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "restock-inventory",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "restock-inventory",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "profile-center",
+      "label": "Profile and settings center",
+      "classification": "A",
+      "expected_route": "/profile",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "profile-center",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "profile-center",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "label": "Personal information",
+      "classification": "A",
+      "expected_route": "/settings/personal-info",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-personal-info",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-personal-info",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "label": "Privacy and security",
+      "classification": "A",
+      "expected_route": "/settings/privacy",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-privacy-security",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-privacy-security",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-notifications",
+      "label": "Notification preferences",
+      "classification": "A",
+      "expected_route": "/settings/notifications",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-notifications",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-notifications",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-household",
+      "label": "Household settings",
+      "classification": "A",
+      "expected_route": "/settings/household",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-household",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-household",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-invite",
+      "label": "Invite family",
+      "classification": "A",
+      "expected_route": "/settings/invite",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-invite",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-invite",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "label": "Chore history completed",
+      "classification": "A",
+      "expected_route": "/settings/chore-history",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-chore-history-completed",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-chore-history-completed",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "label": "Chore history deleted",
+      "classification": "A",
+      "expected_route": "/settings/chore-history?tab=deleted",
+      "route_query_policy": "consumed",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-chore-history-deleted",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-chore-history-deleted",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-help",
+      "label": "Help center",
+      "classification": "A",
+      "expected_route": "/settings/help",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-help",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-help",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "settings-about",
+      "label": "About HomeHuddle",
+      "classification": "A",
+      "expected_route": "/settings/about",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "settings-about",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "settings-about",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "label": "Home family/account switcher",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": null,
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3335
+        },
+        {
+          "index": 2,
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": "icon-only relative geometry",
+          "result": "passed",
+          "elapsed_ms": 7
+        }
+      ],
+      "failure_pairs": [
+        {
+          "surface_key": "home-family-switcher",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected Family Orbit"
+        },
+        {
+          "surface_key": "home-family-switcher",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected Family Orbit"
+        }
+      ],
+      "failure_reason": "ready visible text assertion failed: expected Family Orbit",
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "label": "Home chore approval inbox",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "home-inbox-review",
+          "viewport": "mobile",
+          "artifact": "screenshots/home-inbox-review--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "0090964aa7543e896bb0b12e2cff53f333a26447e4de8e48ae51218d1580ae30",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:03.559Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Well Done!",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5446,
+          "provisional": true
+        },
+        {
+          "surface_key": "home-inbox-review",
+          "viewport": "desktop",
+          "artifact": "screenshots/home-inbox-review--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "268b0b38e6416955eaf048ccbebbffa2bb59427dc5669a308e5fbdf869eacf46",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:03.904Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Well Done!",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5809,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Well Done!"
+      },
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/",
+        "actual": "/",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3340
+        },
+        {
+          "index": 2,
+          "action": "Select visible Inbox Review",
+          "selector": "visible text",
+          "result": "passed",
+          "elapsed_ms": 93
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "label": "Home delivery create form",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "home-delivery-add",
+          "viewport": "mobile",
+          "artifact": "screenshots/home-delivery-add--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "ebebf1670747fa34f07698ce0194b4534d63105397b80a7ef299ed2008017671",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:09.283Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "WHAT'S ARRIVING?",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5359,
+          "provisional": true
+        },
+        {
+          "surface_key": "home-delivery-add",
+          "viewport": "desktop",
+          "artifact": "screenshots/home-delivery-add--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "bd7bbd634feec02515bfe5af0b139c95c7a79b16dfa208a4efa4e5b271dce0fd",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:09.629Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "WHAT'S ARRIVING?",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5722,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "WHAT'S ARRIVING?"
+      },
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/",
+        "actual": "/",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3317
+        },
+        {
+          "index": 2,
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": "icon-only relative geometry",
+          "result": "passed",
+          "elapsed_ms": 53
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "label": "Home delivery calendar",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "home-delivery-calendar",
+          "viewport": "mobile",
+          "artifact": "screenshots/home-delivery-calendar--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "afb11c30b6c041901b63072baaf9a6053319b49085ac789149ef8d2dd3d7fc3d",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:14.974Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Sep 2026",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5327,
+          "provisional": true
+        },
+        {
+          "surface_key": "home-delivery-calendar",
+          "viewport": "desktop",
+          "artifact": "screenshots/home-delivery-calendar--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "03d3415616eecd885f4d9d382762f654df75cd040f09866c84c38e9eb240f069",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:15.321Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Sep 2026",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5700,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Sep 2026"
+      },
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/",
+        "actual": "/",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3313
+        },
+        {
+          "index": 2,
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": "icon-only relative geometry",
+          "result": "passed",
+          "elapsed_ms": 21
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "label": "Home delivery history",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": null,
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3322
+        },
+        {
+          "index": 2,
+          "action": "Long press the visible calendar/history control identified by its tap / hold helper label",
+          "selector": "anchored_control",
+          "result": "passed",
+          "elapsed_ms": 741
+        }
+      ],
+      "failure_pairs": [
+        {
+          "surface_key": "home-delivery-history",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected Delivery History"
+        },
+        {
+          "surface_key": "home-delivery-history",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected Delivery History"
+        }
+      ],
+      "failure_reason": "ready visible text assertion failed: expected Delivery History",
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "label": "Home announcement board",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "home-announcement-board",
+          "viewport": "mobile",
+          "artifact": "screenshots/home-announcement-board--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "7f0724327a0d94fe9cf1c7f6aeda6c70419efb642b2a75dbf51eaea842eb2a4f",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:26.535Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Announcements",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5450,
+          "provisional": true
+        },
+        {
+          "surface_key": "home-announcement-board",
+          "viewport": "desktop",
+          "artifact": "screenshots/home-announcement-board--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "a94f7c963dee91be7d92ec8397e02559558ea0656f3348f12a94d227201a3648",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:26.878Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Announcements",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5813,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Announcements"
+      },
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/",
+        "actual": "/",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3323
+        },
+        {
+          "index": 2,
+          "action": "Select visible Grandparents visiting!",
+          "selector": "visible text",
+          "result": "passed",
+          "elapsed_ms": 90
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "label": "Home weekly dinner planner",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "home-dinner-planner",
+          "viewport": "mobile",
+          "artifact": "screenshots/home-dinner-planner--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "aa190727fa0465a04d944e8a5096ff1049b00b019626e4abee038b5ef4156275",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:32.358Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "This Week Vote Results",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5467,
+          "provisional": true
+        },
+        {
+          "surface_key": "home-dinner-planner",
+          "viewport": "desktop",
+          "artifact": "screenshots/home-dinner-planner--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "388b9a9b6d3e5573126060e45fb7c85e7425fada550b3d12220b1d56bfe1df00",
+          "settled_route": "http://localhost:8081/",
+          "capture_time_utc": "2026-09-27T20:21:32.713Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "This Week Vote Results",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 5831,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "This Week Vote Results"
+      },
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/",
+        "actual": "/",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3319
+        },
+        {
+          "index": 2,
+          "action": "Select visible Tap for details & recipes",
+          "selector": "visible text",
+          "result": "passed",
+          "elapsed_ms": 155
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-automation-create",
+      "label": "Home automation create form",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": null,
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3315
+        },
+        {
+          "index": 2,
+          "action": "Scroll Automations into view and activate its visible add control",
+          "selector": "anchored_control",
+          "result": "passed",
+          "elapsed_ms": 135
+        }
+      ],
+      "failure_pairs": [
+        {
+          "surface_key": "home-automation-create",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected New Automation"
+        },
+        {
+          "surface_key": "home-automation-create",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected New Automation"
+        }
+      ],
+      "failure_reason": "ready visible text assertion failed: expected New Automation",
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "label": "Home appliance create form",
+      "classification": "A",
+      "expected_route": "/",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": "http://localhost:8081/",
+      "route_evidence": null,
+      "actions": [
+        {
+          "index": 1,
+          "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+          "selector": "visible fixture control",
+          "result": "passed",
+          "elapsed_ms": 3324
+        },
+        {
+          "index": 2,
+          "action": "Scroll Appliance Watch into view and activate its visible add control",
+          "selector": "anchored_control",
+          "result": "passed",
+          "elapsed_ms": 88
+        }
+      ],
+      "failure_pairs": [
+        {
+          "surface_key": "home-appliance-create",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected New Appliance"
+        },
+        {
+          "surface_key": "home-appliance-create",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected New Appliance"
+        }
+      ],
+      "failure_reason": "ready visible text assertion failed: expected New Appliance",
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "chores-create",
+      "label": "Chores create form",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-create",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-create",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-edit",
+      "label": "Chores edit form",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-edit",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-edit",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "label": "Chores expanded task detail",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-expanded-task",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-expanded-task",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "label": "Chores sort and filter sheet",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-filter-sort",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-filter-sort",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-assignment",
+      "label": "Chores assignment sheet",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-assignment",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-assignment",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "label": "Chores reschedule/date picker",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-reschedule",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-reschedule",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "label": "Chores game picker",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-game-picker",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-game-picker",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "label": "Chores random assignment",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-random-assignment",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-random-assignment",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "label": "Chores completed section expanded",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-completed-expanded",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-completed-expanded",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-member-detail",
+      "label": "Family member detail sheet",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-member-detail",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-member-detail",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-member-editor",
+      "label": "Onboarding family member edit modal",
+      "classification": "B",
+      "expected_route": "/onboarding/family",
+      "route_query_policy": "preserved",
+      "start_context": "onboarding",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": "http://localhost:8081/onboarding/family",
+      "route_evidence": null,
+      "actions": [
+        {
+          "index": 1,
+          "action": "Open /onboarding in a new context",
+          "selector": "route",
+          "result": "passed",
+          "elapsed_ms": 666
+        },
+        {
+          "index": 2,
+          "action": "Activate Get Started",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 91
+        },
+        {
+          "index": 3,
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": "textbox placeholder",
+          "result": "passed",
+          "elapsed_ms": 13
+        },
+        {
+          "index": 4,
+          "action": "Activate Continue",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 52
+        },
+        {
+          "index": 5,
+          "action": "Open Sarah Kim edit modal and leave draft unsaved",
+          "selector": "icon-only member action",
+          "result": "passed",
+          "elapsed_ms": 21
+        }
+      ],
+      "failure_pairs": [
+        {
+          "surface_key": "family-member-editor",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected Edit Member"
+        },
+        {
+          "surface_key": "family-member-editor",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "ready visible text assertion failed: expected Edit Member"
+        }
+      ],
+      "failure_reason": "ready visible text assertion failed: expected Edit Member",
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "family-announcements",
+      "label": "Family announcements manager",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-announcements",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-announcements",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-wishlist",
+      "label": "Family wishlist",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-wishlist",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-wishlist",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "label": "Family activity expanded",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-activity-expanded",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-activity-expanded",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-heatmap",
+      "label": "Family activity heatmap",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-heatmap",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-heatmap",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-meal-results",
+      "label": "Family meal results",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-meal-results",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-meal-results",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "label": "Wallet savings goal create",
+      "classification": "A",
+      "expected_route": "/wallet",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "wallet-goal-create",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "wallet-goal-create",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "label": "Wallet savings goal contribution",
+      "classification": "B",
+      "expected_route": "/wallet",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "wallet-goal-contribute",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        },
+        {
+          "surface_key": "wallet-goal-contribute",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        }
+      ],
+      "failure_reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "label": "Wallet reward use/note",
+      "classification": "A",
+      "expected_route": "/wallet",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "wallet-reward-use",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "wallet-reward-use",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "label": "Wallet activity search and filter",
+      "classification": "A",
+      "expected_route": "/wallet",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "wallet-activity-search",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "wallet-activity-search",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-item-create",
+      "label": "Market reward create",
+      "classification": "A",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-item-create",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "market-item-create",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-item-edit",
+      "label": "Market reward edit",
+      "classification": "B",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-item-edit",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        },
+        {
+          "surface_key": "market-item-edit",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        }
+      ],
+      "failure_reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-item-restock",
+      "label": "Market inventory restock",
+      "classification": "B",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-item-restock",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        },
+        {
+          "surface_key": "market-item-restock",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        }
+      ],
+      "failure_reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-price-history",
+      "label": "Market price/reward history",
+      "classification": "A",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-price-history",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "market-price-history",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "label": "Market flash sale editor",
+      "classification": "A",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-flash-sale",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "market-flash-sale",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "label": "Market redemption confirmation",
+      "classification": "A",
+      "expected_route": "/market",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "market-redeem-confirmation",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "market-redeem-confirmation",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "restock-item-create",
+      "label": "Restock quick add item",
+      "classification": "A",
+      "expected_route": "/restock",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "restock-item-create",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "restock-item-create",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "label": "Restock item edit form",
+      "classification": "A",
+      "expected_route": "/restock",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "restock-item-edit",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "restock-item-edit",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "restock-filter",
+      "label": "Restock filters",
+      "classification": "A",
+      "expected_route": "/restock",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "restock-filter",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "restock-filter",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "label": "Restock completed/history expanded",
+      "classification": "B",
+      "expected_route": "/restock",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "restock-history-expanded",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        },
+        {
+          "surface_key": "restock-history-expanded",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+        }
+      ],
+      "failure_reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "family-member-create",
+      "label": "Onboarding family member create modal",
+      "classification": "B",
+      "expected_route": "/onboarding/family",
+      "route_query_policy": "preserved",
+      "start_context": "onboarding",
+      "status": "provisional_captured",
+      "captures": [
+        {
+          "surface_key": "family-member-create",
+          "viewport": "mobile",
+          "artifact": "screenshots/family-member-create--mobile-390x844.png",
+          "dimensions": {
+            "width": 390,
+            "height": 844
+          },
+          "sha256": "4b2a70ecdeaab6bb24ac4d80a2807d2a015193d6911a815070dafba521dd82cf",
+          "settled_route": "http://localhost:8081/onboarding/family",
+          "capture_time_utc": "2026-09-27T20:23:40.370Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Add Member",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 3532,
+          "provisional": true
+        },
+        {
+          "surface_key": "family-member-create",
+          "viewport": "desktop",
+          "artifact": "screenshots/family-member-create--desktop-1440x900.png",
+          "dimensions": {
+            "width": 1440,
+            "height": 900
+          },
+          "sha256": "3ef001210630fbc78c788700dd5f0e29a9bf7a793993e8635f8b333b9f7425a4",
+          "settled_route": "http://localhost:8081/onboarding/family",
+          "capture_time_utc": "2026-09-27T20:23:40.743Z",
+          "ready_assertion": {
+            "kind": "visible text",
+            "result": "passed",
+            "value": "Add Member",
+            "capture_time_precheck": "passed",
+            "postcapture_check": "passed"
+          },
+          "capture_elapsed_ms": 3889,
+          "provisional": true
+        }
+      ],
+      "ready_assertion": {
+        "kind": "visible text",
+        "result": "passed",
+        "value": "Add Member"
+      },
+      "settled_route": "http://localhost:8081/onboarding/family",
+      "route_evidence": {
+        "result": "passed",
+        "expected": "/onboarding/family",
+        "actual": "/onboarding/family",
+        "policy": "preserved"
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": "Open /onboarding in a new context",
+          "selector": "route",
+          "result": "passed",
+          "elapsed_ms": 757
+        },
+        {
+          "index": 2,
+          "action": "Activate Get Started",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 115
+        },
+        {
+          "index": 3,
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": "textbox placeholder",
+          "result": "passed",
+          "elapsed_ms": 21
+        },
+        {
+          "index": 4,
+          "action": "Activate Continue",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 69
+        },
+        {
+          "index": 5,
+          "action": "Open Add Family Member and leave draft unsaved",
+          "selector": "visible button text",
+          "result": "passed",
+          "elapsed_ms": 50
+        }
+      ],
+      "failure_pairs": [],
+      "failure_reason": null,
+      "logbox_overlay_check": "no visible crash or LogBox detected during ready/capture checks"
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "label": "Family widget layout edit mode",
+      "classification": "A",
+      "expected_route": "/family",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "family-layout-edit",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "family-layout-edit",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "label": "Chores bulk selection",
+      "classification": "A",
+      "expected_route": "/chores",
+      "route_query_policy": "preserved",
+      "start_context": "seeded-app",
+      "status": "failed",
+      "captures": [],
+      "ready_assertion": [],
+      "settled_route": null,
+      "route_evidence": null,
+      "actions": [],
+      "failure_pairs": [
+        {
+          "surface_key": "chores-bulk-selection",
+          "viewport": "mobile",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        },
+        {
+          "surface_key": "chores-bulk-selection",
+          "viewport": "desktop",
+          "error_code": "CAPTURE_RECIPE_FAILED",
+          "reason": "fixture control unavailable in current visible state"
+        }
+      ],
+      "failure_reason": "fixture control unavailable in current visible state",
+      "logbox_overlay_check": "not completed after recipe action failure"
+    }
+  ],
+  "failed_surface_viewport_pairs": [
+    {
+      "surface_key": "chores-today-all",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-today-all",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-hub",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-hub",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-points",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-points",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-catalog",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-catalog",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-inventory",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-inventory",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "profile-center",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "profile-center",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-notifications",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-notifications",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-household",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-household",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-invite",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-invite",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-help",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-help",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-about",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "settings-about",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected Family Orbit"
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected Family Orbit"
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected Delivery History"
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected Delivery History"
+    },
+    {
+      "surface_key": "home-automation-create",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected New Automation"
+    },
+    {
+      "surface_key": "home-automation-create",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected New Automation"
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected New Appliance"
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected New Appliance"
+    },
+    {
+      "surface_key": "chores-create",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-create",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-edit",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-edit",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-assignment",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-assignment",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-member-detail",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-member-detail",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-member-editor",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected Edit Member"
+    },
+    {
+      "surface_key": "family-member-editor",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "ready visible text assertion failed: expected Edit Member"
+    },
+    {
+      "surface_key": "family-announcements",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-announcements",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-wishlist",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-wishlist",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-heatmap",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-heatmap",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-meal-results",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-meal-results",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-item-create",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-item-create",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-item-edit",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "market-item-edit",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "market-item-restock",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "market-item-restock",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "market-price-history",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-price-history",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-item-create",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-item-create",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-filter",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-filter",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByTestId('logo-trigger') to be visible\n"
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "viewport": "mobile",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "viewport": "desktop",
+      "error_code": "CAPTURE_RECIPE_FAILED",
+      "reason": "fixture control unavailable in current visible state"
+    }
+  ],
+  "validation": {
+    "manifest_sha_matches": true,
+    "recipes_sha_matches": true,
+    "manifest_copy_byte_identical": true,
+    "recipes_copy_byte_identical": true,
+    "unique_manifest_surface_keys": 66,
+    "recipe_count": 66,
+    "captured_pairs": 24,
+    "duplicate_captured_pairs": 0,
+    "all_captured_png_dimensions_exact": true,
+    "all_captured_png_hashes_verified": true,
+    "all_accepted_ready_assertions_passed_for_provisional_captures": true,
+    "all_accepted_ready_assertions_passed_for_atlas": false,
+    "both_review_pdfs_66_pages": false,
+    "product_source_changed": false,
+    "product_worktree_clean": true,
+    "remote_main_expected_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "remote_main_expected_tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "generated_at_utc": "2026-09-27T20:34:47.873Z"
+}

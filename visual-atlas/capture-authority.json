@@ -1,0 +1,42 @@
+{
+  "schema": "project-os-visual-atlas-capture-authority-v2",
+  "project": "homehuddle",
+  "change": "CHG-290 R1",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "request": "homehuddle-ui0-final-atlas-current-v1",
+  "operation": "VERIFY",
+  "artifact_kind": "failure-evidence",
+  "artifact_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1",
+  "product_source": {
+    "ref": "refs/heads/main",
+    "sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "source_changed": false
+  },
+  "ar96": {
+    "semantic_authority": "AR-96 independently accepted current-source manifest and capture recipes",
+    "git_ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1",
+    "commit": "705d18724e4b4ac3621206aad8926bbf55c53db8",
+    "tree": "5dc725715ac98ea55ad7d6c0a5369a0b39d41029",
+    "manifest_path": "atlas-recipe-reconciliation/surface-manifest.current.json",
+    "manifest_sha256": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4",
+    "recipes_path": "atlas-recipe-reconciliation/capture-recipes.current.json",
+    "recipes_sha256": "bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608",
+    "recipe_validation_report_path": "atlas-recipe-reconciliation/recipe-validation-report.json",
+    "recipe_validation_report_sha256": "8addc24e79926a4ca906c529e9941e39dee57cf1c5ad3ed4906e262dabae79f8"
+  },
+  "canonical_surface_count": 66,
+  "expected_screenshot_count": 132,
+  "manifest_mutation_count": 0,
+  "recipe_mutation_count": 0,
+  "outcome": {
+    "status": "FAILED_CAPTURE_RECIPE",
+    "error_code": "CAPTURE_RECIPE_FAILED",
+    "provisional_screenshot_count": 24,
+    "failed_surface_count": 54,
+    "failed_surface_viewport_pair_count": 108,
+    "success_atlas_published": false
+  },
+  "created_at_utc": "2026-09-27T20:34:47.873Z"
+}

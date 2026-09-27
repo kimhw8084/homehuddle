@@ -1,0 +1,7 @@
+{
+  "schema": "project-os-visual-atlas-stress-holdout-report-v1",
+  "status": "not_run",
+  "reason": "Canonical capture requirement was not met (24/132 provisional PNGs; 108 failed Surface Key + viewport pairs). Stress/holdout must run only after all canonical captures succeed.",
+  "scenarios": [],
+  "new_material_failure_classes": []
+}

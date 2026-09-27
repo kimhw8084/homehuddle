@@ -1,0 +1,47 @@
+{
+  "schema": "project-os-visual-atlas-source-runtime-inventory-v1",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-final-atlas-current-v1",
+  "source": {
+    "sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+  },
+  "git": {
+    "work_branch": "codex/homehuddle-ui0-final-atlas-current-v1",
+    "head": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "worktree_clean": true,
+    "package_and_lock_unchanged": true
+  },
+  "runtime": {
+    "os": "macOS 26.6.2 (25G83)",
+    "node": "v20.19.4",
+    "npm": "10.8.2",
+    "expo_cli": "54.0.23",
+    "expo_package": "54.0.33",
+    "react": "19.1.0",
+    "react_native": "0.81.5",
+    "react_native_web": "0.21.2",
+    "expo_router": "6.0.23",
+    "playwright": "1.57.0",
+    "chromium_capture": "143.0.7499.4",
+    "chromium_diagnostic_only": "153.0.8010.54"
+  },
+  "capture_environment": {
+    "expo_no_dotenv": "1",
+    "supabase_url": "http://127.0.0.1:54321",
+    "supabase_anon_key_kind": "non-secret local placeholder",
+    "supabase_loopback_reachable": false,
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "theme": "light default",
+    "canonical_dpr": 1,
+    "browser_contexts_created_for_66_keys": 66
+  },
+  "capture_outcome": {
+    "success": false,
+    "captured_provisional_pngs": 24,
+    "failed_surface_viewport_pairs": 108,
+    "stress_holdout_run": false
+  }
+}

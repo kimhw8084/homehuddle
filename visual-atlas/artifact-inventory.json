@@ -1,0 +1,170 @@
+{
+  "schema": "project-os-visual-atlas-artifact-inventory-v1",
+  "package_kind": "failure-evidence",
+  "status": "incomplete_capture",
+  "self_hash_excluded": true,
+  "bundle_hash_excluded": true,
+  "entry_count": 32,
+  "entries": [
+    {
+      "path": "capture-authority.json",
+      "size_bytes": 1908,
+      "sha256": "5e71a08b51d8eb35e1a6a506c15f1acc9315d7cf5d71c1a88d597a162de1bf99"
+    },
+    {
+      "path": "capture-recipes.json",
+      "size_bytes": 160275,
+      "sha256": "bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608"
+    },
+    {
+      "path": "capture-report.json",
+      "size_bytes": 119350,
+      "sha256": "cf8ef29eb1ad8f659799852498a60ee8d6144d51e721895416afaa46b8bbd7a0"
+    },
+    {
+      "path": "reader-index.json",
+      "size_bytes": 7580,
+      "sha256": "ea4aefbd854b47eedce1a589ee6bcf271bfc4a21dea25487b4c1da8d7bb747c8"
+    },
+    {
+      "path": "runtime-console-network.json",
+      "size_bytes": 546482,
+      "sha256": "1b5bb6b997089901a74cf75938594bc1841eeab336b3b7bf9c9c0246a52751a2"
+    },
+    {
+      "path": "screenshots/auth-entry--desktop-1440x900.png",
+      "size_bytes": 108565,
+      "sha256": "8c8c6cd3d1d5f6981df27041a41dfe6c732a9553f1b8bad33d44df490e6cd791"
+    },
+    {
+      "path": "screenshots/auth-entry--mobile-390x844.png",
+      "size_bytes": 83264,
+      "sha256": "7a98ce15e38dcb95f2f388373e4f2734cdc96192876b78e8548901d97e84774a"
+    },
+    {
+      "path": "screenshots/family-member-create--desktop-1440x900.png",
+      "size_bytes": 54813,
+      "sha256": "3ef001210630fbc78c788700dd5f0e29a9bf7a793993e8635f8b333b9f7425a4"
+    },
+    {
+      "path": "screenshots/family-member-create--mobile-390x844.png",
+      "size_bytes": 42904,
+      "sha256": "4b2a70ecdeaab6bb24ac4d80a2807d2a015193d6911a815070dafba521dd82cf"
+    },
+    {
+      "path": "screenshots/home-announcement-board--desktop-1440x900.png",
+      "size_bytes": 98591,
+      "sha256": "a94f7c963dee91be7d92ec8397e02559558ea0656f3348f12a94d227201a3648"
+    },
+    {
+      "path": "screenshots/home-announcement-board--mobile-390x844.png",
+      "size_bytes": 70826,
+      "sha256": "7f0724327a0d94fe9cf1c7f6aeda6c70419efb642b2a75dbf51eaea842eb2a4f"
+    },
+    {
+      "path": "screenshots/home-dashboard--desktop-1440x900.png",
+      "size_bytes": 154170,
+      "sha256": "950c2b15352fdbc9644d4f679e3baa1fc5e7ac7fef269ae2c9c9a3f5269d0b9e"
+    },
+    {
+      "path": "screenshots/home-dashboard--mobile-390x844.png",
+      "size_bytes": 92629,
+      "sha256": "1e397bf3bc24cef3cf999b4220a4e51ee999c7056cda4c07b17b9e8a1d28b5dc"
+    },
+    {
+      "path": "screenshots/home-delivery-add--desktop-1440x900.png",
+      "size_bytes": 62265,
+      "sha256": "bd7bbd634feec02515bfe5af0b139c95c7a79b16dfa208a4efa4e5b271dce0fd"
+    },
+    {
+      "path": "screenshots/home-delivery-add--mobile-390x844.png",
+      "size_bytes": 53316,
+      "sha256": "ebebf1670747fa34f07698ce0194b4534d63105397b80a7ef299ed2008017671"
+    },
+    {
+      "path": "screenshots/home-delivery-calendar--desktop-1440x900.png",
+      "size_bytes": 143585,
+      "sha256": "03d3415616eecd885f4d9d382762f654df75cd040f09866c84c38e9eb240f069"
+    },
+    {
+      "path": "screenshots/home-delivery-calendar--mobile-390x844.png",
+      "size_bytes": 54500,
+      "sha256": "afb11c30b6c041901b63072baaf9a6053319b49085ac789149ef8d2dd3d7fc3d"
+    },
+    {
+      "path": "screenshots/home-dinner-planner--desktop-1440x900.png",
+      "size_bytes": 98585,
+      "sha256": "388b9a9b6d3e5573126060e45fb7c85e7425fada550b3d12220b1d56bfe1df00"
+    },
+    {
+      "path": "screenshots/home-dinner-planner--mobile-390x844.png",
+      "size_bytes": 76066,
+      "sha256": "aa190727fa0465a04d944e8a5096ff1049b00b019626e4abee038b5ef4156275"
+    },
+    {
+      "path": "screenshots/home-inbox-review--desktop-1440x900.png",
+      "size_bytes": 63311,
+      "sha256": "268b0b38e6416955eaf048ccbebbffa2bb59427dc5669a308e5fbdf869eacf46"
+    },
+    {
+      "path": "screenshots/home-inbox-review--mobile-390x844.png",
+      "size_bytes": 45206,
+      "sha256": "0090964aa7543e896bb0b12e2cff53f333a26447e4de8e48ae51218d1580ae30"
+    },
+    {
+      "path": "screenshots/onboarding-complete--desktop-1440x900.png",
+      "size_bytes": 47847,
+      "sha256": "9e97e9f142a5aaeeeda1fbafbe3b2ab5975870cb76f2e09e6c2f58045614d0cf"
+    },
+    {
+      "path": "screenshots/onboarding-complete--mobile-390x844.png",
+      "size_bytes": 16779,
+      "sha256": "d0862a77becc7a35e692840130d9d7548274bea9c1682a19ccec7573fda9187c"
+    },
+    {
+      "path": "screenshots/onboarding-family--desktop-1440x900.png",
+      "size_bytes": 49692,
+      "sha256": "925e7c3c09f52d0eaeae5c8e83f4fca8d60b07bcdd06add6603c3ccaa58cb3c3"
+    },
+    {
+      "path": "screenshots/onboarding-family--mobile-390x844.png",
+      "size_bytes": 43436,
+      "sha256": "1647c2367aba2a8d68327ffd0dd02a4f0b3071b16a2d97b362555c0fad03895c"
+    },
+    {
+      "path": "screenshots/onboarding-profile--desktop-1440x900.png",
+      "size_bytes": 48542,
+      "sha256": "f28ce395265eb6da018c050d6b4ef646260b2f8d31610fbcbfaf5b6798cd8b50"
+    },
+    {
+      "path": "screenshots/onboarding-profile--mobile-390x844.png",
+      "size_bytes": 42117,
+      "sha256": "749370d076f10e90e5fbe368cd9b6ea596746c5298f7475b1120c6d5dc0dbcd2"
+    },
+    {
+      "path": "screenshots/onboarding-welcome--desktop-1440x900.png",
+      "size_bytes": 62242,
+      "sha256": "adacf2647f1ba5d58cccb15d5164a47aebfa1966b2ae145e7e1e0c8845873f04"
+    },
+    {
+      "path": "screenshots/onboarding-welcome--mobile-390x844.png",
+      "size_bytes": 53873,
+      "sha256": "ca5e31b43260a06047d978f3a0f9a780e0d0414ca298118458aa18a6e71dc177"
+    },
+    {
+      "path": "source-runtime-inventory.json",
+      "size_bytes": 1459,
+      "sha256": "8c87727bf9db93b8f44fde50473758e020daad91d1af1e082adfe88d6bdd7f11"
+    },
+    {
+      "path": "stress-holdout-report.json",
+      "size_bytes": 339,
+      "sha256": "2b034d8c353be87748c44a733f74d7c896bd8618613cd39070f1b06a28395f09"
+    },
+    {
+      "path": "surface-manifest.json",
+      "size_bytes": 93576,
+      "sha256": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4"
+    }
+  ]
+}
