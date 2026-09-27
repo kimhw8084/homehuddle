@@ -1,0 +1,358 @@
+{
+  "accepted_at": "2026-09-27T15:50:34Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc 'rtk git show b1f3af00863dafaa036c056e60393dc41c54edcc:atlas-failure-recovery/failure-triage.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git log -1 --format='%H%n%T%n%P' 0ef561e869f4bc53a2c473691bd3bd84b599f9a8 && rtk git ls-tree 0ef561e869f4bc53a2c473691bd3bd84b599f9a8\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote --heads origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg --files /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b\nrtk proxy git grep -n \\\"chores-my-scope\\\\|home-delivery-history\\\\|market-redeem-confirmation\\\" b1f3af00863dafaa036c056e60393dc41c54edcc -- atlas-failure-recovery\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\nP='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/'\nfor f in ['failure-triage.json','visual-atlas/capture-report.json']:\n d=json.load(open(P+f)); print(f,d.keys())\n if 'results' in d: print('results',len(d['results']))\n if 'surfaces' in d: print('surfaces',len(d['surfaces']))\n print('sample',str(d)[:800])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/capture-report.json'\nd=json.load(open(p)); print(len(d['capture_results'])); print(json.dumps(d['capture_results'][2],ensure_ascii=False,indent=2)[:2500])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/capture-report.json'\nd=json.load(open(p))\nfor x in d['capture_results']:\n if x['surface_key'] in {'chores-my-scope','home-delivery-history','home-automation-create','home-appliance-create','chores-reschedule','chores-random-assignment','chores-completed-expanded','family-member-detail','family-activity-expanded','wallet-goal-contribute','wallet-activity-search','market-item-edit','market-item-restock','market-price-history','market-redeem-confirmation','family-layout-edit'}:\n  print('\\\\n',x['surface_key'], 'fails=',x.get('failures'))\n  for a in x.get('actions',[]): print(a['order'],a['action'],'PASS' if a['passed'] else 'FAIL',a.get('error',''),a.get('selector'))\n  print('ready',x.get('ready_assertion'),'screens', list(x.get('screenshots',{})))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy /opt/anaconda3/bin/python /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/validate-current-recipes.py'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/capture-report.json'; d=json.load(open(p))\nkeys={'chores-my-scope','home-delivery-history','home-automation-create','home-appliance-create','chores-reschedule','chores-random-assignment','chores-completed-expanded','family-member-detail','family-activity-expanded','wallet-goal-contribute','wallet-activity-search','market-item-edit','market-item-restock','market-price-history','market-redeem-confirmation','family-layout-edit'}\nfor x in d['capture_results']:\n if x['surface_key'] in keys:\n  failed=[a for a in x.get('actions',[]) if not a.get('passed')]\n  print(x['surface_key'],'FAIL',[(a['action'],a.get('selector'),(a.get('error') or '')[:200]) for a in failed],'ready',x.get('ready_assertion',{}).get('value'), 'failure', x.get('failures'))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,subprocess\nc='0ef561e869f4bc53a2c473691bd3bd84b599f9a8';p='manifest-validation/surface-manifest.validated.json'; d=json.loads(subprocess.check_output(['rtk','git','show',f'{c}:{p}']))\nprint('top',d.keys())\nfor k in d:\n if 'unreachable' in k or 'noncanonical' in k: print(k,json.dumps(d[k],ensure_ascii=False,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --name-status 46bd155dd55cbd85a29db5722c96d96c4946952b 28735b6fc8436ff461d5a094cf90e9f0709821b3 && rtk git diff --stat 46bd155dd55cbd85a29db5722c96d96c4946952b 28735b6fc8436ff461d5a094cf90e9f0709821b3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/capture-report.json'; d=json.load(open(p))\nkeys={'chores-my-scope','home-delivery-history','home-automation-create','home-appliance-create','chores-reschedule','chores-random-assignment','chores-completed-expanded','family-member-detail','family-activity-expanded','wallet-goal-contribute','wallet-activity-search','market-item-edit','market-item-restock','market-price-history','market-redeem-confirmation','family-layout-edit'}\nfor x in d['capture_results']:\n if x['surface_key'] in keys:\n  fs=[a for a in x.get('actions',[]) if not a.get('passed')]\n  f=fs[0] if fs else None\n  msg=' '.join((f.get('error','').splitlines()[:1] if f else []))\n  print(x['surface_key'],'action=',f.get('action') if f else 'none','selector=',f.get('selector') if f else '', 'error=',msg[:180], 'ready=',x.get('ready_assertion',{}).get('value'))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,subprocess\nc='0ef561e869f4bc53a2c473691bd3bd84b599f9a8';p='manifest-validation/noncanonical-obligations.json'\ntry: d=json.loads(subprocess.check_output(['rtk','git','show',f'{c}:{p}']))\nexcept Exception as e: print('missing',e); raise SystemExit\nprint(json.dumps(d,ensure_ascii=False,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-238-R6@46bd155dd55cbd85a29db5722c96d96c4946952b/visual-atlas/capture-report.json'; d=json.load(open(p))\nkeys={'chores-my-scope','home-delivery-history','home-automation-create','home-appliance-create','chores-reschedule','chores-random-assignment','chores-completed-expanded','family-member-detail','family-activity-expanded','wallet-goal-contribute','wallet-activity-search','market-item-edit','market-item-restock','market-price-history','market-redeem-confirmation','family-layout-edit'}\nfor x in d['capture_results']:\n if x['surface_key'] in keys:\n  print('\\\\n'+x['surface_key'],'failures=',[f['class'] for f in x.get('failures',[])])\n  for a in x.get('actions',[]):\n   e=a.get('evidence',{})\n   safe={k:e[k] for k in ('selector_kind','label','text','gesture','bounds','control_index','anchor','row_bounds','value','state_after') if k in e}\n   print(a['order'],a['action'],'PASS' if a.get('passed') else 'FAIL',safe,('ERR '+(a.get('error','').splitlines()[0][:100]) if not a.get('passed') else ''))\n  print('ready',x.get('ready_assertion'))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/validation-work/recipe-validation-run.json';d=json.load(open(p))\nfor k in ['chores-reschedule','chores-random-assignment','wallet-reward-use','wallet-activity-search','market-item-edit','market-item-restock','market-redeem-confirmation']:\n x=next(r for r in d['all_results'] if r['surface_key']==k)\n print('\\\\n',k,'status',x['recipe_status'],'ready',x['ready_assertion'])\n for a in x['executed_visible_actions']: print(a['order'],a['action'],a['selector'],a.get('evidence'))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git ls-tree -r --name-only b1f3af00863dafaa036c056e60393dc41c54edcc | rtk proxy rg 'atlas-failure-recovery/'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy /opt/anaconda3/bin/python /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/validate-current-recipes.py'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy /opt/anaconda3/bin/python /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/build-reconciliation-package.py'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --porcelain=v1 --untracked-files=all\nrtk git branch --show-current\nrtk git rev-parse HEAD\nrtk git rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy /opt/anaconda3/bin/python /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/build-reconciliation-package.py'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5acf3/atlas-recipe-reconciliation/surface-manifest.current.json'\nd=json.load(open(p)); print('keys',d.keys()); print('counts',d.get('surface_count'),d.get('canonical_surface_count'),d.get('expected_screenshot_count'),d.get('validation_classification_counts'))\nfor key in ['chores-my-scope','wallet-reward-use','chores-bulk-selection']:\n r=next(x for x in d['surfaces'] if x['surface_key']==key); print('\\\\n',key, {k:r.get(k) for k in ('label','route','state','classification','validation_classification','capture_recipe_id','canonical')})\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/noncanonical-obligations.json'\nd=json.load(open(p)); print('\\\\nobligations',[(x['surface_key'],x.get('classification'),x.get('qualification_status')) for x in d['items']]); print('carried',d['carried_forward_unchanged']['qualification_status'])\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\nP='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5acf3'\nP='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5acf3'\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\nP='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3'\nd=json.load(open(P+'/atlas-recipe-reconciliation/surface-manifest.current.json')); print('keys',d.keys()); print('counts',d.get('surface_count'),d.get('canonical_surface_count'),d.get('expected_screenshot_count'),d.get('validation_classification_counts'))\nfor key in ['chores-my-scope','wallet-reward-use','chores-bulk-selection']:\n r=next(x for x in d['surfaces'] if x['surface_key']==key); print('\\\\n',key, {k:r.get(k) for k in ('label','route','state','classification','validation_classification','capture_recipe_id','canonical')})\nd=json.load(open(P+'/atlas-recipe-reconciliation/noncanonical-obligations.json')); print('\\\\nobligations',[(x['surface_key'],x.get('classification'),x.get('qualification_status')) for x in d['items']]); print('carried',d['carried_forward_unchanged']['qualification_status'])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,collections\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/surface-manifest.current.json';d=json.load(open(p))\nprint('unreachable',json.dumps(d.get('unreachable_surface_candidates'),indent=2)[:3000])\nprint('surfaces first',[(x.get('validation_classification'),x.get('classification')) for x in d['surfaces'][:4]])\nprint('surface count classifications',collections.Counter(x.get('validation_classification',x.get('classification')) for x in d['surfaces']))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/surface-manifest.current.json';d=json.load(open(p))\nfor k,v in d.items():\n if any(s in k.lower() for s in ('count','surface','validation','canonical','temporal','capture')) and not isinstance(v,(list,dict)):print(k,repr(v))\nprint('temporal',json.dumps(d.get('source_defined_temporal_states'),ensure_ascii=False,indent=2)[:2400])\nprint('valid',json.dumps(d.get('validation'),ensure_ascii=False,indent=2)[:2000])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy /opt/anaconda3/bin/python /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/build-reconciliation-package.py'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,hashlib,zipfile,collections\nfrom pathlib import Path\nP=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation')\nrequired=['surface-manifest.current.json','capture-recipes.current.json','recipe-validation-report.json','failed-recipe-reconciliation.json','route-normalization-report.json','current-source-diff-assessment.json','noncanonical-obligations.json','harness-defect-log.json','current-source-authority.json','artifact-bundle.zip']\nfor n in required: assert (P/n).is_file(),n\nm=json.load(open(P/'surface-manifest.current.json')); cr=json.load(open(P/'capture-recipes.current.json')); vr=json.load(open(P/'recipe-validation-report.json')); fr=json.load(open(P/'failed-recipe-reconciliation.json')); rr=json.load(open(P/'route-normalization-report.json')); diff=json.load(open(P/'current-source-diff-assessment.json')); no=json.load(open(P/'noncanonical-obligations.json')); inv=json.load(open(P/'artifact-inventory.json'))\nkeys=[s['surface_key'] for s in m['surfaces']]; artifacts=[s['canonical'][v]['artifact'] for s in m['surfaces'] for v in ('desktop','mobile')]\nassert len(keys)==len(set(keys))==66\nassert len(artifacts)==len(set(artifacts))==132\nassert m['status']==m['manifest_status']=='VALIDATED_CURRENT_SOURCE_PENDING_CAPTURE'\nassert m['source']=={'sha':'28735b6fc8436ff461d5a094cf90e9f0709821b3','tree':'719cf4a0051a6b0af390b7b8703bd5e62e1c22cc','remote_target':'main'}\nassert cr['recipe_count']==cr['canonical_surface_count']==cr['validated_recipe_count']==66\nassert vr['validated_recipe_count']==vr['canonical_surface_count']==66 and not vr['failed_surface_keys']\nassert len(vr['all_results'])==66 and all(x['recipe_status']=='RECIPE_VALIDATED_CURRENT_SOURCE' and x['ready_assertion']['passed'] and x['route_evidence']['passed'] for x in vr['all_results'])\nassert vr['screenshots_written']==0 and not vr['full_atlas_capture_performed']\nassert fr['root_route_false_positive_count']==8 and fr['query_route_bookkeeping_false_negative_count']==2 and fr['real_r6_failure_count']==16\nassert fr['current_source_surface_additions']==1 and len(fr['items'])==30\nassert rr['controls_failed']==0 and rr['controls_passed']==9\nassert diff['source_scope_drift'] is False and len(diff['changed_product_paths'])==7\nmeal=[x for x in no['items'] if x['surface_key']=='family-meal-voting']\nassert len(meal)==1 and meal[0]['qualification_status']=='SOURCE_DEFINED_TEMPORAL_UNPROVEN'\nassert not any(x['surface_key']=='chores-bulk-selection' for x in no['items'])\nassert inv['canonical_surface_count']==66 and inv['expected_screenshot_count']==132 and inv['actual_screenshots_in_package']==0\nfor item in inv['files']:\n p=P/item['path']; assert p.stat().st_size==item['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==item['sha256'], item['path']\nwith zipfile.ZipFile(P/'artifact-bundle.zip') as z:\n names=z.namelist(); assert len(names)==9 and all(name.startswith('atlas-recipe-reconciliation/') for name in names)\n print(json.dumps({'prepublication_package_validation':'PASS','canonical_surface_count':len(keys),'expected_screenshot_count':len(artifacts),'validated_recipes':len(vr['all_results']),'reconciled_records':len(fr['items']),'bundle_members':len(names),'bundle_sha256':hashlib.sha256((P/'artifact-bundle.zip').read_bytes()).hexdigest(),'inventory_file_sha256':hashlib.sha256((P/'artifact-inventory.json').read_bytes()).hexdigest()},ensure_ascii=False))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy /opt/anaconda3/bin/python /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/build-reconciliation-package.py'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,hashlib,zipfile\nfrom pathlib import Path\nP=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation')\nrequired=['surface-manifest.current.json','capture-recipes.current.json','recipe-validation-report.json','failed-recipe-reconciliation.json','route-normalization-report.json','current-source-diff-assessment.json','noncanonical-obligations.json','harness-defect-log.json','current-source-authority.json','artifact-bundle.zip']\nfor n in required: assert (P/n).is_file(),n\nm=json.load(open(P/'surface-manifest.current.json')); cr=json.load(open(P/'capture-recipes.current.json')); vr=json.load(open(P/'recipe-validation-report.json')); fr=json.load(open(P/'failed-recipe-reconciliation.json')); rr=json.load(open(P/'route-normalization-report.json')); diff=json.load(open(P/'current-source-diff-assessment.json')); no=json.load(open(P/'noncanonical-obligations.json')); inv=json.load(open(P/'artifact-inventory.json'))\nkeys=[s['surface_key'] for s in m['surfaces']]; artifacts=[s['canonical'][v]['artifact'] for s in m['surfaces'] for v in ('desktop','mobile')]\nassert len(keys)==len(set(keys))==66\nassert len(artifacts)==len(set(artifacts))==132\nassert m['surface_count']==m['canonical_surface_count']==66 and m['expected_screenshot_count']==132\nassert m['status']==m['manifest_status']=='VALIDATED_CURRENT_SOURCE_PENDING_CAPTURE'\nassert m['source']=={'sha':'28735b6fc8436ff461d5a094cf90e9f0709821b3','tree':'719cf4a0051a6b0af390b7b8703bd5e62e1c22cc','remote_target':'main'}\nassert cr['recipe_count']==cr['canonical_surface_count']==cr['validated_recipe_count']==66\nassert vr['validated_recipe_count']==vr['canonical_surface_count']==66 and not vr['failed_surface_keys']\nassert len(vr['all_results'])==66 and all(x['recipe_status']=='RECIPE_VALIDATED_CURRENT_SOURCE' and x['ready_assertion']['passed'] and x['route_evidence']['passed'] for x in vr['all_results'])\nassert vr['screenshots_written']==0 and not vr['full_atlas_capture_performed']\nassert fr['root_route_false_positive_count']==8 and fr['query_route_bookkeeping_false_negative_count']==2 and fr['real_r6_failure_count']==16\nassert fr['current_source_surface_additions']==1 and len(fr['items'])==30\nassert rr['controls_failed']==0 and rr['controls_passed']==9\nassert diff['source_scope_drift'] is False and len(diff['changed_product_paths'])==7\nmeal=[x for x in no['items'] if x['surface_key']=='family-meal-voting']\nassert len(meal)==1 and meal[0]['qualification_status']=='SOURCE_DEFINED_TEMPORAL_UNPROVEN'\nassert not any(x['surface_key']=='chores-bulk-selection' for x in no['items'])\nassert inv['canonical_surface_count']==66 and inv['expected_screenshot_count']==132 and inv['actual_screenshots_in_package']==0\nfor item in inv['files']:\n p=P/item['path']; assert p.stat().st_size==item['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==item['sha256'], item['path']\nwith zipfile.ZipFile(P/'artifact-bundle.zip') as z:\n names=z.namelist(); assert len(names)==9 and all(name.startswith('atlas-recipe-reconciliation/') for name in names)\n print(json.dumps({'prepublication_package_validation':'PASS','canonical_surface_count':len(keys),'expected_screenshot_count':len(artifacts),'validated_recipes':len(vr['all_results']),'reconciled_records':len(fr['items']),'bundle_members':len(names),'bundle_sha256':hashlib.sha256((P/'artifact-bundle.zip').read_bytes()).hexdigest(),'inventory_file_sha256':hashlib.sha256((P/'artifact-inventory.json').read_bytes()).hexdigest()},ensure_ascii=False))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nfrom pathlib import Path\nimport subprocess\nR=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3')\nfor n in ['runtime-server.pid','runtime-server.log']:\n p=R/n; print(n,'exists',p.exists(),'bytes',p.stat().st_size if p.exists() else None)\n if n.endswith('.pid') and p.exists():\n  pid=int(p.read_text().strip()); print('pid',pid); q=subprocess.run(['ps','-p',str(pid),'-o','pid=,command='],capture_output=True,text=True); print(q.stdout.strip() or 'process not running')\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport subprocess\nfor cmd in [['ps','-o','pid=,ppid=,command=','-ax'],['pgrep','-P','97345']]:\n p=subprocess.run(cmd,capture_output=True,text=True); print(p.stdout[:5000])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport subprocess\nfor pid in ('97345','97346'):\n print(pid,subprocess.run(['ps','-p',pid,'-o','pid=,ppid=,command='],capture_output=True,text=True).stdout.strip())\n for p in subprocess.run(['pgrep','-P',pid],capture_output=True,text=True).stdout.split():\n  print(' child',p,subprocess.run(['ps','-p',p,'-o','pid=,ppid=,command='],capture_output=True,text=True).stdout.strip())\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport os,signal,subprocess,time\nexpected='CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/runtime-source'\npids=[97373,97346,97345]\ncommands={}\nfor pid in pids:\n q=subprocess.run(['ps','-p',str(pid),'-o','pid=,ppid=,command='],capture_output=True,text=True)\n commands[pid]=q.stdout.strip()\nif expected not in commands[97373] or 'npm run web' not in commands[97346] or 'rtk npm run web' not in commands[97345]:\n raise SystemExit('refusing to stop process tree because PID ownership no longer matches the isolated validator runtime')\nfor pid in pids:\n try: os.kill(pid,signal.SIGTERM)\n except ProcessLookupError: pass\ntime.sleep(0.5)\nlive=[]\nfor pid in pids:\n if subprocess.run(['ps','-p',str(pid)],capture_output=True).returncode==0: live.append(pid)\nfor pid in live:\n try: os.kill(pid,signal.SIGKILL)\n except ProcessLookupError: pass\nprint('isolated local Expo process tree stopped',pids)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote --heads origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git worktree add --detach /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier 0ef561e869f4bc53a2c473691bd3bd84b599f9a8'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport shutil\nfrom pathlib import Path\nroot=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3')\nsrc=root/'atlas-recipe-reconciliation'; dst=root/'artifact-carrier/atlas-recipe-reconciliation'\nif dst.exists(): raise SystemExit('carrier package path already exists; refusing overwrite')\nshutil.copytree(src,dst)\nprint('copied package files',len([p for p in dst.iterdir() if p.is_file()]))\nPY\nrtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier status --short\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier add atlas-recipe-reconciliation'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier commit -m \"Project OS CHG-288 R1: current-source atlas recipes\"'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier rev-parse HEAD'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier rev-parse HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier status --porcelain=v1 --untracked-files=all'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote --heads origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/artifact-carrier push origin 705d18724e4b4ac3621206aad8926bbf55c53db8:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch --no-tags origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1:refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport hashlib,json,subprocess,zipfile,io\nfrom pathlib import Path\nPRODUCT=Path('/Users/haewonkim/.codex-fabric/worktrees/CF-108664702f8de524a1d5acf3')\nROOT=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3')\nPKG=ROOT/'atlas-recipe-reconciliation'\nREADBACK='refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\nARTIFACT='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\nEVIDENCE='refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\nMAIN='refs/heads/main'; SOURCE='28735b6fc8436ff461d5a094cf90e9f0709821b3'; TREE='719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'; COMMIT='705d18724e4b4ac3621206aad8926bbf55c53db8'\ndef git(*args,cwd=PRODUCT): return subprocess.check_output(['rtk','git',*args],cwd=cwd).decode().strip()\ndef show(path): return subprocess.check_output(['rtk','git','show',f'{READBACK}:atlas-recipe-reconciliation/{path}'],cwd=PRODUCT)\ndef digest(b): return hashlib.sha256(b).hexdigest()\nremote=git('ls-remote','--heads','origin',MAIN,ARTIFACT,EVIDENCE).splitlines()\nrefs={line.split()[1]:line.split()[0] for line in remote if line.strip()}\nassert refs.get(MAIN)==SOURCE,('remote main drift',refs)\nassert refs.get(ARTIFACT)==COMMIT,('artifact ref does not point to pushed commit',refs)\nassert EVIDENCE not in refs,('unexpected normal evidence ref mutation',refs.get(EVIDENCE))\ncommit=git('rev-parse',READBACK); tree=git('rev-parse',READBACK+'\"'^{tree}'\"')\nassert commit==COMMIT\nassert git('rev-parse',READBACK+'\"'^{tree}'\"')==git('rev-parse',COMMIT+'\"'^{tree}'\"')\nassert git('rev-parse',SOURCE+'\"'^{tree}'\"')==TREE\nmanifest_bytes=show('surface-manifest.current.json'); recipes_bytes=show('capture-recipes.current.json'); report_bytes=show('recipe-validation-report.json'); failed_bytes=show('failed-recipe-reconciliation.json'); route_bytes=show('route-normalization-report.json'); inventory_bytes=show('artifact-inventory.json'); bundle_bytes=show('artifact-bundle.zip')\nfor name,data in [('surface-manifest.current.json',manifest_bytes),('capture-recipes.current.json',recipes_bytes),('recipe-validation-report.json',report_bytes),('failed-recipe-reconciliation.json',failed_bytes),('route-normalization-report.json',route_bytes),('artifact-inventory.json',inventory_bytes),('artifact-bundle.zip',bundle_bytes)]:\n assert digest(data)==digest((PKG/name).read_bytes()),'remote/local sha mismatch '+name\nm=json.loads(manifest_bytes); cr=json.loads(recipes_bytes); vr=json.loads(report_bytes); fr=json.loads(failed_bytes); rr=json.loads(route_bytes); inv=json.loads(inventory_bytes)\nkeys=[x['surface_key'] for x in m['surfaces']]; artifacts=[x['canonical'][v]['artifact'] for x in m['surfaces'] for v in ('desktop','mobile')]\nassert m['status']=='VALIDATED_CURRENT_SOURCE_PENDING_CAPTURE' and m['canonical_surface_count']==m['surface_count']==66 and m['expected_screenshot_count']==132\nassert m['source']['sha']==SOURCE and m['source']['tree']==TREE\nassert len(keys)==len(set(keys))==66 and len(artifacts)==len(set(artifacts))==132\nassert cr['recipe_count']==cr['validated_recipe_count']==66 and vr['validated_recipe_count']==66 and len(vr['all_results'])==66 and vr['failed_surface_keys']==[]\nassert all(x['recipe_status']=='RECIPE_VALIDATED_CURRENT_SOURCE' and x['ready_assertion']['passed'] and x['route_evidence']['passed'] for x in vr['all_results'])\nassert vr['screenshots_written']==0 and not vr['full_atlas_capture_performed']\nassert fr['root_route_false_positive_count']==8 and fr['query_route_bookkeeping_false_negative_count']==2 and fr['real_r6_failure_count']==16 and fr['current_source_surface_additions']==1\nassert rr['controls_passed']==9 and rr['controls_failed']==0\nassert inv['canonical_surface_count']==66 and inv['expected_screenshot_count']==132 and inv['actual_screenshots_in_package']==0\nfor item in inv['files']:\n data=show(item['path']); assert len(data)==item['bytes'] and digest(data)==item['sha256'],item['path']\nwith zipfile.ZipFile(io.BytesIO(bundle_bytes)) as z:\n names=z.namelist(); assert len(names)==9\n for name in names: assert name.startswith('atlas-recipe-reconciliation/')\nstatus=git('status','--porcelain=v1','--untracked-files=all')\nassert status in ('','ok')\nassert git('branch','--show-current')=='codex/homehuddle-ui0-atlas-recipes-current-v1'\nassert git('rev-parse','HEAD')==SOURCE and git('rev-parse','HEAD\"'^{tree}'\"')==TREE\nreceipt={'project_os_atlas_recipe_reconciliation':1,'ok':True,'status':'GIT_PUBLISHED_AWAITING_AUDIT','project':'homehuddle','request':'homehuddle-ui0-atlas-recipes-current-v1','operation':'VERIFY','source_sha':SOURCE,'tree_sha':TREE,'source_changed':False,'canonical_surface_count':66,'expected_screenshot_count':132,'validated_recipe_count':66,'product_blocker_count':0,'authority_contradiction_count':0,'git_artifact_ref':ARTIFACT,'git_artifact_commit':commit,'git_artifact_tree':tree,'verified_package':'atlas-recipe-reconciliation','manifest_sha256':digest(manifest_bytes),'capture_recipes_sha256':digest(recipes_bytes),'recipe_validation_report_sha256':digest(report_bytes),'failed_reconciliation_sha256':digest(failed_bytes),'route_normalization_report_sha256':digest(route_bytes),'artifact_bundle_sha256':digest(bundle_bytes),'artifact_inventory_sha256':digest(inventory_bytes),'remote_main_sha':refs[MAIN],'remote_main_tree':TREE,'normal_fabric_evidence_ref':'unchanged-absent','product_worktree_clean':True,'canonical_screenshots_captured':False,'error_code':None}\n(ROOT/'publication-readback.json').write_text(json.dumps({'schema':'project-os-atlas-recipe-publication-readback-v1','remote_refs':refs,'artifact_commit':commit,'artifact_tree':tree,'source_sha':SOURCE,'source_tree':TREE,'verified_package_files':{name:digest(show(name)) for name in ['surface-manifest.current.json','capture-recipes.current.json','recipe-validation-report.json','failed-recipe-reconciliation.json','route-normalization-report.json','artifact-inventory.json','artifact-bundle.zip']},'canonical_surface_count':66,'expected_screenshot_count':132,'validated_recipe_count':66,'source_changed':False,'product_worktree_clean':True,'normal_fabric_evidence_ref_changed':False},indent=2)+'\\\\n')\n(ROOT/'success-receipt.json').write_text(json.dumps(receipt,indent=2)+'\\\\n')\nprint(json.dumps(receipt,ensure_ascii=False))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1:atlas-recipe-reconciliation/artifact-bundle.zip\nrtk git hash-object /Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/artifact-bundle.zip\nrtk git cat-file -s refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1:atlas-recipe-reconciliation/artifact-bundle.zip'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport subprocess,hashlib\nfrom pathlib import Path\nrepo='/Users/haewonkim/.codex-fabric/worktrees/CF-108664702f8de524a1d5acf3'\nref='refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\npath='atlas-recipe-reconciliation/artifact-bundle.zip'\nlocal=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/artifact-bundle.zip').read_bytes()\nblob=subprocess.check_output(['rtk','git','rev-parse',f'{ref}:{path}'],cwd=repo).decode().strip()\nremote=subprocess.check_output(['rtk','proxy','/usr/bin/git','-C',repo,'cat-file','blob',blob])\nprint('remote zip raw readback',len(remote),hashlib.sha256(remote).hexdigest(),'matches',remote==local)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport hashlib,json,subprocess,zipfile,io\nfrom pathlib import Path\nPRODUCT=Path('/Users/haewonkim/.codex-fabric/worktrees/CF-108664702f8de524a1d5acf3')\nROOT=Path('/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3')\nPKG=ROOT/'atlas-recipe-reconciliation'\nREADBACK='refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\nARTIFACT='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\nEVIDENCE='refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1'\nMAIN='refs/heads/main'; SOURCE='28735b6fc8436ff461d5a094cf90e9f0709821b3'; TREE='719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'; COMMIT='705d18724e4b4ac3621206aad8926bbf55c53db8'\ndef git(*args): return subprocess.check_output(['rtk','git',*args],cwd=PRODUCT).decode().strip()\ndef raw(path):\n full=f'atlas-recipe-reconciliation/{path}'\n if path.endswith('.zip'):\n  oid=git('rev-parse',f'{READBACK}:{full}')\n  return subprocess.check_output(['rtk','proxy','/usr/bin/git','-C',str(PRODUCT),'cat-file','blob',oid])\n return subprocess.check_output(['rtk','git','show',f'{READBACK}:{full}'],cwd=PRODUCT)\ndef digest(b): return hashlib.sha256(b).hexdigest()\nrefs={line.split()[1]:line.split()[0] for line in git('ls-remote','--heads','origin',MAIN,ARTIFACT,EVIDENCE).splitlines() if line.strip()}\nassert refs.get(MAIN)==SOURCE,('remote main drift',refs)\nassert refs.get(ARTIFACT)==COMMIT,('artifact ref does not point to pushed commit',refs)\nassert EVIDENCE not in refs,('normal evidence ref changed',refs.get(EVIDENCE))\ncommit=git('rev-parse',READBACK); tree=git('rev-parse',READBACK+'\"'^{tree}'\"')\nassert commit==COMMIT and git('rev-parse',SOURCE+'\"'^{tree}'\"')==TREE\nmanifest_bytes=raw('surface-manifest.current.json'); recipes_bytes=raw('capture-recipes.current.json'); report_bytes=raw('recipe-validation-report.json'); failed_bytes=raw('failed-recipe-reconciliation.json'); route_bytes=raw('route-normalization-report.json'); inventory_bytes=raw('artifact-inventory.json'); bundle_bytes=raw('artifact-bundle.zip')\nfor name,data in [('surface-manifest.current.json',manifest_bytes),('capture-recipes.current.json',recipes_bytes),('recipe-validation-report.json',report_bytes),('failed-recipe-reconciliation.json',failed_bytes),('route-normalization-report.json',route_bytes),('artifact-inventory.json',inventory_bytes),('artifact-bundle.zip',bundle_bytes)]:\n assert digest(data)==digest((PKG/name).read_bytes()),'remote/local sha mismatch '+name\nm=json.loads(manifest_bytes); cr=json.loads(recipes_bytes); vr=json.loads(report_bytes); fr=json.loads(failed_bytes); rr=json.loads(route_bytes); inv=json.loads(inventory_bytes)\nkeys=[x['surface_key'] for x in m['surfaces']]; artifacts=[x['canonical'][v]['artifact'] for x in m['surfaces'] for v in ('desktop','mobile')]\nassert m['status']=='VALIDATED_CURRENT_SOURCE_PENDING_CAPTURE' and m['canonical_surface_count']==m['surface_count']==66 and m['expected_screenshot_count']==132\nassert m['source']['sha']==SOURCE and m['source']['tree']==TREE\nassert len(keys)==len(set(keys))==66 and len(artifacts)==len(set(artifacts))==132\nassert cr['recipe_count']==cr['validated_recipe_count']==66 and vr['validated_recipe_count']==66 and len(vr['all_results'])==66 and vr['failed_surface_keys']==[]\nassert all(x['recipe_status']=='RECIPE_VALIDATED_CURRENT_SOURCE' and x['ready_assertion']['passed'] and x['route_evidence']['passed'] for x in vr['all_results'])\nassert vr['screenshots_written']==0 and not vr['full_atlas_capture_performed']\nassert fr['root_route_false_positive_count']==8 and fr['query_route_bookkeeping_false_negative_count']==2 and fr['real_r6_failure_count']==16 and fr['current_source_surface_additions']==1\nassert rr['controls_passed']==9 and rr['controls_failed']==0\nassert inv['canonical_surface_count']==66 and inv['expected_screenshot_count']==132 and inv['actual_screenshots_in_package']==0\nremote_file_shas={}\nfor item in inv['files']:\n data=raw(item['path']); remote_file_shas[item['path']]=digest(data)\n assert len(data)==item['bytes'] and digest(data)==item['sha256'],item['path']\nwith zipfile.ZipFile(io.BytesIO(bundle_bytes)) as z:\n names=z.namelist(); assert len(names)==9 and all(name.startswith('atlas-recipe-reconciliation/') for name in names)\nstatus=git('status','--porcelain=v1','--untracked-files=all')\nassert status in ('','ok')\nassert git('branch','--show-current')=='codex/homehuddle-ui0-atlas-recipes-current-v1'\nassert git('rev-parse','HEAD')==SOURCE and git('rev-parse','HEAD\"'^{tree}'\"')==TREE\nreceipt={'project_os_atlas_recipe_reconciliation':1,'ok':True,'status':'GIT_PUBLISHED_AWAITING_AUDIT','project':'homehuddle','request':'homehuddle-ui0-atlas-recipes-current-v1','operation':'VERIFY','source_sha':SOURCE,'tree_sha':TREE,'source_changed':False,'canonical_surface_count':66,'expected_screenshot_count':132,'validated_recipe_count':66,'product_blocker_count':0,'authority_contradiction_count':0,'git_artifact_ref':ARTIFACT,'git_artifact_commit':commit,'git_artifact_tree':tree,'verified_package':'atlas-recipe-reconciliation','manifest_sha256':digest(manifest_bytes),'capture_recipes_sha256':digest(recipes_bytes),'recipe_validation_report_sha256':digest(report_bytes),'failed_reconciliation_sha256':digest(failed_bytes),'route_normalization_report_sha256':digest(route_bytes),'artifact_bundle_sha256':digest(bundle_bytes),'artifact_inventory_sha256':digest(inventory_bytes),'remote_main_sha':refs[MAIN],'remote_main_tree':TREE,'normal_fabric_evidence_ref':'unchanged-absent','product_worktree_clean':True,'canonical_screenshots_captured':False,'error_code':None}\nreadback={'schema':'project-os-atlas-recipe-publication-readback-v1','remote_refs':refs,'artifact_commit':commit,'artifact_tree':tree,'source_sha':SOURCE,'source_tree':TREE,'verified_package_files':remote_file_shas,'canonical_surface_count':66,'expected_screenshot_count':132,'validated_recipe_count':66,'source_changed':False,'product_worktree_clean':True,'normal_fabric_evidence_ref_changed':False}\n(ROOT/'publication-readback.json').write_text(json.dumps(readback,indent=2)+'\\\\n')\n(ROOT/'success-receipt.json').write_text(json.dumps(receipt,indent=2)+'\\\\n')\nprint(json.dumps(receipt,ensure_ascii=False))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,collections\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/recipe-validation-report.json'\nd=json.load(open(p))\nagg=collections.Counter()\nfor x in d['all_results']:\n for k in ('pageerror_count','console_error_count','console_warning_count','failed_request_count','http_ge_400_count','logbox_match_count'):\n  agg[k]+=x['runtime_errors_warnings_summary'].get(k,0)\nerrors=[];failed=[];bad=[]\nfor x in d['all_results']:\n s=x['runtime_errors_warnings_summary']\n if s.get('console_error_count'): errors.append((x['surface_key'],s['console_errors']))\n if s.get('failed_request_count'): failed.append((x['surface_key'],s['failed_requests']))\n if s.get('http_ge_400_count'): bad.append((x['surface_key'],s['http_ge_400']))\nprint('aggregate',dict(agg));print('console error surfaces',len(errors));print('failed request surfaces',len(failed));print('http >=400 surfaces',len(bad))\nif errors: print('errors',json.dumps(errors,ensure_ascii=False)[:3000])\nif failed: print('failed',json.dumps(failed,ensure_ascii=False)[:1800])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy /opt/anaconda3/bin/python - <<'PY'\nimport json,collections,urllib.parse\np='/Users/haewonkim/.codex-fabric/project-os-artifacts/homehuddle/CHG-288-R1@28735b6fc8436ff461d5a094cf90e9f0709821b3/atlas-recipe-reconciliation/recipe-validation-report.json';d=json.load(open(p))\nerrors=collections.Counter(); req=collections.Counter(); warns=collections.Counter();\nfor x in d['all_results']:\n s=x['runtime_errors_warnings_summary']\n for e in s.get('console_errors',[]):errors[e.get('text','')]+=1\n for e in s.get('console_warnings',[]):warns[e.get('text','')]+=1\n for e in s.get('failed_requests',[]):req[(e.get('method'),urllib.parse.urlsplit(e.get('url','')).netloc+urllib.parse.urlsplit(e.get('url','')).path,e.get('failure'))]+=1\nprint('CONSOLE ERRORS')\nfor k,v in errors.items():print(v,repr(k[:300]))\nprint('FAILED REQUESTS')\nfor k,v in req.items():print(v,k)\nprint('WARNINGS UNIQUE',len(warns),'total',sum(warns.values()))\nfor k,v in warns.most_common(20):print(v,repr(k[:220]))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 368,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 97.5,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 21208320,
+      "fresh_input_tokens": 543779,
+      "input_tokens": 21752099,
+      "non_reasoning_output_tokens": 66034,
+      "output_tokens": 181901,
+      "reasoning_output_tokens": 115867,
+      "total_processed_tokens": 21934000
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-27T17:21:11Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "branch": "codex/homehuddle-ui0-atlas-recipes-current-v1",
+    "detached_verify": false,
+    "head_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "remote_exact_head": true,
+    "remote_head_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "work_branch": "codex/homehuddle-ui0-atlas-recipes-current-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-108664702f8de524a1d5acf3",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v1"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-atlas-recipes-current-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-27T15:50:34Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 5437,
+    "queue_seconds": 0,
+    "total_seconds": 5437
+  },
+  "transport": {
+    "bytes": 12603,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 12265,
+    "prompt_sha256": "99fe17f2e57d70c069a8920e21b0ea32ab85cab5ed97cdcd7a7350cf9e9696fb",
+    "sha256": "108664702f8de524a1d5acf3cef0e4b5e1ce4ac0b441ee7607f8b2430e74afff"
+  }
+}
