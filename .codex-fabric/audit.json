@@ -1,0 +1,358 @@
+{
+  "accepted_at": "2026-09-27T19:58:33Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const m=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/input/surface-manifest.current.json\\\"));const r=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/input/capture-recipes.current.json\\\"));for(const x of r.recipes){const s=m.surfaces.find(y=>y.surface_key===x.surface_key);const special=x.ordered_visible_user_actions.filter(a=>a.selector.kind&&\"'!/visible (text|button text|label|fixture control)|textbox placeholder|route|anchored_text|pattern_text|visible pressable text/.test(a.selector.kind));if(special.length||x.ordered_visible_user_actions.some(a=>!a.selector.label)) console.log(JSON.stringify({key:x.surface_key,actions:x.ordered_visible_user_actions.map(a=>({action:a.action,selector:a.selector,value:a.value,fixture_bootstrap:a.fixture_bootstrap})),surface_trigger_evidence:s.trigger_evidence,ready:x.ready_assertion,route:x.route_evidence},null,2));}'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy npm exec expo -- --version && rtk proxy git status --porcelain=v1 && rtk proxy git diff -- package.json package-lock.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy ls -ld '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' '/Applications/Chromium.app/Contents/MacOS/Chromium' /Users/haewonkim/Library/Caches/ms-playwright /Users/haewonkim/.cache/ms-playwright 2>/dev/null; rtk proxy git status --porcelain=v1; rtk proxy git diff -- package.json package-lock.json; rtk proxy node -e 'for(const m of [\\\"playwright\\\",\\\"playwright-core\\\",\\\"puppeteer\\\",\\\"puppeteer-core\\\"]){try{console.log(m,require.resolve(m))}catch(e){console.log(m,\\\"absent\\\")}}'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy find /Users/haewonkim -maxdepth 6 \\\\( -name 'chrome-headless-shell' -o -name 'Google Chrome' -o -name 'chromium' -o -name 'playwright' \\\\) -type f -print 2>/dev/null\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n 'setDevModal|devModalVisible|logo.*tap|tap.*logo|setTap|Developer Control|onPress=.*dev' app/index.tsx && rtk proxy git status --porcelain=v1 && rtk proxy sha256sum package.json package-lock.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '300,430p' app/index.tsx && rtk proxy sed -n '1,220p' app/_layout.tsx && rtk proxy sed -n '1,200p' 'app/(app)/_layout.tsx' && rtk proxy sed -n '1,160p' 'app/(app)/(tabs)/_layout.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '430,530p' app/index.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n 'function Logo3D|const Logo3D|onPress' components app/index.tsx | head -80 && rtk proxy rg -n 'accessibilityLabel|accessibilityRole|testID' components/Logo3D*\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const r=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/input/capture-recipes.current.json\\\"));const c={}; for(const x of r.recipes) for(const a of x.ordered_visible_user_actions){const k=a.selector.kind;c[k]=(c[k]||0)+1};console.log(JSON.stringify(c,null,2)); for(const x of r.recipes){const ks=[...new Set(x.ordered_visible_user_actions.map(a=>a.selector.kind))];console.log(x.surface_key,\\\"::\\\",ks.join(\\\", \\\"));}'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/main:refs/remotes/origin/main && rtk proxy git rev-parse refs/remotes/origin/main && rtk proxy git rev-parse refs/remotes/origin/main''^{tree} && rtk proxy git rev-parse HEAD && rtk proxy git rev-parse HEAD''^{tree} && rtk proxy git status --porcelain=v1 && rtk proxy git diff -- package.json package-lock.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy cat /Users/haewonkim/.codex/plugins/cache/openai-primary-runtime/pdf/26.923.10815/skills/pdf/SKILL.md'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const r=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/input/capture-recipes.current.json\\\"));for(const x of r.recipes)for(const a of x.ordered_visible_user_actions)if(a.selector.kind===\\\"visible action observed by runtime probe\\\")console.log(x.surface_key,JSON.stringify(a.selector));' && rtk proxy rg -n 'Accessible|AmbientHUD|Profile|avatar|testID' components/AmbientHUD.tsx app/'(app)'/'(tabs)'/index.tsx\"",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n 'Add to Market|New Market Item|Limited stock|placeholder=|Add Stock|Quick Add|Add an item|Plus|Create Fund|Goal Name|Target Points|R5 disposable item' 'app/(app)/(tabs)/market.tsx' 'app/(app)/(tabs)/restock.tsx' 'app/(app)/(tabs)/wallet.tsx' app/onboarding/family.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '312,535p' 'app/(app)/(tabs)/market.tsx' && rtk proxy sed -n '1050,1115p' 'app/(app)/(tabs)/restock.tsx' && rtk proxy sed -n '925,995p' 'app/(app)/(tabs)/wallet.tsx'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sed -n '6420,6510p' 'app/(app)/(tabs)/chores.tsx' && rtk proxy rg -n 'chore-completion-circle-check-mail|bulk-selection-count|accessibilityState|checked|selected' 'app/(app)/(tabs)/chores.tsx' | tail -50\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy find /Applications/ChatGPT.app/Contents/Resources /Users/haewonkim/.codex /Users/haewonkim/.codex-fabric -type f -name mark_artifact_operation_started.mjs -print 2>/dev/null; rtk proxy which pdftoppm; rtk proxy python3 -c 'import reportlab,pypdf,pdfplumber; print(reportlab.Version, pypdf.__version__, pdfplumber.__version__)' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const p=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/captures.json\\\";const d=JSON.parse(fs.readFileSync(p));console.log(JSON.stringify({captures:d.length,uniqueSurfaces:[...new Set(d.map(x=>x.surface_key))].length,last:d.slice(-4).map(x=>({key:x.surface_key,viewport:x.viewport})),failures:fs.existsSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/sweep-failures.json\\\")?JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/sweep-failures.json\\\")):null},null,2))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const b=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/\\\";const c=JSON.parse(fs.readFileSync(b+\\\"captures.json\\\"));const d=JSON.parse(fs.readFileSync(b+\\\"runtime-diagnostics.json\\\"));const f=JSON.parse(fs.readFileSync(b+\\\"sweep-failures.json\\\"));console.log(JSON.stringify({captures:c.length,unique:[...new Set(c.map(x=>x.surface_key))].length,diagnosticRows:d.length,failures:f.length,failedKeys:[...new Set(f.map(x=>x.surface_key))],last:d.slice(-4).map(x=>({key:x.surface_key,actions:x.actions.length,caps:x.captures.length,error:x.failure?.message}))},null,2))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const {createRequire}=require(\\\"module\\\");const rq=createRequire(\\\"/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/playwright/package.json\\\");const pw=rq(\\\"playwright\\\");(async()=>{const b=await pw.chromium.launch({headless:true});const c=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,locale:\\\"en-US\\\",timezoneId:\\\"America/Chicago\\\"});const p=await c.newPage();const errors=[];p.on(\\\"console\\\",m=>{if([\\\"error\\\",\\\"warning\\\"].includes(m.type()))errors.push({type:m.type(),text:m.text()})});p.on(\\\"pageerror\\\",e=>errors.push({pageerror:String(e)}));await p.goto(\\\"http://localhost:8081/chores\\\",{waitUntil:\\\"domcontentloaded\\\",timeout:30000});for(const t of [700,3000,8000]){await p.waitForTimeout(t);console.log(JSON.stringify({wait:t,url:p.url(),body:(await p.locator(\\\"body\\\").innerText().catch(e=>\\\"ERR \\\"+e.message)).slice(0,900),errors:errors.slice(-8)}))}await b.close()})().catch(e=>{console.error(e);process.exitCode=1})'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy cat store/authStore.ts && rtk proxy sed -n '1,130p' store/huddleStore.ts && rtk proxy rg -n 'setDevBypass|isDevBypass' .\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const b=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/\\\";const c=JSON.parse(fs.readFileSync(b+\\\"captures.json\\\"));const d=JSON.parse(fs.readFileSync(b+\\\"runtime-diagnostics.json\\\"));const f=JSON.parse(fs.readFileSync(b+\\\"sweep-failures.json\\\"));console.log(JSON.stringify({captures:c.length,unique:[...new Set(c.map(x=>x.surface_key))],rows:d.length,failures:f.length,last:d.slice(-3).map(x=>({key:x.surface_key,actions:x.actions.length,caps:x.captures.length,error:x.failure?.message}))},null,2))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const {createRequire}=require(\\\"module\\\");const rq=createRequire(\\\"/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/playwright/package.json\\\");const pw=rq(\\\"playwright\\\");(async()=>{const b=await pw.chromium.launch({headless:true});for(const route of [\\\"/\\\",\\\"/chores\\\"]){const c=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,locale:\\\"en-US\\\",timezoneId:\\\"America/Chicago\\\"});const p=await c.newPage();await p.goto(\\\"http://localhost:8081\\\"+route,{waitUntil:\\\"domcontentloaded\\\",timeout:30000});await p.waitForTimeout(3000);const data=await p.evaluate(()=>({url:location.href,keys:Object.keys(localStorage),sessionKeys:Object.keys(sessionStorage),head:document.body.innerText.slice(0,180)}));console.log(JSON.stringify(data));await c.close()}await b.close()})().catch(e=>{console.error(e);process.exitCode=1})'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rg -n 'Sign Out|Log Out|signOut|signOut\\\\(' 'app/(app)/profile.tsx' 'app/(app)' components/DevToolsOverlay.tsx && rtk proxy sed -n '250,320p' 'app/(app)/profile.tsx' && rtk proxy sed -n '145,215p' components/DevToolsOverlay.tsx && rtk proxy sed -n '1,130p' app/index.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const {createRequire}=require(\\\"module\\\");const rq=createRequire(\\\"/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/playwright/package.json\\\");const pw=rq(\\\"playwright\\\");(async()=>{const b=await pw.chromium.launch({headless:true,executablePath:\\\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\\\"});for(const route of [\\\"/\\\",\\\"/chores\\\"]){const c=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,locale:\\\"en-US\\\",timezoneId:\\\"America/Chicago\\\"});const p=await c.newPage();await p.goto(\\\"http://localhost:8081\\\"+route,{waitUntil:\\\"domcontentloaded\\\",timeout:30000});await p.waitForTimeout(2000);console.log(JSON.stringify({route,url:p.url(),body:(await p.locator(\\\"body\\\").innerText()).slice(0,220),version:b.version(),storage:await p.evaluate(()=>({local:Object.keys(localStorage),session:Object.keys(sessionStorage)}))}));await c.close()}await b.close()})().catch(e=>{console.error(e);process.exitCode=1})'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const b=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/\\\";const c=JSON.parse(fs.readFileSync(b+\\\"captures.json\\\"));const d=JSON.parse(fs.readFileSync(b+\\\"runtime-diagnostics.json\\\"));const f=JSON.parse(fs.readFileSync(b+\\\"sweep-failures.json\\\"));const groups={};for(const x of f)groups[x.reason]=(groups[x.reason]||0)+1;console.log(JSON.stringify({capturedSurfaces:[...new Set(c.map(x=>x.surface_key))],capturePairs:c.length,failedPairCount:f.length,failedSurfaces:[...new Set(f.map(x=>x.surface_key))],failureReasons:groups,nonFixtureActionRows:d.filter(x=>x.actions.length>0&&x.failure).map(x=>({key:x.surface_key,actions:x.actions.map(a=>a.action),failure:x.failure.message})),runtimePageErrors:[...new Set(d.flatMap(x=>x.diagnostics.pageerrors))]},null,2))' && rtk proxy git status --short --branch && rtk proxy git rev-parse HEAD && rtk proxy git rev-parse refs/remotes/origin/main\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\");const b=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/\\\";const c=JSON.parse(fs.readFileSync(b+\\\"captures.json\\\"));const d=JSON.parse(fs.readFileSync(b+\\\"runtime-diagnostics.json\\\"));const f=JSON.parse(fs.readFileSync(b+\\\"sweep-failures.json\\\"));const groups={};for(const x of f)groups[x.reason]=(groups[x.reason]||0)+1;const rows=d.filter(x=>Array.isArray(x.actions));console.log(JSON.stringify({capturedSurfaces:[...new Set(c.map(x=>x.surface_key))],capturePairs:c.length,diagnosticRows:rows.length,failedPairCount:f.length,failedSurfaces:[...new Set(f.map(x=>x.surface_key))],failureReasons:groups,nonFixtureActionRows:rows.filter(x=>x.actions.length&&x.failure).map(x=>({key:x.surface_key,actions:x.actions.map(a=>a.action),failure:x.failure.message})),runtimePageErrors:[...new Set(rows.flatMap(x=>x.diagnostics.pageerrors))]},null,2))' && rtk proxy git status --short --branch && rtk proxy git rev-parse HEAD && rtk proxy git rev-parse refs/remotes/origin/main\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy cat lib/supabase.ts && rtk proxy curl --max-time 2 -s -o /dev/null -w 'loopback_supabase_http=%{http_code}\\\\n' http://127.0.0.1:54321/\"",
+      "exit_code": 7,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const {createRequire}=require(\\\"module\\\");const rq=createRequire(\\\"/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules/playwright/package.json\\\");const pw=rq(\\\"playwright\\\");(async()=>{const b=await pw.chromium.launch({headless:true,executablePath:\\\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\\\"});const c=await b.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,locale:\\\"en-US\\\",timezoneId:\\\"America/Chicago\\\"});const p=await c.newPage();const req=[];p.on(\\\"request\\\",r=>{if(r.url().includes(\\\"127.0.0.1:54321\\\"))req.push(r.url().split(\\\"?\\\")[0])});p.on(\\\"response\\\",r=>{if(r.url().includes(\\\"127.0.0.1:54321\\\"))req.push(r.status()+\\\" \\\"+r.url().split(\\\"?\\\")[0])});await p.goto(\\\"http://localhost:8081/chores\\\",{waitUntil:\\\"domcontentloaded\\\",timeout:30000});await p.waitForTimeout(2500);console.log(JSON.stringify(await p.evaluate(async()=>({url:location.href,local:Object.keys(localStorage),session:Object.keys(sessionStorage),indexedDB:await indexedDB.databases(),head:document.body.innerText.slice(0,80)})));console.log(JSON.stringify({supabase:req}));await b.close()})().catch(e=>{console.error(e);process.exitCode=1})'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\"),c=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/captures.json\\\")),f=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/sweep-failures.json\\\"));const x=c.map(a=>{const b=fs.readFileSync(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/\\\"+a.artifact);return {key:a.surface_key,viewport:a.viewport,sha:b.length>24?b.subarray(0,8).toString(\\\"hex\\\"):\\\"\\\",dims:[b.readUInt32BE(16),b.readUInt32BE(20)],recorded:a.dimensions}});console.log(JSON.stringify({captures:c.length,pairs:new Set(c.map(a=>a.surface_key+\\\"|\\\"+a.viewport)).size,failed:f.length,dimensions:x},null,2))' \"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git status --short --branch && rtk proxy git rev-parse HEAD && rtk proxy git rev-parse HEAD''^{tree} && rtk proxy git rev-parse refs/remotes/origin/main''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node --version && rtk proxy npm --version && rtk proxy ./node_modules/.bin/expo --version && rtk proxy node -e 'for(const n of [\\\"expo\\\",\\\"react\\\",\\\"react-native\\\",\\\"react-native-web\\\",\\\"expo-router\\\"]){const p=require(n+\\\"/package.json\\\");console.log(n,p.version)}' && rtk proxy sw_vers\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\"),p=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/\\\",c=JSON.parse(fs.readFileSync(p+\\\"captures.json\\\"));const x=c.map(a=>{const rel=a.artifact||(\\\"screenshots/\\\"+a.path.split(\\\"/screenshots/\\\").pop());const b=fs.readFileSync(p+rel);return {key:a.surface_key,viewport:a.viewport,artifact:rel,sha256:require(\\\"crypto\\\").createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\"),actual:[b.readUInt32BE(16),b.readUInt32BE(20)],recorded:a.dimensions}});console.log(JSON.stringify({captures:c.length,pairs:new Set(c.map(a=>a.surface_key+\\\"|\\\"+a.viewport)).size,dimensions:x},null,2))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy sh -c 'cd /tmp/homehuddle-ui0-final-atlas-current-v1/package && zip -q -r /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-bundle.zip visual-atlas' && rtk proxy mv /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-bundle.zip /tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas/artifact-bundle.zip && rtk proxy shasum -a 256 /tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas/artifact-bundle.zip /tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas/artifact-inventory.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const fs=require(\\\"fs\\\"),crypto=require(\\\"crypto\\\"),p=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas/\\\";const sha=b=>crypto.createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\");const m=fs.readFileSync(p+\\\"surface-manifest.json\\\"),r=fs.readFileSync(p+\\\"capture-recipes.json\\\"),a=JSON.parse(fs.readFileSync(p+\\\"capture-authority.json\\\")),c=JSON.parse(fs.readFileSync(p+\\\"capture-report.json\\\")),man=JSON.parse(m);console.log(JSON.stringify({manifest_sha256:sha(m),recipes_sha256:sha(r),canonical_keys:man.surfaces.length,expected:a.expected_screenshot_count,manifest_mutation:a.manifest_mutation_count,recipe_mutation:a.recipe_mutation_count,status:c.status,error_code:c.error_code,captured:c.counts.provisional_screenshot_count,failed_pairs:c.failed_surface_viewport_pairs.length,failed_keys:c.counts.failed_surface_count},null,2))' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 -c 'import zipfile,json,hashlib,os; z=zipfile.ZipFile(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas/artifact-bundle.zip\\\"); names=set(z.namelist()); inv=json.load(open(\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas/artifact-inventory.json\\\")); bad=[]; missing=[]; [(missing.append(\\\"visual-atlas/\\\"+e[\\\"path\\\"]) if \\\"visual-atlas/\\\"+e[\\\"path\\\"] not in names else None) for e in inv[\\\"entries\\\"]]; [(bad.append(e[\\\"path\\\"]) if hashlib.sha256(z.read(\\\"visual-atlas/\\\"+e[\\\"path\\\"])).hexdigest()\"'!=e[\"sha256\"] else None) for e in inv[\"entries\"] if \"visual-atlas/\"+e[\"path\"] in names]; print(json.dumps({\"zip_members\":len(names),\"inventory_entries\":inv[\"entry_count\"],\"missing\":missing,\"hash_mismatches\":bad,\"inventory_in_zip\":\"visual-atlas/artifact-inventory.json\" in names,\"pdf_members\":[n for n in names if n.endswith(\".pdf\")]},indent=2)); assert not missing and not bad and \"visual-atlas/artifact-inventory.json\" in names'\"' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/main:refs/remotes/origin/main && rtk proxy git rev-parse refs/remotes/origin/main && rtk proxy git rev-parse refs/remotes/origin/main''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy rm -rf /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git && rtk git init --initial-branch=artifact-evidence /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git && rtk proxy cp -R /tmp/homehuddle-ui0-final-atlas-current-v1/package/visual-atlas /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git/visual-atlas && rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git add visual-atlas && rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git commit -m 'Publish HomeHuddle UI0 atlas failure evidence'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git rev-parse HEAD && rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git rev-parse HEAD''^{tree} && rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git status --porcelain=v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git remote add origin https://github.com/kimhw8084/homehuddle.git && rtk proxy git -C /tmp/homehuddle-ui0-final-atlas-current-v1/artifact-git push origin HEAD:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy rm -rf /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files && rtk proxy git init --bare /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git && rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git fetch https://github.com/kimhw8084/homehuddle.git refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1:refs/heads/readback && rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git rev-parse refs/heads/readback && rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git rev-parse refs/heads/readback''^{tree} && rtk proxy mkdir -p /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files && rtk proxy sh -c '\"'rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git archive --format=tar refs/heads/readback | rtk proxy tar -xf - -C /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy python3 -c 'import os,json,hashlib,struct,zipfile; root=\\\"/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas\\\"; mbytes=open(root+\\\"/surface-manifest.json\\\",\\\"rb\\\").read(); rbytes=open(root+\\\"/capture-recipes.json\\\",\\\"rb\\\").read(); m=json.loads(mbytes); r=json.loads(rbytes); c=json.load(open(root+\\\"/capture-report.json\\\")); inv=json.load(open(root+\\\"/artifact-inventory.json\\\")); capmap={cap[\\\"surface_key\\\"]+\\\"|\\\"+cap[\\\"viewport\\\"]:cap for s in c[\\\"surfaces\\\"] for cap in s[\\\"captures\\\"]}; present=[]; missing=[]; bad=[]; seen=set();\nfor s in m[\\\"surfaces\\\"]:\n  for v in (\\\"desktop\\\",\\\"mobile\\\"):\n    art=s[\\\"canonical\\\"][v][\\\"artifact\\\"]; key=s[\\\"surface_key\\\"]+\\\"|\\\"+v; fp=root+\\\"/\\\"+art\n    if not os.path.isfile(fp): missing.append(key); continue\n    b=open(fp,\\\"rb\\\").read(); dims=struct.unpack(\\\">II\\\",b[16:24]); expected=(s[\\\"canonical\\\"][v][\\\"width\\\"],s[\\\"canonical\\\"][v][\\\"height\\\"]); cap=capmap.get(key)\n    if b[:8]\"'!=b\"'\"\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n\\\" or dims\"'!=expected or not cap or hashlib.sha256(b).hexdigest()!=cap[\"sha256\"]: bad.append(key)\n    present.append(key)\nz=zipfile.ZipFile(root+\"/artifact-bundle.zip\"); zn=set(z.namelist()); invbad=[]; invmissing=[]\nfor e in inv[\"entries\"]:\n  n=\"visual-atlas/\"+e[\"path\"]\n  if n not in zn: invmissing.append(e[\"path\"])\n  elif hashlib.sha256(z.read(n)).hexdigest()!=e[\"sha256\"]: invbad.append(e[\"path\"])\nprint(json.dumps({\"manifest_sha256\":hashlib.sha256(mbytes).hexdigest(),\"recipes_sha256\":hashlib.sha256(rbytes).hexdigest(),\"manifest_surfaces\":len(m[\"surfaces\"]),\"recipe_count\":len(r[\"recipes\"]),\"remote_provisional_pngs\":len(present),\"missing_canonical_pairs\":len(missing),\"bad_pngs\":bad,\"failed_pairs_in_report\":len(c[\"failed_surface_viewport_pairs\"]),\"capture_report_status\":c[\"status\"],\"capture_authority_status\":json.load(open(root+\"/capture-authority.json\"))[\"outcome\"][\"status\"],\"inventory_entries\":len(inv[\"entries\"]),\"zip_members\":len(zn),\"inventory_missing_members\":invmissing,\"inventory_hash_mismatches\":invbad,\"artifact_bundle_sha256\":hashlib.sha256(open(root+\"/artifact-bundle.zip\",\"rb\").read()).hexdigest(),\"review_pdfs_present\":any(os.path.exists(root+\"/review-\"+v+\".pdf\") for v in (\"desktop\",\"mobile\"))},indent=2)); assert hashlib.sha256(mbytes).hexdigest()==\"ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4\"; assert hashlib.sha256(rbytes).hexdigest()==\"bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608\"; assert len(m[\"surfaces\"])==66 and len(r[\"recipes\"])==66; assert len(present)==24 and len(missing)==108 and not bad and not invmissing and not invbad and c[\"status\"]==\"FAILED_CAPTURE_RECIPE\"'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy shasum -a 256 /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas/capture-authority.json /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas/capture-report.json /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas/reader-index.json /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas/artifact-inventory.json /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas/artifact-bundle.zip && rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git rev-parse refs/heads/readback && rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git rev-parse refs/heads/readback''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/main:refs/remotes/origin/main && rtk proxy git rev-parse HEAD && rtk proxy git rev-parse HEAD''^{tree} && rtk proxy git rev-parse refs/remotes/origin/main && rtk proxy git rev-parse refs/remotes/origin/main''^{tree} && rtk proxy git status --short --branch && rtk proxy git diff --exit-code -- package.json package-lock.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env -i PATH=/Users/haewonkim/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin HOME=/Users/haewonkim CI=1 EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=local-atlas-fixture-placeholder TZ=America/Chicago LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 ./node_modules/.bin/expo start --web --port 8081 --host localhost'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git rev-parse refs/heads/readback && rtk proxy git --git-dir=/tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback.git rev-parse refs/heads/readback''^{tree} && rtk proxy shasum -a 256 /tmp/homehuddle-ui0-final-atlas-current-v1/remote-readback-files/visual-atlas/artifact-bundle.zip'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git status --short --branch && rtk proxy git rev-parse HEAD && rtk proxy git rev-parse HEAD''^{tree} && rtk proxy git branch --show-current && rtk proxy git diff --exit-code -- package.json package-lock.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-final-atlas-current-v1'",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 173,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 96.97,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 8292096,
+      "fresh_input_tokens": 258678,
+      "input_tokens": 8550774,
+      "non_reasoning_output_tokens": 35304,
+      "output_tokens": 120669,
+      "reasoning_output_tokens": 85365,
+      "total_processed_tokens": 8671443
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-27T20:40:03Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "branch": "codex/homehuddle-ui0-final-atlas-current-v1",
+    "detached_verify": false,
+    "head_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "remote_exact_head": true,
+    "remote_head_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "work_branch": "codex/homehuddle-ui0-final-atlas-current-v1",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-eb2f11e69d28311f1c0ba664",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-final-atlas-current-v1",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-final-atlas-current-v1"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-final-atlas-current-v1",
+  "schema_version": 1,
+  "started_at": "2026-09-27T19:58:33Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 2490,
+    "queue_seconds": 0,
+    "total_seconds": 2490
+  },
+  "transport": {
+    "bytes": 11087,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 10753,
+    "prompt_sha256": "4d14b71148ec105a41646bf03d8996fb73989204b7c632675e4e87e243b45bca",
+    "sha256": "eb2f11e69d28311f1c0ba664083a246e38b20e0efcd6f5305dded9e33b37a40a"
+  }
+}
