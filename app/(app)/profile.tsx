@@ -7,6 +7,8 @@ import {
   StyleSheet,
   Alert,
   Switch,
+  Modal,
+  Platform,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -75,8 +77,22 @@ export default function ProfileScreen() {
   const [notificationsEnabled, setNotificationsEnabled] = React.useState(true);
   const [darkMode, setDarkMode] = React.useState(false);
   const [choreApproval, setChoreApproval] = React.useState(false);
+  const [webSignOutVisible, setWebSignOutVisible] = React.useState(false);
+
+  const confirmSignOut = () => {
+    setWebSignOutVisible(false);
+    if (Platform.OS !== 'web') {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    }
+    signOut();
+  };
 
   const handleSignOut = () => {
+    if (Platform.OS === 'web') {
+      setWebSignOutVisible(true);
+      return;
+    }
+
     Alert.alert(
       'Sign Out',
       'Are you sure you want to sign out of HomeHuddle?',
@@ -85,10 +101,7 @@ export default function ProfileScreen() {
         {
           text: 'Sign Out',
           style: 'destructive',
-          onPress: () => {
-            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-            signOut();
-          },
+          onPress: confirmSignOut,
         },
       ]
     );
@@ -296,13 +309,53 @@ export default function ProfileScreen() {
         </Card>
 
         {/* ── SIGN OUT ─────────────────────────────────────────── */}
-        <TouchableOpacity onPress={handleSignOut} style={styles.signOutBtn}>
+        <TouchableOpacity testID="profile-sign-out" onPress={handleSignOut} style={styles.signOutBtn}>
           <LogOut size={18} color={C.red} />
           <Text style={styles.signOutText}>Sign Out</Text>
         </TouchableOpacity>
 
         <Text style={styles.version}>HomeHuddle v1.0.4 (Build 2026) · Harulo Studio</Text>
       </ScrollView>
+
+      {Platform.OS === 'web' ? (
+        <Modal
+          visible={webSignOutVisible}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setWebSignOutVisible(false)}
+          testID="profile-signout-modal"
+          accessibilityLabel="Sign Out confirmation"
+        >
+          <View style={styles.signOutBackdrop}>
+            <View style={styles.signOutDialog}>
+              <Text style={styles.signOutDialogTitle}>Sign Out</Text>
+              <Text style={styles.signOutDialogBody}>
+                Are you sure you want to sign out of HomeHuddle?
+              </Text>
+              <View style={styles.signOutActions}>
+                <TouchableOpacity
+                  testID="profile-signout-cancel"
+                  accessibilityRole="button"
+                  accessibilityLabel="Cancel"
+                  onPress={() => setWebSignOutVisible(false)}
+                  style={styles.signOutCancelButton}
+                >
+                  <Text style={styles.signOutCancelText}>Cancel</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  testID="profile-signout-confirm"
+                  accessibilityRole="button"
+                  accessibilityLabel="Confirm Sign Out"
+                  onPress={confirmSignOut}
+                  style={styles.signOutConfirmButton}
+                >
+                  <Text style={styles.signOutConfirmText}>Sign Out</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
+      ) : null}
     </SafeAreaView>
   );
 }
@@ -509,6 +562,73 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '800',
     color: C.red,
+  },
+  signOutBackdrop: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(15, 23, 42, 0.48)',
+    paddingHorizontal: 24,
+    paddingVertical: 32,
+  },
+  signOutDialog: {
+    width: '100%',
+    maxWidth: 420,
+    padding: 24,
+    borderRadius: 20,
+    backgroundColor: C.card,
+    borderWidth: 1,
+    borderColor: C.cardBorder,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.18,
+    shadowRadius: 24,
+    elevation: 12,
+  },
+  signOutDialogTitle: {
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: '800',
+    color: C.text,
+  },
+  signOutDialogBody: {
+    fontSize: 14,
+    lineHeight: 21,
+    color: C.subtext,
+    marginTop: 8,
+  },
+  signOutActions: {
+    flexDirection: 'row',
+    gap: 12,
+    marginTop: 24,
+  },
+  signOutCancelButton: {
+    flex: 1,
+    minHeight: 46,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: C.cardBorder,
+    backgroundColor: C.card,
+  },
+  signOutCancelText: {
+    color: C.text,
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  signOutConfirmButton: {
+    flex: 1,
+    minHeight: 46,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    backgroundColor: C.red,
+  },
+  signOutConfirmText: {
+    color: C.card,
+    fontSize: 14,
+    fontWeight: '800',
   },
   version: {
     textAlign: 'center',
