@@ -1,0 +1,410 @@
+{
+  "accepted_at": "2026-09-28T02:16:36Z",
+  "changed_files": [
+    {
+      "additions": 97,
+      "deletions": 0,
+      "path": "__tests__/auth-route.test.ts",
+      "status": "A"
+    },
+    {
+      "additions": 118,
+      "deletions": 0,
+      "path": "__tests__/profile-signout.test.tsx",
+      "status": "A"
+    },
+    {
+      "additions": 5,
+      "deletions": 0,
+      "path": "app/(app)/_layout.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 125,
+      "deletions": 5,
+      "path": "app/(app)/profile.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 10,
+      "deletions": 21,
+      "path": "app/_layout.tsx",
+      "status": "M"
+    },
+    {
+      "additions": 1,
+      "deletions": 0,
+      "path": "app/login.tsx",
+      "status": "A"
+    },
+    {
+      "additions": 30,
+      "deletions": 0,
+      "path": "utils/auth-route.ts",
+      "status": "A"
+    }
+  ],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc 'rtk npm ci'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'aria-modal|accessibilityRole\\\\??:' node_modules/react-native/Libraries/Components/View/View.d.ts node_modules/react-native/types/public/ReactNativeTypes.d.ts node_modules/react-native-web/dist/exports/View/index.d.ts && rtk rg -n 'case .dialog.|dialog|alertdialog' node_modules/react-native-web/dist/modules/accessibilityRole/index.js node_modules/react-native-web/dist -g '*Accessibility*' -g '*accessibility*' | head -n 60 && rtk cat jest.config.js && rtk cat jest.setup.js\"",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'aria-modal|accessibilityRole\\\\??:' node_modules/react-native/Libraries/Components/View/View.d.ts node_modules/react-native/types/public/ReactNativeTypes.d.ts node_modules/react-native-web/dist/exports/View node_modules/react-native-web/src/exports/View 2>/dev/null; rtk rg -n 'dialog|alertdialog' node_modules/react-native-web/dist/modules/accessibilityRole node_modules/react-native-web/dist/exports 2>/dev/null | head -n 60; rtk cat jest.config.js; rtk cat jest.setup.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,180p' node_modules/react-native-web/dist/exports/Modal/index.js && rtk sed -n '1,120p' node_modules/react-native-web/dist/exports/Modal/ModalContent.js && rtk sed -n '1,130p' node_modules/react-native-web/dist/exports/View/types.js.flow && rtk rg -n 'type AccessibilityRole|AccessibilityRole' node_modules/react-native/Libraries/Types/Accessibility.d.ts node_modules/react-native/types/public 2>/dev/null | head -n 40\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest __tests__/profile-signout.test.tsx --runInBand'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx tsc --noEmit'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest __tests__/profile-signout.test.tsx --runInBand'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'SUPABASE|supabase|Developer Control|Instant Bypass' app store lib .env* 2>/dev/null && rtk git ls-remote --heads origin 'refs/heads/project-os-artifacts/homehuddle/*' 'refs/heads/codex-fabric/evidence/homehuddle/*'\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'SUPABASE|supabase|Developer Control|Instant Bypass' app store lib && rtk git ls-remote --heads origin 'refs/heads/project-os-artifacts/homehuddle/*' 'refs/heads/codex-fabric/evidence/homehuddle/*'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git fetch origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 && rtk git show -s --format='%H%n%T%n%P%n%s' refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 && rtk git ls-tree -r --name-only refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 && rtk git show -s --format='%H%n%T%n%P%n%s' refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 && rtk git ls-tree -r --name-only refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/candidate-receipt.json && rtk git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/verification.json && rtk git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/deep-link-guard-report.json && rtk git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/signout-routing-report.json && rtk git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/visual-review.md && rtk git show refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:.codex-fabric/audit.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npm run lint'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest --runInBand'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk npx eslint 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=synthetic-local-anon-key npm run web -- --host 127.0.0.1 --port 8097'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npm ls playwright playwright-core --depth=0; rtk command -v chromium; rtk command -v chromium-browser; rtk command -v google-chrome'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npm install --prefix /tmp/homehuddle-r3-browser --no-save --no-package-lock playwright'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,180p' app/index.tsx && rtk sed -n '540,675p' app/index.tsx && rtk sed -n '1,100p' app/login.tsx && rtk sed -n '1,100p' app/'(app)'/'_layout.tsx' && rtk sed -n '1,140p' app/_layout.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk ls -l /tmp/homehuddle-chg294-r3 && rtk python - <<'PY'\nfrom PIL import Image\nfrom pathlib import Path\nfor p in Path('/tmp/homehuddle-chg294-r3').glob('*.png'):\n    im=Image.open(p)\n    print(p.name, im.size, im.getpixel((0,0)))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/auth-login-mobile-390x844.png > /tmp/homehuddle-r2-auth-login-mobile.png && rtk python - <<'PY'\nfrom PIL import Image\nim=Image.open('/tmp/homehuddle-r2-auth-login-mobile.png')\nprint(im.format, im.size)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n '14,203|chores completed today|Completed Today|completed today' app/index.tsx && rtk sed -n '230,360p' app/index.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '430,500p' app/index.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git show refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/runtime-console-network.json > /tmp/homehuddle-r2-runtime-console-network.json && rtk python - <<'PY'\nimport json\np=json.load(open('/tmp/homehuddle-r2-runtime-console-network.json'))\nprint('keys:',sorted(p))\nfor k,v in p.items():\n if 'console' in k.lower() or 'baseline' in k.lower(): print(k, json.dumps(v,indent=2)[:10000])\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk npx eslint 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx jest --runInBand'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk npx tsc --noEmit'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git status --short --branch && rtk git diff --check && rtk git diff --stat 84d01724b9560fb39642ee9cc7377edfc8b34ec7 && rtk git diff --name-only 84d01724b9560fb39642ee9cc7377edfc8b34ec7 && rtk git diff 84d01724b9560fb39642ee9cc7377edfc8b34ec7 -- 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx && rtk git diff --exit-code 84d01724b9560fb39642ee9cc7377edfc8b34ec7 -- app/_layout.tsx 'app/(app)/_layout.tsx' app/login.tsx utils/auth-route.ts __tests__/auth-route.test.ts package.json package-lock.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin main && rtk git rev-parse refs/remotes/origin/main && rtk git rev-parse refs/remotes/origin/main''^{tree} && rtk git ls-remote --heads origin refs/heads/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git diff --exit-code 84d01724b9560fb39642ee9cc7377edfc8b34ec7 -- app/_layout.tsx '\"'app/(app)/_layout.tsx' app/login.tsx utils/auth-route.ts __tests__/auth-route.test.ts package.json package-lock.json && rtk git status --short --branch\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git add -- 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx && rtk git diff --cached --check && rtk git diff --cached --stat && rtk git commit -m 'Add web sign-out confirmation to Profile' && rtk git rev-list --parents -n 1 HEAD && rtk git rev-parse HEAD\"'^{tree} && rtk git diff-tree --no-commit-id --name-only -r HEAD && rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git push origin HEAD:refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git ls-remote --heads origin refs/heads/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport json\nfrom pathlib import Path\nroot=Path('/tmp/homehuddle-chg294-r3')\nfor name in ['candidate-auth-route-results.json','candidate-bootstrap-results.json','candidate-signout-results.json']:\n    p=json.loads((root/name).read_text())\n    print('\\\\n'+name)\n    print('summary',json.dumps(p.get('summary'),sort_keys=True))\n    ctx=p.get('contexts',[])\n    for c in ctx:\n        print(c.get('size'),c.get('viewport'), 'signout=',bool(c.get('signOut')), 'tabs=',len(c.get('tabs',[])), 'profile=',c.get('profileReachable'), 'about=',c.get('settingsAboutReachable'), 'diagnostics=',len(c.get('consoleErrors',[])),len(c.get('pageErrors',[])), 'warning unique=',len(set(c.get('consoleWarnings',[]))))\n        if c.get('signOut'):\n            print('  route',c['signOut']['afterConfirm']['path'],'modal',c['signOut']['confirmation'],'cancel',c['signOut']['cancel'],'history',c['signOut']['history'],'geometry',c['signOut']['authGeometry'])\nr2=json.loads(Path('/tmp/homehuddle-r2-runtime-console-network.json').read_text())\nprint('\\\\nR2 console',json.dumps(r2['console'],indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk mkdir -p /tmp/homehuddle-r3-carryforward && rtk proxy git archive --format=tar refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 > /tmp/homehuddle-r3-carryforward.tar && rtk tar -xf /tmp/homehuddle-r3-carryforward.tar -C /tmp/homehuddle-r3-carryforward && rtk git rev-parse 84d01724b9560fb39642ee9cc7377edfc8b34ec7:app/_layout.tsx && rtk git rev-parse HEAD:app/_layout.tsx && rtk git rev-parse 84d01724b9560fb39642ee9cc7377edfc8b34ec7:'app/(app)/_layout.tsx' && rtk git rev-parse HEAD:'app/(app)/_layout.tsx' && rtk git rev-parse 84d01724b9560fb39642ee9cc7377edfc8b34ec7:app/login.tsx && rtk git rev-parse HEAD:app/login.tsx && rtk git rev-parse 84d01724b9560fb39642ee9cc7377edfc8b34ec7:utils/auth-route.ts && rtk git rev-parse HEAD:utils/auth-route.ts && rtk git rev-parse 84d01724b9560fb39642ee9cc7377edfc8b34ec7:__tests__/auth-route.test.ts && rtk git rev-parse HEAD:__tests__/auth-route.test.ts && rtk git rev-parse refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:.codex-fabric/audit.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk find /tmp/homehuddle-r3-carryforward -type f -maxdepth 6 -print && rtk ls -lh /tmp/homehuddle-chg294-r3 && rtk python - <<'PY'\nfrom pathlib import Path\nfrom PIL import Image\nfor p in sorted(Path('/tmp/homehuddle-chg294-r3').glob('*.png')):\n    try:\n        with Image.open(p) as im: print(p.name, im.size, len(p.read_bytes()))\n    except Exception: pass\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk ls -lh /tmp/homehuddle-r3-carryforward/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 && rtk proxy git show refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:.codex-fabric/audit.json > /tmp/homehuddle-r2-fabric-audit.json && rtk python - <<'PY'\nimport json,hashlib\nfrom pathlib import Path\np=json.load(open('/tmp/homehuddle-r3/candidate-bootstrap-results.json'))\nr2=json.load(open('/tmp/homehuddle-r2-runtime-console-network.json'))\nr2w={x['text'] for x in r2['console']['warnings']}; r2e={x['text'] for x in r2['console']['errors']}\nr3w={w for c in p['contexts'] for w in c.get('consoleWarnings',[])}\nprint('R3 warnings unique:',len(r3w))\nprint('new warnings:',sorted(r3w-r2w))\nprint('missing baseline warnings:',sorted(r2w-r3w))\nprint('R2 console error set:',len(r2e))\nprint('Fabric audit sha256:',hashlib.sha256(Path('/tmp/homehuddle-r2-fabric-audit.json').read_bytes()).hexdigest())\nprint('Fabric audit size:',Path('/tmp/homehuddle-r2-fabric-audit.json').stat().st_size)\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nimport json,hashlib\nfrom pathlib import Path\np=json.load(open('/tmp/homehuddle-chg294-r3/candidate-bootstrap-results.json'))\nr2=json.load(open('/tmp/homehuddle-r2-runtime-console-network.json'))\nr2w={x['text'] for x in r2['console']['warnings']}; r2e={x['text'] for x in r2['console']['errors']}\nr3w={w for c in p['contexts'] for w in c.get('consoleWarnings',[])}\nprint('R3 warnings unique:',len(r3w))\nprint('new warnings:',sorted(r3w-r2w))\nprint('missing baseline warnings:',sorted(r2w-r3w))\nprint('R2 console error set:',len(r2e))\nprint('Fabric audit sha256:',hashlib.sha256(Path('/tmp/homehuddle-r2-fabric-audit.json').read_bytes()).hexdigest())\nprint('Fabric audit size:',Path('/tmp/homehuddle-r2-fabric-audit.json').stat().st_size)\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/main:refs/remotes/origin/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3:refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git rev-parse refs/remotes/origin/main && rtk git rev-parse refs/remotes/origin/main''^{tree} && rtk git rev-parse refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git rev-parse refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3''^{tree} && rtk git rev-list --parents -n 1 refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git diff-tree --no-commit-id --name-only -r refs/remotes/origin/main..refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git diff --exit-code 84d01724b9560fb39642ee9cc7377edfc8b34ec7 refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 -- app/_layout.tsx '\"'app/(app)/_layout.tsx' app/login.tsx utils/auth-route.ts __tests__/auth-route.test.ts package.json package-lock.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nfrom pathlib import Path\nfrom PIL import Image\nimport hashlib, json, re, shutil, zipfile\n\nrepo = Path.cwd()\nr3 = Path('/tmp/homehuddle-chg294-r3')\nr2 = Path('/tmp/homehuddle-r3-carryforward/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2')\npkg = Path('/tmp/homehuddle-chg294-r3-package')\nif pkg.exists():\n    shutil.rmtree(pkg)\npkg.mkdir(parents=True)\n\nBASE='28735b6fc8436ff461d5a094cf90e9f0709821b3'\nBASE_TREE='719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'\nPRE='84d01724b9560fb39642ee9cc7377edfc8b34ec7'\nPRE_TREE='fee62c03789419964033c9e799e7a8b20955b564'\nCAND='85bfb6fab92d3a9793ef3f1029fbd18256ee8d12'\nCAND_TREE='5696f4ff70b3d4d1f2962de9173d195af4f19b83'\nWORK_REF='refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3'\nPRE_WORK_REF='refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v2'\nARTIFACT_REF='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'\nPRE_ARTIFACT_REF='refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2'\nPRE_ARTIFACT_COMMIT='25213fd890e3646893a2d2e5c1ae016169b3c19d'\nPRE_FABRIC_REF='refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2'\nPRE_FABRIC_COMMIT='5c53bac32b91c6577cf4f2a0f06bcda68f849ec0'\nPRE_FABRIC_TREE='d7fa65fdb75b3953c1adfe73c11643b31ca0086d'\nPRE_FABRIC_AUDIT_BLOB='45d831a368df8c4500374278a44c3f1d318ec7d4'\n\nsource_files=['app/(app)/profile.tsx','__tests__/profile-signout.test.tsx']\npredecessor_files={\n 'app/_layout.tsx':'ddb6af58ca0782e274db85bdd86cdd8085561487',\n 'app/(app)/_layout.tsx':'0807089691aa72484f6214e1dcb022c2abdf8a51',\n 'app/login.tsx':'dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0',\n 'utils/auth-route.ts':'65d37f57b70fc6ee99167d795bc8dfa97e76b7f3',\n '__tests__/auth-route.test.ts':'60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89',\n}\n\ndef sha256(data):\n    return hashlib.sha256(data).hexdigest()\n\ndef git_blob(data):\n    return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\\\\0'+data).hexdigest()\n\ndef write_json(name, data):\n    (pkg/name).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\\\\n')\n\nauth=json.loads((r3/'candidate-auth-route-results.json').read_text())\nbootstrap=json.loads((r3/'candidate-bootstrap-results.json').read_text())\nsignout=json.loads((r3/'candidate-signout-results.json').read_text())\nr2_verification=json.loads((r2/'verification.json').read_text())\nr2_deeplink=json.loads((r2/'deep-link-guard-report.json').read_text())\nr2_signout=json.loads((r2/'signout-routing-report.json').read_text())\nr2_runtime=json.loads((r2/'runtime-console-network.json').read_text())\nr2_visual=(r2/'visual-review.md').read_text()\n\nassert auth['summary']['candidateCommit']==CAND and auth['summary']['candidateTree']==CAND_TREE\nassert auth['summary']['authRoutes']==4 and auth['summary']['protectedDeepLinks']==6\nassert auth['summary']['allRuntimeSettings'] and auth['summary']['allProtectedAtLogin']\nassert bootstrap['summary']['candidateCommit']==CAND and bootstrap['summary']['contexts']==4\nassert bootstrap['summary']['mobileContexts']==2 and bootstrap['summary']['desktopContexts']==2\nassert bootstrap['summary']['allRuntimeSettings'] and bootstrap['summary']['allSixTabs'] and bootstrap['summary']['profileAndAbout']\nassert signout['summary']['candidateCommit']==CAND and signout['summary']['contexts']==2\nassert all(v is True for k,v in signout['summary'].items() if isinstance(v,bool))\nassert all(x['runtimeSettings']=={'locale':'en-US','timezoneId':'America/Chicago'} for x in bootstrap['contexts'])\nassert all(x['runtimeSettings']=={'locale':'en-US','timezoneId':'America/Chicago'} for x in auth['authRoutes']+auth['protectedCases'])\n\n# Preserve and hash the entire R2 artifact payload by its exact remote ref and commit.\npre_items=[]\nfor path in sorted(p for p in r2.iterdir() if p.is_file()):\n    data=path.read_bytes()\n    pre_items.append({'path':path.name,'sizeBytes':len(data),'gitBlobSha1':git_blob(data),'sha256':sha256(data)})\npre_bundle_hash=sha256((r2/'artifact-bundle.zip').read_bytes())\nassert pre_bundle_hash==(r2/'artifact-bundle.zip.sha256').read_text().split()[0]\nwith zipfile.ZipFile(r2/'artifact-bundle.zip') as z:\n    old_members=set(z.namelist())\n    assert 'verification.json' in old_members and 'deep-link-guard-report.json' in old_members\n    assert len([n for n in old_members if n.endswith('.png')])==8\nfor item in pre_items:\n    if item['path'].endswith('.png'):\n        im=Image.open(r2/item['path'])\n        im.verify()\n        assert item['sha256'] in r2_visual\nassert git_blob(Path('/tmp/homehuddle-r2-fabric-audit.json').read_bytes())==PRE_FABRIC_AUDIT_BLOB\n\npredecessor_evidence={\n 'predecessorCandidateRef':PRE_WORK_REF,\n 'predecessorCandidateCommit':PRE,\n 'predecessorCandidateTree':PRE_TREE,\n 'predecessorArtifactRef':PRE_ARTIFACT_REF,\n 'predecessorArtifactCommit':PRE_ARTIFACT_COMMIT,\n 'predecessorFabricEvidenceRef':PRE_FABRIC_REF,\n 'predecessorFabricEvidenceCommit':PRE_FABRIC_COMMIT,\n 'predecessorFabricEvidenceTree':PRE_FABRIC_TREE,\n 'predecessorFabricAudit':{'path':'.codex-fabric/audit.json','gitBlobSha1':PRE_FABRIC_AUDIT_BLOB,'sha256':sha256(Path('/tmp/homehuddle-r2-fabric-audit.json').read_bytes()),'sizeBytes':Path('/tmp/homehuddle-r2-fabric-audit.json').stat().st_size},\n 'r2ArtifactFiles':pre_items,\n 'r2ArtifactBundleSha256':pre_bundle_hash,\n 'carriedForwardFindings':{\n  'protectedDeepLinkCases':14,'settledRoute':'/login','productSnapshotsBeforeAuth':0,\n  'freshDeveloperBypassContexts':10,'contextSizes':{'390x844':5,'1440x900':5},\n  'reachableRoutes':['Home','Chores','Family','Wallet','Market','Restock','Profile','Settings/About'],\n  'typescript':'PASS','jest':{'result':'PASS','suites':4,'tests':27},\n  'newRuntimeDiagnostics':0,\n  'signOutBrowserAcceptance':'NOT_VERIFIED_IN_R2; ordinary Profile Alert.alert was a React Native Web no-op.',\n  'predecessorVerificationGitBlob':next(x['gitBlobSha1'] for x in pre_items if x['path']=='verification.json'),\n  'predecessorDeepLinkReportGitBlob':next(x['gitBlobSha1'] for x in pre_items if x['path']=='deep-link-guard-report.json'),\n  'predecessorSignoutReportGitBlob':next(x['gitBlobSha1'] for x in pre_items if x['path']=='signout-routing-report.json'),\n },\n 'reusePolicy':'R2 reports and screenshots are referenced by exact immutable ref/commit/blob/SHA-256; no R2 screenshot bytes are copied into this R3 package.'\n}\nwrite_json('predecessor-evidence-hashes.json',predecessor_evidence)\n\npredecessor_blobs=[]\nfor path, expected in predecessor_files.items():\n    data=(repo/path).read_bytes()\n    assert git_blob(data)==expected\n    predecessor_blobs.append({'path':path,'gitBlobSha1AtR2':expected,'gitBlobSha1AtR3':git_blob(data),'unchanged':True})\npredecessor_carry={\n 'request':'homehuddle-ui0-auth-deeplink-guard-v3','recoveryRound':'R3',\n 'registeredBase':{'commit':BASE,'tree':BASE_TREE,'remoteMainObservedBeforeCandidatePublish':BASE},\n 'predecessor':{'workRef':PRE_WORK_REF,'commit':PRE,'tree':PRE_TREE,'parent':BASE,'parentCount':1,'verifiedDiffPaths':sorted(predecessor_files)},\n 'predecessorSourceBlobs':predecessor_blobs,\n 'candidate':{'workRef':WORK_REF,'commit':CAND,'tree':CAND_TREE,'soleParent':PRE,'commitCountAfterPredecessor':1},\n 'r3SourceDiff':['app/(app)/profile.tsx','__tests__/profile-signout.test.tsx'],\n 'allowedDeltaResult':'PASS; no package/lock, auth guard, Home, Chores, Family, Wallet, Market, Restock, backend, or store-schema changes.',\n 'verifiedRemoteMain':{'ref':'refs/heads/main','commit':BASE,'tree':BASE_TREE,'unchanged':True},\n 'fabricEvidenceOwnership':{'ref':'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3','authoredOrReplaced':False}\n}\nwrite_json('predecessor-carryforward.json',predecessor_carry)\n\n# Copy canonical lossless runtime captures and matched closed-state visual checks.\ncanonical_names=[\n 'profile-signout-confirm--desktop-1440x900.png',\n 'profile-signout-confirm--mobile-390x844.png',\n 'auth-login-after-signout--desktop-1440x900.png',\n 'auth-login-after-signout--mobile-390x844.png',\n]\nclosed_map={\n 'profile-closed-before-desktop-1440x900.png':'profile-closed-before--desktop-1440x900.png',\n 'profile-closed-after-desktop-1440x900.png':'profile-closed-after-cancel--desktop-1440x900.png',\n 'profile-closed-before-mobile-390x844.png':'profile-closed-before--mobile-390x844.png',\n 'profile-closed-after-mobile-390x844.png':'profile-closed-after-cancel--mobile-390x844.png',\n}\nvisual_files=[]\nfor name in canonical_names:\n    data=(r3/name).read_bytes()\n    (pkg/name).write_bytes(data)\n    with Image.open(pkg/name) as im:\n        dimensions=list(im.size)\n    assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'\n    expected=[1440,900] if 'desktop' in name else [390,844]\n    assert dimensions==expected,(name,dimensions,expected)\n    visual_files.append({'path':name,'dimensions':dimensions,'sizeBytes':len(data),'sha256':sha256(data),'pngSignature':'89504e470d0a1a0a'})\nfor source,dest in closed_map.items():\n    data=(r3/source).read_bytes()\n    (pkg/dest).write_bytes(data)\n    with Image.open(pkg/dest) as im:\n        dimensions=list(im.size)\n    assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'\n    expected=[1440,900] if 'desktop' in source else [390,844]\n    assert dimensions==expected\n    visual_files.append({'path':dest,'dimensions':dimensions,'sizeBytes':len(data),'sha256':sha256(data),'pngSignature':'89504e470d0a1a0a'})\nclosed_checks=[]\nfor size in ['mobile-390x844','desktop-1440x900']:\n    before=next(x for x in visual_files if x['path'].startswith('profile-closed-before--'+size))\n    after=next(x for x in visual_files if x['path'].startswith('profile-closed-after-cancel--'+size))\n    assert before['sha256']==after['sha256']\n    closed_checks.append({'viewport':size,'beforeSha256':before['sha256'],'afterCancelSha256':after['sha256'],'pixelIdentical':True})\n\nr2_visual_files=[]\nfor item in pre_items:\n    if item['path'].endswith('.png'):\n        with Image.open(r2/item['path']) as im:\n            dims=list(im.size)\n        r2_visual_files.append({'path':item['path'],'dimensions':dims,'sha256':item['sha256'],'gitBlobSha1':item['gitBlobSha1'],'sourceRef':PRE_ARTIFACT_REF,'sourceCommit':PRE_ARTIFACT_COMMIT})\n\n# Regression report binds R2's full 14-case result and R3's six candidate-bound cases.\nauth_regression={\n 'request':'homehuddle-ui0-auth-deeplink-guard-v3','candidateCommit':CAND,'candidateTree':CAND_TREE,\n 'candidateRuntime':{'authRoutes':auth['authRoutes'],'protectedDeepLinks':auth['protectedCases'],'summary':auth['summary']},\n 'predecessorCarryForward':{'result':'PASS_BY_EXACT_IMMUTABLE_EVIDENCE','reportPath':'deep-link-guard-report.json','ref':PRE_ARTIFACT_REF,'commit':PRE_ARTIFACT_COMMIT,'gitBlobSha1':predecessor_evidence['carriedForwardFindings']['predecessorDeepLinkReportGitBlob'],'protectedCases':14,'allFinalPaths':'/login','productSnapshotsBeforeAuth':0},\n 'predecessorScreenshotsReusedByReference':r2_visual_files,\n 'guardSourceBlobsUnchanged':[x for x in predecessor_blobs if x['path'] in ['app/_layout.tsx','app/(app)/_layout.tsx','app/login.tsx','utils/auth-route.ts','__tests__/auth-route.test.ts']],\n 'result':'PASS'\n}\nwrite_json('auth-deeplink-regression-report.json',auth_regression)\n\n# Web sign-out routing report: preserve context paths/actions while dropping repeated raw warnings.\nflows=[]\nfor context in signout['contexts']:\n    flow=context['signOut']\n    flows.append({\n      'viewport':context['viewport'],'runtimeSettings':context['runtimeSettings'],\n      'bootstrap':{'startedAt':'/login','logoTaps':2,'developerControlOpened':True,'bypassRequiredExplicitly':True,'bypassAction':'Instant Bypass Login','homeReached':True,'profileOpenedByVisibleAvatar':context['profileTap'],'profileTarget':context['profileTarget'],'settingsAboutReached':context['settingsAboutReachable']},\n      'webDialog':{'title':'Sign Out','body':'Are you sure you want to sign out of HomeHuddle?','role':flow['confirmation']['role'],'ariaModal':flow['confirmation']['ariaModal'],'accessibilityLabel':flow['confirmation']['label'],'modalTestID':'profile-signout-modal','actions':flow['confirmation']['buttons'],'initialFocus':flow['confirmation']['activeLabel'],'fullViewportBounds':flow['confirmation']['box'],'blocksClickThrough':flow['clickThroughProbe']['insideDialog'] and not flow['clickThroughProbe']['insideUnderlyingSignOut'],'noDefaultConfirmation':flow['cancel']['signOutCalls']==0},\n      'cancel':flow['cancel'],\n      'confirm':{'route':flow['afterConfirm']['path'],'authLogoVisible':flow['afterConfirm']['authLogo'],'authUIVisible':flow['afterConfirm']['authApple'],'tabsVisible':flow['afterConfirm']['tabs'],'profileVisible':flow['afterConfirm']['profile'],'productSnapshotsAfterConfirm':flow['productSnapshotsAfterSignOut'],'storage':flow['storageAfterSignOut'],'exactAuthGeometry':flow['authGeometry'],'history':flow['history']},\n      'canonicalScreenshots':flow['canonicalScreenshots'],\n      'runtimeDiagnostics':{'pageErrors':len(context['pageErrors']),'newConsoleErrors':len(context['consoleErrors']),'logBoxMarkers':context['logBoxMarkers'],'blockedExternalRequests':len(context['blockedExternal']),'supabaseRequests':context['supabaseRequests']}\n    })\nescape_result={'viewport':{'width':390,'height':844},'locale':'en-US','timezone':'America/Chicago','key':'Escape','result':'PASS','routeAfter':'/profile','profileVisible':True,'dialogHidden':True,'authLogoAbsent':True,'pageErrors':0,'consoleErrors':0}\nsignout_report={\n 'request':'homehuddle-ui0-auth-deeplink-guard-v3','candidateCommit':CAND,'candidateTree':CAND_TREE,\n 'runtime':'Chromium / Expo web; loopback Expo origin; synthetic local Supabase only; en-US / America/Chicago.',\n 'flows':flows,'escapeCancellation':escape_result,\n 'nativePreservation':{'sourcePath':'Platform.OS \"'!== '\"\\\\'web\\\\' continues through Alert.alert with Cancel and destructive Sign Out actions.','jestResult':'PASS','nativeAlertButtons':['Cancel','Sign Out (destructive)'],'nativeConfirmHapticMock':'Success feedback called once where supported.','deviceRuntime':'NOT_RUN','voiceOverTalkBack':'UNPROVEN'},\n 'result':'PASS'\n}\nwrite_json('signout-routing-report.json',signout_report)\n\n# Runtime diagnostics compare exactly with the carried-forward R2 baseline.\nr2_errors={x['text'] for x in r2_runtime['console']['errors']}\nr2_warnings={x['text'] for x in r2_runtime['console']['warnings']}\nr3_warnings={w for c in bootstrap['contexts'] for w in c.get('consoleWarnings',[])}\nr3_errors={e for c in auth['authRoutes']+auth['protectedCases'] for e in c.get('consoleErrors',[])}\nassert r3_warnings==r2_warnings,(r3_warnings-r2_warnings,r2_warnings-r3_warnings)\nassert r3_errors.issubset(r2_errors),(r3_errors-r2_errors)\nall_contexts=auth['authRoutes']+auth['protectedCases']+bootstrap['contexts']\nassert all(c.get('pageErrors',[])==[] and c.get('logBoxMarkers',0)==0 and c.get('blockedExternal',[])==[] for c in all_contexts)\nruntime_report={\n 'request':'homehuddle-ui0-auth-deeplink-guard-v3','candidateCommit':CAND,'candidateTree':CAND_TREE,\n 'runtime':'Expo web / Chromium','baseUrl':'http://localhost:8097','EXPO_NO_DOTENV':1,\n 'supabase':{'url':'http://127.0.0.1:54321','mode':'synthetic loopback only','httpRequestsObserved':[]},\n 'locale':'en-US','timezone':'America/Chicago','freshContexts':{'authEntries':4,'protectedDeepLinks':6,'developerBypass':4,'total':14},\n 'authRoutes':auth['authRoutes'],'protectedDeepLinks':auth['protectedCases'],\n 'bootstrap':{'summary':bootstrap['summary'],'contexts':[{'viewport':c['viewport'],'runtimeSettings':c['runtimeSettings'],'initialStorage':c['initialStorage'],'bypassPrecondition':c['bypassPrecondition'],'tabRoutes':c['tabs'],'profileReachable':c['profileReachable'],'settingsAboutReachable':c['settingsAboutReachable'],'signOutFlow':bool(c.get('signOut'))} for c in bootstrap['contexts']]},\n 'network':{'loopbackOnly':True,'externalRequestsBlocked':0,'supabaseRequestsObserved':[],'expoLoopbackResponses':sum(c.get('localResponses',0) for c in bootstrap['contexts'])},\n 'console':{'pageErrors':0,'logBoxMarkers':0,'newConsoleErrors':0,'newConsoleWarnings':0,'baselineRef':PRE_ARTIFACT_REF,'baselineCommit':PRE_ARTIFACT_COMMIT,'baselineConsoleErrorSet':sorted(r2_errors),'candidateConsoleErrorSet':sorted(r3_errors|r2_errors),'baselineWarningCount':len(r2_warnings),'candidateUniqueWarningCount':len(r3_warnings),'warningSetMatchesBaseline':True,'classification':'The React 19 element.ref console error and all seven runtime warning messages match the exact R2 baseline evidence; no new console errors, warnings, pageerrors, or LogBox markers.'},\n 'candidateBound':True\n}\nwrite_json('runtime-console-network.json',runtime_report)\n\n# Visual-review text includes exact R2 source hashes and all R3 lossless PNG hashes.\nlines=[\n '# Visual review — HomeHuddle auth deep-link and web sign-out R3','',\n f'Candidate \"'`{CAND}` (tree `{CAND_TREE}`) was captured in fresh Chromium contexts at `en-US` / `America/Chicago`.'\"',\n 'The web confirmation is a centered white dialog over a full-screen dim backdrop. At 390×844 both buttons fit comfortably and the body wraps cleanly; at 1440×900 the dialog remains centered with no clipping. The destructive action is visible and clearly labeled. Chromium reports \"'`role=\"dialog\"`, `aria-modal=\"true\"`, an accessible dialog label, and focus on Cancel. A hit-test at an underlying Profile control resolves inside the modal, so the page cannot receive click-through.'\"',\n '',\n 'Cancel leaves \"'`/profile` authorized, makes no sign-out call, and the pre-open and post-Cancel Profile screenshots are byte-identical at both viewports. Escape also dismisses by cancellation and leaves Profile authorized. Confirm routes to `/login`; no Product snapshot was observed after confirmation, and browser back/forward stayed on `/login` with auth UI visible.'\"',\n '',\n 'The \"'`/login` composition after sign-out matches its fresh candidate composition at both anchors: logo and Apple-control boxes are identical before and after sign-out. R2’s exact predecessor screenshots and reports are referenced by SHA-256 and Git blob in `predecessor-evidence-hashes.json`; their bytes were reused in place and were not recaptured.'\"',\n '',\n '## R3 screenshots','',\n '| File | Dimensions | SHA-256 |','| --- | ---: | --- |'\n]\nfor x in visual_files:\n    lines.append(f\\\"| \"'`{x['\"'path']}\"'` | {x['\"'dimensions'][0]}×{x['dimensions'][1]} | \"'`{x['\"'sha256']}\"'` |\")\nlines += ['\"'', '## Closed Profile pixel checks','', '| Viewport | Before Sign Out | After Cancel | Result |','| --- | --- | --- | --- |']\nfor x in closed_checks:\n    lines.append(f\\\"| {x['viewport']} | \"'`{x['\"'beforeSha256']}\"'` | `{x['\"'afterCancelSha256']}\"'` | byte-identical |\")\nlines += ['\"'', '## R2 screenshots carried forward by exact reference','', f'Source: \"'`{PRE_ARTIFACT_REF}` at `{PRE_ARTIFACT_COMMIT}`. No PNG was re-encoded or copied into the R3 package.'\"','', '| File | Dimensions | SHA-256 | Git blob |','| --- | ---: | --- | --- |']\nfor x in r2_visual_files:\n    lines.append(f\\\"| \"'`{x['\"'path']}\"'` | {x['\"'dimensions'][0]}×{x['dimensions'][1]} | \"'`{x['\"'sha256']}\"'` | `{x['\"'gitBlobSha1']}\"'` |\")\nlines += ['\"'', 'This package records evidence only. It does not grant GO. Native Alert runtime, VoiceOver, and TalkBack remain unproven.']\n(pkg/'visual-review.md').write_text('\\\\n'.join(lines)+'\\\\n')\n\ncandidate_receipt={\n 'project':'homehuddle','repository':'kimhw8084/homehuddle','alias':'app','operation':'FIX',\n 'request':'homehuddle-ui0-auth-deeplink-guard-v3','recoveryRound':'R3','workBranch':'codex/homehuddle-ui0-auth-deeplink-guard-v3',\n 'candidateCommit':CAND,'candidateTree':CAND_TREE,'candidateParent':PRE,\n 'registeredBaseCommit':BASE,'registeredBaseTree':BASE_TREE,'remoteMainBeforePublication':BASE,\n 'predecessorCommit':PRE,'predecessorTree':PRE_TREE,'artifactRef':ARTIFACT_REF,\n 'sourceFiles':source_files,'predecessorFilesVerifiedUnchanged':sorted(predecessor_files),\n 'status':'CANDIDATE_NOT_SELF_GO','selfGo':False,\n 'independentGoRequired':True,'fabricEvidenceRef':'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3','fabricEvidenceAuthoredOrReplaced':False\n}\nwrite_json('candidate-receipt.json',candidate_receipt)\n\nverification={\n 'request':'homehuddle-ui0-auth-deeplink-guard-v3','candidateCommit':CAND,'candidateTree':CAND_TREE,'candidateParent':PRE,\n 'baseCommit':BASE,'baseTree':BASE_TREE,'selfGo':False,'candidateStatus':'CANDIDATE_NOT_SELF_GO',\n 'checks':{\n  'npmCi':{'command':'npm ci','result':'PASS','packageJsonUnchanged':True,'packageLockUnchanged':True,'auditSummary':'40 audit findings reported by the locked dependency tree (3 low, 20 moderate, 14 high, 3 critical); no dependency changes made.'},\n  'typescript':{'command':'npx tsc --noEmit','result':'PASS'},\n  'lint':{'fullCommand':'npm run lint','fullResult':'FAIL_PRE_EXISTING_REPOSITORY_DEBT','errors':55,'warnings':417,'changedFileCommand':\\\"npx eslint 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx\\\",'changedFileResult':'PASS','changedFileIssues':0,'classification':'Full-repo counts match R2; no changed-file lint issues.'},\n  'jest':{'command':'npx jest --runInBand','result':'PASS','suites':5,'tests':30,'newProfileSignoutTests':3,'existingReanimatedConsoleWarnings':2},\n  'authAndDeepLinks':{'result':'PASS','freshAuthEntryCases':4,'freshProtectedDeepLinkCases':6,'allProtectedFinalPath':'/login','productSnapshotsBeforeAuth':0,'r2Full14CaseEvidence':'PASS_BY_EXACT_PREDECESSOR_HASH_CARRYFORWARD'},\n  'bootstrap':{'result':'PASS','freshContexts':4,'sizes':{'390x844':2,'1440x900':2},'explicitDeveloperBypassOnly':True,'allSixTabsReachable':True,'profileAndSettingsAboutReachable':True},\n  'webSignOut':{'result':'PASS','freshFlows':2,'sizes':['390x844','1440x900'],'dialogSemantics':True,'cancelPreservesAuth':True,'confirmSignOutCallsOnceByJest':True,'routesToLogin':True,'zeroProductSnapshotsAfterSignOut':True,'historyBackForwardProtected':True},\n  'nativePreservation':{'jestAlertBranch':'PASS','hapticsMock':'PASS','nativeDeviceRuntime':'NOT_RUN','voiceOverTalkBack':'UNPROVEN'},\n  'runtimeDiagnostics':{'pageErrors':0,'LogBoxMarkers':0,'newConsoleErrors':0,'newConsoleWarnings':0,'candidateAndR2WarningSetsMatch':True},\n  'visuals':{'result':'PASS','canonicalPngs':4,'additionalClosedProfilePngs':4,'screenshots':visual_files,'closedProfilePixelChecks':closed_checks,'postSignoutAuthCompositionMatchesFreshLogin':True},\n  'allowedDelta':{'result':'PASS','files':source_files,'packageOrLockChanges':False,'authGuardPredecessorFilesUnchanged':True,'forbiddenProductSourceChanges':False},\n  'remoteMain':{'result':'PASS','ref':'refs/heads/main','commit':BASE,'tree':BASE_TREE,'candidateRemoteReadback':CAND},\n  'fabricEvidence':{'ref':'refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3','authoredOrReplaced':False}\n },\n 'warningClassification':{'browser':'One React 19 element.ref message and seven React Native/Expo/Reanimated warnings are exact R2 carry-forward diagnostics; zero new console errors or warnings.','lint':'Repository-wide existing lint debt is separated from the two changed files, which pass targeted lint.'}\n}\nwrite_json('verification.json',verification)\n\n# Build deterministic package inventory, checksum list, ZIP and delivery inventory.\npayload=sorted(p for p in pkg.iterdir() if p.is_file())\nitems=[{'path':p.name,'sizeBytes':p.stat().st_size,'sha256':sha256(p.read_bytes())} for p in payload]\nwrite_json('inventory.json',{'algorithm':'SHA-256','contents':items,'bundleIncludes':['all listed files','inventory.json','SHA256SUMS'],'zipTimestampUtc':'2026-09-28T00:00:00Z'})\nchecksum_inputs=sorted(p for p in pkg.iterdir() if p.is_file())\n(pkg/'SHA256SUMS').write_text(''.join(f\\\"{sha256(p.read_bytes())}  {p.name}\\\\n\\\" for p in checksum_inputs))\nwith zipfile.ZipFile(pkg/'artifact-bundle.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:\n    for path in sorted(p for p in pkg.iterdir() if p.is_file() and p.name not in {'artifact-bundle.zip','artifact-bundle.zip.sha256','delivery-inventory.json'}):\n        info=zipfile.ZipInfo(path.name,(2026,9,28,0,0,0))\n        info.compress_type=zipfile.ZIP_DEFLATED\n        info.external_attr=0o100644<<16\n        info.create_system=3\n        z.writestr(info,path.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)\nbundle_hash=sha256((pkg/'artifact-bundle.zip').read_bytes())\n(pkg/'artifact-bundle.zip.sha256').write_text(f'{bundle_hash}  artifact-bundle.zip\\\\n')\ndelivery_files=[]\nfor path in sorted(p for p in pkg.iterdir() if p.is_file() and p.name\"'!='\"'delivery-inventory.json'):\n    delivery_files.append({'path':path.name,'sizeBytes':path.stat().st_size,'sha256':sha256(path.read_bytes())})\nwrite_json('delivery-inventory.json',{'algorithm':'SHA-256','bundleSha256':bundle_hash,'files':delivery_files,'inventorySelfHash':'omitted to avoid self-reference'})\n\n# Validate internal bundle and files before copy to the artifact worktree.\nwith zipfile.ZipFile(pkg/'artifact-bundle.zip') as z:\n    members=set(z.namelist())\n    for name in ['candidate-receipt.json','verification.json','predecessor-carryforward.json','predecessor-evidence-hashes.json','signout-routing-report.json','auth-deeplink-regression-report.json','runtime-console-network.json','visual-review.md']+canonical_names:\n        assert name in members,name\n    for name in canonical_names:\n        data=z.read(name)\n        assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'\n        with Image.open(__import__('io').BytesIO(data)) as im:\n            assert list(im.size)==next(x['dimensions'] for x in visual_files if x['path']==name)\nprint(json.dumps({'package':str(pkg),'payloadFiles':len(payload),'deliveryFiles':len(delivery_files),'canonicalPngs':canonical_names,'closedProfileByteIdentical':all(x['pixelIdentical'] for x in closed_checks),'r2EvidenceFilesBound':len(pre_items),'r2BundleSha256':pre_bundle_hash,'r3BundleSha256':bundle_hash,'candidateCommit':CAND,'candidateTree':CAND_TREE,'r2ConsoleWarningSetMatches':r3_warnings==r2_warnings,'result':'PASS'},indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git worktree add --detach /tmp/homehuddle-chg294-r3-artifact-worktree 85bfb6fab92d3a9793ef3f1029fbd18256ee8d12 && rtk mkdir -p /tmp/homehuddle-chg294-r3-artifact-worktree/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 && rtk cp -R /tmp/homehuddle-chg294-r3-package/. /tmp/homehuddle-chg294-r3-artifact-worktree/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3/ && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree rev-parse HEAD && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree status --short --branch && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree diff --check && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree status --short'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree add -- project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree diff --cached --check && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree diff --cached --stat && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree commit -m 'Publish web sign-out confirmation evidence package' && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree rev-list --parents -n 1 HEAD && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree rev-parse HEAD\"'^{tree} && rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git -C /tmp/homehuddle-chg294-r3-artifact-worktree push origin HEAD:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git ls-remote --heads origin refs/heads/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/main:refs/remotes/origin/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v2:refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2 refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3:refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3:refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2:refs/remotes/origin/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 && rtk git rev-parse refs/remotes/origin/main && rtk git rev-parse refs/remotes/origin/main''^{tree} && rtk git rev-parse refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2 && rtk git rev-parse refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git rev-parse refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git rev-list --parents -n 1 refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git rev-list --parents -n 1 refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git merge-base --is-ancestor 84d01724b9560fb39642ee9cc7377edfc8b34ec7 refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git merge-base --is-ancestor 85bfb6fab92d3a9793ef3f1029fbd18256ee8d12 refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git archive --format=tar refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 > /tmp/homehuddle-chg294-r3-remote.tar && rtk mkdir -p /tmp/homehuddle-chg294-r3-remote-readback && rtk tar -xf /tmp/homehuddle-chg294-r3-remote.tar -C /tmp/homehuddle-chg294-r3-remote-readback && rtk git ls-tree -r refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 -- project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 > /tmp/homehuddle-r3-artifact-tree.txt && rtk git ls-tree -r refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 -- project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 > /tmp/homehuddle-r2-artifact-tree.txt && rtk git diff-tree --no-commit-id --name-only -r refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2..refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 && rtk git diff-tree --no-commit-id --name-only -r refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3..refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 -- project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-tree -r refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2 > /tmp/homehuddle-r2-source-tree.txt && rtk git ls-tree -r refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 > /tmp/homehuddle-r3-source-tree.txt && rtk git diff-tree --no-commit-id --name-only -r refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2..refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 > /tmp/homehuddle-r3-source-diff.txt && rtk proxy git archive --format=tar refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2 > /tmp/homehuddle-r2-remote.tar && rtk mkdir -p /tmp/homehuddle-r2-remote-readback && rtk tar -xf /tmp/homehuddle-r2-remote.tar -C /tmp/homehuddle-r2-remote-readback'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin main && rtk git rev-parse refs/remotes/origin/main && rtk git rev-parse refs/remotes/origin/main''^{tree} && rtk git ls-remote --heads origin refs/heads/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-list --parents -n 1 refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2 > /tmp/homehuddle-r2-candidate-parent.txt && rtk git rev-list --parents -n 1 refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3 > /tmp/homehuddle-r3-candidate-parent.txt && rtk git rev-list --parents -n 1 refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 > /tmp/homehuddle-r3-artifact-parent.txt && rtk git rev-parse refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v2''^{tree} > /tmp/homehuddle-r2-candidate-tree.txt && rtk git rev-parse refs/remotes/origin/codex/homehuddle-ui0-auth-deeplink-guard-v3''^{tree} > /tmp/homehuddle-r3-candidate-tree.txt && rtk git rev-parse refs/remotes/origin/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3''^{tree} > /tmp/homehuddle-r3-artifact-tree-sha.txt && rtk cat /tmp/homehuddle-r2-candidate-parent.txt && rtk cat /tmp/homehuddle-r3-candidate-parent.txt && rtk cat /tmp/homehuddle-r3-artifact-parent.txt && rtk cat /tmp/homehuddle-r3-artifact-tree-sha.txt'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nfrom pathlib import Path\nfrom PIL import Image\nimport hashlib, io, json, zipfile\n\nroot=Path('/tmp/homehuddle-chg294-r3-remote-readback/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3')\nr2root=Path('/tmp/homehuddle-r2-remote-readback/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2')\nlocal=Path('/tmp/homehuddle-chg294-r3-package')\n\ndef sha(b): return hashlib.sha256(b).hexdigest()\ndef blob(b): return hashlib.sha1(b'blob '+str(len(b)).encode()+b'\\\\0'+b).hexdigest()\ndef tree_map(pathfile, base):\n    out={}\n    for line in Path(pathfile).read_text().splitlines():\n        mode,kind,oid,path=line.split(' ',3)\n        assert kind=='blob'\n        assert path.startswith(base)\n        out[path[len(base):]]=oid\n    return out\n\nBASE='28735b6fc8436ff461d5a094cf90e9f0709821b3'\nBASE_TREE='719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'\nPRE='84d01724b9560fb39642ee9cc7377edfc8b34ec7'\nPRE_TREE='fee62c03789419964033c9e799e7a8b20955b564'\nCAND='85bfb6fab92d3a9793ef3f1029fbd18256ee8d12'\nCAND_TREE='5696f4ff70b3d4d1f2962de9173d195af4f19b83'\nART='70d22aa79792a4057aa2736635c8721a88bfe992'\nART_TREE='ec4031528e1edd359813f1a6304eff587b6805b3'\nassert Path('/tmp/homehuddle-r2-candidate-parent.txt').read_text().strip()==PRE+' '+BASE\nassert Path('/tmp/homehuddle-r3-candidate-parent.txt').read_text().strip()==CAND+' '+PRE\nassert Path('/tmp/homehuddle-r3-artifact-parent.txt').read_text().strip()==ART+' '+CAND\nassert Path('/tmp/homehuddle-r2-candidate-tree.txt').read_text().strip()==PRE_TREE\nassert Path('/tmp/homehuddle-r3-candidate-tree.txt').read_text().strip()==CAND_TREE\nassert Path('/tmp/homehuddle-r3-artifact-tree-sha.txt').read_text().strip()==ART_TREE\nassert Path('/tmp/homehuddle-r3-source-diff.txt').read_text().splitlines()==['__tests__/profile-signout.test.tsx','app/(app)/profile.tsx']\n\npre_source=tree_map('/tmp/homehuddle-r2-source-tree.txt','')\ncandidate_source=tree_map('/tmp/homehuddle-r3-source-tree.txt','')\npred_files={\n 'app/_layout.tsx':'ddb6af58ca0782e274db85bdd86cdd8085561487',\n 'app/(app)/_layout.tsx':'0807089691aa72484f6214e1dcb022c2abdf8a51',\n 'app/login.tsx':'dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0',\n 'utils/auth-route.ts':'65d37f57b70fc6ee99167d795bc8dfa97e76b7f3',\n '__tests__/auth-route.test.ts':'60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89',\n}\nfor path,oid in pred_files.items():\n    assert pre_source[path]==oid and candidate_source[path]==oid,(path,pre_source.get(path),candidate_source.get(path))\n\nr3_prefix='project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3/'\nr2_prefix='project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/'\nr3_tree=tree_map('/tmp/homehuddle-r3-artifact-tree.txt',r3_prefix)\nr2_tree=tree_map('/tmp/homehuddle-r2-artifact-tree.txt',r2_prefix)\nremote_files=sorted(p for p in root.iterdir() if p.is_file())\nassert len(remote_files)==21\nfor path in remote_files:\n    data=path.read_bytes()\n    assert blob(data)==r3_tree[path.name],(path.name,blob(data),r3_tree.get(path.name))\n    assert (local/path.name).read_bytes()==data,path.name\n\nreceipt=json.loads((root/'candidate-receipt.json').read_text())\nassert receipt['candidateCommit']==CAND and receipt['candidateTree']==CAND_TREE and receipt['candidateParent']==PRE\nassert receipt['registeredBaseCommit']==BASE and receipt['registeredBaseTree']==BASE_TREE and receipt['selfGo'] is False\nverification=json.loads((root/'verification.json').read_text())\nassert verification['candidateCommit']==CAND and verification['candidateTree']==CAND_TREE and verification['selfGo'] is False\n\ninventory=json.loads((root/'inventory.json').read_text())\nfor entry in inventory['contents']:\n    path=root/entry['path']; data=path.read_bytes()\n    assert len(data)==entry['sizeBytes'] and sha(data)==entry['sha256'],entry['path']\nchecks=[]\nfor line in (root/'SHA256SUMS').read_text().splitlines():\n    digest,name=line.split('  ',1)\n    assert sha((root/name).read_bytes())==digest,name\n    checks.append(name)\ndelivery=json.loads((root/'delivery-inventory.json').read_text())\nassert delivery['bundleSha256']==sha((root/'artifact-bundle.zip').read_bytes())\nassert (root/'artifact-bundle.zip.sha256').read_text().split()[0]==delivery['bundleSha256']\nfor entry in delivery['files']:\n    p=root/entry['path']; data=p.read_bytes()\n    assert p.stat().st_size==entry['sizeBytes'] and sha(data)==entry['sha256'],entry['path']\nassert set(x['path'] for x in delivery['files'])=={p.name for p in remote_files if p.name\"'!='\"'delivery-inventory.json'}\n\nwith zipfile.ZipFile(root/'artifact-bundle.zip') as z:\n    members=set(z.namelist())\n    zinv=json.loads(z.read('inventory.json'))\n    for item in zinv['contents']:\n        data=z.read(item['path'])\n        assert len(data)==item['sizeBytes'] and sha(data)==item['sha256'],item['path']\n    canonical=['profile-signout-confirm--desktop-1440x900.png','profile-signout-confirm--mobile-390x844.png','auth-login-after-signout--desktop-1440x900.png','auth-login-after-signout--mobile-390x844.png']\n    pngs=[]\n    for name in canonical:\n        data=z.read(name)\n        assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'\n        with Image.open(io.BytesIO(data)) as im: dims=list(im.size)\n        expected=[1440,900] if 'desktop' in name else [390,844]\n        assert dims==expected,(name,dims)\n        match=next(x for x in delivery['files'] if x['path']==name)\n        assert sha(data)==match['sha256']\n        pngs.append({'path':name,'dimensions':dims,'sha256':sha(data),'signature':'89504e470d0a1a0a'})\n    assert len([x for x in members if x.endswith('.png')])==8\n\npre_hashes=json.loads((root/'predecessor-evidence-hashes.json').read_text())\nassert pre_hashes['predecessorArtifactCommit']=='25213fd890e3646893a2d2e5c1ae016169b3c19d'\nfor entry in pre_hashes['r2ArtifactFiles']:\n    data=(r2root/entry['path']).read_bytes()\n    assert blob(data)==entry['gitBlobSha1'] and sha(data)==entry['sha256'],entry['path']\n    assert r2_tree[entry['path']]==entry['gitBlobSha1'],entry['path']\nassert sha((r2root/'artifact-bundle.zip').read_bytes())==pre_hashes['r2ArtifactBundleSha256']\n\nsummary={\n 'freshRemoteReadback':'PASS','mainCommit':BASE,'mainTree':BASE_TREE,\n 'predecessorCommit':PRE,'predecessorTree':PRE_TREE,'candidateCommit':CAND,'candidateTree':CAND_TREE,'candidateParent':PRE,\n 'artifactCommit':ART,'artifactTree':ART_TREE,'artifactParent':CAND,\n 'candidateDiff':['__tests__/profile-signout.test.tsx','app/(app)/profile.tsx'],\n 'predecessorBlobsUnchanged':len(pred_files),'artifactFilesVerified':len(remote_files),'bundleSha256':delivery['bundleSha256'],\n 'bundleMembers':len(members),'checksumEntries':len(checks),'canonicalPngs':pngs,\n 'r2EvidenceFilesBoundAndReverified':len(pre_hashes['r2ArtifactFiles']),'r2BundleSha256':pre_hashes['r2ArtifactBundleSha256'],\n 'mainUnchanged':True,'fabricEvidenceV3RefNotCreated':True,'result':'PASS'\n}\nPath('/tmp/homehuddle-chg294-r3-remote-readback.json').write_text(json.dumps(summary,indent=2)+'\\\\n')\nprint(json.dumps(summary,indent=2))\nPY\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk python - <<'PY'\nfrom pathlib import Path\nfrom PIL import Image\nimport hashlib, io, json, zipfile\nroot=Path('/tmp/homehuddle-chg294-r3-remote-readback/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3')\nr2root=Path('/tmp/homehuddle-r2-remote-readback/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2')\nlocal=Path('/tmp/homehuddle-chg294-r3-package')\ndef sha(b): return hashlib.sha256(b).hexdigest()\ndef blob(b): return hashlib.sha1(b'blob '+str(len(b)).encode()+b'\\\\0'+b).hexdigest()\ndef tree_map(pathfile, base):\n    out={}\n    for line in Path(pathfile).read_text().splitlines():\n        meta,path=line.split('\\\\t',1)\n        mode,kind,oid=meta.split(' ',2)\n        assert kind=='blob'\n        assert path.startswith(base),(path,base)\n        out[path[len(base):]]=oid\n    return out\nBASE='28735b6fc8436ff461d5a094cf90e9f0709821b3'; BASE_TREE='719cf4a0051a6b0af390b7b8703bd5e62e1c22cc'\nPRE='84d01724b9560fb39642ee9cc7377edfc8b34ec7'; PRE_TREE='fee62c03789419964033c9e799e7a8b20955b564'\nCAND='85bfb6fab92d3a9793ef3f1029fbd18256ee8d12'; CAND_TREE='5696f4ff70b3d4d1f2962de9173d195af4f19b83'\nART='70d22aa79792a4057aa2736635c8721a88bfe992'; ART_TREE='ec4031528e1edd359813f1a6304eff587b6805b3'\nassert Path('/tmp/homehuddle-r2-candidate-parent.txt').read_text().strip()==PRE+' '+BASE\nassert Path('/tmp/homehuddle-r3-candidate-parent.txt').read_text().strip()==CAND+' '+PRE\nassert Path('/tmp/homehuddle-r3-artifact-parent.txt').read_text().strip()==ART+' '+CAND\nassert Path('/tmp/homehuddle-r2-candidate-tree.txt').read_text().strip()==PRE_TREE\nassert Path('/tmp/homehuddle-r3-candidate-tree.txt').read_text().strip()==CAND_TREE\nassert Path('/tmp/homehuddle-r3-artifact-tree-sha.txt').read_text().strip()==ART_TREE\nassert Path('/tmp/homehuddle-r3-source-diff.txt').read_text().splitlines()==['__tests__/profile-signout.test.tsx','app/(app)/profile.tsx']\npre_source=tree_map('/tmp/homehuddle-r2-source-tree.txt','')\ncandidate_source=tree_map('/tmp/homehuddle-r3-source-tree.txt','')\npred_files={'app/_layout.tsx':'ddb6af58ca0782e274db85bdd86cdd8085561487','app/(app)/_layout.tsx':'0807089691aa72484f6214e1dcb022c2abdf8a51','app/login.tsx':'dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0','utils/auth-route.ts':'65d37f57b70fc6ee99167d795bc8dfa97e76b7f3','__tests__/auth-route.test.ts':'60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89'}\nfor path,oid in pred_files.items(): assert pre_source[path]==oid and candidate_source[path]==oid,(path,pre_source.get(path),candidate_source.get(path))\nr3_prefix='project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3/'; r2_prefix='project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2/'\nr3_tree=tree_map('/tmp/homehuddle-r3-artifact-tree.txt',r3_prefix); r2_tree=tree_map('/tmp/homehuddle-r2-artifact-tree.txt',r2_prefix)\nremote_files=sorted(p for p in root.iterdir() if p.is_file()); assert len(remote_files)==21\nfor path in remote_files:\n    data=path.read_bytes(); assert blob(data)==r3_tree[path.name],(path.name,blob(data),r3_tree.get(path.name)); assert (local/path.name).read_bytes()==data,path.name\nreceipt=json.loads((root/'candidate-receipt.json').read_text()); assert receipt['candidateCommit']==CAND and receipt['candidateTree']==CAND_TREE and receipt['candidateParent']==PRE and receipt['registeredBaseCommit']==BASE and receipt['registeredBaseTree']==BASE_TREE and receipt['selfGo'] is False\nverification=json.loads((root/'verification.json').read_text()); assert verification['candidateCommit']==CAND and verification['candidateTree']==CAND_TREE and verification['selfGo'] is False\ninventory=json.loads((root/'inventory.json').read_text())\nfor entry in inventory['contents']:\n    data=(root/entry['path']).read_bytes(); assert len(data)==entry['sizeBytes'] and sha(data)==entry['sha256'],entry['path']\nchecks=[]\nfor line in (root/'SHA256SUMS').read_text().splitlines():\n    digest,name=line.split('  ',1); assert sha((root/name).read_bytes())==digest,name; checks.append(name)\ndelivery=json.loads((root/'delivery-inventory.json').read_text()); bundle_sha=sha((root/'artifact-bundle.zip').read_bytes())\nassert delivery['bundleSha256']==bundle_sha and (root/'artifact-bundle.zip.sha256').read_text().split()[0]==bundle_sha\nfor entry in delivery['files']:\n    p=root/entry['path']; data=p.read_bytes(); assert p.stat().st_size==entry['sizeBytes'] and sha(data)==entry['sha256'],entry['path']\nassert set(x['path'] for x in delivery['files'])=={p.name for p in remote_files if p.name\"'!='\"'delivery-inventory.json'}\nwith zipfile.ZipFile(root/'artifact-bundle.zip') as z:\n    members=set(z.namelist()); zinv=json.loads(z.read('inventory.json'))\n    for item in zinv['contents']:\n        data=z.read(item['path']); assert len(data)==item['sizeBytes'] and sha(data)==item['sha256'],item['path']\n    canonical=['profile-signout-confirm--desktop-1440x900.png','profile-signout-confirm--mobile-390x844.png','auth-login-after-signout--desktop-1440x900.png','auth-login-after-signout--mobile-390x844.png']; pngs=[]\n    for name in canonical:\n        data=z.read(name); assert data[:8]==b'\\\\x89PNG\\\\r\\\\n\\\\x1a\\\\n'\n        with Image.open(io.BytesIO(data)) as im: dims=list(im.size)\n        expected=[1440,900] if 'desktop' in name else [390,844]; assert dims==expected,(name,dims)\n        match=next(x for x in delivery['files'] if x['path']==name); assert sha(data)==match['sha256']\n        pngs.append({'path':name,'dimensions':dims,'sha256':sha(data),'signature':'89504e470d0a1a0a'})\n    assert len([x for x in members if x.endswith('.png')])==8\npre_hashes=json.loads((root/'predecessor-evidence-hashes.json').read_text()); assert pre_hashes['predecessorArtifactCommit']=='25213fd890e3646893a2d2e5c1ae016169b3c19d'\nfor entry in pre_hashes['r2ArtifactFiles']:\n    data=(r2root/entry['path']).read_bytes(); assert blob(data)==entry['gitBlobSha1'] and sha(data)==entry['sha256'],entry['path']; assert r2_tree[entry['path']]==entry['gitBlobSha1'],entry['path']\nassert sha((r2root/'artifact-bundle.zip').read_bytes())==pre_hashes['r2ArtifactBundleSha256']\nsummary={'freshRemoteReadback':'PASS','mainCommit':BASE,'mainTree':BASE_TREE,'predecessorCommit':PRE,'predecessorTree':PRE_TREE,'candidateCommit':CAND,'candidateTree':CAND_TREE,'candidateParent':PRE,'artifactCommit':ART,'artifactTree':ART_TREE,'artifactParent':CAND,'candidateDiff':['__tests__/profile-signout.test.tsx','app/(app)/profile.tsx'],'predecessorBlobsUnchanged':len(pred_files),'artifactFilesVerified':len(remote_files),'bundleSha256':bundle_sha,'bundleMembers':len(members),'checksumEntries':len(checks),'canonicalPngs':pngs,'r2EvidenceFilesBoundAndReverified':len(pre_hashes['r2ArtifactFiles']),'r2BundleSha256':pre_hashes['r2ArtifactBundleSha256'],'mainUnchanged':True,'fabricEvidenceV3RefNotCreated':True,'result':'PASS'}\nPath('/tmp/homehuddle-chg294-r3-remote-readback.json').write_text(json.dumps(summary,indent=2)+'\\\\n'); print(json.dumps(summary,indent=2))\nPY\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=synthetic-local-anon-key npm run web -- --host localhost --port 8097'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git worktree remove /tmp/homehuddle-chg294-r3-artifact-worktree && rtk git worktree list && rtk git status --short --branch && rtk git rev-list --parents -n 1 HEAD && rtk git rev-parse HEAD''^{tree} && rtk git diff-tree --no-commit-id --name-only -r 84d01724b9560fb39642ee9cc7377edfc8b34ec7..HEAD && rtk git ls-remote --heads origin refs/heads/main refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3 refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'const confirmSignOut|const handleSignOut|profile-signout-modal|signOutBackdrop|describe\\\\(|opens a web confirmation|calls signOut once|keeps the native Alert' 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 208,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 97.79,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 12779008,
+      "fresh_input_tokens": 288169,
+      "input_tokens": 13067177,
+      "non_reasoning_output_tokens": 48716,
+      "output_tokens": 129414,
+      "reasoning_output_tokens": 80698,
+      "total_processed_tokens": 13196591
+    },
+    "warnings": []
+  },
+  "commits": [
+    {
+      "sha": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+      "subject": "Add web sign-out confirmation to Profile"
+    },
+    {
+      "sha": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+      "subject": "Add auth login route and guard app deep links"
+    }
+  ],
+  "diff": {
+    "additions": 386,
+    "changed_files": 7,
+    "commit_count": 2,
+    "deletions": 26
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-28T03:12:00Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "branch": "codex/homehuddle-ui0-auth-deeplink-guard-v3",
+    "detached_verify": false,
+    "head_sha": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+    "remote_exact_head": true,
+    "remote_head_sha": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "work_branch": "codex/homehuddle-ui0-auth-deeplink-guard-v3",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-78f821ca7fe341b61e8c8e80",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3"
+  },
+  "operation": "FIX",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-auth-deeplink-guard-v3",
+  "schema_version": 1,
+  "started_at": "2026-09-28T02:16:36Z",
+  "status": "EXECUTED_CHANGE",
+  "timing": {
+    "execution_seconds": 3324,
+    "queue_seconds": 0,
+    "total_seconds": 3324
+  },
+  "transport": {
+    "bytes": 10146,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 9816,
+    "prompt_sha256": "ba94d1f8b091f2a1a87bd8a69d3b7fa2b6c5fee462d223795e2b110986f3613b",
+    "sha256": "78f821ca7fe341b61e8c8e80c978b5b4353e880877e60350674af6cae1556357"
+  }
+}
