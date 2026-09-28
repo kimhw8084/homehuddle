@@ -1,0 +1,1688 @@
+{
+  "runtime": "Expo web / Chromium",
+  "baseUrl": "http://localhost:8097",
+  "syntheticSupabase": "http://127.0.0.1:54321 (loopback only)",
+  "authRoutes": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "finalPath": "/",
+      "authUi": true,
+      "geometry": {
+        "logo": {
+          "x": 135,
+          "y": 132.8,
+          "width": 120,
+          "height": 120
+        },
+        "apple": {
+          "x": 105.2,
+          "y": 588.0,
+          "width": 179.5,
+          "height": 21
+        }
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "protectedSnapshots": [],
+      "logBoxMarkers": 0,
+      "screenshot": "auth-root-mobile-390x844.png",
+      "stableAfterMs": 3000
+    },
+    {
+      "route": "/login",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "geometry": {
+        "logo": {
+          "x": 135,
+          "y": 132.8,
+          "width": 120,
+          "height": 120
+        },
+        "apple": {
+          "x": 105.2,
+          "y": 588.0,
+          "width": 179.5,
+          "height": 21
+        }
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "protectedSnapshots": [],
+      "logBoxMarkers": 0,
+      "screenshot": "auth-login-mobile-390x844.png",
+      "stableAfterMs": 3000
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "finalPath": "/",
+      "authUi": true,
+      "geometry": {
+        "logo": {
+          "x": 660,
+          "y": 151,
+          "width": 120,
+          "height": 120
+        },
+        "apple": {
+          "x": 630.2,
+          "y": 620.5,
+          "width": 179.5,
+          "height": 21
+        }
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "protectedSnapshots": [],
+      "logBoxMarkers": 0,
+      "screenshot": "auth-root-desktop-1440x900.png",
+      "stableAfterMs": 3000
+    },
+    {
+      "route": "/login",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "geometry": {
+        "logo": {
+          "x": 660,
+          "y": 151,
+          "width": 120,
+          "height": 120
+        },
+        "apple": {
+          "x": 630.2,
+          "y": 620.5,
+          "width": 179.5,
+          "height": 21
+        }
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "protectedSnapshots": [],
+      "logBoxMarkers": 0,
+      "screenshot": "auth-login-desktop-1440x900.png",
+      "stableAfterMs": 3000
+    }
+  ],
+  "protectedDeepLinks": [
+    {
+      "requestedPath": "/chores",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": "guarded-chores-deeplink-mobile-390x844.png"
+    },
+    {
+      "requestedPath": "/chores",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": "guarded-chores-deeplink-desktop-1440x900.png"
+    },
+    {
+      "requestedPath": "/family",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/family",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/wallet",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/wallet",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/market",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/market",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/restock",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/restock",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/profile",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/profile",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/settings/about",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/settings/about",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    }
+  ],
+  "atlasBootstrap": [
+    {
+      "context": 1,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 2,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 3,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 4,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 5,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 6,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 7,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 8,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 9,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    },
+    {
+      "context": 10,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/"
+    }
+  ],
+  "routeJourney": [
+    {
+      "label": "Home",
+      "route": "/",
+      "selected": true
+    },
+    {
+      "label": "Chores",
+      "route": "/chores",
+      "selected": true
+    },
+    {
+      "label": "Family",
+      "route": "/family",
+      "selected": true
+    },
+    {
+      "label": "Wallet",
+      "route": "/wallet",
+      "selected": true
+    },
+    {
+      "label": "Market",
+      "route": "/market",
+      "selected": true
+    },
+    {
+      "label": "Restock",
+      "route": "/restock",
+      "selected": true
+    },
+    {
+      "label": "Home",
+      "route": "/",
+      "selected": true
+    },
+    {
+      "label": "Profile",
+      "route": "/profile",
+      "selector": "Home profile avatar at viewport point (338,36)"
+    },
+    {
+      "label": "Settings/About",
+      "route": "/settings/about",
+      "selector": "About HomeHuddle row"
+    }
+  ],
+  "signoutBrowserProbe": {
+    "routeBeforeClick": "/profile",
+    "signOutButtonVisible": true,
+    "browserDialogs": [],
+    "routeAfterClick": "/profile",
+    "confirmationVisible": false,
+    "observedLimitation": "React Native Web Alert.alert is a no-op; Chromium receives no confirmation dialog, so the existing destructive action cannot be confirmed through ordinary browser UI.",
+    "platformImplementationEvidence": "node_modules/react-native-web/dist/exports/Alert/index.js defines static alert() {}",
+    "result": "NOT_VERIFIED_IN_WEB_RUNTIME"
+  },
+  "console": {
+    "errors": [
+      {
+        "type": "error",
+        "text": "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+      }
+    ],
+    "warnings": [
+      {
+        "type": "warning",
+        "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+      },
+      {
+        "type": "warning",
+        "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+      },
+      {
+        "type": "warning",
+        "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+      },
+      {
+        "type": "warning",
+        "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+      },
+      {
+        "type": "warning",
+        "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+      },
+      {
+        "type": "warning",
+        "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+      },
+      {
+        "type": "warning",
+        "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+      }
+    ],
+    "pageErrors": []
+  },
+  "network": {
+    "requests": [
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/chores"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/chores"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/family"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/family"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/wallet"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/wallet"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/market"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/market"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/restock"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/restock"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/profile"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/profile"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/settings/about"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/settings/about"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/login"
+      },
+      {
+        "method": "GET",
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      },
+      {
+        "method": "HEAD",
+        "host": "localhost:8097",
+        "path": "/"
+      }
+    ],
+    "responses": [
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/chores",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/chores",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/family",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/family",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/wallet",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/wallet",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/market",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/market",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/restock",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/restock",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/profile",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/profile",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/settings/about",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/settings/about",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/node_modules/expo-router/entry.bundle",
+        "status": 200
+      },
+      {
+        "host": "localhost:8097",
+        "path": "/",
+        "status": 200
+      }
+    ],
+    "blockedExternal": [],
+    "supabaseMocked": []
+  },
+  "authGeometryDeltas": {
+    "mobile": {
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "apple": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "desktop": {
+      "logo": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "apple": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "summary": {
+    "authRouteScreens": 4,
+    "protectedDeepLinkCases": 14,
+    "bootstrapContextsPassed": 10,
+    "routesReachedAfterBypass": 9,
+    "uniquePageErrors": 0,
+    "uniqueConsoleErrors": 1,
+    "uniqueConsoleWarnings": 7,
+    "blockedExternalRequests": 0,
+    "syntheticSupabaseRequests": 0,
+    "signoutRuntime": "NOT_VERIFIED_IN_WEB_RUNTIME",
+    "baselineNewPageErrors": 0,
+    "baselineNewConsoleErrors": 0,
+    "baselineNewConsoleWarnings": 0
+  },
+  "baselineComparison": {
+    "baseCommit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "runtimeCases": [
+      "/",
+      "/chores"
+    ],
+    "baselineRouteOutcomes": {
+      "/": {
+        "finalPath": "/",
+        "logoTriggerVisible": true
+      },
+      "/chores": {
+        "finalPath": "/",
+        "logoTriggerVisible": false
+      }
+    },
+    "candidatePageErrors": 0,
+    "baselinePageErrors": 0,
+    "consoleErrorSetMatchesBaseline": true,
+    "consoleWarningSetMatchesBaseline": true,
+    "newConsoleErrors": 0,
+    "newConsoleWarnings": 0,
+    "classification": "The React 19 element.ref message and all seven React Native, Expo Router, React Native Web, and Reanimated warnings reproduce at bound base. They are pre-existing dependency/runtime diagnostics."
+  }
+}

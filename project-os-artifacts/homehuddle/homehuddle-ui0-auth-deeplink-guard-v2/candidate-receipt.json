@@ -1,0 +1,36 @@
+{
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "operation": "FIX",
+  "request": "homehuddle-ui0-auth-deeplink-guard-v2",
+  "recoveryRound": "R2",
+  "workBranch": "codex/homehuddle-ui0-auth-deeplink-guard-v2",
+  "candidateCommit": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "candidateTree": "fee62c03789419964033c9e799e7a8b20955b564",
+  "registeredBaseCommit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "registeredBaseTree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "artifactRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+  "sourceFiles": [
+    "app/_layout.tsx",
+    "app/(app)/_layout.tsx",
+    "app/login.tsx",
+    "utils/auth-route.ts",
+    "__tests__/auth-route.test.ts"
+  ],
+  "recoveryPreflight": {
+    "remoteMainFetch": "PASS",
+    "remoteMainCommit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "remoteMainTree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "predecessorRequest": "homehuddle-ui0-auth-deeplink-guard-v1",
+    "predecessorBranch": "codex/homehuddle-ui0-auth-deeplink-guard-v1",
+    "localFabricMetadata": "No predecessor job/result/worktree or candidate diff found by exact request/branch search; exact occurrences were only the R2 prompt/session record.",
+    "gitRefs": "No predecessor local or remote branch/ref found.",
+    "recoveryResult": "NO_RECOVERABLE_PREDECESSOR_JOB_OR_DIFF; bounded R2 FIX executed."
+  },
+  "status": "CANDIDATE_NOT_SELF_GO",
+  "selfGo": false,
+  "openEvidenceLimitations": [
+    "Browser sign-out confirmation/back-forward flow is unverified because React Native Web Alert.alert is a no-op."
+  ]
+}

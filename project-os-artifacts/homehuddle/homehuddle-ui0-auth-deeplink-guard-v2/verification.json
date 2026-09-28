@@ -1,0 +1,131 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v2",
+  "candidateCommit": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "candidateTree": "fee62c03789419964033c9e799e7a8b20955b564",
+  "baseCommit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "baseTree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "selfGo": false,
+  "candidateStatus": "CANDIDATE_NOT_SELF_GO",
+  "checks": {
+    "npmCi": {
+      "result": "PASS",
+      "packageJsonUnchanged": true,
+      "packageLockUnchanged": true,
+      "auditSummary": "40 existing audit findings reported by npm ci (3 low, 20 moderate, 14 high, 3 critical); no dependency changes made."
+    },
+    "typescript": {
+      "command": "npx tsc --noEmit",
+      "result": "PASS"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "result": "FAIL_PRE_EXISTING_REPO_ERRORS",
+      "errors": 55,
+      "warnings": 417,
+      "changedFileErrors": 0,
+      "changedFileWarnings": 1,
+      "changedFileWarning": "Existing root session initialization effect has empty dependencies; this effect is unchanged by the patch."
+    },
+    "jest": {
+      "command": "npx jest --runInBand",
+      "result": "PASS",
+      "suites": 4,
+      "tests": 27,
+      "existingReanimatedConsoleWarnings": 2
+    },
+    "authAndDeepLinks": {
+      "result": "PASS",
+      "authRoutes": 4,
+      "protectedDeepLinkCases": 14,
+      "allFinalPaths": "/login",
+      "productSnapshotsBeforeAuth": 0
+    },
+    "atlasBootstrap": {
+      "result": "PASS",
+      "freshContexts": 10,
+      "sizes": {
+        "390x844": 5,
+        "1440x900": 5
+      },
+      "routesAfterBypass": [
+        {
+          "label": "Home",
+          "route": "/",
+          "selected": true
+        },
+        {
+          "label": "Chores",
+          "route": "/chores",
+          "selected": true
+        },
+        {
+          "label": "Family",
+          "route": "/family",
+          "selected": true
+        },
+        {
+          "label": "Wallet",
+          "route": "/wallet",
+          "selected": true
+        },
+        {
+          "label": "Market",
+          "route": "/market",
+          "selected": true
+        },
+        {
+          "label": "Restock",
+          "route": "/restock",
+          "selected": true
+        },
+        {
+          "label": "Home",
+          "route": "/",
+          "selected": true
+        },
+        {
+          "label": "Profile",
+          "route": "/profile",
+          "selector": "Home profile avatar at viewport point (338,36)"
+        },
+        {
+          "label": "Settings/About",
+          "route": "/settings/about",
+          "selector": "About HomeHuddle row"
+        }
+      ]
+    },
+    "runtimeConsole": {
+      "pageErrors": 0,
+      "logBoxMarkers": 0,
+      "newConsoleErrors": 0,
+      "newConsoleWarnings": 0,
+      "baselineComparedAt": "28735b6fc8436ff461d5a094cf90e9f0709821b3"
+    },
+    "signOutBrowserRuntime": {
+      "result": "NOT_VERIFIED",
+      "reason": "React Native Web Alert.alert is a no-op; native confirmation UI cannot be accepted in Chromium."
+    },
+    "allowedDelta": {
+      "result": "PASS",
+      "files": [
+        "app/_layout.tsx",
+        "app/(app)/_layout.tsx",
+        "app/login.tsx",
+        "utils/auth-route.ts",
+        "__tests__/auth-route.test.ts"
+      ],
+      "packageOrLockChanges": false,
+      "forbiddenProductSourceChanges": false
+    },
+    "remoteMain": {
+      "beforePush": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+      "candidateIsDescendant": true,
+      "mainMustRemainUnchanged": true
+    }
+  },
+  "warningClassification": {
+    "runtimeConsole": "The React 19 element.ref error and all seven runtime warnings were reproduced at the registered base. Zero page errors and zero new console diagnostics.",
+    "fullLint": "The full lint command reports errors outside changed files; targeted lint on all five changed files has zero errors."
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v2",
+  "runtime": "Expo web / Chromium; fresh browser context; local and session storage cleared before page code",
+  "supabase": "EXPO_PUBLIC_SUPABASE_URL set to http://127.0.0.1:54321; no Supabase HTTP requests were needed by getSession()",
+  "cases": [
+    {
+      "requestedPath": "/chores",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": "guarded-chores-deeplink-mobile-390x844.png"
+    },
+    {
+      "requestedPath": "/chores",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": "guarded-chores-deeplink-desktop-1440x900.png"
+    },
+    {
+      "requestedPath": "/family",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/family",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/wallet",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/wallet",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/market",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/market",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/restock",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/restock",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/profile",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/profile",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/settings/about",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    },
+    {
+      "requestedPath": "/settings/about",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "protectedSnapshotsBeforeAuth": [],
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "logBoxMarkers": 0,
+      "screenshot": null
+    }
+  ],
+  "summary": {
+    "protectedPaths": [
+      "/chores",
+      "/family",
+      "/wallet",
+      "/market",
+      "/restock",
+      "/profile",
+      "/settings/about"
+    ],
+    "viewportSizes": [
+      [
+        390,
+        844
+      ],
+      [
+        1440,
+        900
+      ]
+    ],
+    "caseCount": 14,
+    "settledAtLogin": true,
+    "protectedProductSnapshotsBeforeAuth": 0,
+    "result": "PASS"
+  }
+}

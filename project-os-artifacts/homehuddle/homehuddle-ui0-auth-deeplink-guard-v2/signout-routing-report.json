@@ -1,0 +1,34 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v2",
+  "storeTransition": {
+    "test": "__tests__/auth-route.test.ts :: routes a signed-out app session to login after clearing session and dev bypass",
+    "result": "PASS",
+    "afterSignOut": {
+      "session": null,
+      "user": null,
+      "isDevBypass": false,
+      "isInitialized": true
+    },
+    "appGroupRedirect": "/login"
+  },
+  "appLayoutFailClosed": {
+    "condition": "!isInitialized || (!session && !isDevBypass)",
+    "result": "PASS_BY_CODE_REVIEW"
+  },
+  "browserRuntime": {
+    "routeBeforeClick": "/profile",
+    "signOutButtonVisible": true,
+    "browserDialogs": [],
+    "routeAfterClick": "/profile",
+    "confirmationVisible": false,
+    "observedLimitation": "React Native Web Alert.alert is a no-op; Chromium receives no confirmation dialog, so the existing destructive action cannot be confirmed through ordinary browser UI.",
+    "platformImplementationEvidence": "node_modules/react-native-web/dist/exports/Alert/index.js defines static alert() {}",
+    "result": "NOT_VERIFIED_IN_WEB_RUNTIME"
+  },
+  "browserBackForward": {
+    "result": "NOT_VERIFIED_IN_WEB_RUNTIME",
+    "reason": "React Native Web Alert.alert is a no-op, so the ordinary confirmation flow does not expose its destructive action to Chromium.",
+    "note": "Route and store behavior are covered by unit/runtime guard evidence; no browser sign-out or back/forward success is claimed."
+  },
+  "overall": "PARTIAL_WEB_SIGNOUT_LIMITATION"
+}

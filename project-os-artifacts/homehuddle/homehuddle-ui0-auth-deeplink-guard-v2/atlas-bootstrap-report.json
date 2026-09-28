@@ -1,0 +1,288 @@
+{
+  "contexts": [
+    {
+      "context": 1,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 2,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 3,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 4,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 5,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 6,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 7,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 8,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 9,
+      "viewport": "mobile",
+      "size": [
+        390,
+        844
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    },
+    {
+      "context": 10,
+      "viewport": "desktop",
+      "size": [
+        1440,
+        900
+      ],
+      "freshStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "developerControlOpened": true,
+      "openingAloneStayedAtLogin": true,
+      "explicitInstantBypassReachedHome": true,
+      "homeRoute": "/",
+      "selectors": {
+        "logoTrigger": "[data-testid=\"logo-trigger\"]",
+        "developerControl": "text=Developer Control",
+        "explicitBypass": "text=Instant Bypass Login",
+        "homeTab": "role=tab[name=\"Home\"]"
+      }
+    }
+  ],
+  "routeJourney": [
+    {
+      "label": "Home",
+      "route": "/",
+      "selected": true
+    },
+    {
+      "label": "Chores",
+      "route": "/chores",
+      "selected": true
+    },
+    {
+      "label": "Family",
+      "route": "/family",
+      "selected": true
+    },
+    {
+      "label": "Wallet",
+      "route": "/wallet",
+      "selected": true
+    },
+    {
+      "label": "Market",
+      "route": "/market",
+      "selected": true
+    },
+    {
+      "label": "Restock",
+      "route": "/restock",
+      "selected": true
+    },
+    {
+      "label": "Home",
+      "route": "/",
+      "selected": true
+    },
+    {
+      "label": "Profile",
+      "route": "/profile",
+      "selector": "Home profile avatar at viewport point (338,36)"
+    },
+    {
+      "label": "Settings/About",
+      "route": "/settings/about",
+      "selector": "About HomeHuddle row"
+    }
+  ],
+  "summary": {
+    "freshContextsPassed": 10,
+    "mobileContexts": 5,
+    "desktopContexts": 5,
+    "routeScreensReached": 9,
+    "viewportSizes": [
+      [
+        390,
+        844
+      ],
+      [
+        1440,
+        900
+      ]
+    ],
+    "notAnAR96Edit": true
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v2",
+  "candidateCommit": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "testFile": "__tests__/auth-route.test.ts",
+  "implementation": "utils/auth-route.ts",
+  "decisions": [
+    {
+      "scenario": "initialized unauthenticated + app group",
+      "segments": [
+        "(app)",
+        "(tabs)",
+        "chores"
+      ],
+      "expected": "/login",
+      "result": "PASS"
+    },
+    {
+      "scenario": "initialized unauthenticated + /login",
+      "segments": [
+        "login"
+      ],
+      "expected": null,
+      "result": "PASS"
+    },
+    {
+      "scenario": "initialized unauthenticated + canonical auth root",
+      "segments": [
+        "index"
+      ],
+      "expected": null,
+      "result": "PASS"
+    },
+    {
+      "scenario": "authorized + onboarding incomplete",
+      "segments": [
+        "login"
+      ],
+      "expected": "/onboarding",
+      "result": "PASS"
+    },
+    {
+      "scenario": "authorized + onboarding complete + /login",
+      "segments": [
+        "login"
+      ],
+      "expected": "/(app)/(tabs)",
+      "result": "PASS"
+    },
+    {
+      "scenario": "authorized + onboarding complete + auth root",
+      "segments": [],
+      "expected": "/(app)/(tabs)",
+      "result": "PASS"
+    },
+    {
+      "scenario": "authorized + app group",
+      "segments": [
+        "(app)",
+        "(tabs)",
+        "chores"
+      ],
+      "expected": null,
+      "result": "PASS"
+    },
+    {
+      "scenario": "uninitialized + app group",
+      "segments": [
+        "(app)",
+        "(tabs)",
+        "chores"
+      ],
+      "expected": null,
+      "result": "PASS"
+    },
+    {
+      "scenario": "sign out clears session and dev bypass",
+      "segments": [
+        "(app)",
+        "profile"
+      ],
+      "expected": "/login",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

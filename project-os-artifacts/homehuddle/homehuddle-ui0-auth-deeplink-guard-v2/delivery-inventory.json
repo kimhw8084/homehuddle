@@ -1,0 +1,107 @@
+{
+  "algorithm": "SHA-256",
+  "bundleSha256": "fb511b8f54d869b0c7473a02255a17bc44c6b0d925a2e0800d19199b433bcbd1",
+  "files": [
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 1553,
+      "sha256": "279670f3c6bf014c30170e668862ef84aa4b3082393634fc77c1a7ebc2c1252c"
+    },
+    {
+      "path": "app-home-after-bypass-desktop-1440x900.png",
+      "sizeBytes": 153759,
+      "sha256": "add8d873609d47b4d63f0f7d6d5bccf0cb17432d0d831846f0d67ff0ca133999"
+    },
+    {
+      "path": "app-home-after-bypass-mobile-390x844.png",
+      "sizeBytes": 92138,
+      "sha256": "a115eaa1f639e3e475db88fad2bc9fc019c7975094bb2df960d1c41480c9d980"
+    },
+    {
+      "path": "artifact-bundle.zip",
+      "sizeBytes": 1105767,
+      "sha256": "fb511b8f54d869b0c7473a02255a17bc44c6b0d925a2e0800d19199b433bcbd1"
+    },
+    {
+      "path": "artifact-bundle.zip.sha256",
+      "sizeBytes": 86,
+      "sha256": "715e007afcfe068bdd11e47d8e4c7719b5e5ae5106560574f334daef3d05c4b9"
+    },
+    {
+      "path": "atlas-bootstrap-report.json",
+      "sizeBytes": 7079,
+      "sha256": "104275800e02fba7a05319f97442d23cc5f553c5c8dd6745d079a691a00d88bd"
+    },
+    {
+      "path": "auth-login-desktop-1440x900.png",
+      "sizeBytes": 202641,
+      "sha256": "25e0d4e6ea76e023656e4e5669a2208a901fd3f2ec8e4a88235523c9dcb9726e"
+    },
+    {
+      "path": "auth-login-mobile-390x844.png",
+      "sizeBytes": 83534,
+      "sha256": "a8e244e38bc010731b23786c649521a99aaeea181a3b9b71dcf2d22ebd62e122"
+    },
+    {
+      "path": "auth-root-desktop-1440x900.png",
+      "sizeBytes": 201372,
+      "sha256": "37516d8679a09d0eeaf6aae601031940e8ec28beadd2d41aacfd1a99074b6ae2"
+    },
+    {
+      "path": "auth-root-mobile-390x844.png",
+      "sizeBytes": 82466,
+      "sha256": "07ab1c50ea0e0660d6aa76f0425f3168d594f126b935e5a7d4ea7157bec8d618"
+    },
+    {
+      "path": "auth-route-decision-report.json",
+      "sizeBytes": 1866,
+      "sha256": "88d9adf6cfdfd69b9b24d74ed6e1dc74e7497ab892855452d61c56a42455732a"
+    },
+    {
+      "path": "candidate-receipt.json",
+      "sizeBytes": 1656,
+      "sha256": "508dd4aa2f5e90189c519afd055f77534ba33e3ce24a7fa9d0bb041f6f70aa55"
+    },
+    {
+      "path": "deep-link-guard-report.json",
+      "sizeBytes": 5156,
+      "sha256": "b646eab62ffcd812c75f86322a991dc229fd3f5c3bc45fb47c679ecf0576e100"
+    },
+    {
+      "path": "guarded-chores-deeplink-desktop-1440x900.png",
+      "sizeBytes": 216189,
+      "sha256": "0689ebcf8942b6d9e21589b8a1155bba6bfa1da1297e1c3ae341e9cb251505f1"
+    },
+    {
+      "path": "guarded-chores-deeplink-mobile-390x844.png",
+      "sizeBytes": 81185,
+      "sha256": "15105777bcf7e38e9c34f81e7c9f1b5564c146129f1562aff552a959f075aed4"
+    },
+    {
+      "path": "inventory.json",
+      "sizeBytes": 2857,
+      "sha256": "8620c3872c1eecdc958e78c6cbd069ac025ca1a7f831b51f73ac6072bc3e194b"
+    },
+    {
+      "path": "runtime-console-network.json",
+      "sizeBytes": 38582,
+      "sha256": "3d09e71f6b04a594810cfa3769d75ef5e734fbedddee82a2044b4ca0b1921484"
+    },
+    {
+      "path": "signout-routing-report.json",
+      "sizeBytes": 1490,
+      "sha256": "d068f76c50fd7690724b2b76a5355d1e6a35fdc62514d7127dd15e5ec2713a18"
+    },
+    {
+      "path": "verification.json",
+      "sizeBytes": 3874,
+      "sha256": "301df659247229cb739e1c079e6ca63629beaa5d50291029c285518574a8087a"
+    },
+    {
+      "path": "visual-review.md",
+      "sizeBytes": 2139,
+      "sha256": "ae624a9e604052123cbf5ffeadf130b8e2cfd01de93dd13efbd155badff2b2cc"
+    }
+  ],
+  "deliveryInventorySelfHash": "omitted to avoid self-reference"
+}
