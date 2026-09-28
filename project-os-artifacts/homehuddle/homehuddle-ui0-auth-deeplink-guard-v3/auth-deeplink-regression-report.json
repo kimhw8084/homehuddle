@@ -1,0 +1,348 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v3",
+  "candidateCommit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+  "candidateTree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "candidateRuntime": {
+    "authRoutes": [
+      {
+        "requestedPath": "/",
+        "viewport": "mobile",
+        "finalPath": "/",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/login",
+        "viewport": "mobile",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/",
+        "viewport": "desktop",
+        "finalPath": "/",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/login",
+        "viewport": "desktop",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      }
+    ],
+    "protectedDeepLinks": [
+      {
+        "requestedPath": "/chores",
+        "viewport": "mobile",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/wallet",
+        "viewport": "mobile",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/settings/about",
+        "viewport": "mobile",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/chores",
+        "viewport": "desktop",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/wallet",
+        "viewport": "desktop",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      },
+      {
+        "requestedPath": "/settings/about",
+        "viewport": "desktop",
+        "finalPath": "/login",
+        "authUi": true,
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "productSnapshots": [],
+        "logBoxMarkers": 0,
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedExternal": []
+      }
+    ],
+    "summary": {
+      "candidateCommit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+      "candidateTree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "authRoutes": 4,
+      "protectedDeepLinks": 6,
+      "allProtectedAtLogin": true,
+      "zeroProductSnapshots": true,
+      "zeroPageErrors": true,
+      "zeroLogBox": true,
+      "zeroExternalRequests": true,
+      "allRuntimeSettings": true
+    }
+  },
+  "predecessorCarryForward": {
+    "result": "PASS_BY_EXACT_IMMUTABLE_EVIDENCE",
+    "reportPath": "deep-link-guard-report.json",
+    "ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+    "commit": "25213fd890e3646893a2d2e5c1ae016169b3c19d",
+    "gitBlobSha1": "260d7f43bf4f9ec40800df42be04f471bd102b90",
+    "protectedCases": 14,
+    "allFinalPaths": "/login",
+    "productSnapshotsBeforeAuth": 0
+  },
+  "predecessorScreenshotsReusedByReference": [
+    {
+      "path": "app-home-after-bypass-desktop-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "add8d873609d47b4d63f0f7d6d5bccf0cb17432d0d831846f0d67ff0ca133999",
+      "gitBlobSha1": "fdfa689a6ec89fd289c189160099bd58b20a0122",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "app-home-after-bypass-mobile-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "a115eaa1f639e3e475db88fad2bc9fc019c7975094bb2df960d1c41480c9d980",
+      "gitBlobSha1": "188310c4d479cf284aaa5bccffa78ac44fc67449",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "auth-login-desktop-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "25e0d4e6ea76e023656e4e5669a2208a901fd3f2ec8e4a88235523c9dcb9726e",
+      "gitBlobSha1": "6dd11574b81b9e16cbdbd5366478ec3dee6f0485",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "auth-login-mobile-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "a8e244e38bc010731b23786c649521a99aaeea181a3b9b71dcf2d22ebd62e122",
+      "gitBlobSha1": "69464ad5bd1a334b7fe6687e5e744169812d497c",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "auth-root-desktop-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "37516d8679a09d0eeaf6aae601031940e8ec28beadd2d41aacfd1a99074b6ae2",
+      "gitBlobSha1": "a59025eaca835a6320686bd81f06d01322569f86",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "auth-root-mobile-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "07ab1c50ea0e0660d6aa76f0425f3168d594f126b935e5a7d4ea7157bec8d618",
+      "gitBlobSha1": "d0fe72cc1532d27aa2194c01fe09fbdf7dded7fa",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "guarded-chores-deeplink-desktop-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "sha256": "0689ebcf8942b6d9e21589b8a1155bba6bfa1da1297e1c3ae341e9cb251505f1",
+      "gitBlobSha1": "db35956870b51a10a7538b9c34c444cd707a6767",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    },
+    {
+      "path": "guarded-chores-deeplink-mobile-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "15105777bcf7e38e9c34f81e7c9f1b5564c146129f1562aff552a959f075aed4",
+      "gitBlobSha1": "32f5466e3a96ceb333855f81b726ee0f70d39159",
+      "sourceRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+      "sourceCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d"
+    }
+  ],
+  "guardSourceBlobsUnchanged": [
+    {
+      "path": "app/_layout.tsx",
+      "gitBlobSha1AtR2": "ddb6af58ca0782e274db85bdd86cdd8085561487",
+      "gitBlobSha1AtR3": "ddb6af58ca0782e274db85bdd86cdd8085561487",
+      "unchanged": true
+    },
+    {
+      "path": "app/(app)/_layout.tsx",
+      "gitBlobSha1AtR2": "0807089691aa72484f6214e1dcb022c2abdf8a51",
+      "gitBlobSha1AtR3": "0807089691aa72484f6214e1dcb022c2abdf8a51",
+      "unchanged": true
+    },
+    {
+      "path": "app/login.tsx",
+      "gitBlobSha1AtR2": "dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0",
+      "gitBlobSha1AtR3": "dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0",
+      "unchanged": true
+    },
+    {
+      "path": "utils/auth-route.ts",
+      "gitBlobSha1AtR2": "65d37f57b70fc6ee99167d795bc8dfa97e76b7f3",
+      "gitBlobSha1AtR3": "65d37f57b70fc6ee99167d795bc8dfa97e76b7f3",
+      "unchanged": true
+    },
+    {
+      "path": "__tests__/auth-route.test.ts",
+      "gitBlobSha1AtR2": "60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89",
+      "gitBlobSha1AtR3": "60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89",
+      "unchanged": true
+    }
+  ],
+  "result": "PASS"
+}

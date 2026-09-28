@@ -1,0 +1,77 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v3",
+  "recoveryRound": "R3",
+  "registeredBase": {
+    "commit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "remoteMainObservedBeforeCandidatePublish": "28735b6fc8436ff461d5a094cf90e9f0709821b3"
+  },
+  "predecessor": {
+    "workRef": "refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v2",
+    "commit": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+    "tree": "fee62c03789419964033c9e799e7a8b20955b564",
+    "parent": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "parentCount": 1,
+    "verifiedDiffPaths": [
+      "__tests__/auth-route.test.ts",
+      "app/(app)/_layout.tsx",
+      "app/_layout.tsx",
+      "app/login.tsx",
+      "utils/auth-route.ts"
+    ]
+  },
+  "predecessorSourceBlobs": [
+    {
+      "path": "app/_layout.tsx",
+      "gitBlobSha1AtR2": "ddb6af58ca0782e274db85bdd86cdd8085561487",
+      "gitBlobSha1AtR3": "ddb6af58ca0782e274db85bdd86cdd8085561487",
+      "unchanged": true
+    },
+    {
+      "path": "app/(app)/_layout.tsx",
+      "gitBlobSha1AtR2": "0807089691aa72484f6214e1dcb022c2abdf8a51",
+      "gitBlobSha1AtR3": "0807089691aa72484f6214e1dcb022c2abdf8a51",
+      "unchanged": true
+    },
+    {
+      "path": "app/login.tsx",
+      "gitBlobSha1AtR2": "dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0",
+      "gitBlobSha1AtR3": "dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0",
+      "unchanged": true
+    },
+    {
+      "path": "utils/auth-route.ts",
+      "gitBlobSha1AtR2": "65d37f57b70fc6ee99167d795bc8dfa97e76b7f3",
+      "gitBlobSha1AtR3": "65d37f57b70fc6ee99167d795bc8dfa97e76b7f3",
+      "unchanged": true
+    },
+    {
+      "path": "__tests__/auth-route.test.ts",
+      "gitBlobSha1AtR2": "60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89",
+      "gitBlobSha1AtR3": "60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89",
+      "unchanged": true
+    }
+  ],
+  "candidate": {
+    "workRef": "refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v3",
+    "commit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+    "tree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+    "soleParent": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+    "commitCountAfterPredecessor": 1
+  },
+  "r3SourceDiff": [
+    "app/(app)/profile.tsx",
+    "__tests__/profile-signout.test.tsx"
+  ],
+  "allowedDeltaResult": "PASS; no package/lock, auth guard, Home, Chores, Family, Wallet, Market, Restock, backend, or store-schema changes.",
+  "verifiedRemoteMain": {
+    "ref": "refs/heads/main",
+    "commit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "unchanged": true
+  },
+  "fabricEvidenceOwnership": {
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3",
+    "authoredOrReplaced": false
+  }
+}

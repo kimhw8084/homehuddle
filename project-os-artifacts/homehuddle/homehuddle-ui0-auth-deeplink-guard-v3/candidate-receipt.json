@@ -1,0 +1,34 @@
+{
+  "project": "homehuddle",
+  "repository": "kimhw8084/homehuddle",
+  "alias": "app",
+  "operation": "FIX",
+  "request": "homehuddle-ui0-auth-deeplink-guard-v3",
+  "recoveryRound": "R3",
+  "workBranch": "codex/homehuddle-ui0-auth-deeplink-guard-v3",
+  "candidateCommit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+  "candidateTree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "candidateParent": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "registeredBaseCommit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "registeredBaseTree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "remoteMainBeforePublication": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "predecessorCommit": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "predecessorTree": "fee62c03789419964033c9e799e7a8b20955b564",
+  "artifactRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3",
+  "sourceFiles": [
+    "app/(app)/profile.tsx",
+    "__tests__/profile-signout.test.tsx"
+  ],
+  "predecessorFilesVerifiedUnchanged": [
+    "__tests__/auth-route.test.ts",
+    "app/(app)/_layout.tsx",
+    "app/_layout.tsx",
+    "app/login.tsx",
+    "utils/auth-route.ts"
+  ],
+  "status": "CANDIDATE_NOT_SELF_GO",
+  "selfGo": false,
+  "independentGoRequired": true,
+  "fabricEvidenceRef": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3",
+  "fabricEvidenceAuthoredOrReplaced": false
+}

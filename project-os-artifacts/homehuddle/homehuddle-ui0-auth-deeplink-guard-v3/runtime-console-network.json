@@ -1,0 +1,493 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v3",
+  "candidateCommit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+  "candidateTree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "runtime": "Expo web / Chromium",
+  "baseUrl": "http://localhost:8097",
+  "EXPO_NO_DOTENV": 1,
+  "supabase": {
+    "url": "http://127.0.0.1:54321",
+    "mode": "synthetic loopback only",
+    "httpRequestsObserved": []
+  },
+  "locale": "en-US",
+  "timezone": "America/Chicago",
+  "freshContexts": {
+    "authEntries": 4,
+    "protectedDeepLinks": 6,
+    "developerBypass": 4,
+    "total": 14
+  },
+  "authRoutes": [
+    {
+      "requestedPath": "/",
+      "viewport": "mobile",
+      "finalPath": "/",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/login",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/",
+      "viewport": "desktop",
+      "finalPath": "/",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/login",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    }
+  ],
+  "protectedDeepLinks": [
+    {
+      "requestedPath": "/chores",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/wallet",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/settings/about",
+      "viewport": "mobile",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/chores",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/wallet",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    },
+    {
+      "requestedPath": "/settings/about",
+      "viewport": "desktop",
+      "finalPath": "/login",
+      "authUi": true,
+      "runtimeSettings": {
+        "locale": "en-US",
+        "timezoneId": "America/Chicago"
+      },
+      "initialStorage": {
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "productSnapshots": [],
+      "logBoxMarkers": 0,
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedExternal": []
+    }
+  ],
+  "bootstrap": {
+    "summary": {
+      "candidateCommit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "contexts": 4,
+      "mobileContexts": 2,
+      "desktopContexts": 2,
+      "explicitBypass": true,
+      "allSixTabs": true,
+      "profileAndAbout": true,
+      "twoViewportSignOut": true,
+      "zeroPageErrors": true,
+      "zeroNewConsoleErrors": true,
+      "zeroLogBox": true,
+      "zeroExternal": true,
+      "allRuntimeSettings": true
+    },
+    "contexts": [
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "bypassPrecondition": {
+          "path": "/login",
+          "developerControlVisible": false,
+          "tabs": 0,
+          "storage": {
+            "localStorage": 0,
+            "sessionStorage": 0
+          }
+        },
+        "tabRoutes": [
+          {
+            "label": "Home",
+            "path": "/",
+            "selected": true
+          },
+          {
+            "label": "Chores",
+            "path": "/chores",
+            "selected": true
+          },
+          {
+            "label": "Family",
+            "path": "/family",
+            "selected": true
+          },
+          {
+            "label": "Wallet",
+            "path": "/wallet",
+            "selected": true
+          },
+          {
+            "label": "Market",
+            "path": "/market",
+            "selected": true
+          },
+          {
+            "label": "Restock",
+            "path": "/restock",
+            "selected": true
+          }
+        ],
+        "profileReachable": true,
+        "settingsAboutReachable": true,
+        "signOutFlow": true
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "bypassPrecondition": {
+          "path": "/login",
+          "developerControlVisible": false,
+          "tabs": 0,
+          "storage": {
+            "localStorage": 0,
+            "sessionStorage": 0
+          }
+        },
+        "tabRoutes": [
+          {
+            "label": "Home",
+            "path": "/",
+            "selected": true
+          },
+          {
+            "label": "Chores",
+            "path": "/chores",
+            "selected": true
+          },
+          {
+            "label": "Family",
+            "path": "/family",
+            "selected": true
+          },
+          {
+            "label": "Wallet",
+            "path": "/wallet",
+            "selected": true
+          },
+          {
+            "label": "Market",
+            "path": "/market",
+            "selected": true
+          },
+          {
+            "label": "Restock",
+            "path": "/restock",
+            "selected": true
+          }
+        ],
+        "profileReachable": true,
+        "settingsAboutReachable": true,
+        "signOutFlow": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "bypassPrecondition": {
+          "path": "/login",
+          "developerControlVisible": false,
+          "tabs": 0,
+          "storage": {
+            "localStorage": 0,
+            "sessionStorage": 0
+          }
+        },
+        "tabRoutes": [
+          {
+            "label": "Home",
+            "path": "/",
+            "selected": true
+          },
+          {
+            "label": "Chores",
+            "path": "/chores",
+            "selected": true
+          },
+          {
+            "label": "Family",
+            "path": "/family",
+            "selected": true
+          },
+          {
+            "label": "Wallet",
+            "path": "/wallet",
+            "selected": true
+          },
+          {
+            "label": "Market",
+            "path": "/market",
+            "selected": true
+          },
+          {
+            "label": "Restock",
+            "path": "/restock",
+            "selected": true
+          }
+        ],
+        "profileReachable": true,
+        "settingsAboutReachable": true,
+        "signOutFlow": false
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "runtimeSettings": {
+          "locale": "en-US",
+          "timezoneId": "America/Chicago"
+        },
+        "initialStorage": {
+          "localStorage": 0,
+          "sessionStorage": 0
+        },
+        "bypassPrecondition": {
+          "path": "/login",
+          "developerControlVisible": false,
+          "tabs": 0,
+          "storage": {
+            "localStorage": 0,
+            "sessionStorage": 0
+          }
+        },
+        "tabRoutes": [
+          {
+            "label": "Home",
+            "path": "/",
+            "selected": true
+          },
+          {
+            "label": "Chores",
+            "path": "/chores",
+            "selected": true
+          },
+          {
+            "label": "Family",
+            "path": "/family",
+            "selected": true
+          },
+          {
+            "label": "Wallet",
+            "path": "/wallet",
+            "selected": true
+          },
+          {
+            "label": "Market",
+            "path": "/market",
+            "selected": true
+          },
+          {
+            "label": "Restock",
+            "path": "/restock",
+            "selected": true
+          }
+        ],
+        "profileReachable": true,
+        "settingsAboutReachable": true,
+        "signOutFlow": false
+      }
+    ]
+  },
+  "network": {
+    "loopbackOnly": true,
+    "externalRequestsBlocked": 0,
+    "supabaseRequestsObserved": [],
+    "expoLoopbackResponses": 12
+  },
+  "console": {
+    "pageErrors": 0,
+    "logBoxMarkers": 0,
+    "newConsoleErrors": 0,
+    "newConsoleWarnings": 0,
+    "baselineRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+    "baselineCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d",
+    "baselineConsoleErrorSet": [
+      "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    ],
+    "candidateConsoleErrorSet": [
+      "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
+    ],
+    "baselineWarningCount": 7,
+    "candidateUniqueWarningCount": 7,
+    "warningSetMatchesBaseline": true,
+    "classification": "The React 19 element.ref console error and all seven runtime warning messages match the exact R2 baseline evidence; no new console errors, warnings, pageerrors, or LogBox markers."
+  },
+  "candidateBound": true
+}

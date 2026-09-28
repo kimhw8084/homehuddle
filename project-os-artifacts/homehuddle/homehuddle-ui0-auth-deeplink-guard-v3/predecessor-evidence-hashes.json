@@ -1,0 +1,177 @@
+{
+  "predecessorCandidateRef": "refs/heads/codex/homehuddle-ui0-auth-deeplink-guard-v2",
+  "predecessorCandidateCommit": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "predecessorCandidateTree": "fee62c03789419964033c9e799e7a8b20955b564",
+  "predecessorArtifactRef": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+  "predecessorArtifactCommit": "25213fd890e3646893a2d2e5c1ae016169b3c19d",
+  "predecessorFabricEvidenceRef": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v2",
+  "predecessorFabricEvidenceCommit": "5c53bac32b91c6577cf4f2a0f06bcda68f849ec0",
+  "predecessorFabricEvidenceTree": "d7fa65fdb75b3953c1adfe73c11643b31ca0086d",
+  "predecessorFabricAudit": {
+    "path": ".codex-fabric/audit.json",
+    "gitBlobSha1": "45d831a368df8c4500374278a44c3f1d318ec7d4",
+    "sha256": "481bf04d0b5e2a109c3e3026d6fc48e29767141b8661bcfad38b277220c66882",
+    "sizeBytes": 51611
+  },
+  "r2ArtifactFiles": [
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 1553,
+      "gitBlobSha1": "0c1056aefc9508d21f139781c78ba856a42aebc0",
+      "sha256": "279670f3c6bf014c30170e668862ef84aa4b3082393634fc77c1a7ebc2c1252c"
+    },
+    {
+      "path": "app-home-after-bypass-desktop-1440x900.png",
+      "sizeBytes": 153759,
+      "gitBlobSha1": "fdfa689a6ec89fd289c189160099bd58b20a0122",
+      "sha256": "add8d873609d47b4d63f0f7d6d5bccf0cb17432d0d831846f0d67ff0ca133999"
+    },
+    {
+      "path": "app-home-after-bypass-mobile-390x844.png",
+      "sizeBytes": 92138,
+      "gitBlobSha1": "188310c4d479cf284aaa5bccffa78ac44fc67449",
+      "sha256": "a115eaa1f639e3e475db88fad2bc9fc019c7975094bb2df960d1c41480c9d980"
+    },
+    {
+      "path": "artifact-bundle.zip",
+      "sizeBytes": 1105767,
+      "gitBlobSha1": "c50d3c83463b9041c5e50c18be301521e178caa3",
+      "sha256": "fb511b8f54d869b0c7473a02255a17bc44c6b0d925a2e0800d19199b433bcbd1"
+    },
+    {
+      "path": "artifact-bundle.zip.sha256",
+      "sizeBytes": 86,
+      "gitBlobSha1": "d9b13c928d0a29238bd1e6d9b14c879152a9b133",
+      "sha256": "715e007afcfe068bdd11e47d8e4c7719b5e5ae5106560574f334daef3d05c4b9"
+    },
+    {
+      "path": "atlas-bootstrap-report.json",
+      "sizeBytes": 7079,
+      "gitBlobSha1": "0b6368803d5d3018c4100198f698fcb7113f5a60",
+      "sha256": "104275800e02fba7a05319f97442d23cc5f553c5c8dd6745d079a691a00d88bd"
+    },
+    {
+      "path": "auth-login-desktop-1440x900.png",
+      "sizeBytes": 202641,
+      "gitBlobSha1": "6dd11574b81b9e16cbdbd5366478ec3dee6f0485",
+      "sha256": "25e0d4e6ea76e023656e4e5669a2208a901fd3f2ec8e4a88235523c9dcb9726e"
+    },
+    {
+      "path": "auth-login-mobile-390x844.png",
+      "sizeBytes": 83534,
+      "gitBlobSha1": "69464ad5bd1a334b7fe6687e5e744169812d497c",
+      "sha256": "a8e244e38bc010731b23786c649521a99aaeea181a3b9b71dcf2d22ebd62e122"
+    },
+    {
+      "path": "auth-root-desktop-1440x900.png",
+      "sizeBytes": 201372,
+      "gitBlobSha1": "a59025eaca835a6320686bd81f06d01322569f86",
+      "sha256": "37516d8679a09d0eeaf6aae601031940e8ec28beadd2d41aacfd1a99074b6ae2"
+    },
+    {
+      "path": "auth-root-mobile-390x844.png",
+      "sizeBytes": 82466,
+      "gitBlobSha1": "d0fe72cc1532d27aa2194c01fe09fbdf7dded7fa",
+      "sha256": "07ab1c50ea0e0660d6aa76f0425f3168d594f126b935e5a7d4ea7157bec8d618"
+    },
+    {
+      "path": "auth-route-decision-report.json",
+      "sizeBytes": 1866,
+      "gitBlobSha1": "e2e378f7b5302c722cfd9be6a4f73e41b94ae826",
+      "sha256": "88d9adf6cfdfd69b9b24d74ed6e1dc74e7497ab892855452d61c56a42455732a"
+    },
+    {
+      "path": "candidate-receipt.json",
+      "sizeBytes": 1656,
+      "gitBlobSha1": "79aea51012dacccb04805f225f1d4fbb206b83ba",
+      "sha256": "508dd4aa2f5e90189c519afd055f77534ba33e3ce24a7fa9d0bb041f6f70aa55"
+    },
+    {
+      "path": "deep-link-guard-report.json",
+      "sizeBytes": 5156,
+      "gitBlobSha1": "260d7f43bf4f9ec40800df42be04f471bd102b90",
+      "sha256": "b646eab62ffcd812c75f86322a991dc229fd3f5c3bc45fb47c679ecf0576e100"
+    },
+    {
+      "path": "delivery-inventory.json",
+      "sizeBytes": 3542,
+      "gitBlobSha1": "b2dd925313f2bc9b26ea23c7dc2a0823585fce61",
+      "sha256": "42a20bde388cbd2056fc4352e856e8b4650def4e4b3ee603d3c5cc56cb0b29f6"
+    },
+    {
+      "path": "guarded-chores-deeplink-desktop-1440x900.png",
+      "sizeBytes": 216189,
+      "gitBlobSha1": "db35956870b51a10a7538b9c34c444cd707a6767",
+      "sha256": "0689ebcf8942b6d9e21589b8a1155bba6bfa1da1297e1c3ae341e9cb251505f1"
+    },
+    {
+      "path": "guarded-chores-deeplink-mobile-390x844.png",
+      "sizeBytes": 81185,
+      "gitBlobSha1": "32f5466e3a96ceb333855f81b726ee0f70d39159",
+      "sha256": "15105777bcf7e38e9c34f81e7c9f1b5564c146129f1562aff552a959f075aed4"
+    },
+    {
+      "path": "inventory.json",
+      "sizeBytes": 2857,
+      "gitBlobSha1": "1d5d4f5f91bd4bf1a5407e088a312efe58b0e407",
+      "sha256": "8620c3872c1eecdc958e78c6cbd069ac025ca1a7f831b51f73ac6072bc3e194b"
+    },
+    {
+      "path": "runtime-console-network.json",
+      "sizeBytes": 38582,
+      "gitBlobSha1": "e62cebf8e2fd02056f1d190d3d649acc4a07bc6b",
+      "sha256": "3d09e71f6b04a594810cfa3769d75ef5e734fbedddee82a2044b4ca0b1921484"
+    },
+    {
+      "path": "signout-routing-report.json",
+      "sizeBytes": 1490,
+      "gitBlobSha1": "500b8b281eeac2e3e778c1013b37259ef333153d",
+      "sha256": "d068f76c50fd7690724b2b76a5355d1e6a35fdc62514d7127dd15e5ec2713a18"
+    },
+    {
+      "path": "verification.json",
+      "sizeBytes": 3874,
+      "gitBlobSha1": "1db7a032ad1a8db2c1715aef80a20277ccc0ee17",
+      "sha256": "301df659247229cb739e1c079e6ca63629beaa5d50291029c285518574a8087a"
+    },
+    {
+      "path": "visual-review.md",
+      "sizeBytes": 2139,
+      "gitBlobSha1": "2ddbf41f5a0a2493d014bb8168d1c80d171398d2",
+      "sha256": "ae624a9e604052123cbf5ffeadf130b8e2cfd01de93dd13efbd155badff2b2cc"
+    }
+  ],
+  "r2ArtifactBundleSha256": "fb511b8f54d869b0c7473a02255a17bc44c6b0d925a2e0800d19199b433bcbd1",
+  "carriedForwardFindings": {
+    "protectedDeepLinkCases": 14,
+    "settledRoute": "/login",
+    "productSnapshotsBeforeAuth": 0,
+    "freshDeveloperBypassContexts": 10,
+    "contextSizes": {
+      "390x844": 5,
+      "1440x900": 5
+    },
+    "reachableRoutes": [
+      "Home",
+      "Chores",
+      "Family",
+      "Wallet",
+      "Market",
+      "Restock",
+      "Profile",
+      "Settings/About"
+    ],
+    "typescript": "PASS",
+    "jest": {
+      "result": "PASS",
+      "suites": 4,
+      "tests": 27
+    },
+    "newRuntimeDiagnostics": 0,
+    "signOutBrowserAcceptance": "NOT_VERIFIED_IN_R2; ordinary Profile Alert.alert was a React Native Web no-op.",
+    "predecessorVerificationGitBlob": "1db7a032ad1a8db2c1715aef80a20277ccc0ee17",
+    "predecessorDeepLinkReportGitBlob": "260d7f43bf4f9ec40800df42be04f471bd102b90",
+    "predecessorSignoutReportGitBlob": "500b8b281eeac2e3e778c1013b37259ef333153d"
+  },
+  "reusePolicy": "R2 reports and screenshots are referenced by exact immutable ref/commit/blob/SHA-256; no R2 screenshot bytes are copied into this R3 package."
+}

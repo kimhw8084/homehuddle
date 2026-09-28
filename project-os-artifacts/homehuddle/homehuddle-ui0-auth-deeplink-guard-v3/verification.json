@@ -1,0 +1,214 @@
+{
+  "request": "homehuddle-ui0-auth-deeplink-guard-v3",
+  "candidateCommit": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+  "candidateTree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "candidateParent": "84d01724b9560fb39642ee9cc7377edfc8b34ec7",
+  "baseCommit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "baseTree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "selfGo": false,
+  "candidateStatus": "CANDIDATE_NOT_SELF_GO",
+  "checks": {
+    "npmCi": {
+      "command": "npm ci",
+      "result": "PASS",
+      "packageJsonUnchanged": true,
+      "packageLockUnchanged": true,
+      "auditSummary": "40 audit findings reported by the locked dependency tree (3 low, 20 moderate, 14 high, 3 critical); no dependency changes made."
+    },
+    "typescript": {
+      "command": "npx tsc --noEmit",
+      "result": "PASS"
+    },
+    "lint": {
+      "fullCommand": "npm run lint",
+      "fullResult": "FAIL_PRE_EXISTING_REPOSITORY_DEBT",
+      "errors": 55,
+      "warnings": 417,
+      "changedFileCommand": "npx eslint 'app/(app)/profile.tsx' __tests__/profile-signout.test.tsx",
+      "changedFileResult": "PASS",
+      "changedFileIssues": 0,
+      "classification": "Full-repo counts match R2; no changed-file lint issues."
+    },
+    "jest": {
+      "command": "npx jest --runInBand",
+      "result": "PASS",
+      "suites": 5,
+      "tests": 30,
+      "newProfileSignoutTests": 3,
+      "existingReanimatedConsoleWarnings": 2
+    },
+    "authAndDeepLinks": {
+      "result": "PASS",
+      "freshAuthEntryCases": 4,
+      "freshProtectedDeepLinkCases": 6,
+      "allProtectedFinalPath": "/login",
+      "productSnapshotsBeforeAuth": 0,
+      "r2Full14CaseEvidence": "PASS_BY_EXACT_PREDECESSOR_HASH_CARRYFORWARD"
+    },
+    "bootstrap": {
+      "result": "PASS",
+      "freshContexts": 4,
+      "sizes": {
+        "390x844": 2,
+        "1440x900": 2
+      },
+      "explicitDeveloperBypassOnly": true,
+      "allSixTabsReachable": true,
+      "profileAndSettingsAboutReachable": true
+    },
+    "webSignOut": {
+      "result": "PASS",
+      "freshFlows": 2,
+      "sizes": [
+        "390x844",
+        "1440x900"
+      ],
+      "dialogSemantics": true,
+      "cancelPreservesAuth": true,
+      "confirmSignOutCallsOnceByJest": true,
+      "routesToLogin": true,
+      "zeroProductSnapshotsAfterSignOut": true,
+      "historyBackForwardProtected": true
+    },
+    "nativePreservation": {
+      "jestAlertBranch": "PASS",
+      "hapticsMock": "PASS",
+      "nativeDeviceRuntime": "NOT_RUN",
+      "voiceOverTalkBack": "UNPROVEN"
+    },
+    "runtimeDiagnostics": {
+      "pageErrors": 0,
+      "LogBoxMarkers": 0,
+      "newConsoleErrors": 0,
+      "newConsoleWarnings": 0,
+      "candidateAndR2WarningSetsMatch": true
+    },
+    "visuals": {
+      "result": "PASS",
+      "canonicalPngs": 4,
+      "additionalClosedProfilePngs": 4,
+      "screenshots": [
+        {
+          "path": "profile-signout-confirm--desktop-1440x900.png",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "sizeBytes": 82682,
+          "sha256": "8942ce59542f84eb6e438fe03c8277f2ad5957c3c0b58a367a1a61ee805753c0",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "profile-signout-confirm--mobile-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "sizeBytes": 61742,
+          "sha256": "1de6e2ce64cba2294b029b7b74f09ccd2f28708d9652cdea6beb35b0ac2210db",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "auth-login-after-signout--desktop-1440x900.png",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "sizeBytes": 201399,
+          "sha256": "4f0a777cb2cf99152bc333ae2a78fc26bdb5e706d137a4bf70ec2ff33603c94a",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "auth-login-after-signout--mobile-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "sizeBytes": 81684,
+          "sha256": "09ce1e851ee2ae6263290d5223e4b85e85900428b73fffca340a44e3c2dac3e1",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "profile-closed-before--desktop-1440x900.png",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "sizeBytes": 71864,
+          "sha256": "dc041af4a8c420c60508d9dd2c3e61312dd5e04a93bed78411a51bd304cd3e61",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "profile-closed-after-cancel--desktop-1440x900.png",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "sizeBytes": 71864,
+          "sha256": "dc041af4a8c420c60508d9dd2c3e61312dd5e04a93bed78411a51bd304cd3e61",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "profile-closed-before--mobile-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "sizeBytes": 61696,
+          "sha256": "99bea019ae1dcdd4e1c8f7befa90ecf0ab31d94af0d2566acb12af2e9aec271d",
+          "pngSignature": "89504e470d0a1a0a"
+        },
+        {
+          "path": "profile-closed-after-cancel--mobile-390x844.png",
+          "dimensions": [
+            390,
+            844
+          ],
+          "sizeBytes": 61696,
+          "sha256": "99bea019ae1dcdd4e1c8f7befa90ecf0ab31d94af0d2566acb12af2e9aec271d",
+          "pngSignature": "89504e470d0a1a0a"
+        }
+      ],
+      "closedProfilePixelChecks": [
+        {
+          "viewport": "mobile-390x844",
+          "beforeSha256": "99bea019ae1dcdd4e1c8f7befa90ecf0ab31d94af0d2566acb12af2e9aec271d",
+          "afterCancelSha256": "99bea019ae1dcdd4e1c8f7befa90ecf0ab31d94af0d2566acb12af2e9aec271d",
+          "pixelIdentical": true
+        },
+        {
+          "viewport": "desktop-1440x900",
+          "beforeSha256": "dc041af4a8c420c60508d9dd2c3e61312dd5e04a93bed78411a51bd304cd3e61",
+          "afterCancelSha256": "dc041af4a8c420c60508d9dd2c3e61312dd5e04a93bed78411a51bd304cd3e61",
+          "pixelIdentical": true
+        }
+      ],
+      "postSignoutAuthCompositionMatchesFreshLogin": true
+    },
+    "allowedDelta": {
+      "result": "PASS",
+      "files": [
+        "app/(app)/profile.tsx",
+        "__tests__/profile-signout.test.tsx"
+      ],
+      "packageOrLockChanges": false,
+      "authGuardPredecessorFilesUnchanged": true,
+      "forbiddenProductSourceChanges": false
+    },
+    "remoteMain": {
+      "result": "PASS",
+      "ref": "refs/heads/main",
+      "commit": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+      "tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+      "candidateRemoteReadback": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12"
+    },
+    "fabricEvidence": {
+      "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-auth-deeplink-guard-v3",
+      "authoredOrReplaced": false
+    }
+  },
+  "warningClassification": {
+    "browser": "One React 19 element.ref message and seven React Native/Expo/Reanimated warnings are exact R2 carry-forward diagnostics; zero new console errors or warnings.",
+    "lint": "Repository-wide existing lint debt is separated from the two changed files, which pass targeted lint."
+  }
+}
