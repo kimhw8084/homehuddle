@@ -5,6 +5,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useAuthStore } from '../store/authStore';
 import { useOnboardingStore } from '../store/onboardingStore';
 import { supabase } from '../lib/supabase';
+import { getAuthRedirect } from '../utils/auth-route';
 
 export default function RootLayout() {
   const { session, setSession, setInitialized, isInitialized, isDevBypass } = useAuthStore();
@@ -32,33 +33,21 @@ export default function RootLayout() {
 
   // 2. Navigation Guard
   useEffect(() => {
-    if (!isInitialized) return;
+    const redirect = getAuthRedirect({
+      isInitialized,
+      isAuthorized: Boolean(session || isDevBypass),
+      onboardingDone,
+      segments,
+    });
 
-    const inAppGroup = segments[0] === '(app)';
-    const inOnboarding = segments[0] === 'onboarding';
-    const isAuthed = session || isDevBypass;
-
-    if (!isAuthed && inAppGroup) {
-      router.replace('/');
-      return;
-    }
-
-    if (isAuthed) {
-      if (!onboardingDone && !inOnboarding) {
-        // First launch: send to onboarding
-        router.replace('/onboarding');
-        return;
-      }
-      if (onboardingDone && inOnboarding) {
-        router.replace('/(app)/(tabs)');
-      }
-    }
-  }, [session, isDevBypass, isInitialized, onboardingDone, segments]);
+    if (redirect) router.replace(redirect);
+  }, [session, isDevBypass, isInitialized, onboardingDone, segments, router]);
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="login" />
         <Stack.Screen name="(app)" />
         <Stack.Screen name="onboarding" />
       </Stack>
