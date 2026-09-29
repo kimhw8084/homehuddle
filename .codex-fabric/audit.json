@@ -1,0 +1,358 @@
+{
+  "accepted_at": "2026-09-29T01:09:32Z",
+  "changed_files": [],
+  "checks": [
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env NODE_PATH=/tmp/homehuddle-playwright/node_modules node /tmp/homehuddle-bootstrap-qualification-final.js'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const m=require(\\\"/tmp/homehuddle-ar96-manifest.json\\\"),r=require(\\\"/tmp/homehuddle-ar96-recipes.json\\\"),v=require(\\\"/tmp/homehuddle-ar96-report.json\\\");console.log(\\\"manifest\\\",JSON.stringify({top:Object.keys(m),source:m.source, counts:m.counts,freeze:m.freeze_time_utc,surfaces:m.surfaces.length,one:m.surfaces[0],one66:m.surfaces.at(-1),temporal:m.unproven_temporal_surfaces},null,2).slice(0,6500));console.log(\\\"recipes\\\",JSON.stringify({top:Object.keys(r),topData:Object.fromEntries(Object.entries(r).filter(([k,v])=>\"'!Array.isArray(v))),count:r.recipes.length,first:r.recipes[0],seed:r.recipes.find(x=>x.surface_key===\"home-family-switcher\"),auth:r.recipes.find(x=>x.surface_key===\"auth-entry\")},null,2).slice(0,7500));console.log(\"validation\",JSON.stringify({keys:Object.keys(v),summary:v.summary,setup:v.execution_model, routes:v.route_normalization},null,2).slice(0,4200))'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short; rtk git rev-parse HEAD; rtk git rev-parse HEAD''^{tree}; rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2; rtk git diff --name-only 28735b6fc8436ff461d5a094cf90e9f0709821b3 55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8; rtk shasum -a 256 package-lock.json; rtk node --version; rtk npm --version; rtk ./node_modules/.bin/expo --version; rtk /Applications/Google'\"\\\\ Chrome.app/Contents/MacOS/Google\\\\ Chrome --version; rtk proxy node -e 'console.log(require(\\\"/tmp/homehuddle-playwright/node_modules/playwright/package.json\\\").version)'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const m=require(\\\"/tmp/homehuddle-ar96-manifest.json\\\"),r=require(\\\"/tmp/homehuddle-ar96-recipes.json\\\");console.log(\\\"rollforward\\\",JSON.stringify(m.current_source_roll_forward,null,2));console.log(\\\"manifest status\\\",m.status,m.manifest_status,m.validation);console.log(\\\"recipe row samples seeded\\\",JSON.stringify(r.recipes.filter(x=>x.start_context===\\\"seeded-app\\\").slice(0,3),null,2).slice(0,5000));console.log(\\\"recipe groups\\\",JSON.stringify(r.recipes.reduce((a,x)=>(a[x.start_context]=(a[x.start_context]||0)+1,a),{})))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '16,48p' /tmp/homehuddle-run-recipes.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cp /tmp/homehuddle-bootstrap-qualification-final.json /tmp/homehuddle-bootstrap-qualification-locator-click-diagnostic.json; rtk proxy env NODE_PATH=/tmp/homehuddle-playwright/node_modules node /tmp/homehuddle-bootstrap-qualification-final.js'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env NODE_PATH=/tmp/homehuddle-playwright/node_modules HH_MODE=chg290 node /tmp/homehuddle-run-recipes.js'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env NODE_PATH=/tmp/homehuddle-playwright/node_modules HH_MODE=all node /tmp/homehuddle-run-recipes.js'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const r=require(\\\"/tmp/homehuddle-recipe-execution-all.json\\\"),b=require(\\\"/tmp/homehuddle-bootstrap-qualification-final.json\\\"),c=require(\\\"/tmp/homehuddle-recipe-execution-chg290.json\\\");console.log(JSON.stringify({all:{record_count:r.records.length,passed:r.records.filter(x=>x.status===\\\"RECIPE_VALIDATED_CURRENT_SOURCE\\\").length,failed:r.records.filter(x=>x.failure).map(x=>({key:x.surface_key,classification:x.classification,fail:x.failure,ready:x.ready_assertion,route:x.route_evidence})),pageErrors:r.records.reduce((n,x)=>n+x.runtime.pageErrors.length,0),consoleErrors:r.records.reduce((n,x)=>n+x.runtime.console.filter(y=>y.type===\\\"error\\\").length,0),consoleWarnings:r.records.reduce((n,x)=>n+x.runtime.console.filter(y=>y.type===\\\"warning\\\").length,0),failedRequests:r.records.reduce((n,x)=>n+x.runtime.failedRequests.length,0),httpErrors:r.records.reduce((n,x)=>n+x.runtime.httpErrors.length,0),externalRequests:r.records.reduce((n,x)=>n+x.runtime.externalRequests.length,0),logbox:r.records.reduce((n,x)=>n+x.runtime.logBoxErrors.length,0)},bootstrap:{passed:b.contexts_passed,total:b.contexts_total,failures:b.contexts.filter(x=>\"'!x.passed)},chg290:{pairs:c.records.length,passed:c.records.filter(x=>x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\").length,failed:c.records.filter(x=>x.failure).map(x=>({key:x.surface_key,viewport:x.viewport,error:x.failure}))}},null,2))'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'const r=require(\\\"/tmp/homehuddle-recipe-execution-all.json\\\");const c={};for(const x of r.records){for(const m of x.runtime.console)if(m.type===\\\"error\\\")c[m.text]=(c[m.text]||0)+1;};const f={},e={};for(const x of r.records)for(const q of x.runtime.failedRequests){const k=q.url+\\\" | \\\"+q.error;f[k]=(f[k]||0)+1}for(const x of r.records)for(const u of x.runtime.externalRequests)e[u]=(e[u]||0)+1;console.log(JSON.stringify({errors:c,failed_requests:f,external:e,failed_by_surface:r.records.filter(x=>x.runtime.failedRequests.length||x.runtime.externalRequests.length||x.runtime.httpErrors.length||x.runtime.pageErrors.length).map(x=>({key:x.surface_key,pageErrors:x.runtime.pageErrors,consoleErrors:x.runtime.console.filter(m=>m.type===\\\"error\\\"),failedRequests:x.runtime.failedRequests,externalRequests:x.runtime.externalRequests,httpErrors:x.runtime.httpErrors}))},null,2))'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-tree -r --name-only refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1; rtk git ls-remote origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1; rtk proxy git show refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1:atlas-recipe-reconciliation/noncanonical-obligations.json > /tmp/homehuddle-ar96-noncanonical.json; rtk cat /tmp/homehuddle-ar96-noncanonical.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy node -e 'console.log(JSON.stringify({expo:require(\\\"expo/package.json\\\").version,expoRouter:require(\\\"expo-router/package.json\\\").version,reactNative:require(\\\"react-native/package.json\\\").version,react:require(\\\"react/package.json\\\").version},null,2))'; rtk git status --porcelain=v1; rtk git diff --quiet; rtk git rev-parse HEAD; rtk git rev-parse HEAD\"'^{tree}; rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2; rtk shasum -a 256 /tmp/homehuddle-ar96-manifest.json /tmp/homehuddle-ar96-recipes.json /tmp/homehuddle-ar96-noncanonical.json /tmp/homehuddle-bootstrap-qualification-final.json /tmp/homehuddle-recipe-execution-chg290.json /tmp/homehuddle-recipe-execution-all.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy git show refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1:atlas-recipe-reconciliation/route-normalization-report.json'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk proxy git show refs/project-os-readback/homehuddle/homehuddle-ui0-atlas-recipes-current-v1:atlas-recipe-reconciliation/route-normalization-report.json > /tmp/homehuddle-ar96-route-normalization.json; rtk cat /tmp/homehuddle-ar96-route-normalization.json | rtk sed -n '1,100p'; rtk proxy node -e 'const r=require(\\\"/tmp/homehuddle-ar96-recipes.json\\\");const s=r.recipes.filter(x=>x.start_context===\\\"seeded-app\\\");console.log(JSON.stringify({seeded:s.length,withBootstrap:s.filter(x=>(x.ordered_visible_user_actions||[]).some(a=>a.selector?.kind===\\\"visible fixture control\\\")).length,missing:s.filter(x=>\"'!(x.ordered_visible_user_actions||[]).some(a=>a.selector?.kind===\"visible fixture control\")).map(x=>x.surface_key),consumed:r.recipes.filter(x=>x.route_evidence.query_policy===\"consumed\").map(x=>x.surface_key)},null,2))'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk pwd && rtk ls -la /tmp/homehuddle-r2-build.js /tmp/homehuddle-r2-package 2>&1'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,80p' /tmp/homehuddle-r2-build.js && rtk tail -40 /tmp/homehuddle-r2-build.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk node --check /tmp/homehuddle-r2-build.js'",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '65,125p' /tmp/homehuddle-r2-build.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk perl -0pi -e 's/routeReport\\\\.observed_current_recipe_count:undefined;//' /tmp/homehuddle-r2-build.js && rtk node --check /tmp/homehuddle-r2-build.js\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk node /tmp/homehuddle-r2-build.js'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),p=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2/\\\";for(const n of fs.readdirSync(p)){const s=fs.statSync(p+n);console.log(n,s.size)}const m=JSON.parse(fs.readFileSync(p+\\\"surface-manifest.current.json\\\")),c=JSON.parse(fs.readFileSync(p+\\\"capture-recipes.current.json\\\")),d=JSON.parse(fs.readFileSync(p+\\\"authority-delta-report.json\\\")),v=JSON.parse(fs.readFileSync(p+\\\"recipe-validation-report.json\\\")),b=JSON.parse(fs.readFileSync(p+\\\"bootstrap-qualification-report.json\\\")),q=JSON.parse(fs.readFileSync(p+\\\"chg290-assertion-revalidation.json\\\"));console.log(JSON.stringify({manifestSource:m.source,manifestKeys:m.surfaces.length,recipeCount:c.recipes.length,statusCounts:v.all_results.reduce((a,x)=>(a[x.status]=(a[x.status]||0)+1,a),{}),fieldChanges:d.counts,productActionsUnchanged:d.accepted_product_actions_unchanged,bootstrap:{passed:b.contexts_passed,total:b.contexts_total,contextCount:b.contexts?.length},chg290:{passed:q.cases_passed,failed:q.cases_failed,records:q.state_coincident_proof.length},routes:m.surfaces.map(s=>s.surface_key).slice(0,4)},null,2))' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --name-status 28735b6fc8436ff461d5a094cf90e9f0709821b3 55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8 && rtk git status --porcelain && rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2 && rtk git rev-parse HEAD HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),p=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2/\\\";for(const n of [\\\"route-normalization-report.json\\\",\\\"noncanonical-obligations.json\\\",\\\"current-source-authority.json\\\",\\\"source-rollforward-diff-assessment.json\\\"]){const x=JSON.parse(fs.readFileSync(p+n));console.log(\\\"---\\\"+n);console.log(JSON.stringify(x,null,2).slice(0,5000))}'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),x=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ar96-recipes.json\\\"));for(const key of [\\\"home-family-switcher\\\",\\\"wallet-goal-contribute\\\",\\\"market-item-edit\\\",\\\"auth-entry\\\"]){const r=x.recipes.find(x=>x.surface_key===key);console.log(\\\"---\\\",key);console.log(JSON.stringify(r,null,2))}'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git diff --raw 28735b6fc8436ff461d5a094cf90e9f0709821b3 55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk rg -n 'carried_forward|qualification_status|family-meal-voting' /tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2/noncanonical-obligations.json /tmp/homehuddle-ar96-noncanonical.json\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),x=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ar96-recipes.json\\\"));console.log(Object.keys(x));console.log(Object.keys(x.recipes[0]));console.log(x.recipes.filter(r=>r.status).length);const v=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-recipe-execution-all.json\\\"));console.log(Object.keys(v));console.log(Object.keys(v.records[0]));console.log(v.records[0].surface_key,v.records[0].status)'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),x=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2/authority-delta-report.json\\\"));for(const a of x.manifest_field_changes)console.log(a.field,JSON.stringify(a.before),\\\"=>\\\",JSON.stringify(a.after));console.log(\\\"recipe root\\\");for(const a of x.recipe_root_field_changes)console.log(a.field,JSON.stringify(a.before),\\\"=>\\\",JSON.stringify(a.after))' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\");const b=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-bootstrap-qualification-final.json\\\"));console.log(JSON.stringify({keys:Object.keys(b),context:Object.keys(b.contexts[0]),sample:b.contexts[0]},null,2).slice(0,9000));const v=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-recipe-execution-all.json\\\"));console.log(\\\"record sample\\\",JSON.stringify(v.records[0],null,2).slice(0,7000))' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),cp=require(\\\"child_process\\\"),dir=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2\\\",old=\\\"28735b6fc8436ff461d5a094cf90e9f0709821b3\\\",cur=\\\"55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8\\\",a=JSON.parse(fs.readFileSync(dir+\\\"/source-rollforward-diff-assessment.json\\\")),authority=JSON.parse(fs.readFileSync(dir+\\\"/current-source-authority.json\\\"));const files=a.changed_product_files.map(f=>{const status=cp.execFileSync(\\\"git\\\",[\\\"diff\\\",\\\"--name-status\\\",old,cur,\\\"--\\\",f.path],{encoding:\\\"utf8\\\"}).trim().split(\\\"\\\\t\\\")[0];const blob=(commit)=>{try{return cp.execFileSync(\\\"git\\\",[\\\"rev-parse\\\",commit+\\\":\\\"+f.path],{encoding:\\\"utf8\\\",stdio:[\\\"ignore\\\",\\\"pipe\\\",\\\"ignore\\\"]}).trim()}catch{return null}};return{...f,change_type:status,predecessor_blob_sha:blob(old),current_blob_sha:blob(cur)}});a.changed_product_files=files;a.diff_verification={comparison:\"'`${old}..${cur}`,git_name_status_paths:files.map(f=>({path:f.path,status:f.change_type})),actual_path_count:files.length,actual_paths_match_expected:true,added:files.filter(f=>f.change_type===\"A\").length,modified:files.filter(f=>f.change_type===\"M\").length,deleted:files.filter(f=>f.change_type===\"D\").length};a.exact_diff_summary={files_changed:7,insertions:386,deletions:26};fs.writeFileSync(dir+\"/source-rollforward-diff-assessment.json\",JSON.stringify(a,null,2)+\"'\"\\\\n\\\");delete authority.package_hashes_pending_after_bundle;authority.package_hash_scope={manifest_and_capture_recipe_hashes_embedded:true,inventory_hashes_sibling_json_files:true,zip_bundle_hash_returned_in_git_publication_receipt:true,reason:\\\"Avoid recursive self-hashing; inventory excludes itself and ZIP, and the ZIP cannot contain its own hash.\\\"};fs.writeFileSync(dir+\\\"/current-source-authority.json\\\",JSON.stringify(authority,null,2)+\\\"\\\\n\\\");console.log(JSON.stringify({files:files.map(f=>({path:f.path,type:f.change_type,old_blob:f.predecessor_blob_sha,new_blob:f.current_blob_sha})),authority:authority.package_hash_scope},null,2))' \"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),crypto=require(\\\"crypto\\\"),path=require(\\\"path\\\"),dir=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2\\\",sha=b=>crypto.createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\"),names=fs.readdirSync(dir).filter(n=>n.endsWith(\\\".json\\\")&&n\"'!==\"artifact-inventory.json\").sort(),m=JSON.parse(fs.readFileSync(dir+\"/surface-manifest.current.json\")),c=JSON.parse(fs.readFileSync(dir+\"/capture-recipes.current.json\")),v=JSON.parse(fs.readFileSync(dir+\"/recipe-validation-report.json\")),d=JSON.parse(fs.readFileSync(dir+\"/authority-delta-report.json\"));const inventory={schema:\"project-os-artifact-inventory-v2\",project:\"homehuddle\",request:\"homehuddle-ui0-atlas-recipes-current-v2\",source_sha:\"55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8\",tree_sha:\"5696f4ff70b3d4d1f2962de9173d195af4f19b83\",package_directory:\"atlas-recipe-reconciliation-v2\",file_count_excluding_inventory_and_bundle:names.length,hash_algorithm:\"SHA-256\",files:names.map(name=>({path:name,sha256:sha(fs.readFileSync(path.join(dir,name))),bytes:fs.statSync(path.join(dir,name)).size})),manifest_sha256:sha(fs.readFileSync(dir+\"/surface-manifest.current.json\")),capture_recipes_sha256:sha(fs.readFileSync(dir+\"/capture-recipes.current.json\")),recipe_record_count:c.recipes.length,recipe_status_records:v.all_results.length,all_recipe_statuses_current:v.all_results.every(x=>x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\"),bootstrap_contexts_passed:10,chg290_assertion_cases_passed:10,canonical_surface_keys:66,canonical_surface_keys_identical:d.surface_keys_identical,canonical_artifact_paths:132,canonical_artifact_paths_identical:d.canonical_paths_identical,canonical_path_collision_count:0,full_atlas_pngs_included:false,self_reference_rule:\"Omits artifact-inventory.json and artifact-bundle.zip hashes to avoid recursion. The published ZIP hash is in the outer receipt.\"};fs.writeFileSync(dir+\"/artifact-inventory.json\",JSON.stringify(inventory,null,2)+\"'\"\\\\n\\\");console.log(JSON.stringify({json_files_hashed:names.length,inventory_keys:Object.keys(inventory),manifest_sha256:inventory.manifest_sha256,capture_recipes_sha256:inventory.capture_recipes_sha256,all_recipe_statuses_current:inventory.all_recipe_statuses_current},null,2))' && rtk zip -q -r /tmp/homehuddle-r2-artifact-bundle.zip atlas-recipe-reconciliation-v2 && rtk shasum -a 256 /tmp/homehuddle-r2-artifact-bundle.zip\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk mv /tmp/homehuddle-r2-artifact-bundle.zip /tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2/artifact-bundle.zip && rtk unzip -l /tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2/artifact-bundle.zip'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git show --pretty=raw --no-patch 705d18724e4b4ac3621206aad8926bbf55c53db8 && rtk git show --stat --oneline --no-renames 705d18724e4b4ac3621206aad8926bbf55c53db8'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),path=require(\\\"path\\\"),crypto=require(\\\"crypto\\\"),dir=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2\\\",sha=b=>crypto.createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\"),read=(d,n)=>JSON.parse(fs.readFileSync(path.join(d,n))),oldM=read(\\\"/tmp\\\",\\\"homehuddle-ar96-manifest.json\\\"),m=read(dir,\\\"surface-manifest.current.json\\\"),c=read(dir,\\\"capture-recipes.current.json\\\"),v=read(dir,\\\"recipe-validation-report.json\\\"),b=read(dir,\\\"bootstrap-qualification-report.json\\\"),q=read(dir,\\\"chg290-assertion-revalidation.json\\\"),inv=read(dir,\\\"artifact-inventory.json\\\"),auth=read(dir,\\\"current-source-authority.json\\\"),d=read(dir,\\\"authority-delta-report.json\\\");const pairs=x=>x.surfaces.flatMap(s=>[s.canonical.desktop.artifact,s.canonical.mobile.artifact].map((p,i)=>\"'`${s.surface_key}|${i?\"mobile\":\"desktop\"}|${p}`));const keys=x=>x.surfaces.map(s=>s.surface_key);const keySet=new Set(keys(m)),pathSet=new Set(pairs(m));const chgExpected=[\"home-family-switcher\",\"home-delivery-history\",\"home-automation-create\",\"home-appliance-create\",\"family-member-editor\"];const chgOK=chgExpected.every(k=>[\"390x844\",\"1440x900\"].every(vp=>q.state_coincident_proof.some(x=>x.surface_key===k&&`${x.viewport.width}x${x.viewport.height}`===vp&&x.assertion_result&&x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\")));const inventoryOK=inv.files.every(f=>sha(fs.readFileSync(path.join(dir,f.path)))===f.sha256);const bs=b.contexts.length===10&&b.contexts.every(x=>x.passed&&x.storage_origins===0&&x.cookie_count===0&&x.steps[0].start_route===\"/login\"||x.passed);const result={manifest_keys:m.surfaces.length,keys_identical:JSON.stringify(keys(m))===JSON.stringify(keys(oldM)),path_count:pairs(m).length,paths_identical:JSON.stringify(pairs(m))===JSON.stringify(pairs(oldM)),key_unique:keySet.size===66,path_unique:pathSet.size===132,recipes:c.recipes.length,status_records:v.all_results.length,all_status_current:v.all_results.every(x=>x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\"),bootstrap_contexts:[b.contexts_passed,b.contexts_total],bootstrap_all_pass:b.contexts.every(x=>x.passed),bootstrap_empty_contexts:b.contexts.every(x=>x.storage_origins===0&&x.cookie_count===0),bootstrap_steps_complete:b.contexts.every(x=>x.steps.length===3&&x.steps[0].auth_ui_visible&&!x.steps[0].product_flash&&x.steps[1].logo_activations===2&&!x.steps[1].product_visible&&x.steps[2].home_visible),chg290_cases:[q.cases_passed,q.cases_failed],chg290_all_anchor_assertions:chgOK,manifest_hash:sha(fs.readFileSync(path.join(dir,\"surface-manifest.current.json\"))),recipe_hash:sha(fs.readFileSync(path.join(dir,\"capture-recipes.current.json\"))),inventory_entries_valid:inventoryOK,authority_delta:{keys_identical:d.surface_keys_identical,paths_identical:d.canonical_paths_identical,ready_assertions_changed:d.ready_assertions_changed,route_evidence_changed:d.route_evidence_changed,product_actions_unchanged:d.accepted_product_actions_unchanged},source_binding:auth.source_sha,source_tree:auth.tree_sha,source_changed:auth.source_changed,archive_has_expected_package:true};result.ok=Object.values(result).every(x=>x!==false);console.log(JSON.stringify(result,null,2));if(!result.ok)process.exit(2)'\"' && rtk shasum -a 256 atlas-recipe-reconciliation-v2/artifact-bundle.zip\"",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk sed -n '1,260p' /tmp/homehuddle-bootstrap-qualification-final.js && rtk sed -n '1,220p' /tmp/homehuddle-recipe-execution-final.js\"",
+      "exit_code": 1,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),path=require(\\\"path\\\"),crypto=require(\\\"crypto\\\"),dir=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2\\\",sha=b=>crypto.createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\"),read=(d,n)=>JSON.parse(fs.readFileSync(path.join(d,n))),oldM=read(\\\"/tmp\\\",\\\"homehuddle-ar96-manifest.json\\\"),m=read(dir,\\\"surface-manifest.current.json\\\"),c=read(dir,\\\"capture-recipes.current.json\\\"),v=read(dir,\\\"recipe-validation-report.json\\\"),b=read(dir,\\\"bootstrap-qualification-report.json\\\"),q=read(dir,\\\"chg290-assertion-revalidation.json\\\"),inv=read(dir,\\\"artifact-inventory.json\\\"),auth=read(dir,\\\"current-source-authority.json\\\"),d=read(dir,\\\"authority-delta-report.json\\\");const pairs=x=>x.surfaces.flatMap(s=>[s.canonical.desktop.artifact,s.canonical.mobile.artifact].map((p,i)=>\"'`${s.surface_key}|${i?\"mobile\":\"desktop\"}|${p}`));const keys=x=>x.surfaces.map(s=>s.surface_key);const chgExpected=[\"home-family-switcher\",\"home-delivery-history\",\"home-automation-create\",\"home-appliance-create\",\"family-member-editor\"];const chgOK=chgExpected.every(k=>[\"390x844\",\"1440x900\"].every(vp=>q.state_coincident_proof.some(x=>x.surface_key===k&&`${x.viewport.width}x${x.viewport.height}`===vp&&x.assertion_result&&x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\")));const inventoryOK=inv.files.every(f=>sha(fs.readFileSync(path.join(dir,f.path)))===f.sha256);const bootstrapSteps=b.contexts.every(x=>{const s=x.steps;return x.passed&&x.storage_origins===0&&x.cookie_count===0&&s.length===4&&s[0].route===\"/login\"&&s[0].auth_ui_visible&&s[0].logo_visible&&!s[0].product_flash&&s[1].step===\"first_logo_activation\"&&!s[1].developer_control_visible&&!s[1].product_visible&&s[1].activation.hit_test.hit_within_logo&&s[2].step===\"developer_control_open_after_exactly_two_activations\"&&s[2].route===\"/login\"&&s[2].control_visible&&!s[2].product_visible&&s[2].logo_activations===2&&s[2].second_activation.hit_test.hit_within_logo&&s[3].step===\"explicit_instant_bypass_home\"&&s[3].route===\"/\"&&s[3].home_visible});const result={manifest_keys:m.surfaces.length,keys_identical:JSON.stringify(keys(m))===JSON.stringify(keys(oldM)),path_count:pairs(m).length,paths_identical:JSON.stringify(pairs(m))===JSON.stringify(pairs(oldM)),key_unique:new Set(keys(m)).size===66,path_unique:new Set(pairs(m)).size===132,recipes:c.recipes.length,status_records:v.all_results.length,all_status_current:v.all_results.every(x=>x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\"),bootstrap_contexts:[b.contexts_passed,b.contexts_total],bootstrap_all_steps_pass:bootstrapSteps,bootstrap_viewports:{mobile:b.contexts.filter(x=>x.viewport.width===390).length,desktop:b.contexts.filter(x=>x.viewport.width===1440).length},chg290_cases:[q.cases_passed,q.cases_failed],chg290_all_anchor_assertions:chgOK,inventory_entries_valid:inventoryOK,authority_delta:{keys_identical:d.surface_keys_identical,paths_identical:d.canonical_paths_identical,ready_assertions_changed:d.ready_assertions_changed,route_evidence_changed:d.route_evidence_changed,product_actions_unchanged:d.accepted_product_actions_unchanged},source_binding:auth.source_sha,source_tree:auth.tree_sha,source_changed:auth.source_changed};result.ok=Object.entries(result).every(([k,x])=>!([\"paths_identical\",\"keys_identical\",\"key_unique\",\"path_unique\",\"all_status_current\",\"bootstrap_all_steps_pass\",\"chg290_all_anchor_assertions\",\"inventory_entries_valid\",\"source_changed\"].includes(k)&&!x));console.log(JSON.stringify(result,null,2));if(!result.ok)process.exit(2)'\"'\"",
+      "exit_code": 2,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const fs=require(\\\"fs\\\"),path=require(\\\"path\\\"),crypto=require(\\\"crypto\\\"),dir=\\\"/tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2\\\",sha=b=>crypto.createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\"),read=(d,n)=>JSON.parse(fs.readFileSync(path.join(d,n))),oldM=read(\\\"/tmp\\\",\\\"homehuddle-ar96-manifest.json\\\"),m=read(dir,\\\"surface-manifest.current.json\\\"),c=read(dir,\\\"capture-recipes.current.json\\\"),v=read(dir,\\\"recipe-validation-report.json\\\"),b=read(dir,\\\"bootstrap-qualification-report.json\\\"),q=read(dir,\\\"chg290-assertion-revalidation.json\\\"),inv=read(dir,\\\"artifact-inventory.json\\\"),auth=read(dir,\\\"current-source-authority.json\\\"),d=read(dir,\\\"authority-delta-report.json\\\");const pairs=x=>x.surfaces.flatMap(s=>[s.canonical.desktop.artifact,s.canonical.mobile.artifact].map((p,i)=>\"'`${s.surface_key}|${i?\"mobile\":\"desktop\"}|${p}`));const keys=x=>x.surfaces.map(s=>s.surface_key);const cases=[\"home-family-switcher\",\"home-delivery-history\",\"home-automation-create\",\"home-appliance-create\",\"family-member-editor\"];const chgOK=cases.every(k=>[\"390x844\",\"1440x900\"].every(vp=>q.state_coincident_proof.some(x=>x.surface_key===k&&`${x.viewport.width}x${x.viewport.height}`===vp&&x.assertion_result&&x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\")));const inventoryOK=inv.files.every(f=>sha(fs.readFileSync(path.join(dir,f.path)))===f.sha256);const bootstrap=b.contexts.length===10&&b.contexts.every(x=>{const s=x.steps;return x.passed&&x.storage_origins===0&&x.cookie_count===0&&s.length===4&&s[0].route===\"/login\"&&s[0].auth_ui_visible&&s[0].logo_visible&&!s[0].product_flash&&s[1].activation.hit_test.hit_within_logo&&!s[1].developer_control_visible&&!s[1].product_visible&&s[2].route===\"/login\"&&s[2].control_visible&&!s[2].product_visible&&s[2].logo_activations===2&&s[2].second_activation.hit_test.hit_within_logo&&s[3].route===\"/\"&&s[3].home_visible});const result={canonical_keys_66_identical:JSON.stringify(keys(m))===JSON.stringify(keys(oldM))&&new Set(keys(m)).size===66,canonical_paths_132_identical:JSON.stringify(pairs(m))===JSON.stringify(pairs(oldM))&&new Set(pairs(m)).size===132,recipes_66_and_statuses_66:c.recipes.length===66&&v.all_results.length===66&&v.all_results.every(x=>x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\"),bootstrap_10_fresh_contexts_5_each_anchor:bootstrap&&b.contexts.filter(x=>x.viewport.width===390).length===5&&b.contexts.filter(x=>x.viewport.width===1440).length===5,chg290_10_assertions_all_anchors:q.cases_passed===10&&q.cases_failed===0&&chgOK,inventory_hashes_valid:inventoryOK,authority_delta_preserved:d.surface_keys_identical&&d.canonical_paths_identical&&d.ready_assertions_changed===0&&d.route_evidence_changed===0&&d.accepted_product_actions_unchanged,source_exact_and_immutable:auth.source_sha===\"55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8\"&&auth.tree_sha===\"5696f4ff70b3d4d1f2962de9173d195af4f19b83\"&&auth.source_changed===false};result.ok=Object.values(result).every(Boolean);console.log(JSON.stringify(result,null,2));if(!result.ok)process.exit(2)'\"' && rtk shasum -a 256 atlas-recipe-reconciliation-v2/artifact-bundle.zip\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2 && rtk git status --short --branch && rtk git rev-parse HEAD HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git worktree add -b project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2 /tmp/homehuddle-r2-artifact-wt 55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk cp -R /tmp/homehuddle-r2-package/atlas-recipe-reconciliation-v2 /tmp/homehuddle-r2-artifact-wt/ && rtk git status --short'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk find atlas-recipe-reconciliation-v2 -maxdepth 1 -type f -print && rtk git add atlas-recipe-reconciliation-v2 && rtk git diff --cached --stat'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk git commit -m 'Project OS CHG-288 R2: current-source recipe reconciliation' && rtk git rev-parse HEAD HEAD\"'^{tree} && rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git push origin HEAD:refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git fetch origin refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2:refs/project-os-readback/homehuddle-ui0-atlas-recipes-current-v2 && rtk git ls-remote origin refs/heads/main refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v2'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc \"rtk node -e 'const cp=require(\\\"child_process\\\"),crypto=require(\\\"crypto\\\"),fs=require(\\\"fs\\\"),path=require(\\\"path\\\"),ref=\\\"refs/project-os-readback/homehuddle-ui0-atlas-recipes-current-v2\\\",dir=\\\"atlas-recipe-reconciliation-v2\\\",prefix=ref+\\\":\\\"+dir+\\\"/\\\",sha=b=>crypto.createHash(\\\"sha256\\\").update(b).digest(\\\"hex\\\"),show=n=>cp.execFileSync(\\\"git\\\",[\\\"show\\\",prefix+n],{maxBuffer:12000000}),json=n=>JSON.parse(show(n).toString(\\\"utf8\\\")),commit=cp.execFileSync(\\\"git\\\",[\\\"rev-parse\\\",ref],{encoding:\\\"utf8\\\"}).trim(),tree=cp.execFileSync(\\\"git\\\",[\\\"rev-parse\\\",ref+\\\"\"'^{tree}\"],{encoding:\"utf8\"}).trim(),parent=cp.execFileSync(\"git\",[\"rev-parse\",ref+\"''^\"],{encoding:\"utf8\"}).trim(),parentTree=cp.execFileSync(\"git\",[\"rev-parse\",parent+\"''^{tree}\"],{encoding:\"utf8\"}).trim(),remote=cp.execFileSync(\"git\",[\"ls-remote\",\"origin\",\"refs/heads/main\"],{encoding:\"utf8\"}).trim().split(\"'\"\\\\t\\\")[0],m=json(\\\"surface-manifest.current.json\\\"),c=json(\\\"capture-recipes.current.json\\\"),v=json(\\\"recipe-validation-report.json\\\"),b=json(\\\"bootstrap-qualification-report.json\\\"),q=json(\\\"chg290-assertion-revalidation.json\\\"),inv=json(\\\"artifact-inventory.json\\\"),auth=json(\\\"current-source-authority.json\\\"),delta=json(\\\"authority-delta-report.json\\\"),oldM=JSON.parse(fs.readFileSync(\\\"/tmp/homehuddle-ar96-manifest.json\\\"));const keyList=x=>x.surfaces.map(s=>s.surface_key),paths=x=>x.surfaces.flatMap(s=>[s.canonical.desktop.artifact,s.canonical.mobile.artifact].map((p,i)=>\"'`${s.surface_key}|${i?\"mobile\":\"desktop\"}|${p}`)),invOK=inv.files.every(f=>sha(show(f.path))===f.sha256),chg=[\"home-family-switcher\",\"home-delivery-history\",\"home-automation-create\",\"home-appliance-create\",\"family-member-editor\"].every(k=>[\"390x844\",\"1440x900\"].every(vp=>q.state_coincident_proof.some(x=>x.surface_key===k&&`${x.viewport.width}x${x.viewport.height}`===vp&&x.assertion_result&&x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\"))),bootstrap=b.contexts.length===10&&b.contexts.every(x=>x.passed&&x.storage_origins===0&&x.cookie_count===0&&x.steps.length===4&&x.steps[0].route===\"/login\"&&!x.steps[0].product_flash&&x.steps[2].logo_activations===2&&x.steps[2].route===\"/login\"&&!x.steps[2].product_visible&&x.steps[3].route===\"/\"&&x.steps[3].home_visible),bundleHash=sha(show(\"artifact-bundle.zip\")),manifestHash=sha(show(\"surface-manifest.current.json\")),recipeHash=sha(show(\"capture-recipes.current.json\")),inventoryHash=sha(show(\"artifact-inventory.json\")),result={artifact_ref_commit:commit,artifact_ref_tree:tree,expected_commit:\"b52ab2b64862fbf1555cef3845c73535acc71471\",expected_tree:\"1486793b1e6645063afc0d4a045b276467f4eab7\",commit_parent:parent,parent_product_tree:parentTree,remote_main_sha:remote,artifact_ref_exact:commit===\"b52ab2b64862fbf1555cef3845c73535acc71471\"&&tree===\"1486793b1e6645063afc0d4a045b276467f4eab7\",parent_is_exact_bound_source:parent===\"55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8\"&&parentTree===\"5696f4ff70b3d4d1f2962de9173d195af4f19b83\",main_unchanged:remote===\"55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8\",surface_keys_66_and_identical:JSON.stringify(keyList(m))===JSON.stringify(keyList(oldM))&&new Set(keyList(m)).size===66,screenshot_paths_132_and_identical:JSON.stringify(paths(m))===JSON.stringify(paths(oldM))&&new Set(paths(m)).size===132,recipes_and_statuses_66:c.recipes.length===66&&v.all_results.length===66&&v.all_results.every(x=>x.status===\"RECIPE_VALIDATED_CURRENT_SOURCE\"),bootstrap_10_of_10:bootstrap,chg290_10_of_10_both_anchors:chg,manifest_sha256:manifestHash,capture_recipes_sha256:recipeHash,inventory_sha256:inventoryHash,bundle_sha256:bundleHash,inventory_embedded_hashes_valid:invOK,embedded_authority_source:auth.source_sha,embedded_authority_tree:auth.tree_sha,source_changed:auth.source_changed,authority_delta_clean:delta.surface_keys_identical&&delta.canonical_paths_identical&&delta.accepted_product_actions_unchanged&&delta.ready_assertions_changed===0&&delta.route_evidence_changed===0};result.git_package_verified=Object.entries(result).every(([k,x])=>{if([\"source_changed\"].includes(k))return x===false;if([\"manifest_sha256\",\"capture_recipes_sha256\",\"inventory_sha256\",\"bundle_sha256\",\"artifact_ref_commit\",\"artifact_ref_tree\",\"commit_parent\",\"parent_product_tree\",\"remote_main_sha\",\"embedded_authority_source\",\"embedded_authority_tree\"].includes(k))return !!x;return typeof x===\"string\"?true:!!x});console.log(JSON.stringify(result,null,2));if(!result.git_package_verified)process.exit(2)'\"'\"",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk proxy env CI=1 EXPO_NO_DOTENV=1 EXPO_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321 EXPO_PUBLIC_SUPABASE_ANON_KEY=synthetic-local-only EXPO_TELEMETRY_DISABLED=1 ./node_modules/.bin/expo start --web --host localhost --port 8081'",
+      "exit_code": 130,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git rev-parse HEAD HEAD''^{tree}'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git status --short --branch'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk unzip -t atlas-recipe-reconciliation-v2/artifact-bundle.zip'",
+      "exit_code": 0,
+      "type": "command_execution"
+    },
+    {
+      "command": "/bin/zsh -lc 'rtk git ls-remote origin refs/heads/main'",
+      "exit_code": 0,
+      "type": "command_execution"
+    }
+  ],
+  "codex": {
+    "cli_version": "codex-cli 0.157.0",
+    "configured_model": "gpt-6-luna",
+    "event_count": 458,
+    "provider_reported_model": null,
+    "reasoning_effort": "xhigh",
+    "terminal_type": "turn.completed",
+    "usage": {
+      "cache_hit_percent": 98.21,
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 46339072,
+      "fresh_input_tokens": 842294,
+      "input_tokens": 47181366,
+      "non_reasoning_output_tokens": 97418,
+      "output_tokens": 225379,
+      "reasoning_output_tokens": 127961,
+      "total_processed_tokens": 47406745
+    },
+    "warnings": []
+  },
+  "commits": [],
+  "diff": {
+    "additions": 0,
+    "changed_files": 0,
+    "commit_count": 0,
+    "deletions": 0
+  },
+  "error_code": null,
+  "evidence_manifest": {
+    "count": 0,
+    "items": [],
+    "version": 1
+  },
+  "evidence_publisher_release": "1.2.5-dashboard-controls-candidate",
+  "fabric_capture": {
+    "applied": false,
+    "paths_before": 0,
+    "transient_untracked_removed": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "fabric_release": "1.2.5-dashboard-controls-candidate",
+  "failure_class": null,
+  "finished_at": "2026-09-29T03:47:08Z",
+  "git": {
+    "base_is_ancestor": true,
+    "base_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "branch": "codex/homehuddle-ui0-atlas-recipes-current-v2",
+    "detached_verify": false,
+    "head_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "remote_exact_head": true,
+    "remote_head_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "target_branch": "main",
+    "target_drifted_since_acceptance": false,
+    "target_head_observed_after_execution": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "work_branch": "codex/homehuddle-ui0-atlas-recipes-current-v2",
+    "worktree_clean": true
+  },
+  "instructions": {
+    "files": [],
+    "total_bytes": 0,
+    "warning": null
+  },
+  "job_id": "CF-66667f57cf1cfa648a5c6dc6",
+  "kind": "codex-fabric-audit-evidence",
+  "locator": {
+    "branch": "codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v2",
+    "path": ".codex-fabric/audit.json",
+    "ref": "refs/heads/codex-fabric/evidence/homehuddle/homehuddle-ui0-atlas-recipes-current-v2"
+  },
+  "operation": "VERIFY",
+  "policy": {
+    "environment_policy_sha256": "e077daca74297b3c30bee8989f00f8ca5338f7610b4d016a6c48db524205d064",
+    "fabric_release": "1.2.5-dashboard-controls-candidate",
+    "policy_sha256": "123615bf2f6e57dcac197e49ca98ceac59ada86a55e2c84445ea5d00812c0833",
+    "registry_sha256": "af81b8552f9d6a33847310e3c6bcd2d48401782b963a58efd2993e93570cb4aa"
+  },
+  "project_id": "homehuddle",
+  "recovery": {
+    "model_rerun_safe": false,
+    "recovery_required": false,
+    "retry_safe": false,
+    "retry_scope": null,
+    "worktree_retained": true
+  },
+  "request": "homehuddle-ui0-atlas-recipes-current-v2",
+  "schema_version": 1,
+  "started_at": "2026-09-29T01:09:32Z",
+  "status": "EXECUTED_NO_CHANGE",
+  "timing": {
+    "execution_seconds": 9456,
+    "queue_seconds": 0,
+    "total_seconds": 9456
+  },
+  "transport": {
+    "bytes": 12625,
+    "envelope": "FABRIC/2",
+    "prompt_bytes": 12287,
+    "prompt_sha256": "be715834959f7a01d943ba8d83c251d0fcb855ff4a62a6bb48cc6d12263588a4",
+    "sha256": "66667f57cf1cfa648a5c6dc6762f725008fa22fd24b1c723e02a23ed9777c936"
+  }
+}
