@@ -1,0 +1,120 @@
+{
+  "schema": "project-os-source-rollforward-diff-assessment-v2",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-atlas-recipes-current-v2",
+  "predecessor_source_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+  "predecessor_source_tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+  "current_source_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+  "current_source_tree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "remote_target": "main",
+  "accepted_chg294_head": "85bfb6fab92d3a9793ef3f1029fbd18256ee8d12",
+  "accepted_chg294_tree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "integrated_through": "PR #13; main 55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+  "assessment": "EXPECTED_CHG294_SLICE_ONLY",
+  "changed_product_file_count": 7,
+  "changed_product_files": [
+    {
+      "path": "__tests__/auth-route.test.ts",
+      "owner": "auth-route guard tests",
+      "slice": "CHG-294 accepted /login alias and fail-closed route policy",
+      "change_type": "A",
+      "predecessor_blob_sha": null,
+      "current_blob_sha": "60a8adc2541fe9297b2053f2b2d9f4cdc2e7ca89"
+    },
+    {
+      "path": "__tests__/profile-signout.test.tsx",
+      "owner": "profile sign-out tests",
+      "slice": "CHG-294 bounded web sign-out confirmation",
+      "change_type": "A",
+      "predecessor_blob_sha": null,
+      "current_blob_sha": "25ca5f84bd6505eca8b0a1af7e1a5ed91af1c00e"
+    },
+    {
+      "path": "app/(app)/_layout.tsx",
+      "owner": "authorized app layout",
+      "slice": "CHG-294 no Product content before authorization",
+      "change_type": "M",
+      "predecessor_blob_sha": "fa02fcc0952a0da6370b14864285cef3e82a5c3e",
+      "current_blob_sha": "0807089691aa72484f6214e1dcb022c2abdf8a51"
+    },
+    {
+      "path": "app/(app)/profile.tsx",
+      "owner": "Profile route",
+      "slice": "CHG-294 web/native sign-out UI split",
+      "change_type": "M",
+      "predecessor_blob_sha": "eb7e2b16da7717d757bb04108f065d81dac8d302",
+      "current_blob_sha": "6980f0f73ff654e171b65b92d44a0ec983295ef0"
+    },
+    {
+      "path": "app/_layout.tsx",
+      "owner": "root route layout",
+      "slice": "CHG-294 delegates auth routing policy and registers /login",
+      "change_type": "M",
+      "predecessor_blob_sha": "9f21527f8cc073445bdc75307181b3c4e3bd0b77",
+      "current_blob_sha": "ddb6af58ca0782e274db85bdd86cdd8085561487"
+    },
+    {
+      "path": "app/login.tsx",
+      "owner": "/login alias",
+      "slice": "CHG-294 thin alias of authored auth screen",
+      "change_type": "A",
+      "predecessor_blob_sha": null,
+      "current_blob_sha": "dd7dc3008a85fb6254382acb5b8e2f0c9e2984e0"
+    },
+    {
+      "path": "utils/auth-route.ts",
+      "owner": "auth/deep-link route policy",
+      "slice": "CHG-294 unambiguous /login and fail-closed route resolution",
+      "change_type": "A",
+      "predecessor_blob_sha": null,
+      "current_blob_sha": "65d37f57b70fc6ee99167d795bc8dfa97e76b7f3"
+    }
+  ],
+  "unrelated_source_drift": false,
+  "route_or_surface_ownership_changed": false,
+  "action": "PROCEED_WITH_AUTH_BOOTSTRAP_ROLLFORWARD",
+  "details": "All source drift is the integrated auth/deep-link/Profile sign-out change specified by CHG-294. No other route owner or canonical surface source changed.",
+  "diff_verification": {
+    "comparison": "28735b6fc8436ff461d5a094cf90e9f0709821b3..55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "git_name_status_paths": [
+      {
+        "path": "__tests__/auth-route.test.ts",
+        "status": "A"
+      },
+      {
+        "path": "__tests__/profile-signout.test.tsx",
+        "status": "A"
+      },
+      {
+        "path": "app/(app)/_layout.tsx",
+        "status": "M"
+      },
+      {
+        "path": "app/(app)/profile.tsx",
+        "status": "M"
+      },
+      {
+        "path": "app/_layout.tsx",
+        "status": "M"
+      },
+      {
+        "path": "app/login.tsx",
+        "status": "A"
+      },
+      {
+        "path": "utils/auth-route.ts",
+        "status": "A"
+      }
+    ],
+    "actual_path_count": 7,
+    "actual_paths_match_expected": true,
+    "added": 4,
+    "modified": 3,
+    "deleted": 0
+  },
+  "exact_diff_summary": {
+    "files_changed": 7,
+    "insertions": 386,
+    "deletions": 26
+  }
+}

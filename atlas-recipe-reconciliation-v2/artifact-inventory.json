@@ -1,0 +1,81 @@
+{
+  "schema": "project-os-artifact-inventory-v2",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-atlas-recipes-current-v2",
+  "source_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+  "tree_sha": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "package_directory": "atlas-recipe-reconciliation-v2",
+  "file_count_excluding_inventory_and_bundle": 11,
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "authority-delta-report.json",
+      "sha256": "727fae0549cadcbcedc4af0a11dfccc0acc6ab979cdf567b53c5b35f58c82fd6",
+      "bytes": 164673
+    },
+    {
+      "path": "bootstrap-qualification-report.json",
+      "sha256": "1e844fa87fc7daa70778631accd05399d7c0882a4ff58006691db471bf3ea1b7",
+      "bytes": 43146
+    },
+    {
+      "path": "capture-recipes.current.json",
+      "sha256": "c4a3ea19df8c5982f15ba7570bed22f07067b358d3d6d8f0804b0232723193ea",
+      "bytes": 202275
+    },
+    {
+      "path": "chg290-assertion-revalidation.json",
+      "sha256": "b611ff09eccf8d9d94cb1b38391a11475286771c64ea199580f4f1b5272b966f",
+      "bytes": 62092
+    },
+    {
+      "path": "current-source-authority.json",
+      "sha256": "87009380fae7996a520e638dcb21f59e285ad06ed4a47b5766e71c41f49efc0a",
+      "bytes": 2878
+    },
+    {
+      "path": "noncanonical-obligations.json",
+      "sha256": "31d4fe0b1340daefcd43ec9e6c56ab003f1e211e54f3f15a76a7953812732f68",
+      "bytes": 9209
+    },
+    {
+      "path": "recipe-validation-report.json",
+      "sha256": "7afbf84106512530ddd81cf39924a49d313e20adbb4af39c8a9b18b3ea6f89aa",
+      "bytes": 738932
+    },
+    {
+      "path": "route-normalization-report.json",
+      "sha256": "e99e0d924ae4fc1510c114e9c8cda842752b9fe3e331a04efa730114aa2feef0",
+      "bytes": 8111
+    },
+    {
+      "path": "runtime-console-network.json",
+      "sha256": "c5744576f02b299fc50b8ed523b497106df738245a723e6f691d18910041ca13",
+      "bytes": 425951
+    },
+    {
+      "path": "source-rollforward-diff-assessment.json",
+      "sha256": "fde07ede960ceb03164ff538e449d7c2a447f924f37b8d1c952ebcdc63b8ff10",
+      "bytes": 4195
+    },
+    {
+      "path": "surface-manifest.current.json",
+      "sha256": "6b7e0dbc65b37e354259b9a72aa4ba52e8551d8564cdaca65c05b4b174c66d01",
+      "bytes": 94411
+    }
+  ],
+  "manifest_sha256": "6b7e0dbc65b37e354259b9a72aa4ba52e8551d8564cdaca65c05b4b174c66d01",
+  "capture_recipes_sha256": "c4a3ea19df8c5982f15ba7570bed22f07067b358d3d6d8f0804b0232723193ea",
+  "recipe_record_count": 66,
+  "recipe_status_records": 66,
+  "all_recipe_statuses_current": true,
+  "bootstrap_contexts_passed": 10,
+  "chg290_assertion_cases_passed": 10,
+  "canonical_surface_keys": 66,
+  "canonical_surface_keys_identical": true,
+  "canonical_artifact_paths": 132,
+  "canonical_artifact_paths_identical": true,
+  "canonical_path_collision_count": 0,
+  "full_atlas_pngs_included": false,
+  "self_reference_rule": "Omits artifact-inventory.json and artifact-bundle.zip hashes to avoid recursion. The published ZIP hash is in the outer receipt."
+}

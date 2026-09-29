@@ -1,0 +1,242 @@
+{
+  "schema": "project-os-noncanonical-obligations-v2",
+  "source_binding": {
+    "sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "tree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+    "predecessor_manifest_sha256": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4"
+  },
+  "supplemental_obligation_counts": {
+    "D": 4,
+    "C": 1,
+    "E": 2,
+    "F": 1
+  },
+  "items": [
+    {
+      "surface_key": "market-item-detail",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "market-catalog",
+      "rationale": "Long-pressing Movie Night did not render a separate detail state; the catalog remains visible and distinct interactions are represented by other states.",
+      "source_files": [
+        "app/(app)/(tabs)/market.tsx"
+      ],
+      "runtime_validation_reference": "market-item-detail",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/market.tsx": "17e010d58794b129dca550e38984cc14f556c398904161d2050773be420279df"
+      }
+    },
+    {
+      "surface_key": "restock-category-expanded",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "restock-inventory",
+      "rationale": "The default seeded inventory already renders this category expanded; no distinct persistent state is produced.",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "runtime_validation_reference": "restock-category-expanded",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      }
+    },
+    {
+      "surface_key": "wallet-bag-item-note",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "wallet-reward-use",
+      "rationale": "The optional note input is part of the persistent Use reward modal; no separate note renderer exists.",
+      "source_files": [
+        "app/(app)/(tabs)/wallet.tsx"
+      ],
+      "runtime_validation_reference": "wallet-bag-item-note",
+      "source_file_sha256": {
+        "app/(app)/(tabs)/wallet.tsx": "ada9198a5bfc4bff72bb144030bf8b77cff79d03158805e5e87abb24be8248ce"
+      }
+    },
+    {
+      "surface_key": "family-meal-voting",
+      "classification": "C",
+      "canonical_current_atlas": false,
+      "qualification_status": "SOURCE_DEFINED_TEMPORAL_UNPROVEN",
+      "rationale": "Seeded votes cover all three members and WeeklyMenuSection advances phase on mount; current deterministic UI exposes Results. No hidden state or lifecycle mutation is allowed to force Voting.",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx",
+        "store/huddleStore.ts"
+      ],
+      "source_citations": [
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "357-371",
+          "claim": "Seeded votes cover all three members."
+        },
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "387",
+          "claim": "Default menuPhase is voting."
+        },
+        {
+          "file": "components/WeeklyMenuSection.tsx",
+          "lines": "1605-1609",
+          "claim": "Mount check advances phase."
+        },
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "609-612",
+          "claim": "Voting advances at family-size voter count."
+        },
+        {
+          "file": "components/WeeklyMenuSection.tsx",
+          "lines": "1626-1633",
+          "claim": "Header opens Results after phase advance."
+        }
+      ],
+      "source_file_sha256": {
+        "components/WeeklyMenuSection.tsx": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2",
+        "store/huddleStore.ts": "94ac0ca8d9cd9842dd6ebafe560d90a804559c61b00624afbe022deeb851b41a"
+      }
+    },
+    {
+      "surface_key": "restock-item-detail",
+      "classification": "D",
+      "canonical_current_atlas": false,
+      "alias_of": "restock-inventory",
+      "rationale": "No separate detail renderer; rows show facts inline and tapping opens the separately represented editor.",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      }
+    },
+    {
+      "surface_key": "restock-pantry-check",
+      "classification": "E",
+      "canonical_current_atlas": false,
+      "rationale": "pendingIngredients initializes empty with no normal Product call site populating it; conditional pantry modal is unreachable.",
+      "source_files": [
+        "app/(app)/(tabs)/restock.tsx"
+      ],
+      "source_citations": [
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "885",
+          "claim": "pendingIngredients initializes empty."
+        },
+        {
+          "file": "app/(app)/(tabs)/restock.tsx",
+          "lines": "1018-1024",
+          "claim": "Pantry check is conditional on pending ingredients."
+        }
+      ],
+      "source_file_sha256": {
+        "app/(app)/(tabs)/restock.tsx": "41ec1ed698648b28cc65c6de6ebaddafdacee42e93b19a4c58dd3263eedd066e"
+      }
+    },
+    {
+      "surface_key": "/settings/completed-chores",
+      "classification": "E",
+      "canonical_current_atlas": false,
+      "rationale": "Route source exists but no normal in-app navigation call site was found in active source search.",
+      "source_files": [
+        "app/(app)/settings/completed-chores.tsx"
+      ],
+      "source_search": {
+        "terms": [
+          "completed-chores",
+          "/settings/completed-chores"
+        ],
+        "result": "No normal in-app navigation call site found."
+      },
+      "source_file_sha256": {
+        "app/(app)/settings/completed-chores.tsx": "db64e0f69a8273dc7ca42ba7acac45248ddaa75a186cb0ecae7304e4d20f1b9f"
+      }
+    },
+    {
+      "surface_key": "developer-controls-and-simulators",
+      "classification": "F",
+      "canonical_current_atlas": false,
+      "rationale": "Developer Control, Instant Bypass Login, and Simulate First Launch are local fixture/development tooling, not Product UX.",
+      "source_files": [
+        "app/index.tsx",
+        "components/DevToolsOverlay.tsx"
+      ],
+      "source_citations": [
+        {
+          "file": "app/index.tsx",
+          "lines": "585-646",
+          "claim": "Developer Control and explicit Instant Bypass Login."
+        },
+        {
+          "file": "components/DevToolsOverlay.tsx",
+          "lines": "110",
+          "claim": "Simulate First Launch control."
+        }
+      ],
+      "source_file_sha256": {
+        "app/index.tsx": "d304cd9c21087e68675eac3d2e9163735c7f29a2d302c1146821b894fabfdcf9",
+        "components/DevToolsOverlay.tsx": "b5eea635496927b3afd62ca1db63793322bb0ae3fcd1bd71f964fa1224dbe648"
+      }
+    }
+  ],
+  "external_or_destructive_current_canonical_items": [],
+  "carried_forward_unchanged": {
+    "surface_key": "family-meal-voting",
+    "qualification_status": "SOURCE_DEFINED_TEMPORAL_UNPROVEN",
+    "item": {
+      "surface_key": "family-meal-voting",
+      "classification": "C",
+      "canonical_current_atlas": false,
+      "qualification_status": "SOURCE_DEFINED_TEMPORAL_UNPROVEN",
+      "rationale": "Seeded votes cover all three members and WeeklyMenuSection advances phase on mount; current deterministic UI exposes Results. No hidden state or lifecycle mutation is allowed to force Voting.",
+      "source_files": [
+        "components/WeeklyMenuSection.tsx",
+        "store/huddleStore.ts"
+      ],
+      "source_citations": [
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "357-371",
+          "claim": "Seeded votes cover all three members."
+        },
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "387",
+          "claim": "Default menuPhase is voting."
+        },
+        {
+          "file": "components/WeeklyMenuSection.tsx",
+          "lines": "1605-1609",
+          "claim": "Mount check advances phase."
+        },
+        {
+          "file": "store/huddleStore.ts",
+          "lines": "609-612",
+          "claim": "Voting advances at family-size voter count."
+        },
+        {
+          "file": "components/WeeklyMenuSection.tsx",
+          "lines": "1626-1633",
+          "claim": "Header opens Results after phase advance."
+        }
+      ],
+      "source_file_sha256": {
+        "components/WeeklyMenuSection.tsx": "4e48cad3dfdda9514284ea8550d704adde1f63b5177fa53ee2995cf120e77ae2",
+        "store/huddleStore.ts": "94ac0ca8d9cd9842dd6ebafe560d90a804559c61b00624afbe022deeb851b41a"
+      }
+    },
+    "rationale": "Feature remains source-defined; current deterministic seed auto-advances Voting to Results after all seeded members vote. No hidden lifecycle/store/DOM mutation was used.",
+    "source_binding": {
+      "sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+      "tree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83"
+    }
+  },
+  "resolved_to_canonical": [
+    {
+      "surface_key": "chores-bulk-selection",
+      "prior_classification": "E",
+      "resolution": "Current CHG-279 source/runtime exposes selection through ordinary visible long-press; added as canonical surface 66."
+    }
+  ],
+  "request": "homehuddle-ui0-atlas-recipes-current-v2"
+}

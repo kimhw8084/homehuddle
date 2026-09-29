@@ -1,0 +1,1414 @@
+{
+  "schema": "project-os-chg290-assertion-revalidation-v2",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-atlas-recipes-current-v2",
+  "source_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+  "tree_sha": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "browser": "Google Chrome 154.0.8037.58",
+  "playwright": "1.63.0",
+  "execution_model": {
+    "fresh_isolated_browser_context_per_surface_key": true,
+    "base_viewport": "390x844",
+    "extra_chg290_viewport": "1440x900",
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "dpr": 1,
+    "supabase": "synthetic loopback only",
+    "external_requests": "aborted and recorded",
+    "visible_actions_only": true
+  },
+  "cases_expected": 10,
+  "cases_passed": 10,
+  "cases_failed": 0,
+  "required_cases": [
+    "home-family-switcher",
+    "home-delivery-history",
+    "home-automation-create",
+    "home-appliance-create",
+    "family-member-editor"
+  ],
+  "viewport_anchors": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "state_coincident_proof": [
+    {
+      "surface_key": "home-family-switcher",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=header, anchor=None, slot=0, bounds={'i': 0, 'txt': '', 'x': 242, 'y': 8, 'w': 56, 'h': 56, 'cx': 270, 'cy': 36}",
+            "source_owner": "surface owner; see source-evidence-index"
+          },
+          "evidence": {
+            "selector_kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=header, anchor=None, slot=0, bounds={'i': 0, 'txt': '', 'x': 242, 'y': 8, 'w': 56, 'h': 56, 'cx': 270, 'cy': 36}",
+            "click_point": [
+              270,
+              36
+            ],
+            "visible_hit_test": {
+              "tag": "svg",
+              "text": "",
+              "aria": null,
+              "testid": null,
+              "bounds": {
+                "x": 258,
+                "y": 24,
+                "width": 24,
+                "height": 24
+              },
+              "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#4F46E5\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><p"
+            }
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "Family Orbit",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "Family Orbit",
+        "text": "FAMILY ORBIT",
+        "bounds": {
+          "x": 190,
+          "y": 66,
+          "width": 160,
+          "height": 16
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Activate source-identified icon-only control relative to visible anchor",
+          "selector": {
+            "kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=header, anchor=None, slot=0, bounds={'i': 0, 'txt': '', 'x': 242, 'y': 8, 'w': 56, 'h': 56, 'cx': 270, 'cy': 36}",
+            "source_owner": "surface owner; see source-evidence-index"
+          },
+          "evidence": {
+            "selector_kind": "icon-only relative geometry",
+            "runtime_bounds": "source-identified icon control mode=header, anchor=None, slot=0, bounds={'i': 0, 'txt': '', 'x': 242, 'y': 8, 'w': 56, 'h': 56, 'cx': 270, 'cy': 36}",
+            "click_point": [
+              1320,
+              36
+            ],
+            "visible_hit_test": {
+              "tag": "svg",
+              "text": "",
+              "aria": null,
+              "testid": null,
+              "bounds": {
+                "x": 1308,
+                "y": 24,
+                "width": 24,
+                "height": 24
+              },
+              "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#4F46E5\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><p"
+            }
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "Family Orbit",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "Family Orbit",
+        "text": "FAMILY ORBIT",
+        "bounds": {
+          "x": 1240,
+          "y": 66,
+          "width": 160,
+          "height": 16
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Long press the visible calendar/history control identified by its tap / hold helper label",
+          "selector": {
+            "kind": "anchored_control",
+            "anchor": "tap / hold",
+            "index": 0,
+            "gesture": "long_press",
+            "source_relation": "the one control in the visible tap / hold wrapper"
+          },
+          "evidence": {
+            "selector_kind": "visible source-anchored control",
+            "anchor": "tap / hold",
+            "control_index": 0,
+            "control_text": "",
+            "bounds": {
+              "x": 269.46875,
+              "y": 490,
+              "width": 65,
+              "height": 34
+            },
+            "gesture": "long_press",
+            "parent_text": "tap / hold"
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "Delivery History",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "Delivery History",
+        "text": "Delivery History",
+        "bounds": {
+          "x": 62,
+          "y": 288.5,
+          "width": 278,
+          "height": 18
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Long press the visible calendar/history control identified by its tap / hold helper label",
+          "selector": {
+            "kind": "anchored_control",
+            "anchor": "tap / hold",
+            "index": 0,
+            "gesture": "long_press",
+            "source_relation": "the one control in the visible tap / hold wrapper"
+          },
+          "evidence": {
+            "selector_kind": "visible source-anchored control",
+            "anchor": "tap / hold",
+            "control_index": 0,
+            "control_text": "",
+            "bounds": {
+              "x": 1307,
+              "y": 490,
+              "width": 65,
+              "height": 34
+            },
+            "gesture": "long_press",
+            "parent_text": "tap / hold"
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "Delivery History",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "Delivery History",
+        "text": "Delivery History",
+        "bounds": {
+          "x": 62,
+          "y": 344.5,
+          "width": 1328,
+          "height": 18
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-automation-create",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Scroll Automations into view and activate its visible add control",
+          "selector": {
+            "kind": "anchored_control",
+            "anchor": "Automations",
+            "index": 0,
+            "source_relation": "header trailing add control"
+          },
+          "evidence": {
+            "selector_kind": "visible source-anchored control",
+            "anchor": "Automations",
+            "control_index": 0,
+            "control_text": "",
+            "bounds": {
+              "x": 334,
+              "y": 445,
+              "width": 32,
+              "height": 32
+            },
+            "gesture": "click",
+            "parent_text": "Automations\nOne tap to deploy a full chore set"
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "New Automation",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "New Automation",
+        "text": "NEW AUTOMATION",
+        "bounds": {
+          "x": 24,
+          "y": 882,
+          "width": 159.453125,
+          "height": 12
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-automation-create",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Scroll Automations into view and activate its visible add control",
+          "selector": {
+            "kind": "anchored_control",
+            "anchor": "Automations",
+            "index": 0,
+            "source_relation": "header trailing add control"
+          },
+          "evidence": {
+            "selector_kind": "visible source-anchored control",
+            "anchor": "Automations",
+            "control_index": 0,
+            "control_text": "",
+            "bounds": {
+              "x": 1384,
+              "y": 498,
+              "width": 32,
+              "height": 32
+            },
+            "gesture": "click",
+            "parent_text": "Automations\nOne tap to deploy a full chore set"
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "New Automation",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "New Automation",
+        "text": "NEW AUTOMATION",
+        "bounds": {
+          "x": 24,
+          "y": 938,
+          "width": 159.453125,
+          "height": 12
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Scroll Appliance Watch into view and activate its visible add control",
+          "selector": {
+            "kind": "anchored_control",
+            "anchor": "Appliance Watch",
+            "index": 0,
+            "source_relation": "header trailing add control"
+          },
+          "evidence": {
+            "selector_kind": "visible source-anchored control",
+            "anchor": "Appliance Watch",
+            "control_index": 0,
+            "control_text": "",
+            "bounds": {
+              "x": 334,
+              "y": 445,
+              "width": 32,
+              "height": 32
+            },
+            "gesture": "click",
+            "parent_text": "Appliance Watch\nLong press to reorder · Swipe to edit"
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "New Appliance",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "New Appliance",
+        "text": "NEW APPLIANCE",
+        "bounds": {
+          "x": 24,
+          "y": 861,
+          "width": 181.78125,
+          "height": 12
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": {
+        "pathname": "/",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /login and complete visible Developer Control bootstrap",
+          "selector": {
+            "kind": "visible fixture control",
+            "label": "Developer Control; Instant Bypass Login"
+          },
+          "evidence": {
+            "entry": "/login",
+            "logo_activations": 2,
+            "developer_control_stayed_unauthorized": true,
+            "explicit_bypass": "Instant Bypass Login",
+            "settled_route": {
+              "pathname": "/",
+              "search": ""
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Scroll Appliance Watch into view and activate its visible add control",
+          "selector": {
+            "kind": "anchored_control",
+            "anchor": "Appliance Watch",
+            "index": 0,
+            "source_relation": "header trailing add control"
+          },
+          "evidence": {
+            "selector_kind": "visible source-anchored control",
+            "anchor": "Appliance Watch",
+            "control_index": 0,
+            "control_text": "",
+            "bounds": {
+              "x": 1384,
+              "y": 473,
+              "width": 32,
+              "height": 32
+            },
+            "gesture": "click",
+            "parent_text": "Appliance Watch\nLong press to reorder · Swipe to edit"
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "New Appliance",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "New Appliance",
+        "text": "NEW APPLIANCE",
+        "bounds": {
+          "x": 24,
+          "y": 917,
+          "width": 181.78125,
+          "height": 12
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          },
+          {
+            "type": "warning",
+            "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+          },
+          {
+            "type": "warning",
+            "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+          },
+          {
+            "type": "warning",
+            "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          },
+          {
+            "type": "warning",
+            "text": "[Reanimated] Reading from `value` during component render. Please ensure that you don't access the `value` property nor use `get` method of a shared value while React is rendering a component.\n\nIf you don't want to see this message, you can disable the `strict` mode. Refer to:\nhttps://docs.swmansion.com/react-native-reanimated/docs/debugging/logger-configuration for more details."
+          }
+        ],
+        "failedRequests": [
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://localhost:8081/",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "family-member-editor",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": {
+        "pathname": "/onboarding/family",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /onboarding in a new context",
+          "selector": {
+            "kind": "route",
+            "label": "/onboarding"
+          },
+          "evidence": {
+            "selector_kind": "route",
+            "route": "/onboarding",
+            "http_status": 200
+          },
+          "passed": true
+        },
+        {
+          "action": "Activate Get Started",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Get Started"
+          },
+          "evidence": {
+            "selector_kind": "visible text",
+            "label": "Get Started",
+            "text_before_activation": "Get Started",
+            "bounds": {
+              "x": 148.515625,
+              "y": 781,
+              "width": 92.953125,
+              "height": 20
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": {
+            "kind": "textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…"
+          },
+          "evidence": {
+            "selector_kind": "visible textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…",
+            "value": "Haewon Kim"
+          },
+          "passed": true
+        },
+        {
+          "action": "Activate Continue",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          },
+          "evidence": {
+            "selector_kind": "visible text",
+            "label": "Continue",
+            "text_before_activation": "Continue",
+            "bounds": {
+              "x": 146.09375,
+              "y": 793,
+              "width": 71.8125,
+              "height": 18
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Open Sarah Kim edit modal and leave draft unsaved",
+          "selector": {
+            "kind": "icon-only member action",
+            "label": "Sarah Kim",
+            "source_evidence": "app/onboarding/family.tsx lines 166-179; measured bounds in runtime steps"
+          },
+          "evidence": {
+            "selector_kind": "icon-only member action",
+            "member": "Sarah Kim",
+            "source_target": "first member action (Pencil edit, source order)",
+            "target_bounds": {
+              "x": 267,
+              "y": 336,
+              "width": 34,
+              "height": 34
+            }
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "Edit Member",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "Edit Member",
+        "text": "Edit Member",
+        "bounds": {
+          "x": 137.25,
+          "y": 429,
+          "width": 100.28125,
+          "height": 18
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    },
+    {
+      "surface_key": "family-member-editor",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": {
+        "pathname": "/onboarding/family",
+        "search": ""
+      },
+      "executed_actions": [
+        {
+          "action": "Open /onboarding in a new context",
+          "selector": {
+            "kind": "route",
+            "label": "/onboarding"
+          },
+          "evidence": {
+            "selector_kind": "route",
+            "route": "/onboarding",
+            "http_status": 200
+          },
+          "passed": true
+        },
+        {
+          "action": "Activate Get Started",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Get Started"
+          },
+          "evidence": {
+            "selector_kind": "visible text",
+            "label": "Get Started",
+            "text_before_activation": "Get Started",
+            "bounds": {
+              "x": 673.515625,
+              "y": 837,
+              "width": 92.953125,
+              "height": 20
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Fill Your Name with Haewon Kim",
+          "selector": {
+            "kind": "textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…"
+          },
+          "evidence": {
+            "selector_kind": "visible textbox placeholder",
+            "label": "e.g. Sarah, Dad, Haewon…",
+            "value": "Haewon Kim"
+          },
+          "passed": true
+        },
+        {
+          "action": "Activate Continue",
+          "selector": {
+            "kind": "visible button text",
+            "label": "Continue"
+          },
+          "evidence": {
+            "selector_kind": "visible text",
+            "label": "Continue",
+            "text_before_activation": "Continue",
+            "bounds": {
+              "x": 671.09375,
+              "y": 849,
+              "width": 71.8125,
+              "height": 18
+            }
+          },
+          "passed": true
+        },
+        {
+          "action": "Open Sarah Kim edit modal and leave draft unsaved",
+          "selector": {
+            "kind": "icon-only member action",
+            "label": "Sarah Kim",
+            "source_evidence": "app/onboarding/family.tsx lines 166-179; measured bounds in runtime steps"
+          },
+          "evidence": {
+            "selector_kind": "icon-only member action",
+            "member": "Sarah Kim",
+            "source_target": "first member action (Pencil edit, source order)",
+            "target_bounds": {
+              "x": 1317,
+              "y": 316,
+              "width": 34,
+              "height": 34
+            }
+          },
+          "passed": true
+        }
+      ],
+      "assertion_subject": "Edit Member",
+      "assertion_kind": "visible text",
+      "assertion_result": true,
+      "assertion_evidence": {
+        "passed": true,
+        "kind": "visible text",
+        "value": "Edit Member",
+        "text": "Edit Member",
+        "bounds": {
+          "x": 662.25,
+          "y": 485,
+          "width": 100.28125,
+          "height": 18
+        }
+      },
+      "classification": null,
+      "status": "RECIPE_VALIDATED_CURRENT_SOURCE",
+      "runtime": {
+        "pageErrors": [],
+        "console": [
+          {
+            "type": "warning",
+            "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [],
+        "externalRequests": [],
+        "logBoxErrors": []
+      }
+    }
+  ]
+}

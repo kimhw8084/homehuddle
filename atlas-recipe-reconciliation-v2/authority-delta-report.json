@@ -1,0 +1,2731 @@
+{
+  "schema": "project-os-authority-delta-report-v2",
+  "project": "homehuddle",
+  "request": "homehuddle-ui0-atlas-recipes-current-v2",
+  "predecessor": {
+    "ref": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1",
+    "commit": "705d18724e4b4ac3621206aad8926bbf55c53db8",
+    "tree": "5dc725715ac98ea55ad7d6c0a5369a0b39d41029",
+    "source_sha": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+    "source_tree": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+    "manifest_sha256": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4",
+    "capture_recipes_sha256": "bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608"
+  },
+  "current_source": {
+    "sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+    "tree": "5696f4ff70b3d4d1f2962de9173d195af4f19b83"
+  },
+  "surface_key_count": 66,
+  "surface_keys_identical": true,
+  "canonical_path_count": 132,
+  "canonical_paths_identical": true,
+  "canonical_paths_unique": true,
+  "surface_keys_unique": true,
+  "duplicate_surface_viewport_pairs": 0,
+  "manifest_field_changes": [
+    {
+      "field": "change",
+      "before": "CHG-288 R1",
+      "after": "CHG-288 R2"
+    },
+    {
+      "field": "current_source_roll_forward.accepted_capture_recipes_sha256",
+      "before": null,
+      "after": "bdcfca5ea6746dc29aacf88602d94430d1c80b09e7e53b90a77fac5868f93608"
+    },
+    {
+      "field": "current_source_roll_forward.accepted_manifest_sha256",
+      "before": "30c8a9dddf56367251c73f4809e606d37534b2623ed74c0fc28c6851a3d22277",
+      "after": "ddb2b932cd5282dc3bf3069f5c784a6955adfd783729b6b2a0e37b5c9b1618a4"
+    },
+    {
+      "field": "current_source_roll_forward.assessment",
+      "before": null,
+      "after": "EXPECTED_CHG294_SLICE_ONLY"
+    },
+    {
+      "field": "current_source_roll_forward.canonical_artifact_paths_changed",
+      "before": null,
+      "after": false
+    },
+    {
+      "field": "current_source_roll_forward.canonical_surface_keys_changed",
+      "before": null,
+      "after": false
+    },
+    {
+      "field": "current_source_roll_forward.from_artifact_commit",
+      "before": "0ef561e869f4bc53a2c473691bd3bd84b599f9a8",
+      "after": "705d18724e4b4ac3621206aad8926bbf55c53db8"
+    },
+    {
+      "field": "current_source_roll_forward.from_artifact_ref",
+      "before": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-manifest-validate-v1",
+      "after": "refs/heads/project-os-artifacts/homehuddle/homehuddle-ui0-atlas-recipes-current-v1"
+    },
+    {
+      "field": "current_source_roll_forward.from_artifact_tree",
+      "before": "fec6217a46defc2a7301a809b007801f5c5235d8",
+      "after": "5dc725715ac98ea55ad7d6c0a5369a0b39d41029"
+    },
+    {
+      "field": "current_source_roll_forward.from_source_sha",
+      "before": null,
+      "after": "28735b6fc8436ff461d5a094cf90e9f0709821b3"
+    },
+    {
+      "field": "current_source_roll_forward.from_source_tree",
+      "before": null,
+      "after": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc"
+    },
+    {
+      "field": "current_source_roll_forward.product_changed_by_this_verify",
+      "before": null,
+      "after": false
+    },
+    {
+      "field": "current_source_roll_forward.rationale",
+      "before": "Preserve the accepted 65 Surface Keys on integrated current main; add exactly chores-bulk-selection because current CHG-279 makes the visible completion circle normally enter bulk selection. Carry family-meal-voting forward as temporal-unproven.",
+      "after": "Carry the independently accepted AR-96 66-surface authority to exact integrated CHG-294 main. Update only current source binding and the seeded-app /login visible bootstrap semantics; retain the canonical keys, order, screenshot paths, route policy, ready assertions, and noncanonical temporal obligation."
+    },
+    {
+      "field": "current_source_roll_forward.remote_target",
+      "before": null,
+      "after": "main"
+    },
+    {
+      "field": "current_source_roll_forward.to_source_sha",
+      "before": null,
+      "after": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8"
+    },
+    {
+      "field": "current_source_roll_forward.to_source_tree",
+      "before": null,
+      "after": "5696f4ff70b3d4d1f2962de9173d195af4f19b83"
+    },
+    {
+      "field": "request",
+      "before": "homehuddle-ui0-atlas-recipes-current-v1",
+      "after": "homehuddle-ui0-atlas-recipes-current-v2"
+    },
+    {
+      "field": "source.sha",
+      "before": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+      "after": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8"
+    },
+    {
+      "field": "source.tree",
+      "before": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+      "after": "5696f4ff70b3d4d1f2962de9173d195af4f19b83"
+    },
+    {
+      "field": "validation.authority_contradiction_count",
+      "before": null,
+      "after": 0
+    },
+    {
+      "field": "validation.bootstrap_contexts_passed",
+      "before": null,
+      "after": 10
+    },
+    {
+      "field": "validation.change",
+      "before": "CHG-288 R1",
+      "after": "CHG-288 R2"
+    },
+    {
+      "field": "validation.chg290_assertion_cases_passed",
+      "before": null,
+      "after": 10
+    },
+    {
+      "field": "validation.product_blocker_count",
+      "before": null,
+      "after": 0
+    },
+    {
+      "field": "validation.request",
+      "before": "homehuddle-ui0-atlas-recipes-current-v1",
+      "after": "homehuddle-ui0-atlas-recipes-current-v2"
+    },
+    {
+      "field": "validation.source_sha",
+      "before": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+      "after": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8"
+    },
+    {
+      "field": "validation.source_tree",
+      "before": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+      "after": "5696f4ff70b3d4d1f2962de9173d195af4f19b83"
+    },
+    {
+      "field": "validation.validated_recipe_count",
+      "before": null,
+      "after": 66
+    }
+  ],
+  "recipe_root_field_changes": [
+    {
+      "field": "schema",
+      "before": "project-os-capture-recipes-current-v1",
+      "after": "project-os-capture-recipes-current-v2"
+    },
+    {
+      "field": "source_binding.remote_target",
+      "before": null,
+      "after": "main"
+    },
+    {
+      "field": "source_binding.sha",
+      "before": "28735b6fc8436ff461d5a094cf90e9f0709821b3",
+      "after": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8"
+    },
+    {
+      "field": "source_binding.tree",
+      "before": "719cf4a0051a6b0af390b7b8703bd5e62e1c22cc",
+      "after": "5696f4ff70b3d4d1f2962de9173d195af4f19b83"
+    }
+  ],
+  "seeded_recipe_field_changes": [
+    {
+      "surface_key": "home-dashboard",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-today-all",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-my-scope",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores?filter=Me in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores?filter=Me."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-calendar-month",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-hub",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "wallet-points",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /wallet."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "wallet-reward-bag",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /wallet?tab=bag in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /wallet?tab=bag."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-catalog",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "restock-inventory",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /restock in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /restock."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "profile-center",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /profile in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /profile."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-personal-info",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/personal-info in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/personal-info."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-privacy-security",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/privacy in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/privacy."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-notifications",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/notifications in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/notifications."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-household",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/household in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/household."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-invite",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/invite in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/invite."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-chore-history-completed",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/chore-history in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/chore-history."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-chore-history-deleted",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/chore-history?tab=deleted in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/chore-history?tab=deleted."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-help",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/help in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/help."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "settings-about",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /settings/about in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /settings/about."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-family-switcher",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-inbox-review",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-delivery-add",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-delivery-calendar",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-delivery-history",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-announcement-board",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-dinner-planner",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-automation-create",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "home-appliance-create",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route / in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-create",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-edit",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-expanded-task",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-filter-sort",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-assignment",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-reschedule",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-game-picker",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-random-assignment",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-completed-expanded",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /chores in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-member-detail",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-announcements",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-wishlist",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-activity-expanded",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-heatmap",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-meal-results",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "wallet-goal-create",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /wallet."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "wallet-goal-contribute",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /wallet."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "insert_required_fixture_bootstrap",
+          "before": null,
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "wallet-reward-use",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /wallet."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "wallet-activity-search",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /wallet in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /wallet."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-item-create",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-item-edit",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "insert_required_fixture_bootstrap",
+          "before": null,
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-item-restock",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "insert_required_fixture_bootstrap",
+          "before": null,
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-price-history",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-flash-sale",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "market-redeem-confirmation",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /market in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /market."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "restock-item-create",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /restock in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /restock."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "restock-item-edit",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /restock in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /restock."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "restock-filter",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /restock in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /restock."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "restock-history-expanded",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /restock in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /restock."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface. Required visible actions change only disposable browser-local onboarding/session/goal/item data.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "insert_required_fixture_bootstrap",
+          "before": null,
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "family-layout-edit",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open route /family in a new isolated context and follow the visible Product controls.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /family."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated browser context, exact-source local runtime, synthetic/local Supabase fixture; no production credentials or hosted data. Local deterministic seed is loaded as fixture bootstrap. Validation used explicit visible Developer Control bypass only to initialize this fixture; it is not a Product surface.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load local seeded-app fixture via visible Developer Control > Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    },
+    {
+      "surface_key": "chores-bulk-selection",
+      "fields": [
+        {
+          "field": "route_navigation_intent",
+          "before": "Open clean seeded app, visibly navigate to Chores, then long-press the current/past pending chore completion circle.",
+          "after": "Open /login in a fresh isolated context, complete the visible two-activation Developer Control bootstrap and explicit Instant Bypass Login, then use the accepted AR-96 visible Product actions to reach intended route /chores."
+        },
+        {
+          "field": "required_precondition",
+          "before": "Fresh isolated BrowserContext, exact current-source web runtime, deterministic local seed, synthetic loopback Supabase only.",
+          "after": "Fresh isolated BrowserContext with empty local/session storage and cookies. Open /login; verify visible auth UI and no Product content flash. Activate the visible auth logo exactly twice to open Developer Control; verify it remains on /login and unauthorized. Select the ordinary visible Instant Bypass Login action; verify authorization lands on Home at /. Then execute the accepted AR-96 visible Product actions and ready assertion. Use only synthetic loopback Supabase; no production credentials or hosted household data."
+        },
+        {
+          "field": "ordered_visible_user_actions[fixture_bootstrap]",
+          "change": "replace_existing_fixture_bootstrap",
+          "before": {
+            "action": "Load seeded app with visible Developer Control and explicit bypass",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login"
+            },
+            "fixture_bootstrap": true
+          },
+          "after": {
+            "action": "Open /login, activate the visible auth logo exactly twice, then select visible Instant Bypass Login",
+            "selector": {
+              "kind": "visible fixture control",
+              "label": "Developer Control; Instant Bypass Login",
+              "start_route": "/login",
+              "auth_logo_testid": "logo-trigger",
+              "visible_logo_activations": 2,
+              "developer_control_alone_authorizes": false,
+              "bypass_label": "Instant Bypass Login",
+              "landing_route": "/",
+              "landing_ready_assertion": "FAMILY ORBIT"
+            },
+            "fixture_bootstrap": true
+          }
+        }
+      ],
+      "accepted_product_actions_unchanged": true
+    }
+  ],
+  "seeded_recipes_changed": 59,
+  "seeded_recipes_missing_bootstrap_before": [
+    "wallet-goal-contribute",
+    "market-item-edit",
+    "market-item-restock",
+    "restock-history-expanded"
+  ],
+  "non_seeded_recipes_changed": 0,
+  "ready_assertions_changed": 0,
+  "route_evidence_changed": 0,
+  "canonical_keys_added": [],
+  "canonical_keys_removed": [],
+  "canonical_keys_renamed": [],
+  "canonical_paths_added": [],
+  "canonical_paths_removed": [],
+  "canonical_paths_reordered": false,
+  "accepted_product_actions_unchanged": true,
+  "noncanonical_family_meal_voting_preserved": true,
+  "expected_changes_only_source_binding_and_seeded_bootstrap": true,
+  "counts": {
+    "manifest_field_changes": 28,
+    "recipe_root_field_changes": 4,
+    "seeded_recipes_with_bootstrap_rollforward": 59,
+    "bootstrap_actions_replaced": 55,
+    "bootstrap_actions_inserted": 4,
+    "seeded_route_navigation_intents_updated": 59,
+    "seeded_required_preconditions_updated": 59,
+    "ready_assertions_changed": 0,
+    "route_evidence_changed": 0,
+    "source_changed": false
+  }
+}

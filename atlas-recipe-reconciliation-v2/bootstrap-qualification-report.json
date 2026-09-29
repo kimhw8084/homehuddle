@@ -1,0 +1,1264 @@
+{
+  "schema": "project-os-seeded-app-bootstrap-qualification-v2",
+  "browser": "Google Chrome 154.0.8037.58",
+  "playwright": "1.63.0",
+  "headless": true,
+  "timezone": "America/Chicago",
+  "locale": "en-US",
+  "dpr": 1,
+  "frozen_browser_time_utc": "2026-09-26T17:39:52Z",
+  "contexts": [
+    {
+      "context": 1,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 135.2003173828125,
+              "y": 132.9971923828125,
+              "width": 119.59934997558594,
+              "height": 119.59934997558594
+            },
+            "point": {
+              "x": 194.99999237060547,
+              "y": 192.79686737060547
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 134.9994354248047,
+              "y": 132.7963104248047,
+              "width": 120.00112915039062,
+              "height": 120.00112915039062
+            },
+            "point": {
+              "x": 195,
+              "y": 192.796875
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 2,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 135.1709747314453,
+              "y": 132.9678497314453,
+              "width": 119.65805053710938,
+              "height": 119.65805053710938
+            },
+            "point": {
+              "x": 195,
+              "y": 192.796875
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 135.00253295898438,
+              "y": 132.79940795898438,
+              "width": 119.99493408203125,
+              "height": 119.99493408203125
+            },
+            "point": {
+              "x": 195,
+              "y": 192.796875
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 3,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 135.20431518554688,
+              "y": 133.00119018554688,
+              "width": 119.59136962890625,
+              "height": 119.59136962890625
+            },
+            "point": {
+              "x": 195,
+              "y": 192.796875
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 135.00347900390625,
+              "y": 132.80035400390625,
+              "width": 119.99305725097656,
+              "height": 119.99305725097656
+            },
+            "point": {
+              "x": 195.00000762939453,
+              "y": 192.79688262939453
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 4,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 135.19537353515625,
+              "y": 132.99224853515625,
+              "width": 119.60926818847656,
+              "height": 119.60926818847656
+            },
+            "point": {
+              "x": 195.00000762939453,
+              "y": 192.79688262939453
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 134.9786834716797,
+              "y": 132.7755584716797,
+              "width": 120.04264831542969,
+              "height": 120.04264831542969
+            },
+            "point": {
+              "x": 195.00000762939453,
+              "y": 192.79688262939453
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 5,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 135.2108154296875,
+              "y": 133.0076904296875,
+              "width": 119.578369140625,
+              "height": 119.578369140625
+            },
+            "point": {
+              "x": 195,
+              "y": 192.796875
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 134.99832153320312,
+              "y": 132.79519653320312,
+              "width": 120.00335693359375,
+              "height": 120.00335693359375
+            },
+            "point": {
+              "x": 195,
+              "y": 192.796875
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 660.197998046875,
+              "y": 151.197998046875,
+              "width": 119.60400390625,
+              "height": 119.60400390625
+            },
+            "point": {
+              "x": 720,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 660.0034790039062,
+              "y": 151.00347900390625,
+              "width": 119.9930419921875,
+              "height": 119.9930419921875
+            },
+            "point": {
+              "x": 720,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 7,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 660.2081909179688,
+              "y": 151.20816040039062,
+              "width": 119.58367919921875,
+              "height": 119.58367919921875
+            },
+            "point": {
+              "x": 720.0000305175781,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 659.9927978515625,
+              "y": 150.9927978515625,
+              "width": 120.014404296875,
+              "height": 120.014404296875
+            },
+            "point": {
+              "x": 720,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 660.2081909179688,
+              "y": 151.20816040039062,
+              "width": 119.58367919921875,
+              "height": 119.58367919921875
+            },
+            "point": {
+              "x": 720.0000305175781,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 660.004150390625,
+              "y": 151.004150390625,
+              "width": 119.99169921875,
+              "height": 119.99169921875
+            },
+            "point": {
+              "x": 720,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 9,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 660.2161865234375,
+              "y": 151.47215270996094,
+              "width": 119.56768798828125,
+              "height": 119.56770324707031
+            },
+            "point": {
+              "x": 720.0000305175781,
+              "y": 211.2560043334961
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 659.9794311523438,
+              "y": 150.9794464111328,
+              "width": 120.04107666015625,
+              "height": 120.04109191894531
+            },
+            "point": {
+              "x": 719.9999694824219,
+              "y": 210.99999237060547
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    },
+    {
+      "context": 10,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "start_url": "http://localhost:8081/login",
+      "storage_origins": 0,
+      "cookie_count": 0,
+      "steps": [
+        {
+          "step": "auth_entry",
+          "route": "/login",
+          "auth_ui_visible": true,
+          "logo_visible": true,
+          "product_flash": false
+        },
+        {
+          "step": "first_logo_activation",
+          "route": "/login",
+          "developer_control_visible": false,
+          "product_visible": false,
+          "activation": {
+            "bounds": {
+              "x": 660.2130737304688,
+              "y": 151.2130584716797,
+              "width": 119.57391357421875,
+              "height": 119.57389831542969
+            },
+            "point": {
+              "x": 720.0000305175781,
+              "y": 211.00000762939453
+            },
+            "hit_test": {
+              "tag": "path",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "developer_control_open_after_exactly_two_activations",
+          "route": "/login",
+          "control_visible": true,
+          "product_visible": false,
+          "logo_activations": 2,
+          "second_activation": {
+            "bounds": {
+              "x": 660.0034790039062,
+              "y": 151.00347900390625,
+              "width": 119.9930419921875,
+              "height": 119.9930419921875
+            },
+            "point": {
+              "x": 720,
+              "y": 211
+            },
+            "hit_test": {
+              "tag": "DIV",
+              "text": "",
+              "hit_within_logo": true
+            },
+            "activation": "visible browser mouse click"
+          }
+        },
+        {
+          "step": "explicit_instant_bypass_home",
+          "route": "/",
+          "home_visible": true
+        }
+      ],
+      "pageErrors": [],
+      "console": [
+        {
+          "type": "warning",
+          "text": "\"shadow*\" style props are deprecated. Use \"boxShadow\"."
+        },
+        {
+          "type": "warning",
+          "text": "props.pointerEvents is deprecated. Use style.pointerEvents"
+        },
+        {
+          "type": "warning",
+          "text": "TouchableWithoutFeedback is deprecated. Please use Pressable."
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "[Layout children]: No route named \"settings\" exists in nested children: [profile, (tabs), settings/about, settings/chore-history, settings/completed-chores, settings/help, settings/household, settings/invite, settings/notifications, settings/personal-info, settings/privacy]"
+        },
+        {
+          "type": "warning",
+          "text": "[Reanimated] Property [opacity] may be overwritten by a layout animation. Please wrap your component with an animated view and apply the layout animation on the wrapper."
+        },
+        {
+          "type": "warning",
+          "text": "Animated: `useNativeDriver` is not supported because the native animated module is missing. Falling back to JS-based animation. To resolve this, add `RCTAnimation` module to this app, or remove `useNativeDriver`. Make sure to run `bundle exec pod install` first. Read more about autolinking: https://github.com/react-native-community/cli/blob/master/docs/autolinking.md"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://localhost:8081/",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": [],
+      "externalRequests": [],
+      "logBoxErrors": [],
+      "passed": true
+    }
+  ],
+  "contexts_passed": 10,
+  "contexts_total": 10,
+  "request": "homehuddle-ui0-atlas-recipes-current-v2",
+  "source_sha": "55fd7a9334f35e4fb95f2b7c7e70c91bbd0d29e8",
+  "tree_sha": "5696f4ff70b3d4d1f2962de9173d195af4f19b83",
+  "execution_model": {
+    "headless": true,
+    "fresh_isolated_browser_context_per_context": true,
+    "viewports": [
+      {
+        "width": 390,
+        "height": 844,
+        "count": 5
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "count": 5
+      }
+    ],
+    "dpr": 1,
+    "locale": "en-US",
+    "timezone": "America/Chicago",
+    "clock_utc": "2026-09-26T17:39:52Z",
+    "storage_and_cookies_empty": true,
+    "start_route": "/login",
+    "visible_auth_logo_activations": 2,
+    "explicit_bypass": "Instant Bypass Login",
+    "expected_landing_route": "/",
+    "visible_auth_logo_activation_method": "hit-tested mouse clicks at measured visible logo bounds; timing advanced through Playwright clock between activations"
+  },
+  "diagnostic_attempts": [
+    {
+      "method": "Playwright locator click on animated logo",
+      "contexts": 10,
+      "passed": 9,
+      "failed": 1,
+      "classification": "HARNESS_DEFECT",
+      "reason": "One diagnostic context missed Developer Control despite locator.click returning; the locator method did not record the delivered screen hit. Replaced for qualification with measured, hit-tested visible pointer clicks. Final qualification is a separate 10-context fresh run and passed 10/10.",
+      "product_source_mutated": false
+    }
+  ]
+}
